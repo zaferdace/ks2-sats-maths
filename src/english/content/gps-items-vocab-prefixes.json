@@ -114,7 +114,7 @@
     "prompt": "What does the prefix **pre-** mean in **preview** and **prehistoric**?",
     "input": {"kind": "choice", "options": ["after", "again", "before", "against"], "pick": 1},
     "answer": [2],
-    "explain": "A preview is a look before, and prehistoric means before written history."
+    "explain": "A preview is shown before the real thing, and prehistoric means before written history."
   },
   {
     "id": "gi-prefixes-014",
@@ -174,10 +174,10 @@
     "id": "gi-prefixes-020",
     "type": "g-prefixes",
     "level": 3,
-    "prompt": "Which prefix can be added to all three words?\n**frost**, **value**, **code**",
+    "prompt": "Which prefix can be added to all three words?\n**throne**, **value**, **code**",
     "input": {"kind": "choice", "options": ["re-", "de-", "un-", "over-"], "pick": 1},
     "answer": [1],
-    "explain": "Defrost, devalue and decode all use de-, which can mean remove or reverse."
+    "explain": "Dethrone, devalue and decode all use de-, which can mean remove or reverse."
   },
   {
     "id": "gi-prefixes-021",

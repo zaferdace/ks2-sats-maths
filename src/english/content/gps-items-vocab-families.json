@@ -184,9 +184,9 @@
     "type": "g-word-families",
     "level": 3,
     "prompt": "Which word is **not** in the same word family as **solve**?",
-    "input": {"kind": "choice", "options": ["solid", "solution", "dissolve", "unsolved"], "pick": 1},
+    "input": {"kind": "choice", "options": ["solid", "solution", "solver", "unsolved"], "pick": 1},
     "answer": [0],
-    "explain": "Solution, dissolve and unsolved share the root solve; solid is not related."
+    "explain": "A solution, a solver and an unsolved puzzle are all about solving; solid is not related."
   },
   {
     "id": "gi-families-022",
@@ -239,7 +239,7 @@
     "level": 3,
     "prompt": "Write a word from the same word family as **medical** to complete the sentence.",
     "input": {"kind": "text", "before": "The nurse gave Owen some", "after": "for his cough."},
-    "answer": ["medicine", "medication", "medicines"],
+    "answer": ["medicine", "medication", "medicines", "medications"],
     "explain": "Medicine and medical share the root medic."
   },
   {

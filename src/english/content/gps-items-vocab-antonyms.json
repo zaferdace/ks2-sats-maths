@@ -57,10 +57,10 @@
     "id": "gi-antonyms-007",
     "type": "g-antonyms",
     "level": 1,
-    "prompt": "Write a word that means the opposite of **always**.",
-    "input": {"kind": "text"},
+    "prompt": "Write a word that means the opposite of **always** to complete the sentence.",
+    "input": {"kind": "text", "before": "Ali is a vegetarian, so he", "after": "eats meat."},
     "answer": ["never"],
-    "explain": "Always means every time; never means not at any time."
+    "explain": "Always means every time; never means not at any time, and a vegetarian never eats meat."
   },
   {
     "id": "gi-antonyms-008",
@@ -149,7 +149,7 @@
     "level": 2,
     "prompt": "Write a word that means the opposite of **arrived** to complete the sentence.",
     "input": {"kind": "text", "before": "Yesterday, the train", "after": "from the station at nine o'clock."},
-    "answer": ["departed", "left", "set off"],
+    "answer": ["departed", "left", "set off", "set out"],
     "explain": "Arrived means came in, so the opposite is departed or left."
   },
   {
@@ -222,7 +222,7 @@
     "prompt": "Which word is the antonym of the underlined word in this sentence?\nThe new neighbours gave us a __cold__ welcome.",
     "input": {"kind": "choice", "options": ["friendly", "hot", "rude", "freezing"], "pick": 1},
     "answer": [0],
-    "explain": "A cold welcome is an unfriendly one, so the opposite here is friendly, not hot."
+    "explain": "A cold welcome is an unfriendly one, so the opposite here is friendly (or warm), not hot."
   },
   {
     "id": "gi-antonyms-026",

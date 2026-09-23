@@ -57,7 +57,7 @@
     "id": "gi-homophones-007",
     "type": "g-homophones",
     "level": 1,
-    "prompt": "Is the underlined word spelt correctly in each sentence? Tap true or false for each sentence.",
+    "prompt": "Is the underlined homophone the right one for each sentence? Tap true or false for each sentence.",
     "input": {"kind": "tf", "statements": ["Ella ate a juicy __pear__ for her snack.", "Noah __road__ his bike to school.", "The wind __blew__ the leaves away.", "We could __here__ the thunder."]},
     "answer": [true, false, true, false],
     "explain": "Noah rode his bike, and we could hear the thunder."
