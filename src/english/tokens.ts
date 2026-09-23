@@ -35,3 +35,25 @@ export function splitAround(sentence: string, word: string): [string, string] {
   const start = m.index + m[1].length;
   return [sentence.slice(0, start), sentence.slice(start + word.length)];
 }
+
+/** Whether each straight " opens a quotation (the first of a pair) or closes one. */
+function opensQuote(tokens: string[], i: number): boolean {
+  return tokens.slice(0, i + 1).filter((t) => t === '"').length % 2 === 1;
+}
+
+/**
+ * Whether `mark` could go in the gap just after token i, judged from the sentence alone (never
+ * from the answer, so which gaps are shown gives nothing away). Nothing goes just inside an
+ * opening bracket or inverted comma; in front of a full stop or comma only a closing bracket or
+ * inverted comma can go; in front of a closing bracket only . ! or ?.
+ */
+export function gapPossible(tokens: string[], i: number, mark: string): boolean {
+  const before = tokens[i];
+  const after = tokens[i + 1];
+  if (after === undefined) return false;
+  if (OPENERS.has(before) || (before === '"' && opensQuote(tokens, i))) return false;
+  if (after === '"' || after === '”' || after === '’') return true;
+  if (after === ')') return ['.', '!', '?'].includes(mark);
+  if (CLOSERS.test(after)) return [')', '”', '"'].includes(mark);
+  return true;
+}

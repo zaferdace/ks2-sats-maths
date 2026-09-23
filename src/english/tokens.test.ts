@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { joinTokens as show, splitAround } from './tokens';
+import { gapPossible, joinTokens as show, splitAround } from './tokens';
 
 describe('sentences from tokens', () => {
   it('put no space before closing marks or after opening ones', () => {
@@ -25,3 +25,19 @@ describe('dictation sentences', () => {
     expect(splitAround('They sat there.', 'the')).toEqual(['They sat there. ', '']);
   });
 });
+
+describe('gaps shown for a punctuation mark', () => {
+  const speech = ['“', 'It', 'is', 'time', 'to', 'go', 'home', '”', 'said', 'Mum', '.'];
+  it('never depend on the answer', () => {
+    // Inside the closing inverted commas a comma can go, so that gap is always shown.
+    expect(gapPossible(speech, 6, ',')).toBe(true);
+    // Just inside the opening inverted commas nothing goes.
+    expect(gapPossible(speech, 0, ',')).toBe(false);
+    // In front of the full stop only a closing mark could go.
+    expect(gapPossible(speech, 9, ',')).toBe(false);
+    expect(gapPossible(['The', 'cake', '(', 'which', 'Grace', 'baked', 'was', 'lovely', '.'], 7, ')')).toBe(true);
+    // No gap after the last token.
+    expect(gapPossible(speech, 10, '.')).toBe(false);
+  });
+});
+

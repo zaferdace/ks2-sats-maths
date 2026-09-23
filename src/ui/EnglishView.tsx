@@ -4,7 +4,7 @@ import { readingText } from '../english/bank';
 import type { Block, InputSpec, ItemQuestion } from '../gen/types';
 import { RichInline, RichText } from './RichText';
 import { canSpeak, dictate, sayWord } from './speech';
-import { CLOSERS, OPENERS, spaceBefore, splitAround } from '../english/tokens';
+import { gapPossible, spaceBefore, splitAround } from '../english/tokens';
 
 type ItemOf<K extends InputSpec['kind']> = ItemQuestion & { input: Extract<InputSpec, { kind: K }> };
 
@@ -74,9 +74,8 @@ export function GapAnswer({ q, answer, onAnswer, mark }: EnglishAnswerProps<'gap
   const { tokens, mark: symbol } = q.input;
   const sel = answer?.sel ?? [];
   const space = spaceBefore(tokens);
-  const keyed = new Set(indexes(q.answer));
-  // No gap in front of a full stop or comma, or just inside a bracket: nothing goes there.
-  const hasGap = (i: number) => keyed.has(i - 1) || !(CLOSERS.test(tokens[i]) || OPENERS.has(tokens[i - 1]));
+  // Gaps where the mark could never go are left out (decided from the sentence, not the answer).
+  const hasGap = (i: number) => gapPossible(tokens, i - 1, symbol);
   const toggle = (g: number) => {
     if (!onAnswer) return;
     const next = sel.includes(g) ? sel.filter((x) => x !== g) : [...sel, g].sort((a, b) => a - b);

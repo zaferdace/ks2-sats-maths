@@ -1,7 +1,7 @@
 // Structural checks for English content. They cannot tell whether a grammar tag is right, only
 // whether an entry is well formed and self-consistent, so content is also read by a person.
 import { normText, TEXT_MAX } from '../answer/answer';
-import { joinTokens } from './tokens';
+import { gapPossible, joinTokens } from './tokens';
 import {
   GPS_ITEM_TYPES,
   READING_DOMAINS,
@@ -104,6 +104,7 @@ export function checkGpsItem(item: GpsItem): string[] {
       if (input.tokens.length < 3 || !input.mark) out.push('gap needs tokens and a mark');
       if (!ints(answer) || !answer.length) out.push('gap needs gap indexes');
       if (answer.some((a) => typeof a !== 'number' || a < 0 || a > input.tokens.length - 2)) out.push('gap index out of range');
+      else if (answer.some((a) => !gapPossible(input.tokens, a as number, input.mark))) out.push('an answer gap is one the screen hides');
       break;
     case 'tf':
       if (input.statements.length < 2) out.push('tf needs 2+ statements');
