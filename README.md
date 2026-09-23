@@ -1,12 +1,17 @@
 # KS2 Arithmetic
 
-SATs-style arithmetic (Paper 1) practice for Year 6, as an offline web app made for an iPad.
+SATs-style maths practice for Year 6 (Paper 1 arithmetic and Papers 2 and 3 reasoning), as an
+offline web app made for an iPad.
 
-- **Unlimited papers.** Each paper has 40 questions worth 1 mark each, running from easy to hard.
-  Do it as a daily paper (8 questions a day for 5 days) or all 40 in one go.
-- **31 question types** from the KS2 arithmetic paper: place value, the four operations, long
-  multiplication and long division, order of operations, squares and cubes, fractions, decimals
-  and percentages. Each type has three difficulty bands.
+- **Unlimited papers.** Paper 1 has 40 arithmetic questions worth 1 mark each. A reasoning paper
+  (Papers 2 and 3 share the format) has 25 questions worth 35 marks, with tables, charts, angle
+  diagrams and coordinate grids. Both run from easy to hard and can be done as a daily paper
+  (five days) or in one go.
+- **31 arithmetic question types** (place value, the four operations, long multiplication and
+  long division, order of operations, squares and cubes, fractions, decimals, percentages) and
+  **40 reasoning templates** across number, calculation, fractions, ratio, algebra, measurement,
+  geometry, position and statistics. Each has three difficulty bands.
+- **Two-mark questions** score 2 or 0, because a typed answer cannot show working.
 - **Marked like the real test.** Answers are checked when the session is finished. Any
   equivalent form scores: 3/4, 6/8 and 0.75 are all right for 3/4.
 - **Report.** Score per session, accuracy by topic, a skill heat map of every question type,
@@ -38,7 +43,8 @@ npm run build    # type-check and build to dist/
 | Path | What it holds |
 |---|---|
 | `src/math/rational.ts` | Exact fractions, so 0.1 + 0.2 is 0.3 and answers compare exactly |
-| `src/gen/generators/` | One generator per question type, each with three difficulty bands |
+| `src/gen/generators/` | One arithmetic generator per question type, each with three difficulty bands |
+| `src/gen/reasoning/` | Reasoning templates, the 25-question blueprint and the paper builder |
 | `src/gen/blueprint.ts` | The 40 slots of a paper, eight a day, easy to hard |
 | `src/gen/paper.ts` | Paper code → seeded random numbers → the same 40 questions every time |
 | `src/gen/evaluate.ts` | An independent evaluator the tests use to check every generated answer |

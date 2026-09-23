@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DAYS, QUESTIONS_PER_DAY } from '../gen/blueprint';
+import { DAYS } from '../gen/blueprint';
 import { TOPICS } from '../gen/types';
 import type { Tally, TypeRow, WeeklyGrid } from '../stats/stats';
 import { formatDate, formatSeconds } from '../ui/time';
@@ -28,7 +28,7 @@ const describe = (t: Tally) =>
 export function SkillMap({ rows }: { rows: TypeRow[] }) {
   return (
     <div className="skillmap">
-      {TOPICS.map((topic) => (
+      {TOPICS.filter((topic) => rows.some((r) => r.topic === topic.id)).map((topic) => (
         <div key={topic.id} className="skill-topic">
           <h3>{topic.label}</h3>
           <div className="skill-tiles">
@@ -126,7 +126,7 @@ export function WeeklyHeat({ grid }: { grid: WeeklyGrid }) {
             </tr>
           </thead>
           <tbody>
-            {TOPICS.map((topic) => [
+            {TOPICS.filter((topic) => grid.rows.some((r) => r.topic === topic.id)).map((topic) => [
               <tr key={topic.id} className="heat-group">
                 <th colSpan={grid.weekStarts.length + 1} scope="rowgroup">
                   {topic.label}
@@ -165,12 +165,13 @@ export function WeeklyHeat({ grid }: { grid: WeeklyGrid }) {
 /** Day × question position: does accuracy fall off in the harder, later questions? */
 export function PositionHeat({ grid }: { grid: Tally[][] }) {
   const [sel, setSel] = useState<number | null>(null);
-  const selT = sel === null ? null : grid[Math.floor(sel / QUESTIONS_PER_DAY)][sel % QUESTIONS_PER_DAY];
+  const perDay = grid[0]?.length ?? 0;
+  const selT = sel === null ? null : grid[Math.floor(sel / perDay)][sel % perDay];
   return (
     <div>
       <p className="readout" aria-live="polite">
         {sel !== null && selT
-          ? `Question ${sel + 1} (Day ${Math.floor(sel / QUESTIONS_PER_DAY) + 1}): ${describe(selT)}${
+          ? `Question ${sel + 1} (Day ${Math.floor(sel / perDay) + 1}): ${describe(selT)}${
               selT.total ? `, ${formatSeconds(selT.timeMs / selT.total)} on average` : ''
             }`
           : 'Each square is one question number of the paper. Tap one for details.'}
@@ -179,7 +180,7 @@ export function PositionHeat({ grid }: { grid: Tally[][] }) {
         <thead>
           <tr>
             <th scope="col" />
-            {Array.from({ length: QUESTIONS_PER_DAY }, (_, k) => (
+            {Array.from({ length: perDay }, (_, k) => (
               <th key={k} scope="col" className="heat-col">
                 {k + 1}
               </th>
@@ -193,7 +194,7 @@ export function PositionHeat({ grid }: { grid: Tally[][] }) {
                 Day {d + 1}
               </th>
               {grid[d].map((t, k) => {
-                const i = d * QUESTIONS_PER_DAY + k;
+                const i = d * perDay + k;
                 return (
                   <td key={k}>
                     <Cell

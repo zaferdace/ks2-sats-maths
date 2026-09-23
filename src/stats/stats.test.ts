@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { typesOf } from '../gen/catalog';
 import { generatePaper } from '../gen/paper';
 import { ratFromString } from '../math/rational';
 import { addTime, createAttempt, setAnswer, submitSession, type Attempt } from '../store/model';
@@ -61,19 +62,19 @@ describe('stats', () => {
   });
 
   it('breaks accuracy down by topic, type and position', () => {
-    const topicTotal = byTopic(records).reduce((s, r) => s + r.tally.total, 0);
+    const topicTotal = byTopic(records, typesOf('arithmetic')).reduce((s, r) => s + r.tally.total, 0);
     expect(topicTotal).toBe(16);
-    const types = byType(records);
+    const types = byType(records, typesOf('arithmetic'));
     expect(types.reduce((s, r) => s + r.tally.total, 0)).toBe(16);
     expect(types.some((r) => r.tally.total === 0)).toBe(true);
-    const grid = positionGrid(records);
+    const grid = positionGrid(records, 'arithmetic');
     expect(grid[0].every((c) => c.correct === 1 && c.total === 1)).toBe(true);
     expect(grid[1].map((c) => c.correct)).toEqual([1, 1, 1, 1, 0, 0, 0, 0]);
     expect(grid[2].every((c) => c.total === 0)).toBe(true);
   });
 
   it('orders the weakest types first', () => {
-    const rows = byType(records).map((r) => ({ ...r, tally: { ...r.tally } }));
+    const rows = byType(records, typesOf('arithmetic')).map((r) => ({ ...r, tally: { ...r.tally } }));
     rows[0].tally = { correct: 1, total: 4, timeMs: 0 };
     rows[1].tally = { correct: 3, total: 3, timeMs: 0 };
     rows[2].tally = { correct: 0, total: 2, timeMs: 0 };
@@ -82,7 +83,7 @@ describe('stats', () => {
 
   it('buckets records into weeks', () => {
     expect(new Date(weekStart(NOW)).getDay()).toBe(1);
-    const grid = weeklyGrid(records, NOW);
+    const grid = weeklyGrid(records, NOW, typesOf('arithmetic'));
     expect(grid.weekStarts).toHaveLength(8);
     expect(grid.weekStarts[7]).toBe(weekStart(NOW));
     const lastWeek = grid.rows.reduce((s, r) => s + r.cells[7].total, 0);

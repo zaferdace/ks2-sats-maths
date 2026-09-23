@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PAPER_NAME } from '../gen/catalog';
 import type { SessionRecord } from '../stats/stats';
 import { formatDate, formatDateTime, formatDuration } from '../ui/time';
 
@@ -9,7 +10,7 @@ const TICKS = [0, 0.25, 0.5, 0.75, 1];
 const MAX_SESSIONS = 20;
 
 const pct = (s: SessionRecord) => s.score / s.total;
-const name = (s: SessionRecord) => (s.day ? `Day ${s.day}` : 'Full paper');
+const name = (s: SessionRecord) => `${PAPER_NAME[s.paper]} · ${s.day ? `Day ${s.day}` : 'full paper'}`;
 
 /** Column path: 4px rounded data end, square at the baseline. */
 function column(x: number, w: number, top: number, bottom: number): string {

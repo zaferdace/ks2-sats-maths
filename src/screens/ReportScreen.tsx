@@ -1,4 +1,6 @@
 import { useMemo, useState } from 'react';
+import { PAPER_NAME, typesOf, type PaperFilter } from '../gen/catalog';
+import type { PaperKind } from '../gen/types';
 import { LEVELS, levelOf, pctText } from '../report/levels';
 import { Legend, PositionHeat, SkillMap, WeeklyHeat } from '../report/Heatmaps';
 import { ScoreHistory } from '../report/ScoreHistory';
@@ -8,6 +10,7 @@ import {
   byType,
   collectRecords,
   collectSessions,
+  inPaper,
   positionGrid,
   summarize,
   weakest,
@@ -29,30 +32,41 @@ const RANGES = [
 
 type RangeId = (typeof RANGES)[number]['id'];
 
+const PAPER_FILTERS: { id: PaperFilter; label: string }[] = [
+  { id: 'both', label: 'All papers' },
+  { id: 'arithmetic', label: 'Paper 1: Arithmetic' },
+  { id: 'reasoning', label: 'Papers 2 & 3: Reasoning' },
+];
+
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 export function ReportScreen({ data, profile, onBack }: Props) {
   const [range, setRange] = useState<RangeId>('all');
+  const [paper, setPaper] = useState<PaperFilter>('both');
   const [now] = useState(() => Date.now());
 
   const view = useMemo(() => {
     const days = RANGES.find((r) => r.id === range)?.days ?? null;
     const since = days === null ? -Infinity : now - days * DAY_MS;
-    const attempts = data.attempts.filter((a) => a.profileId === profile.id);
+    const attempts = data.attempts.filter((a) => a.profileId === profile.id && inPaper(paper)(a));
     const records = collectRecords(attempts).filter((r) => r.at >= since);
     const sessions = collectSessions(attempts).filter((s) => s.at >= since);
-    const types = byType(records);
+    const typeList = typesOf(paper);
+    const types = byType(records, typeList);
+    const papers: PaperKind[] = paper === 'both' ? ['arithmetic', 'reasoning'] : [paper];
     return {
       records,
       sessions,
       summary: summarize(attempts, records, sessions, now),
-      topics: byTopic(records),
+      topics: byTopic(records, typeList),
       types,
       weak: weakest(types).slice(0, 5),
-      weekly: weeklyGrid(records, now),
-      position: positionGrid(records),
+      weekly: weeklyGrid(records, now, typeList),
+      positions: papers
+        .map((k) => ({ paper: k, grid: positionGrid(records, k) }))
+        .filter((g) => g.grid.some((row) => row.some((c) => c.total > 0))),
     };
-  }, [data.attempts, profile.id, range, now]);
+  }, [data.attempts, profile.id, range, paper, now]);
 
   const { summary } = view;
 
@@ -64,6 +78,21 @@ export function ReportScreen({ data, profile, onBack }: Props) {
           Home
         </button>
       </header>
+
+      <div className="segmented" role="radiogroup" aria-label="Paper">
+        {PAPER_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            role="radio"
+            aria-checked={paper === f.id}
+            className={paper === f.id ? 'on' : ''}
+            onClick={() => setPaper(f.id)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
 
       <div className="segmented" role="radiogroup" aria-label="Time range">
         {RANGES.map((r) => (
@@ -178,11 +207,13 @@ export function ReportScreen({ data, profile, onBack }: Props) {
             <WeeklyHeat grid={view.weekly} />
           </section>
 
-          <section className="card">
-            <h2>Accuracy by question number</h2>
-            <p className="muted small">Later questions are harder. A row that turns red towards the end shows where it gets tough.</p>
-            <PositionHeat grid={view.position} />
-          </section>
+          {view.positions.map(({ paper: k, grid }) => (
+            <section key={k} className="card">
+              <h2>Accuracy by question number: {PAPER_NAME[k]}</h2>
+              <p className="muted small">Later questions are harder. A row that turns red towards the end shows where it gets tough.</p>
+              <PositionHeat grid={grid} />
+            </section>
+          ))}
 
           <section className="card">
             <h2>All question types</h2>

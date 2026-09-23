@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { emptyAnswer, isBlank, typeKey, type AnswerField, type AnswerInput } from '../answer/answer';
+import { emptyAnswer, isBlank, maxMarks, typeBoxKey, typeKey, usesKeypad, type AnswerField, type AnswerInput } from '../answer/answer';
+import { PAPER_NAME } from '../gen/catalog';
+import { isReasoning, type AnyQuestion } from '../gen/types';
 import {
   addTime,
   openSession,
@@ -12,6 +14,7 @@ import {
 import { AnswerBoxes } from '../ui/AnswerBoxes';
 import { Keypad } from '../ui/Keypad';
 import { MathText } from '../ui/MathText';
+import { ReasoningAnswer, ReasoningBody, type Focus } from '../ui/ReasoningView';
 import { promptText } from '../gen/format';
 import { formatDuration } from '../ui/time';
 
@@ -25,13 +28,20 @@ interface Props {
 const FLUSH_EVERY_MS = 10_000;
 const MAX_CHUNK_MS = 60_000; // ignore gaps such as the iPad going to sleep
 
-const firstField = (kind: string): AnswerField => (kind === 'frac' ? 'num' : 'whole');
+/** Where typing goes when a question opens. */
+function firstFocus(q: AnyQuestion): Focus {
+  if (!isReasoning(q)) return q.kind === 'frac' ? 'num' : 'whole';
+  return q.input.kind === 'number' ? 0 : 'num';
+}
+
+/** Suggested minutes: 40 for a whole reasoning paper (35 marks), in proportion for a day. */
+const suggestedMs = (marks: number) => Math.round((marks / 35) * 40) * 60_000;
 
 export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const session = openSession(attempt);
   const index = session ? Math.min(Math.max(attempt.current, session.from), session.to - 1) : 0;
   const question = attempt.questions[index];
-  const [focus, setFocus] = useState<AnswerField>(firstField(question.kind));
+  const [focus, setFocus] = useState<Focus>(firstFocus(question));
   const [confirming, setConfirming] = useState(false);
   // Clock for the on-screen timer, and when the current timing segment began (null while hidden).
   const [clock, setClock] = useState(() => Date.now());
@@ -86,12 +96,17 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
     if (finished) onExit();
   }, [finished, onExit]);
 
+  // On a tall question the answer box can sit under the keypad: bring it into view.
+  useEffect(() => {
+    document.querySelector('.question-card .abox.focus')?.scrollIntoView({ block: 'nearest' });
+  }, [index, focus]);
+
   const goTo = useCallback(
     (i: number) => {
       if (i === indexRef.current) return;
       flush();
       edit((a) => setCurrent(a, i));
-      setFocus(firstField(attempt.questions[i].kind));
+      setFocus(firstFocus(attempt.questions[i]));
     },
     [attempt.questions, edit, flush],
   );
@@ -99,13 +114,39 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const onKey = useCallback(
     (key: string) => {
       const i = indexRef.current;
+      const q = attempt.questions[i];
+      if (isReasoning(q) && q.input.kind === 'number' && typeof focus === 'number') {
+        const box = q.input.boxes[focus];
+        const current = attempt.answers[i]?.boxes?.[focus] ?? '';
+        const typed = typeBoxKey(current, key, box);
+        edit((a) => {
+          const prev: AnswerInput = a.answers[i] ?? emptyAnswer();
+          const boxes = q.input.kind === 'number' ? q.input.boxes.map((_, k) => prev.boxes?.[k] ?? '') : [];
+          boxes[focus] = typeBoxKey(boxes[focus], key, box);
+          const next = { ...prev, boxes };
+          return setAnswer(a, i, isBlank(next) ? null : next);
+        });
+        // Hours typed in full: move on to the minutes.
+        if (q.input.layout === 'time' && focus === 0 && typed.length === 2 && /^\d$/.test(key)) setFocus(1);
+        return;
+      }
+      if (typeof focus !== 'string') return;
+      const field: AnswerField = focus;
       edit((a) => {
         const prev: AnswerInput = a.answers[i] ?? emptyAnswer();
-        const next = { ...prev, [focus]: typeKey(prev[focus], key, focus) };
+        const next = { ...prev, [field]: typeKey(prev[field], key, field) };
         return setAnswer(a, i, isBlank(next) ? null : next);
       });
     },
-    [edit, focus],
+    [attempt.questions, attempt.answers, edit, focus],
+  );
+
+  const onSelect = useCallback(
+    (sel: number[]) => {
+      const i = indexRef.current;
+      edit((a) => setAnswer(a, i, sel.length ? { ...emptyAnswer(), sel } : null));
+    },
+    [edit],
   );
 
   if (!session) return null;
@@ -119,10 +160,43 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const live = segmentStart !== null ? Math.min(Math.max(clock - segmentStart, 0), MAX_CHUNK_MS) : 0;
   const elapsed = indexes.reduce((s, i) => s + attempt.timeMs[i], 0) + live;
   const title = session.day ? `Day ${session.day}` : 'Full paper';
+  const reasoning = isReasoning(question);
   // Long calculations get a smaller font so they stay on one line.
-  const length = promptText(question.parts).length;
+  const length = reasoning ? 0 : promptText(question.parts).length;
   const sizeClass = length > 22 ? 'xlong' : length > 16 ? 'long' : '';
   const isLast = position === count;
+  const marks = maxMarks(question);
+  const keypad = usesKeypad(question);
+  const box = reasoning && question.input.kind === 'number' && typeof focus === 'number' ? question.input.boxes[focus] : undefined;
+  const allowDecimal = box ? Boolean(box.decimal) : focus === 'whole';
+  const allowNegative = Boolean(box?.negative);
+  const sessionMarks = indexes.reduce((s, i) => s + maxMarks(attempt.questions[i]), 0);
+  const suggested = attempt.paper === 'reasoning' ? suggestedMs(sessionMarks) : null;
+
+  const nav = (where: string) => (
+    <div className={`q-nav ${where}`}>
+      <button type="button" className="btn" disabled={position === 1} onClick={() => goTo(index - 1)}>
+        ← Back
+      </button>
+      <button
+        type="button"
+        className={`btn ${attempt.flagged[index] ? 'flag-on' : ''}`}
+        aria-pressed={attempt.flagged[index]}
+        onClick={() => edit((a) => toggleFlag(a, index))}
+      >
+        ⚑ {attempt.flagged[index] ? 'Flagged' : 'Flag'}
+      </button>
+      {isLast ? (
+        <button type="button" className="btn btn-primary" onClick={() => setConfirming(true)}>
+          Finish
+        </button>
+      ) : (
+        <button type="button" className="btn btn-primary" onClick={() => goTo(index + 1)}>
+          Next →
+        </button>
+      )}
+    </div>
+  );
 
   const finish = () => {
     flush();
@@ -139,7 +213,9 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
           ← Home
         </button>
         <div className="grow">
-          <div className="test-title">{title}</div>
+          <div className="test-title">
+            {PAPER_NAME[attempt.paper]} · {title}
+          </div>
           <div className="muted small">
             Paper {attempt.paperCode} · {position} of {count}
             {session.day ? ' today' : ''}
@@ -147,6 +223,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         </div>
         <div className="timer" aria-label="Time on this session">
           ⏱ {formatDuration(elapsed)}
+          {suggested !== null && <span className="muted small"> / {formatDuration(suggested)}</span>}
         </div>
         <button type="button" className="btn btn-primary" onClick={() => setConfirming(true)}>
           Finish
@@ -178,53 +255,59 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         })}
       </nav>
 
-      <div className="test-body">
-        <section className="card question-card" aria-live="polite">
+      <div className={`test-body ${keypad ? '' : 'no-keypad'}`}>
+        <section className={`card question-card ${reasoning ? 'reasoning-card' : ''}`} aria-live="polite">
           <div className="q-head">
             <span className="q-number">{index + 1}</span>
-            {question.showMethod && <span className="method-tag">Show your method: work it out on paper</span>}
+            {!reasoning && question.showMethod && <span className="method-tag">Show your method: work it out on paper</span>}
             <span className="grow" />
-            <span className="muted small">1 mark</span>
+            <span className={marks > 1 ? 'marks-tag' : 'muted small'}>{marks > 1 ? `${marks} marks` : '1 mark'}</span>
           </div>
-          <div className={`q-text ${sizeClass}`}>
-            <MathText
-              parts={question.parts}
-              box={<AnswerBoxes kind={question.kind} value={answer} focus={focus} onFocus={setFocus} />}
-            />
-          </div>
-          {question.kind === 'frac' && (
-            <p className="muted small hint">
-              Tap a box to fill it. Leave the whole-number box empty if there isn't one. A decimal goes in the
-              whole-number box.
-            </p>
+          {reasoning ? (
+            <div className="r-question">
+              <ReasoningBody q={question} />
+              <ReasoningAnswer q={question} answer={answer} focus={focus} onFocus={setFocus} onSelect={onSelect} />
+              {question.input.kind === 'fraction' && (
+                <p className="muted small hint">Tap a box to fill it. Leave the whole-number box empty if there isn't one.</p>
+              )}
+            </div>
+          ) : (
+            <>
+              <div className={`q-text ${sizeClass}`}>
+                <MathText
+                  parts={question.parts}
+                  box={
+                    <AnswerBoxes
+                      kind={question.kind}
+                      value={answer}
+                      focus={typeof focus === 'string' ? focus : undefined}
+                      onFocus={setFocus}
+                    />
+                  }
+                />
+              </div>
+              {question.kind === 'frac' && (
+                <p className="muted small hint">
+                  Tap a box to fill it. Leave the whole-number box empty if there isn't one. A decimal goes in the
+                  whole-number box.
+                </p>
+              )}
+            </>
           )}
-          <div className="q-nav">
-            <button type="button" className="btn" disabled={position === 1} onClick={() => goTo(index - 1)}>
-              ← Back
-            </button>
-            <button
-              type="button"
-              className={`btn ${attempt.flagged[index] ? 'flag-on' : ''}`}
-              aria-pressed={attempt.flagged[index]}
-              onClick={() => edit((a) => toggleFlag(a, index))}
-            >
-              ⚑ {attempt.flagged[index] ? 'Flagged' : 'Flag'}
-            </button>
-            {isLast ? (
-              <button type="button" className="btn btn-primary" onClick={() => setConfirming(true)}>
-                Finish
-              </button>
-            ) : (
-              <button type="button" className="btn btn-primary" onClick={() => goTo(index + 1)}>
-                Next →
-              </button>
-            )}
-          </div>
+          {nav('card-nav')}
         </section>
 
-        <aside className="keypad-wrap">
-          <Keypad onKey={onKey} allowDecimal={focus === 'whole'} enabled={!confirming} />
-        </aside>
+        {keypad && (
+          <aside className="keypad-wrap">
+            {nav('keypad-nav')}
+            <Keypad
+              onKey={onKey}
+              allowDecimal={allowDecimal}
+              allowNegative={allowNegative}
+              enabled={!confirming}
+            />
+          </aside>
+        )}
       </div>
 
       {confirming && (

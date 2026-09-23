@@ -76,6 +76,9 @@ export function isCorrect(q: AnyQuestion, a: AnswerInput | null | undefined): bo
   return v !== null && eq(v, ratFromString(q.answer));
 }
 
+/** True when the question is answered with the keypad (numbers or a fraction), not by tapping options. */
+export const usesKeypad = (q: AnyQuestion): boolean => !isReasoning(q) || q.input.kind === 'number' || q.input.kind === 'fraction';
+
 /** Marks for one question: all or nothing (a typed answer cannot earn a method mark). */
 export const maxMarks = (q: AnyQuestion): number => (isReasoning(q) ? q.marks : 1);
 export const markFor = (q: AnyQuestion, a: AnswerInput | null | undefined): number => (isCorrect(q, a) ? maxMarks(q) : 0);

@@ -1153,3 +1153,487 @@ tr.clickable:active {
   height: 44px;
   font-size: 14px;
 }
+
+/* ---- Papers 2 & 3: reasoning ---- */
+.papers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 16px;
+}
+
+.paper-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paper-card h2,
+.paper-card p {
+  margin: 0;
+}
+
+.paper-card.reasoning {
+  border-top: 4px solid #1baf7a;
+}
+
+.paper-card.arithmetic {
+  border-top: 4px solid var(--accent);
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.marks-tag {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.test-body.no-keypad {
+  grid-template-columns: 1fr;
+}
+
+.reasoning-card {
+  min-height: 0;
+}
+
+.r-question {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 22px;
+}
+
+.r-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rich {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.rich .frac {
+  vertical-align: middle;
+  margin: 0 0.1em;
+}
+
+.r-figure {
+  display: flex;
+  justify-content: center;
+}
+
+.fig-svg {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+}
+
+.fig-small {
+  max-width: 420px;
+}
+
+.fig-pie,
+.fig-coords {
+  max-width: 360px;
+}
+
+.fig-title {
+  font-size: 16px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.fig-tick {
+  font-size: 13px;
+  fill: var(--ink-2);
+}
+
+.fig-tick-small {
+  font-size: 11px;
+  fill: var(--ink-2);
+}
+
+.fig-label {
+  font-size: 15px;
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.fig-unknown {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 700;
+  fill: var(--accent);
+}
+
+.fig-point {
+  font-size: 15px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.fig-grid {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+
+.fig-axis {
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+}
+
+.fig-bar {
+  fill: var(--series-1);
+}
+
+.fig-line {
+  fill: none;
+  stroke: var(--series-1);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.fig-dot {
+  fill: var(--series-1);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.fig-shape {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.fig-right {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.fig-slice {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.fig-cross {
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.fig-face {
+  fill: #eef5fd;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.fig-face-top {
+  fill: #cde2fb;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.fig-face-side {
+  fill: #b7d3f6;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.fig-cell {
+  fill: #fff;
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+}
+
+.fig-cell.on {
+  fill: #86b6ef;
+}
+
+.fig-table-wrap {
+  overflow-x: auto;
+}
+
+.fig-table {
+  width: auto;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.fig-table th,
+.fig-table td {
+  border: 1.5px solid var(--ink-2);
+  padding: 8px 16px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.fig-table th {
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.r-answer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  font-size: 30px;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.r-fraction {
+  font-size: 40px;
+}
+
+.rbox-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rbox-label,
+.rbox-affix,
+.r-sep,
+.r-seq-num {
+  font-weight: 600;
+}
+
+.rbox-affix {
+  color: var(--ink-2);
+}
+
+.abox.rbox {
+  min-width: 3.2em;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-size: 0.6em;
+  font-weight: 500;
+}
+
+.r-seq-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.r-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  font-size: 22px;
+}
+
+.r-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--axis);
+  background: var(--card);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.r-choice .tick {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid var(--axis);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex: none;
+}
+
+.r-choice.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.r-choice.on .tick {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.r-choice:disabled {
+  opacity: 1;
+}
+
+.r-choices.right .r-choice.on {
+  border-color: var(--good);
+  background: #eaf6ea;
+}
+
+.r-choices.wrong .r-choice.on {
+  border-color: var(--critical);
+  background: #fbeaea;
+}
+
+.r-order {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.r-order-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.r-slot {
+  min-height: 60px;
+  border: 2px dashed var(--axis);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.r-slot.filled {
+  border-style: solid;
+  border-color: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  background: var(--accent-soft);
+  font-size: 22px;
+}
+
+.r-order.right .r-slot.filled {
+  border-color: var(--good);
+  background: #eaf6ea;
+}
+
+.r-order.wrong .r-slot.filled {
+  border-color: var(--critical);
+  background: #fbeaea;
+}
+
+.r-order-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.r-choice.used {
+  opacity: 0.35;
+}
+
+.key-minus {
+  font-size: 34px;
+}
+
+.key-clear.narrow {
+  grid-column: span 2;
+}
+
+.review-reasoning {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.review-reasoning .r-answer {
+  font-size: 22px;
+  justify-content: flex-start;
+}
+
+.review-reasoning .fig-svg {
+  max-width: 380px;
+}
+
+.review-reasoning .r-choice {
+  min-height: 44px;
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  .papers {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Portrait iPad: tall reasoning questions scroll while the keypad stays in reach at the bottom. */
+@media (max-width: 900px), (orientation: portrait) {
+  .keypad-wrap {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    max-width: none;
+    margin: 0 -16px -16px;
+    padding: 10px max(16px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-bottom));
+    background: var(--page);
+    box-shadow: 0 -6px 18px rgba(11, 11, 11, 0.08);
+  }
+
+  .keypad-wrap .keypad {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .keypad-wrap .key {
+    height: 56px;
+  }
+
+  .keypad-wrap .key-clear,
+  .keypad-wrap .key-minus {
+    height: 46px;
+  }
+
+  /* scrollIntoView keeps answer boxes clear of the sticky keypad */
+  .question-card .abox {
+    scroll-margin-top: 140px;
+    scroll-margin-bottom: 440px;
+  }
+
+  .r-figure .fig-svg {
+    max-height: 34vh;
+  }
+}
+
+/* Back / Flag / Next sit in the card; in portrait they move into the sticky keypad panel. */
+.keypad-nav {
+  display: none;
+}
+
+@media (max-width: 900px), (orientation: portrait) {
+  .test-body:not(.no-keypad) .card-nav {
+    display: none;
+  }
+
+  .keypad-nav {
+    display: flex;
+    max-width: 520px;
+    margin: 0 auto 10px;
+  }
+
+  .keypad-nav .btn {
+    min-height: 48px;
+  }
+}

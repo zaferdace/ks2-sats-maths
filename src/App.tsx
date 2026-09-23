@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { generatePaper } from './gen/paper';
+import { generateReasoningPaper } from './gen/reasoning/paper';
+import type { PaperKind } from './gen/types';
 import { newPaperCode } from './gen/rng';
 import { HomeScreen } from './screens/HomeScreen';
 import { ProfilesScreen } from './screens/ProfilesScreen';
@@ -52,10 +54,11 @@ export default function App() {
 
   const goHome = useCallback(() => setScreen({ name: 'home' }), []);
 
-  const startPaper = (mode: Mode) => {
+  const startPaper = (paper: PaperKind, mode: Mode) => {
     if (!profile) return;
     const code = newPaperCode();
-    const attempt = createAttempt(profile.id, mode, code, generatePaper(code), Date.now());
+    const questions = paper === 'reasoning' ? generateReasoningPaper(code) : generatePaper(code);
+    const attempt = createAttempt(profile.id, mode, code, questions, Date.now());
     update((d) => addAttempt(d, attempt));
     setScreen({ name: 'test', attemptId: attempt.id });
   };
