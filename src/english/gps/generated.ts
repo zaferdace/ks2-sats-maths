@@ -183,23 +183,29 @@ function tense(rng: Rng, level: Level): ItemQuestion | null {
   const s = rng.pick(candidates);
   const all = ['simple present', 'simple past', 'present progressive', 'past progressive', 'present perfect', 'past perfect', 'future'];
   const { input, answer } = choices(rng, [s.tense!], rng.shuffle(all.filter((t) => t !== s.tense)).slice(0, 3));
-  const clause = s.subordinateClause || s.relativeClause ? ' in the main clause' : '';
+  const where = s.subordinateClause || s.relativeClause ? 'in the main clause of this sentence' : 'in this sentence';
   return {
     ...base('g-tense', level, s),
-    body: [{ b: 'text', text: `Which tense is used${clause} of this sentence?\n**${text(s)}**` }],
+    body: [{ b: 'text', text: `Which tense is used ${where}?\n**${text(s)}**` }],
     input,
     answer,
     explain: `The main verb is in the ${s.tense}.`,
   };
 }
 
-/** Noun phrases elsewhere in the sentence: determiners and adjectives before a noun. */
+/** Words tagged "other" that never belong to a noun phrase. */
+const NOT_MODIFIERS = new Set(['not', 'please', 'to', "don't", 'what', 'how', 'where', 'why']);
+
+/** Noun phrases elsewhere in the sentence: a noun with the determiners, adjectives and noun
+ *  modifiers ("the school day") in front of it. */
 function otherNounPhrases(s: GrammarSentence, avoid: Span): string[] {
   const out: string[] = [];
+  const inPhrase = ([w, t]: [string, Tag]) => t === 'det' || t === 'adj' || (t === 'other' && !NOT_MODIFIERS.has(w.toLowerCase()));
   s.tokens.forEach(([, tag], i) => {
     if (tag !== 'noun' || (i >= avoid[0] && i < avoid[1])) return;
+    if (s.tokens[i + 1]?.[1] === 'noun') return; // "football" in "football boots" is part of the next phrase
     let a = i;
-    while (a > 0 && ['det', 'adj'].includes(s.tokens[a - 1][1]) && !(a - 1 >= avoid[0] && a - 1 < avoid[1])) a--;
+    while (a > 0 && inPhrase(s.tokens[a - 1]) && !(a - 1 >= avoid[0] && a - 1 < avoid[1])) a--;
     out.push(spanText(s, [a, i + 1]));
   });
   return out;

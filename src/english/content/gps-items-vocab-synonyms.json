@@ -1,0 +1,263 @@
+[
+  {
+    "id": "gi-synonyms-001",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Which word is closest in meaning to **begin**?",
+    "input": {"kind": "choice", "options": ["finish", "start", "follow", "wait"], "pick": 1},
+    "answer": [1],
+    "explain": "To begin something is to start it; finish is the opposite."
+  },
+  {
+    "id": "gi-synonyms-002",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Tick the word that means the same as **shut**.",
+    "input": {"kind": "choice", "options": ["open", "throw", "close", "break"], "pick": 1},
+    "answer": [2],
+    "explain": "To shut a door is to close it."
+  },
+  {
+    "id": "gi-synonyms-003",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Which word is a synonym of **glad**?",
+    "input": {"kind": "choice", "options": ["angry", "tired", "sad", "happy"], "pick": 1},
+    "answer": [3],
+    "explain": "A synonym has the same or nearly the same meaning: glad means happy."
+  },
+  {
+    "id": "gi-synonyms-004",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Tick the word that is closest in meaning to **quick**.",
+    "input": {"kind": "choice", "options": ["fast", "late", "slow", "quiet"], "pick": 1},
+    "answer": [0],
+    "explain": "Something quick moves or happens fast."
+  },
+  {
+    "id": "gi-synonyms-005",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Tap the word in the sentence that means the same as **scared**.",
+    "input": {"kind": "words", "tokens": ["The", "frightened", "kitten", "hid", "under", "the", "old", "sofa", "."], "pick": 1},
+    "answer": [1],
+    "explain": "Frightened and scared both mean full of fear."
+  },
+  {
+    "id": "gi-synonyms-006",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Write a word that means the same as the underlined word. It begins with **s**.\nLeo threw a small __rock__ into the pond.",
+    "input": {"kind": "text"},
+    "answer": ["stone"],
+    "explain": "A small rock is a stone."
+  },
+  {
+    "id": "gi-synonyms-007",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Are these pairs of words synonyms? Tap true or false for each pair.",
+    "input": {"kind": "tf", "statements": ["**big** and **large**", "**hot** and **cold**", "**shout** and **yell**", "**fast** and **slow**"]},
+    "answer": [true, false, true, false],
+    "explain": "Synonyms mean the same or nearly the same; hot and cold, and fast and slow, are opposites."
+  },
+  {
+    "id": "gi-synonyms-008",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Which word could replace the underlined word without changing the meaning of the sentence?\nThe cake that Grandma baked was __delicious__.",
+    "input": {"kind": "choice", "options": ["burnt", "heavy", "tasty", "cold"], "pick": 1},
+    "answer": [2],
+    "explain": "Delicious means very tasty."
+  },
+  {
+    "id": "gi-synonyms-009",
+    "type": "g-synonyms",
+    "level": 1,
+    "prompt": "Which word is closest in meaning to the underlined word?\nElla was so __tired__ that she fell asleep on the sofa.",
+    "input": {"kind": "choice", "options": ["hungry", "cross", "noisy", "sleepy"], "pick": 1},
+    "answer": [3],
+    "explain": "Ella fell asleep, so tired here means sleepy."
+  },
+  {
+    "id": "gi-synonyms-010",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word is closest in meaning to **ancient**?",
+    "input": {"kind": "choice", "options": ["modern", "valuable", "old", "famous"], "pick": 1},
+    "answer": [2],
+    "explain": "Something ancient is very old; modern is the opposite."
+  },
+  {
+    "id": "gi-synonyms-011",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Tick the word that means the same as **conceal**.",
+    "input": {"kind": "choice", "options": ["reveal", "hide", "build", "borrow"], "pick": 1},
+    "answer": [1],
+    "explain": "To conceal something is to hide it; reveal is the opposite."
+  },
+  {
+    "id": "gi-synonyms-012",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word is a synonym of **rapid**?",
+    "input": {"kind": "choice", "options": ["swift", "steady", "careful", "gentle"], "pick": 1},
+    "answer": [0],
+    "explain": "Rapid and swift both mean very fast."
+  },
+  {
+    "id": "gi-synonyms-013",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word is closest in meaning to the underlined word?\nThe explorers crossed a __vast__ desert.",
+    "input": {"kind": "choice", "options": ["dry", "dangerous", "sandy", "huge"], "pick": 1},
+    "answer": [3],
+    "explain": "Vast means very large, so a vast desert is a huge one."
+  },
+  {
+    "id": "gi-synonyms-014",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word could replace the underlined word without changing the meaning of the sentence?\nOmar was __reluctant__ to jump into the cold pool.",
+    "input": {"kind": "choice", "options": ["eager", "unwilling", "able", "quick"], "pick": 1},
+    "answer": [1],
+    "explain": "Reluctant means not wanting to do something, so it means unwilling."
+  },
+  {
+    "id": "gi-synonyms-015",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Tap the word in the sentence that is a synonym of **brave**.",
+    "input": {"kind": "words", "tokens": ["The", "courageous", "firefighter", "rescued", "a", "small", "child", "from", "the", "burning", "house", "."], "pick": 1},
+    "answer": [1],
+    "explain": "Courageous means full of courage, which is the same as brave."
+  },
+  {
+    "id": "gi-synonyms-016",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Write a word that means the same as the underlined word. It begins with **a**.\nRavi's __reply__ was short and polite.",
+    "input": {"kind": "text"},
+    "answer": ["answer"],
+    "explain": "A reply is an answer."
+  },
+  {
+    "id": "gi-synonyms-017",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word is closest in meaning to the underlined word?\nNoah __spotted__ a fox at the end of the garden.",
+    "input": {"kind": "choice", "options": ["noticed", "chased", "marked", "fed"], "pick": 1},
+    "answer": [0],
+    "explain": "Here spotted means saw or noticed, not covered in spots."
+  },
+  {
+    "id": "gi-synonyms-018",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Which word is closest in meaning to the underlined word?\nThe __bright__ pupil solved the puzzle in seconds.",
+    "input": {"kind": "choice", "options": ["shiny", "clever", "colourful", "sunny"], "pick": 1},
+    "answer": [1],
+    "explain": "Bright can mean shiny, but a pupil who solves a puzzle quickly is clever."
+  },
+  {
+    "id": "gi-synonyms-019",
+    "type": "g-synonyms",
+    "level": 2,
+    "prompt": "Read each pair of words. Do they mean the same or nearly the same? Tap true or false for each pair.",
+    "input": {"kind": "tf", "statements": ["**cautious** and **careful**", "**fragile** and **strong**", "**assist** and **help**", "**reveal** and **hide**"]},
+    "answer": [true, false, true, false],
+    "explain": "Cautious means careful and assist means help; the other two pairs are opposites."
+  },
+  {
+    "id": "gi-synonyms-020",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Which word is closest in meaning to **tranquil**?",
+    "input": {"kind": "choice", "options": ["stormy", "crowded", "hopeful", "peaceful"], "pick": 1},
+    "answer": [3],
+    "explain": "A tranquil place is calm and peaceful."
+  },
+  {
+    "id": "gi-synonyms-021",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Tick the word that means the same as **jubilant**.",
+    "input": {"kind": "choice", "options": ["gloomy", "nervous", "joyful", "puzzled"], "pick": 1},
+    "answer": [2],
+    "explain": "Jubilant means full of joy, especially after a success."
+  },
+  {
+    "id": "gi-synonyms-022",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Which word is a synonym of **obstinate**?",
+    "input": {"kind": "choice", "options": ["obedient", "polite", "clumsy", "stubborn"], "pick": 1},
+    "answer": [3],
+    "explain": "An obstinate person refuses to change their mind, so they are stubborn."
+  },
+  {
+    "id": "gi-synonyms-023",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Which word could replace the underlined word without changing the meaning of the sentence?\nThe dark clouds looked __ominous__ as we set off up the mountain.",
+    "input": {"kind": "choice", "options": ["threatening", "beautiful", "fluffy", "distant"], "pick": 1},
+    "answer": [0],
+    "explain": "Ominous means that something bad seems about to happen, so it means threatening."
+  },
+  {
+    "id": "gi-synonyms-024",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Which word is closest in meaning to the underlined word?\nGrace could not __bear__ the noise from the building site any longer.",
+    "input": {"kind": "choice", "options": ["carry", "hear", "tolerate", "make"], "pick": 1},
+    "answer": [2],
+    "explain": "Bear can mean carry, but here it means put up with, or tolerate."
+  },
+  {
+    "id": "gi-synonyms-025",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Which word is closest in meaning to the underlined word?\nThe new film was a __hit__ with the whole family.",
+    "input": {"kind": "choice", "options": ["blow", "success", "failure", "target"], "pick": 1},
+    "answer": [1],
+    "explain": "A film that is a hit is a success; a blow is a different meaning of hit."
+  },
+  {
+    "id": "gi-synonyms-026",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Tick the **two** words that are closest in meaning to **angry**.",
+    "input": {"kind": "choice", "options": ["furious", "timid", "irate", "relieved"], "pick": 2},
+    "answer": [0, 2],
+    "explain": "Furious and irate both mean very angry."
+  },
+  {
+    "id": "gi-synonyms-027",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Tap the **two** words in the sentence that are synonyms of each other.",
+    "input": {"kind": "words", "tokens": ["The", "enormous", "whale", "swam", "past", "a", "gigantic", "ship", "near", "the", "rocky", "coast", "."], "pick": 2},
+    "answer": [1, 6],
+    "explain": "Enormous and gigantic both mean extremely large."
+  },
+  {
+    "id": "gi-synonyms-028",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Read the sentence.\nThe children were __astonished__ by the magic trick.\nCould each word replace the underlined word without changing the meaning? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["amazed", "bored", "astounded", "annoyed"]},
+    "answer": [true, false, true, false],
+    "explain": "Astonished means very surprised, and so do amazed and astounded."
+  },
+  {
+    "id": "gi-synonyms-029",
+    "type": "g-synonyms",
+    "level": 3,
+    "prompt": "Write a word that means the same as the underlined word. It begins with **d**.\nThe magician made the coin __vanish__.",
+    "input": {"kind": "text"},
+    "answer": ["disappear"],
+    "explain": "To vanish is to disappear suddenly."
+  }
+]

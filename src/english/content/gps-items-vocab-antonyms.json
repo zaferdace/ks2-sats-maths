@@ -1,0 +1,263 @@
+[
+  {
+    "id": "gi-antonyms-001",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Which word is an antonym of **empty**?",
+    "input": {"kind": "choice", "options": ["open", "full", "clean", "heavy"], "pick": 1},
+    "answer": [1],
+    "explain": "An antonym has the opposite meaning: the opposite of empty is full."
+  },
+  {
+    "id": "gi-antonyms-002",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Which word is an antonym of **arrive**?",
+    "input": {"kind": "choice", "options": ["come", "reach", "leave", "enter"], "pick": 1},
+    "answer": [2],
+    "explain": "To arrive is to come to a place; to leave is to go away from it."
+  },
+  {
+    "id": "gi-antonyms-003",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Tick the word that means the opposite of **noisy**.",
+    "input": {"kind": "choice", "options": ["quiet", "loud", "busy", "happy"], "pick": 1},
+    "answer": [0],
+    "explain": "Noisy means making a lot of sound, so its opposite is quiet."
+  },
+  {
+    "id": "gi-antonyms-004",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Which word is the opposite of **shallow**?",
+    "input": {"kind": "choice", "options": ["wide", "narrow", "wet", "deep"], "pick": 1},
+    "answer": [3],
+    "explain": "Shallow water is not deep, so the opposite of shallow is deep."
+  },
+  {
+    "id": "gi-antonyms-005",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Which word is the opposite of the underlined word?\nThe shop was __closed__ on Sunday.",
+    "input": {"kind": "choice", "options": ["shut", "busy", "open", "empty"], "pick": 1},
+    "answer": [2],
+    "explain": "A shop is either open or closed; shut means the same as closed."
+  },
+  {
+    "id": "gi-antonyms-006",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Tap the word in the sentence that is an antonym of **dark**.",
+    "input": {"kind": "words", "tokens": ["Isla", "painted", "her", "bedroom", "a", "light", "shade", "of", "blue", "."], "pick": 1},
+    "answer": [5],
+    "explain": "A light colour is the opposite of a dark colour."
+  },
+  {
+    "id": "gi-antonyms-007",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Write a word that means the opposite of **always**.",
+    "input": {"kind": "text"},
+    "answer": ["never"],
+    "explain": "Always means every time; never means not at any time."
+  },
+  {
+    "id": "gi-antonyms-008",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Are these pairs of words antonyms? Tap true or false for each pair.",
+    "input": {"kind": "tf", "statements": ["**wet** and **dry**", "**big** and **huge**", "**open** and **shut**", "**fast** and **quick**"]},
+    "answer": [true, false, true, false],
+    "explain": "Antonyms are opposites; big and huge, and fast and quick, are synonyms."
+  },
+  {
+    "id": "gi-antonyms-009",
+    "type": "g-antonyms",
+    "level": 1,
+    "prompt": "Which word is an antonym of the underlined word?\nThe water in the pond was __clear__.",
+    "input": {"kind": "choice", "options": ["cold", "clean", "deep", "cloudy"], "pick": 1},
+    "answer": [3],
+    "explain": "You can see through clear water but not through cloudy water."
+  },
+  {
+    "id": "gi-antonyms-010",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Which word is an antonym of **generous**?",
+    "input": {"kind": "choice", "options": ["kind", "wealthy", "helpful", "selfish"], "pick": 1},
+    "answer": [3],
+    "explain": "A generous person gives freely; a selfish person thinks only of themselves."
+  },
+  {
+    "id": "gi-antonyms-011",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Tick the word that is an antonym of **victory**.",
+    "input": {"kind": "choice", "options": ["defeat", "battle", "success", "triumph"], "pick": 1},
+    "answer": [0],
+    "explain": "A victory is a win, so its opposite is a defeat."
+  },
+  {
+    "id": "gi-antonyms-012",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Which word is an antonym of **increase**?",
+    "input": {"kind": "choice", "options": ["expand", "grow", "decrease", "improve"], "pick": 1},
+    "answer": [2],
+    "explain": "Increase means become bigger; decrease means become smaller."
+  },
+  {
+    "id": "gi-antonyms-013",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Which word is an antonym of the underlined word?\nKai found the spelling test really __hard__.",
+    "input": {"kind": "choice", "options": ["soft", "easy", "long", "strict"], "pick": 1},
+    "answer": [1],
+    "explain": "Here hard means difficult, so its opposite is easy; soft is the opposite of hard only for materials."
+  },
+  {
+    "id": "gi-antonyms-014",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Which word is an antonym of the underlined word?\nThe suitcase was __light__ enough for Ravi to carry on his own.",
+    "input": {"kind": "choice", "options": ["dark", "dim", "full", "heavy"], "pick": 1},
+    "answer": [3],
+    "explain": "Here light means not heavy, so its opposite is heavy, not dark."
+  },
+  {
+    "id": "gi-antonyms-015",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Tap the word in the sentence that is an antonym of **ancient**.",
+    "input": {"kind": "words", "tokens": ["The", "museum", "has", "a", "modern", "wing", "next", "to", "the", "old", "castle", "."], "pick": 1},
+    "answer": [4],
+    "explain": "Ancient means very old, so its opposite is modern; old is a synonym."
+  },
+  {
+    "id": "gi-antonyms-016",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Tap the antonym of **accept** in the sentence.",
+    "input": {"kind": "words", "tokens": ["Zara", "had", "to", "refuse", "the", "invitation", "because", "she", "was", "busy", "."], "pick": 1},
+    "answer": [3],
+    "explain": "To accept is to say yes to something; to refuse is to say no."
+  },
+  {
+    "id": "gi-antonyms-017",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Write a word that means the opposite of **arrived** to complete the sentence.",
+    "input": {"kind": "text", "before": "The train", "after": "from the station at nine o'clock."},
+    "answer": ["departed", "left"],
+    "explain": "Arrived means came in, so the opposite is departed or left."
+  },
+  {
+    "id": "gi-antonyms-018",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Read each pair of words. Are they opposites? Tap true or false for each pair.",
+    "input": {"kind": "tf", "statements": ["**include** and **exclude**", "**rough** and **smooth**", "**brave** and **fearless**", "**expand** and **grow**"]},
+    "answer": [true, true, false, false],
+    "explain": "Include and exclude, and rough and smooth, are opposites; the other pairs mean nearly the same."
+  },
+  {
+    "id": "gi-antonyms-019",
+    "type": "g-antonyms",
+    "level": 2,
+    "prompt": "Which pair of words are antonyms?",
+    "input": {"kind": "choice", "options": ["gloomy and dull", "rare and common", "tiny and small", "shout and yell"], "pick": 1},
+    "answer": [1],
+    "explain": "Something rare is not often found; something common is found often."
+  },
+  {
+    "id": "gi-antonyms-020",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Which word is an antonym of **transparent**?",
+    "input": {"kind": "choice", "options": ["opaque", "clear", "fragile", "shiny"], "pick": 1},
+    "answer": [0],
+    "explain": "You can see through something transparent but not through something opaque."
+  },
+  {
+    "id": "gi-antonyms-021",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Tick the word that is an antonym of **scarce**.",
+    "input": {"kind": "choice", "options": ["rare", "valuable", "plentiful", "hidden"], "pick": 1},
+    "answer": [2],
+    "explain": "Scarce means there is not enough; plentiful means there is a lot."
+  },
+  {
+    "id": "gi-antonyms-022",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Which word is an antonym of **frequently**?",
+    "input": {"kind": "choice", "options": ["often", "quickly", "always", "rarely"], "pick": 1},
+    "answer": [3],
+    "explain": "Frequently means often, so its opposite is rarely."
+  },
+  {
+    "id": "gi-antonyms-023",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Which word is an antonym of the underlined word?\nThe __timid__ puppy hid behind the sofa.",
+    "input": {"kind": "choice", "options": ["bold", "shy", "fluffy", "tiny"], "pick": 1},
+    "answer": [0],
+    "explain": "Timid means shy and easily frightened; bold is the opposite."
+  },
+  {
+    "id": "gi-antonyms-024",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Which word is the antonym of the underlined word in this sentence?\nThe ice on the pond was too __thin__ to walk on.",
+    "input": {"kind": "choice", "options": ["fat", "wide", "thick", "cold"], "pick": 1},
+    "answer": [2],
+    "explain": "Thin ice is the opposite of thick ice; fat is the opposite of thin for people and animals."
+  },
+  {
+    "id": "gi-antonyms-025",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Which word is the antonym of the underlined word in this sentence?\nThe new neighbours gave us a __cold__ welcome.",
+    "input": {"kind": "choice", "options": ["friendly", "hot", "rude", "freezing"], "pick": 1},
+    "answer": [0],
+    "explain": "A cold welcome is an unfriendly one, so the opposite here is friendly, not hot."
+  },
+  {
+    "id": "gi-antonyms-026",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Tick the **two** words that are antonyms of **cautious**.",
+    "input": {"kind": "choice", "options": ["careful", "reckless", "wary", "careless"], "pick": 2},
+    "answer": [1, 3],
+    "explain": "A cautious person avoids risks and mistakes; a reckless or careless person does not."
+  },
+  {
+    "id": "gi-antonyms-027",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Tap the **two** words in the sentence that are antonyms of each other.",
+    "input": {"kind": "words", "tokens": ["The", "shop", "assistant", "was", "polite", ",", "but", "her", "manager", "was", "extremely", "rude", "."], "pick": 2},
+    "answer": [4, 11],
+    "explain": "Polite and rude have opposite meanings."
+  },
+  {
+    "id": "gi-antonyms-028",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Write the antonym of **maximum**.",
+    "input": {"kind": "text"},
+    "answer": ["minimum"],
+    "explain": "The maximum is the greatest amount; the minimum is the smallest."
+  },
+  {
+    "id": "gi-antonyms-029",
+    "type": "g-antonyms",
+    "level": 3,
+    "prompt": "Is each word an antonym of **expand**? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["shrink", "grow", "contract", "stretch"]},
+    "answer": [true, false, true, false],
+    "explain": "Expand means get bigger; shrink and contract mean get smaller."
+  }
+]

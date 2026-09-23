@@ -1,0 +1,172 @@
+{
+  "id": "rt-fiction-08",
+  "title": "The Gentle Giant",
+  "genre": "fiction",
+  "level": 1,
+  "paragraphs": [
+    "Finn had been afraid of dogs for as long as he could remember. Whenever he saw one coming along the pavement, he crossed to the other side of the road. So when Jess from next door hobbled up the path one Saturday morning with the biggest dog he had ever seen, Finn stayed well back in the hallway.",
+    "The dog was a Great Dane, as tall as the kitchen table, with a grey coat and paws the size of saucers. 'I've twisted my ankle,' Jess explained, leaning on her crutches. 'The doctor says I mustn't walk on it for a week. Could you possibly take him to the park for me?' Mum said yes at once. Finn's stomach did a somersault.",
+    "That afternoon, Mum clipped on the lead and they set off for the park. Finn walked on the far side of Mum, keeping her between himself and the dog. The dog plodded along quietly, sniffing every lamppost, but whenever his huge tail swung near Finn's legs, Finn jumped.",
+    "At the park gate, Mum's phone rang. 'Hold this for a moment, love,' she said, and before Finn could argue, she had pressed the lead into his hand. Finn froze. The dog looked down at him with gentle brown eyes. Then he sat down and waited.",
+    "Just then, a small ginger cat strolled out from under a hedge. It stopped, arched its back and let out a furious hiss. Finn gripped the lead, sure that the dog would leap forward and drag him across the park. Instead, the enormous dog gave a whimper, tucked his tail between his legs and tried to hide behind Finn.",
+    "Finn could hardly believe his eyes. The biggest dog in the street was trembling from nose to tail, and all because of a cat no bigger than a loaf of bread. Without thinking, Finn crouched down and stroked the dog's velvety ears. 'It's all right,' he said softly. 'I'll look after you.' The dog leaned his warm head against Finn's shoulder and slowly stopped shaking.",
+    "When Mum finished her phone call, she turned round and stopped in surprise. Finn was scratching the dog's chin, and he was smiling. 'Shall I take him now?' Mum asked. Finn shook his head. 'No thanks,' he said. 'We're fine.'",
+    "For the rest of the week, Finn walked the Great Dane every afternoon. He discovered that the dog loved chasing leaves, hated puddles and was frightened of almost everything, from pigeons to plastic bags. On Saturday, when Jess's ankle was better, she offered to take the lead back. Finn looked at the dog, and the dog looked at Finn. 'Could I still come with you?' Finn asked. 'Just sometimes?'"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy **one** word that shows Jess was walking with difficulty.",
+      "accept": ["hobbled"]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhy could Jess not take her dog to the park herself?\nTick one.",
+      "options": ["She had twisted her ankle.", "She had to go to work.", "The park was closed.", "The dog was not well."],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q3",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\n'Finn's stomach did a somersault.'\nWhat does this tell you about how Finn felt?\nTick one.",
+      "options": ["He felt nervous and worried.", "He felt proud of himself.", "He felt hungry.", "He felt sleepy."],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\n'The dog **plodded** along quietly'\nWhich of these is closest in meaning to **plodded**?\nTick one.",
+      "options": ["walked slowly", "ran fast", "jumped", "barked"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q5",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\n'Finn froze.'\nWhy did Finn freeze?\nTick one.",
+      "options": [
+        "He was feeling very cold.",
+        "He was cross that Mum's phone had rung.",
+        "He was scared now that he was holding the dog's lead.",
+        "He had just seen a cat under the hedge."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWhy did the dog try to hide behind Finn?\nTick one.",
+      "options": [
+        "He wanted to play a game with Finn.",
+        "He was frightened of the cat.",
+        "He was trying to creep up on the cat.",
+        "He was tired and wanted to go home."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nWhat did the dog love chasing?",
+      "accept": ["leaves", "the leaves", "some leaves", "leaf", "chasing leaves", "fallen leaves"]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Jess had to stay off her ankle for a month.",
+        "The dog had a grey coat.",
+        "The cat that hissed was black.",
+        "Finn walked the dog every afternoon for the rest of the week."
+      ],
+      "answer": [false, true, false, true]
+    },
+    {
+      "id": "q9",
+      "domain": "2h",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Think about the whole story.\nIn what way are Finn and the dog alike?\nTick one.",
+      "options": [
+        "They both love chasing leaves.",
+        "They are both frightened of things.",
+        "They have both hurt an ankle.",
+        "They both hate going to the park."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "How do Finn's feelings about the dog change during the story?\nExplain, using evidence from the text.",
+      "model": "At the start, Finn is frightened of the dog. He walks on the far side of Mum, 'keeping her between himself and the dog', and when Mum gives him the lead, 'Finn froze.' By the end, he likes the dog and wants to look after him. He tells the dog, 'I'll look after you,' and when Jess offers to take the lead back, he asks, 'Could I still come with you?'",
+      "points": [
+        "Explains that at the start Finn is frightened of the dog, with evidence, e.g. 'Finn froze' or he kept Mum 'between himself and the dog'.",
+        "Explains that by the end Finn likes or cares about the dog, with evidence, e.g. 'I'll look after you' or 'Could I still come with you?'"
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of the whole story?\nTick one.",
+      "options": [
+        "A dog chases a cat across the park and gets lost.",
+        "A boy's neighbour gives him a puppy for his birthday.",
+        "A boy who is scared of dogs helps a frightened dog, and they become friends.",
+        "A boy and his mum take their own dog to the vet."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Finn strokes the dog's ears.",
+        "Jess asks if someone can take her dog to the park.",
+        "A cat hisses at the dog.",
+        "Mum presses the lead into Finn's hand.",
+        "Finn asks if he can still come on walks."
+      ],
+      "answer": [1, 3, 2, 0, 4]
+    }
+  ]
+}
