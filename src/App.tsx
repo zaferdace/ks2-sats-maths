@@ -1,122 +1,140 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { generatePaper } from './gen/paper';
+import { newPaperCode } from './gen/rng';
+import { HomeScreen } from './screens/HomeScreen';
+import { ProfilesScreen } from './screens/ProfilesScreen';
+import { ReportScreen } from './screens/ReportScreen';
+import { ResultScreen } from './screens/ResultScreen';
+import { SettingsScreen } from './screens/SettingsScreen';
+import { TestScreen } from './screens/TestScreen';
+import {
+  addAttempt,
+  addProfile,
+  createAttempt,
+  findAttempt,
+  replaceAttempt,
+  selectProfile,
+  type Attempt,
+  type Mode,
+} from './store/model';
+import { useStore } from './useStore';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Screens live in memory: no URL routing, so the home-screen app never loses its place.
+type Screen =
+  | { name: 'profiles' }
+  | { name: 'home' }
+  | { name: 'test'; attemptId: string }
+  | { name: 'result'; attemptId: string; at: number }
+  | { name: 'report' }
+  | { name: 'settings' };
+
+export default function App() {
+  const { data, update, saveFailed } = useStore();
+  const profile = data.profiles.find((p) => p.id === data.currentProfileId);
+  const [screen, setScreen] = useState<Screen>(() => ({ name: profile ? 'home' : 'profiles' }) as Screen);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [screen]);
+
+  const editAttempt = useCallback(
+    (id: string) => (fn: (a: Attempt) => Attempt) =>
+      update((d) => {
+        const a = findAttempt(d, id);
+        return a ? replaceAttempt(d, fn(a)) : d;
+      }),
+    [update],
+  );
+
+  // One stable editor per open test, so the test screen's timers are not reset on every render.
+  const testId = screen.name === 'test' ? screen.attemptId : null;
+  const editTest = useMemo(() => (testId ? editAttempt(testId) : null), [editAttempt, testId]);
+
+  const goHome = useCallback(() => setScreen({ name: 'home' }), []);
+
+  const startPaper = (mode: Mode) => {
+    if (!profile) return;
+    const code = newPaperCode();
+    const attempt = createAttempt(profile.id, mode, code, generatePaper(code), Date.now());
+    update((d) => addAttempt(d, attempt));
+    setScreen({ name: 'test', attemptId: attempt.id });
+  };
+
+  let body;
+  if (!profile || screen.name === 'profiles') {
+    body = (
+      <ProfilesScreen
+        data={data}
+        onSelect={(id) => {
+          update((d) => selectProfile(d, id));
+          setScreen({ name: 'home' });
+        }}
+        onCreate={(name) => {
+          update((d) => addProfile(d, name, Date.now()));
+          setScreen({ name: 'home' });
+        }}
+      />
+    );
+  } else if (screen.name === 'test') {
+    const attempt = findAttempt(data, screen.attemptId);
+    body =
+      attempt && editTest ? (
+      <TestScreen
+        key={attempt.id}
+        attempt={attempt}
+        edit={editTest}
+        onFinished={(at) => setScreen({ name: 'result', attemptId: attempt.id, at })}
+        onExit={goHome}
+      />
+    ) : null;
+  } else if (screen.name === 'result') {
+    const attempt = findAttempt(data, screen.attemptId);
+    body = attempt ? (
+      <ResultScreen
+        attempt={attempt}
+        at={screen.at}
+        onHome={goHome}
+        onReport={() => setScreen({ name: 'report' })}
+        onContinue={() => setScreen({ name: 'test', attemptId: attempt.id })}
+      />
+    ) : null;
+  } else if (screen.name === 'report') {
+    body = <ReportScreen data={data} profile={profile} onBack={goHome} />;
+  } else if (screen.name === 'settings') {
+    body = <SettingsScreen data={data} update={update} onBack={goHome} />;
+  } else {
+    body = (
+      <HomeScreen
+        data={data}
+        profile={profile}
+        onStart={startPaper}
+        onContinue={(attemptId) => setScreen({ name: 'test', attemptId })}
+        onOpenResult={(attemptId, at) => setScreen({ name: 'result', attemptId, at })}
+        onReport={() => setScreen({ name: 'report' })}
+        onSettings={() => setScreen({ name: 'settings' })}
+        onSwitchProfile={() => {
+          update((d) => selectProfile(d, null));
+          setScreen({ name: 'profiles' });
+        }}
+      />
+    );
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app">
+      {saveFailed && (
+        <div className="banner page">
+          This iPad refused to save the latest answers (storage may be full). Open Settings and save a backup.
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+      )}
+      {body ?? (
+        <div className="page">
+          <p>That paper could not be found.</p>
+          <button type="button" className="btn" onClick={goHome}>
+            Home
+          </button>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      )}
+    </div>
+  );
 }
-
-export default App

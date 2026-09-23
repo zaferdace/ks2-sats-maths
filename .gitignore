@@ -25,3 +25,6 @@ dist-ssr
 
 # test report written by the RTK shell hook
 .vitest/
+
+# local tooling
+.claude/

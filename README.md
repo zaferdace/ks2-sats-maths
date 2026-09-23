@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# KS2 Arithmetic
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+SATs-style arithmetic (Paper 1) practice for Year 6, as an offline web app made for an iPad.
 
-Currently, two official plugins are available:
+- **Unlimited papers.** Each paper has 40 questions worth 1 mark each, running from easy to hard.
+  Do it as a daily paper (8 questions a day for 5 days) or all 40 in one go.
+- **31 question types** from the KS2 arithmetic paper: place value, the four operations, long
+  multiplication and long division, order of operations, squares and cubes, fractions, decimals
+  and percentages. Each type has three difficulty bands.
+- **Marked like the real test.** Answers are checked when the session is finished. Any
+  equivalent form scores: 3/4, 6/8 and 0.75 are all right for 3/4.
+- **Report.** Score per session, accuracy by topic, a skill heat map of every question type,
+  progress by week, accuracy by question number, and the question types to practise next.
+- **Private.** Questions are generated on the device and results stay in the browser's storage.
+  Settings has backup and restore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Install on an iPad
 
-## React Compiler
+1. Open <https://zaferdace.github.io/ks2-sats-maths/> in Safari.
+2. Tap **Share**, then **Add to Home Screen**.
+3. Open the app from its icon. After the first visit it also works offline.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Make a backup from Settings now and then: clearing Safari's website data removes the results.
 
-## Expanding the Oxlint configuration
+## Development
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # http://localhost:5173/ks2-sats-maths/
+npm test         # unit and property tests
+npm run build    # type-check and build to dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+`.npmrc` pins the public npm registry so installs work on machines with a different default.
+
+## How the questions are made
+
+| Path | What it holds |
+|---|---|
+| `src/math/rational.ts` | Exact fractions, so 0.1 + 0.2 is 0.3 and answers compare exactly |
+| `src/gen/generators/` | One generator per question type, each with three difficulty bands |
+| `src/gen/blueprint.ts` | The 40 slots of a paper, eight a day, easy to hard |
+| `src/gen/paper.ts` | Paper code → seeded random numbers → the same 40 questions every time |
+| `src/gen/evaluate.ts` | An independent evaluator the tests use to check every generated answer |
+| `src/stats/stats.ts` | Statistics and heat-map data |
+
+The property tests generate 1,000 questions per type and difficulty and check each answer by
+re-evaluating the calculation with the answer put back in the box.
+
+## Deployment
+
+Every push to `main` runs the tests, builds the app and publishes it to GitHub Pages
+(`.github/workflows/deploy.yml`). The design notes are in `docs/superpowers/specs/`.
