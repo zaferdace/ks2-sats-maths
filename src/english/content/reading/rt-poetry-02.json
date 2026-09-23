@@ -1,0 +1,166 @@
+{
+  "id": "rt-poetry-02",
+  "title": "Storm in the Harbour",
+  "genre": "poetry",
+  "level": 2,
+  "paragraphs": [
+    "This morning the sea was a sheet of glass.\nBoats dozed in the harbour,\na gull stood on one leg on the wall,\nand nothing, nothing moved.",
+    "By lunchtime, the sky had changed its mind.\nClouds rolled in from the west,\nheavy and bruise-purple,\ndragging their shadows across the water\nlike dark nets.",
+    "Then the wind arrived.\nIt rattled our windows,\nsnatched the washing from our neighbour’s line\nand tossed the gulls across the sky\nlike scraps of torn paper.",
+    "The sea woke up.\nIt heaved its great grey shoulders\nand hurled itself at the harbour wall,\nagain\nand again\nand again,\nflinging foam as high as the lamp posts.",
+    "Thunder grumbled overhead.\nLightning split the sky\nlike a crack across a china plate.\nDown in the harbour, the little boats\ntugged at their ropes like ponies desperate to bolt.\nI pulled my curtains almost shut,\nbut left a gap, just wide enough to watch.",
+    "By evening, the sea was a sheet of glass again.\nBoats dozed in the harbour,\na gull stood on one leg on the wall,\nand nothing, nothing moved,\nexcept one shirt on a lamp post,\nwaving goodbye to the storm."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\n‘This morning the sea was a sheet of glass.’\nWhat does this tell you about the sea? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": ["It was freezing cold.", "It was flat and still.", "It was sharp and dangerous.", "It was very deep."],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q2",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nFind and copy **one** word that shows the boats were resting quietly.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": ["dozed"]
+    },
+    {
+      "id": "q3",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the second stanza.\n‘By lunchtime, the sky had changed its mind.’\nWhat does this mean? Tick **one**.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "The clouds were moving away.",
+        "The sun had come out.",
+        "The speaker had changed their plans.",
+        "The weather was starting to change."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at stanzas 2 to 4.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The clouds came in from the west.",
+        "The clouds were white and fluffy.",
+        "The wind broke the speaker’s windows.",
+        "The sea threw foam as high as the lamp posts."
+      ],
+      "answer": [true, false, false, true]
+    },
+    {
+      "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the fourth stanza.\nWhy has the poet put the word ‘again’ on three separate lines? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "to show that the storm was nearly over",
+        "to show that the waves kept crashing into the wall, over and over",
+        "to show that the waves were small and gentle",
+        "to show that the speaker was bored"
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\nThe boats ‘tugged at their ropes like ponies desperate to bolt’.\nWhat does **bolt** mean here? Tick **one**.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": ["to lock a door", "to eat food very quickly", "to run away suddenly", "to lie down and sleep"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at the fifth stanza.\nHow does the speaker feel about the storm?\nExplain, using evidence from the poem.",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "The speaker is frightened of the storm, because they pull the curtains ‘almost shut’ to hide from it. But they are also curious and fascinated by it, because they leave ‘a gap, just wide enough to watch’.",
+      "points": [
+        "Explains that the speaker is scared or nervous, with evidence, such as pulling the curtains ‘almost shut’.",
+        "Explains that the speaker is also curious or excited, with evidence, such as leaving ‘a gap, just wide enough to watch’."
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at the third stanza and the last stanza.\nWhere had the shirt on the lamp post most likely come from? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "The speaker hung it there to dry.",
+        "A gull carried it there to build a nest.",
+        "The wind snatched it from the neighbour’s washing line.",
+        "Someone tied it there as a flag for the boats."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at the first stanza and the last stanza.\nWhy does the last stanza repeat lines from the first stanza? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "to show that the harbour is calm again, just as it was in the morning",
+        "to show that the storm is about to start again",
+        "to show that the storm never really happened",
+        "to show that the speaker has fallen asleep"
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2h",
+      "marks": 1,
+      "prompt": "Compare the first stanza with the fourth stanza.\nHow has the sea changed? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "It has changed from wild and rough to calm and still.",
+        "It has stayed calm and still.",
+        "It has changed from warm to freezing cold.",
+        "It has changed from calm and still to wild and violent."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "A fishing boat is lost at sea in a terrible storm.",
+        "A calm harbour is hit by a wild storm, which has passed by the evening.",
+        "A child goes sailing on a calm, sunny day.",
+        "A storm destroys a seaside town and all its boats."
+      ],
+      "pick": 1,
+      "answer": [1]
+    }
+  ]
+}

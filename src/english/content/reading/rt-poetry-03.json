@@ -1,0 +1,174 @@
+{
+  "id": "rt-poetry-03",
+  "title": "The Conker Tree",
+  "genre": "poetry",
+  "level": 2,
+  "paragraphs": [
+    "I have stood in this playground\nfor a hundred years,\nmy roots gripping the earth\nlike an old man’s fingers.\nI have watched the children grow up,\nand their children,\nand their children’s children.",
+    "In spring, I unfold my leaves\nlike a thousand green hands\nand hold up my flowers,\nwhite candles\nto light the playground.",
+    "In summer, I am an umbrella of shade.\nChildren sit beneath my branches,\nsharing sandwiches and secrets.\nI keep their secrets.\nI never tell.",
+    "In autumn, I drop my treasures:\nglossy conkers, brown as polished shoes,\nhidden in spiky green cases.\nThe children shriek and scramble\nand stuff their pockets full,\nand I feel richer than a king.",
+    "In winter, the children hurry past me,\nhoods up and heads down.\nThe wind rattles my bare branches.\nSnow settles on my shoulders\nlike a heavy white shawl,\nand I shiver,\nand I wait.",
+    "But I am patient.\nI have waited through a hundred winters,\nand every spring the children run back to me:\nthe shouts, the skipping ropes,\nthe football thudding against my trunk.\nI have stood in this playground for a hundred years.\nI will stand here for a hundred more."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nFor how long has the tree stood in the playground?",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": [
+        "a hundred years",
+        "one hundred years",
+        "100 years",
+        "for a hundred years",
+        "for one hundred years",
+        "for 100 years",
+        "hundred years",
+        "a century",
+        "100"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nThe tree’s roots grip the earth ‘like an old man’s fingers’.\nWhat does this suggest about the roots? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "They are young and smooth.",
+        "They are old and knobbly, and they hold on tightly.",
+        "They are growing up towards the sky.",
+        "They are cold and wet from the rain."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the second stanza.\nWhat are the ‘white candles’? Tick **one**.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "candles that the children put in the tree",
+        "snow lying on the branches",
+        "lights on the school building",
+        "the tree’s white flowers, standing up tall"
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at the third stanza.\n‘I keep their secrets. I never tell.’\nWhat does this suggest about the tree? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "It can be trusted.",
+        "It cannot hear the children.",
+        "It does not like the children.",
+        "It forgets things easily."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fourth stanza.\nThe conkers are ‘glossy’.\nWhich word is closest in meaning to **glossy**? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": ["sticky", "shiny", "heavy", "rough"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fourth stanza.\nFind and copy **one** word that shows the children move quickly and untidily to get the conkers.",
+      "paragraph": 4,
+      "kind": "text",
+      "accept": ["scramble"]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The conkers grow in smooth, soft cases.",
+        "The tree’s flowers are white.",
+        "In winter, the children climb up into the tree.",
+        "In summer, children sit in the tree’s shade."
+      ],
+      "answer": [false, true, false, true]
+    },
+    {
+      "id": "q8",
+      "domain": "2h",
+      "marks": 1,
+      "prompt": "Compare the fourth stanza with the fifth stanza.\nHow is winter different from autumn for the tree? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "In autumn the tree feels lonely, but in winter it feels happy.",
+        "In both seasons, the children play under the tree.",
+        "In autumn the tree is busy and happy with the children, but in winter it is cold and lonely.",
+        "In autumn it snows, but in winter the sun shines."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "How is the poem organised? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "Each stanza is about a different child.",
+        "Stanzas 2 to 5 each describe a different season.",
+        "The seasons go backwards, from winter to spring.",
+        "Every stanza ends with the same line."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "How does the tree feel about the children?\nExplain, using evidence from the poem.",
+      "kind": "self",
+      "model": "The tree loves the children and cares about them. It keeps their secrets (‘I never tell’) and it feels ‘richer than a king’ when they collect its conkers. In winter it misses them and waits for them, and every spring they ‘run back’ to it.",
+      "points": [
+        "Gives a feeling that fits, such as loves, cares about or misses the children.",
+        "Backs it up with words from the poem, such as ‘I never tell’, ‘richer than a king’ or ‘and I wait’."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "A tree is cut down to make room for a new playground.",
+        "Children plant a conker and watch it grow into a tree.",
+        "A tree describes one exciting day when the children found its conkers.",
+        "An old tree describes how it has watched over the children through the seasons for a hundred years."
+      ],
+      "pick": 1,
+      "answer": [3]
+    }
+  ]
+}

@@ -22,8 +22,8 @@ export function ProfilesScreen({ data, onSelect, onCreate }: Props) {
           ×÷
         </div>
         <div>
-          <h1>KS2 Arithmetic</h1>
-          <p className="muted">SATs-style arithmetic papers, 8 questions a day</p>
+          <h1>KS2 SATs</h1>
+          <p className="muted">Maths and English practice papers, a little every day</p>
         </div>
       </header>
 

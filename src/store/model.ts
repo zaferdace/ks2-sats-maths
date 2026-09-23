@@ -2,7 +2,7 @@
 // persist.ts writes it to localStorage.
 import { markFor, maxMarks, type AnswerInput } from '../answer/answer';
 import { DAYS } from '../gen/blueprint';
-import { isReasoning, type AnyQuestion, type PaperKind } from '../gen/types';
+import { isItem, type AnyQuestion, type LevelChoice, type PaperKind } from '../gen/types';
 
 /** 2: attempts carry `paper` and marks can be 0-2. Version 1 data is migrated on load. */
 export const SCHEMA_VERSION = 2;
@@ -15,12 +15,22 @@ export interface Profile {
 
 export type Mode = 'daily' | 'full';
 
+/** What the home screen asks for. `size`: words in a spelling test, texts in a reading paper. */
+export interface StartRequest {
+  paper: PaperKind;
+  mode: Mode;
+  level?: LevelChoice;
+  size?: number;
+}
+
 export interface Attempt {
   id: string;
   profileId: string;
   paperCode: string;
   paper: PaperKind;
   mode: Mode;
+  /** English only: the level picked when the paper was made. */
+  level?: LevelChoice;
   createdAt: number;
   completedAt: number | null;
   questions: AnyQuestion[]; // snapshot of the paper
@@ -65,8 +75,9 @@ export function addProfile(data: StoreData, name: string, now: number, id = newI
 
 export const selectProfile = (data: StoreData, id: string | null): StoreData => ({ ...data, currentProfileId: id });
 
+/** Paper of attempts saved before `paper` existed (maths only). */
 export const paperOf = (questions: AnyQuestion[]): PaperKind =>
-  questions.length > 0 && isReasoning(questions[0]) ? 'reasoning' : 'arithmetic';
+  questions.length > 0 && isItem(questions[0]) ? 'reasoning' : 'arithmetic';
 
 export function createAttempt(
   profileId: string,
@@ -75,14 +86,17 @@ export function createAttempt(
   questions: AnyQuestion[],
   now: number,
   id = newId(),
+  paper: PaperKind = paperOf(questions),
+  level?: LevelChoice,
 ): Attempt {
   const n = questions.length;
   return {
     id,
     profileId,
     paperCode,
-    paper: paperOf(questions),
+    paper,
     mode,
+    ...(level !== undefined && { level }),
     createdAt: now,
     completedAt: null,
     questions,

@@ -1,0 +1,3785 @@
+[
+  {
+    "id": "gi-verb-forms-001",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Which sentence is written in the simple past?",
+    "input": {
+      "kind": "choice",
+      "options": ["Maya walks to school.", "Maya walked to school.", "Maya is walking to school.", "Maya will walk to school."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The simple past shows a finished action, and regular verbs add -ed: walked."
+  },
+  {
+    "id": "gi-verb-forms-002",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Complete the sentence with the simple past form of the verb **to eat**.\nYesterday, Leo ___ a whole pizza.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["ate"],
+    "explain": "Eat is an irregular verb: its simple past form is ate."
+  },
+  {
+    "id": "gi-verb-forms-003",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Which sentence is written in the present progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Grace is reading a comic.", "Grace reads a comic.", "Grace read a comic.", "Grace has read a comic."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The present progressive uses am, is or are with a verb ending in -ing."
+  },
+  {
+    "id": "gi-verb-forms-004",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Complete the sentence with the simple past form of the verb **to catch**.\nYusuf ___ the ball with one hand.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["caught"],
+    "explain": "Catch is an irregular verb: its simple past form is caught."
+  },
+  {
+    "id": "gi-verb-forms-005",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Which sentence is written in the simple present?",
+    "input": {
+      "kind": "choice",
+      "options": ["Kai plays the drums.", "Kai played the drums.", "Kai is playing the drums.", "Kai was playing the drums."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The simple present uses the verb on its own, adding -s after he, she or it: plays."
+  },
+  {
+    "id": "gi-verb-forms-006",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Tap the verb that is in the simple past.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Every", "day", "Isla", "feeds", "the", "cat", ",", "but", "yesterday", "she", "forgot", "."],
+      "pick": 1
+    },
+    "answer": [10],
+    "explain": "Forgot is the simple past of forget; feeds is in the simple present."
+  },
+  {
+    "id": "gi-verb-forms-007",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Which verb completes the sentence in the present progressive?\nLook! The children ___ in the snow.",
+    "input": {
+      "kind": "choice",
+      "options": ["played", "are playing", "were playing", "have played"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Are playing is the present progressive: are + a verb ending in -ing."
+  },
+  {
+    "id": "gi-verb-forms-008",
+    "type": "g-verb-forms",
+    "level": 1,
+    "prompt": "Is each sentence written in the past progressive? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["Jack was painting a picture.", "Jack painted a picture.", "The birds were singing loudly.", "The birds are singing loudly."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "The past progressive uses was or were with a verb ending in -ing."
+  },
+  {
+    "id": "gi-verb-forms-009",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Complete the sentence with the past progressive form of the verb **to rain**.\nIt ___ when we left the cinema.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was raining"],
+    "explain": "The past progressive uses was or were + a verb ending in -ing: was raining."
+  },
+  {
+    "id": "gi-verb-forms-010",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Complete the sentence with the present perfect form of the verb **to write**.\nAmir ___ two poems this week.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["has written"],
+    "explain": "The present perfect uses has or have + the past participle: has written."
+  },
+  {
+    "id": "gi-verb-forms-011",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which sentence is written in the present perfect?",
+    "input": {
+      "kind": "choice",
+      "options": ["Noah has finished his homework.", "Noah finished his homework.", "Noah had finished his homework.", "Noah is finishing his homework."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The present perfect uses has or have + the past participle: has finished."
+  },
+  {
+    "id": "gi-verb-forms-012",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which sentence is written in the past perfect?",
+    "input": {
+      "kind": "choice",
+      "options": ["The bus left before we got there.", "The bus had left before we got there.", "The bus has left.", "The bus was leaving when we got there."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The past perfect uses had + the past participle: had left."
+  },
+  {
+    "id": "gi-verb-forms-013",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the present perfect verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Chloe", "has", "visited", "the", "museum", "twice", "."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Has + the past participle visited makes the present perfect."
+  },
+  {
+    "id": "gi-verb-forms-014",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which verb form completes the sentence?\nWhile Theo ___ his bike, he saw a fox.",
+    "input": {
+      "kind": "choice",
+      "options": ["is riding", "was riding", "has ridden", "rides"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The past progressive (was riding) shows an action that was going on when something else happened."
+  },
+  {
+    "id": "gi-verb-forms-015",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Complete the sentence with the past perfect form of the verb **to forget**.\nZara realised that she ___ her lunchbox.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["had forgotten"],
+    "explain": "The past perfect uses had + the past participle: had forgotten."
+  },
+  {
+    "id": "gi-verb-forms-016",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which verb form completes the sentence?\nPriya ___ every race so far this season.",
+    "input": {
+      "kind": "choice",
+      "options": ["win", "has won", "have won", "winned"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "So far this season links the past to now, so we use the present perfect: has won."
+  },
+  {
+    "id": "gi-verb-forms-017",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which tense is the underlined verb in?\nThe players __had trained__ hard before the final.",
+    "input": {
+      "kind": "choice",
+      "options": ["simple past", "present perfect", "past perfect", "past progressive"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Had + the past participle trained makes the past perfect."
+  },
+  {
+    "id": "gi-verb-forms-018",
+    "type": "g-verb-forms",
+    "level": 2,
+    "prompt": "Which word completes the sentence?\nThey have ___ home already.",
+    "input": {
+      "kind": "choice",
+      "options": ["went", "gone", "go", "going"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "After have, we use the past participle gone, not went."
+  },
+  {
+    "id": "gi-verb-forms-019",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Which sentence uses the present perfect correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["I have seen that film last week.", "I have seen that film twice.", "I have saw that film twice.", "I seen that film twice."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Have seen is right, but with a finished time like last week we use the simple past instead."
+  },
+  {
+    "id": "gi-verb-forms-020",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Which verb form best completes the sentence?\nBy the time the firefighters arrived, the fire ___ out.",
+    "input": {
+      "kind": "choice",
+      "options": ["has gone", "had gone", "goes", "is going"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The past perfect (had gone) shows that one past event happened before another."
+  },
+  {
+    "id": "gi-verb-forms-021",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Complete the sentence with the present progressive form of the verb **to hop**.\nA rabbit ___ across the lawn.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["is hopping"],
+    "explain": "We need is + the -ing form, and hop doubles its p before -ing: is hopping."
+  },
+  {
+    "id": "gi-verb-forms-022",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that are written in the present perfect.",
+    "input": {
+      "kind": "choice",
+      "options": ["Ella has lost her key.", "Ella had lost her key.", "They have painted the fence.", "They were painting the fence."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "The present perfect uses has or have (not had) + the past participle."
+  },
+  {
+    "id": "gi-verb-forms-023",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Tap the **two** words that make the past perfect verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["After", "Finn", "had", "eaten", "his", "tea", ",", "he", "went", "outside", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Had + eaten makes the past perfect; went is in the simple past."
+  },
+  {
+    "id": "gi-verb-forms-024",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Which sentence shows an action that started in the past and is still true now?",
+    "input": {
+      "kind": "choice",
+      "options": ["Priya has lived in Leeds since she was five.", "Priya lived in Leeds when she was five.", "Priya had lived in Leeds before she moved.", "Priya was living in Leeds last year."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The present perfect (has lived) links the past to now."
+  },
+  {
+    "id": "gi-verb-forms-025",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Which verb form best completes the sentence?\nListen! Someone ___ at the door.",
+    "input": {
+      "kind": "choice",
+      "options": ["knocked", "is knocking", "had knocked", "knock"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Listen! shows it is happening now, so we use the present progressive: is knocking."
+  },
+  {
+    "id": "gi-verb-forms-026",
+    "type": "g-verb-forms",
+    "level": 3,
+    "prompt": "Complete the sentence with the past perfect form of the verb **to begin**.\nWhen we found our seats, the film ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["had begun"],
+    "explain": "The past perfect is had + the past participle, and the past participle of begin is begun."
+  },
+  {
+    "id": "gi-active-passive-001",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Which sentence is written in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The dog will chase the ball."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the passive, the subject has the action done to it: the ball was chased by the dog."
+  },
+  {
+    "id": "gi-active-passive-002",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Which sentence is written in the active voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The window was smashed by a football.", "A football smashed the window.", "The cake was eaten by Ella.", "The letter was posted yesterday."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the active voice, the subject does the action: a football smashed the window."
+  },
+  {
+    "id": "gi-active-passive-003",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Read this passive sentence.\nThe tent was put up by Amir.\nWho did the action?",
+    "input": {
+      "kind": "choice",
+      "options": ["the tent", "Amir", "we cannot tell"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In a passive sentence, the doer of the action often comes after the word by."
+  },
+  {
+    "id": "gi-active-passive-004",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "This sentence is in the passive voice. Tap the name of the person who did the action.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "flowers", "were", "watered", "by", "Isla", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Isla comes after by, so she is the one who watered the flowers."
+  },
+  {
+    "id": "gi-active-passive-005",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Is each sentence written in the passive voice? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The song was sung by the choir.", "The choir sang the song.", "The shed was painted last week.", "Dad painted the shed."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "A passive verb uses a form of be + a past participle, such as was sung or was painted."
+  },
+  {
+    "id": "gi-active-passive-006",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Which sentence is written in the active voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The vase was knocked over by the cat.", "The ball was kicked into the net.", "The cat knocked over the vase.", "The net was hit by the ball."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "In the active sentence, the doer (the cat) is the subject and comes first."
+  },
+  {
+    "id": "gi-active-passive-007",
+    "type": "g-active-passive",
+    "level": 1,
+    "prompt": "Which passive sentence does **not** tell us who did the action?",
+    "input": {
+      "kind": "choice",
+      "options": ["The door was opened by Jack.", "The door was opened.", "The gate was locked by the caretaker.", "The note was written by Mum."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The door was opened does not say who opened it; the others name the doer after by."
+  },
+  {
+    "id": "gi-active-passive-008",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Which sentence is written in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The chef cooked the pasta.", "The chef was cooking the pasta.", "The pasta was cooked by the chef.", "The chef had cooked the pasta."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Was cooked is passive (was + past participle); was cooking and had cooked are active."
+  },
+  {
+    "id": "gi-active-passive-009",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Which is the passive version of this sentence?\nThe teacher marked the tests.",
+    "input": {
+      "kind": "choice",
+      "options": ["The tests were marked by the teacher.", "The tests marked the teacher.", "The teacher was marked by the tests.", "The tests are marked by the teacher."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The tests becomes the subject and the tense stays the same: marked becomes were marked."
+  },
+  {
+    "id": "gi-active-passive-010",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Which is the active version of this sentence?\nThe tickets were sold by Theo.",
+    "input": {
+      "kind": "choice",
+      "options": ["Theo sold the tickets.", "The tickets sold Theo.", "Theo was sold the tickets.", "The tickets were sold."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In the active version, the doer (Theo) becomes the subject: Theo sold the tickets."
+  },
+  {
+    "id": "gi-active-passive-011",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Complete the passive version of this sentence.\nThe twins built the sandcastle.\nThe sandcastle ___ by the twins.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was built"],
+    "explain": "The passive keeps the same tense, so built becomes was built."
+  },
+  {
+    "id": "gi-active-passive-012",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Complete the passive version of this sentence.\nThe farmer feeds the hens every morning.\nThe hens ___ by the farmer every morning.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["are fed"],
+    "explain": "The hens are plural and the tense is the present, so the passive verb is are fed."
+  },
+  {
+    "id": "gi-active-passive-013",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Tick the **two** sentences that are written in the passive voice.",
+    "input": {
+      "kind": "choice",
+      "options": ["The cakes were made by Grandma.", "Grandma made the cakes.", "The bridge was built in 1890.", "The bridge was very old."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Were made and was built are passive: a form of be + a past participle."
+  },
+  {
+    "id": "gi-active-passive-014",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the passive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "bike", "was", "stolen", "from", "outside", "the", "library", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Was + the past participle stolen makes the passive verb."
+  },
+  {
+    "id": "gi-active-passive-015",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Which verb completes the sentence so that it is in the passive voice?\nThe posters ___ by Year 6 this morning.",
+    "input": {
+      "kind": "choice",
+      "options": ["made", "were made", "are making", "make"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Were made is passive: were + the past participle made."
+  },
+  {
+    "id": "gi-active-passive-016",
+    "type": "g-active-passive",
+    "level": 2,
+    "prompt": "Read the sentence.\nThe winning goal was scored by Priya.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The sentence is in the passive voice.", "Priya did the action.", "The active version is: Priya scored the winning goal.", "The verb is in the present tense."]
+    },
+    "answer": [true, true, true, false],
+    "explain": "Was scored is a passive verb in the past tense, and Priya comes after by because she scored."
+  },
+  {
+    "id": "gi-active-passive-017",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Which sentence is written in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The goalkeeper was happy.", "The penalty was saved.", "The goalkeeper was diving.", "The goalkeeper saved the penalty."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Was saved is passive (be + past participle); was happy and was diving are not."
+  },
+  {
+    "id": "gi-active-passive-018",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Why might a writer choose the passive voice for this sentence?\nThe shop window was smashed during the night.",
+    "input": {
+      "kind": "choice",
+      "options": ["The writer may not know who smashed it.", "It tells us who smashed the window.", "It is a command.", "It is about the future."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The passive lets a writer leave out who did the action, for example when nobody knows."
+  },
+  {
+    "id": "gi-active-passive-019",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Complete the passive version of this sentence.\nA bee stung Leo.\nLeo ___ by a bee.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was stung"],
+    "explain": "The past participle of sting is stung, so the passive verb is was stung."
+  },
+  {
+    "id": "gi-active-passive-020",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Which is the passive version of this sentence?\nThe children are planting trees.",
+    "input": {
+      "kind": "choice",
+      "options": ["Trees are being planted by the children.", "Trees were planted by the children.", "The children are being planted by trees.", "Trees are planting the children."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The tense stays the same, so are planting becomes are being planted."
+  },
+  {
+    "id": "gi-active-passive-021",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Which is the passive version of this sentence?\nOur class will perform the play.",
+    "input": {
+      "kind": "choice",
+      "options": ["The play will be performed by our class.", "The play was performed by our class.", "Our class will be performed by the play.", "The play will perform our class."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will perform becomes will be performed, and the play becomes the subject."
+  },
+  {
+    "id": "gi-active-passive-022",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Which sentence changes this active sentence into the passive correctly?\nThe wind blew the leaves across the field.",
+    "input": {
+      "kind": "choice",
+      "options": ["The leaves were blown across the field by the wind.", "The leaves blew across the field by the wind.", "The wind was blown across the field by the leaves.", "The leaves were blowing across the field."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Blew becomes were blown, and the wind moves to the end after by."
+  },
+  {
+    "id": "gi-active-passive-023",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "This sentence is in the passive voice. Tap the noun that tells you what did the action.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "road", "was", "blocked", "by", "a", "fallen", "tree", "."],
+      "pick": 1
+    },
+    "answer": [7],
+    "explain": "A fallen tree comes after by, so the tree is what blocked the road."
+  },
+  {
+    "id": "gi-active-passive-024",
+    "type": "g-active-passive",
+    "level": 3,
+    "prompt": "Which sentence is written in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The shop was busy all day.", "The shop was closed early by the owner.", "The owner was closing the shop.", "The owner had closed the shop."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Was closed by the owner is passive; was closing and had closed are active verbs."
+  },
+  {
+    "id": "gi-modals-001",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Tap the modal verb in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "might", "go", "to", "the", "beach", "tomorrow", "."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Might is a modal verb: it shows that something is possible."
+  },
+  {
+    "id": "gi-modals-002",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Tap the modal verb in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["You", "should", "wear", "a", "helmet", "when", "you", "ride", "your", "bike", "."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Should is a modal verb: here it gives advice."
+  },
+  {
+    "id": "gi-modals-003",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Which word is a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["run", "could", "happy", "quickly"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Could is a modal verb; it goes with another verb, as in could run."
+  },
+  {
+    "id": "gi-modals-004",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Which sentence contains a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["Lily plays the violin.", "Lily can play the violin.", "Lily played the violin.", "Lily is playing the violin."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Can is a modal verb; here it shows that Lily is able to play."
+  },
+  {
+    "id": "gi-modals-005",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Which modal verb completes the sentence to show that it is **certain**?\nThe sun ___ rise tomorrow morning.",
+    "input": {
+      "kind": "choice",
+      "options": ["will", "might", "could", "may"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will shows that something is certain to happen; might, could and may only show possibility."
+  },
+  {
+    "id": "gi-modals-006",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Is each word a modal verb? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["might", "should", "jump", "would", "often"]
+    },
+    "answer": [true, true, false, true, false],
+    "explain": "Might, should and would are modal verbs; jump is an ordinary verb and often is an adverb."
+  },
+  {
+    "id": "gi-modals-007",
+    "type": "g-modals",
+    "level": 1,
+    "prompt": "Which sentence shows the **most** certainty?",
+    "input": {
+      "kind": "choice",
+      "options": ["We might have pizza for tea.", "We could have pizza for tea.", "We will have pizza for tea.", "We may have pizza for tea."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will shows certainty; might, could and may only show possibility."
+  },
+  {
+    "id": "gi-modals-008",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which sentence shows that it is **possible**, but not certain, that Jack will win the race?",
+    "input": {
+      "kind": "choice",
+      "options": ["Jack will win the race.", "Jack might win the race.", "Jack won the race.", "Jack is winning the race."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Might shows that something is possible but not certain."
+  },
+  {
+    "id": "gi-modals-009",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Complete the sentence with a modal verb that shows it is **possible**, but not certain.\nThe parcel ___ arrive tomorrow.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["might", "may", "could", "should"],
+    "explain": "Might, may and could show that something is possible; should (it is expected) also fits."
+  },
+  {
+    "id": "gi-modals-010",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which sentence uses a modal verb to give advice?",
+    "input": {
+      "kind": "choice",
+      "options": ["You should drink more water.", "You drank more water.", "You are drinking more water.", "You drink water every day."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Should is a modal verb that is often used to give advice."
+  },
+  {
+    "id": "gi-modals-011",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Tap the **two** modal verbs.",
+    "input": {
+      "kind": "words",
+      "tokens": ["If", "we", "hurry", ",", "we", "can", "catch", "the", "bus", ",", "but", "we", "might", "miss", "the", "start", "."],
+      "pick": 2
+    },
+    "answer": [5, 12],
+    "explain": "Can and might are modal verbs; they change the meaning of catch and miss."
+  },
+  {
+    "id": "gi-modals-012",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "What does the modal verb **must** show in this sentence?\nYou must wash your hands before lunch.",
+    "input": {
+      "kind": "choice",
+      "options": ["It is something you have to do.", "It is something that might happen.", "It happened in the past.", "It is something you are good at."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Here must shows that something has to be done."
+  },
+  {
+    "id": "gi-modals-013",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which sentence uses a modal verb to show **ability**?",
+    "input": {
+      "kind": "choice",
+      "options": ["Ravi can swim two lengths.", "Ravi must swim two lengths.", "Ravi should swim two lengths.", "Ravi might swim two lengths."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Can often shows that someone is able to do something."
+  },
+  {
+    "id": "gi-modals-014",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which modal verb completes the sentence to show that it is a **rule**?\nVisitors ___ show their tickets at the gate.",
+    "input": {
+      "kind": "choice",
+      "options": ["must", "might", "could", "may"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Must shows that something has to be done, like a rule."
+  },
+  {
+    "id": "gi-modals-015",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which word could replace **might** without changing the meaning?\nIt might rain later.",
+    "input": {
+      "kind": "choice",
+      "options": ["may", "will", "must", "won't"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Might and may both show that something is possible."
+  },
+  {
+    "id": "gi-modals-016",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Read the sentence.\nWe could visit the castle, or we might go to the zoo.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The sentence contains two modal verbs.", "The speaker is certain that they will go to the zoo.", "The word \"visit\" is a modal verb."]
+    },
+    "answer": [true, false, false],
+    "explain": "Could and might are the modal verbs, and they show possibility, not certainty."
+  },
+  {
+    "id": "gi-modals-017",
+    "type": "g-modals",
+    "level": 2,
+    "prompt": "Which word in the sentence is a modal verb?\nThe twins would often play chess after school.",
+    "input": {
+      "kind": "choice",
+      "options": ["would", "often", "play", "after"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Would is a modal verb; it comes before the main verb play."
+  },
+  {
+    "id": "gi-modals-018",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Maya sees puddles all over the playground. Which sentence shows that she is **sure** it has rained?",
+    "input": {
+      "kind": "choice",
+      "options": ["It might have rained.", "It could have rained.", "It must have rained.", "It may have rained."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Must shows the speaker is sure, because the puddles are the evidence."
+  },
+  {
+    "id": "gi-modals-019",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Which sentence shows that something is **impossible**?",
+    "input": {
+      "kind": "choice",
+      "options": ["That can't be Omar, because he is on holiday.", "That might be Omar.", "That could be Omar.", "That may be Omar."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Can't shows the speaker is sure it is not possible."
+  },
+  {
+    "id": "gi-modals-020",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Complete the sentence with a modal verb that shows **certainty**.\nToday is Friday, so tomorrow ___ be Saturday.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will", "must"],
+    "explain": "Will (or must) shows that the speaker is certain."
+  },
+  {
+    "id": "gi-modals-021",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "In which sentence does the modal verb show **possibility**?",
+    "input": {
+      "kind": "choice",
+      "options": ["You must be quiet in the library.", "The shop may be closed on Sunday.", "You should brush your teeth twice a day.", "Kai can ride a unicycle."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "May shows the shop is possibly closed; the others show a rule, advice and ability."
+  },
+  {
+    "id": "gi-modals-022",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Which sentence shows the **least** certainty?",
+    "input": {
+      "kind": "choice",
+      "options": ["Grace will be at the party.", "Grace must be at the party, because her coat is here.", "Grace might be at the party.", "Grace is definitely at the party."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Might shows only a possibility; the other sentences show the speaker is sure."
+  },
+  {
+    "id": "gi-modals-023",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Tap the **two** modal verbs.",
+    "input": {
+      "kind": "words",
+      "tokens": ["You", "must", "not", "touch", "the", "oven", ",", "because", "it", "could", "still", "be", "hot", "."],
+      "pick": 2
+    },
+    "answer": [1, 9],
+    "explain": "Must and could are modal verbs; touch and be are the main verbs."
+  },
+  {
+    "id": "gi-modals-024",
+    "type": "g-modals",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that show something is **possible** but not certain.",
+    "input": {
+      "kind": "choice",
+      "options": ["The film may start late.", "The film will start late.", "The film could start late.", "The film won't start late."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "May and could show possibility; will and won't show the speaker is sure."
+  },
+  {
+    "id": "gi-subjunctive-001",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nIf I ___ taller, I could reach the top shelf.",
+    "input": {
+      "kind": "choice",
+      "options": ["was", "were", "am", "is"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The subjunctive uses were for something imagined: If I were taller."
+  },
+  {
+    "id": "gi-subjunctive-002",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Which sentence uses the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["If I were a bird, I would fly south for the winter.", "If I was a bird, I would fly south for the winter.", "I am a bird, so I fly south for the winter.", "Birds fly south for the winter."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "If I were is the subjunctive form, used for something that is not true."
+  },
+  {
+    "id": "gi-subjunctive-003",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nIf I ___ you, I would take an umbrella.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["were"],
+    "explain": "The subjunctive form here is were: If I were you."
+  },
+  {
+    "id": "gi-subjunctive-004",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Tap the verb that is in the subjunctive form.",
+    "input": {
+      "kind": "words",
+      "tokens": ["If", "I", "were", "the", "headteacher", ",", "I", "would", "ban", "homework", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Were is the subjunctive form used after if for something imagined."
+  },
+  {
+    "id": "gi-subjunctive-005",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nIf Leo ___ the captain, he would choose Ava first.",
+    "input": {
+      "kind": "choice",
+      "options": ["was", "were", "is", "be"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "For an imagined situation after if, the subjunctive uses were."
+  },
+  {
+    "id": "gi-subjunctive-006",
+    "type": "g-subjunctive",
+    "level": 1,
+    "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nIf Omar ___ older, he could stay up late.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["were"],
+    "explain": "The subjunctive uses were for something imagined, even for one person: If Omar were."
+  },
+  {
+    "id": "gi-subjunctive-007",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which sentence uses the subjunctive to make a wish?",
+    "input": {
+      "kind": "choice",
+      "options": ["I wish it were the weekend.", "I wish it is the weekend.", "I wish it will be the weekend.", "I wish it being the weekend."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After wish, the subjunctive uses were: I wish it were."
+  },
+  {
+    "id": "gi-subjunctive-008",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nThe coach insisted that Sam ___ on time for training.",
+    "input": {
+      "kind": "choice",
+      "options": ["be", "is", "was", "being"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After insisted that, the subjunctive uses the base form be."
+  },
+  {
+    "id": "gi-subjunctive-009",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nIt is essential that every pupil ___ a packed lunch.",
+    "input": {
+      "kind": "choice",
+      "options": ["brings", "bring", "brought", "bringing"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the subjunctive, the verb stays in its base form: bring, not brings."
+  },
+  {
+    "id": "gi-subjunctive-010",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Complete the sentence with the subjunctive form of the verb **to arrive**.\nThe headteacher requests that every visitor ___ before nine o'clock.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["arrive"],
+    "explain": "After requests that, the subjunctive uses the base form arrive, with no -s."
+  },
+  {
+    "id": "gi-subjunctive-011",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which sentence uses the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["I suggest that he takes the bus.", "I suggest that he take the bus.", "I suggest that he took the bus.", "I suggest that he taking the bus."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the subjunctive, the verb after suggest that has no -s: he take."
+  },
+  {
+    "id": "gi-subjunctive-012",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Tap the verb that is in the subjunctive form.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "doctor", "recommended", "that", "Grace", "rest", "for", "a", "week", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Rest has no -s even though Grace is one person, because it is in the subjunctive form."
+  },
+  {
+    "id": "gi-subjunctive-013",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Is each sentence written in the subjunctive? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["If I were rich, I would buy a boat.", "If I was rich, I would buy a boat.", "It is vital that he be ready.", "It is vital that he is ready."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "The subjunctive uses were after if and the base form be after it is vital that."
+  },
+  {
+    "id": "gi-subjunctive-014",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nThe letter demands that Priya ___ the library book at once.",
+    "input": {
+      "kind": "choice",
+      "options": ["return", "returns", "returned", "returning"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In the subjunctive, the verb stays in its base form: return, not returns."
+  },
+  {
+    "id": "gi-subjunctive-015",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Which sentence uses the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["The teacher asked that Ella speak more slowly.", "The teacher asked Ella to speak more slowly.", "The teacher said that Ella speaks slowly.", "The teacher asked if Ella spoke slowly."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Speak (not speaks) after asked that is the subjunctive form."
+  },
+  {
+    "id": "gi-subjunctive-016",
+    "type": "g-subjunctive",
+    "level": 2,
+    "prompt": "Tap the verb that is in the subjunctive form.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Mum", "insisted", "that", "Theo", "tidy", "his", "room", "before", "tea", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Tidy has no -s after insisted that, so it is in the subjunctive form."
+  },
+  {
+    "id": "gi-subjunctive-017",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that use the subjunctive form.",
+    "input": {
+      "kind": "choice",
+      "options": ["If she were here, she would help us.", "If she was here, she would help us.", "We ask that he remain seated.", "We ask that he remains seated."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Were after if, and remain with no -s after ask that, are both subjunctive forms."
+  },
+  {
+    "id": "gi-subjunctive-018",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nThe rules require that every player ___ at the pitch by ten o'clock.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["be"],
+    "explain": "After require that, the subjunctive of the verb to be is be."
+  },
+  {
+    "id": "gi-subjunctive-019",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Which **two** words can be subjunctive forms of the verb **to be**?",
+    "input": {
+      "kind": "choice",
+      "options": ["be", "am", "is", "were"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "The subjunctive uses be (It is vital that he be ready) and were (If I were you)."
+  },
+  {
+    "id": "gi-subjunctive-020",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Which sentence is written in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["Were I in charge, I would change the rules.", "Was I in charge, I would change the rules.", "I was in charge, so I changed the rules.", "When I am in charge, I will change the rules."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Were I in charge is a formal subjunctive way of saying If I were in charge."
+  },
+  {
+    "id": "gi-subjunctive-021",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Complete the sentence with the subjunctive form of the verb **to go**.\nThe nurse suggested that my brother ___ home to rest.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["go"],
+    "explain": "After suggested that, the subjunctive uses the base form go."
+  },
+  {
+    "id": "gi-subjunctive-022",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nIt is important that the dog ___ fed twice a day.",
+    "input": {
+      "kind": "choice",
+      "options": ["is", "be", "was", "are"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "After it is important that, the subjunctive uses be, even in a passive like be fed."
+  },
+  {
+    "id": "gi-subjunctive-023",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Which sentence is **not** written in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["If I were you, I would apologise.", "I demand that he apologise.", "I think that he should apologise.", "It is vital that she apologise."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Should apologise uses a modal verb; the others use the subjunctive forms were and apologise."
+  },
+  {
+    "id": "gi-subjunctive-024",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "Which verb completes the sentence in the subjunctive form?\nI propose that the meeting ___ on Friday.",
+    "input": {
+      "kind": "choice",
+      "options": ["be held", "is held", "was held", "been held"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After propose that, the subjunctive uses the base form be: be held."
+  },
+  {
+    "id": "gi-subjunctive-025",
+    "type": "g-subjunctive",
+    "level": 3,
+    "prompt": "In which sentence is **were** in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["If I were an astronaut, I would visit Mars.", "We were late for school.", "They were playing outside.", "You were right about the weather."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Were is subjunctive when it describes something imagined, like being an astronaut."
+  },
+  {
+    "id": "gi-standard-english-001",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["We was late for school.", "We were late for school.", "We is late for school.", "We be late for school."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In Standard English, we use we were, not we was."
+  },
+  {
+    "id": "gi-standard-english-002",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which verb completes the sentence in Standard English?\nThey ___ playing football when it started to rain.",
+    "input": {
+      "kind": "choice",
+      "options": ["was", "were", "is", "be"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "With they, Standard English uses were."
+  },
+  {
+    "id": "gi-standard-english-003",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which word completes the sentence in Standard English?\nCan you pass me ___ books, please?",
+    "input": {
+      "kind": "choice",
+      "options": ["them", "those", "they", "this"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Standard English uses those before a plural noun, not them."
+  },
+  {
+    "id": "gi-standard-english-004",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["I seen a fox in the garden.", "I saw a fox in the garden.", "I seed a fox in the garden.", "I have saw a fox in the garden."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The simple past of see is saw; seen needs have or has before it."
+  },
+  {
+    "id": "gi-standard-english-005",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Tap the word that is **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Yesterday", "we", "was", "going", "to", "the", "park", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Standard English uses we were, not we was."
+  },
+  {
+    "id": "gi-standard-english-006",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Is each sentence written in Standard English? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["She doesn't like carrots.", "He don't like carrots.", "They were very tired.", "I ain't hungry."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Standard English uses he doesn't and I'm not, not he don't or I ain't."
+  },
+  {
+    "id": "gi-standard-english-007",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["Them shoes is too small.", "Those shoes are too small.", "Those shoes is too small.", "Them shoes are too small."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Standard English uses those shoes with the plural verb are."
+  },
+  {
+    "id": "gi-standard-english-008",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which word completes the sentence in Standard English?\nPriya ___ been to France three times.",
+    "input": {
+      "kind": "choice",
+      "options": ["have", "has", "of", "is"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "With one person, such as Priya, Standard English uses has."
+  },
+  {
+    "id": "gi-standard-english-009",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Rewrite the underlined word in Standard English.\nI __done__ my homework last night.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["did", "had done"],
+    "explain": "The simple past of do is did (had done also works); done needs have, has or had before it."
+  },
+  {
+    "id": "gi-standard-english-010",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Rewrite the underlined word in Standard English.\nAva and Kai __was__ laughing at the clown.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["were"],
+    "explain": "Ava and Kai are two people, so Standard English uses were."
+  },
+  {
+    "id": "gi-standard-english-011",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["I didn't do nothing wrong.", "I didn't do anything wrong.", "I never done nothing wrong.", "I done nothing wrong."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Standard English uses only one negative: I didn't do anything, not I didn't do nothing."
+  },
+  {
+    "id": "gi-standard-english-012",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["Me and Omar went swimming.", "Omar and me went swimming.", "Omar and I went swimming.", "Me and him went swimming."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The subject of the sentence needs I, not me: Omar and I."
+  },
+  {
+    "id": "gi-standard-english-013",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Rewrite the underlined word in Standard English.\nYou should __of__ asked first.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["have"],
+    "explain": "Should have can sound like should of, but have is the correct word."
+  },
+  {
+    "id": "gi-standard-english-014",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Tap the word that is **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Can", "you", "see", "them", "ducks", "on", "the", "pond", "?"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Standard English uses those ducks, not them ducks."
+  },
+  {
+    "id": "gi-standard-english-015",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which verb completes the sentence in Standard English?\nMy grandad ___ me how to play chess.",
+    "input": {
+      "kind": "choice",
+      "options": ["learned", "teached", "taught", "learnt"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "In Standard English, someone teaches you (taught), and you learn."
+  },
+  {
+    "id": "gi-standard-english-016",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Rewrite the underlined word in Standard English.\nZara __come__ to my house yesterday.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["came", "had come"],
+    "explain": "The simple past of come is came (had come also works)."
+  },
+  {
+    "id": "gi-standard-english-017",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Tap the word that is **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Jack", "hurt", "hisself", "when", "he", "fell", "off", "the", "wall", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Standard English uses himself, not hisself."
+  },
+  {
+    "id": "gi-standard-english-018",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which word completes the sentence in Standard English?\nThere are ___ people in the queue today.",
+    "input": {
+      "kind": "choice",
+      "options": ["less", "fewer", "lesser", "littler"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "We use fewer with things we can count, like people."
+  },
+  {
+    "id": "gi-standard-english-019",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that are written in Standard English.",
+    "input": {
+      "kind": "choice",
+      "options": ["There's less cars on the road today.", "There are fewer cars on the road today.", "We could of won the match.", "We could have won the match."],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "Fewer goes with things we can count, and could have is correct, not could of."
+  },
+  {
+    "id": "gi-standard-english-020",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Rewrite the underlined word in Standard English.\nThere were __less__ apples on the tree this year.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["fewer"],
+    "explain": "Apples can be counted, so Standard English uses fewer."
+  },
+  {
+    "id": "gi-standard-english-021",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Which word completes the sentence in Standard English?\nChloe and Isla helped ___ to more cake.",
+    "input": {
+      "kind": "choice",
+      "options": ["theirselves", "themselves", "theirself", "themself"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The Standard English form is themselves."
+  },
+  {
+    "id": "gi-standard-english-022",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Tap the **two** words that are **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "was", "tired", "because", "we", "done", "a", "long", "walk", "."],
+      "pick": 2
+    },
+    "answer": [1, 5],
+    "explain": "Standard English uses we were and we did (or we had done)."
+  },
+  {
+    "id": "gi-standard-english-023",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Which is the Standard English version of this sentence?\nI ain't got no pencil.",
+    "input": {
+      "kind": "choice",
+      "options": ["I haven't got a pencil.", "I ain't got a pencil.", "I haven't got no pencil.", "I aren't got a pencil."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Standard English uses haven't instead of ain't, and only one negative."
+  },
+  {
+    "id": "gi-standard-english-024",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Which words complete the sentence in Standard English?\nTheo ___ in his spelling test.",
+    "input": {
+      "kind": "choice",
+      "options": ["did good", "done good", "did well", "done well"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Did is the simple past of do, and the adverb well (not good) tells us how he did."
+  },
+  {
+    "id": "gi-standard-english-025",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Which word completes the sentence in Standard English?\nThe man ___ fixed our boiler was very friendly.",
+    "input": {
+      "kind": "choice",
+      "options": ["who", "what", "which", "whose"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Standard English uses who (or that) for people, not what or which."
+  },
+  {
+    "id": "gi-standard-english-026",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Rewrite the underlined word in Standard English.\nLast Saturday, the team __brung__ their own footballs.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["brought", "had brought"],
+    "explain": "The simple past of bring is brought (had brought also works)."
+  },
+  {
+    "id": "gi-formality-001",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which sentence would be best in a letter to a headteacher?",
+    "input": {
+      "kind": "choice",
+      "options": ["I am writing to ask whether our class could visit the museum.", "Can we go to the museum? It'd be well fun!", "Museum trip, yeah?", "Hey! Fancy a trip to the museum?"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It uses polite, formal language with full words and no slang."
+  },
+  {
+    "id": "gi-formality-002",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which word is the most formal way to say **kids**?",
+    "input": {
+      "kind": "choice",
+      "options": ["children", "lot", "gang", "tots"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Children is the formal word; kids is informal."
+  },
+  {
+    "id": "gi-formality-003",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Is each sentence informal? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["We're gonna be late!", "We will arrive at noon.", "That film was well good.", "The museum will reopen next month."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Gonna and well good are informal; the other two sentences use standard words with no slang."
+  },
+  {
+    "id": "gi-formality-004",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which sentence ends with a question tag?",
+    "input": {
+      "kind": "choice",
+      "options": ["You like pizza, don't you?", "Do you like pizza?", "What pizza do you like?", "Would you like some pizza?"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Don't you is a question tag: a short question added to the end of a statement."
+  },
+  {
+    "id": "gi-formality-005",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which is the most formal way to end a letter?",
+    "input": {
+      "kind": "choice",
+      "options": ["Yours sincerely", "See ya", "Cheers", "Laters"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Yours sincerely is a formal ending; the others are informal."
+  },
+  {
+    "id": "gi-formality-006",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which is the most formal way to ask for help?",
+    "input": {
+      "kind": "choice",
+      "options": ["Give us a hand, will you?", "I would be grateful for your assistance.", "Can you help me out?", "Help me with this, yeah?"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "It uses formal words like grateful and assistance, with no slang or contractions."
+  },
+  {
+    "id": "gi-formality-007",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Tap the word that is too informal for a science report.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Our", "results", "show", "that", "the", "plants", "grew", "loads", "in", "sunlight", "."],
+      "pick": 1
+    },
+    "answer": [7],
+    "explain": "Loads is a chatty, informal word, so it does not suit a report."
+  },
+  {
+    "id": "gi-formality-008",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which sentence is written in a formal style?",
+    "input": {
+      "kind": "choice",
+      "options": ["The school trip has been cancelled owing to poor weather.", "The school trip's off 'cos of the rain.", "No school trip – rubbish weather!", "Sorry, the trip's not happening."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It uses formal words (owing to) and the passive, with no slang or contractions."
+  },
+  {
+    "id": "gi-formality-009",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the question tag.",
+    "input": {
+      "kind": "words",
+      "tokens": ["You've", "finished", "your", "homework", ",", "haven't", "you", "?"],
+      "pick": 2
+    },
+    "answer": [5, 6],
+    "explain": "Haven't you is a question tag, which makes the sentence sound informal."
+  },
+  {
+    "id": "gi-formality-010",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which is the most formal way to replace the underlined words?\nWe need to __find out__ what happened.",
+    "input": {
+      "kind": "choice",
+      "options": ["discover", "suss out", "figure out", "check out"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Discover is more formal than find out; the other choices are informal phrases."
+  },
+  {
+    "id": "gi-formality-011",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which sentence is more formal because it uses the subjunctive?",
+    "input": {
+      "kind": "choice",
+      "options": ["If I were the manager, I would change the rules.", "If I was the manager, I'd change the rules."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "If I were is the subjunctive, which is used in formal writing."
+  },
+  {
+    "id": "gi-formality-012",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Why is this sentence informal?\nIt's freezing today, isn't it?",
+    "input": {
+      "kind": "choice",
+      "options": ["It uses a contraction and a question tag.", "It uses the subjunctive.", "It uses the passive voice.", "It has no verb."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It's is a contraction and isn't it is a question tag; both are informal."
+  },
+  {
+    "id": "gi-formality-013",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Complete the sentence with a question tag.\nYou're coming to the party, ___?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["aren't you", "are you not"],
+    "explain": "A positive statement with you're takes the question tag aren't you."
+  },
+  {
+    "id": "gi-formality-014",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which word is the most formal way to say **ask for**?",
+    "input": {
+      "kind": "choice",
+      "options": ["request", "want", "grab", "beg"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Request is a formal way to say ask for."
+  },
+  {
+    "id": "gi-formality-015",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Tick the **two** sentences that are formal.",
+    "input": {
+      "kind": "choice",
+      "options": ["Visitors must sign in at reception.", "Guys, sign in over there!", "Pupils are requested to walk in the corridors.", "No running, OK?"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "They use full, polite words, with no chatty words like guys or OK."
+  },
+  {
+    "id": "gi-formality-016",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which is the most formal version of this sentence?\nThanks a lot for the cool present!",
+    "input": {
+      "kind": "choice",
+      "options": ["Thank you very much for the wonderful gift.", "Cheers for the awesome present!", "Ta for the great pressie.", "Thanks loads for the cool gift."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Thank you very much and wonderful gift are formal; cheers, ta, awesome and cool are informal."
+  },
+  {
+    "id": "gi-formality-017",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which word is the most formal way to complete the sentence?\nThe library has ___ new computers for pupils to use.",
+    "input": {
+      "kind": "choice",
+      "options": ["got", "obtained", "grabbed", "nabbed"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Obtained is the most formal choice; got, grabbed and nabbed are everyday or chatty words."
+  },
+  {
+    "id": "gi-formality-018",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Read the sentence.\nWe've got loads of stuff to do, haven't we?\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The sentence contains a question tag.", "The sentence contains a contraction.", "The sentence is formal.", "The word \"loads\" is informal."]
+    },
+    "answer": [true, true, false, true],
+    "explain": "Haven't we is a question tag, we've is a contraction and loads is informal, so the sentence is informal."
+  },
+  {
+    "id": "gi-formality-019",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Complete the sentence with a question tag.\nJack can swim, ___?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["can't he", "can he not"],
+    "explain": "A positive statement with can takes the question tag can't he."
+  },
+  {
+    "id": "gi-formality-020",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which sentence is the most formal?",
+    "input": {
+      "kind": "choice",
+      "options": ["Should you require any help, please speak to a member of staff.", "If you need help, just ask someone.", "Need help? Give us a shout!", "Ask us if you get stuck."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Should you require is a very formal way of saying if you need."
+  },
+  {
+    "id": "gi-formality-021",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which feature makes this sentence formal?\nWere the weather to improve, the match would continue.",
+    "input": {
+      "kind": "choice",
+      "options": ["the subjunctive", "a question tag", "a contraction", "slang"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Were the weather to improve uses the subjunctive, which is formal."
+  },
+  {
+    "id": "gi-formality-022",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which sentence is written in the most formal way?",
+    "input": {
+      "kind": "choice",
+      "options": ["The concert was absolutely brilliant!", "The concert was of an exceptionally high standard.", "The concert was dead good.", "The concert was awesome."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Of an exceptionally high standard is formal; dead good and awesome are slang."
+  },
+  {
+    "id": "gi-formality-023",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Complete the sentence with a question tag.\nMaya hasn't finished her lunch yet, ___?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["has she"],
+    "explain": "A negative statement (hasn't) takes a positive question tag: has she."
+  },
+  {
+    "id": "gi-formality-024",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which is the most formal way to complete the sentence?\nPupils ___ to bring a water bottle on the trip.",
+    "input": {
+      "kind": "choice",
+      "options": ["are required", "have got", "gotta remember", "should try and remember"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Are required is formal; have got, gotta and try and are informal."
+  },
+  {
+    "id": "gi-formality-025",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which sentence uses the most formal vocabulary?",
+    "input": {
+      "kind": "choice",
+      "options": ["We will purchase the tickets in advance.", "We'll grab the tickets early.", "We're gonna get the tickets early.", "We'll sort the tickets out early."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Purchase is a formal word for buy."
+  },
+  {
+    "id": "gi-conjunctions-001",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Tap the conjunction in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["I", "wanted", "to", "play", "outside", ",", "but", "it", "was", "raining", "."],
+      "pick": 1
+    },
+    "answer": [6],
+    "explain": "But is a conjunction; it joins the two parts of the sentence."
+  },
+  {
+    "id": "gi-conjunctions-002",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Tap the conjunction in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Noah", "had", "a", "bath", "because", "he", "was", "muddy", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Because is a conjunction; it joins the clauses and gives a reason."
+  },
+  {
+    "id": "gi-conjunctions-003",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Which conjunction best completes the sentence?\nWe can have pasta for tea ___ we can have rice.",
+    "input": {
+      "kind": "choice",
+      "options": ["or", "because", "until", "although"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Or shows a choice between two things."
+  },
+  {
+    "id": "gi-conjunctions-004",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Which word is a conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["quickly", "and", "table", "under"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "And is a conjunction: it joins words, phrases or clauses."
+  },
+  {
+    "id": "gi-conjunctions-005",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Which conjunction best completes the sentence?\nThe plants died ___ nobody watered them.",
+    "input": {
+      "kind": "choice",
+      "options": ["because", "but", "or", "unless"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Because gives the reason why the plants died."
+  },
+  {
+    "id": "gi-conjunctions-006",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Which conjunction best completes the sentence?\nI will lend you my bike ___ you promise to be careful.",
+    "input": {
+      "kind": "choice",
+      "options": ["if", "but", "or", "so"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "If shows a condition: you can borrow the bike only if you promise."
+  },
+  {
+    "id": "gi-conjunctions-007",
+    "type": "g-conjunctions",
+    "level": 1,
+    "prompt": "Is each word a coordinating conjunction? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["and", "but", "because", "or", "when"]
+    },
+    "answer": [true, true, false, true, false],
+    "explain": "And, but and or are coordinating conjunctions; because and when are subordinating conjunctions."
+  },
+  {
+    "id": "gi-conjunctions-008",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Which sentence uses a **subordinating** conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["I like apples and pears.", "I ate an apple because I was hungry.", "I ate an apple, but I was still hungry.", "Do you want an apple or a pear?"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Because starts a subordinate clause, so it is a subordinating conjunction."
+  },
+  {
+    "id": "gi-conjunctions-009",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Which word is a **coordinating** conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["although", "if", "or", "since"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Or joins two parts of equal importance, so it is a coordinating conjunction."
+  },
+  {
+    "id": "gi-conjunctions-010",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Which conjunction best completes the sentence?\nAva loves swimming, ___ her brother prefers football.",
+    "input": {
+      "kind": "choice",
+      "options": ["whereas", "because", "so", "if"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Whereas shows a contrast between Ava and her brother."
+  },
+  {
+    "id": "gi-conjunctions-011",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Write a coordinating conjunction to complete the sentence.\nWould you like to walk ___ would you rather take the bus?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["or"],
+    "explain": "Or links two choices of equal importance."
+  },
+  {
+    "id": "gi-conjunctions-012",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Write a subordinating conjunction to complete the sentence.\nYou cannot go out to play ___ you have finished your lunch.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["until", "unless", "before", "till"],
+    "explain": "Until (or unless or before) starts a subordinate clause that makes sense here."
+  },
+  {
+    "id": "gi-conjunctions-013",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Tap the **subordinating** conjunction.",
+    "input": {
+      "kind": "words",
+      "tokens": ["When", "the", "bell", "rang", ",", "the", "children", "lined", "up", "quickly", "."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "When starts the subordinate clause when the bell rang."
+  },
+  {
+    "id": "gi-conjunctions-014",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Tap the **two** conjunctions.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "will", "go", "to", "the", "park", "and", "have", "a", "picnic", "if", "it", "is", "sunny", "."],
+      "pick": 2
+    },
+    "answer": [6, 10],
+    "explain": "And joins two actions, and if starts a subordinate clause."
+  },
+  {
+    "id": "gi-conjunctions-015",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Tick the **two** subordinating conjunctions.",
+    "input": {
+      "kind": "choice",
+      "options": ["but", "while", "or", "if"],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "While and if start subordinate clauses; but and or are coordinating conjunctions."
+  },
+  {
+    "id": "gi-conjunctions-016",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Which conjunction best completes the sentence?\n___ it was snowing, the children still walked to school.",
+    "input": {
+      "kind": "choice",
+      "options": ["Although", "Because", "Unless", "Since"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Although shows a contrast: the snow did not stop the children."
+  },
+  {
+    "id": "gi-conjunctions-017",
+    "type": "g-conjunctions",
+    "level": 2,
+    "prompt": "Which word in this sentence is a subordinating conjunction?\nIf you finish early, you can read quietly or draw.",
+    "input": {
+      "kind": "choice",
+      "options": ["If", "can", "or", "quietly"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "If starts the subordinate clause if you finish early; or is a coordinating conjunction."
+  },
+  {
+    "id": "gi-conjunctions-018",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "Write a conjunction that gives a **reason** to complete the sentence.\nThe match was cancelled ___ the pitch was flooded.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["because", "as", "since", "for"],
+    "explain": "Because, as and since can all introduce a reason."
+  },
+  {
+    "id": "gi-conjunctions-019",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "In which sentence is **before** used as a conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["Ella finished her book before bedtime.", "Ella finished her book before she went to bed.", "Ella had never read that book before.", "Ella stood before the whole class."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Before is a conjunction when it starts a clause with its own verb: before she went to bed."
+  },
+  {
+    "id": "gi-conjunctions-020",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "In which sentence is **since** used as a conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["We have lived here since 2019.", "Since it was late, we took a taxi.", "I have not seen Omar since Monday.", "It has been raining since breakfast."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Since is a conjunction when it starts a clause: since it was late."
+  },
+  {
+    "id": "gi-conjunctions-021",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "Which conjunction best completes the sentence?\nOmar practised every day ___ he could win the competition.",
+    "input": {
+      "kind": "choice",
+      "options": ["so that", "unless", "or", "although"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "So that shows the purpose of Omar's practice."
+  },
+  {
+    "id": "gi-conjunctions-022",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "Tap the **coordinating** conjunction.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Although", "the", "path", "was", "muddy", ",", "we", "walked", "to", "the", "lake", "and", "back", "."],
+      "pick": 1
+    },
+    "answer": [11],
+    "explain": "And is a coordinating conjunction; although is a subordinating conjunction."
+  },
+  {
+    "id": "gi-conjunctions-023",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "In which sentence does **and** join two main clauses?",
+    "input": {
+      "kind": "choice",
+      "options": ["Leo and Finn are twins.", "Leo plays the piano and Finn plays the drums.", "Leo bought bread and milk.", "Leo is tall and strong."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Leo plays the piano and Finn plays the drums are both main clauses: each could be a sentence on its own."
+  },
+  {
+    "id": "gi-conjunctions-024",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "Read the sentence.\nWhile Mum cooked dinner, Isla laid the table and Leo filled the jug.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"While\" is a subordinating conjunction.", "The word \"and\" is a coordinating conjunction.", "The sentence contains only one conjunction."]
+    },
+    "answer": [true, true, false],
+    "explain": "While starts a subordinate clause, and the word and joins two main clauses, so there are two conjunctions."
+  },
+  {
+    "id": "gi-conjunctions-025",
+    "type": "g-conjunctions",
+    "level": 3,
+    "prompt": "Which conjunction best completes the sentence?\nYou will get wet ___ you take an umbrella.",
+    "input": {
+      "kind": "choice",
+      "options": ["unless", "because", "and", "so"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Unless means if not: you will get wet if you do not take an umbrella."
+  },
+  {
+    "id": "gi-relative-pronouns-001",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Which relative pronoun completes the sentence?\nThis is the girl ___ won the race.",
+    "input": {
+      "kind": "choice",
+      "options": ["who", "which", "where", "when"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Who is the relative pronoun we use for people."
+  },
+  {
+    "id": "gi-relative-pronouns-002",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Which relative pronoun completes the sentence?\nThe cake ___ Dad made was delicious.",
+    "input": {
+      "kind": "choice",
+      "options": ["which", "who", "whose", "where"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Which is the relative pronoun we use for things, like the cake."
+  },
+  {
+    "id": "gi-relative-pronouns-003",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Tap the relative pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["My", "aunt", ",", "who", "lives", "in", "Wales", ",", "is", "a", "vet", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Who starts the relative clause, which tells us more about my aunt."
+  },
+  {
+    "id": "gi-relative-pronouns-004",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Which relative pronoun completes the sentence?\nThis is the park ___ we play football.",
+    "input": {
+      "kind": "choice",
+      "options": ["where", "who", "whose", "which"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Where is the relative pronoun we use for places."
+  },
+  {
+    "id": "gi-relative-pronouns-005",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Which word is the relative pronoun in this sentence?\nThe book which I borrowed was very funny.",
+    "input": {
+      "kind": "choice",
+      "options": ["The", "which", "I", "funny"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Which starts the relative clause which I borrowed."
+  },
+  {
+    "id": "gi-relative-pronouns-006",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Which sentence uses a relative pronoun correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["The lady which runs the shop is kind.", "The lady who runs the shop is kind.", "The lady whose runs the shop is kind.", "The lady where runs the shop is kind."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Who is the relative pronoun for people."
+  },
+  {
+    "id": "gi-relative-pronouns-007",
+    "type": "g-relative-pronouns",
+    "level": 1,
+    "prompt": "Tap the relative pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "climbed", "the", "hill", "which", "overlooks", "the", "town", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Which starts a relative clause giving more information about the hill."
+  },
+  {
+    "id": "gi-relative-pronouns-008",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Which relative pronoun completes the sentence?\nSaturday is the day ___ we visit Grandma.",
+    "input": {
+      "kind": "choice",
+      "options": ["when", "who", "whose", "what"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "When is the relative pronoun we use for times, such as a day."
+  },
+  {
+    "id": "gi-relative-pronouns-009",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Complete the sentence with a relative pronoun.\nThe boy ___ bag was lost went to the office.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["whose"],
+    "explain": "Whose shows that the bag belongs to the boy."
+  },
+  {
+    "id": "gi-relative-pronouns-010",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Complete the sentence with a relative pronoun.\nThe teacher ___ taught me to swim is retiring.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["who", "that"],
+    "explain": "Who (or that) starts a relative clause about a person."
+  },
+  {
+    "id": "gi-relative-pronouns-011",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Complete the sentence with a relative pronoun.\nThe bus ___ goes to town is late again.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["which", "that"],
+    "explain": "Which (or that) starts a relative clause about a thing."
+  },
+  {
+    "id": "gi-relative-pronouns-012",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Tap the relative pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Ravi", "found", "the", "key", "that", "he", "had", "lost", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "That starts the relative clause that he had lost, which tells us about the key."
+  },
+  {
+    "id": "gi-relative-pronouns-013",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Which sentence contains a relative clause?",
+    "input": {
+      "kind": "choice",
+      "options": ["My cousin, who is a nurse, works at night.", "My cousin works at night.", "My cousin is a nurse and works at night.", "Because my cousin is a nurse, she works at night."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Who is a nurse is a relative clause: it starts with who and tells us more about my cousin."
+  },
+  {
+    "id": "gi-relative-pronouns-014",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Read the sentence.\nThe village where my gran grew up has a tiny school, which is closing.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"where\" is a relative pronoun.", "The word \"which\" is a relative pronoun.", "The word \"tiny\" is a relative pronoun."]
+    },
+    "answer": [true, true, false],
+    "explain": "Where and which both start relative clauses; tiny is an adjective."
+  },
+  {
+    "id": "gi-relative-pronouns-015",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Which relative pronoun completes the sentence?\nThe artist ___ paintings we saw lives in our village.",
+    "input": {
+      "kind": "choice",
+      "options": ["whose", "who", "which", "that"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Whose shows that the paintings belong to the artist."
+  },
+  {
+    "id": "gi-relative-pronouns-016",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Tap the relative pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "children", "whose", "drawings", "were", "chosen", "will", "visit", "the", "gallery", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Whose starts the relative clause and shows the drawings belong to the children."
+  },
+  {
+    "id": "gi-relative-pronouns-017",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Complete the sentence with a relative pronoun.\nThis is the shop ___ Mum bought my trainers.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["where", "in which", "at which", "from which"],
+    "explain": "Where is the relative pronoun we use for places, like the shop."
+  },
+  {
+    "id": "gi-relative-pronouns-018",
+    "type": "g-relative-pronouns",
+    "level": 2,
+    "prompt": "Which relative pronoun could replace **that** without changing the meaning?\nThe film that we watched was scary.",
+    "input": {
+      "kind": "choice",
+      "options": ["which", "who", "whose", "where"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The film is a thing, so which can replace that."
+  },
+  {
+    "id": "gi-relative-pronouns-019",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "In which sentence is **that** a relative pronoun?",
+    "input": {
+      "kind": "choice",
+      "options": ["That is my coat.", "I think that it will rain.", "The coat that I bought is blue.", "That coat is blue."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "That is a relative pronoun when it starts a clause about a noun: the coat that I bought."
+  },
+  {
+    "id": "gi-relative-pronouns-020",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "In which sentence is **who** a relative pronoun?",
+    "input": {
+      "kind": "choice",
+      "options": ["Who ate the last biscuit?", "The boy who ate the last biscuit felt sick.", "Who is at the door?", "Who wants a biscuit?"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Who is a relative pronoun when it tells us more about a noun (the boy); in the questions it is not."
+  },
+  {
+    "id": "gi-relative-pronouns-021",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "In which sentence is **when** a relative pronoun?",
+    "input": {
+      "kind": "choice",
+      "options": ["I remember the day when we moved house.", "We cheered when the team scored.", "When will we arrive?", "Call me when you get home."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Here when follows the noun day and starts a relative clause about it."
+  },
+  {
+    "id": "gi-relative-pronouns-022",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "Complete the sentence with a relative pronoun.\nThe museum, ___ opened last year, has a dinosaur skeleton.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["which"],
+    "explain": "Which is used for things, and that is not used after a comma like this."
+  },
+  {
+    "id": "gi-relative-pronouns-023",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "Which is the relative clause in this sentence?\nThe cat that sleeps on our wall belongs to Zara.",
+    "input": {
+      "kind": "choice",
+      "options": ["The cat", "that sleeps on our wall", "belongs to Zara", "on our wall"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The relative clause starts with the relative pronoun that and tells us which cat."
+  },
+  {
+    "id": "gi-relative-pronouns-024",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "Tap the relative pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["When", "we", "reached", "the", "house", "where", "Grandad", "was", "born", ",", "we", "took", "a", "photo", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Where starts a relative clause about the house; when is a subordinating conjunction here."
+  },
+  {
+    "id": "gi-relative-pronouns-025",
+    "type": "g-relative-pronouns",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that contain a relative pronoun.",
+    "input": {
+      "kind": "choice",
+      "options": ["The girl who sings in the choir is my sister.", "Who sings in the choir?", "The song, which was very old, made us cry.", "Which song do you like best?"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Who and which are relative pronouns only when they start a relative clause about a noun."
+  },
+  {
+    "id": "gi-determiners-001",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Which word completes the sentence?\nI saw ___ elephant at the zoo.",
+    "input": {
+      "kind": "choice",
+      "options": ["a", "an"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "We use an before a vowel sound: an elephant."
+  },
+  {
+    "id": "gi-determiners-002",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Tap the **two** determiners.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "owl", "flew", "over", "the", "barn", "."],
+      "pick": 2
+    },
+    "answer": [0, 4],
+    "explain": "The is a determiner; it comes before a noun."
+  },
+  {
+    "id": "gi-determiners-003",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Which word is a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["those", "jump", "quietly", "green"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Those is a determiner when it comes before a noun, as in those shoes."
+  },
+  {
+    "id": "gi-determiners-004",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Write **a** or **an** to complete the sentence.\nChloe drew ___ eagle.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["an"],
+    "explain": "Eagle starts with a vowel sound, so we use an."
+  },
+  {
+    "id": "gi-determiners-005",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Which sentence uses **a** or **an** correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["I found a old coin.", "I found an old coin.", "I found an coin.", "I found an gold coin."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Old starts with a vowel sound, so we use an."
+  },
+  {
+    "id": "gi-determiners-006",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Tap the determiner.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Lily", "fed", "those", "ducks", "yesterday", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Those is a determiner: it comes before the noun ducks."
+  },
+  {
+    "id": "gi-determiners-007",
+    "type": "g-determiners",
+    "level": 1,
+    "prompt": "Which determiner completes the sentence?\n___ books on the top shelf are mine.",
+    "input": {
+      "kind": "choice",
+      "options": ["Those", "That", "This", "A"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Books is plural, so we use those, not that, this or a."
+  },
+  {
+    "id": "gi-determiners-008",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Write **a** or **an** to complete the sentence.\nWe waited for ___ hour.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["an"],
+    "explain": "The h in hour is silent, so the word starts with a vowel sound and we use an."
+  },
+  {
+    "id": "gi-determiners-009",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Tap the **two** determiners.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Some", "children", "brought", "their", "lunch", "."],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Some and their are determiners; they come before the nouns children and lunch."
+  },
+  {
+    "id": "gi-determiners-010",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Which determiner completes the sentence?\nThere isn't ___ milk left in the fridge.",
+    "input": {
+      "kind": "choice",
+      "options": ["many", "any", "a", "few"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "We use any with milk in a negative sentence; many and few are for things we can count."
+  },
+  {
+    "id": "gi-determiners-011",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Which **two** words are determiners in this sentence?\nOur new neighbours have three dogs.",
+    "input": {
+      "kind": "choice",
+      "options": ["Our", "new", "three", "dogs"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Our and three come before nouns and tell us whose and how many."
+  },
+  {
+    "id": "gi-determiners-012",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Read the sentence.\nEvery pupil in this class has a pencil.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"Every\" is a determiner.", "The word \"this\" is a determiner.", "The word \"pupil\" is a determiner.", "The word \"a\" is a determiner."]
+    },
+    "answer": [true, true, false, true],
+    "explain": "Every, this and a are determiners; pupil is a noun."
+  },
+  {
+    "id": "gi-determiners-013",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Write **a** or **an** to complete the sentence.\nIt was ___ honest mistake.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["an"],
+    "explain": "The h in honest is silent, so we use an."
+  },
+  {
+    "id": "gi-determiners-014",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Which sentence uses a number as a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["Four ducks swam across the pond.", "The ducks swam across the pond.", "A duck swam across the pond.", "Some ducks swam across the pond."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Four comes before the noun ducks and tells us how many."
+  },
+  {
+    "id": "gi-determiners-015",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Tap the **three** determiners.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Each", "player", "must", "bring", "a", "drink", "and", "a", "snack", "."],
+      "pick": 3
+    },
+    "answer": [0, 4, 7],
+    "explain": "Each and a (twice) are determiners: they come before the nouns player, drink and snack."
+  },
+  {
+    "id": "gi-determiners-016",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Which determiner completes the sentence?\nHow ___ sweets are in the jar?",
+    "input": {
+      "kind": "choice",
+      "options": ["many", "much", "little", "a"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Sweets can be counted, so we use many."
+  },
+  {
+    "id": "gi-determiners-017",
+    "type": "g-determiners",
+    "level": 2,
+    "prompt": "Which of these words from the sentence is a determiner?\nThe tortoise hid its head inside its shell.",
+    "input": {
+      "kind": "choice",
+      "options": ["hid", "its", "inside", "shell"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Its comes before the noun head and tells us whose head it is."
+  },
+  {
+    "id": "gi-determiners-018",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "In which sentence is **that** a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["That dog is barking again.", "That is my favourite song.", "I know that you are tired.", "The bag that I lost was red."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "That is a determiner when it comes before a noun: that dog."
+  },
+  {
+    "id": "gi-determiners-019",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "In which sentence is **his** a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["Noah lost his coat.", "That coat is his.", "Is this coat his?", "The coat was his."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "His is a determiner when it comes before a noun: his coat."
+  },
+  {
+    "id": "gi-determiners-020",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Write **a** or **an** to complete the sentence.\nMy big sister goes to ___ university in Scotland.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["a"],
+    "explain": "University starts with a y sound, as in you, so we use a."
+  },
+  {
+    "id": "gi-determiners-021",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Tap the **three** determiners.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Several", "birds", "were", "eating", "the", "seeds", "on", "our", "bird", "table", "."],
+      "pick": 3
+    },
+    "answer": [0, 4, 7],
+    "explain": "Several, the and our are determiners; bird is a noun telling us what kind of table."
+  },
+  {
+    "id": "gi-determiners-022",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Which word completes the sentence?\nWe have very ___ time left, so we must hurry.",
+    "input": {
+      "kind": "choice",
+      "options": ["few", "many", "little", "several"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Time cannot be counted here, so we use little, not few or many."
+  },
+  {
+    "id": "gi-determiners-023",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Tap the determiner.",
+    "input": {
+      "kind": "words",
+      "tokens": ["This", "is", "the", "best", "day", "ever", "!"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The comes before best day; this is a pronoun here because no noun follows it."
+  },
+  {
+    "id": "gi-determiners-024",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Which sentence uses **a** and **an** correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["We saw an owl and a unicorn in the film.", "We saw a owl and an unicorn in the film.", "We saw an owl and an unicorn in the film.", "We saw a owl and a unicorn in the film."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Owl starts with a vowel sound (an owl), but unicorn starts with a y sound (a unicorn)."
+  },
+  {
+    "id": "gi-determiners-025",
+    "type": "g-determiners",
+    "level": 3,
+    "prompt": "Write **a** or **an** to complete the sentence.\nThe lorry drove down ___ one-way street.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["a"],
+    "explain": "One starts with a w sound, so we use a."
+  },
+  {
+    "id": "gi-pronouns-001",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Tap the pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Lily", "gave", "the", "parcel", "to", "him", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Him is a pronoun: it stands in place of a noun."
+  },
+  {
+    "id": "gi-pronouns-002",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Which pronoun could replace the underlined words?\n__Jack and Ella__ walked to the shop.",
+    "input": {
+      "kind": "choice",
+      "options": ["They", "We", "He", "Them"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "They replaces two people when they are the subject of the sentence."
+  },
+  {
+    "id": "gi-pronouns-003",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Which pronoun completes the sentence?\nOmar lost his hat, so ___ looked everywhere for it.",
+    "input": {
+      "kind": "choice",
+      "options": ["he", "him", "his", "it"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "He stands for Omar as the subject of looked."
+  },
+  {
+    "id": "gi-pronouns-004",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Write the pronoun that could replace the underlined word.\nMum hugged __Chloe__ at the school gate.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["her"],
+    "explain": "Her replaces Chloe after the verb hugged."
+  },
+  {
+    "id": "gi-pronouns-005",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Which word is a pronoun?",
+    "input": {
+      "kind": "choice",
+      "options": ["they", "table", "slowly", "under"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "They is a pronoun: it can stand in place of a noun."
+  },
+  {
+    "id": "gi-pronouns-006",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Write the pronoun that could replace the underlined words.\nThe coach gave __the players__ a drink.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["them"],
+    "explain": "Them replaces the players after the verb gave."
+  },
+  {
+    "id": "gi-pronouns-007",
+    "type": "g-pronouns",
+    "level": 1,
+    "prompt": "Tap the **two** pronouns.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "asked", "her", "to", "join", "the", "team", "."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "We and her are pronouns: they stand in place of nouns."
+  },
+  {
+    "id": "gi-pronouns-008",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Which possessive pronoun completes the sentence?\nThat bike is not yours; it is ___.",
+    "input": {
+      "kind": "choice",
+      "options": ["mine", "my", "me", "I"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Mine is a possessive pronoun: it shows who owns the bike and stands on its own."
+  },
+  {
+    "id": "gi-pronouns-009",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Complete the sentence with a possessive pronoun.\nThis pencil belongs to Priya, so it is ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["hers"],
+    "explain": "Hers is the possessive pronoun for something that belongs to her."
+  },
+  {
+    "id": "gi-pronouns-010",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Which pronoun could replace the underlined words to avoid repeating them?\nThe puppy chased its tail until __the puppy__ fell over.",
+    "input": {
+      "kind": "choice",
+      "options": ["it", "they", "its", "them"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It replaces the puppy as the subject of fell."
+  },
+  {
+    "id": "gi-pronouns-011",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Which is the best way to avoid repeating **the books** in this sentence?\nI picked up the books and put the books on the shelf.",
+    "input": {
+      "kind": "choice",
+      "options": ["I picked up the books and put them on the shelf.", "I picked up the books and put it on the shelf.", "I picked up the books and put they on the shelf.", "I picked up the books and put their on the shelf."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Them replaces the books, which are plural, after the verb put."
+  },
+  {
+    "id": "gi-pronouns-012",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Tap the **two** possessive pronouns.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Is", "this", "scarf", "yours", "or", "mine", "?"],
+      "pick": 2
+    },
+    "answer": [3, 5],
+    "explain": "Yours and mine show who owns something and stand on their own."
+  },
+  {
+    "id": "gi-pronouns-013",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Which pronoun completes the sentence?\nAmir and ___ built a den in the woods.",
+    "input": {
+      "kind": "choice",
+      "options": ["I", "me", "myself", "mine"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Amir and I are the subject of the sentence, so we use I."
+  },
+  {
+    "id": "gi-pronouns-014",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Read the sentence.\nThey told us that the idea was theirs.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"They\" is a pronoun.", "The word \"us\" is a pronoun.", "The word \"theirs\" is a possessive pronoun.", "The word \"idea\" is a pronoun."]
+    },
+    "answer": [true, true, true, false],
+    "explain": "They, us and theirs are pronouns; idea is a noun."
+  },
+  {
+    "id": "gi-pronouns-015",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "What does the underlined pronoun refer to?\nWhen the kite got stuck in the tree, Dad climbed up to rescue __it__.",
+    "input": {
+      "kind": "choice",
+      "options": ["the kite", "the tree", "Dad", "the ladder"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Dad climbed up to rescue the kite, so it refers to the kite."
+  },
+  {
+    "id": "gi-pronouns-016",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Tap the pronoun that refers to **the kittens**.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "kittens", "were", "hungry", ",", "so", "Isla", "fed", "them", "."],
+      "pick": 1
+    },
+    "answer": [8],
+    "explain": "Them stands in place of the kittens."
+  },
+  {
+    "id": "gi-pronouns-017",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Tap the pronoun.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "baby", "smiled", "at", "herself", "in", "the", "mirror", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Herself is a pronoun that refers back to the baby."
+  },
+  {
+    "id": "gi-pronouns-018",
+    "type": "g-pronouns",
+    "level": 2,
+    "prompt": "Which pronoun completes the sentence?\nThe prize is for Ravi and Kai, so it belongs to ___.",
+    "input": {
+      "kind": "choice",
+      "options": ["them", "they", "their", "theirs"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After belongs to, we use the object pronoun them."
+  },
+  {
+    "id": "gi-pronouns-019",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Why is this sentence unclear?\nSam told Leo that he had won the prize.",
+    "input": {
+      "kind": "choice",
+      "options": ["We cannot tell whether he means Sam or Leo.", "It has no verb.", "It uses the wrong determiner.", "It should be written in the passive."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "He could refer to either boy, so using a name would make the meaning clear."
+  },
+  {
+    "id": "gi-pronouns-020",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Which pronoun could replace the underlined words?\nThe coach thanked __Finn and me__.",
+    "input": {
+      "kind": "choice",
+      "options": ["us", "we", "them", "our"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Finn and me are the object of thanked, so we use us."
+  },
+  {
+    "id": "gi-pronouns-021",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Write the pronoun that could replace the underlined words.\n__Isla and I__ are best friends.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["We", "we"],
+    "explain": "We replaces Isla and I as the subject of the sentence."
+  },
+  {
+    "id": "gi-pronouns-022",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Which sentence uses pronouns correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["Her and me went to the cinema.", "She and I went to the cinema.", "She and me went to the cinema.", "Her and I went to the cinema."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The subject needs the subject pronouns she and I."
+  },
+  {
+    "id": "gi-pronouns-023",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "In which sentence is **this** a pronoun?",
+    "input": {
+      "kind": "choice",
+      "options": ["This is my house.", "This house is mine.", "I like this song.", "This song is new."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "This is a pronoun when it stands on its own instead of a noun."
+  },
+  {
+    "id": "gi-pronouns-024",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Which pronoun completes the sentence?\nThe teacher gave the prize to Ava and ___.",
+    "input": {
+      "kind": "choice",
+      "options": ["me", "I", "myself", "mine"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After to, we need the object pronoun: to Ava and me."
+  },
+  {
+    "id": "gi-pronouns-025",
+    "type": "g-pronouns",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that contain a possessive pronoun.",
+    "input": {
+      "kind": "choice",
+      "options": ["The blue bike is his.", "The blue bike is fast.", "Is that umbrella yours?", "Is that umbrella wet?"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "His and yours are possessive pronouns: they show who owns something."
+  },
+  {
+    "id": "gi-prepositions-001",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Tap the preposition.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "cat", "is", "hiding", "under", "the", "bed", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Under is a preposition: it shows where the cat is."
+  },
+  {
+    "id": "gi-prepositions-002",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Which word is a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["behind", "run", "happy", "loudly"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Behind is a preposition; it shows where something is."
+  },
+  {
+    "id": "gi-prepositions-003",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Which preposition completes the sentence?\nWe go swimming ___ Saturdays.",
+    "input": {
+      "kind": "choice",
+      "options": ["on", "in", "at", "to"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "We use on with days of the week."
+  },
+  {
+    "id": "gi-prepositions-004",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Which preposition completes the sentence?\nThe film starts ___ six o'clock.",
+    "input": {
+      "kind": "choice",
+      "options": ["at", "on", "in", "of"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "We use at with clock times."
+  },
+  {
+    "id": "gi-prepositions-005",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Which preposition completes the sentence?\nMy birthday is ___ May.",
+    "input": {
+      "kind": "choice",
+      "options": ["in", "on", "at", "of"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "We use in with months."
+  },
+  {
+    "id": "gi-prepositions-006",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Complete the sentence with **in**, **on** or **at**.\nThe leaves change colour ___ autumn.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["in"],
+    "explain": "We use in with seasons."
+  },
+  {
+    "id": "gi-prepositions-007",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Is each word a preposition? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["between", "beside", "sleepy", "through", "jumped"]
+    },
+    "answer": [true, true, false, true, false],
+    "explain": "Between, beside and through are prepositions; sleepy is an adjective and jumped is a verb."
+  },
+  {
+    "id": "gi-prepositions-008",
+    "type": "g-prepositions",
+    "level": 1,
+    "prompt": "Which sentence contains a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["Grace laughed loudly.", "Grace sat on the wall.", "Grace is clever.", "Grace sang and danced."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "On is a preposition: it links sat to the wall and shows where."
+  },
+  {
+    "id": "gi-prepositions-009",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Tap the preposition of time.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "played", "cards", "during", "the", "storm", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "During is a preposition that tells us when."
+  },
+  {
+    "id": "gi-prepositions-010",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Tap the **two** prepositions.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "ball", "rolled", "across", "the", "road", "and", "into", "the", "drain", "."],
+      "pick": 2
+    },
+    "answer": [3, 7],
+    "explain": "Across and into are prepositions that show direction."
+  },
+  {
+    "id": "gi-prepositions-011",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Which word in this sentence is a preposition?\nThe tired dog slept beside the fire.",
+    "input": {
+      "kind": "choice",
+      "options": ["tired", "slept", "beside", "fire"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Beside is a preposition that shows where the dog slept."
+  },
+  {
+    "id": "gi-prepositions-012",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Write a preposition that means the opposite of the underlined word.\nThe plane flew __above__ the clouds.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["below", "beneath", "under", "underneath"],
+    "explain": "Below (or beneath, under or underneath) means the opposite of above."
+  },
+  {
+    "id": "gi-prepositions-013",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Tick the **two** prepositions of time.",
+    "input": {
+      "kind": "choice",
+      "options": ["after", "under", "during", "beside"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "After and during tell us when; under and beside tell us where."
+  },
+  {
+    "id": "gi-prepositions-014",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Which preposition best completes the sentence?\nThe children walked ___ the dark tunnel, holding their torches.",
+    "input": {
+      "kind": "choice",
+      "options": ["through", "at", "since", "of"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Through shows movement from one end of the tunnel to the other."
+  },
+  {
+    "id": "gi-prepositions-015",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Which preposition completes the sentence?\nThe library is open from Monday ___ Friday.",
+    "input": {
+      "kind": "choice",
+      "options": ["to", "at", "on", "in"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "From and to show when a period of time starts and ends."
+  },
+  {
+    "id": "gi-prepositions-016",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Complete the sentence with **in**, **on** or **at**.\nWe will meet outside the school gates ___ noon.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["at"],
+    "explain": "We use at with exact times, such as noon."
+  },
+  {
+    "id": "gi-prepositions-017",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Which of these is a preposition of place?",
+    "input": {
+      "kind": "choice",
+      "options": ["until", "during", "beneath", "since"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Beneath tells us where something is; until, during and since are about time."
+  },
+  {
+    "id": "gi-prepositions-018",
+    "type": "g-prepositions",
+    "level": 2,
+    "prompt": "Read the sentence.\nOn Monday, we walked along the canal to the old mill.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"On\" is a preposition.", "The word \"along\" is a preposition.", "The word \"walked\" is a preposition.", "The word \"old\" is a preposition."]
+    },
+    "answer": [true, true, false, false],
+    "explain": "On, along and to are prepositions; walked is a verb and old is an adjective."
+  },
+  {
+    "id": "gi-prepositions-019",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "In which sentence is **after** used as a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["We went home after the match.", "We went home after we had eaten.", "After we had eaten, we went home.", "Ravi arrived after Kai had left."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After is a preposition when a noun phrase follows it: after the match."
+  },
+  {
+    "id": "gi-prepositions-020",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "In which sentence is **outside** a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["The children waited outside the hall.", "The children played outside.", "The outside of the box was red.", "It was cold outside."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Outside is a preposition when it is followed by a noun phrase: outside the hall."
+  },
+  {
+    "id": "gi-prepositions-021",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "Tap the preposition.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Since", "breakfast", ",", "Omar", "has", "been", "reading", "his", "new", "book", "."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Since is a preposition here because a noun (breakfast) follows it, not a clause."
+  },
+  {
+    "id": "gi-prepositions-022",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "Tap the **two** prepositions.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Before", "the", "show", ",", "we", "bought", "ice", "creams", "from", "the", "kiosk", "."],
+      "pick": 2
+    },
+    "answer": [0, 8],
+    "explain": "Before and from are prepositions; each is followed by a noun phrase."
+  },
+  {
+    "id": "gi-prepositions-023",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "In which sentence is **until** a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["We stayed at the party until midnight.", "We stayed until the fireworks finished.", "Wait here until I come back.", "Until you say sorry, I will not speak to you."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Until is a preposition when a noun (midnight) follows it, rather than a clause."
+  },
+  {
+    "id": "gi-prepositions-024",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "Which preposition completes the sentence?\nThe teacher sat ___ Ella and Theo.",
+    "input": {
+      "kind": "choice",
+      "options": ["between", "among", "during", "since"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Between is used for a position with one person on each side."
+  },
+  {
+    "id": "gi-prepositions-025",
+    "type": "g-prepositions",
+    "level": 3,
+    "prompt": "Complete the sentence with **in**, **on** or **at**.\nOur school play is ___ the first of July.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["on"],
+    "explain": "We use on with dates."
+  },
+  {
+    "id": "gi-adverbials-001",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Tap the adverb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "tortoise", "walked", "slowly", "across", "the", "garden", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Slowly is an adverb: it tells us how the tortoise walked."
+  },
+  {
+    "id": "gi-adverbials-002",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Which word is an adverb?",
+    "input": {
+      "kind": "choice",
+      "options": ["happily", "happy", "happiness", "happier"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Happily is an adverb: it describes how something is done."
+  },
+  {
+    "id": "gi-adverbials-003",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Which adverb completes the sentence?\nThe baby was asleep, so we spoke ___.",
+    "input": {
+      "kind": "choice",
+      "options": ["quietly", "quiet", "noisy", "sleepy"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Quietly is an adverb that tells us how we spoke."
+  },
+  {
+    "id": "gi-adverbials-004",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Which sentence begins with a fronted adverbial?",
+    "input": {
+      "kind": "choice",
+      "options": ["Later that day, we went to the beach.", "We went to the beach later that day.", "We went to the beach.", "The beach was busy."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Later that day comes at the front of the sentence and tells us when."
+  },
+  {
+    "id": "gi-adverbials-005",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Tap the adverb of time.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "will", "soon", "arrive", "at", "the", "beach", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Soon is an adverb that tells us when."
+  },
+  {
+    "id": "gi-adverbials-006",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Complete the sentence with the adverb made from the adjective **careful**.\nZara carried the eggs ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["carefully"],
+    "explain": "Adding -ly to careful makes the adverb carefully."
+  },
+  {
+    "id": "gi-adverbials-007",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "Which adverb shows **how** the fox moved?\nThe fox moved ___ through the long grass.",
+    "input": {
+      "kind": "choice",
+      "options": ["silently", "yesterday", "there", "often"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Silently tells us how the fox moved."
+  },
+  {
+    "id": "gi-adverbials-008",
+    "type": "g-adverbials",
+    "level": 1,
+    "prompt": "What does the underlined adverbial tell us?\nThe children played __in the park__.",
+    "input": {
+      "kind": "choice",
+      "options": ["where", "when", "how", "how often"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In the park tells us where the children played."
+  },
+  {
+    "id": "gi-adverbials-009",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Which word is an adverb of **possibility**?",
+    "input": {
+      "kind": "choice",
+      "options": ["perhaps", "slowly", "yesterday", "here"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Perhaps shows how likely something is."
+  },
+  {
+    "id": "gi-adverbials-010",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Which adverb shows that something is **certain**?",
+    "input": {
+      "kind": "choice",
+      "options": ["definitely", "perhaps", "possibly", "maybe"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Definitely shows certainty; perhaps, possibly and maybe show that something might not happen."
+  },
+  {
+    "id": "gi-adverbials-011",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Tap the adverb of possibility.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Priya", "will", "probably", "be", "late", "for", "the", "party", "."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Probably tells us how likely it is that Priya will be late."
+  },
+  {
+    "id": "gi-adverbials-012",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "What does the underlined adverbial tell us?\nWe visit our cousins __every summer__.",
+    "input": {
+      "kind": "choice",
+      "options": ["how often", "where", "how", "why"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Every summer tells us how often we visit."
+  },
+  {
+    "id": "gi-adverbials-013",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Tap the **three** words that make the fronted adverbial.",
+    "input": {
+      "kind": "words",
+      "tokens": ["In", "the", "morning", ",", "the", "birds", "sang", "loudly", "."],
+      "pick": 3
+    },
+    "answer": [0, 1, 2],
+    "explain": "In the morning comes at the front of the sentence and tells us when."
+  },
+  {
+    "id": "gi-adverbials-014",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Complete the sentence with the adverb made from the adjective **happy**.\nThe puppy wagged its tail ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["happily"],
+    "explain": "Change the y to i and add -ly: happily."
+  },
+  {
+    "id": "gi-adverbials-015",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Tick the **two** sentences that begin with a fronted adverbial.",
+    "input": {
+      "kind": "choice",
+      "options": ["Without a sound, the fox crept away.", "The fox crept away without a sound.", "Every morning, Dad makes porridge.", "Dad makes porridge every morning."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "A fronted adverbial comes at the start of the sentence, before the main clause."
+  },
+  {
+    "id": "gi-adverbials-016",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Tap the **two** adverbs.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Sometimes", "my", "brother", "sings", "loudly", "in", "the", "bath", "."],
+      "pick": 2
+    },
+    "answer": [0, 4],
+    "explain": "Sometimes tells us how often and loudly tells us how."
+  },
+  {
+    "id": "gi-adverbials-017",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "What is the underlined part of the sentence?\n__After a long wait__, the doors opened.",
+    "input": {
+      "kind": "choice",
+      "options": ["a fronted adverbial", "a relative clause", "a noun phrase", "a main clause"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After a long wait comes before the main clause and tells us when."
+  },
+  {
+    "id": "gi-adverbials-018",
+    "type": "g-adverbials",
+    "level": 2,
+    "prompt": "Which sentence uses an adverb to show **how likely** something is?",
+    "input": {
+      "kind": "choice",
+      "options": ["We will probably go camping.", "We went camping yesterday.", "We often go camping.", "We camped near the lake."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Probably is an adverb of possibility."
+  },
+  {
+    "id": "gi-adverbials-019",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "Is each word an adverb? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["soon", "quickly", "lovely", "friendly", "often"]
+    },
+    "answer": [true, true, false, false, true],
+    "explain": "Lovely and friendly end in -ly but are adjectives, as in a lovely day."
+  },
+  {
+    "id": "gi-adverbials-020",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "Which word is an adverb?",
+    "input": {
+      "kind": "choice",
+      "options": ["silly", "lonely", "ugly", "sadly"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Sadly is an adverb; silly, lonely and ugly are adjectives even though they end in -ly."
+  },
+  {
+    "id": "gi-adverbials-021",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "Tap the adverb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Isla's", "friendly", "dog", "barked", "loudly", "at", "the", "postman", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "Loudly tells us how the dog barked; friendly is an adjective describing the dog."
+  },
+  {
+    "id": "gi-adverbials-022",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "In which sentence is **fast** an adverb?",
+    "input": {
+      "kind": "choice",
+      "options": ["Kai is a fast runner.", "Kai runs fast.", "Kai has a fast bike.", "The fast train was late."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Fast is an adverb when it tells us how someone does something: runs fast."
+  },
+  {
+    "id": "gi-adverbials-023",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "Which adverb shows that the speaker is **least** sure?\n___, the shop will be open on Sunday.",
+    "input": {
+      "kind": "choice",
+      "options": ["Certainly", "Definitely", "Probably", "Perhaps"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Perhaps shows only a possibility; probably means likely, and certainly and definitely mean sure."
+  },
+  {
+    "id": "gi-adverbials-024",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "What does the underlined fronted adverbial tell us?\n__Because of the snow__, the school was closed.",
+    "input": {
+      "kind": "choice",
+      "options": ["why", "where", "how often", "how"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Because of the snow tells us why the school was closed."
+  },
+  {
+    "id": "gi-adverbials-025",
+    "type": "g-adverbials",
+    "level": 3,
+    "prompt": "Complete the sentence with the adverb made from the adjective **gentle**.\nNoah stroked the kitten ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["gently"],
+    "explain": "For adjectives ending in -le, change the e to y: gently."
+  }
+]

@@ -1,7 +1,7 @@
 // Statistics and heat-map data, all derived from marked questions.
 import { maxMarks } from '../answer/answer';
 import { DAYS } from '../gen/blueprint';
-import { PAPER_LENGTH, typeInfo, type PaperFilter } from '../gen/catalog';
+import { matchesFilter, PAPER_LENGTH, typeInfo, type MathsPaper, type PaperFilter } from '../gen/catalog';
 import { TOPICS, type Difficulty, type PaperKind, type TopicId, type TypeInfo } from '../gen/types';
 import { perDay, type Attempt, type Mode } from '../store/model';
 
@@ -57,7 +57,7 @@ export function tally(records: Iterable<QuestionRecord>): Tally {
 
 export const accuracyOf = (t: Tally): number | null => (t.total ? t.correct / t.total : null);
 
-export const inPaper = (paper: PaperFilter) => (r: { paper: PaperKind }) => paper === 'both' || r.paper === paper;
+export const inPaper = (filter: PaperFilter) => (r: { paper: PaperKind }) => matchesFilter(filter, r.paper);
 
 export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
   const out: QuestionRecord[] = [];
@@ -172,7 +172,7 @@ export function weakest(rows: TypeRow[], minAnswered = 3): TypeRow[] {
 }
 
 /** Accuracy by position in one kind of paper: DAYS rows × questions-per-day columns. */
-export function positionGrid(records: QuestionRecord[], paper: PaperKind): Tally[][] {
+export function positionGrid(records: QuestionRecord[], paper: MathsPaper): Tally[][] {
   const size = Math.ceil(PAPER_LENGTH[paper] / DAYS);
   const grid = Array.from({ length: DAYS }, () => Array.from({ length: size }, emptyTally));
   for (const r of records) {

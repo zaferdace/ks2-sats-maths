@@ -1,4 +1,7 @@
-// localStorage persistence plus backup/restore. Everything stays on the device.
+// Persistence (IndexedDB, with a localStorage copy while it fits) plus backup/restore.
+// Everything stays on the device.
+import { PAPER_KINDS } from '../gen/types';
+import { idbGet, idbSet } from './idb';
 import { emptyStore, paperOf, SCHEMA_VERSION, type Attempt, type Profile, type StoreData } from './model';
 
 // The key name predates schema 2; it stays so existing results are found.
@@ -19,7 +22,7 @@ function isAttempt(x: unknown): x is Attempt {
     typeof x.paperCode === 'string' &&
     (x.mode === 'daily' || x.mode === 'full') &&
     typeof x.createdAt === 'number' &&
-    (x.paper === undefined || x.paper === 'arithmetic' || x.paper === 'reasoning') &&
+    (x.paper === undefined || (PAPER_KINDS as readonly unknown[]).includes(x.paper)) &&
     lists.every((k) => Array.isArray(x[k]) && (x[k] as unknown[]).length === (x.questions as unknown[]).length)
   );
 }
@@ -75,10 +78,88 @@ export function saveStore(data: StoreData, storage: Storage | undefined = global
   }
 }
 
+// ---- Durable storage -------------------------------------------------------
+
+/** Key-value access to IndexedDB (replaceable in tests). */
+export interface KeyValue {
+  get(key: string): Promise<unknown>;
+  set(key: string, value: unknown): Promise<void>;
+}
+
+const indexedDb: KeyValue = { get: idbGet, set: idbSet };
+const DB_KEY = 'store';
+const SAVED_AT_KEY = 'ks2-sats/saved-at';
+
+interface Saved {
+  savedAt: number;
+  data: unknown;
+}
+
+function localSavedAt(storage: Storage | undefined): number {
+  try {
+    return Number(storage?.getItem(SAVED_AT_KEY)) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+/**
+ * Loads the newest copy: IndexedDB, or localStorage when that is newer (or IndexedDB is empty,
+ * the first time after this update). `durable` is false when IndexedDB can't be used.
+ */
+export async function loadDurable(
+  db: KeyValue = indexedDb,
+  storage: Storage | undefined = globalThis.localStorage,
+): Promise<{ data: StoreData; durable: boolean }> {
+  const local = loadStore(storage);
+  const localAt = localSavedAt(storage);
+  try {
+    const saved = (await db.get(DB_KEY)) as Saved | undefined;
+    const fromDb = saved && typeof saved === 'object' ? parseStore(saved.data) : null;
+    if (fromDb && saved!.savedAt >= localAt) return { data: fromDb, durable: true };
+    await db.set(DB_KEY, { savedAt: localAt, data: local } satisfies Saved);
+    return { data: local, durable: true };
+  } catch {
+    return { data: local, durable: false };
+  }
+}
+
+/** Storages found full: they are not tried again (IndexedDB carries on). */
+const full = new WeakSet<Storage>();
+
+/** Saves everywhere it can. Returns false only when nothing could be saved. */
+export async function saveDurable(
+  data: StoreData,
+  now: number,
+  db: KeyValue = indexedDb,
+  storage: Storage | undefined = globalThis.localStorage,
+): Promise<boolean> {
+  // localStorage first: it is synchronous, so it lands even if the app is closing.
+  let local = false;
+  if (storage && !full.has(storage)) {
+    local = saveStore(data, storage);
+    if (local) {
+      try {
+        storage.setItem(SAVED_AT_KEY, String(now));
+      } catch {
+        local = false;
+      }
+    } else {
+      full.add(storage);
+    }
+  }
+  try {
+    await db.set(DB_KEY, { savedAt: now, data } satisfies Saved);
+    return true;
+  } catch {
+    return local;
+  }
+}
+
 /** Asks the browser not to evict our data under storage pressure. */
 export function requestPersistentStorage(): void {
   void navigator.storage?.persist?.().catch(() => undefined);
 }
 
 export const backupFileName = (now = new Date()): string =>
-  `ks2-arithmetic-backup-${now.toISOString().slice(0, 10)}.json`;
+  `ks2-sats-backup-${now.toISOString().slice(0, 10)}.json`;

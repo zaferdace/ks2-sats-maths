@@ -313,6 +313,15 @@ button.abox {
   background: var(--critical);
 }
 
+.status.part {
+  color: #7a5300;
+}
+
+.status.part .dot {
+  background: var(--warning);
+  color: var(--ink);
+}
+
 /* Stat tiles */
 .tiles {
   display: grid;
@@ -587,6 +596,24 @@ tr.clickable:active {
   height: 40px;
   font-size: 15px;
   border-radius: 10px;
+}
+
+/* Long papers: one row that scrolls sideways, so the question keeps its space. */
+.qmap-scroll {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 7px 2px 4px;
+  margin: -7px -2px 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.qmap-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.qmap-scroll .qchip {
+  flex: none;
 }
 
 .qchip.answered {
@@ -1635,5 +1662,580 @@ tr.clickable:active {
 
   .keypad-nav .btn {
     min-height: 48px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   English
+   --------------------------------------------------------------------------- */
+
+.subject-switch {
+  align-self: stretch;
+  display: flex;
+}
+
+.subject-switch button {
+  flex: 1;
+  font-size: 20px;
+  padding: 12px 16px;
+}
+
+.level-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.level-card .muted {
+  margin: 0;
+}
+
+.bank-note {
+  margin: 10px 0 0;
+}
+
+/* Long options and events (sentences) sit one per line. */
+.r-choices.long {
+  grid-template-columns: 1fr;
+}
+
+.r-choices.long .r-choice {
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.r-order.long .r-order-row {
+  grid-auto-flow: row;
+}
+
+.r-order.long .r-order-items {
+  grid-template-columns: 1fr;
+}
+
+.r-order.long .r-slot,
+.r-order.long .r-choice {
+  justify-content: flex-start;
+  text-align: left;
+  gap: 12px;
+  padding: 8px 14px;
+  font-size: 19px;
+  font-weight: 500;
+  min-height: 52px;
+}
+
+.slot-num {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--grid);
+  color: var(--ink);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Sentences to tap: words, or the gaps between them */
+.r-answer.e-block {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.e-block > .muted {
+  margin: 0;
+}
+
+.e-sentence {
+  margin: 0;
+  font-size: 26px;
+  line-height: 2.1;
+  text-align: center;
+}
+
+.e-word {
+  border: 2px solid transparent;
+  border-bottom-color: var(--axis);
+  border-radius: 8px;
+  background: transparent;
+  padding: 0 4px;
+  line-height: 1.5;
+  font-size: inherit;
+}
+
+.e-word.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+
+.e-word:disabled {
+  cursor: default;
+  border-bottom-color: transparent;
+}
+
+.e-sentence.right .e-word.on {
+  border-color: var(--good);
+  background: #eaf6ea;
+}
+
+.e-sentence.wrong .e-word.on {
+  border-color: var(--critical);
+  background: #fbeaea;
+}
+
+.e-word.expected {
+  border-bottom: 3px dashed var(--good);
+}
+
+.e-gap {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 30px;
+  height: 1.5em;
+  margin: 0 -2px;
+  vertical-align: bottom;
+  border: 0;
+  border-bottom: 3px dotted var(--axis);
+  border-radius: 6px 6px 0 0;
+  background: transparent;
+  font-size: inherit;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.e-gap.spaced {
+  width: 36px;
+}
+
+.e-gap.on {
+  background: var(--accent-soft);
+  border-bottom: 3px solid var(--accent);
+}
+
+.e-gap:disabled {
+  cursor: default;
+  border-bottom-color: transparent;
+}
+
+.e-gap:disabled.on {
+  background: transparent;
+}
+
+.e-sentence.right .e-gap.on {
+  color: var(--good-text);
+}
+
+.e-sentence.wrong .e-gap.on {
+  color: var(--critical-text);
+}
+
+.e-symbol {
+  font-size: 1.3em;
+  color: var(--accent);
+  padding: 0 4px;
+}
+
+/* True or false table */
+.e-tf {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+
+.e-tf th {
+  font-size: 16px;
+  color: var(--ink-2);
+  font-weight: 600;
+  padding: 4px 8px;
+  width: 84px;
+}
+
+.e-tf th:first-child {
+  width: auto;
+}
+
+.e-tf td {
+  border-top: 1px solid var(--grid);
+  padding: 8px;
+  text-align: left;
+}
+
+.e-tf .tf-cell {
+  text-align: center;
+}
+
+.tf-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  border: 2px solid var(--axis);
+  background: var(--card);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.tf-btn.on {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.tf-btn:disabled {
+  cursor: default;
+}
+
+.e-tf.right .tf-btn.on {
+  border-color: var(--good);
+  background: var(--good);
+}
+
+.e-tf .row-wrong .tf-btn.on {
+  border-color: var(--critical);
+  background: var(--critical);
+}
+
+/* Typed answers (letter keyboard) */
+.e-text,
+.e-dictation {
+  margin: 0;
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  line-height: 2;
+}
+
+.abox.tbox {
+  min-width: 6em;
+  height: 1.6em;
+  padding: 0 0.35em;
+  vertical-align: middle;
+  font-variant-numeric: normal;
+  letter-spacing: 0.02em;
+}
+
+.e-speak {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.e-speak.fallback {
+  flex-direction: column;
+  font-size: 18px;
+  text-align: center;
+}
+
+.e-speak.fallback p {
+  margin: 0;
+}
+
+.e-replay {
+  align-self: flex-start;
+}
+
+/* Written answers marked against a model */
+.e-self {
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 19px;
+}
+
+.e-self .row {
+  align-items: center;
+}
+
+.e-write {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid var(--axis);
+  background: var(--card);
+  font: inherit;
+  font-size: 20px;
+  line-height: 1.4;
+  resize: vertical;
+  color: var(--ink);
+}
+
+.e-write:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-wash);
+}
+
+.e-written,
+.e-model {
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.e-written {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.e-written p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.e-model {
+  background: #eef7ee;
+  border: 1px solid #cfe6cf;
+}
+
+.e-model ul {
+  margin: 4px 0 0;
+  padding-left: 22px;
+}
+
+.e-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 6px 0 4px;
+}
+
+.e-label:first-child {
+  margin-top: 0;
+}
+
+.e-selfmark {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.explain {
+  font-size: 16px;
+  color: var(--ink-2);
+  background: var(--surface);
+  border-left: 4px solid var(--accent-wash);
+  padding: 6px 10px;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Letter keyboard */
+.letters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.letters-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key.lkey {
+  flex: 1 1 0;
+  max-width: 76px;
+  min-width: 0;
+  height: 58px;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.key.lkey.punct {
+  font-weight: 800;
+}
+
+.key.lkey.wide {
+  flex: 1.6 1 0;
+  max-width: 130px;
+  font-size: 20px;
+}
+
+.key.lkey.space {
+  flex: 5 1 0;
+  max-width: 420px;
+  font-size: 18px;
+  color: var(--ink-2);
+}
+
+.letters-wrap {
+  grid-column: 1 / -1;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 0 -16px -16px;
+  padding: 10px max(16px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-bottom));
+  background: var(--page);
+  box-shadow: 0 -6px 18px rgba(11, 11, 11, 0.08);
+}
+
+.test-body.kb-letters {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.test-body.kb-letters .card-nav {
+  display: none;
+}
+
+/* Keeps the typed answer clear of the keyboard panel when it is scrolled into view. */
+.test-body.kb-letters .question-card .abox {
+  scroll-margin-top: 16px;
+  scroll-margin-bottom: 340px;
+}
+
+.test-body.kb-letters .keypad-nav {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto 10px;
+}
+
+.test-body.kb-letters .keypad-nav .btn {
+  min-height: 48px;
+}
+
+.test-body.no-keypad {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Reading: the text beside the questions (landscape) or above them (portrait) */
+.test-body.with-passage {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+}
+
+.passage {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.passage-panel {
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.test-body.with-passage.kb-letters .passage-panel {
+  max-height: calc(100dvh - 380px);
+}
+
+.passage-genre {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.passage-title {
+  font-size: 24px;
+  margin: 4px 0 12px;
+}
+
+.passage-para {
+  position: relative;
+  padding: 4px 6px 4px 34px;
+  margin: 0 -6px 10px;
+  border-radius: 10px;
+}
+
+.passage-para.current {
+  background: #fff4dc;
+  box-shadow: inset 4px 0 0 var(--warning);
+}
+
+.para-num {
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  width: 22px;
+  text-align: right;
+}
+
+.passage.poem .rich {
+  line-height: 1.6;
+  font-style: normal;
+}
+
+.passage-ref {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.test-body.with-passage .r-question {
+  font-size: 20px;
+}
+
+.review-text {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: var(--surface);
+}
+
+.review-text summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+.review-text .passage {
+  border: 0;
+  padding: 8px 0;
+  background: transparent;
+  font-size: 17px;
+}
+
+@media (max-width: 900px), (orientation: portrait) {
+  .test-body.with-passage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .passage-panel {
+    top: 0;
+    z-index: 1;
+    max-height: 40vh;
+    max-height: 40dvh;
+    box-shadow: 0 6px 18px rgba(11, 11, 11, 0.08);
+  }
+
+  .test-body.with-passage.kb-letters .passage-panel {
+    max-height: 30dvh;
+  }
+
+  .key.lkey {
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .e-sentence {
+    font-size: 24px;
   }
 }

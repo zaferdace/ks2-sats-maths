@@ -14,9 +14,9 @@ export default defineConfig({
       injectRegister: 'auto',
       pwaAssets: { config: true },
       manifest: {
-        name: 'KS2 Arithmetic',
-        short_name: 'Arithmetic',
-        description: 'SATs-style arithmetic practice papers for Year 6, generated on the device.',
+        name: 'KS2 SATs practice',
+        short_name: 'KS2 SATs',
+        description: 'KS2 SATs practice for Year 6: maths and English papers, made on the device.',
         lang: 'en-GB',
         start_url: base,
         scope: base,

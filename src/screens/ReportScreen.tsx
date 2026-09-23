@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
-import { PAPER_NAME, typesOf, type PaperFilter } from '../gen/catalog';
-import type { PaperKind } from '../gen/types';
+import { matchesFilter, PAPER_NAME, typesOf, type MathsPaper, type PaperFilter } from '../gen/catalog';
+import type { PaperKind, Subject } from '../gen/types';
 import { LEVELS, levelOf, pctText } from '../report/levels';
 import { Legend, PositionHeat, SkillMap, WeeklyHeat } from '../report/Heatmaps';
 import { ScoreHistory } from '../report/ScoreHistory';
@@ -32,28 +32,35 @@ const RANGES = [
 
 type RangeId = (typeof RANGES)[number]['id'];
 
-const PAPER_FILTERS: { id: PaperFilter; label: string }[] = [
-  { id: 'both', label: 'All papers' },
-  { id: 'arithmetic', label: 'Paper 1: Arithmetic' },
-  { id: 'reasoning', label: 'Papers 2 & 3: Reasoning' },
+const SUBJECTS: { id: 'all' | Subject; label: string }[] = [
+  { id: 'all', label: 'Everything' },
+  { id: 'maths', label: 'Maths' },
+  { id: 'english', label: 'English' },
 ];
+
+const PAPERS_OF: Record<Subject, PaperKind[]> = {
+  maths: ['arithmetic', 'reasoning'],
+  english: ['gps', 'spelling', 'reading'],
+};
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 export function ReportScreen({ data, profile, onBack }: Props) {
   const [range, setRange] = useState<RangeId>('all');
-  const [paper, setPaper] = useState<PaperFilter>('both');
+  const [subject, setSubject] = useState<'all' | Subject>('all');
+  const [paperChoice, setPaperChoice] = useState<PaperKind | null>(null);
   const [now] = useState(() => Date.now());
+  const filter: PaperFilter = paperChoice ?? subject;
 
   const view = useMemo(() => {
     const days = RANGES.find((r) => r.id === range)?.days ?? null;
     const since = days === null ? -Infinity : now - days * DAY_MS;
-    const attempts = data.attempts.filter((a) => a.profileId === profile.id && inPaper(paper)(a));
+    const attempts = data.attempts.filter((a) => a.profileId === profile.id && inPaper(filter)(a));
     const records = collectRecords(attempts).filter((r) => r.at >= since);
     const sessions = collectSessions(attempts).filter((s) => s.at >= since);
-    const typeList = typesOf(paper);
+    const typeList = typesOf(filter);
     const types = byType(records, typeList);
-    const papers: PaperKind[] = paper === 'both' ? ['arithmetic', 'reasoning'] : [paper];
+    const papers = (['arithmetic', 'reasoning'] as MathsPaper[]).filter((k) => matchesFilter(filter, k));
     return {
       records,
       sessions,
@@ -66,7 +73,7 @@ export function ReportScreen({ data, profile, onBack }: Props) {
         .map((k) => ({ paper: k, grid: positionGrid(records, k) }))
         .filter((g) => g.grid.some((row) => row.some((c) => c.total > 0))),
     };
-  }, [data.attempts, profile.id, range, paper, now]);
+  }, [data.attempts, profile.id, range, filter, now]);
 
   const { summary } = view;
 
@@ -79,19 +86,43 @@ export function ReportScreen({ data, profile, onBack }: Props) {
         </button>
       </header>
 
-      <div className="segmented" role="radiogroup" aria-label="Paper">
-        {PAPER_FILTERS.map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            role="radio"
-            aria-checked={paper === f.id}
-            className={paper === f.id ? 'on' : ''}
-            onClick={() => setPaper(f.id)}
-          >
-            {f.label}
-          </button>
-        ))}
+      <div className="row">
+        <div className="segmented" role="radiogroup" aria-label="Subject">
+          {SUBJECTS.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              role="radio"
+              aria-checked={subject === f.id}
+              className={subject === f.id ? 'on' : ''}
+              onClick={() => {
+                setSubject(f.id);
+                setPaperChoice(null);
+              }}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+        {subject !== 'all' && (
+          <div className="segmented" role="radiogroup" aria-label="Paper">
+            <button type="button" role="radio" aria-checked={paperChoice === null} className={paperChoice === null ? 'on' : ''} onClick={() => setPaperChoice(null)}>
+              All {subject}
+            </button>
+            {PAPERS_OF[subject].map((k) => (
+              <button
+                key={k}
+                type="button"
+                role="radio"
+                aria-checked={paperChoice === k}
+                className={paperChoice === k ? 'on' : ''}
+                onClick={() => setPaperChoice(k)}
+              >
+                {PAPER_NAME[k]}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="segmented" role="radiogroup" aria-label="Time range">

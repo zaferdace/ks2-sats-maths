@@ -14,7 +14,7 @@ import {
   submitSession,
   type Attempt,
 } from './model';
-import { loadStore, mergeStores, parseStore, saveStore } from './persist';
+import { loadDurable, loadStore, mergeStores, parseStore, saveDurable, saveStore, type KeyValue } from './persist';
 
 const paper = generatePaper('TESTAB');
 
@@ -122,3 +122,69 @@ describe('persistence', () => {
     expect(merged.currentProfileId).toBe('p1');
   });
 });
+
+describe('durable storage', () => {
+  const memory = (limit = Infinity): Storage => {
+    const m = new Map<string, string>();
+    return {
+      getItem: (k) => m.get(k) ?? null,
+      setItem: (k, v) => {
+        if (v.length > limit) throw new Error('QuotaExceededError');
+        m.set(k, v);
+      },
+      removeItem: (k) => void m.delete(k),
+      clear: () => m.clear(),
+      key: (i) => [...m.keys()][i] ?? null,
+      get length() {
+        return m.size;
+      },
+    };
+  };
+  const fakeDb = (): KeyValue & { map: Map<string, unknown> } => {
+    const map = new Map<string, unknown>();
+    return { map, get: async (k) => map.get(k), set: async (k, v) => void map.set(k, structuredClone(v)) };
+  };
+  const brokenDb: KeyValue = { get: () => Promise.reject(new Error('no db')), set: () => Promise.reject(new Error('no db')) };
+  const withSam = () => addProfile(emptyStore(), 'Sam', 1, 'p1');
+
+  it('moves localStorage data into IndexedDB the first time', async () => {
+    const storage = memory();
+    saveStore(withSam(), storage);
+    const db = fakeDb();
+    const { data, durable } = await loadDurable(db, storage);
+    expect(durable).toBe(true);
+    expect(data.profiles.map((p) => p.name)).toEqual(['Sam']);
+    expect(db.map.has('store')).toBe(true);
+  });
+
+  it('loads the newer copy', async () => {
+    const storage = memory();
+    const db = fakeDb();
+    await saveDurable(withSam(), 10, db, storage);
+    // An older app version wrote only to localStorage afterwards.
+    const later = addProfile(withSam(), 'Ali', 2, 'p2');
+    await saveDurable(later, 20, fakeDb(), storage);
+    expect((await loadDurable(db, storage)).data.profiles).toHaveLength(2);
+    // IndexedDB newer than localStorage.
+    const db2 = fakeDb();
+    await db2.set('store', { savedAt: 30, data: withSam() });
+    expect((await loadDurable(db2, storage)).data.profiles).toHaveLength(1);
+  });
+
+  it('keeps saving to IndexedDB when localStorage is full', async () => {
+    const storage = memory(10);
+    const db = fakeDb();
+    expect(await saveDurable(withSam(), 5, db, storage)).toBe(true);
+    expect((await loadDurable(db, storage)).data.profiles).toHaveLength(1);
+  });
+
+  it('falls back to localStorage without IndexedDB', async () => {
+    const storage = memory();
+    expect(await saveDurable(withSam(), 5, brokenDb, storage)).toBe(true);
+    const { data, durable } = await loadDurable(brokenDb, storage);
+    expect(durable).toBe(false);
+    expect(data.profiles).toHaveLength(1);
+    expect(await saveDurable(withSam(), 6, brokenDb, memory(10))).toBe(false);
+  });
+});
+

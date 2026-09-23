@@ -1,0 +1,170 @@
+{
+  "id": "rt-poetry-01",
+  "title": "The Runaway Kite",
+  "genre": "poetry",
+  "level": 1,
+  "paragraphs": [
+    "On a wild, windy Saturday, Ruby set out\nWith her kite in her hands and a skip and a shout.\nIt was scarlet and gold, with a long ribbon tail\nThat fluttered and flapped like a flag in a gale.",
+    "At the top of the hill, she let out the string,\nAnd the kite climbed as high as a bird on the wing.\nIt swooped and it swirled and it danced in the air,\nWhile Ruby held on with the wind in her hair.",
+    "Then SNAP! went the string, and away the kite flew\nPast the church and the chimneys, a speck in the blue.\n“Come back!” Ruby cried as she raced down the hill,\nBut the kite didn’t listen. It flew higher still.",
+    "She ran through the market, she ran down the lane,\nShe splashed through the puddles still full from the rain,\nTill she found it at last at the top of a tree,\nWith its tail in a tangle, as sad as could be.",
+    "Ruby slumped on a bench with a sniff and a sigh.\n“It’s stuck there,” she said, “and the branches are high.”\nThen the wind gave the branches a playful shove,\nAnd the kite drifted down like a leaf from above.",
+    "Now whenever the wind rushes down Ruby’s lane,\nShe takes out her kite and she flies it again,\nBut she holds the string tightly, as tight as can be,\nAnd she tells it, “Stay close! You belong here with me.”"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nOn which day of the week did Ruby take her kite out?",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": [
+        "Saturday",
+        "on Saturday",
+        "a Saturday",
+        "on a Saturday",
+        "a wild, windy Saturday",
+        "a wild windy Saturday",
+        "on a wild, windy Saturday",
+        "on a wild windy Saturday"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nFind and copy **one** word that tells you the kite was red.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": ["scarlet"]
+    },
+    {
+      "id": "q3",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the first stanza.\nThe kite’s tail ‘fluttered and flapped like a flag in a gale’.\nWhat does this tell you about the tail? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "It was made from an old flag.",
+        "It was hanging down, straight and still.",
+        "It had come off the kite.",
+        "It was blowing about in the strong wind."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the third stanza.\nThe kite became ‘a speck in the blue’.\nWhat is a **speck**? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": ["a loud bang", "a big grey cloud", "a tiny spot", "a long ribbon"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the third stanza.\n‘But the kite didn’t listen.’\nWhat do these words make the kite sound like? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "a person who is ignoring Ruby",
+        "a bird that has lost its way",
+        "a toy that is broken",
+        "a cloud full of rain"
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at stanzas 3 to 5.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The string snapped while the kite was flying.",
+        "The kite got stuck on the church roof.",
+        "Ruby ran through the market after her kite.",
+        "Ruby climbed the tree to get her kite back."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\nHow does Ruby feel when she sits on the bench? Tick **one**.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": ["excited", "proud", "unhappy", "brave"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q8",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at the last stanza.\nHow does Ruby feel about her kite at the end of the poem?\nExplain, using evidence from the poem.",
+      "paragraph": 6,
+      "kind": "self",
+      "model": "Ruby is happy to have her kite back, because whenever it is windy she ‘flies it again’. She is also careful not to lose it again, because she ‘holds the string tightly, as tight as can be’ and tells the kite to ‘Stay close!’",
+      "points": [
+        "Gives a feeling that fits, such as happy, relieved, or careful not to lose the kite again.",
+        "Backs it up with words from the poem, such as ‘holds the string tightly’ or ‘Stay close!’"
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at the last stanza.\nHow is it different from the other stanzas? Tick **one**.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "It is the only stanza in which Ruby speaks.",
+        "It tells us what Ruby does now, every time it is windy.",
+        "It is the first time the kite is described.",
+        "It is the stanza in which the string snaps."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2h",
+      "marks": 1,
+      "prompt": "Compare the second stanza with the fourth stanza.\nHow does the mood change? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "It changes from sad to cheerful.",
+        "It stays calm and peaceful.",
+        "It changes from frightening to funny.",
+        "It changes from joyful to worried and sad."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "Ruby makes a new kite and wins a kite competition.",
+        "Ruby’s kite breaks free and gets stuck in a tree, but the wind brings it back to her.",
+        "Ruby’s kite flies away for ever, and she is sad.",
+        "Ruby climbs a tall tree to rescue a frightened bird."
+      ],
+      "pick": 1,
+      "answer": [1]
+    }
+  ]
+}

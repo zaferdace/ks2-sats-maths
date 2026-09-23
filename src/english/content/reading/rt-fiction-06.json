@@ -1,0 +1,182 @@
+{
+  "id": "rt-fiction-06",
+  "title": "The Whistle",
+  "genre": "fiction",
+  "level": 3,
+  "paragraphs": [
+    "“Last one to the top is a slowcoach!” Owen shouted, and he was off before Nia could argue, his boots crunching on the stony path. Behind him, Dad called something about staying where they could see him, but Owen just waved a hand over his shoulder and kept going. He had been looking forward to this walk all week, and he was not going to spend it plodding along behind his big sister.",
+    "For a while, everything was perfect. The path zigzagged up between boulders and clumps of purple heather, and every time Owen glanced back, Dad and Nia were a little smaller: two bright dots, one red and one yellow, far below. Ahead of him, the cairn at the summit stood out sharply against the sky, a tall pile of stones that walkers had been adding to for hundreds of years. Owen was so busy looking up that he did not notice the cloud sliding up the valley behind him like a tide coming in.",
+    "Then, quite suddenly, the fog arrived. One moment the cairn was there; the next, it had vanished. The fog rolled up the mountainside and swallowed everything: the path, the boulders, the heather and, at last, Owen himself. The air turned cold and damp against his cheeks. His whole world shrank to a small grey circle, just a few steps wide, and even the crunch of his boots sounded muffled, as if someone had wrapped the mountain in wet cotton wool.",
+    "“Dad?” Owen called. “Nia?” The fog seemed to swallow his voice as well, and no one answered. He turned round slowly. Every direction looked the same: grey rock, grey air, grey nothing. His heart began to thump. He took a few quick steps to the left, where he thought the path should be, but loose stones skittered away under his boots, and he heard them clatter down the slope into the fog below. Owen froze. Somewhere down there, the mountainside dropped away steeply.",
+    "That was when he remembered what Dad had said in the car that morning, while Owen had been only half listening. “If you ever lose the path, don’t wander about. Stop. Stay still. Keep warm. Then use your whistle: six long blasts mean ‘Help!’ and three short blasts mean ‘We hear you. We’re coming.’” At the time, Owen had rolled his eyes. Now, with trembling fingers, he pulled his hat down over his ears, zipped his coat up to his chin and felt along the strap of his rucksack until he found the orange whistle clipped there.",
+    "He took a deep breath and blew six long blasts that tore through the silence. Then he waited. Nothing. There was only the drip of water from the rocks and the thud of his own heart. He blew again, longer and louder this time, and waited, counting under his breath. Then, from somewhere below him and to the right, came an answer: three short blasts, faint but clear. Owen’s legs went wobbly with relief, and he sat down on a rock before they could give way.",
+    "“Keep blowing!” Dad shouted, much closer now. Owen blew and blew until two shapes loomed out of the grey. Dad reached him in three long strides and hugged him so tightly that Owen’s feet almost left the ground. “You did exactly the right thing,” Dad said into his hair. His voice sounded strange and croaky. “Exactly the right thing.”",
+    "Nia hung back with her arms folded. “So you won the race, then,” she said, but her voice wobbled, and Owen noticed that she was blinking very fast. He mumbled that he was sorry, and that he should never have run off. For once, his sister did not argue. She just bumped her shoulder against his, which was Nia’s way of saying that she was glad he was safe.",
+    "As if it had been listening, the fog began to thin. Patches of blue appeared overhead, and the mountain slowly came back: the boulders, the heather and, only ten steps away, the path, winding up towards the cairn. Far below, the lake glinted like a dropped coin. The three of them walked the last stretch to the summit together. Owen could easily have raced ahead, but this time he stayed exactly where Dad could see him, right in the middle."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nWhy did Owen run ahead? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "He wanted to get to the top before his sister.",
+        "Dad had asked him to check the path.",
+        "He had seen the fog coming.",
+        "He was looking for his whistle."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q2",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy **one** word that means walking slowly and heavily.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": ["plodding"]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraphs 1 to 5.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "Owen noticed the cloud as soon as it appeared.",
+        "Dad asked Owen to stay where he could be seen.",
+        "The cairn is a pile of stones at the top of the mountain.",
+        "The whistle was in Owen’s coat pocket."
+      ],
+      "answer": [false, true, true, false]
+    },
+    {
+      "id": "q4",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\n‘The fog rolled up the mountainside and swallowed everything’.\nWhat does the word **swallowed** suggest? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "The fog was hungry and ate the stones.",
+        "The fog covered everything so completely that nothing could be seen.",
+        "The path was washed away by heavy rain.",
+        "Owen fell into a deep hole."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nFind and copy **one** word that shows the sound of Owen’s boots was quieter and less clear.",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": ["muffled"]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 4.\nWhy did Owen freeze? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "He was too cold to move.",
+        "He heard Dad calling his name.",
+        "He realised he might be close to a steep drop.",
+        "He had found the path again."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q7",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why is paragraph 5 a turning point in the story? Tick **one**.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "It is the moment the fog first arrives.",
+        "It is when Dad and Nia find Owen.",
+        "It is when Owen reaches the cairn at the top.",
+        "It is when Owen remembers Dad’s advice and starts to help himself."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nAccording to Dad, how many long blasts on a whistle mean ‘Help!’?",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": ["six", "6", "six long blasts", "6 long blasts", "six blasts", "6 blasts", "six long ones"]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "Look at paragraphs 4 to 6.\nHow do Owen’s feelings change?\nExplain, using evidence from the text.",
+      "kind": "self",
+      "model": "At first Owen is frightened: ‘His heart began to thump’, and he ‘froze’ when he heard the stones clatter down the slope. When he remembers Dad’s advice, he becomes calmer and more sensible, even though his fingers are still ‘trembling’: he pulls his hat down, zips up his coat and finds his whistle. When he hears the three short blasts, he is hugely relieved, because his ‘legs went wobbly with relief’.",
+      "points": [
+        "Frightened or panicky when he is lost, with evidence, such as ‘His heart began to thump’ or ‘Owen froze’.",
+        "Calmer or more sensible when he remembers Dad’s advice, with evidence, such as pulling his hat down and zipping up his coat.",
+        "Relieved when he hears the answer, with evidence, such as his ‘legs went wobbly with relief’."
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happen in the story.",
+      "kind": "order",
+      "items": [
+        "Owen hears three short blasts.",
+        "Owen races ahead of Dad and Nia.",
+        "The fog thins and the lake appears far below.",
+        "The fog swallows the path.",
+        "Owen finds the orange whistle."
+      ],
+      "answer": [1, 3, 4, 0, 2]
+    },
+    {
+      "id": "q11",
+      "domain": "2h",
+      "marks": 1,
+      "prompt": "Compare Owen at the start of the story with Owen at the end.\nHow has he changed? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "At the start he walks slowly behind Nia; at the end he races ahead.",
+        "At the start he is frightened of the mountain; at the end he is bored.",
+        "At the start he rushes off on his own; at the end he chooses to stay close to his family.",
+        "He does not change at all."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the story? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "A boy and his sister race to the top of a mountain, and the sister wins.",
+        "A boy races ahead, gets lost in fog, and is found after using his whistle as his dad taught him.",
+        "A family gets lost in fog and is rescued by a helicopter.",
+        "A boy finds an orange whistle on a mountain and gives it to his dad."
+      ],
+      "pick": 1,
+      "answer": [1]
+    }
+  ]
+}

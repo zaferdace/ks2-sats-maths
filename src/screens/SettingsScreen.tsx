@@ -22,7 +22,7 @@ export function SettingsScreen({ data, update, onBack }: Props) {
     const file = new File([json()], backupFileName(), { type: 'application/json' });
     try {
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'KS2 Arithmetic backup' });
+        await navigator.share({ files: [file], title: 'KS2 SATs backup' });
         setNote({ kind: 'ok', text: 'Backup shared. Save it to Files or send it to yourself.' });
         return;
       }
@@ -56,7 +56,7 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       incoming = null;
     }
     if (!incoming) {
-      setNote({ kind: 'error', text: 'That does not look like a KS2 Arithmetic backup.' });
+      setNote({ kind: 'error', text: 'That does not look like a KS2 SATs backup.' });
       return;
     }
     const restored = incoming;
@@ -130,8 +130,10 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       <section className="card">
         <h2>About</h2>
         <p className="muted">
-          Questions are generated on this device in the style of the KS2 SATs arithmetic paper. Nothing is sent
-          anywhere. Equivalent answers are accepted (3/4, 6/8 and 0.75 all score).
+          Maths questions are generated on this device in the style of the KS2 SATs papers; English questions
+          come from a bank of original questions, texts and spelling words stored in the app. Nothing is sent
+          anywhere. Equivalent maths answers are accepted (3/4, 6/8 and 0.75 all score). Spelling words are read
+          aloud by the iPad's own voice.
         </p>
       </section>
     </div>

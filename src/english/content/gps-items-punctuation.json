@@ -1,0 +1,2513 @@
+[
+  {
+    "id": "gi-capitals-001",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["my", "friend", "zara", "lives", "in", "leeds", "."], "pick": 3},
+    "answer": [0, 2, 5],
+    "explain": "A sentence starts with a capital letter, and so do the names of people and places."
+  },
+  {
+    "id": "gi-capitals-002",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["on", "friday", ",", "i", "played", "football", "with", "my", "cousin", "."], "pick": 3},
+    "answer": [0, 1, 3],
+    "explain": "The first word, days of the week and the word I always need capital letters."
+  },
+  {
+    "id": "gi-capitals-003",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["we", "visited", "cardiff", "in", "july", "."], "pick": 3},
+    "answer": [0, 2, 4],
+    "explain": "The first word, place names and months need capital letters."
+  },
+  {
+    "id": "gi-capitals-004",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **two** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["my", "birthday", "is", "on", "a", "tuesday", "this", "year", "."], "pick": 2},
+    "answer": [0, 5],
+    "explain": "The first word of a sentence and days of the week need capital letters."
+  },
+  {
+    "id": "gi-capitals-005",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["yesterday", ",", "leo", "and", "i", "went", "swimming", "."], "pick": 3},
+    "answer": [0, 2, 4],
+    "explain": "The first word, people's names and the word I need capital letters."
+  },
+  {
+    "id": "gi-capitals-006",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["can", "ella", "come", "to", "my", "house", "on", "saturday", "?"], "pick": 3},
+    "answer": [0, 1, 7],
+    "explain": "The first word, names and days of the week start with a capital letter."
+  },
+  {
+    "id": "gi-capitals-007",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tick the sentence that uses capital letters correctly.",
+    "input": {"kind": "choice", "options": ["we went to the beach on Sunday.", "We went to the beach on sunday.", "We went to the Beach on Sunday.", "We went to the beach on Sunday."], "pick": 1},
+    "answer": [3],
+    "explain": "**We** and **Sunday** need capital letters, but **beach** is not a name, so it does not."
+  },
+  {
+    "id": "gi-capitals-008",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: all the capital letters are correct.",
+    "input": {"kind": "tf", "statements": ["Omar and I play chess.", "My dog is called max.", "We live in Bristol.", "noah likes pizza."]},
+    "answer": [true, false, true, false],
+    "explain": "Names and the first word of a sentence need capital letters, so **max** and **noah** are wrong."
+  },
+  {
+    "id": "gi-capitals-009",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["kai", "and", "isla", "live", "in", "york", "."], "pick": 3},
+    "answer": [0, 2, 5],
+    "explain": "Names of people and places always start with a capital letter."
+  },
+  {
+    "id": "gi-capitals-010",
+    "type": "g-capitals",
+    "level": 1,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["in", "may", ",", "i", "will", "be", "eleven", "."], "pick": 3},
+    "answer": [0, 1, 3],
+    "explain": "The first word, months and the word I need capital letters."
+  },
+  {
+    "id": "gi-capitals-011",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **three** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["the", "train", "to", "glasgow", "leaves", "every", "thursday", "."], "pick": 3},
+    "answer": [0, 3, 6],
+    "explain": "The first word, place names and days of the week need capital letters."
+  },
+  {
+    "id": "gi-capitals-012",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **two** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["it", "was", "raining", ".", "we", "stayed", "inside", "and", "played", "cards", "."], "pick": 2},
+    "answer": [0, 4],
+    "explain": "Each new sentence starts with a capital letter."
+  },
+  {
+    "id": "gi-capitals-013",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["mr", "khan", "teaches", "us", "french", "on", "wednesdays", "."], "pick": 4},
+    "answer": [0, 1, 4, 6],
+    "explain": "A title with a name, a language and days of the week all need capital letters."
+  },
+  {
+    "id": "gi-capitals-014",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **five** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["last", "december", ",", "grace", "and", "i", "went", "to", "scotland", "."], "pick": 5},
+    "answer": [0, 1, 3, 5, 8],
+    "explain": "The first word, months, names, the word I and countries need capital letters."
+  },
+  {
+    "id": "gi-capitals-015",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["we", "celebrate", "diwali", "in", "october", "or", "november", "."], "pick": 4},
+    "answer": [0, 2, 4, 6],
+    "explain": "The first word, festivals and months need capital letters."
+  },
+  {
+    "id": "gi-capitals-016",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["does", "theo", "know", "that", "mrs", "evans", "is", "leaving", "?"], "pick": 4},
+    "answer": [0, 1, 4, 5],
+    "explain": "The first word, names and titles such as **Mrs** need capital letters."
+  },
+  {
+    "id": "gi-capitals-017",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tick the sentence that uses capital letters correctly.",
+    "input": {"kind": "choice", "options": ["My cousin lives in spain and speaks Spanish.", "My Cousin lives in Spain and speaks spanish.", "my cousin lives in Spain and speaks Spanish.", "My cousin lives in Spain and speaks Spanish."], "pick": 1},
+    "answer": [3],
+    "explain": "Countries and languages are proper nouns, so Spain and Spanish need capital letters."
+  },
+  {
+    "id": "gi-capitals-018",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tick **two** sentences that use capital letters correctly.",
+    "input": {"kind": "choice", "options": ["Our school trip is in June.", "At bedtime, i read a book.", "Finn and I walked to the park.", "We sang songs in july."], "pick": 2},
+    "answer": [0, 2],
+    "explain": "The word I and the names of months always need capital letters."
+  },
+  {
+    "id": "gi-capitals-019",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["my", "family", "went", "to", "edinburgh", "in", "august", ".", "it", "was", "sunny", "every", "day", "."], "pick": 4},
+    "answer": [0, 4, 6, 8],
+    "explain": "Each new sentence, place names and months need capital letters."
+  },
+  {
+    "id": "gi-capitals-020",
+    "type": "g-capitals",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: all the capital letters are correct.",
+    "input": {"kind": "tf", "statements": ["Priya was born in Kenya.", "We have art every Friday afternoon.", "My Teacher is called Miss Hill.", "The Park near my house has a big slide."]},
+    "answer": [true, true, false, false],
+    "explain": "**Teacher** and **park** are common nouns, so they do not need capital letters."
+  },
+  {
+    "id": "gi-capitals-021",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **two** words that should **not** start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["Every", "Saturday", ",", "Maya", "helps", "her", "Aunt", "in", "the", "Garden", "."], "pick": 2},
+    "answer": [6, 9],
+    "explain": "**Aunt** and **garden** are common nouns here, so they should not have capital letters."
+  },
+  {
+    "id": "gi-capitals-022",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["we", "sailed", "along", "the", "river", "thames", "to", "london", "."], "pick": 4},
+    "answer": [0, 4, 5, 7],
+    "explain": "**River** is part of the name **River Thames**, so it needs a capital letter too."
+  },
+  {
+    "id": "gi-capitals-023",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["on", "tuesday", ",", "doctor", "singh", "visited", "our", "school", "."], "pick": 4},
+    "answer": [0, 1, 3, 4],
+    "explain": "A title such as **Doctor** is part of a person's name, so it needs a capital letter."
+  },
+  {
+    "id": "gi-capitals-024",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **two** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["“", "can", "we", "go", "to", "the", "park", "?", "”", "asked", "ravi", "."], "pick": 2},
+    "answer": [1, 10],
+    "explain": "The spoken words start with a capital letter, but **asked** carries on the sentence, so it does not."
+  },
+  {
+    "id": "gi-capitals-025",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **two** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["“", "i", "think", ",", "”", "said", "ella", ",", "“", "that", "we", "should", "go", "home", ".", "”"], "pick": 2},
+    "answer": [1, 6],
+    "explain": "**I** is always a capital letter, but **that** carries on Ella's spoken sentence, so it stays lower case."
+  },
+  {
+    "id": "gi-capitals-026",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tick the sentence that uses capital letters correctly.",
+    "input": {"kind": "choice", "options": ["Every weekend, Isla visits Uncle Omar in wales.", "Every weekend, isla visits Uncle Omar in Wales.", "Every weekend, Isla visits uncle Omar in Wales.", "Every weekend, Isla visits Uncle Omar in Wales."], "pick": 1},
+    "answer": [3],
+    "explain": "**Uncle** is part of the name **Uncle Omar**, so it needs a capital letter, just like **Isla** and **Wales**."
+  },
+  {
+    "id": "gi-capitals-027",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **two** words that should **not** start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["On", "Monday", ",", "our", "Class", "visited", "a", "Castle", "in", "Wales", "."], "pick": 2},
+    "answer": [4, 7],
+    "explain": "**Class** and **castle** are common nouns, so they do not need capital letters."
+  },
+  {
+    "id": "gi-capitals-028",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tap the **four** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["zara's", "new", "school", "is", "called", "hill", "top", "academy", "."], "pick": 4},
+    "answer": [0, 5, 6, 7],
+    "explain": "**Zara's** is a name, and each word in the name of the school needs a capital letter."
+  },
+  {
+    "id": "gi-capitals-029",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: all the capital letters are correct.",
+    "input": {"kind": "tf", "statements": ["Ava's aunt lives near the River Severn.", "“Where are you going?” Asked Leo.", "Every Tuesday, I have a piano lesson.", "My brother wants to be a Doctor."]},
+    "answer": [true, false, true, false],
+    "explain": "**Asked** carries on the sentence and **doctor** is a job, not a name, so neither needs a capital letter."
+  },
+  {
+    "id": "gi-capitals-030",
+    "type": "g-capitals",
+    "level": 3,
+    "prompt": "Which word in this sentence should **not** start with a capital letter?\nOn Wednesday, Ravi and his Brother flew to Paris.",
+    "input": {"kind": "choice", "options": ["Brother", "Paris", "Ravi", "Wednesday"], "pick": 1},
+    "answer": [0],
+    "explain": "**Brother** is a common noun, so it should not have a capital letter."
+  },
+  {
+    "id": "gi-endpunct-001",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Which punctuation mark should complete this sentence?\nWhere did you put the scissors □",
+    "input": {"kind": "choice", "options": ["full stop", "comma", "question mark", "exclamation mark"], "pick": 1},
+    "answer": [2],
+    "explain": "It is a question, so it ends with a question mark."
+  },
+  {
+    "id": "gi-endpunct-002",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tick the sentence that should end with a question mark.",
+    "input": {"kind": "choice", "options": ["I passed you the glue", "Please pass me the glue", "Can you pass me the glue", "The glue is on the table"], "pick": 1},
+    "answer": [2],
+    "explain": "Only **Can you pass me the glue** asks a question, so it needs a question mark."
+  },
+  {
+    "id": "gi-endpunct-003",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["is it time for lunch?", "Is it time for lunch", "Is it time for lunch.", "Is it time for lunch?"], "pick": 1},
+    "answer": [3],
+    "explain": "A question starts with a capital letter and ends with a question mark."
+  },
+  {
+    "id": "gi-endpunct-004",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tap where the missing full stop should go.",
+    "input": {"kind": "gap", "tokens": ["We", "packed", "our", "bags", "Then", "we", "walked", "to", "the", "station", "."], "mark": "."},
+    "answer": [3],
+    "explain": "The first sentence ends after **bags**, so the full stop goes there."
+  },
+  {
+    "id": "gi-endpunct-005",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["Where", "is", "my", "pencil", "case", "I", "can't", "find", "it", "anywhere", "."], "mark": "?"},
+    "answer": [4],
+    "explain": "**Where is my pencil case** is a question, so it ends with a question mark."
+  },
+  {
+    "id": "gi-endpunct-006",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: it ends with the correct punctuation mark.",
+    "input": {"kind": "tf", "statements": ["What time does the film start?", "My sister likes painting?", "Do you have a pet.", "The bus was late."]},
+    "answer": [true, false, false, true],
+    "explain": "Questions end with a question mark and statements end with a full stop."
+  },
+  {
+    "id": "gi-endpunct-007",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Which punctuation mark should complete this sentence?\nHow many sweets are left in the jar □",
+    "input": {"kind": "choice", "options": ["exclamation mark", "full stop", "question mark"], "pick": 1},
+    "answer": [2],
+    "explain": "It asks a question, so it needs a question mark."
+  },
+  {
+    "id": "gi-endpunct-008",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tick the sentence that should end with a full stop.",
+    "input": {"kind": "choice", "options": ["What a mess your room is", "Have you seen my shoes", "My shoes are under the bed", "Where are my shoes"], "pick": 1},
+    "answer": [2],
+    "explain": "**My shoes are under the bed** is a statement, so it ends with a full stop."
+  },
+  {
+    "id": "gi-endpunct-009",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tap where the missing full stop should go.",
+    "input": {"kind": "gap", "tokens": ["The", "rain", "stopped", "The", "sun", "came", "out", "and", "dried", "the", "playground", "."], "mark": "."},
+    "answer": [2],
+    "explain": "The first sentence ends after **stopped**, so the full stop goes there."
+  },
+  {
+    "id": "gi-endpunct-010",
+    "type": "g-end-punctuation",
+    "level": 1,
+    "prompt": "Tap where the missing full stop should go.",
+    "input": {"kind": "gap", "tokens": ["Leo", "fed", "the", "rabbits", "Maya", "cleaned", "out", "their", "hutch", "."], "mark": "."},
+    "answer": [3],
+    "explain": "**Leo fed the rabbits** is a complete sentence, so a full stop goes after it."
+  },
+  {
+    "id": "gi-endpunct-011",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Which punctuation mark should complete this sentence?\nWhat a beautiful rainbow that is □",
+    "input": {"kind": "choice", "options": ["question mark", "full stop", "exclamation mark"], "pick": 1},
+    "answer": [2],
+    "explain": "It starts with **What a** and shows strong feeling, so it is an exclamation and needs an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-012",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["Have", "you", "finished", "your", "homework", "We", "need", "to", "leave", "soon", "."], "mark": "?"},
+    "answer": [4],
+    "explain": "**Have you finished your homework** is a question, so a question mark goes after it."
+  },
+  {
+    "id": "gi-endpunct-013",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tap where the missing exclamation mark should go.",
+    "input": {"kind": "gap", "tokens": ["What", "a", "huge", "wave", "that", "was", "We", "were", "soaked", "from", "head", "to", "toe", "."], "mark": "!"},
+    "answer": [5],
+    "explain": "**What a huge wave that was** is an exclamation, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-014",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["What an amazing goal that was", "What an amazing goal that was!", "what an amazing goal that was!", "What an amazing goal that was?"], "pick": 1},
+    "answer": [1],
+    "explain": "An exclamation that starts with **What** needs a capital letter and an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-015",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: it ends with the correct punctuation mark.",
+    "input": {"kind": "tf", "statements": ["What a long walk that was!", "How did you get so muddy?", "When does the swimming pool open.", "What are you doing after school!"]},
+    "answer": [true, true, false, false],
+    "explain": "Questions need question marks, and exclamations that start with **What** or **How** need exclamation marks."
+  },
+  {
+    "id": "gi-endpunct-016",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["Did", "you", "hear", "that", "noise", "It", "came", "from", "the", "attic", "."], "mark": "?"},
+    "answer": [4],
+    "explain": "**Did you hear that noise** is a question, so a question mark goes after it."
+  },
+  {
+    "id": "gi-endpunct-017",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tick the sentence that should end with an exclamation mark.",
+    "input": {"kind": "choice", "options": ["What a delicious cake you have baked", "Can I have a slice of cake", "What flavour is the cake", "The cake has three layers"], "pick": 1},
+    "answer": [0],
+    "explain": "**What a delicious cake you have baked** is an exclamation, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-018",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Which punctuation mark should complete this sentence?\nWhat an exciting adventure we had □",
+    "input": {"kind": "choice", "options": ["exclamation mark", "full stop", "question mark"], "pick": 1},
+    "answer": [0],
+    "explain": "It starts with **What an** and shows strong feeling, so it is an exclamation."
+  },
+  {
+    "id": "gi-endpunct-019",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tap where the missing exclamation mark should go.",
+    "input": {"kind": "gap", "tokens": ["What", "a", "mess", "the", "puppy", "has", "made", "There", "are", "shoes", "everywhere", "."], "mark": "!"},
+    "answer": [6],
+    "explain": "**What a mess the puppy has made** is an exclamation, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-020",
+    "type": "g-end-punctuation",
+    "level": 2,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["where is the nearest post office?", "Where is the nearest post office.", "Where is the nearest post office?", "Where is the nearest post office!"], "pick": 1},
+    "answer": [2],
+    "explain": "It is a question, so it needs a capital letter at the start and a question mark at the end."
+  },
+  {
+    "id": "gi-endpunct-021",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Which punctuation mark should complete this sentence?\nHow tall you have grown □",
+    "input": {"kind": "choice", "options": ["question mark", "exclamation mark", "full stop"], "pick": 1},
+    "answer": [1],
+    "explain": "**How tall you have grown** is an exclamation, not a question, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-022",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Which punctuation mark should complete this sentence?\nHow tall is the tallest tree in the world □",
+    "input": {"kind": "choice", "options": ["exclamation mark", "question mark", "full stop"], "pick": 1},
+    "answer": [1],
+    "explain": "**How tall is the tallest tree** asks a question, so it ends with a question mark."
+  },
+  {
+    "id": "gi-endpunct-023",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick the sentence that must end with a question mark.",
+    "input": {"kind": "choice", "options": ["Noah wondered where the treasure was hidden", "Noah asked where the treasure was hidden", "Tell Noah where the treasure is hidden", "Where do you think the treasure is hidden"], "pick": 1},
+    "answer": [3],
+    "explain": "Only **Where do you think the treasure is hidden** asks a direct question; the others are statements or a command."
+  },
+  {
+    "id": "gi-endpunct-024",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["You", "have", "fed", "the", "cat", ",", "haven't", "you", "She", "looks", "very", "happy", "."], "mark": "?"},
+    "answer": [7],
+    "explain": "**Haven't you** turns the sentence into a question, so it needs a question mark."
+  },
+  {
+    "id": "gi-endpunct-025",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["What homework do we have tonight.", "What a lot of homework we have tonight?", "What a lot of homework we have tonight!", "What homework do we have tonight!"], "pick": 1},
+    "answer": [2],
+    "explain": "**What a lot of homework we have tonight** is an exclamation, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-026",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
+    "input": {"kind": "tf", "statements": ["I wonder if it will snow tomorrow.", "Do you think it will snow tomorrow?", "Ask Maya if she wants to build a snowman?", "How cold it is today?"]},
+    "answer": [true, true, false, false],
+    "explain": "Only a direct question takes a question mark, and **How cold it is today** is an exclamation."
+  },
+  {
+    "id": "gi-endpunct-027",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tap where the missing exclamation mark should go.",
+    "input": {"kind": "gap", "tokens": ["How", "brightly", "the", "stars", "are", "shining", "tonight", "Let's", "go", "outside", "and", "look", "."], "mark": "!"},
+    "answer": [6],
+    "explain": "**How brightly the stars are shining tonight** is an exclamation, so it ends with an exclamation mark."
+  },
+  {
+    "id": "gi-endpunct-028",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick **two** sentences that should end with an exclamation mark.",
+    "input": {"kind": "choice", "options": ["How loudly the audience laughed", "How long was the film", "What a funny film that was", "What time does the film start"], "pick": 2},
+    "answer": [0, 2],
+    "explain": "Exclamations that start with **What** or **How** end with an exclamation mark; the other two are questions."
+  },
+  {
+    "id": "gi-endpunct-029",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick **two** sentences that should end with a question mark.",
+    "input": {"kind": "choice", "options": ["Is the sky always blue", "Why is the sky blue", "I asked why the sky is blue", "Tell me why the sky is blue"], "pick": 2},
+    "answer": [0, 1],
+    "explain": "Only direct questions need a question mark; the other two are a statement and a command."
+  },
+  {
+    "id": "gi-endpunct-030",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Which punctuation mark should complete this sentence?\nI wonder what we will have for dinner □",
+    "input": {"kind": "choice", "options": ["comma", "full stop", "question mark"], "pick": 1},
+    "answer": [1],
+    "explain": "**I wonder** tells us what someone is thinking, so it is a statement and ends with a full stop."
+  },
+  {
+    "id": "gi-endpunct-031",
+    "type": "g-end-punctuation",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["could we tidy up?", "Could we tidy up.", "Our teacher asked if we could tidy up.", "Our teacher asked if we could tidy up?"], "pick": 1},
+    "answer": [2],
+    "explain": "**Our teacher asked if we could tidy up** reports a question, so it is a statement and ends with a full stop."
+  },
+  {
+    "id": "gi-commas-001",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["We", "bought", "apples", "pears", "grapes", "and", "plums", "at", "the", "market", "."], "mark": ","},
+    "answer": [2, 3],
+    "explain": "Commas separate the items in a list, and the last two items are joined by and."
+  },
+  {
+    "id": "gi-commas-002",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["After", "school", "we", "played", "in", "the", "garden", "."], "mark": ","},
+    "answer": [1],
+    "explain": "**After school** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-003",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["My", "pencil", "case", "holds", "a", "ruler", "a", "rubber", "a", "pencil", "and", "a", "sharpener", "."], "mark": ","},
+    "answer": [5, 7],
+    "explain": "Commas separate the items in a list, and the last two items are joined by and."
+  },
+  {
+    "id": "gi-commas-004",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Before", "breakfast", "Isla", "fed", "the", "chickens", "."], "mark": ","},
+    "answer": [1],
+    "explain": "**Before breakfast** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-005",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tick the sentence that uses commas correctly.",
+    "input": {"kind": "choice", "options": ["I packed a towel, a swimsuit goggles and a snack.", "I packed a towel, a swimsuit, goggles and a snack.", "I packed a towel a swimsuit, goggles, and, a snack.", "I packed, a towel, a swimsuit goggles and a snack."], "pick": 1},
+    "answer": [1],
+    "explain": "A comma separates each item in the list, except the last two, which are joined by and."
+  },
+  {
+    "id": "gi-commas-006",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Every", "morning", "Omar", "walks", "his", "dog", "to", "the", "park", "."], "mark": ","},
+    "answer": [1],
+    "explain": "**Every morning** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-007",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
+    "input": {"kind": "tf", "statements": ["After lunch, we went outside.", "We need eggs, flour, sugar and butter.", "Later that day we, went home.", "I like cats, dogs, and, hamsters."]},
+    "answer": [true, true, false, false],
+    "explain": "Commas go after fronted adverbials and between list items, but never straight after and."
+  },
+  {
+    "id": "gi-commas-008",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Slowly", "the", "snail", "crawled", "across", "the", "path", "."], "mark": ","},
+    "answer": [0],
+    "explain": "**Slowly** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-009",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Next", "week", "our", "class", "is", "going", "to", "the", "zoo", "."], "mark": ","},
+    "answer": [1],
+    "explain": "**Next week** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-010",
+    "type": "g-commas",
+    "level": 1,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Kai", "plays", "football", "tennis", "rugby", "and", "cricket", "."], "mark": ","},
+    "answer": [2, 3],
+    "explain": "Commas separate the items in a list, and the last two items are joined by and."
+  },
+  {
+    "id": "gi-commas-011",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["When", "the", "bell", "rang", "the", "children", "lined", "up", "."], "mark": ","},
+    "answer": [3],
+    "explain": "**When the bell rang** is a fronted subordinate clause, so a comma separates it from the main clause."
+  },
+  {
+    "id": "gi-commas-012",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["If", "it", "rains", "tomorrow", "we", "will", "stay", "indoors", "."], "mark": ","},
+    "answer": [3],
+    "explain": "**If it rains tomorrow** comes before the main clause, so a comma follows it."
+  },
+  {
+    "id": "gi-commas-013",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Although", "she", "was", "tired", "Chloe", "finished", "her", "book", "."], "mark": ","},
+    "answer": [3],
+    "explain": "**Although she was tired** comes before the main clause, so a comma follows it."
+  },
+  {
+    "id": "gi-commas-014",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["As", "the", "sun", "rose", "we", "packed", "the", "tent", "the", "stove", "and", "our", "rucksacks", "."], "mark": ","},
+    "answer": [3, 7],
+    "explain": "One comma follows the fronted clause and one separates the first two items in the list."
+  },
+  {
+    "id": "gi-commas-015",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tick the sentence that uses a comma correctly.",
+    "input": {"kind": "choice", "options": ["During the storm the, lights went out.", "During the storm, the lights went out.", "During the storm the lights, went out.", "During, the storm the lights went out."], "pick": 1},
+    "answer": [1],
+    "explain": "The comma goes straight after the fronted adverbial **During the storm**."
+  },
+  {
+    "id": "gi-commas-016",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["With", "a", "loud", "crash", "the", "vase", "fell", "to", "the", "floor", "."], "mark": ","},
+    "answer": [3],
+    "explain": "**With a loud crash** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-commas-017",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Because", "the", "road", "was", "icy", "the", "bus", "drove", "slowly", "."], "mark": ","},
+    "answer": [4],
+    "explain": "**Because the road was icy** comes before the main clause, so a comma follows it."
+  },
+  {
+    "id": "gi-commas-018",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tick **two** sentences that use commas correctly.",
+    "input": {"kind": "choice", "options": ["The dragon, had green scales and sharp claws.", "The dragon ate apples pears, and plums.", "Once upon a time, a dragon lived in a cave.", "Every night, the dragon counted its gold."], "pick": 2},
+    "answer": [2, 3],
+    "explain": "**Once upon a time** and **Every night** are fronted adverbials, so a comma follows each of them."
+  },
+  {
+    "id": "gi-commas-019",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
+    "input": {"kind": "tf", "statements": ["While we waited, Theo read a comic.", "The children, ran into the hall.", "If you finish early, you can read quietly.", "We ate sandwiches crisps, and fruit."]},
+    "answer": [true, false, true, false],
+    "explain": "A comma follows a fronted clause, but it never splits a subject from its verb."
+  },
+  {
+    "id": "gi-commas-020",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the **three** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Zara", "invited", "Amir", "Leo", "Grace", "Finn", "and", "Priya", "to", "her", "party", "."], "mark": ","},
+    "answer": [2, 3, 4],
+    "explain": "Commas separate the items in a list, and the last two items are joined by and."
+  },
+  {
+    "id": "gi-commas-021",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Why is a comma used in this sentence?\nBefore the match started, the players warmed up.",
+    "input": {"kind": "choice", "options": ["after a fronted adverbial", "to show where speech begins", "to show parenthesis", "to separate items in a list"], "pick": 1},
+    "answer": [0],
+    "explain": "**Before the match started** is a fronted adverbial, so a comma follows it."
+  },
+  {
+    "id": "gi-commas-022",
+    "type": "g-commas",
+    "level": 2,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["On", "the", "beach", "we", "found", "shells", "pebbles", "and", "a", "crab", "."], "mark": ","},
+    "answer": [2, 5],
+    "explain": "One comma follows the fronted adverbial and one separates the first two items in the list."
+  },
+  {
+    "id": "gi-commas-023",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the comma should go to make the meaning clear.",
+    "input": {"kind": "gap", "tokens": ["While", "Priya", "was", "eating", "the", "dog", "barked", "at", "the", "postman", "."], "mark": ","},
+    "answer": [3],
+    "explain": "Without the comma, it sounds as if Priya was **eating the dog**."
+  },
+  {
+    "id": "gi-commas-024",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the comma should go to make the meaning clear.",
+    "input": {"kind": "gap", "tokens": ["After", "the", "class", "had", "finished", "painting", "the", "teacher", "collected", "the", "brushes", "."], "mark": ","},
+    "answer": [5],
+    "explain": "Without the comma, it sounds as if the class had been **painting the teacher**."
+  },
+  {
+    "id": "gi-commas-025",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the comma should go to make the meaning clear.",
+    "input": {"kind": "gap", "tokens": ["As", "Isla", "was", "drawing", "her", "cat", "jumped", "onto", "the", "table", "."], "mark": ","},
+    "answer": [3],
+    "explain": "Without the comma, it sounds as if Isla was **drawing her cat**."
+  },
+  {
+    "id": "gi-commas-026",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Which sentence uses a comma to show that someone is talking **to** Theo?",
+    "input": {"kind": "choice", "options": ["Are you ready to eat Theo?", "Are you, ready to eat Theo?", "Are you ready, to eat Theo?", "Are you ready to eat, Theo?"], "pick": 1},
+    "answer": [3],
+    "explain": "The comma separates Theo's name from the question, so the speaker is talking to Theo, not about eating him."
+  },
+  {
+    "id": "gi-commas-027",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["Before we left, the house we locked the door.", "Before we left the house we, locked the door.", "We locked the door, before, we left the house.", "Before we left the house, we locked the door."], "pick": 1},
+    "answer": [3],
+    "explain": "The comma goes at the end of the fronted clause **Before we left the house**."
+  },
+  {
+    "id": "gi-commas-028",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
+    "input": {"kind": "tf", "statements": ["Can we start cooking, Ava?", "As the storm grew louder, the windows rattled.", "Grace likes painting, drawing, and, singing.", "Leaping into the air the, dolphin splashed."]},
+    "answer": [true, true, false, false],
+    "explain": "Commas go before the name of the person being spoken to and after a fronted clause, but never straight after and."
+  },
+  {
+    "id": "gi-commas-029",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tick the sentence that uses commas correctly.",
+    "input": {"kind": "choice", "options": ["For the picnic, we took cheese sandwiches juicy grapes and a flask of tea.", "For the picnic, we took cheese, sandwiches, juicy, grapes and a flask of tea.", "For the picnic we took, cheese sandwiches juicy grapes and, a flask of tea.", "For the picnic, we took cheese sandwiches, juicy grapes and a flask of tea."], "pick": 1},
+    "answer": [3],
+    "explain": "A comma follows the fronted adverbial, and another separates **cheese sandwiches** from **juicy grapes**."
+  },
+  {
+    "id": "gi-commas-030",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Once", "the", "rain", "had", "stopped", "Finn", "Kai", "and", "Zara", "ran", "outside", "."], "mark": ","},
+    "answer": [4, 5],
+    "explain": "One comma ends the fronted clause and one separates Finn and Kai in the list of names."
+  },
+  {
+    "id": "gi-commas-031",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the comma should go to show that the speaker is asking Noah a question.",
+    "input": {"kind": "gap", "tokens": ["Can", "we", "draw", "Noah", "?"], "mark": ","},
+    "answer": [2],
+    "explain": "The comma shows the speaker is talking to Noah; without it, they want to draw a picture of Noah."
+  },
+  {
+    "id": "gi-commas-032",
+    "type": "g-commas",
+    "level": 3,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Grabbing", "her", "coat", "Lily", "raced", "out", "of", "the", "door", "."], "mark": ","},
+    "answer": [2],
+    "explain": "**Grabbing her coat** is a fronted adverbial, so a comma goes after it."
+  },
+  {
+    "id": "gi-parenthesis-001",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Mr", "Khan", "our", "caretaker", "fixed", "the", "gate", "."], "mark": ","},
+    "answer": [1, 3],
+    "explain": "The commas go around **our caretaker**, the extra information about Mr Khan."
+  },
+  {
+    "id": "gi-parenthesis-002",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Tick the sentence that uses brackets correctly.",
+    "input": {"kind": "choice", "options": ["My (dog a spotty Dalmatian) loves to swim.", "My dog (a spotty) Dalmatian loves to swim.", "My dog (a spotty Dalmatian) loves to swim.", "My dog a spotty (Dalmatian loves to swim)."], "pick": 1},
+    "answer": [2],
+    "explain": "The brackets go around the extra information, and the sentence still makes sense without it."
+  },
+  {
+    "id": "gi-parenthesis-003",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "The opening bracket is already there. Tap where the closing bracket should go.",
+    "input": {"kind": "gap", "tokens": ["The", "cake", "(", "which", "Grace", "baked", "was", "delicious", "."], "mark": ")"},
+    "answer": [5],
+    "explain": "The brackets go around **which Grace baked**, so the sentence still makes sense without it."
+  },
+  {
+    "id": "gi-parenthesis-004",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Which punctuation is used for parenthesis in this sentence?\nOur school – which is over a hundred years old – has a new roof.",
+    "input": {"kind": "choice", "options": ["dashes", "commas", "inverted commas", "brackets"], "pick": 1},
+    "answer": [0],
+    "explain": "A pair of dashes marks off the extra information about the school."
+  },
+  {
+    "id": "gi-parenthesis-005",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Tap where the **two** missing dashes should go.",
+    "input": {"kind": "gap", "tokens": ["The", "fox", "hungry", "and", "tired", "crept", "towards", "the", "bins", "."], "mark": "–"},
+    "answer": [1, 4],
+    "explain": "The dashes go around **hungry and tired**, the extra information about the fox."
+  },
+  {
+    "id": "gi-parenthesis-006",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: the brackets are in the correct place.",
+    "input": {"kind": "tf", "statements": ["My grandad (who is eighty) still rides a bike.", "Our teacher (Miss Hill) plays the guitar.", "The tree fell (down in the) storm.", "We visited (the castle on) Sunday."]},
+    "answer": [true, true, false, false],
+    "explain": "Brackets go around extra information, and the sentence must still make sense when it is taken out."
+  },
+  {
+    "id": "gi-parenthesis-007",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Tick the sentence that uses commas to show parenthesis correctly.",
+    "input": {"kind": "choice", "options": ["Grace my best friend, is coming, to tea.", "Grace, my best, friend is coming to tea.", "Grace my, best friend is coming, to tea.", "Grace, my best friend, is coming to tea."], "pick": 1},
+    "answer": [3],
+    "explain": "The commas go around **my best friend**, the extra information about Grace."
+  },
+  {
+    "id": "gi-parenthesis-008",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "The opening bracket is already there. Tap where the closing bracket should go.",
+    "input": {"kind": "gap", "tokens": ["Zara's", "rabbit", "(", "a", "fluffy", "brown", "one", "escaped", "from", "its", "hutch", "."], "mark": ")"},
+    "answer": [6],
+    "explain": "The brackets go around **a fluffy brown one**, and the sentence makes sense without it."
+  },
+  {
+    "id": "gi-parenthesis-009",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Which words in this sentence are the parenthesis?\nThe old lighthouse, which stood on the cliff, was painted white.",
+    "input": {"kind": "choice", "options": ["was painted white", "which stood on the cliff", "The old lighthouse", "the cliff"], "pick": 1},
+    "answer": [1],
+    "explain": "The words between the pair of commas are extra information that can be taken out."
+  },
+  {
+    "id": "gi-parenthesis-010",
+    "type": "g-parenthesis",
+    "level": 1,
+    "prompt": "Why has the writer used brackets in this sentence?\nThe hedgehog (a shy, spiky creature) came out at night.",
+    "input": {"kind": "choice", "options": ["to show possession", "to add extra information", "to show someone is speaking", "to separate items in a list"], "pick": 1},
+    "answer": [1],
+    "explain": "The brackets hold extra information about the hedgehog."
+  },
+  {
+    "id": "gi-parenthesis-011",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Ravi", "who", "loves", "drawing", "won", "the", "art", "prize", "."], "mark": ","},
+    "answer": [0, 3],
+    "explain": "The commas go around **who loves drawing**, the extra information about Ravi."
+  },
+  {
+    "id": "gi-parenthesis-012",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Mount", "Everest", "the", "highest", "mountain", "in", "the", "world", "is", "in", "Asia", "."], "mark": ","},
+    "answer": [1, 7],
+    "explain": "The commas go around **the highest mountain in the world**, the extra information about Mount Everest."
+  },
+  {
+    "id": "gi-parenthesis-013",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing dashes should go.",
+    "input": {"kind": "gap", "tokens": ["Finn", "who", "hates", "getting", "up", "early", "was", "late", "for", "school", "again", "."], "mark": "–"},
+    "answer": [0, 5],
+    "explain": "The dashes go around **who hates getting up early**, the extra information about Finn."
+  },
+  {
+    "id": "gi-parenthesis-014",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tick **two** options that could be used instead of the brackets in this sentence.\nThe film (which lasted three hours) was very exciting.",
+    "input": {"kind": "choice", "options": ["a pair of dashes", "a pair of colons", "a pair of inverted commas", "a pair of commas"], "pick": 2},
+    "answer": [0, 3],
+    "explain": "Brackets, dashes and commas can all be used in pairs to show parenthesis."
+  },
+  {
+    "id": "gi-parenthesis-015",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "The closing bracket is already there. Tap where the opening bracket should go.",
+    "input": {"kind": "gap", "tokens": ["The", "river", "which", "was", "frozen", "solid", ")", "sparkled", "in", "the", "sunlight", "."], "mark": "("},
+    "answer": [1],
+    "explain": "The brackets go around **which was frozen solid**, so the opening bracket goes after **river**."
+  },
+  {
+    "id": "gi-parenthesis-016",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tick the sentence that uses dashes to show parenthesis correctly.",
+    "input": {"kind": "choice", "options": ["The storm – the worst for fifty years – knocked down many trees.", "The storm the worst – for fifty years knocked – down many trees.", "The storm the worst for – fifty years – knocked down many trees.", "The – storm the worst for fifty years knocked – down many trees."], "pick": 1},
+    "answer": [0],
+    "explain": "The dashes go around **the worst for fifty years**, and the sentence makes sense without it."
+  },
+  {
+    "id": "gi-parenthesis-017",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: the commas show parenthesis correctly.",
+    "input": {"kind": "tf", "statements": ["Leo, who is ten, plays the drums.", "London, the capital of England, is very busy.", "My aunt, lives in Wales, with her cat.", "The biscuits, which, were in the tin were soft."]},
+    "answer": [true, true, false, false],
+    "explain": "A pair of commas must go around extra information that can be taken out."
+  },
+  {
+    "id": "gi-parenthesis-018",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Mrs", "Ahmed", "our", "head", "teacher", "rang", "the", "bell", "for", "assembly", "."], "mark": ","},
+    "answer": [1, 4],
+    "explain": "The commas go around **our head teacher**, the extra information about Mrs Ahmed."
+  },
+  {
+    "id": "gi-parenthesis-019",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "The opening bracket is already there. Tap where the closing bracket should go.",
+    "input": {"kind": "gap", "tokens": ["Kai", "(", "the", "youngest", "player", "in", "the", "team", "scored", "the", "winning", "goal", "."], "mark": ")"},
+    "answer": [7],
+    "explain": "The brackets go around **the youngest player in the team**, and the sentence makes sense without it."
+  },
+  {
+    "id": "gi-parenthesis-020",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing dashes should go.",
+    "input": {"kind": "gap", "tokens": ["Our", "puppy", "tired", "after", "the", "long", "walk", "fell", "asleep", "by", "the", "fire", "."], "mark": "–"},
+    "answer": [1, 6],
+    "explain": "The dashes go around **tired after the long walk**, the extra information about the puppy."
+  },
+  {
+    "id": "gi-parenthesis-021",
+    "type": "g-parenthesis",
+    "level": 2,
+    "prompt": "Tap where the **two** missing dashes should go.",
+    "input": {"kind": "gap", "tokens": ["The", "twins", "Ava", "and", "Ella", "won", "the", "three-legged", "race", "."], "mark": "–"},
+    "answer": [1, 4],
+    "explain": "The dashes go around **Ava and Ella**, the extra information about the twins."
+  },
+  {
+    "id": "gi-parenthesis-022",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick the sentence that uses brackets correctly.",
+    "input": {"kind": "choice", "options": ["Our (class all thirty of us) went on the trip.", "Our class (all thirty of us) went on the trip.", "Our class (all thirty of us went) on the trip.", "Our class (all thirty) of us went on the trip."], "pick": 1},
+    "answer": [1],
+    "explain": "Taking out **all thirty of us** leaves a sentence that still makes sense."
+  },
+  {
+    "id": "gi-parenthesis-023",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["Noah", "excited", "about", "the", "trip", "could", "not", "sit", "still", "."], "mark": ","},
+    "answer": [0, 4],
+    "explain": "The commas go around **excited about the trip**, the extra information about Noah."
+  },
+  {
+    "id": "gi-parenthesis-024",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "One comma is missing. Tap where it should go.",
+    "input": {"kind": "gap", "tokens": ["Leo", ",", "who", "had", "forgotten", "his", "lunch", "shared", "Kai's", "sandwiches", "."], "mark": ","},
+    "answer": [6],
+    "explain": "Parenthesis needs a comma at each end, so the second comma goes after **lunch**."
+  },
+  {
+    "id": "gi-parenthesis-025",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "One dash is missing. Tap where it should go.",
+    "input": {"kind": "gap", "tokens": ["The", "castle", "–", "built", "over", "eight", "hundred", "years", "ago", "stands", "on", "a", "hill", "."], "mark": "–"},
+    "answer": [8],
+    "explain": "Parenthesis needs a dash at each end, so the second dash goes after **ago**."
+  },
+  {
+    "id": "gi-parenthesis-026",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick the sentence that uses commas for parenthesis.",
+    "input": {"kind": "choice", "options": ["Ella trains every morning, but she is never tired.", "After school, Ella trains at the pool.", "Ella, a keen swimmer, trains every morning.", "Ella packed goggles, a towel and a snack."], "pick": 1},
+    "answer": [2],
+    "explain": "The words **a keen swimmer** are extra information about Ella, marked off by a pair of commas."
+  },
+  {
+    "id": "gi-parenthesis-027",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: if the words in brackets were taken out, the sentence would still make sense.",
+    "input": {"kind": "tf", "statements": ["The Nile (the longest river in Africa) flows into the sea.", "My (older) sister plays netball.", "The bus (was late) this morning.", "Theo (found a key) under the doormat."]},
+    "answer": [true, true, false, false],
+    "explain": "Parenthesis is extra information, so the sentence must make sense without it."
+  },
+  {
+    "id": "gi-parenthesis-028",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["Omar, who lives next door, has a pet snake.", "Omar who, lives next door, has a pet snake.", "Omar, who lives next door has a pet snake.", "Omar who lives next door, has a pet snake."], "pick": 1},
+    "answer": [0],
+    "explain": "The extra information **who lives next door** needs a comma at each end."
+  },
+  {
+    "id": "gi-parenthesis-029",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick **two** sentences that use brackets correctly.",
+    "input": {"kind": "choice", "options": ["Grace brought a friend (her cousin Priya) to the party.", "Grace (brought a friend her) cousin Priya to the party.", "The pizza (which was enormous) was cut into twelve slices.", "The pizza (which was) enormous was cut into twelve slices."], "pick": 2},
+    "answer": [0, 2],
+    "explain": "In both correct sentences, the words in brackets can be taken out and the sentence still makes sense."
+  },
+  {
+    "id": "gi-parenthesis-030",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["The", "Thames", "which", "flows", "through", "London", "is", "over", "two", "hundred", "miles", "long", "."], "mark": ","},
+    "answer": [1, 5],
+    "explain": "The commas go around **which flows through London**, the extra information about the Thames."
+  },
+  {
+    "id": "gi-parenthesis-031",
+    "type": "g-parenthesis",
+    "level": 3,
+    "prompt": "Tick the sentence where the parenthesis is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["Penguins, which cannot fly, are excellent swimmers.", "Penguins, which cannot fly are excellent swimmers.", "Penguins which, cannot fly are, excellent swimmers.", "Penguins which cannot fly, are excellent swimmers."], "pick": 1},
+    "answer": [0],
+    "explain": "The extra information **which cannot fly** needs a comma at both ends."
+  },
+  {
+    "id": "gi-apostrophes-001",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tick the sentence that uses an apostrophe correctly.",
+    "input": {"kind": "choice", "options": ["Amirs coat is on the hook.", "Amir's coat is on the hook.", "Amir's coat is on the hook's.", "Amirs' coat is on the hook."], "pick": 1},
+    "answer": [1],
+    "explain": "The coat belongs to Amir, so an apostrophe and s are added to his name."
+  },
+  {
+    "id": "gi-apostrophes-002",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tap the word that needs an apostrophe.",
+    "input": {"kind": "words", "tokens": ["Sams", "scooter", "is", "blue", "."], "pick": 1},
+    "answer": [0],
+    "explain": "The scooter belongs to Sam, so it should be **Sam's**."
+  },
+  {
+    "id": "gi-apostrophes-003",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tap the word that has an apostrophe it does not need.",
+    "input": {"kind": "words", "tokens": ["I", "bought", "three", "apple's", "at", "the", "market", "."], "pick": 1},
+    "answer": [3],
+    "explain": "**Apples** is just a plural, so it does not need an apostrophe."
+  },
+  {
+    "id": "gi-apostrophes-004",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the bike belonging to Maya**",
+    "input": {"kind": "text"},
+    "answer": ["Maya's bike"],
+    "explain": "Add an apostrophe and s to Maya to show that the bike belongs to her."
+  },
+  {
+    "id": "gi-apostrophes-005",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Why is an apostrophe used in this sentence?\nLeo's jumper is on the floor.",
+    "input": {"kind": "choice", "options": ["to show that Leo is speaking", "to show that there is more than one jumper", "to show that letters are missing", "to show that the jumper belongs to Leo"], "pick": 1},
+    "answer": [3],
+    "explain": "The apostrophe and s show that the jumper belongs to Leo."
+  },
+  {
+    "id": "gi-apostrophes-006",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: the apostrophe is used correctly.",
+    "input": {"kind": "tf", "statements": ["My brother's room is messy.", "The dog's are barking.", "We saw two giraffe's at the zoo.", "Ella's coat is red."]},
+    "answer": [true, false, false, true],
+    "explain": "Apostrophes show belonging, but plurals such as dogs and giraffes do not need one."
+  },
+  {
+    "id": "gi-apostrophes-007",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tap the word that needs an apostrophe.",
+    "input": {"kind": "words", "tokens": ["We", "played", "in", "Omars", "garden", "after", "school", "."], "pick": 1},
+    "answer": [3],
+    "explain": "The garden belongs to Omar, so it should be **Omar's**."
+  },
+  {
+    "id": "gi-apostrophes-008",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Which word needs an apostrophe?\nThe babys toys were all over the floor.",
+    "input": {"kind": "choice", "options": ["were", "floor", "babys", "toys"], "pick": 1},
+    "answer": [2],
+    "explain": "The toys belong to the baby, so it should be **baby's**; **toys** is just a plural."
+  },
+  {
+    "id": "gi-apostrophes-009",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the tail of the dog**",
+    "input": {"kind": "text"},
+    "answer": ["the dog's tail", "dog's tail"],
+    "explain": "Add an apostrophe and s to dog to show that the tail belongs to it."
+  },
+  {
+    "id": "gi-apostrophes-010",
+    "type": "g-apostrophes",
+    "level": 1,
+    "prompt": "Tap the **two** words that need an apostrophe.",
+    "input": {"kind": "words", "tokens": ["Kais", "lunchbox", "is", "next", "to", "Zaras", "bag", "."], "pick": 2},
+    "answer": [0, 5],
+    "explain": "The lunchbox belongs to Kai and the bag belongs to Zara, so they should be **Kai's** and **Zara's**."
+  },
+  {
+    "id": "gi-apostrophes-011",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Which phrase shows that the bag belongs to **one** girl?",
+    "input": {"kind": "choice", "options": ["the girls bag", "the girl's bag", "the girl's' bag", "the girls' bag"], "pick": 1},
+    "answer": [1],
+    "explain": "For one owner, the apostrophe goes before the s: **girl's**."
+  },
+  {
+    "id": "gi-apostrophes-012",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Which phrase shows that the toys belong to **more than one** boy?",
+    "input": {"kind": "choice", "options": ["the boy's' toys", "the boy's toys", "the boys' toys", "the boys toy's"], "pick": 1},
+    "answer": [2],
+    "explain": "Boys already ends in s, so for more than one boy the apostrophe goes after the s."
+  },
+  {
+    "id": "gi-apostrophes-013",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the coats belonging to the children**",
+    "input": {"kind": "text"},
+    "answer": ["the children's coats", "children's coats"],
+    "explain": "Children does not end in s, so it takes an apostrophe and s: **children's**."
+  },
+  {
+    "id": "gi-apostrophes-014",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Tick the sentence that uses an apostrophe correctly.",
+    "input": {"kind": "choice", "options": ["The children's playground has a new slide.", "The childrens' playground has a new slide.", "The children's playground has a new slide's.", "The childrens playground has a new slide."], "pick": 1},
+    "answer": [0],
+    "explain": "Children is already plural and does not end in s, so it takes 's."
+  },
+  {
+    "id": "gi-apostrophes-015",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Tap the word that needs an apostrophe.",
+    "input": {"kind": "words", "tokens": ["The", "two", "horses", "stable", "needed", "cleaning", "."], "pick": 1},
+    "answer": [2],
+    "explain": "The stable belongs to two horses, so it should be **horses'** with the apostrophe after the s."
+  },
+  {
+    "id": "gi-apostrophes-016",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Maya has three sisters who share one bedroom. Which phrase is correct?",
+    "input": {"kind": "choice", "options": ["her sisters' bedroom", "her sisters bedroom", "her sister's bedroom", "her sisters's bedroom"], "pick": 1},
+    "answer": [0],
+    "explain": "The bedroom belongs to more than one sister, so the apostrophe goes after the s."
+  },
+  {
+    "id": "gi-apostrophes-017",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Tick true or false for each phrase: the apostrophe is used correctly.",
+    "input": {"kind": "tf", "statements": ["the men's changing room", "the womens' football team", "the two cats' baskets", "the childrens' books"]},
+    "answer": [true, false, true, false],
+    "explain": "Men, women and children do not end in s, so they take 's, but cats' has the apostrophe after the s."
+  },
+  {
+    "id": "gi-apostrophes-018",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Tick the sentence that uses **its** or **it's** correctly.",
+    "input": {"kind": "choice", "options": ["Its raining again.", "It's time to go home.", "The bird built it's nest in the tree.", "The dog wagged it's tail."], "pick": 1},
+    "answer": [1],
+    "explain": "**It's** means it is, and **its** without an apostrophe shows belonging."
+  },
+  {
+    "id": "gi-apostrophes-019",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Tap the word that should **not** have an apostrophe.",
+    "input": {"kind": "words", "tokens": ["The", "farmer's", "cows", "ate", "the", "carrot's", "from", "Maya's", "garden", "."], "pick": 1},
+    "answer": [5],
+    "explain": "**Carrots** is just a plural, so it does not need an apostrophe."
+  },
+  {
+    "id": "gi-apostrophes-020",
+    "type": "g-apostrophes",
+    "level": 2,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the nests of the birds**",
+    "input": {"kind": "text"},
+    "answer": ["the birds' nests", "birds' nests"],
+    "explain": "Birds is a plural that ends in s, so the apostrophe goes after the s."
+  },
+  {
+    "id": "gi-apostrophes-021",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the coat belonging to James**",
+    "input": {"kind": "text"},
+    "answer": ["James's coat", "James' coat"],
+    "explain": "For a name ending in s, add 's to show possession: **James's** (**James'** is also accepted)."
+  },
+  {
+    "id": "gi-apostrophes-022",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tick the sentence that uses an apostrophe correctly.",
+    "input": {"kind": "choice", "options": ["The mice's tails were very long.", "The mices' tails were very long.", "The mice's tail's were very long.", "The mices tails were very long."], "pick": 1},
+    "answer": [0],
+    "explain": "Mice is already plural and does not end in s, so it takes 's."
+  },
+  {
+    "id": "gi-apostrophes-023",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: the apostrophes are used correctly.",
+    "input": {"kind": "tf", "statements": ["The women's race starts at noon.", "Both teams' shirts were muddy.", "The bus's engine made a loud noise.", "Grace's cousin's live in Wales."]},
+    "answer": [true, true, true, false],
+    "explain": "**Women's**, **teams'** and **bus's** show possession, but **cousins** is just a plural."
+  },
+  {
+    "id": "gi-apostrophes-024",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Which sentence shows that the pens belong to **more than one** pupil?",
+    "input": {"kind": "choice", "options": ["The pupil's pen's were in the pot.", "The pupils pen's were in the pot.", "The pupils' pens were in the pot.", "The pupil's pens were in the pot."], "pick": 1},
+    "answer": [2],
+    "explain": "For more than one pupil, the apostrophe goes after the s: **pupils'**."
+  },
+  {
+    "id": "gi-apostrophes-025",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tap the **two** words that need an apostrophe.",
+    "input": {"kind": "words", "tokens": ["The", "childrens", "paintings", "hung", "beside", "the", "teachers", "desk", "."], "pick": 2},
+    "answer": [1, 6],
+    "explain": "The paintings belong to the children and the desk belongs to the teacher, but **paintings** is just a plural."
+  },
+  {
+    "id": "gi-apostrophes-026",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "In which sentence does the apostrophe show possession?",
+    "input": {"kind": "choice", "options": ["The librarian's desk was tidy.", "She's going to the library.", "We'll meet you there.", "They're late again."], "pick": 1},
+    "answer": [0],
+    "explain": "The desk belongs to the librarian; the other apostrophes show missing letters."
+  },
+  {
+    "id": "gi-apostrophes-027",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tick **two** sentences that use apostrophes correctly.",
+    "input": {"kind": "choice", "options": ["Its' going to be sunny today.", "The two boys' bikes were locked up outside.", "The nurses' uniforms were blue.", "Our neighbour's are very friendly."], "pick": 2},
+    "answer": [1, 2],
+    "explain": "Boys and nurses are plurals that end in s, so the apostrophe goes after the s."
+  },
+  {
+    "id": "gi-apostrophes-028",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Rewrite this phrase using an apostrophe to show possession.\n**the toys belonging to the puppies**",
+    "input": {"kind": "text"},
+    "answer": ["the puppies' toys", "puppies' toys"],
+    "explain": "Puppies is a plural that ends in s, so the apostrophe goes after the s."
+  },
+  {
+    "id": "gi-apostrophes-029",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tap the word where the apostrophe is in the wrong place.",
+    "input": {"kind": "words", "tokens": ["The", "mens'", "changing", "room", "was", "next", "to", "the", "girls'", "changing", "room", "."], "pick": 1},
+    "answer": [1],
+    "explain": "**Men** does not end in s, so it should be **men's**."
+  },
+  {
+    "id": "gi-apostrophes-030",
+    "type": "g-apostrophes",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["The tree lost all of its leaves.", "The tree lost all of its' leaves.", "The tree lost all of its leave's.", "The tree lost all of it's leaves."], "pick": 1},
+    "answer": [0],
+    "explain": "**Its** shows belonging and never has an apostrophe; **it's** means it is or it has."
+  },
+  {
+    "id": "gi-contractions-001",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the contracted form of **do not**.",
+    "input": {"kind": "text"},
+    "answer": ["don't"],
+    "explain": "In **don't**, the apostrophe replaces the o of not."
+  },
+  {
+    "id": "gi-contractions-002",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the contracted form of **I am**.",
+    "input": {"kind": "text"},
+    "answer": ["I'm"],
+    "explain": "In **I'm**, the apostrophe replaces the a of am."
+  },
+  {
+    "id": "gi-contractions-003",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the contracted form of **cannot**.",
+    "input": {"kind": "text"},
+    "answer": ["can't"],
+    "explain": "In **can't**, the apostrophe replaces the letters n and o from cannot."
+  },
+  {
+    "id": "gi-contractions-004",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the contracted form of **it is**.",
+    "input": {"kind": "text"},
+    "answer": ["it's"],
+    "explain": "In **it's**, the apostrophe replaces the i of is."
+  },
+  {
+    "id": "gi-contractions-005",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Tick the correct contracted form of **she is**.",
+    "input": {"kind": "choice", "options": ["shes'", "she'is", "sh'is", "she's"], "pick": 1},
+    "answer": [3],
+    "explain": "In **she's**, the apostrophe replaces the i of is."
+  },
+  {
+    "id": "gi-contractions-006",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Tick the correct contracted form of **they are**.",
+    "input": {"kind": "choice", "options": ["they're", "theyr'e", "there", "their"], "pick": 1},
+    "answer": [0],
+    "explain": "**They're** is short for they are; **their** and **there** are different words."
+  },
+  {
+    "id": "gi-contractions-007",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the contracted form of **we will**.",
+    "input": {"kind": "text"},
+    "answer": ["we'll"],
+    "explain": "In **we'll**, the apostrophe replaces the letters wi of will."
+  },
+  {
+    "id": "gi-contractions-008",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Tap the word that is a contraction.",
+    "input": {"kind": "words", "tokens": ["I", "think", "you're", "right", "about", "the", "weather", "."], "pick": 1},
+    "answer": [2],
+    "explain": "**You're** is short for you are, and the apostrophe shows the missing letter."
+  },
+  {
+    "id": "gi-contractions-009",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Tick true or false for each word: the apostrophe is in the right place.",
+    "input": {"kind": "tf", "statements": ["did'nt", "isn't", "wer'e", "I've"]},
+    "answer": [false, true, false, true],
+    "explain": "The apostrophe goes exactly where the letters are missing, as in **didn't** and **we're**."
+  },
+  {
+    "id": "gi-contractions-010",
+    "type": "g-contractions",
+    "level": 1,
+    "prompt": "Write the two words that **didn't** is made from.",
+    "input": {"kind": "text"},
+    "answer": ["did not"],
+    "explain": "**Didn't** is short for did not."
+  },
+  {
+    "id": "gi-contractions-011",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the contracted form of **will not**.",
+    "input": {"kind": "text"},
+    "answer": ["won't"],
+    "explain": "**Will not** is a special contraction: it becomes **won't**."
+  },
+  {
+    "id": "gi-contractions-012",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the contracted form of **should have**.",
+    "input": {"kind": "text"},
+    "answer": ["should've"],
+    "explain": "In **should've**, the apostrophe replaces the letters ha of have."
+  },
+  {
+    "id": "gi-contractions-013",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the two words that **won't** is made from.",
+    "input": {"kind": "text"},
+    "answer": ["will not"],
+    "explain": "**Won't** is short for will not."
+  },
+  {
+    "id": "gi-contractions-014",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Which is the correct contracted form of **would not**?",
+    "input": {"kind": "choice", "options": ["wouldn't", "would'nt", "woul'dnt", "wouldnt'"], "pick": 1},
+    "answer": [0],
+    "explain": "The apostrophe replaces the o of not, so it goes between the n and the t."
+  },
+  {
+    "id": "gi-contractions-015",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Tap the word where the apostrophe is in the wrong place.",
+    "input": {"kind": "words", "tokens": ["We", "could'nt", "find", "the", "ball", ",", "so", "we", "went", "home", "."], "pick": 1},
+    "answer": [1],
+    "explain": "The apostrophe replaces the o of not, so it should be **couldn't**."
+  },
+  {
+    "id": "gi-contractions-016",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Tick **two** contractions that are made with **not**.",
+    "input": {"kind": "choice", "options": ["isn't", "I'll", "we've", "aren't"], "pick": 2},
+    "answer": [0, 3],
+    "explain": "**Isn't** is short for is not and **aren't** is short for are not."
+  },
+  {
+    "id": "gi-contractions-017",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the two words that **I've** is made from.",
+    "input": {"kind": "text"},
+    "answer": ["I have"],
+    "explain": "**I've** is short for I have."
+  },
+  {
+    "id": "gi-contractions-018",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the contracted form of **are not** to complete the sentence.",
+    "input": {"kind": "text", "before": "We", "after": "allowed to run in the corridor."},
+    "answer": ["aren't"],
+    "explain": "**Are not** becomes **aren't**, with the apostrophe where the o is missing."
+  },
+  {
+    "id": "gi-contractions-019",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the contracted form of **let us** to complete the sentence.",
+    "input": {"kind": "text", "after": "play a game."},
+    "answer": ["Let's"],
+    "explain": "**Let us** becomes **let's**, with the apostrophe where the u is missing."
+  },
+  {
+    "id": "gi-contractions-020",
+    "type": "g-contractions",
+    "level": 2,
+    "prompt": "Write the two words that **she'll** stands for in this sentence.\nAva hopes **she'll** win the race.",
+    "input": {"kind": "text"},
+    "answer": ["she will", "she shall"],
+    "explain": "**She'll** is short for she will."
+  },
+  {
+    "id": "gi-contractions-021",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Tick the sentence that is written correctly.",
+    "input": {"kind": "choice", "options": ["They're going to the beach tomorrow.", "Their going to the beach tomorrow.", "There going to the beach tomorrow.", "Theyre going to the beach tomorrow."], "pick": 1},
+    "answer": [0],
+    "explain": "**They're** is short for they are, which is what the sentence needs."
+  },
+  {
+    "id": "gi-contractions-022",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Write the two words that **they'd** stands for in this sentence.\nThey said **they'd** been waiting for hours.",
+    "input": {"kind": "text"},
+    "answer": ["they had"],
+    "explain": "**They'd been waiting** means they had been waiting."
+  },
+  {
+    "id": "gi-contractions-023",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Write the two words that **they'd** stands for in this sentence.\nIf the rain stopped, **they'd** go outside.",
+    "input": {"kind": "text"},
+    "answer": ["they would"],
+    "explain": "**They'd go outside** means they would go outside."
+  },
+  {
+    "id": "gi-contractions-024",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Write the two words that **it's** stands for in this sentence.\nI think **it's** been raining all night.",
+    "input": {"kind": "text"},
+    "answer": ["it has"],
+    "explain": "**It's been raining** means it has been raining."
+  },
+  {
+    "id": "gi-contractions-025",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Write the two words that **he's** stands for in this sentence.\nMy brother says **he's** finished his homework.",
+    "input": {"kind": "text"},
+    "answer": ["he has"],
+    "explain": "**He's finished** means he has finished."
+  },
+  {
+    "id": "gi-contractions-026",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Which sentence uses a contraction correctly?",
+    "input": {"kind": "choice", "options": ["Whose going to the party?", "Who's coat is this?", "Whos' turn is it?", "Who's coming to the park?"], "pick": 1},
+    "answer": [3],
+    "explain": "**Who's** means who is; **whose** asks who something belongs to."
+  },
+  {
+    "id": "gi-contractions-027",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: it is written correctly.",
+    "input": {"kind": "tf", "statements": ["You're the best friend I have.", "Your late for school.", "It's wheels were muddy.", "We've already eaten."]},
+    "answer": [true, false, false, true],
+    "explain": "**You're** means you are, and **its** without an apostrophe shows belonging."
+  },
+  {
+    "id": "gi-contractions-028",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Tap the **two** words that are contractions.",
+    "input": {"kind": "words", "tokens": ["We're", "sure", "Leo's", "finished", "his", "lunch", "."], "pick": 2},
+    "answer": [0, 2],
+    "explain": "**We're** means we are and **Leo's** means Leo has."
+  },
+  {
+    "id": "gi-contractions-029",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "In which sentence does **'s** stand for **has**?",
+    "input": {"kind": "choice", "options": ["Sam's bike is red.", "Sam's found his keys.", "Sam's going to the park.", "Sam's sister is six."], "pick": 1},
+    "answer": [1],
+    "explain": "**Sam's found** means Sam has found."
+  },
+  {
+    "id": "gi-contractions-030",
+    "type": "g-contractions",
+    "level": 3,
+    "prompt": "Tick the sentence that is written correctly.",
+    "input": {"kind": "choice", "options": ["We should've brought our coats.", "We should'of brought our coats.", "We should of brought our coats.", "We shouldve' brought our coats."], "pick": 1},
+    "answer": [0],
+    "explain": "**Should've** is short for should have; **should of** is never correct."
+  },
+  {
+    "id": "gi-speech-001",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tick the sentence that uses inverted commas correctly.",
+    "input": {"kind": "choice", "options": ["“I love swimming, said Ella.”", "“I love swimming,” said Ella.", "I love “swimming,” said Ella.", "“I love swimming,” said “Ella.”"], "pick": 1},
+    "answer": [1],
+    "explain": "Inverted commas go around only the words that are spoken."
+  },
+  {
+    "id": "gi-speech-002",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["“", "It", "is", "time", "to", "go", "home", "”", "said", "Mrs", "Patel", "."], "mark": ","},
+    "answer": [6],
+    "explain": "The comma goes after the spoken words, inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-003",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Where", "are", "my", "trainers", "”", "asked", "Noah", "."], "mark": "?"},
+    "answer": [4],
+    "explain": "The question mark ends the spoken question, so it goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-004",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Grace", "said", "“", "Let's", "play", "tag", ".", "”"], "mark": ","},
+    "answer": [1],
+    "explain": "When the reporting clause comes first, a comma follows it before the inverted commas open."
+  },
+  {
+    "id": "gi-speech-005",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing exclamation mark should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Watch", "out", "for", "the", "puddle", "”", "yelled", "Finn", "."], "mark": "!"},
+    "answer": [5],
+    "explain": "The exclamation mark belongs to the spoken words, so it goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-006",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: the inverted commas are in the right place.",
+    "input": {"kind": "tf", "statements": ["“Look at the rainbow!” shouted Maya.", "“Look at the rainbow! shouted Maya.”", "Mr Hughes said, “Dinner is ready.”", "“Ravi asked, where is the glue?”"]},
+    "answer": [true, false, true, false],
+    "explain": "Only the words that are actually spoken go inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-007",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“We won the match! cheered the team.”", "“We won the match!” cheered the team.", "We won the match! “cheered the team.”", "“We won the match”! cheered the team."], "pick": 1},
+    "answer": [1],
+    "explain": "The spoken words and their exclamation mark go inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-008",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["“", "What", "is", "for", "lunch", "”", "asked", "Ravi", "."], "mark": "?"},
+    "answer": [4],
+    "explain": "The question mark ends the spoken question, so it goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-009",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["“", "The", "film", "starts", "at", "six", "”", "said", "Isla", "."], "mark": ","},
+    "answer": [5],
+    "explain": "The comma goes after the spoken words, inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-010",
+    "type": "g-speech",
+    "level": 1,
+    "prompt": "Which punctuation mark should go in the box?\n“Please sit down □” said the teacher.",
+    "input": {"kind": "choice", "options": ["comma", "semi-colon", "full stop", "colon"], "pick": 1},
+    "answer": [0],
+    "explain": "When the reporting clause comes after the speech, a comma goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-011",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["Leo", "whispered", "“", "I", "can", "hear", "something", "outside", ".", "”"], "mark": ","},
+    "answer": [1],
+    "explain": "A comma follows the reporting clause **Leo whispered**, before the inverted commas open."
+  },
+  {
+    "id": "gi-speech-012",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap where the missing full stop should go.",
+    "input": {"kind": "gap", "tokens": ["The", "pilot", "announced", ",", "“", "We", "are", "about", "to", "land", "”", "Everyone", "cheered", "."], "mark": "."},
+    "answer": [9],
+    "explain": "The full stop that ends the spoken sentence goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-013",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tick true or false for each statement about direct speech.",
+    "input": {"kind": "tf", "statements": ["Each new speaker starts on a new line.", "Inverted commas go around the words that are actually spoken.", "The comma after the spoken words goes outside the inverted commas.", "A spoken question ends with a full stop inside the inverted commas."]},
+    "answer": [true, true, false, false],
+    "explain": "Punctuation that ends the spoken words goes inside the inverted commas, and a question needs a question mark."
+  },
+  {
+    "id": "gi-speech-014",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Which sentence is punctuated correctly?",
+    "input": {"kind": "choice", "options": ["Zara asked, “Is it my turn yet?”", "Zara asked, “Is it my turn yet.”", "Zara asked, “is it my turn yet?”", "Zara asked “Is it my turn yet”?"], "pick": 1},
+    "answer": [0],
+    "explain": "A comma follows **asked**, the speech starts with a capital letter and the question mark goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-015",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap where the missing question mark should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Have", "you", "seen", "my", "glasses", "”", "Mrs", "Evans", "asked", "."], "mark": "?"},
+    "answer": [5],
+    "explain": "The question mark ends the spoken question, so it goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-016",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap the word that should **not** start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["“", "Can", "you", "help", "me", "?", "”", "Asked", "Ella", "."], "pick": 1},
+    "answer": [7],
+    "explain": "The reporting clause carries on the sentence, so **asked** does not need a capital letter."
+  },
+  {
+    "id": "gi-speech-017",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Which sentence is punctuated correctly?",
+    "input": {"kind": "choice", "options": ["The captain shouted, “Abandon ship!", "The captain shouted, “Abandon ship”!", "The captain shouted “abandon ship!”", "The captain shouted, “Abandon ship!”"], "pick": 1},
+    "answer": [3],
+    "explain": "A comma follows **shouted**, and the exclamation mark goes inside the closing inverted commas."
+  },
+  {
+    "id": "gi-speech-018",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“I'm hungry”, moaned Theo.", "“I'm hungry,” moaned Theo.", "“I'm hungry.” moaned Theo.", "“I'm hungry” moaned Theo."], "pick": 1},
+    "answer": [1],
+    "explain": "The comma that separates the speech from **moaned Theo** goes inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-019",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "The opening inverted commas are already there. Tap where the closing inverted commas should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Can", "I", "borrow", "your", "ruler", "?", "asked", "Theo", "."], "mark": "”"},
+    "answer": [6],
+    "explain": "The question mark belongs to the spoken words, so the closing inverted commas go after it."
+  },
+  {
+    "id": "gi-speech-020",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap where the opening inverted commas should go.",
+    "input": {"kind": "gap", "tokens": ["Mr", "Hughes", "said", ",", "Tidy", "your", "desks", ",", "please", ".", "”"], "mark": "“"},
+    "answer": [3],
+    "explain": "The spoken words start at **Tidy**, so the inverted commas open just before it."
+  },
+  {
+    "id": "gi-speech-021",
+    "type": "g-speech",
+    "level": 2,
+    "prompt": "Tap the **two** words that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["amir", "said", ",", "“", "we", "need", "more", "paint", ".", "”"], "pick": 2},
+    "answer": [0, 4],
+    "explain": "**Amir** is a name, and the first spoken word always starts with a capital letter."
+  },
+  {
+    "id": "gi-speech-022",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tap where the **two** missing commas should go.",
+    "input": {"kind": "gap", "tokens": ["“", "If", "we", "hurry", "”", "said", "Omar", "“", "we", "can", "catch", "the", "bus", ".", "”"], "mark": ","},
+    "answer": [3, 6],
+    "explain": "In split speech, a comma ends the first part inside the inverted commas and another follows **said Omar**."
+  },
+  {
+    "id": "gi-speech-023",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“When the bell rings,” said Mr Khan, “line up quietly.”", "“When the bell rings, said Mr Khan, line up quietly.”", "“When the bell rings,” said Mr Khan, “Line up quietly.”", "“When the bell rings” said Mr Khan “line up quietly.”"], "pick": 1},
+    "answer": [0],
+    "explain": "The spoken sentence is split in two, so **line** carries it on with a lower-case letter."
+  },
+  {
+    "id": "gi-speech-024",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“I've finished,” said Priya. “Can I go outside now?”", "“I've finished,” said Priya, “can I go outside now?”", "“I've finished” said Priya. “Can I go outside now?”", "“I've finished,” said Priya. “Can I go outside now”?"], "pick": 1},
+    "answer": [0],
+    "explain": "The second part is a new sentence, so a full stop follows **Priya** and **Can** has a capital letter."
+  },
+  {
+    "id": "gi-speech-025",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Honestly", "”", "laughed", "Ava", ",", "“", "that", "was", "the", "funniest", "film", "ever", "!", "”"], "mark": ","},
+    "answer": [1],
+    "explain": "The first part of the split speech ends with a comma inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-026",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tap the word that should start with a capital letter.",
+    "input": {"kind": "words", "tokens": ["“", "I", "found", "it", ",", "”", "said", "Lily", ".", "“", "it", "was", "under", "my", "bed", ".", "”"], "pick": 1},
+    "answer": [10],
+    "explain": "**It** starts a new spoken sentence, so it needs a capital letter."
+  },
+  {
+    "id": "gi-speech-027",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
+    "input": {"kind": "tf", "statements": ["“Is it raining?” asked Grace.", "“I think,” said Finn, “That we are lost.”", "“Stop!” shouted the lifeguard. “The water is too deep.”", "“We should leave now” said Omar."]},
+    "answer": [true, false, true, false],
+    "explain": "Split speech that carries on the same sentence stays lower case, and a comma must end the speech before **said**."
+  },
+  {
+    "id": "gi-speech-028",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“Do you know?” asked Maya, “where the library is?”", "“Do you know” asked Maya “where the library is?”", "“Do you know,” asked Maya, “Where the library is?”", "“Do you know,” asked Maya, “where the library is?”"], "pick": 1},
+    "answer": [3],
+    "explain": "The question is one sentence split in two, so a comma ends the first part and **where** stays lower case."
+  },
+  {
+    "id": "gi-speech-029",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "When should a writer start a new line in a conversation?",
+    "input": {"kind": "choice", "options": ["after every comma", "after every reporting clause", "when a different person starts speaking", "before every question mark"], "pick": 1},
+    "answer": [2],
+    "explain": "Each new speaker starts on a new line so the reader can follow who is talking."
+  },
+  {
+    "id": "gi-speech-030",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tap where the missing comma should go.",
+    "input": {"kind": "gap", "tokens": ["“", "Before", "we", "start", "”", "said", "the", "coach", ",", "“", "everyone", "needs", "to", "warm", "up", ".", "”"], "mark": ","},
+    "answer": [3],
+    "explain": "The first part of the split speech ends with a comma inside the inverted commas."
+  },
+  {
+    "id": "gi-speech-031",
+    "type": "g-speech",
+    "level": 3,
+    "prompt": "Tick the sentence that is punctuated correctly.",
+    "input": {"kind": "choice", "options": ["“Leo said that he was tired.”", "Leo said that “he was tired.”", "Leo said that he was tired.", "Leo said, “that he was tired.”"], "pick": 1},
+    "answer": [2],
+    "explain": "This is reported speech, not Leo's exact words, so it has no inverted commas."
+  },
+  {
+    "id": "gi-colons-001",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tap where the colon should go.",
+    "input": {"kind": "gap", "tokens": ["You", "will", "need", "three", "things", "a", "torch", ",", "a", "map", "and", "a", "whistle", "."], "mark": ":"},
+    "answer": [4],
+    "explain": "A colon introduces the list after the complete clause **You will need three things**."
+  },
+  {
+    "id": "gi-colons-002",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Which punctuation mark should go in the box?\nFor the cake, we need four things □ flour, eggs, butter and sugar.",
+    "input": {"kind": "choice", "options": ["semi-colon", "hyphen", "comma", "colon"], "pick": 1},
+    "answer": [3],
+    "explain": "A colon introduces a list after a complete clause."
+  },
+  {
+    "id": "gi-colons-003",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tick the sentence that uses a colon correctly.",
+    "input": {"kind": "choice", "options": ["I packed three things: for the trip a coat, a hat and some boots.", "I packed: three things for the trip a coat, a hat and some boots.", "I packed three things for the trip: a coat, a hat and some boots.", "I packed three things for the trip a coat: a hat and some boots."], "pick": 1},
+    "answer": [2],
+    "explain": "The colon comes after the complete clause and introduces the list."
+  },
+  {
+    "id": "gi-colons-004",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tap where the colon should go.",
+    "input": {"kind": "gap", "tokens": ["Our", "class", "has", "three", "pets", "a", "rabbit", ",", "a", "hamster", "and", "a", "goldfish", "."], "mark": ":"},
+    "answer": [4],
+    "explain": "A colon introduces the list after the complete clause **Our class has three pets**."
+  },
+  {
+    "id": "gi-colons-005",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: the colon is used correctly.",
+    "input": {"kind": "tf", "statements": ["We bought three kinds of fruit: apples, pears and plums.", "Leo plays three: instruments.", "The recipe needs two things: milk and oats.", "My: favourite colour is green."]},
+    "answer": [true, false, true, false],
+    "explain": "A colon comes after a complete clause, before a list or an explanation."
+  },
+  {
+    "id": "gi-colons-006",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tap where the semi-colon should go.",
+    "input": {"kind": "gap", "tokens": ["Lily", "loves", "reading", "her", "brother", "prefers", "football", "."], "mark": ";"},
+    "answer": [2],
+    "explain": "A semi-colon joins two closely related main clauses."
+  },
+  {
+    "id": "gi-colons-007",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tick the sentence that uses a semi-colon correctly.",
+    "input": {"kind": "choice", "options": ["The sky grew dark the wind; began to howl.", "The sky grew dark; the wind began to howl.", "The sky grew; dark the wind began to howl.", "The sky; grew dark the wind began to howl."], "pick": 1},
+    "answer": [1],
+    "explain": "The semi-colon sits between the two main clauses **The sky grew dark** and **the wind began to howl**."
+  },
+  {
+    "id": "gi-colons-008",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Which punctuation mark should go in the box?\nThe baby was asleep □ we tiptoed past her room.",
+    "input": {"kind": "choice", "options": ["apostrophe", "hyphen", "comma", "semi-colon"], "pick": 1},
+    "answer": [3],
+    "explain": "A semi-colon can join two main clauses, but a comma cannot."
+  },
+  {
+    "id": "gi-colons-009",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tap where the dash should go.",
+    "input": {"kind": "gap", "tokens": ["The", "door", "creaked", "open", "someone", "was", "coming", "."], "mark": "–"},
+    "answer": [3],
+    "explain": "A single dash can separate two main clauses."
+  },
+  {
+    "id": "gi-colons-010",
+    "type": "g-colons-semicolons",
+    "level": 1,
+    "prompt": "Tap where the colon should go.",
+    "input": {"kind": "gap", "tokens": ["Ravi", "has", "visited", "three", "countries", "France", ",", "Spain", "and", "Italy", "."], "mark": ":"},
+    "answer": [4],
+    "explain": "A colon introduces the list after the complete clause **Ravi has visited three countries**."
+  },
+  {
+    "id": "gi-colons-011",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the colon should go.",
+    "input": {"kind": "gap", "tokens": ["Grace", "was", "thrilled", "she", "had", "been", "picked", "for", "the", "team", "."], "mark": ":"},
+    "answer": [2],
+    "explain": "The colon introduces the explanation of why Grace was thrilled."
+  },
+  {
+    "id": "gi-colons-012",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the semi-colon should go.",
+    "input": {"kind": "gap", "tokens": ["The", "museum", "was", "huge", "we", "could", "not", "see", "everything", "in", "one", "day", "."], "mark": ";"},
+    "answer": [3],
+    "explain": "A semi-colon joins two closely related main clauses."
+  },
+  {
+    "id": "gi-colons-013",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Why is a colon used in this sentence?\nI knew why Kai was late: he had missed the bus.",
+    "input": {"kind": "choice", "options": ["to show possession", "to introduce an explanation", "to introduce a list", "to show where speech begins"], "pick": 1},
+    "answer": [1],
+    "explain": "The words after the colon explain why Kai was late."
+  },
+  {
+    "id": "gi-colons-014",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tick the sentence that uses a semi-colon correctly.",
+    "input": {"kind": "choice", "options": ["I was hungry; because I had missed lunch.", "I was; hungry I had missed lunch.", "I was hungry; I had missed lunch.", "Because I had missed lunch; I was hungry."], "pick": 1},
+    "answer": [2],
+    "explain": "A semi-colon joins two main clauses, and **because I had missed lunch** is not a main clause."
+  },
+  {
+    "id": "gi-colons-015",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the dash should go.",
+    "input": {"kind": "gap", "tokens": ["We", "raced", "to", "the", "station", "the", "train", "had", "already", "left", "."], "mark": "–"},
+    "answer": [4],
+    "explain": "A single dash separates the two main clauses."
+  },
+  {
+    "id": "gi-colons-016",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Which sentence uses a dash correctly?",
+    "input": {"kind": "choice", "options": ["The cake smelled – delicious we could not wait to eat it.", "The cake smelled delicious we could not – wait to eat it.", "The cake – smelled delicious we could not wait to eat it.", "The cake smelled delicious – we could not wait to eat it."], "pick": 1},
+    "answer": [3],
+    "explain": "The dash separates the two main clauses."
+  },
+  {
+    "id": "gi-colons-017",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: the semi-colon is used correctly.",
+    "input": {"kind": "tf", "statements": ["Omar likes maths; Isla prefers science.", "We went outside; although it was cold.", "The wind blew; the leaves swirled around.", "After tea; we played a board game."]},
+    "answer": [true, false, true, false],
+    "explain": "A semi-colon must have a main clause on each side."
+  },
+  {
+    "id": "gi-colons-018",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Which punctuation mark should go in the box?\nThere was only one problem □ nobody had brought the tickets.",
+    "input": {"kind": "choice", "options": ["question mark", "hyphen", "comma", "colon"], "pick": 1},
+    "answer": [3],
+    "explain": "A colon introduces the explanation of what the problem was."
+  },
+  {
+    "id": "gi-colons-019",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the semi-colon should go.",
+    "input": {"kind": "gap", "tokens": ["Some", "people", "like", "the", "seaside", "others", "prefer", "the", "countryside", "."], "mark": ";"},
+    "answer": [4],
+    "explain": "A semi-colon joins two closely related main clauses."
+  },
+  {
+    "id": "gi-colons-020",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the colon should go.",
+    "input": {"kind": "gap", "tokens": ["Pack", "the", "following", "items", "a", "sleeping", "bag", ",", "a", "warm", "jumper", "and", "a", "torch", "."], "mark": ":"},
+    "answer": [3],
+    "explain": "A colon introduces the list after the complete clause **Pack the following items**."
+  },
+  {
+    "id": "gi-colons-021",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the semi-colon should go.",
+    "input": {"kind": "gap", "tokens": ["Amir", "had", "forgotten", "his", "homework", "he", "would", "have", "to", "do", "it", "at", "lunchtime", "."], "mark": ";"},
+    "answer": [4],
+    "explain": "A semi-colon joins two closely related main clauses."
+  },
+  {
+    "id": "gi-colons-022",
+    "type": "g-colons-semicolons",
+    "level": 2,
+    "prompt": "Tap where the dash should go.",
+    "input": {"kind": "gap", "tokens": ["I", "opened", "the", "box", "slowly", "it", "was", "completely", "empty", "."], "mark": "–"},
+    "answer": [4],
+    "explain": "A single dash separates the two main clauses."
+  },
+  {
+    "id": "gi-colons-023",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tap where the **two** semi-colons should go.",
+    "input": {"kind": "gap", "tokens": ["We", "visited", "Cardiff", ",", "in", "Wales", "Glasgow", ",", "in", "Scotland", "and", "Belfast", ",", "in", "Northern", "Ireland", "."], "mark": ";"},
+    "answer": [5, 9],
+    "explain": "The items in the list already contain commas, so semi-colons separate them."
+  },
+  {
+    "id": "gi-colons-024",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick the sentence that uses semi-colons correctly.",
+    "input": {"kind": "choice", "options": ["The winners; were Leo, from Year 4 Ava, from Year 5 and Kai, from Year 6.", "The winners were; Leo, from Year 4, Ava, from Year 5, and Kai, from Year 6.", "The winners were Leo, from Year 4; Ava, from Year 5; and Kai, from Year 6.", "The winners were Leo; from Year 4, Ava; from Year 5, and Kai; from Year 6."], "pick": 1},
+    "answer": [2],
+    "explain": "Each list item already contains a comma, so semi-colons separate the items."
+  },
+  {
+    "id": "gi-colons-025",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick **two** sentences that use a colon correctly.",
+    "input": {"kind": "choice", "options": ["My friend: Noah is very funny.", "Please bring: your packed lunch.", "The reason was simple: the bridge had collapsed.", "We need three colours: red, blue and yellow."], "pick": 2},
+    "answer": [2, 3],
+    "explain": "In both correct sentences, the colon follows a complete clause and introduces an explanation or a list."
+  },
+  {
+    "id": "gi-colons-026",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: the punctuation between the two clauses is correct.",
+    "input": {"kind": "tf", "statements": ["The river had flooded – the road was closed.", "The river had flooded, the road was closed.", "The river had flooded; the road was closed.", "The river had; flooded the road was closed."]},
+    "answer": [true, false, true, false],
+    "explain": "Two main clauses can be separated by a dash or a semi-colon, but not by a comma."
+  },
+  {
+    "id": "gi-colons-027",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick **two** punctuation marks that could go in the box.\nZara practised every day □ she wanted to win the competition.",
+    "input": {"kind": "choice", "options": ["hyphen", "comma", "colon", "semi-colon"], "pick": 2},
+    "answer": [2, 3],
+    "explain": "A colon can introduce the explanation and a semi-colon can join the two main clauses, but a comma cannot."
+  },
+  {
+    "id": "gi-colons-028",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick the sentence where a dash separates two main clauses.",
+    "input": {"kind": "choice", "options": ["The lights went out – everyone screamed.", "The old barn – built long ago – has fallen down.", "My cousin – who lives in Spain – is visiting.", "Ella – my best friend – loves dancing."], "pick": 1},
+    "answer": [0],
+    "explain": "The other sentences use a pair of dashes for parenthesis, not a single dash between clauses."
+  },
+  {
+    "id": "gi-colons-029",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Why has the writer used a semi-colon in this sentence?\nThe film was long; the popcorn ran out after an hour.",
+    "input": {"kind": "choice", "options": ["to introduce a list", "to show where speech begins", "to join two closely related main clauses", "to add extra information in the middle of a sentence"], "pick": 1},
+    "answer": [2],
+    "explain": "The semi-colon joins two main clauses about the same event."
+  },
+  {
+    "id": "gi-colons-030",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tick the sentence that uses a colon correctly.",
+    "input": {"kind": "choice", "options": ["The: weather was perfect warm, sunny and still.", "The weather was perfect warm: sunny and still.", "The weather: was perfect warm, sunny and still.", "The weather was perfect: warm, sunny and still."], "pick": 1},
+    "answer": [3],
+    "explain": "The colon follows the complete clause **The weather was perfect** and introduces more detail."
+  },
+  {
+    "id": "gi-colons-031",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Which punctuation mark should go in the box?\nThe team needed a goalkeeper, who could dive □ a defender, who could tackle; and a striker, who could score.",
+    "input": {"kind": "choice", "options": ["hyphen", "semi-colon", "colon", "question mark"], "pick": 1},
+    "answer": [1],
+    "explain": "The list items already contain commas, so semi-colons separate them."
+  },
+  {
+    "id": "gi-colons-032",
+    "type": "g-colons-semicolons",
+    "level": 3,
+    "prompt": "Tap where the semi-colon should go.",
+    "input": {"kind": "gap", "tokens": ["Although", "it", "was", "late", ",", "Ravi", "kept", "reading", "the", "story", "was", "too", "exciting", "to", "stop", "."], "mark": ";"},
+    "answer": [7],
+    "explain": "The semi-colon joins two main clauses, while **Although it was late** is a subordinate clause."
+  },
+  {
+    "id": "gi-hyphens-001",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["My", "uncle", "has", "a", "bad", "tempered", "parrot", "."], "mark": "-"},
+    "answer": [4],
+    "explain": "**Bad-tempered** describes the parrot, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-002",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["We", "read", "a", "book", "by", "a", "well", "known", "author", "."], "mark": "-"},
+    "answer": [6],
+    "explain": "**Well-known** describes the author, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-003",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tick the sentence that uses a hyphen correctly.",
+    "input": {"kind": "choice", "options": ["The-sugar free sweets tasted strange.", "The sugar free-sweets tasted strange.", "The sugar-free-sweets tasted strange.", "The sugar-free sweets tasted strange."], "pick": 1},
+    "answer": [3],
+    "explain": "**Sugar-free** describes the sweets, so only sugar and free are joined."
+  },
+  {
+    "id": "gi-hyphens-004",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Write the number **63** in words.",
+    "input": {"kind": "text"},
+    "answer": ["sixty-three"],
+    "explain": "Two-part numbers from twenty-one to ninety-nine are written with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-005",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["There", "were", "thirty", "two", "children", "on", "the", "trip", "."], "mark": "-"},
+    "answer": [2],
+    "explain": "Two-part numbers such as **thirty-two** are written with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-006",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap the **two** words that should be joined with a hyphen.",
+    "input": {"kind": "words", "tokens": ["Grace", "has", "a", "curly", "haired", "puppy", "."], "pick": 2},
+    "answer": [3, 4],
+    "explain": "**Curly-haired** describes the puppy, so the two words are joined with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-007",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tick true or false for each sentence: the hyphen is used correctly.",
+    "input": {"kind": "tf", "statements": ["The long-eared rabbit hopped away.", "My brother is twenty-one.", "We walked in-the park.", "Chloe is a fast-runner."]},
+    "answer": [true, true, false, false],
+    "explain": "Hyphens join words that work together as one describing word or one number."
+  },
+  {
+    "id": "gi-hyphens-008",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["The", "cheetah", "is", "a", "fast", "moving", "animal", "."], "mark": "-"},
+    "answer": [4],
+    "explain": "**Fast-moving** describes the animal, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-009",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Which two words should be joined with a hyphen?\nMy sister has a kind hearted friend called Chloe.",
+    "input": {"kind": "choice", "options": ["My sister", "hearted friend", "kind hearted", "called Chloe"], "pick": 1},
+    "answer": [2],
+    "explain": "**Kind-hearted** describes the friend, so those two words are joined."
+  },
+  {
+    "id": "gi-hyphens-010",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["Theo", "was", "wearing", "a", "short", "sleeved", "shirt", "."], "mark": "-"},
+    "answer": [4],
+    "explain": "**Short-sleeved** describes the shirt, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-011",
+    "type": "g-hyphens",
+    "level": 1,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["Priya's", "grandmother", "is", "ninety", "five", "."], "mark": "-"},
+    "answer": [3],
+    "explain": "Two-part numbers such as **ninety-five** are written with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-012",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "The old sofa was covered with new fabric. Which sentence says this?",
+    "input": {"kind": "choice", "options": ["We had the sofa recovered.", "We had the sofa re-covered."], "pick": 1},
+    "answer": [1],
+    "explain": "**Re-cover** means cover again; **recover** means get better or get something back."
+  },
+  {
+    "id": "gi-hyphens-013",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap where the hyphen should go so that the sentence means the shark eats people.",
+    "input": {"kind": "gap", "tokens": ["The", "divers", "were", "chased", "by", "a", "man", "eating", "shark", "."], "mark": "-"},
+    "answer": [6],
+    "explain": "**Man-eating** describes the shark; without the hyphen it sounds like a man eating a shark."
+  },
+  {
+    "id": "gi-hyphens-014",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap where the **two** hyphens should go.",
+    "input": {"kind": "gap", "tokens": ["My", "ten", "year", "old", "cousin", "can", "swim", "very", "well", "."], "mark": "-"},
+    "answer": [1, 2],
+    "explain": "**Ten-year-old** describes the cousin, so all three words are joined with hyphens."
+  },
+  {
+    "id": "gi-hyphens-015",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tick the sentence that uses hyphens correctly.",
+    "input": {"kind": "choice", "options": ["Our seven-year-old dog loves to play.", "Our seven-year old dog loves to play.", "Our seven year-old dog loves to play.", "Our-seven-year-old dog loves to play."], "pick": 1},
+    "answer": [0],
+    "explain": "**Seven-year-old** describes the dog, so all three words are joined with hyphens."
+  },
+  {
+    "id": "gi-hyphens-016",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["We", "watched", "a", "fire", "breathing", "dragon", "at", "the", "puppet", "show", "."], "mark": "-"},
+    "answer": [3],
+    "explain": "**Fire-breathing** describes the dragon, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-017",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tick true or false for each sentence: the hyphens are used correctly.",
+    "input": {"kind": "tf", "statements": ["Ella found a four-leaf clover.", "My grandad is eighty-two years old.", "The dog-was-barking all night.", "Leo is a well-behaved-pupil."]},
+    "answer": [true, true, false, false],
+    "explain": "Hyphens join words that act as one describing word or one number, not whole phrases."
+  },
+  {
+    "id": "gi-hyphens-018",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["My", "sister", "has", "a", "part", "time", "job", "at", "the", "library", "."], "mark": "-"},
+    "answer": [4],
+    "explain": "**Part-time** describes the job, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-019",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap the **two** words that should be joined with a hyphen.",
+    "input": {"kind": "words", "tokens": ["The", "green", "eyed", "cat", "stared", "at", "the", "goldfish", "."], "pick": 2},
+    "answer": [1, 2],
+    "explain": "**Green-eyed** describes the cat, so the two words are joined with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-020",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap the **two** words that should be joined with a hyphen.",
+    "input": {"kind": "words", "tokens": ["We", "went", "on", "a", "two", "day", "trip", "to", "the", "seaside", "."], "pick": 2},
+    "answer": [4, 5],
+    "explain": "**Two-day** describes the trip, so the two words are joined with a hyphen."
+  },
+  {
+    "id": "gi-hyphens-021",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Why is a hyphen used in this sentence?\nThe man-eating tiger was kept in a strong cage.",
+    "input": {"kind": "choice", "options": ["to show that the tiger is in a cage", "to show that a man is eating a tiger", "to show that the tiger eats people", "to separate two main clauses"], "pick": 1},
+    "answer": [2],
+    "explain": "The hyphen joins **man** and **eating** into one describing word for the tiger."
+  },
+  {
+    "id": "gi-hyphens-022",
+    "type": "g-hyphens",
+    "level": 2,
+    "prompt": "Tap where the hyphen should go.",
+    "input": {"kind": "gap", "tokens": ["Kai", "made", "a", "last", "minute", "dash", "for", "the", "bus", "."], "mark": "-"},
+    "answer": [3],
+    "explain": "**Last-minute** describes the dash, so a hyphen joins the two words."
+  },
+  {
+    "id": "gi-hyphens-023",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Which sentence means that the goalkeeper has signed a new contract with the same club?",
+    "input": {"kind": "choice", "options": ["The goalkeeper has resigned.", "The goalkeeper has re-signed."], "pick": 1},
+    "answer": [1],
+    "explain": "**Re-signed** means signed again; **resigned** means gave up a job."
+  },
+  {
+    "id": "gi-hyphens-024",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Which sentence tells you that the band got back together?",
+    "input": {"kind": "choice", "options": ["After ten years, the band re-formed.", "After ten years, the band reformed."], "pick": 1},
+    "answer": [0],
+    "explain": "**Re-formed** means formed again; **reformed** means changed for the better."
+  },
+  {
+    "id": "gi-hyphens-025",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Which sentence tells you that the hospital is for small animals?",
+    "input": {"kind": "choice", "options": ["We took our hamster to a small-animal hospital.", "We took our hamster to a small animal hospital."], "pick": 1},
+    "answer": [0],
+    "explain": "The hyphen joins **small** and **animal** to describe the kind of hospital, not its size."
+  },
+  {
+    "id": "gi-hyphens-026",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Tap where the **two** hyphens should go to show that each child is three years old.",
+    "input": {"kind": "gap", "tokens": ["The", "nursery", "has", "lots", "of", "three", "year", "old", "children", "."], "mark": "-"},
+    "answer": [5, 6],
+    "explain": "**Three-year-old** describes the children, so all three words are joined with hyphens."
+  },
+  {
+    "id": "gi-hyphens-027",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Tick true or false for each sentence: the hyphen is used correctly.",
+    "input": {"kind": "tf", "statements": ["The vet re-treated the dog's sore paw.", "The soldiers re-treated to the castle.", "The teacher had to re-mark our spelling tests.", "She re-marked that it was a sunny day."]},
+    "answer": [true, false, true, false],
+    "explain": "**Re-** with a hyphen means again, while **retreat** means go back and **remark** means say."
+  },
+  {
+    "id": "gi-hyphens-028",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Which sentence tells you that the path is **not used very often**?",
+    "input": {"kind": "choice", "options": ["We walked along a little used path.", "We walked along a little-used path."], "pick": 1},
+    "answer": [1],
+    "explain": "**Little-used** means hardly ever used; without the hyphen it could mean a small path that has been used."
+  },
+  {
+    "id": "gi-hyphens-029",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Add the prefix **re** to **mark** to make a word that means **mark again**.",
+    "input": {"kind": "text"},
+    "answer": ["re-mark"],
+    "explain": "The hyphen shows that **re-mark** means mark again, which is different from **remark**."
+  },
+  {
+    "id": "gi-hyphens-030",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Tap where the hyphen should go so that the sentence means **about** twenty people came.",
+    "input": {"kind": "gap", "tokens": ["Twenty", "odd", "people", "came", "to", "watch", "the", "play", "."], "mark": "-"},
+    "answer": [0],
+    "explain": "**Twenty-odd** means about twenty; without the hyphen it means twenty strange people."
+  },
+  {
+    "id": "gi-hyphens-031",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Tick the sentence that uses a hyphen correctly.",
+    "input": {"kind": "choice", "options": ["Our class made-a get well card for Miss Hill.", "Our class made a get well-card for Miss Hill.", "Our-class made a get well card for Miss Hill.", "Our class made a get-well card for Miss Hill."], "pick": 1},
+    "answer": [3],
+    "explain": "**Get-well** describes the card, so those two words are joined."
+  },
+  {
+    "id": "gi-hyphens-032",
+    "type": "g-hyphens",
+    "level": 3,
+    "prompt": "Which word should have a hyphen in this sentence?\nAfter the storm, we had to recover the roof of the shed with new tiles.",
+    "input": {"kind": "choice", "options": ["recover", "roof", "storm", "tiles"], "pick": 1},
+    "answer": [0],
+    "explain": "The roof was covered again, so it should be **re-cover**; **recover** means get better or get something back."
+  }
+]

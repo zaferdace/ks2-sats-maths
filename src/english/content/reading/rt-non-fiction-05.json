@@ -1,0 +1,224 @@
+{
+  "id": "rt-non-fiction-05",
+  "title": "Wrenfield Needs a Skate Park!",
+  "genre": "non-fiction",
+  "level": 3,
+  "paragraphs": [
+    "Where can a young person in Wrenfield go to have fun, keep fit and meet friends? If you are under sixteen, the honest answer is: almost nowhere. We are Wrenfield Wheels, a group of local young people, and we believe it is time for that to change. We are asking the town council to build a skate park on the empty land beside the recreation ground. Read on to find out why our town needs one – and how you can help.",
+    "Nowhere to go",
+    "At the moment, there is nowhere in Wrenfield where skateboarders, scooter riders and BMX riders are allowed to ride. Instead, many of us practise in the supermarket car park, where we have to dodge moving cars, or in the market square, where we are regularly told to move on. We understand why shopkeepers get fed up with the noise, but it is not fair that young people are treated like troublemakers simply for wanting to exercise. The nearest skate park is in Castleton, fifteen miles away, and getting there takes two buses.",
+    "The perfect spot",
+    "The land beside the recreation ground was once home to two tennis courts, but they have not been used for more than ten years. Today, the space is covered in weeds and broken glass. It is flat, it is next to a bus stop, and the nearest house is more than 200 metres away, so the rattle of wheels on concrete would not disturb anyone. Turning this wasteland into a skate park would make a forgotten corner of our town useful again.",
+    "Good for everyone",
+    "A skate park would help young people to stay healthy. Health experts in the UK say that children and teenagers should be active for an average of at least sixty minutes a day, and skating is so much fun that you hardly notice you are exercising. Skating also teaches patience and determination, because every skater falls over many times before landing a new trick. Best of all, a skate park is not just a slab of concrete. It is a place where people of all ages can meet, share tips and cheer each other on.",
+    "Skateboarding is not just a hobby, either. It became an Olympic sport for the first time at the Tokyo Games, which were held in 2021, and some of the medal winners were just twelve or thirteen years old. Who knows? The next Olympic champion could be a Wrenfield skater – if only they had somewhere to practise.",
+    "What about noise and litter?",
+    "Some people worry that a skate park would bring noise, litter and trouble. We have thought carefully about this. As well as being far from houses, the park would have plenty of bins, and our group has promised to hold a litter-pick every month. In Castleton, young people helped to design their skate park, and they are so proud of it that they keep it clean themselves. A police officer there told us that complaints about young people in the town centre have fallen since the park opened.",
+    "How you can help",
+    "We have already raised £6,000 through cake sales and a sponsored skate, and we are applying for grants to cover the rest of the cost. Now we need you. Please sign our petition at the library or the post office, and come to the council meeting at Wrenfield Town Hall on Thursday 14 May at 7 p.m. to show your support. If you are a young person, tell us what you would like the park to include: we want it to be designed by the people who will use it.",
+    "A skate park would give Wrenfield’s young people somewhere safe to go, something healthy to do and a reason to feel proud of their town. Please support us – together, we can make it happen!"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\n…where we have to **dodge** moving cars…\nWhich word is closest in meaning to **dodge**? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "chase",
+        "race",
+        "avoid",
+        "watch"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "According to the leaflet, where do many young people in Wrenfield practise at the moment? Tick two.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "the recreation ground",
+        "the supermarket car park",
+        "the old tennis courts",
+        "the market square"
+      ],
+      "pick": 2,
+      "answer": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nWhat impression does this paragraph give of the writers? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "They do not care what shopkeepers think.",
+        "They enjoy being told to move on.",
+        "They want the market square to be closed.",
+        "They can understand other people’s point of view as well as their own."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "In which town is the nearest skate park?",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "Castleton",
+        "in Castleton"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nFind and copy one word that means an area of land that is empty and not being used.",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": [
+        "wasteland"
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the leaflet, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "The tennis courts have not been used for more than ten years.",
+        "The group has already raised enough money to build the skate park.",
+        "The nearest house is more than 200 metres from the land.",
+        "The council meeting will be held at the library."
+      ],
+      "answer": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nThe writer says that “a skate park is not just a slab of concrete”.\nWhat does the writer want readers to think? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "that the skate park should be built from wood instead",
+        "that a skate park is much more than a place to ride, because it brings people together",
+        "that concrete is too expensive",
+        "that skate parks are ugly"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\nWhy do you think the writer mentions that some Olympic medal winners were just twelve or thirteen years old? Tick one.",
+      "paragraph": 8,
+      "kind": "choice",
+      "options": [
+        "to suggest that young skaters from Wrenfield could achieve great things if they had somewhere to practise",
+        "to show that the Olympic Games are only for children",
+        "to argue that skateboarding is too dangerous for young people",
+        "to prove that Wrenfield skaters are too old to win medals"
+      ],
+      "pick": 1,
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at the section headed **What about noise and litter?** (paragraphs 9 and 10).\nWhy has the writer included this section? Tick one.",
+      "paragraph": 10,
+      "kind": "choice",
+      "options": [
+        "to warn readers that the skate park will be noisy",
+        "to explain how to skate safely",
+        "to answer worries that some readers might have about the skate park",
+        "to show that the writers have changed their minds"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "Look at paragraphs 10 and 12.\nWhy do you think the group wants young people to help design the skate park? Explain, using evidence from the text.",
+      "paragraph": 10,
+      "kind": "self",
+      "model": "I think they want young people to design it so that they feel proud of it and look after it, just like in Castleton, where young people helped to design their park and “they are so proud of it that they keep it clean themselves”. This would also answer people who worry that a skate park would bring “noise, litter and trouble”. Finally, if young people design it, it will have what skaters really want, so they will use it instead of practising in “the supermarket car park” or “the market square”.",
+      "points": [
+        "They will be proud of it and look after it, like the young designers in Castleton",
+        "It would answer worries that the park would bring noise, litter and trouble",
+        "It will have what skaters want, so they will use it instead of the car park or market square"
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at these statements, which are based on the leaflet. Is each one a fact?\nChoose **true** if it is a fact that could be checked, or **false** if it is the writer’s opinion.",
+      "kind": "tf",
+      "statements": [
+        "Skating is so much fun that you hardly notice you are exercising.",
+        "The group has raised £6,000 through cake sales and a sponsored skate.",
+        "A skate park would give Wrenfield’s young people a reason to feel proud of their town.",
+        "Skateboarding became an Olympic sport for the first time at the Tokyo Games."
+      ],
+      "answer": [
+        false,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the leaflet? Tick one.",
+      "kind": "choice",
+      "options": [
+        "A group of young people complains about the shopkeepers in the market square.",
+        "The town council explains why it has decided to build a skate park.",
+        "A young skater describes how she won a medal at the Olympic Games.",
+        "A group of young people explains why Wrenfield needs a skate park and asks readers to support their campaign."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

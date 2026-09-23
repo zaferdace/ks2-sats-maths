@@ -1,0 +1,198 @@
+{
+  "id": "rt-fiction-05",
+  "title": "Letters from Hill End",
+  "genre": "fiction",
+  "level": 3,
+  "paragraphs": [
+    "The train had been rattling north for hours, carrying Ruby and hundreds of other children out of London, away from the war. She sat squashed between two boys from her street, with her gas-mask box bumping against her knees and a brown label tied to her coat button, as if she were a parcel. That morning, on the crowded platform, Mum had hugged her so tightly that Ruby's hat had fallen off. 'Be brave, love,' Mum had said. 'It won't be for long.'",
+    "In the village hall, the evacuees were lined up against the wall while local families walked up and down, choosing. One by one, the other children were led away, until only Ruby was left, clutching her small brown suitcase. At last, a tall woman in muddy boots stepped forward. She looked Ruby up and down, the way the greengrocer back home inspected a crate of apples. 'You'll do,' said Mrs Hollis, and that was all.",
+    "Everything about Hill End Farm was bewildering. Instead of buses and barrows and the chatter of neighbours, there were cows that stared, hens that pecked and a silence so deep that Ruby could hear her own heartbeat at night. There was no electric light, only oil lamps that smelled of smoke. Mrs Hollis had run the farm alone since her son, Oscar, had joined the army, and she worked from before dawn until after dark. She could spot a stray lamb on the far side of the valley, yet she hardly seemed to notice Ruby at all, except to give curt orders: 'Shut that gate. Wipe your boots. Eat up.'",
+    "On Sunday, Ruby wrote her first letter home. 'Dear Mum,' she wrote. 'I am having a lovely time. The farm is very big and I have a bedroom all to myself. Mrs Hollis is very kind. Please don't worry about me. Love from Ruby.' She did not mention that she had cried into her pillow every night, or that she had secretly fed her boiled cabbage to the sheepdog under the table.",
+    "One grey afternoon, the postman brought a thin envelope. Mrs Hollis turned it over and over in her rough red hands, but she did not open it. Ruby noticed that her fingers were trembling. 'You read it,' Mrs Hollis said suddenly, pushing it across the table. 'My eyes aren't what they were.' So Ruby read the letter aloud. Oscar was well, he wrote. The food was dreadful, the sergeant was worse, and he missed his mother's bread more than anything in the world.",
+    "When Ruby had finished, Mrs Hollis sat motionless. Then she pressed her apron to her face, and her shoulders began to shake. For one awful moment, Ruby thought she was crying, until she realised that Mrs Hollis was laughing. 'The sergeant's worse than the food!' she said, wiping her eyes. 'That's my Oscar.' And for the first time since Ruby had arrived, Mrs Hollis looked at her and smiled properly.",
+    "After that, things began to change. Mrs Hollis showed Ruby how to slide a hand under a sitting hen without being pecked, and how to knead dough until it felt as soft as a baby's cheek. She let Ruby choose a name for the new calf. In the evenings, they sat by the stove while Ruby read Oscar's letters aloud, even though they both knew, by then, that there was nothing wrong with Mrs Hollis's eyes.",
+    "At the end of October, Ruby wrote to Mum again. 'Dear Mum,' she wrote. 'The farm smells of cows, the nights are very quiet and I still miss you every single day. But I have named the calf Clementine, I can collect the eggs without breaking any (nearly), and Mrs Hollis is teaching me to make bread. She is not very good at smiling, but she is getting better. Love from Ruby. P.S. This time, everything I have written is true.'"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nRuby has 'a brown label tied to her coat button, as if she were a parcel'.\nWhat does the phrase 'as if she were a parcel' suggest?\nTick one.",
+      "options": [
+        "Ruby is being sent away like an object, not a person.",
+        "Ruby has been given a birthday present.",
+        "Ruby has packed too many things in her suitcase.",
+        "Ruby is on her way to the post office."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\n'You'll do,' said Mrs Hollis, and that was all.\nWhat impression does this give of Mrs Hollis at this point in the story?\nTick one.",
+      "options": [
+        "She is cheerful and chatty.",
+        "She is a woman of few words who does not show her feelings.",
+        "She is cross with Ruby for being the last child left.",
+        "She has been longing for weeks to meet Ruby."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nFind and copy **one** word that means short and rather rude.",
+      "accept": ["curt"]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhat did the farm use for light instead of electricity?",
+      "accept": [
+        "oil lamps",
+        "oil lamp",
+        "an oil lamp",
+        "the oil lamps",
+        "some oil lamps",
+        "lamps",
+        "lamp",
+        "oil",
+        "by oil lamps",
+        "with oil lamps",
+        "by oil lamp",
+        "with oil lamp",
+        "they used oil lamps",
+        "oil lamps that smelled of smoke"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWhy do you think Mrs Hollis **really** asked Ruby to read the letter?\nTick one.",
+      "options": [
+        "She was too busy on the farm to read it herself.",
+        "She was afraid that it might contain bad news about Oscar.",
+        "She wanted to find out whether Ruby could read.",
+        "Her eyes were too weak to read the small writing."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\n'When Ruby had finished, Mrs Hollis sat **motionless**.'\nWhich word is closest in meaning to **motionless**?\nTick one.",
+      "options": ["still", "silent", "puzzled", "exhausted"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 7,
+      "prompt": "Look at paragraph 7.\nWhich **two** things did Mrs Hollis teach Ruby to do?\nTick two.",
+      "options": [
+        "milk a cow",
+        "slide a hand under a hen without being pecked",
+        "drive the cows to market",
+        "knead dough"
+      ],
+      "pick": 2,
+      "answer": [1, 3]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Ruby left London on a train.",
+        "Mrs Hollis was the first person to choose an evacuee.",
+        "In his letter, Oscar said that he missed his mother's bread.",
+        "Ruby named the new calf Clementine."
+      ],
+      "answer": [true, false, true, true]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
+      "options": [
+        "Good news in a letter from Oscar helps Mrs Hollis and Ruby to become closer.",
+        "Mrs Hollis gets bad news about Oscar and sends Ruby back to London.",
+        "Ruby writes to her mum to say that she is having a lovely time.",
+        "Ruby learns to read by practising with Oscar's letters."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2h",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Compare Ruby's two letters to her mum.\nWhich statement best describes the difference between them?\nTick one.",
+      "options": [
+        "The first letter hides how Ruby really feels, but the second letter tells the truth.",
+        "The first letter is honest, but the second letter is full of made-up stories.",
+        "In the second letter, Ruby asks her mum to take her home.",
+        "In the second letter, Ruby says that she has a bedroom all to herself."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "prompt": "How do Ruby's feelings about living at Hill End Farm change during the story?\nExplain fully, using evidence from the text.",
+      "model": "At first, Ruby is homesick and unhappy. Everything is 'bewildering', she 'cried into her pillow every night', and she only pretends to her mum that she is 'having a lovely time'. After Oscar's letter, Mrs Hollis becomes kinder and teaches Ruby things, so Ruby starts to feel happier and more at home. She names the calf Clementine and is learning to make bread, and her second letter is honest: 'This time, everything I have written is true.'",
+      "points": [
+        "Explains that at first Ruby is unhappy, homesick or lonely, with evidence, e.g. she 'cried into her pillow every night'.",
+        "Explains that by the end Ruby feels happier or more at home, with evidence, e.g. she named the calf Clementine or is learning to make bread.",
+        "Explains why her feelings change or how her letters show it, e.g. Mrs Hollis becomes kinder after Oscar's letter, or her second letter is honest."
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Ruby reads Oscar's letter aloud.",
+        "Mrs Hollis chooses Ruby in the village hall.",
+        "Ruby writes that everything in her letter is true.",
+        "Mum hugs Ruby on the platform.",
+        "Ruby writes that Mrs Hollis is very kind."
+      ],
+      "answer": [3, 1, 4, 0, 2]
+    }
+  ]
+}

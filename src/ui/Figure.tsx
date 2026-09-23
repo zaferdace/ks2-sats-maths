@@ -3,7 +3,7 @@
 import type { Block } from '../gen/types';
 import { formatNumber } from '../gen/format';
 
-type FigureBlock = Exclude<Block, { b: 'text' }>;
+type FigureBlock = Exclude<Block, { b: 'text' | 'speak' | 'passage' }>;
 
 const PI = Math.PI;
 const polar = (cx: number, cy: number, r: number, turn: number) => {

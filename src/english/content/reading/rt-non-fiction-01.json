@@ -1,0 +1,202 @@
+{
+  "id": "rt-non-fiction-01",
+  "title": "Puffins: Clowns of the Sea",
+  "genre": "non-fiction",
+  "level": 1,
+  "paragraphs": [
+    "Have you ever seen a bird with a beak as bright as a rainbow? You might spot one on Britain’s cliffs in spring or summer. It is a puffin, a small seabird with a black back, a white front and orange feet. Because of its colourful beak and its waddling walk, the puffin is sometimes called the “clown of the sea”.",
+    "An adult puffin is about as long as a 30-centimetre ruler. Puffins spend most of their lives at sea. In autumn and winter, they live far out on the ocean, bobbing on the waves even in wild storms. They only return to land in spring, to raise a family.",
+    "Puffins are excellent swimmers. They dive to catch small fish such as sand eels. Underwater, they flap their wings as if they were flying and steer with their webbed feet. A puffin can carry several fish in its beak at once, holding each one in place with its tongue while it catches the next.",
+    "Each spring, puffins return to the same cliff tops, often to the very same burrow. A burrow is a tunnel in the ground. Puffins dig burrows with their beaks and feet, or move into old rabbit holes. Deep inside the burrow, the female lays a single egg. Both parents take turns to keep the egg warm for about six weeks.",
+    "When the egg hatches, out comes a fluffy black chick called a puffling. Its parents fly back and forth to the sea many times a day, bringing it beakfuls of fish. Safe in the dark burrow, the hungry puffling eats and eats until it grows plump.",
+    "Puffins have enemies, too. Large gulls wait on the cliff tops, ready to snatch young birds or steal fish from tired parents. At about six weeks old, the puffling is ready to leave. It waits until dark, then scurries to the cliff edge and flutters down to the sea alone. It will not come back to land for two or three years.",
+    "Sadly, puffins are at risk. In some areas, there are fewer sand eels for them to eat, and on some islands, rats eat their eggs and chicks. People are working hard to help. On Lundy, an island off the coast of Devon, rats were removed, and puffins now raise chicks there again."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy one word that means walking with short steps while rocking from side to side.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": [
+        "waddling"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nThe writer says the puffin has “a beak as bright as a rainbow”.\nWhat does this tell you about the puffin’s beak? Tick one.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "It is curved like a rainbow.",
+        "It is very colourful.",
+        "It only appears after rain.",
+        "It is extremely large."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "According to paragraph 2, where do puffins spend the autumn and winter? Tick one.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "in burrows on the cliff tops",
+        "in old rabbit holes",
+        "on sandy beaches",
+        "far out on the ocean"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nPuffins bob on the waves “even in wild storms”.\nWhat does this suggest about puffins? Tick one.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "They are tough birds.",
+        "They are afraid of the sea.",
+        "They prefer storms to calm weather.",
+        "They cannot fly."
+      ],
+      "pick": 1,
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "According to paragraph 3, what kind of small fish do puffins catch?",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "sand eels",
+        "sand eel",
+        "sandeels",
+        "sandeel"
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "Puffins use their wings to swim underwater.",
+        "Puffins steer with their tails when they swim.",
+        "Puffins dig their burrows with their beaks and feet.",
+        "A puffin can only carry one fish in its beak at a time."
+      ],
+      "answer": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\n…the hungry puffling eats and eats until it grows **plump**.\nWhich word is closest in meaning to **plump**? Tick one.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "fluffy",
+        "brave",
+        "chubby",
+        "noisy"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at paragraph 6.\nWhy do you think the puffling waits until dark before it leaves? Explain, using evidence from the text.",
+      "paragraph": 6,
+      "kind": "self",
+      "model": "I think the puffling waits until dark so that its enemies cannot see it. The text says that “large gulls wait on the cliff tops, ready to snatch young birds”, so if the puffling left in daylight, a gull might catch it before it reached the sea.",
+      "points": [
+        "Explains that in the dark it is harder for enemies to see or catch the puffling",
+        "Uses evidence: large gulls wait on the cliff tops, ready to snatch young birds"
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happen in a puffin’s year.",
+      "kind": "order",
+      "items": [
+        "The puffling flutters down to the sea.",
+        "Puffins return to the cliff tops.",
+        "Both parents take turns to keep the egg warm.",
+        "The female lays a single egg.",
+        "The parents bring fish to the puffling."
+      ],
+      "answer": [
+        1,
+        3,
+        2,
+        4,
+        0
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why does the writer begin the text with a question? Tick one.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "to show that the writer does not know much about puffins",
+        "to give the reader instructions",
+        "to tell the reader how the text will end",
+        "to make the reader curious and want to read on"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "Puffins are funny birds that perform tricks like clowns.",
+        "Puffins are colourful seabirds that spend most of the year at sea, come to land to raise their chicks and are now being helped by people.",
+        "Gulls and rats are the biggest dangers to all the birds in Britain.",
+        "Puffins spend the whole year in burrows on the cliff tops."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    }
+  ]
+}

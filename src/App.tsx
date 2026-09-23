@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { buildGpsPaper } from './english/gps/paper';
+import { englishHistory } from './english/history';
+import { buildReading } from './english/reading';
+import { buildSpellingTest } from './english/spelling';
 import { generatePaper } from './gen/paper';
 import { generateReasoningPaper } from './gen/reasoning/paper';
-import type { PaperKind } from './gen/types';
+import { SUBJECT_OF, type AnyQuestion } from './gen/types';
 import { newPaperCode } from './gen/rng';
 import { HomeScreen } from './screens/HomeScreen';
 import { ProfilesScreen } from './screens/ProfilesScreen';
@@ -17,9 +21,10 @@ import {
   replaceAttempt,
   selectProfile,
   type Attempt,
-  type Mode,
+  type StartRequest,
+  type StoreData,
 } from './store/model';
-import { useStore } from './useStore';
+import { useStore, type Update } from './useStore';
 
 // Screens live in memory: no URL routing, so the home-screen app never loses its place.
 type Screen =
@@ -32,6 +37,11 @@ type Screen =
 
 export default function App() {
   const { data, update, saveFailed } = useStore();
+  // Results load from IndexedDB in a moment; until then the page stays empty.
+  return data ? <Main data={data} update={update} saveFailed={saveFailed} /> : <div className="app" aria-busy="true" />;
+}
+
+function Main({ data, update, saveFailed }: { data: StoreData; update: Update; saveFailed: boolean }) {
   const profile = data.profiles.find((p) => p.id === data.currentProfileId);
   const [screen, setScreen] = useState<Screen>(() => ({ name: profile ? 'home' : 'profiles' }) as Screen);
 
@@ -54,11 +64,32 @@ export default function App() {
 
   const goHome = useCallback(() => setScreen({ name: 'home' }), []);
 
-  const startPaper = (paper: PaperKind, mode: Mode) => {
+  const startPaper = ({ paper, mode, level = 'mixed', size }: StartRequest) => {
     if (!profile) return;
     const code = newPaperCode();
-    const questions = paper === 'reasoning' ? generateReasoningPaper(code) : generatePaper(code);
-    const attempt = createAttempt(profile.id, mode, code, questions, Date.now());
+    // English papers avoid what this pupil has already seen and bring back mistakes.
+    const history = () => englishHistory(data.attempts.filter((a) => a.profileId === profile.id));
+    let questions: AnyQuestion[];
+    switch (paper) {
+      case 'arithmetic':
+        questions = generatePaper(code);
+        break;
+      case 'reasoning':
+        questions = generateReasoningPaper(code);
+        break;
+      case 'gps':
+        questions = buildGpsPaper(code, level, history());
+        break;
+      case 'spelling':
+        questions = buildSpellingTest(code, level, history(), size);
+        break;
+      case 'reading':
+        questions = buildReading(code, level, history(), size === 3 ? 3 : 1);
+        break;
+    }
+    if (!questions.length) return;
+    const english = SUBJECT_OF[paper] === 'english';
+    const attempt = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
     update((d) => addAttempt(d, attempt));
     setScreen({ name: 'test', attemptId: attempt.id });
   };

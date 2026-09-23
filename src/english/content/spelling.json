@@ -1,0 +1,2803 @@
+[
+  {
+    "word": "accident",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Sam had a small accident and spilt juice on the kitchen floor."
+  },
+  {
+    "word": "accidentally",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Ella accidentally knocked over the tower of blocks she had built.",
+    "hint": "double c, double l"
+  },
+  {
+    "word": "address",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Please write your full address clearly at the top of the letter.",
+    "hint": "double d"
+  },
+  {
+    "word": "answer",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Noah put up his hand because he knew the answer to the question."
+  },
+  {
+    "word": "appear",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Stars appear in the sky once the sun has gone down."
+  },
+  {
+    "word": "arrive",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Our train should arrive at the station in ten minutes."
+  },
+  {
+    "word": "believe",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "I believe that hard work is more important than luck.",
+    "hint": "i before e except after c"
+  },
+  {
+    "word": "bicycle",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Jack rides his bicycle to school every morning with his brother."
+  },
+  {
+    "word": "breath",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Maya took a deep breath before she dived into the pool.",
+    "hint": "breath is the noun"
+  },
+  {
+    "word": "breathe",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Remember to breathe slowly if you feel worried before a test.",
+    "hint": "breathe is the verb, with a silent e"
+  },
+  {
+    "word": "build",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The children plan to build a den at the bottom of the garden.",
+    "hint": "ui, not iu"
+  },
+  {
+    "word": "busy",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The market was busy with shoppers on Saturday morning.",
+    "hint": "sounds like bizzy but spelt with a u"
+  },
+  {
+    "word": "business",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Grandad started his own business selling honey from his bees.",
+    "hint": "busy plus ness, the y changes to i"
+  },
+  {
+    "word": "calendar",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Zara marked her birthday on the calendar hanging in the kitchen.",
+    "hint": "ends in -ar, not -er"
+  },
+  {
+    "word": "caught",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The goalkeeper caught the ball just before it crossed the line.",
+    "hint": "au then ght"
+  },
+  {
+    "word": "centre",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The fountain stands in the centre of the busy town square.",
+    "hint": "UK spelling: -re, not -er"
+  },
+  {
+    "word": "century",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A century is a period of one hundred years."
+  },
+  {
+    "word": "certain",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Omar was certain that he had left his key on the table."
+  },
+  {
+    "word": "circle",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The teacher asked the class to sit in a circle on the mat."
+  },
+  {
+    "word": "complete",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Leo needs one more sticker to complete his football album."
+  },
+  {
+    "word": "consider",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Please consider how the other players feel before you shout."
+  },
+  {
+    "word": "continue",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The match will continue after a short break for the players."
+  },
+  {
+    "word": "decide",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Ravi could not decide which book to borrow from the library."
+  },
+  {
+    "word": "describe",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Can you describe what the strange creature in your dream looked like?"
+  },
+  {
+    "word": "different",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Chloe chose a different colour for each wall in her bedroom."
+  },
+  {
+    "word": "difficult",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The last question on the test was extremely difficult to answer.",
+    "hint": "double f"
+  },
+  {
+    "word": "disappear",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Fog can make hills and buildings disappear from view very quickly.",
+    "hint": "dis- plus appear, one s"
+  },
+  {
+    "word": "early",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "We left home early so we would not miss the coach."
+  },
+  {
+    "word": "earth",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The Earth takes one year to travel around the sun."
+  },
+  {
+    "word": "eight",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Isla invited eight friends to her birthday party at the park.",
+    "hint": "ei, not ie"
+  },
+  {
+    "word": "eighth",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Theo was the eighth runner to cross the finish line today.",
+    "hint": "eight plus h, the gh is silent"
+  },
+  {
+    "word": "enough",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "There was not enough time to finish the whole quiz today.",
+    "hint": "ough sounds like uff"
+  },
+  {
+    "word": "exercise",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Regular exercise keeps your heart and muscles strong and healthy.",
+    "hint": "UK spelling: -ise"
+  },
+  {
+    "word": "experience",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Visiting the space museum was an experience Priya will never forget."
+  },
+  {
+    "word": "experiment",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The class did an experiment to see which liquids would mix."
+  },
+  {
+    "word": "extreme",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The climbers faced extreme cold near the top of the mountain."
+  },
+  {
+    "word": "famous",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The artist became famous after her painting won a national prize."
+  },
+  {
+    "word": "favourite",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Pizza is Finn's favourite meal on a Friday night.",
+    "hint": "UK spelling: -our-, not -or-"
+  },
+  {
+    "word": "february",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The shortest month of the year is February.",
+    "hint": "don't forget the r: Feb-ru-ary"
+  },
+  {
+    "word": "forward",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Grace leaned forward to get a better look at the map."
+  },
+  {
+    "word": "fruit",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Leo packed some fresh fruit and a sandwich for the school trip.",
+    "hint": "ui, not iu"
+  },
+  {
+    "word": "grammar",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Good grammar makes your writing much easier for others to understand.",
+    "hint": "double m, ends in -ar"
+  },
+  {
+    "word": "group",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Each group had to build a bridge out of drinking straws.",
+    "hint": "ou makes an oo sound"
+  },
+  {
+    "word": "guard",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A security guard checked every bag before we entered the stadium.",
+    "hint": "gu- makes a hard g sound"
+  },
+  {
+    "word": "guide",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Our guide showed us the oldest paintings inside the cave.",
+    "hint": "gu- makes a hard g sound"
+  },
+  {
+    "word": "heard",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Yusuf heard a strange noise coming from the attic last night.",
+    "hint": "past tense of hear"
+  },
+  {
+    "word": "heart",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Running fast for a long time makes your heart beat quicker."
+  },
+  {
+    "word": "height",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The height of the climbing wall made some pupils feel nervous.",
+    "hint": "ei, not ie, like eight"
+  },
+  {
+    "word": "history",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Our history lesson today was about castles built in medieval times."
+  },
+  {
+    "word": "imagine",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Try to imagine what life was like before mobile phones existed."
+  },
+  {
+    "word": "increase",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A good diet can increase the amount of energy you have."
+  },
+  {
+    "word": "important",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "It is important to wash your hands before you eat lunch.",
+    "hint": "ends in -ant, not -ent"
+  },
+  {
+    "word": "interest",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Kai showed great interest in the model volcano at the fair."
+  },
+  {
+    "word": "island",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The pirates buried their treasure on a small, hidden island.",
+    "hint": "silent s"
+  },
+  {
+    "word": "knowledge",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Reading books gives you knowledge about places you may never visit.",
+    "hint": "know plus ledge"
+  },
+  {
+    "word": "learn",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "We learn new spelling words in class every single week."
+  },
+  {
+    "word": "length",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The length of the corridor made it perfect for a running race.",
+    "hint": "remember the g: len-g-th"
+  },
+  {
+    "word": "library",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Ava borrowed three mystery novels from the school library yesterday.",
+    "hint": "don't forget both r's"
+  },
+  {
+    "word": "material",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The curtains were made from a thick, bright orange material."
+  },
+  {
+    "word": "medicine",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The doctor gave Sam some medicine to help his cough.",
+    "hint": "related to medical, so spelt with a c"
+  },
+  {
+    "word": "mention",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Did anyone mention what time the school trip actually starts?"
+  },
+  {
+    "word": "minute",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Please wait one minute while I find my library card."
+  },
+  {
+    "word": "natural",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Honey is a natural sweetener that bees make from flower nectar."
+  },
+  {
+    "word": "naughty",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The naughty puppy chewed a hole in Dad's favourite slipper.",
+    "hint": "augh sounds like or"
+  },
+  {
+    "word": "notice",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A notice on the board told pupils about the football trials."
+  },
+  {
+    "word": "occasion",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Wearing a suit is normal only on a very special occasion.",
+    "hint": "double c, one s"
+  },
+  {
+    "word": "occasionally",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Occasionally, the school bus arrives a few minutes early.",
+    "hint": "double c, one s, double l"
+  },
+  {
+    "word": "often",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Priya often walks her dog along the river before breakfast.",
+    "hint": "silent t"
+  },
+  {
+    "word": "opposite",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The bakery is opposite the library on the high street.",
+    "hint": "related to oppose"
+  },
+  {
+    "word": "ordinary",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "It was just an ordinary Tuesday until the fire alarm rang."
+  },
+  {
+    "word": "particular",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Theo has a particular way of folding his football kit."
+  },
+  {
+    "word": "peculiar",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A peculiar smell drifted out of the science lab this morning."
+  },
+  {
+    "word": "perhaps",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Perhaps we should take an umbrella in case it rains later."
+  },
+  {
+    "word": "popular",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The climbing frame is the most popular part of the playground."
+  },
+  {
+    "word": "position",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Ravi changed his position on the team after the injury."
+  },
+  {
+    "word": "possess",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Some animals possess senses that humans simply do not have.",
+    "hint": "double s, twice"
+  },
+  {
+    "word": "possession",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Losing his watch felt like losing his most treasured possession.",
+    "hint": "double s, then double s again plus ion"
+  },
+  {
+    "word": "possible",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Is it possible to finish this puzzle before dinner time?",
+    "hint": "double s"
+  },
+  {
+    "word": "potatoes",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Grandma grows carrots, onions and potatoes in her back garden.",
+    "hint": "don't forget the e before s"
+  },
+  {
+    "word": "pressure",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Too much pressure before a test can make pupils feel anxious."
+  },
+  {
+    "word": "probably",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "It will probably rain later, so bring a coat to school.",
+    "hint": "don't forget the middle b"
+  },
+  {
+    "word": "promise",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Chloe made a promise to feed the class hamster every day."
+  },
+  {
+    "word": "purpose",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The purpose of the meeting was to plan the summer fair."
+  },
+  {
+    "word": "quarter",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A quarter of the class chose swimming as their favourite sport."
+  },
+  {
+    "word": "question",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Nobody could answer the final question in the quiz correctly."
+  },
+  {
+    "word": "recent",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "In recent weeks, the weather has been unusually warm and dry."
+  },
+  {
+    "word": "regular",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Regular practice will help you get better at playing the piano."
+  },
+  {
+    "word": "reign",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The reign of that queen lasted for more than fifty years.",
+    "hint": "like eight and weight: ei"
+  },
+  {
+    "word": "remember",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Try to remember your PE kit for the lesson on Friday."
+  },
+  {
+    "word": "sentence",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Write a sentence that describes your favourite place to visit."
+  },
+  {
+    "word": "separate",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Keep the wet towels in a separate bag from your books.",
+    "hint": "sep-a-rate, not seperate"
+  },
+  {
+    "word": "special",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Grandma baked a special cake for Omar's tenth birthday party."
+  },
+  {
+    "word": "straight",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Walk straight down this corridor and turn left at the end.",
+    "hint": "gh is silent"
+  },
+  {
+    "word": "strange",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "A strange shadow moved across the wall during the storm."
+  },
+  {
+    "word": "strength",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Lifting the heavy box took all of Finn's strength.",
+    "hint": "remember the g: streng-th"
+  },
+  {
+    "word": "suppose",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "I suppose we could try a different route to the beach.",
+    "hint": "double p"
+  },
+  {
+    "word": "surprise",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The whole class planned a surprise party for their kind teacher.",
+    "hint": "remember the r: sur-prise"
+  },
+  {
+    "word": "therefore",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "It was raining, therefore the sports day was moved indoors."
+  },
+  {
+    "word": "though",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Though it was cold, the children still played outside at break.",
+    "hint": "ough sounds like oh"
+  },
+  {
+    "word": "although",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Although she was tired, Isla finished the whole cross-country race.",
+    "hint": "al plus though"
+  },
+  {
+    "word": "thought",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Nobody thought the small team could win the district final.",
+    "hint": "ough sounds like or"
+  },
+  {
+    "word": "through",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The path leads through a shaded wood beside the old mill.",
+    "hint": "ough sounds like oo"
+  },
+  {
+    "word": "various",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The market sold various fruits that Maya had never tasted before."
+  },
+  {
+    "word": "weight",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The weight of the backpack made Yusuf's shoulders ache by lunchtime.",
+    "hint": "ei, like eight"
+  },
+  {
+    "word": "woman",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "The woman at the ticket desk helped us find our platform.",
+    "hint": "singular: wo-MAN"
+  },
+  {
+    "word": "women",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Several women from the village formed a new football team.",
+    "hint": "plural: wo-MEN"
+  },
+  {
+    "word": "actual",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Nobody knew the actual reason why the trip was cancelled."
+  },
+  {
+    "word": "actually",
+    "level": 1,
+    "group": "y34-list",
+    "sentence": "Kai actually finished his homework before dinner for once.",
+    "hint": "double l"
+  },
+  {
+    "word": "accommodate",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The new hotel can accommodate up to four hundred guests each night.",
+    "hint": "double c, double m"
+  },
+  {
+    "word": "accompany",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Would you like me to accompany you to the dentist tomorrow?"
+  },
+  {
+    "word": "according",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "According to the forecast, it should stay dry for sports day."
+  },
+  {
+    "word": "achieve",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Practising every day helped Leo achieve his personal best time."
+  },
+  {
+    "word": "aggressive",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The coach asked the players to stop being so aggressive during training."
+  },
+  {
+    "word": "amateur",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Dad still plays for an amateur football team on Sunday mornings."
+  },
+  {
+    "word": "ancient",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The museum displayed pottery from an ancient Roman settlement."
+  },
+  {
+    "word": "apparent",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "It was apparent from her smile that Priya had won the race."
+  },
+  {
+    "word": "appreciate",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "I really appreciate you helping me carry these heavy boxes upstairs."
+  },
+  {
+    "word": "attached",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "A small label was attached to the parcel with a piece of string."
+  },
+  {
+    "word": "available",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Tickets for the school play are still available at the office."
+  },
+  {
+    "word": "average",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The average temperature in April is much warmer than in January."
+  },
+  {
+    "word": "awkward",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "There was an awkward silence after Finn forgot his lines in the play."
+  },
+  {
+    "word": "bargain",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Mum found a real bargain on winter coats in the sale."
+  },
+  {
+    "word": "bruise",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Ravi got a bruise on his knee after falling off his scooter."
+  },
+  {
+    "word": "category",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Please sort each animal into the correct category on the chart."
+  },
+  {
+    "word": "cemetery",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "An old, quiet cemetery stood behind the crumbling stone church.",
+    "hint": "three e's: cem-e-tery"
+  },
+  {
+    "word": "committee",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The school committee decided to plant new trees around the field.",
+    "hint": "double m, double t, double e"
+  },
+  {
+    "word": "communicate",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Sailors used flags to communicate messages between different ships."
+  },
+  {
+    "word": "community",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Everyone in the community helped clean up the local park."
+  },
+  {
+    "word": "competition",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Zara entered the baking competition with a lemon drizzle cake."
+  },
+  {
+    "word": "conscience",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Leaving without saying sorry troubled his conscience for the rest of the day.",
+    "hint": "science with con- in front"
+  },
+  {
+    "word": "conscious",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The patient became conscious again shortly after the operation ended.",
+    "hint": "ends in -scious, like precious ends in -cious"
+  },
+  {
+    "word": "controversy",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The referee's final decision caused a huge controversy among both teams.",
+    "hint": "stress the first syllable: CON-tro-ver-sy"
+  },
+  {
+    "word": "convenience",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "For convenience, the shop stays open until ten every evening."
+  },
+  {
+    "word": "correspond",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The dotted lines correspond to the borders between each country."
+  },
+  {
+    "word": "criticise",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "It is easy to criticise a plan without offering a better one.",
+    "hint": "UK spelling: -ise not -ize"
+  },
+  {
+    "word": "curiosity",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Out of curiosity, Omar opened the mysterious box in the attic."
+  },
+  {
+    "word": "definite",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "There is no definite date yet for the school trip to the farm.",
+    "hint": "ends in -ite, not -ate"
+  },
+  {
+    "word": "desperate",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The stranded hikers sent a desperate message asking for help.",
+    "hint": "contains sper, not spir"
+  },
+  {
+    "word": "determined",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Ella was determined to finish the marathon even though it was raining."
+  },
+  {
+    "word": "develop",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Reading often will help you develop a wider vocabulary.",
+    "hint": "no e at the end"
+  },
+  {
+    "word": "dictionary",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Look up any unfamiliar word in a dictionary before the spelling test."
+  },
+  {
+    "word": "disastrous",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The picnic turned disastrous when the storm arrived without warning.",
+    "hint": "disaster plus ous, drop the e"
+  },
+  {
+    "word": "embarrass",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Loud snoring at the sleepover began to embarrass Jack a little.",
+    "hint": "double r, double s"
+  },
+  {
+    "word": "environment",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Recycling paper and plastic helps protect the natural environment.",
+    "hint": "don't forget the n before ment"
+  },
+  {
+    "word": "equip",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The scouts will equip each tent with a torch and a blanket.",
+    "hint": "one p; equipped doubles the p"
+  },
+  {
+    "word": "especially",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Maya loves fruit, especially strawberries picked fresh in the summer."
+  },
+  {
+    "word": "exaggerate",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Try not to exaggerate the size of the fish you caught.",
+    "hint": "one x, double g"
+  },
+  {
+    "word": "excellent",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Theo's report said his effort in maths this term was excellent.",
+    "hint": "double l"
+  },
+  {
+    "word": "existence",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Scientists still argue about the existence of creatures in the deep ocean.",
+    "hint": "ends in -ence, not -ance"
+  },
+  {
+    "word": "explanation",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Grace gave a clear explanation of how the water cycle works."
+  },
+  {
+    "word": "familiar",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "That tune sounded familiar, although Kai couldn't remember its name.",
+    "hint": "related to family: famil-iar"
+  },
+  {
+    "word": "foreign",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Learning a foreign language can help you when you travel abroad.",
+    "hint": "e before i here: for-eign"
+  },
+  {
+    "word": "forty",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Grandad has been a bus driver in this town for forty years.",
+    "hint": "no u, unlike four"
+  },
+  {
+    "word": "frequently",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Buses run frequently along this road during the morning rush."
+  },
+  {
+    "word": "government",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The government announced new rules about recycling plastic bottles.",
+    "hint": "govern plus ment"
+  },
+  {
+    "word": "guarantee",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The shop gave a two-year guarantee on the new washing machine.",
+    "hint": "gua- at the start, like guard"
+  },
+  {
+    "word": "harass",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The headteacher made it clear that pupils must never harass one another.",
+    "hint": "one r, double s"
+  },
+  {
+    "word": "hindrance",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "A blocked path was a real hindrance to the walkers that day.",
+    "hint": "drop the e from hinder before -ance"
+  },
+  {
+    "word": "identity",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The detective in the story hid her true identity until the end."
+  },
+  {
+    "word": "immediate",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The fire alarm needed an immediate response from everyone in the hall.",
+    "hint": "double m"
+  },
+  {
+    "word": "immediately",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Please line up immediately when the whistle blows for assembly.",
+    "hint": "double m"
+  },
+  {
+    "word": "individual",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Every individual in the class was given a chance to speak."
+  },
+  {
+    "word": "interfere",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Please do not interfere with the experiment while it is running."
+  },
+  {
+    "word": "interrupt",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "It is rude to interrupt someone while they are still talking.",
+    "hint": "double r"
+  },
+  {
+    "word": "language",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Isla is learning a new language for her trip to Spain."
+  },
+  {
+    "word": "leisure",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Grandpa spends most of his leisure time fishing by the river.",
+    "hint": "ei, not ie"
+  },
+  {
+    "word": "lightning",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "A flash of lightning lit up the sky above the hills.",
+    "hint": "no e, unlike lightening"
+  },
+  {
+    "word": "marvellous",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The fireworks display was a truly marvellous sight to watch.",
+    "hint": "UK spelling: double l"
+  },
+  {
+    "word": "mischievous",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The mischievous kitten hid one of Dad's slippers under the sofa.",
+    "hint": "no i before -ous: mis-chiev-ous"
+  },
+  {
+    "word": "muscle",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Climbing that steep hill made every muscle in her legs ache.",
+    "hint": "silent c"
+  },
+  {
+    "word": "necessary",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "It is not necessary to bring your own pencil to the exam.",
+    "hint": "one c, two s's"
+  },
+  {
+    "word": "neighbour",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Our neighbour kindly watered our plants while we were on holiday.",
+    "hint": "ei, like eight, plus UK -our"
+  },
+  {
+    "word": "nuisance",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The buzzing fly became a real nuisance during the picnic.",
+    "hint": "tricky vowels: n-u-i-sance"
+  },
+  {
+    "word": "occupy",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Board games can occupy the class on a rainy lunchtime.",
+    "hint": "double c"
+  },
+  {
+    "word": "occur",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Power cuts sometimes occur during a heavy thunderstorm.",
+    "hint": "double c, one r"
+  },
+  {
+    "word": "opportunity",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Winning the scholarship gave Amir a wonderful opportunity to study abroad.",
+    "hint": "double p; each t stands alone"
+  },
+  {
+    "word": "parliament",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Members of parliament debated the new law for several hours.",
+    "hint": "contains lia: par-lia-ment"
+  },
+  {
+    "word": "persuade",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Chloe tried to persuade her parents to get a pet rabbit."
+  },
+  {
+    "word": "physical",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "PE lessons help pupils improve their physical fitness and teamwork."
+  },
+  {
+    "word": "prejudice",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The story teaches children to judge people without prejudice."
+  },
+  {
+    "word": "privilege",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Meeting the author of her favourite book felt like a huge privilege.",
+    "hint": "-ege not -edge: priv-i-lege"
+  },
+  {
+    "word": "profession",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Being a vet is a profession that requires years of training."
+  },
+  {
+    "word": "programme",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Our school printed a programme listing every act in the concert.",
+    "hint": "UK spelling: -mme"
+  },
+  {
+    "word": "pronunciation",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The teacher corrected Yusuf's pronunciation of the tricky French word.",
+    "hint": "no o before -nunciation, unlike pronounce"
+  },
+  {
+    "word": "queue",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "A long queue formed outside the cinema before the new film started.",
+    "hint": "q-u-e-u-e, four vowels in a row"
+  },
+  {
+    "word": "recognise",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Would you recognise your teacher without her glasses on?",
+    "hint": "UK spelling: -ise"
+  },
+  {
+    "word": "recommend",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Could you recommend a good book for the summer holidays?",
+    "hint": "double m, one c"
+  },
+  {
+    "word": "relevant",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Make sure your answer stays relevant to the actual question asked."
+  },
+  {
+    "word": "restaurant",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "We celebrated Nana's birthday at a small Italian restaurant in town.",
+    "hint": "au makes an 'or' sound"
+  },
+  {
+    "word": "rhyme",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Can you think of a word that will rhyme with orange?",
+    "hint": "silent h"
+  },
+  {
+    "word": "rhythm",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The drummer kept a steady rhythm throughout the whole song.",
+    "hint": "no vowels except y: r-h-y-t-h-m"
+  },
+  {
+    "word": "sacrifice",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The captain chose to sacrifice her place so a younger player could join.",
+    "hint": "no double letters: sac-ri-fice"
+  },
+  {
+    "word": "secretary",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The club secretary wrote down the minutes of every meeting.",
+    "hint": "secret plus ary"
+  },
+  {
+    "word": "shoulder",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Ravi carried his little sister on his shoulder during the parade."
+  },
+  {
+    "word": "signature",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Please ask a parent for their signature on the permission slip."
+  },
+  {
+    "word": "sincere",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Ella wrote a sincere apology to her friend after the argument."
+  },
+  {
+    "word": "sincerely",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Yusuf ended his thank-you letter with the words Yours sincerely."
+  },
+  {
+    "word": "soldier",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The soldier saluted proudly as the flag was raised at dawn.",
+    "hint": "ends in -dier, not -dger"
+  },
+  {
+    "word": "stomach",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Eating too many sweets gave Noah a bit of a stomach ache.",
+    "hint": "ends in -ach, sounds like -ck"
+  },
+  {
+    "word": "sufficient",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Bring sufficient water for the whole hike up the hill.",
+    "hint": "double f, one c"
+  },
+  {
+    "word": "suggest",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Could you suggest a good place for our class trip this year?",
+    "hint": "double g"
+  },
+  {
+    "word": "symbol",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "A red cross is a symbol used on many first aid kits.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "system",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The library uses a computer system to track borrowed books.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "temperature",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The nurse checked the patient's temperature before the doctor arrived.",
+    "hint": "tem-per-a-ture, don't forget the middle a"
+  },
+  {
+    "word": "thorough",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Dad gave the car a thorough clean before our long journey.",
+    "hint": "not the same as though or through"
+  },
+  {
+    "word": "twelfth",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Priya will turn twelve on the twelfth of next month.",
+    "hint": "twelve becomes twelf, then th"
+  },
+  {
+    "word": "variety",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "The market sold a variety of fruits from all over the world."
+  },
+  {
+    "word": "vegetable",
+    "level": 2,
+    "group": "y56-list",
+    "sentence": "Broccoli is a green vegetable that grows best in cool weather.",
+    "hint": "don't forget the middle e: veg-e-table"
+  },
+  {
+    "word": "vehicle",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The fire engine is a large vehicle with a very loud siren.",
+    "hint": "-icle not -ical, and remember the h"
+  },
+  {
+    "word": "yacht",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The captain steered the yacht carefully into the small harbour.",
+    "hint": "silent ch: y-a-c-h-t"
+  },
+  {
+    "word": "station",
+    "level": 1,
+    "group": "suffix-tion-sion",
+    "sentence": "The train stopped for two minutes at the next station."
+  },
+  {
+    "word": "motion",
+    "level": 1,
+    "group": "suffix-tion-sion",
+    "sentence": "Please stay seated while the bus is in motion."
+  },
+  {
+    "word": "action",
+    "level": 1,
+    "group": "suffix-tion-sion",
+    "sentence": "The players had to act fast once the whistle signalled action."
+  },
+  {
+    "word": "section",
+    "level": 1,
+    "group": "suffix-tion-sion",
+    "sentence": "Turn to the sports section of the newspaper for match results."
+  },
+  {
+    "word": "tension",
+    "level": 1,
+    "group": "suffix-tion-sion",
+    "sentence": "The tug of war rope snapped under the sudden tension."
+  },
+  {
+    "word": "invention",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "The paperclip is a simple but very useful invention."
+  },
+  {
+    "word": "completion",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "The builders celebrated the completion of the new library roof."
+  },
+  {
+    "word": "expansion",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "The rapid expansion of the town meant new schools were needed."
+  },
+  {
+    "word": "extension",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "Dad built a small extension onto the back of our house."
+  },
+  {
+    "word": "magician",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "The magician pulled a rabbit out of an empty top hat.",
+    "hint": "-cian for people, like musician"
+  },
+  {
+    "word": "confession",
+    "level": 2,
+    "group": "suffix-tion-sion",
+    "sentence": "Jack's quiet confession about the broken vase surprised his mum.",
+    "hint": "-ssion after ss or -mit"
+  },
+  {
+    "word": "discussion",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "The class had a lively discussion about keeping the beach clean.",
+    "hint": "discuss plus ion"
+  },
+  {
+    "word": "permission",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "You must ask permission before leaving the classroom during a lesson.",
+    "hint": "one m, double s"
+  },
+  {
+    "word": "musician",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "The street musician played her violin outside the crowded market.",
+    "hint": "-cian for people who do music"
+  },
+  {
+    "word": "vicious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "The film showed a vicious storm sweeping across the small village."
+  },
+  {
+    "word": "precious",
+    "level": 1,
+    "group": "suffix-cious-tious",
+    "sentence": "Grandma keeps her most precious jewellery locked in a small box."
+  },
+  {
+    "word": "delicious",
+    "level": 1,
+    "group": "suffix-cious-tious",
+    "sentence": "The soup smelled delicious as soon as it started to simmer."
+  },
+  {
+    "word": "malicious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "Spreading malicious rumours about a classmate is never kind."
+  },
+  {
+    "word": "suspicious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "The dog barked at every suspicious noise outside the front gate."
+  },
+  {
+    "word": "ambitious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "Isla set herself an ambitious goal of reading fifty books this year."
+  },
+  {
+    "word": "cautious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "Be cautious when crossing the road near the busy junction."
+  },
+  {
+    "word": "fictitious",
+    "level": 3,
+    "group": "suffix-cious-tious",
+    "sentence": "The story's fictitious town does not appear on any real map.",
+    "hint": "two t's: fic-ti-tious"
+  },
+  {
+    "word": "infectious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "Her infectious laugh soon had the whole class giggling too."
+  },
+  {
+    "word": "nutritious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "A nutritious breakfast helps you concentrate during morning lessons."
+  },
+  {
+    "word": "anxious",
+    "level": 3,
+    "group": "suffix-cious-tious",
+    "sentence": "Kai felt anxious before stepping onto the stage for his solo.",
+    "hint": "exception: spelt -xious, not -cious"
+  },
+  {
+    "word": "spacious",
+    "level": 1,
+    "group": "suffix-cious-tious",
+    "sentence": "Their new classroom felt far more spacious than the old one."
+  },
+  {
+    "word": "gracious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "The losing team gave a gracious speech congratulating the winners."
+  },
+  {
+    "word": "ferocious",
+    "level": 2,
+    "group": "suffix-cious-tious",
+    "sentence": "A ferocious wind tore several branches from the old oak tree."
+  },
+  {
+    "word": "official",
+    "level": 1,
+    "group": "suffix-cial-tial",
+    "sentence": "The mayor made an official announcement outside the town hall."
+  },
+  {
+    "word": "artificial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "The classroom Christmas tree was artificial but looked very real."
+  },
+  {
+    "word": "partial",
+    "level": 1,
+    "group": "suffix-cial-tial",
+    "sentence": "Cloudy skies gave only a partial view of the eclipse."
+  },
+  {
+    "word": "confidential",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "The letter was marked confidential and only for the headteacher."
+  },
+  {
+    "word": "essential",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "A warm coat is essential on a cold, windy day like today."
+  },
+  {
+    "word": "initial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "Write your initial and surname at the top of the sheet.",
+    "hint": "exception: -tial after a vowel"
+  },
+  {
+    "word": "financial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "The family made a financial plan for their summer holiday.",
+    "hint": "related to finance"
+  },
+  {
+    "word": "commercial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "The town centre has a busy commercial area full of shops.",
+    "hint": "related to commerce"
+  },
+  {
+    "word": "provincial",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "The novel is set in a quiet provincial town in France.",
+    "hint": "related to province"
+  },
+  {
+    "word": "social",
+    "level": 1,
+    "group": "suffix-cial-tial",
+    "sentence": "Break time is a chance for social games in the playground."
+  },
+  {
+    "word": "crucial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "Scoring that goal was crucial to winning the final match."
+  },
+  {
+    "word": "beneficial",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "Drinking plenty of water is beneficial for your whole body."
+  },
+  {
+    "word": "potential",
+    "level": 2,
+    "group": "suffix-cial-tial",
+    "sentence": "The coach saw real potential in the youngest player on the team."
+  },
+  {
+    "word": "observant",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "An observant reader will notice the clue on the very first page."
+  },
+  {
+    "word": "observance",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "The school held a minute's silence in observance of the anniversary."
+  },
+  {
+    "word": "expectant",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "The expectant crowd fell silent as the runners reached the line."
+  },
+  {
+    "word": "hesitant",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "Leo felt hesitant before jumping off the high diving board."
+  },
+  {
+    "word": "tolerant",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "Our teacher is very tolerant of small mistakes during practice."
+  },
+  {
+    "word": "tolerance",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "The assembly talked about tolerance and respect for other cultures."
+  },
+  {
+    "word": "innocent",
+    "level": 1,
+    "group": "suffix-ant-ent",
+    "sentence": "The jury decided the young man was completely innocent."
+  },
+  {
+    "word": "innocence",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "Her innocence was clear once the true story came out."
+  },
+  {
+    "word": "decent",
+    "level": 1,
+    "group": "suffix-ant-ent",
+    "sentence": "It was decent of Amir to share his umbrella in the rain."
+  },
+  {
+    "word": "decency",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "Basic decency means saying sorry when you make a mistake."
+  },
+  {
+    "word": "confident",
+    "level": 1,
+    "group": "suffix-ant-ent",
+    "sentence": "Grace felt confident about the maths test after all her revision."
+  },
+  {
+    "word": "confidence",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "Winning the small race gave Theo more confidence for the final."
+  },
+  {
+    "word": "independent",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "Being independent means learning to solve small problems by yourself."
+  },
+  {
+    "word": "adorable",
+    "level": 1,
+    "group": "suffix-able-ible",
+    "sentence": "The kittens at the shelter looked absolutely adorable in their basket."
+  },
+  {
+    "word": "considerable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "Fixing the old bridge will take a considerable amount of time."
+  },
+  {
+    "word": "tolerable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "The heat was just tolerable with a cold drink and some shade."
+  },
+  {
+    "word": "changeable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "British weather can be extremely changeable, even within a single day.",
+    "hint": "keep the e to keep the soft g sound"
+  },
+  {
+    "word": "noticeable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "There was a noticeable improvement in Sam's handwriting this term.",
+    "hint": "keep the e to keep the soft c sound"
+  },
+  {
+    "word": "forcible",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "Police used forcible entry to reach the trapped resident safely."
+  },
+  {
+    "word": "legible",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "Please make sure your writing is legible before you hand it in."
+  },
+  {
+    "word": "dependable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "Ravi is a dependable friend who always keeps his promises."
+  },
+  {
+    "word": "comfortable",
+    "level": 1,
+    "group": "suffix-able-ible",
+    "sentence": "This old armchair is the most comfortable seat in the house."
+  },
+  {
+    "word": "reasonable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "The shopkeeper offered a reasonable price for the secondhand bike."
+  },
+  {
+    "word": "enjoyable",
+    "level": 1,
+    "group": "suffix-able-ible",
+    "sentence": "The school trip to the farm was thoroughly enjoyable for everyone."
+  },
+  {
+    "word": "reliable",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "A reliable torch is essential when you go camping at night."
+  },
+  {
+    "word": "horrible",
+    "level": 1,
+    "group": "suffix-able-ible",
+    "sentence": "The weather turned horrible just as the match was about to start."
+  },
+  {
+    "word": "poisonous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "Some bright red berries in the wood are actually poisonous."
+  },
+  {
+    "word": "dangerous",
+    "level": 1,
+    "group": "suffix-ous",
+    "sentence": "Swimming in that fast river can be extremely dangerous alone."
+  },
+  {
+    "word": "mountainous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "The hikers trekked across a mountainous region of northern Scotland."
+  },
+  {
+    "word": "tremendous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "The choir put in a tremendous amount of effort before the concert."
+  },
+  {
+    "word": "enormous",
+    "level": 1,
+    "group": "suffix-ous",
+    "sentence": "An enormous oak tree stood in the middle of the field."
+  },
+  {
+    "word": "jealous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "Ella felt a little jealous when her sister won the prize."
+  },
+  {
+    "word": "humorous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "The author included a humorous character to make readers laugh.",
+    "hint": "drop the u from humour before -ous"
+  },
+  {
+    "word": "glamorous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "The actress wore a glamorous dress to the film premiere.",
+    "hint": "drop the u from glamour before -ous"
+  },
+  {
+    "word": "vigorous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "A vigorous game of tag left the whole class out of breath.",
+    "hint": "drop the u from vigour before -ous"
+  },
+  {
+    "word": "courageous",
+    "level": 2,
+    "group": "suffix-ous",
+    "sentence": "The firefighter made a courageous dash into the smoky building.",
+    "hint": "keep the e to keep the soft g sound"
+  },
+  {
+    "word": "serious",
+    "level": 1,
+    "group": "suffix-ous",
+    "sentence": "The teacher looked serious when she read out the exam rules."
+  },
+  {
+    "word": "obvious",
+    "level": 1,
+    "group": "suffix-ous",
+    "sentence": "It was obvious from the mud that the dog had been digging."
+  },
+  {
+    "word": "curious",
+    "level": 1,
+    "group": "suffix-ous",
+    "sentence": "The curious cat kept peering into every open box in the hall."
+  },
+  {
+    "word": "refer",
+    "level": 1,
+    "group": "suffix-fer",
+    "sentence": "You may refer to your notes during the second part of the test."
+  },
+  {
+    "word": "referring",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "Was the poem referring to autumn when it mentioned falling leaves?",
+    "hint": "stress stays on fer, so double r"
+  },
+  {
+    "word": "referred",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "The doctor referred Grandad to a specialist at the hospital.",
+    "hint": "stress stays on fer, so double r"
+  },
+  {
+    "word": "referral",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "The vet wrote a referral letter for the injured puppy."
+  },
+  {
+    "word": "referee",
+    "level": 1,
+    "group": "suffix-fer",
+    "sentence": "The referee blew his whistle to start the second half."
+  },
+  {
+    "word": "prefer",
+    "level": 1,
+    "group": "suffix-fer",
+    "sentence": "Would you prefer tea or juice with your breakfast today?"
+  },
+  {
+    "word": "preferring",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "Most of the class voted for football, preferring it to rugby."
+  },
+  {
+    "word": "preferred",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "Noah preferred the window seat on the long coach journey.",
+    "hint": "stress stays on fer, so double r"
+  },
+  {
+    "word": "preference",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "Please state your preference for either the museum or the zoo trip.",
+    "hint": "no double r here, unlike preferred"
+  },
+  {
+    "word": "reference",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "The librarian keeps a reference copy of every dictionary in stock.",
+    "hint": "no double r here, unlike referred"
+  },
+  {
+    "word": "transfer",
+    "level": 1,
+    "group": "suffix-fer",
+    "sentence": "Yusuf will transfer to a new school after the summer holidays."
+  },
+  {
+    "word": "transferred",
+    "level": 2,
+    "group": "suffix-fer",
+    "sentence": "The prisoner in the story was transferred to a different cell.",
+    "hint": "stress stays on fer, so double r"
+  },
+  {
+    "word": "hopeful",
+    "level": 1,
+    "group": "suffix-other",
+    "sentence": "Maya stayed hopeful that the rain would stop before the match."
+  },
+  {
+    "word": "careless",
+    "level": 1,
+    "group": "suffix-other",
+    "sentence": "A careless mistake in the last sum cost Jack the top mark."
+  },
+  {
+    "word": "happiness",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "Winning the cup brought real happiness to the whole team.",
+    "hint": "y changes to i before -ness"
+  },
+  {
+    "word": "merriment",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "Laughter and merriment filled the hall during the party games.",
+    "hint": "y changes to i before -ment"
+  },
+  {
+    "word": "beginning",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "The beginning of the story explains how the two friends first met.",
+    "hint": "double n before -ing"
+  },
+  {
+    "word": "forgotten",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "Priya had forgotten her lunchbox on the kitchen table again.",
+    "hint": "double t before -en"
+  },
+  {
+    "word": "gardener",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "The gardener planted rows of sunflowers along the back fence."
+  },
+  {
+    "word": "limited",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "Tickets for the concert were limited to two per family.",
+    "hint": "one t, because the stress is not on -it"
+  },
+  {
+    "word": "finally",
+    "level": 1,
+    "group": "suffix-other",
+    "sentence": "After weeks of practice, Omar finally learned to ride his bike."
+  },
+  {
+    "word": "happily",
+    "level": 1,
+    "group": "suffix-other",
+    "sentence": "The two dogs played happily together in the garden all afternoon.",
+    "hint": "y changes to i before -ly"
+  },
+  {
+    "word": "angrily",
+    "level": 2,
+    "group": "suffix-other",
+    "sentence": "The wasp buzzed angrily around the picnic basket on the grass.",
+    "hint": "y changes to i before -ly"
+  },
+  {
+    "word": "gently",
+    "level": 1,
+    "group": "suffix-other",
+    "sentence": "Chloe gently placed the injured bird back into its nest.",
+    "hint": "-le changes to -ly"
+  },
+  {
+    "word": "truly",
+    "level": 3,
+    "group": "suffix-other",
+    "sentence": "That was truly the funniest joke Finn had heard all week.",
+    "hint": "irregular: drop the e from true"
+  },
+  {
+    "word": "disappoint",
+    "level": 1,
+    "group": "prefixes",
+    "sentence": "Losing the final did not disappoint the team, who had tried their best."
+  },
+  {
+    "word": "misbehave",
+    "level": 1,
+    "group": "prefixes",
+    "sentence": "The puppy tends to misbehave whenever visitors come to the house."
+  },
+  {
+    "word": "mislead",
+    "level": 1,
+    "group": "prefixes",
+    "sentence": "The foggy weather can easily mislead walkers who do not know the hills."
+  },
+  {
+    "word": "inactive",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "The old volcano has been inactive for hundreds of years."
+  },
+  {
+    "word": "illegal",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "Parking on the yellow lines outside the school is illegal.",
+    "hint": "in- becomes il- before l"
+  },
+  {
+    "word": "immature",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "The teacher said shouting out answers was a rather immature habit.",
+    "hint": "in- becomes im- before m"
+  },
+  {
+    "word": "impossible",
+    "level": 1,
+    "group": "prefixes",
+    "sentence": "It felt impossible to finish the maze without a single wrong turn.",
+    "hint": "in- becomes im- before p"
+  },
+  {
+    "word": "irregular",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "The old clock kept an irregular beat that annoyed everyone nearby.",
+    "hint": "in- becomes ir- before r"
+  },
+  {
+    "word": "irresponsible",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "It was irresponsible to leave the garden gate open with the puppy inside.",
+    "hint": "in- becomes ir- before r"
+  },
+  {
+    "word": "redo",
+    "level": 1,
+    "group": "prefixes",
+    "sentence": "Sam had to redo his diagram after spilling water on the page.",
+    "hint": "re- means again"
+  },
+  {
+    "word": "submarine",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "The film showed a submarine gliding silently beneath the waves.",
+    "hint": "sub- means under"
+  },
+  {
+    "word": "international",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "The airport was busy with passengers from several international flights.",
+    "hint": "inter- means between"
+  },
+  {
+    "word": "antisocial",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "Playing loud music at midnight is a rather antisocial thing to do.",
+    "hint": "anti- means against"
+  },
+  {
+    "word": "autograph",
+    "level": 2,
+    "group": "prefixes",
+    "sentence": "Ravi asked the footballer for his autograph after the match.",
+    "hint": "auto- means self"
+  },
+  {
+    "word": "deceive",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "The magician's trick is designed to deceive the eyes of the audience.",
+    "hint": "e before i after c"
+  },
+  {
+    "word": "conceive",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "It was hard to conceive how the tiny seed grew so tall.",
+    "hint": "e before i after c"
+  },
+  {
+    "word": "receive",
+    "level": 1,
+    "group": "ei-ie",
+    "sentence": "Every pupil will receive a certificate at the end of term.",
+    "hint": "e before i after c"
+  },
+  {
+    "word": "perceive",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "Some people perceive the colour differently depending on the light.",
+    "hint": "e before i after c"
+  },
+  {
+    "word": "ceiling",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "A large spider was sitting quietly on the classroom ceiling.",
+    "hint": "e before i after c"
+  },
+  {
+    "word": "receipt",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "Keep your receipt in case you need to return the toy.",
+    "hint": "e before i after c, and a silent p"
+  },
+  {
+    "word": "niece",
+    "level": 1,
+    "group": "ei-ie",
+    "sentence": "Aunty Zara brought her niece along to the family barbecue.",
+    "hint": "i before e, not after c"
+  },
+  {
+    "word": "thief",
+    "level": 1,
+    "group": "ei-ie",
+    "sentence": "The thief in the story crept quietly across the rooftop.",
+    "hint": "i before e, not after c"
+  },
+  {
+    "word": "chief",
+    "level": 1,
+    "group": "ei-ie",
+    "sentence": "The chief of the fire station thanked every volunteer that evening.",
+    "hint": "i before e, not after c"
+  },
+  {
+    "word": "shield",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "The knight raised his shield to block the arrow.",
+    "hint": "i before e, not after c"
+  },
+  {
+    "word": "relief",
+    "level": 2,
+    "group": "ei-ie",
+    "sentence": "It was a relief to find the missing house keys at last.",
+    "hint": "i before e, not after c"
+  },
+  {
+    "word": "science",
+    "level": 1,
+    "group": "ei-ie",
+    "sentence": "Our science lesson today was about the water cycle."
+  },
+  {
+    "word": "seize",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "The soldiers were ordered to seize the bridge before dawn.",
+    "hint": "exception: e before i, even though not after c"
+  },
+  {
+    "word": "ought",
+    "level": 2,
+    "group": "ough",
+    "sentence": "You ought to wear a helmet whenever you ride your bike."
+  },
+  {
+    "word": "bought",
+    "level": 1,
+    "group": "ough",
+    "sentence": "Dad bought fresh bread from the bakery on the corner."
+  },
+  {
+    "word": "nought",
+    "level": 3,
+    "group": "ough",
+    "sentence": "The score stayed at nought all the way until half time.",
+    "hint": "same ough sound as bought"
+  },
+  {
+    "word": "brought",
+    "level": 2,
+    "group": "ough",
+    "sentence": "Isla brought a spare jumper in case the weather turned cold."
+  },
+  {
+    "word": "fought",
+    "level": 2,
+    "group": "ough",
+    "sentence": "The two knights fought bravely in the old legend."
+  },
+  {
+    "word": "rough",
+    "level": 1,
+    "group": "ough",
+    "sentence": "The sea looked rough as the storm clouds gathered overhead."
+  },
+  {
+    "word": "tough",
+    "level": 1,
+    "group": "ough",
+    "sentence": "That maths problem was tough, but Kai solved it in the end."
+  },
+  {
+    "word": "cough",
+    "level": 1,
+    "group": "ough",
+    "sentence": "A dry cough kept Grace awake for most of the night."
+  },
+  {
+    "word": "dough",
+    "level": 1,
+    "group": "ough",
+    "sentence": "Maya rolled out the dough before cutting shapes for the biscuits."
+  },
+  {
+    "word": "borough",
+    "level": 3,
+    "group": "ough",
+    "sentence": "The town became part of a larger borough last year.",
+    "hint": "same ough sound as thorough"
+  },
+  {
+    "word": "plough",
+    "level": 2,
+    "group": "ough",
+    "sentence": "The farmer used an old plough to turn over the field."
+  },
+  {
+    "word": "bough",
+    "level": 2,
+    "group": "ough",
+    "sentence": "A robin landed on a low bough of the apple tree.",
+    "hint": "rhymes with cow, like plough"
+  },
+  {
+    "word": "doubt",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "I doubt it will snow again before the end of March.",
+    "hint": "silent b"
+  },
+  {
+    "word": "lamb",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "A newborn lamb wobbled across the field on shaky legs.",
+    "hint": "silent b"
+  },
+  {
+    "word": "solemn",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "Everyone in the hall wore a solemn expression during the memorial service.",
+    "hint": "silent n"
+  },
+  {
+    "word": "thistle",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "A purple thistle grew beside the old stone wall.",
+    "hint": "silent t"
+  },
+  {
+    "word": "knight",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "The brave knight rode out to defend the castle gates.",
+    "hint": "silent k, silent gh"
+  },
+  {
+    "word": "thumb",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "Leo hurt his thumb while trying to open the stiff jar.",
+    "hint": "silent b"
+  },
+  {
+    "word": "climb",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "It took an hour to climb to the top of the hill.",
+    "hint": "silent b"
+  },
+  {
+    "word": "comb",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "Ella keeps a small comb in her school bag.",
+    "hint": "silent b"
+  },
+  {
+    "word": "wrist",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "Theo wore a bandage on his wrist after the fall.",
+    "hint": "silent w"
+  },
+  {
+    "word": "autumn",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "Golden leaves cover the playground every single autumn without fail.",
+    "hint": "silent n"
+  },
+  {
+    "word": "column",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "Each column in the spreadsheet showed a different pupil's score.",
+    "hint": "silent n"
+  },
+  {
+    "word": "knee",
+    "level": 1,
+    "group": "silent-letters",
+    "sentence": "Priya grazed her knee when she tripped on the pavement.",
+    "hint": "silent k"
+  },
+  {
+    "word": "honest",
+    "level": 2,
+    "group": "silent-letters",
+    "sentence": "It is always better to be honest, even when it is hard.",
+    "hint": "silent h"
+  },
+  {
+    "word": "advice",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Grandad gave me some good advice about looking after my bike.",
+    "hint": "advice is the noun, like a notice"
+  },
+  {
+    "word": "advise",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The doctor will advise you on how to care for the cut.",
+    "hint": "advise is the verb, rhymes with wise"
+  },
+  {
+    "word": "practice",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Football practice starts at four o'clock every Tuesday afternoon.",
+    "hint": "practice is the noun"
+  },
+  {
+    "word": "practise",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "You need to practise your spellings every night this week.",
+    "hint": "practise is the verb"
+  },
+  {
+    "word": "principal",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The principal spoke to new students on their first day at college.",
+    "hint": "the principal is a person: a pal"
+  },
+  {
+    "word": "principle",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "Sharing fairly is an important principle in our classroom rules.",
+    "hint": "a principle is a rule"
+  },
+  {
+    "word": "stationary",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The bus stayed stationary for ten minutes because of the traffic.",
+    "hint": "stationary means not moving"
+  },
+  {
+    "word": "stationery",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The shop sold pens, notebooks and other stationery near the till.",
+    "hint": "stationery is paper and pens"
+  },
+  {
+    "word": "aloud",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Please read the poem aloud so the whole class can hear it.",
+    "hint": "aloud means out loud"
+  },
+  {
+    "word": "allowed",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Pupils are not allowed to use phones during the school day.",
+    "hint": "allowed means permitted"
+  },
+  {
+    "word": "affect",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Missing breakfast can affect how well you concentrate at school.",
+    "hint": "affect is usually the verb"
+  },
+  {
+    "word": "effect",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The medicine had an instant effect on her hay fever.",
+    "hint": "effect is usually the noun"
+  },
+  {
+    "word": "past",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Grandma told us stories about life in the past.",
+    "hint": "past means before now"
+  },
+  {
+    "word": "passed",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Chloe passed the ball to Ravi just before the final whistle.",
+    "hint": "passed is the past tense of pass"
+  },
+  {
+    "word": "whose",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Whose coat is this hanging on the back of the chair?",
+    "hint": "whose shows belonging"
+  },
+  {
+    "word": "who's",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Who's bringing the drinks to the picnic on Saturday?",
+    "hint": "who's means who is or who has"
+  },
+  {
+    "word": "there",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The library is over there, next to the school office.",
+    "hint": "there points to a place"
+  },
+  {
+    "word": "their",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The twins left their scooters by the front door.",
+    "hint": "their shows belonging"
+  },
+  {
+    "word": "hear",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Did you hear the thunder rumbling in the distance?",
+    "hint": "hear is what you do with your ears"
+  },
+  {
+    "word": "here",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Please put your books here on the shelf by the door.",
+    "hint": "here means this place"
+  },
+  {
+    "word": "weather",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The weather turned sunny just in time for sports day.",
+    "hint": "weather is rain, sun or wind"
+  },
+  {
+    "word": "whether",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Nobody was sure whether the trip would go ahead in the rain.",
+    "hint": "whether means if, a choice"
+  },
+  {
+    "word": "co-ordinate",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "The two teachers had to co-ordinate their plans for sports day."
+  },
+  {
+    "word": "co-operate",
+    "level": 1,
+    "group": "hyphens",
+    "sentence": "The twins learned to co-operate while building the model bridge."
+  },
+  {
+    "word": "co-own",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "The two brothers co-own a small boat kept by the river."
+  },
+  {
+    "word": "co-pilot",
+    "level": 1,
+    "group": "hyphens",
+    "sentence": "The co-pilot checked every dial before the plane took off."
+  },
+  {
+    "word": "co-author",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "Isla was proud to co-author the class book of poems."
+  },
+  {
+    "word": "co-exist",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "Bees and flowers co-exist happily in the school garden."
+  },
+  {
+    "word": "re-enter",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "You must show your ticket to re-enter the theme park."
+  },
+  {
+    "word": "re-elect",
+    "level": 2,
+    "group": "hyphens",
+    "sentence": "Voters chose to re-elect the same mayor for another term."
+  },
+  {
+    "word": "re-educate",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "The programme aims to re-educate drivers about cycling safety."
+  },
+  {
+    "word": "re-emerge",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "Divers watched the seal re-emerge for air near the boat."
+  },
+  {
+    "word": "re-cover",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "Since the old cover had ripped, Dad decided to re-cover the sofa in new fabric.",
+    "hint": "re-cover means cover again, unlike recover"
+  },
+  {
+    "word": "re-sign",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "After his contract ended, the goalkeeper agreed to re-sign for the club.",
+    "hint": "re-sign means sign again, unlike resign"
+  },
+  {
+    "word": "measure",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "Use a ruler to measure the length of your bedroom desk."
+  },
+  {
+    "word": "treasure",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "The children buried a small treasure chest beneath the old oak."
+  },
+  {
+    "word": "pleasure",
+    "level": 2,
+    "group": "ture-sure",
+    "sentence": "It was a real pleasure to watch the choir perform tonight."
+  },
+  {
+    "word": "enclosure",
+    "level": 2,
+    "group": "ture-sure",
+    "sentence": "The zookeeper cleaned the penguin enclosure early every morning."
+  },
+  {
+    "word": "exposure",
+    "level": 2,
+    "group": "ture-sure",
+    "sentence": "Too much exposure to the midday sun can burn your skin."
+  },
+  {
+    "word": "creature",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "A strange creature appeared in the story Amir was writing."
+  },
+  {
+    "word": "furniture",
+    "level": 2,
+    "group": "ture-sure",
+    "sentence": "All the furniture was moved out before the new carpet arrived."
+  },
+  {
+    "word": "picture",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "Grace drew a picture of her house for the art display."
+  },
+  {
+    "word": "nature",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "Our class visited the nature reserve to spot different birds."
+  },
+  {
+    "word": "adventure",
+    "level": 1,
+    "group": "ture-sure",
+    "sentence": "The book tells the adventure of two friends lost at sea."
+  },
+  {
+    "word": "capture",
+    "level": 2,
+    "group": "ture-sure",
+    "sentence": "The photographer waited hours to capture the perfect sunset shot."
+  },
+  {
+    "word": "closure",
+    "level": 3,
+    "group": "ture-sure",
+    "sentence": "News of the shop's closure surprised everyone in the village."
+  },
+  {
+    "word": "composure",
+    "level": 3,
+    "group": "ture-sure",
+    "sentence": "The young gymnast kept her composure despite the noisy crowd."
+  },
+  {
+    "word": "myth",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "The Greek myth explained why the seasons change each year.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "gym",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "Our school gym was full of pupils practising for sports day.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "mystery",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "Nobody could solve the mystery of the missing library books.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "pyramid",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "The class built a pyramid using empty cardboard boxes.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "young",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "The young fox followed its mother across the quiet field.",
+    "hint": "ou makes a u sound"
+  },
+  {
+    "word": "touch",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "Please do not touch the wet paint on the fence.",
+    "hint": "ou makes a u sound"
+  },
+  {
+    "word": "double",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "Noah asked for a double scoop of chocolate ice cream.",
+    "hint": "ou makes a u sound"
+  },
+  {
+    "word": "country",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "France is a country famous for its cheese and bread.",
+    "hint": "ou makes a u sound"
+  },
+  {
+    "word": "scheme",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "The council launched a scheme to plant trees along the road.",
+    "hint": "ch makes a k sound"
+  },
+  {
+    "word": "chorus",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "The whole audience joined in singing the final chorus.",
+    "hint": "ch makes a k sound"
+  },
+  {
+    "word": "chemist",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "Mum picked up a prescription from the chemist after school.",
+    "hint": "ch makes a k sound"
+  },
+  {
+    "word": "chef",
+    "level": 1,
+    "group": "tricky-sounds",
+    "sentence": "The chef added a pinch of salt to the simmering soup.",
+    "hint": "ch makes a sh sound"
+  },
+  {
+    "word": "machine",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "The washing machine made a strange noise during the spin cycle.",
+    "hint": "ch makes a sh sound"
+  },
+  {
+    "word": "league",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "Our football team plays in the under-eleven league this season.",
+    "hint": "gue makes a g sound"
+  },
+  {
+    "word": "tongue",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "The dog's tongue lolled out after chasing the ball for ages.",
+    "hint": "gue makes a g sound"
+  }
+]

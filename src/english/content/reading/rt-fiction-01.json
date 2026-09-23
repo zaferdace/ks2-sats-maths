@@ -1,0 +1,178 @@
+{
+  "id": "rt-fiction-01",
+  "title": "The Pup on the Sand",
+  "genre": "fiction",
+  "level": 1,
+  "paragraphs": [
+    "The tide was far out when Leo and Gran reached Pebble Bay. The wet sand shone like a mirror, and seagulls squabbled over a crab near the rock pools. Leo filled his pockets with shells while Gran strolled along behind him, sipping tea from her flask.",
+    "Near the rocks, Leo noticed a grey shape lying on the sand. At first, he thought it was a smooth stone. Then it lifted its head and gazed at him with enormous dark eyes. 'Gran!' he whispered. 'It's a baby seal!'",
+    "The pup was all alone. Leo took a step towards it, but Gran gently caught his arm. 'Stay back,' she said. 'Its mother is probably out at sea, catching fish. If she sees people close to her baby, she might be too frightened to come back.'",
+    "'But what if she never comes back?' asked Leo. The pup gave a thin, wailing cry, and Leo's stomach twisted into a knot. He wanted to scoop the little seal up and carry it into the waves himself.",
+    "Instead, Gran phoned the seal rescue team. Twenty minutes later, a volunteer called Ella arrived with a pair of binoculars. She studied the pup from behind the rocks and smiled. 'He's plump and healthy,' she said. 'Mother seals often leave their pups on the beach while they hunt. We just need to wait quietly and keep everyone away.'",
+    "So they waited. Leo sat on a rock and kept watch like a guard. When a man came along the beach with a bouncy spaniel, Leo hurried over and politely asked him to put the dog on its lead and walk the other way. The man smiled and did as Leo asked. Slowly, the sea began to creep back up the sand.",
+    "Just as Leo was starting to lose hope, a sleek head bobbed up between the waves. The mother seal gave a deep, echoing call. At once, the pup wriggled and flopped down the sand towards her, and the two of them slipped into the water together.",
+    "Leo let out a cheer, then clapped a hand over his mouth. Ella laughed. She told him he had been a brilliant helper, and she gave him a badge with a seal on it. All the way home, Leo held the badge tightly. 'When I'm older,' he told Gran, 'I'm going to rescue seals too.'"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy **one** word that shows the seagulls were arguing.",
+      "accept": ["squabbled"]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhat did Leo think the grey shape was at first?\nTick one.",
+      "options": ["a pile of seaweed", "a smooth stone", "a sleeping dog", "an old boot"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\nWhy did Leo want to carry the pup into the waves himself?\nTick one.",
+      "options": [
+        "He wanted to find out whether seals could swim.",
+        "He was worried that the pup had been left behind and was not safe.",
+        "Gran had asked him to help the pup.",
+        "He wanted to take the pup home as a pet."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWhat did Ella bring with her to the beach?",
+      "accept": ["binoculars", "a pair of binoculars", "pair of binoculars", "some binoculars", "her binoculars", "binocular", "a binocular"]
+    },
+    {
+      "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\n'Leo sat on a rock and kept watch like a guard.'\nWhat does this suggest about Leo?\nTick one.",
+      "options": [
+        "He was bored and wanted to go home.",
+        "He was taking his job of protecting the pup seriously.",
+        "He was frightened of the man with the spaniel.",
+        "He was pretending to be a soldier in a game."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 7,
+      "prompt": "Look at paragraph 7.\n'a **sleek** head bobbed up between the waves'\nWhich word is closest in meaning to **sleek**?\nTick one.",
+      "options": ["smooth", "small", "sleepy", "spotty"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nWhy did Leo clap a hand over his mouth after he cheered?\nTick one.",
+      "options": [
+        "He remembered that he was supposed to stay quiet near the seals.",
+        "He did not want Ella to hear what he said.",
+        "He was trying to stop himself from yawning.",
+        "He had got sand in his mouth."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q8",
+      "domain": "2e",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nWhat is Leo most likely to do when he is older?\nTick one.",
+      "options": [
+        "Keep away from the beach.",
+        "Try to keep a seal as a pet.",
+        "Help to look after seals, like Ella does.",
+        "Become a fisherman at Pebble Bay."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q9",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Leo and Gran reached the beach when the tide was far out.",
+        "Ella arrived an hour after Gran phoned the rescue team.",
+        "Ella carried the pup back into the sea.",
+        "The man put his dog on its lead when Leo asked him to."
+      ],
+      "answer": [true, false, false, true]
+    },
+    {
+      "id": "q10",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
+      "options": [
+        "Leo carries the pup into the sea, and a volunteer thanks him.",
+        "A volunteer says the pup is healthy, and after a long wait its mother comes back for it.",
+        "A man's dog chases the pup down the beach and into the water.",
+        "Gran and Leo get tired of waiting and go home for tea."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "How does Leo feel about the seal pup before its mother comes back?\nExplain fully, using evidence from the text.",
+      "model": "Leo feels worried about the pup. When it cries, 'Leo's stomach twisted into a knot', and he asks, 'But what if she never comes back?' He also feels protective of it, because he 'kept watch like a guard' and asked the man with the spaniel to walk the other way.",
+      "points": [
+        "Gives one feeling, such as worried or anxious, with evidence, e.g. 'Leo's stomach twisted into a knot' or he was 'starting to lose hope'.",
+        "Gives a second feeling, such as caring or protective, with evidence, e.g. he 'kept watch like a guard' or he wanted to 'scoop the little seal up'."
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Leo asks a man to put his dog on its lead.",
+        "Ella gives Leo a badge.",
+        "Leo fills his pockets with shells.",
+        "The mother seal calls from the waves.",
+        "Gran phones the seal rescue team."
+      ],
+      "answer": [2, 4, 0, 3, 1]
+    }
+  ]
+}

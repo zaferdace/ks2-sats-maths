@@ -1,25 +1,29 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { isBlank } from '../answer/answer';
+import { GPS_ITEMS, READING_TEXTS, SPELLING_WORDS } from '../english/bank';
+import { englishHistory } from '../english/history';
 import { DAYS } from '../gen/blueprint';
-import { PAPER_NAME } from '../gen/catalog';
-import type { PaperKind } from '../gen/types';
+import { LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
+import type { LevelChoice, PaperKind, Subject } from '../gen/types';
 import {
   activeAttempt,
+  findAttempt,
   openSession,
   perDay,
   scoreOf,
   type Attempt,
-  type Mode,
   type Profile,
+  type StartRequest,
   type StoreData,
 } from '../store/model';
 import { collectRecords, collectSessions, streakDays, tally } from '../stats/stats';
+import { sessionTitle } from '../ui/labels';
 import { formatDateTime } from '../ui/time';
 
 interface Props {
   data: StoreData;
   profile: Profile;
-  onStart: (paper: PaperKind, mode: Mode) => void;
+  onStart: (request: StartRequest) => void;
   onContinue: (attemptId: string) => void;
   onOpenResult: (attemptId: string, at: number) => void;
   onReport: () => void;
@@ -29,10 +33,92 @@ interface Props {
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
-const PAPERS: { paper: PaperKind; title: string; about: string; perDay: number }[] = [
-  { paper: 'arithmetic', title: 'Paper 1: Arithmetic', about: '40 questions, 1 mark each', perDay: 8 },
-  { paper: 'reasoning', title: 'Papers 2 & 3: Reasoning', about: '25 questions, 35 marks, about 40 minutes', perDay: 5 },
+interface Option {
+  title: string;
+  about: string;
+  request: Omit<StartRequest, 'level'>;
+}
+
+interface PaperCard {
+  paper: PaperKind;
+  title: string;
+  about: string;
+  options: Option[];
+}
+
+const MATHS: PaperCard[] = [
+  {
+    paper: 'arithmetic',
+    title: 'Paper 1: Arithmetic',
+    about: '40 questions, 1 mark each',
+    options: [
+      { title: 'New daily paper', about: '8 questions a day for 5 days', request: { paper: 'arithmetic', mode: 'daily' } },
+      { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },
+    ],
+  },
+  {
+    paper: 'reasoning',
+    title: 'Papers 2 & 3: Reasoning',
+    about: '25 questions, 35 marks, about 40 minutes',
+    options: [
+      { title: 'New daily paper', about: '5 questions a day for 5 days', request: { paper: 'reasoning', mode: 'daily' } },
+      { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'reasoning', mode: 'full' } },
+    ],
+  },
 ];
+
+const ENGLISH: PaperCard[] = [
+  {
+    paper: 'gps',
+    title: 'Grammar, punctuation & vocabulary',
+    about: 'Paper 1: 50 questions, 45 minutes',
+    options: [
+      { title: 'New daily paper', about: '10 questions a day for 5 days', request: { paper: 'gps', mode: 'daily' } },
+      { title: 'New full paper', about: 'All 50 questions in one go', request: { paper: 'gps', mode: 'full' } },
+    ],
+  },
+  {
+    paper: 'spelling',
+    title: 'Spelling',
+    about: 'Paper 2: the iPad reads each word and a sentence. Turn the sound on.',
+    options: [
+      { title: 'Quick test', about: '10 words', request: { paper: 'spelling', mode: 'full', size: 10 } },
+      { title: 'Full spelling test', about: '20 words, like the real test', request: { paper: 'spelling', mode: 'full', size: 20 } },
+    ],
+  },
+  {
+    paper: 'reading',
+    title: 'Reading',
+    about: 'Read a text, then answer questions about it. The text stays on screen.',
+    options: [
+      { title: 'One text', about: 'A story, poem or information text', request: { paper: 'reading', mode: 'full', size: 1 } },
+      { title: 'Full reading paper', about: '3 texts, about 60 minutes', request: { paper: 'reading', mode: 'full', size: 3 } },
+    ],
+  },
+];
+
+const LEVELS: LevelChoice[] = [1, 2, 3, 'mixed'];
+
+// Small per-device preferences; the app works the same when storage is unavailable.
+function loadPref<T extends string>(key: string, fallback: T, allowed: readonly string[]): T {
+  try {
+    const v = localStorage.getItem(key);
+    return v !== null && allowed.includes(v) ? (v as T) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function savePref(key: string, value: string): void {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // not saved: fine
+  }
+}
+
+const SUBJECT_KEY = 'ks2-sats/subject';
+const LEVEL_KEY = 'ks2-sats/english-level';
 
 function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () => void }) {
   const session = openSession(attempt);
@@ -47,7 +133,10 @@ function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () =>
     : `Continue (${answered}/${questions} answered)`;
   return (
     <div className="progress">
-      <div className="muted small">In progress · paper {attempt.paperCode}</div>
+      <div className="muted small">
+        In progress · {sessionTitle(attempt, null) === 'Full paper' ? `paper ${attempt.paperCode}` : sessionTitle(attempt, null)}
+        {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
+      </div>
       {attempt.mode === 'daily' && (
         <ol className="days">
           {Array.from({ length: DAYS }, (_, k) => {
@@ -73,15 +162,46 @@ function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () =>
 
 export function HomeScreen(props: Props) {
   const { data, profile, onStart, onContinue, onOpenResult } = props;
-  const [confirm, setConfirm] = useState<{ paper: PaperKind; mode: Mode } | null>(null);
-  const attempts = data.attempts.filter((a) => a.profileId === profile.id);
+  const [confirm, setConfirm] = useState<StartRequest | null>(null);
+  const [subject, setSubject] = useState<Subject>(() => loadPref<Subject>(SUBJECT_KEY, 'maths', ['maths', 'english']));
+  const [level, setLevel] = useState<LevelChoice>(() => {
+    const v = loadPref(LEVEL_KEY, 'mixed', ['1', '2', '3', 'mixed']);
+    return v === 'mixed' ? 'mixed' : (Number(v) as 1 | 2 | 3);
+  });
+  const attempts = useMemo(() => data.attempts.filter((a) => a.profileId === profile.id), [data.attempts, profile.id]);
   const sessions = collectSessions(attempts);
   const [now] = useState(() => Date.now());
   const lastWeek = tally(collectRecords(attempts).filter((r) => r.at > now - WEEK_MS));
   const streak = streakDays(sessions, now);
+  const history = useMemo(() => englishHistory(attempts), [attempts]);
 
-  const start = (paper: PaperKind, mode: Mode) =>
-    activeAttempt(data, profile.id, paper) ? setConfirm({ paper, mode }) : onStart(paper, mode);
+  const seen = (ids: string[]) => ids.filter((id) => history.has(id)).length;
+  const textsRead = new Set([...history.keys()].filter((id) => id.includes('#')).map((id) => id.split('#')[0])).size;
+  const bank: Partial<Record<PaperKind, { have: number; note: string }>> = {
+    gps: {
+      have: GPS_ITEMS.length,
+      note: `${seen(GPS_ITEMS.map((i) => i.id))} of ${GPS_ITEMS.length} ready-made questions seen, plus new sentence questions every time`,
+    },
+    spelling: {
+      have: SPELLING_WORDS.length,
+      note: `${seen(SPELLING_WORDS.map((w) => w.word))} of ${SPELLING_WORDS.length} words practised`,
+    },
+    reading: { have: READING_TEXTS.length, note: `${textsRead} of ${READING_TEXTS.length} texts read` },
+  };
+
+  const start = (request: StartRequest) =>
+    activeAttempt(data, profile.id, request.paper) ? setConfirm(request) : onStart(request);
+
+  const chooseSubject = (s: Subject) => {
+    setSubject(s);
+    savePref(SUBJECT_KEY, s);
+  };
+  const chooseLevel = (l: LevelChoice) => {
+    setLevel(l);
+    savePref(LEVEL_KEY, String(l));
+  };
+
+  const cards = subject === 'maths' ? MATHS : ENGLISH;
 
   return (
     <div className="page">
@@ -112,24 +232,66 @@ export function HomeScreen(props: Props) {
         </div>
       </div>
 
+      <div className="segmented subject-switch" role="radiogroup" aria-label="Subject">
+        {(['maths', 'english'] as const).map((s) => (
+          <button key={s} type="button" role="radio" aria-checked={subject === s} className={subject === s ? 'on' : ''} onClick={() => chooseSubject(s)}>
+            {s === 'maths' ? 'Maths' : 'English'}
+          </button>
+        ))}
+      </div>
+
+      {subject === 'english' && (
+        <section className="card level-card">
+          <div className="row">
+            <h2 className="grow">Level</h2>
+            <div className="segmented" role="radiogroup" aria-label="Level">
+              {LEVELS.map((l) => (
+                <button key={l} type="button" role="radio" aria-checked={level === l} className={level === l ? 'on' : ''} onClick={() => chooseLevel(l)}>
+                  {LEVEL_NAME[l]}
+                </button>
+              ))}
+            </div>
+          </div>
+          <p className="muted small">
+            {level === 'mixed'
+              ? 'Mixed starts easy and gets harder, like the real SATs papers.'
+              : level === 1
+                ? 'Easy: Year 3 and 4 words and grammar. A good warm-up.'
+                : level === 2
+                  ? 'Medium: Year 5 and 6 work at the expected standard.'
+                  : 'Hard: the trickiest questions, at the higher standard.'}
+          </p>
+        </section>
+      )}
+
       <div className="papers">
-        {PAPERS.map((p) => {
+        {cards.map((p) => {
           const active = activeAttempt(data, profile.id, p.paper);
+          const content = bank[p.paper];
+          const empty = content !== undefined && content.have === 0;
           return (
             <section key={p.paper} className={`card paper-card ${p.paper}`}>
               <h2>{p.title}</h2>
               <p className="muted">{p.about}</p>
               {active && <Progress attempt={active} onContinue={() => onContinue(active.id)} />}
-              <div className="choices">
-                <button type="button" className="choice" onClick={() => start(p.paper, 'daily')}>
-                  <strong>New daily paper</strong>
-                  <span className="muted">{p.perDay} questions a day for 5 days</span>
-                </button>
-                <button type="button" className="choice" onClick={() => start(p.paper, 'full')}>
-                  <strong>New full paper</strong>
-                  <span className="muted">The whole paper in one go</span>
-                </button>
-              </div>
+              {empty ? (
+                <p className="banner small">Questions for this paper are on their way.</p>
+              ) : (
+                <div className="choices">
+                  {p.options.map((o) => (
+                    <button
+                      key={o.title}
+                      type="button"
+                      className="choice"
+                      onClick={() => start({ ...o.request, ...(subject === 'english' && { level }) })}
+                    >
+                      <strong>{o.title}</strong>
+                      <span className="muted">{o.about}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+              {content && !empty && <p className="muted small bank-note">{content.note}</p>}
             </section>
           );
         })}
@@ -148,20 +310,23 @@ export function HomeScreen(props: Props) {
           <table>
             <tbody>
               {sessions
-                .slice(-6)
+                .slice(-8)
                 .reverse()
-                .map((s) => (
-                  <tr key={`${s.attemptId}-${s.at}`} className="clickable" onClick={() => onOpenResult(s.attemptId, s.at)}>
-                    <td>{formatDateTime(s.at)}</td>
-                    <td>
-                      {PAPER_NAME[s.paper]} · {s.day ? `Day ${s.day}` : 'Full paper'}
-                    </td>
-                    <td className="num">
-                      {s.score} / {s.total}
-                    </td>
-                    <td className="num">{Math.round((s.score / s.total) * 100)}%</td>
-                  </tr>
-                ))}
+                .map((s) => {
+                  const attempt = findAttempt(data, s.attemptId);
+                  return (
+                    <tr key={`${s.attemptId}-${s.at}`} className="clickable" onClick={() => onOpenResult(s.attemptId, s.at)}>
+                      <td>{formatDateTime(s.at)}</td>
+                      <td>
+                        {PAPER_NAME[s.paper]} · {attempt ? sessionTitle(attempt, s.day) : s.day ? `Day ${s.day}` : 'Full paper'}
+                      </td>
+                      <td className="num">
+                        {s.score} / {s.total}
+                      </td>
+                      <td className="num">{Math.round((s.score / s.total) * 100)}%</td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         )}
@@ -180,7 +345,7 @@ export function HomeScreen(props: Props) {
                 type="button"
                 className="btn btn-primary grow"
                 onClick={() => {
-                  onStart(confirm.paper, confirm.mode);
+                  onStart(confirm);
                   setConfirm(null);
                 }}
               >

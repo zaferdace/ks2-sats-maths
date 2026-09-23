@@ -1,7 +1,18 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { emptyAnswer, isBlank, maxMarks, typeBoxKey, typeKey, usesKeypad, type AnswerField, type AnswerInput } from '../answer/answer';
-import { PAPER_NAME } from '../gen/catalog';
-import { isReasoning, type AnyQuestion } from '../gen/types';
+import {
+  emptyAnswer,
+  isBlank,
+  keyboardFor,
+  maxMarks,
+  typeBoxKey,
+  typeKey,
+  typeLetter,
+  type AnswerField,
+  type AnswerInput,
+} from '../answer/answer';
+import { LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
+import { promptText } from '../gen/format';
+import { isItem, type AnyQuestion, type Block, type PaperKind } from '../gen/types';
 import {
   addTime,
   openSession,
@@ -13,9 +24,12 @@ import {
 } from '../store/model';
 import { AnswerBoxes } from '../ui/AnswerBoxes';
 import { Keypad } from '../ui/Keypad';
+import { LetterKeyboard } from '../ui/LetterKeyboard';
 import { MathText } from '../ui/MathText';
+import { Passage } from '../ui/Passage';
 import { ReasoningAnswer, ReasoningBody, type Focus } from '../ui/ReasoningView';
-import { promptText } from '../gen/format';
+import { dictate, stopSpeaking } from '../ui/speech';
+import { sessionTitle } from '../ui/labels';
 import { formatDuration } from '../ui/time';
 
 interface Props {
@@ -30,12 +44,25 @@ const MAX_CHUNK_MS = 60_000; // ignore gaps such as the iPad going to sleep
 
 /** Where typing goes when a question opens. */
 function firstFocus(q: AnyQuestion): Focus {
-  if (!isReasoning(q)) return q.kind === 'frac' ? 'num' : 'whole';
+  if (!isItem(q)) return q.kind === 'frac' ? 'num' : 'whole';
   return q.input.kind === 'number' ? 0 : 'num';
 }
 
-/** Suggested minutes: 40 for a whole reasoning paper (35 marks), in proportion for a day. */
-const suggestedMs = (marks: number) => Math.round((marks / 35) * 40) * 60_000;
+type SpeakBlock = Extract<Block, { b: 'speak' }>;
+type PassageBlock = Extract<Block, { b: 'passage' }>;
+
+const speakOf = (q: AnyQuestion | undefined) =>
+  q && isItem(q) ? q.body.find((b): b is SpeakBlock => b.b === 'speak') : undefined;
+const passageOf = (q: AnyQuestion | undefined) =>
+  q && isItem(q) ? q.body.find((b): b is PassageBlock => b.b === 'passage') : undefined;
+
+/** Real test timings: [marks, minutes]. The arithmetic paper shows no target. */
+const TIMING: Partial<Record<PaperKind, [number, number]>> = {
+  reasoning: [35, 40],
+  gps: [50, 45],
+  spelling: [20, 15],
+  reading: [50, 60],
+};
 
 export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const session = openSession(attempt);
@@ -78,6 +105,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
     window.addEventListener('pagehide', onVisibility);
     return () => {
       flush();
+      stopSpeaking();
       window.clearInterval(timer);
       window.clearInterval(ticker);
       document.removeEventListener('visibilitychange', onVisibility);
@@ -101,21 +129,33 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
     document.querySelector('.question-card .abox.focus')?.scrollIntoView({ block: 'nearest' });
   }, [index, focus]);
 
+  // In a long paper's scrolling question map, keep the current question in sight (sideways only,
+  // so the page itself doesn't jump).
+  useEffect(() => {
+    const map = document.querySelector<HTMLElement>('.qmap-scroll');
+    const chip = map?.querySelector<HTMLElement>('.qchip.current');
+    if (map && chip) map.scrollTo({ left: chip.offsetLeft - map.offsetLeft - (map.clientWidth - chip.offsetWidth) / 2 });
+  }, [index]);
+
   const goTo = useCallback(
     (i: number) => {
       if (i === indexRef.current) return;
       flush();
       edit((a) => setCurrent(a, i));
       setFocus(firstFocus(attempt.questions[i]));
+      // Spelling: read the next word straight away (iPadOS only speaks in response to a tap).
+      const speak = speakOf(attempt.questions[i]);
+      if (speak) dictate(speak.word, speak.sentence);
+      else stopSpeaking();
     },
-    [attempt.questions, edit, flush],
+    [attempt.questions, edit, flush, setFocus],
   );
 
   const onKey = useCallback(
     (key: string) => {
       const i = indexRef.current;
       const q = attempt.questions[i];
-      if (isReasoning(q) && q.input.kind === 'number' && typeof focus === 'number') {
+      if (isItem(q) && q.input.kind === 'number' && typeof focus === 'number') {
         const box = q.input.boxes[focus];
         const current = attempt.answers[i]?.boxes?.[focus] ?? '';
         const typed = typeBoxKey(current, key, box);
@@ -138,7 +178,19 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         return setAnswer(a, i, isBlank(next) ? null : next);
       });
     },
-    [attempt.questions, attempt.answers, edit, focus],
+    [attempt.questions, attempt.answers, edit, focus, setFocus],
+  );
+
+  const onLetter = useCallback(
+    (key: string) => {
+      const i = indexRef.current;
+      edit((a) => {
+        const prev: AnswerInput = a.answers[i] ?? emptyAnswer();
+        const next = { ...prev, text: typeLetter(prev.text ?? '', key) };
+        return setAnswer(a, i, isBlank(next) ? null : next);
+      });
+    },
+    [edit],
   );
 
   const onSelect = useCallback(
@@ -151,27 +203,37 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
 
   if (!session) return null;
 
+  // Bound to this question, so a late save (a written answer) never lands on the next one.
+  const onAnswer = (a: AnswerInput | null) => edit((att) => setAnswer(att, index, a));
+
   const answer = attempt.answers[index];
   const count = session.to - session.from;
   const position = index - session.from + 1;
   const indexes = Array.from({ length: count }, (_, k) => session.from + k);
   const answered = indexes.filter((i) => !isBlank(attempt.answers[i])).length;
   const flagged = indexes.filter((i) => attempt.flagged[i]).length;
+  const unmarked = indexes.filter((i) => {
+    const q = attempt.questions[i];
+    const a = attempt.answers[i];
+    return isItem(q) && q.input.kind === 'self' && (a?.checked || !isBlank(a)) && a?.self === undefined;
+  }).length;
   const live = segmentStart !== null ? Math.min(Math.max(clock - segmentStart, 0), MAX_CHUNK_MS) : 0;
   const elapsed = indexes.reduce((s, i) => s + attempt.timeMs[i], 0) + live;
-  const title = session.day ? `Day ${session.day}` : 'Full paper';
-  const reasoning = isReasoning(question);
+  const title = sessionTitle(attempt, session.day);
+  const item = isItem(question);
   // Long calculations get a smaller font so they stay on one line.
-  const length = reasoning ? 0 : promptText(question.parts).length;
+  const length = item ? 0 : promptText(question.parts).length;
   const sizeClass = length > 22 ? 'xlong' : length > 16 ? 'long' : '';
   const isLast = position === count;
   const marks = maxMarks(question);
-  const keypad = usesKeypad(question);
-  const box = reasoning && question.input.kind === 'number' && typeof focus === 'number' ? question.input.boxes[focus] : undefined;
+  const keyboard = keyboardFor(question);
+  const passage = passageOf(question);
+  const box = item && question.input.kind === 'number' && typeof focus === 'number' ? question.input.boxes[focus] : undefined;
   const allowDecimal = box ? Boolean(box.decimal) : focus === 'whole';
   const allowNegative = Boolean(box?.negative);
   const sessionMarks = indexes.reduce((s, i) => s + maxMarks(attempt.questions[i]), 0);
-  const suggested = attempt.paper === 'reasoning' ? suggestedMs(sessionMarks) : null;
+  const timing = TIMING[attempt.paper];
+  const suggested = timing ? Math.round((sessionMarks / timing[0]) * timing[1]) * 60_000 : null;
 
   const nav = (where: string) => (
     <div className={`q-nav ${where}`}>
@@ -200,14 +262,21 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
 
   const finish = () => {
     flush();
+    stopSpeaking();
     const now = Date.now();
     edit((a) => submitSession(a, now));
     setConfirming(false);
     onFinished(now);
   };
 
+  const layout = [
+    'test-body',
+    keyboard ? `kb-${keyboard}` : 'no-keypad',
+    passage ? 'with-passage' : '',
+  ].join(' ');
+
   return (
-    <div className="page test-page">
+    <div className={`page test-page ${passage ? 'reading-page' : ''}`}>
       <header className="topbar test-top">
         <button type="button" className="btn btn-ghost" onClick={onExit} aria-label="Save and go home">
           ← Home
@@ -219,6 +288,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
           <div className="muted small">
             Paper {attempt.paperCode} · {position} of {count}
             {session.day ? ' today' : ''}
+            {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
           </div>
         </div>
         <div className="timer" aria-label="Time on this session">
@@ -230,7 +300,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         </button>
       </header>
 
-      <nav className={`qmap ${count > 8 ? 'qmap-full' : ''}`} aria-label="Questions">
+      <nav className={`qmap ${count > 8 ? 'qmap-full' : ''} ${count > 30 ? 'qmap-scroll' : ''}`} aria-label="Questions">
         {indexes.map((i) => {
           const state = [
             i === index ? 'current' : '',
@@ -255,18 +325,27 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         })}
       </nav>
 
-      <div className={`test-body ${keypad ? '' : 'no-keypad'}`}>
-        <section className={`card question-card ${reasoning ? 'reasoning-card' : ''}`} aria-live="polite">
+      <div className={layout}>
+        {passage && <Passage key={passage.textId} textId={passage.textId} paragraph={passage.paragraph} className="passage-panel" />}
+
+        <section className={`card question-card ${item ? 'reasoning-card' : ''}`} aria-live="polite">
           <div className="q-head">
             <span className="q-number">{index + 1}</span>
-            {!reasoning && question.showMethod && <span className="method-tag">Show your method: work it out on paper</span>}
+            {!item && question.showMethod && <span className="method-tag">Show your method: work it out on paper</span>}
             <span className="grow" />
             <span className={marks > 1 ? 'marks-tag' : 'muted small'}>{marks > 1 ? `${marks} marks` : '1 mark'}</span>
           </div>
-          {reasoning ? (
-            <div className="r-question">
+          {item ? (
+            <div className="r-question" key={index}>
               <ReasoningBody q={question} />
-              <ReasoningAnswer q={question} answer={answer} focus={focus} onFocus={setFocus} onSelect={onSelect} />
+              <ReasoningAnswer
+                q={question}
+                answer={answer}
+                focus={focus}
+                onFocus={setFocus}
+                onSelect={onSelect}
+                onAnswer={onAnswer}
+              />
               {question.input.kind === 'fraction' && (
                 <p className="muted small hint">Tap a box to fill it. Leave the whole-number box empty if there isn't one.</p>
               )}
@@ -297,15 +376,16 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
           {nav('card-nav')}
         </section>
 
-        {keypad && (
+        {keyboard === 'numbers' && (
           <aside className="keypad-wrap">
             {nav('keypad-nav')}
-            <Keypad
-              onKey={onKey}
-              allowDecimal={allowDecimal}
-              allowNegative={allowNegative}
-              enabled={!confirming}
-            />
+            <Keypad onKey={onKey} allowDecimal={allowDecimal} allowNegative={allowNegative} enabled={!confirming} />
+          </aside>
+        )}
+        {keyboard === 'letters' && (
+          <aside className="keypad-wrap letters-wrap">
+            {nav('keypad-nav')}
+            <LetterKeyboard onKey={onLetter} enabled={!confirming} />
           </aside>
         )}
       </div>
@@ -313,12 +393,18 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
       {confirming && (
         <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="finish-title">
           <div className="modal">
-            <h2 id="finish-title">Finish {title.toLowerCase() === 'full paper' ? 'the paper' : title}?</h2>
+            <h2 id="finish-title">Finish {session.day ? title : 'the paper'}?</h2>
             <p>
               You have answered <strong>{answered}</strong> of {count} questions.
               {answered < count && ` ${count - answered} blank ${count - answered === 1 ? 'answer scores' : 'answers score'} 0.`}
               {flagged > 0 && ` ${flagged} flagged.`}
             </p>
+            {unmarked > 0 && (
+              <p className="banner small">
+                {unmarked === 1 ? 'One written answer still needs' : `${unmarked} written answers still need`} your marks.
+                Tap “Check my answer” and choose a mark, or it scores 0.
+              </p>
+            )}
             <div className="row">
               <button type="button" className="btn grow" onClick={() => setConfirming(false)}>
                 Keep going

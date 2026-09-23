@@ -1,10 +1,14 @@
 import { formatCorrect, formatInput, isBlank, maxMarks } from '../answer/answer';
-import { PAPER_NAME, typeInfo } from '../gen/catalog';
-import { isReasoning, TOPICS } from '../gen/types';
+import { readingText } from '../english/bank';
+import { LEVEL_NAME, PAPER_NAME, typeInfo } from '../gen/catalog';
+import { isItem, SUBJECT_OF, TOPICS } from '../gen/types';
 import { openSession, scoreOf, sessionAt, type Attempt } from '../store/model';
 import { AnswerBoxes } from '../ui/AnswerBoxes';
+import { sessionTitle, textsOf } from '../ui/labels';
 import { MathText } from '../ui/MathText';
+import { Passage } from '../ui/Passage';
 import { ReasoningAnswer, ReasoningBody } from '../ui/ReasoningView';
+import { RichText } from '../ui/RichText';
 import { formatDateTime, formatDuration, formatSeconds } from '../ui/time';
 
 interface Props {
@@ -45,8 +49,14 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
     total: marked.reduce((s, i) => s + maxMarks(attempt.questions[i]), 0),
   };
   const next = openSession(attempt);
-  const hasTwoMarkers = indexes.some((i) => maxMarks(attempt.questions[i]) > 1);
+  const maths = SUBJECT_OF[attempt.paper] === 'maths';
+  const hasTwoMarkers = maths && indexes.some((i) => maxMarks(attempt.questions[i]) > 1);
+  const selfMarked = indexes.some((i) => {
+    const q = attempt.questions[i];
+    return isItem(q) && q.input.kind === 'self';
+  });
   const paperName = PAPER_NAME[attempt.paper];
+  const texts = textsOf(attempt);
 
   const topics = TOPICS.map((t) => {
     const qs = indexes.filter((i) => typeInfo(attempt.questions[i].typeId)?.topic === t.id);
@@ -61,7 +71,7 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
     <div className="page">
       <header className="topbar">
         <h1>
-          {paperName}: {session.day ? `Day ${session.day} marked` : 'paper marked'}
+          {paperName} · {sessionTitle(attempt, session.day)}
         </h1>
         <button type="button" className="btn" onClick={onHome}>
           Home
@@ -74,7 +84,7 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
             {score} / {total}
           </div>
           <div className="result-pct">
-            {attempt.paper === 'reasoning' ? 'marks · ' : ''}
+            {total !== indexes.length ? 'marks · ' : ''}
             {pct}%
           </div>
         </div>
@@ -82,6 +92,7 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
           <p className="praise">{praise(pct)}</p>
           <p className="muted small">
             Paper {attempt.paperCode} · {formatDateTime(at)}
+            {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
           </p>
         </div>
       </section>
@@ -109,6 +120,12 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
         <p className="banner small">
           Two-mark questions score 2 or 0 here. In the real test, a correct method can still earn 1 mark when the
           answer is wrong, so show your working on paper.
+        </p>
+      )}
+      {selfMarked && (
+        <p className="banner small">
+          Written answers were marked by the pupil against a model answer. A grown-up can read them below and check
+          the marks.
         </p>
       )}
 
@@ -141,6 +158,12 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
 
       <section className="card">
         <h2>Questions</h2>
+        {texts.map((id) => (
+          <details key={id} className="review-text">
+            <summary>Read “{readingText(id)?.title ?? 'the text'}” again</summary>
+            <Passage textId={id} />
+          </details>
+        ))}
         <ol className="review">
           {indexes.map((i) => {
             const q = attempt.questions[i];
@@ -148,13 +171,14 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
             const got = attempt.marks[i] ?? 0;
             const right = got === max;
             const given = attempt.answers[i];
+            const selfQ = isItem(q) && q.input.kind === 'self';
             return (
               <li key={i} className={`review-item ${right ? 'is-right' : 'is-wrong'}`}>
                 <span className="q-number small-num">{i + 1}</span>
                 <div className="review-main">
-                  {isReasoning(q) ? (
+                  {isItem(q) ? (
                     <div className="review-reasoning">
-                      <ReasoningBody q={q} />
+                      <ReasoningBody q={q} review />
                       <ReasoningAnswer q={q} answer={given} mark={right ? 'right' : 'wrong'} />
                     </div>
                   ) : (
@@ -163,19 +187,28 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue }: Prop
                     </div>
                   )}
                   <div className="review-meta">
-                    <span className={`status ${right ? 'good' : 'bad'}`}>
+                    <span className={`status ${right ? 'good' : got > 0 ? 'part' : 'bad'}`}>
                       <span className="dot" aria-hidden="true">
-                        {right ? '✓' : '✕'}
+                        {right ? '✓' : got > 0 ? '½' : '✕'}
                       </span>
-                      {right ? 'Correct' : isBlank(given) ? 'No answer' : 'Not quite'}
-                      {max > 1 && ` · ${got}/${max} marks`}
+                      {selfQ
+                        ? given?.self !== undefined
+                          ? `You gave yourself ${got} of ${max}`
+                          : 'Not marked'
+                        : right
+                          ? 'Correct'
+                          : isBlank(given)
+                            ? 'No answer'
+                            : 'Not quite'}
+                      {!selfQ && max > 1 && ` · ${got}/${max} marks`}
                     </span>
-                    {!right && (
+                    {!right && !selfQ && (
                       <span>
                         Answer: <strong>{formatCorrect(q)}</strong>
                         {!isBlank(given) && <span className="muted"> (you wrote {formatInput(given, q)})</span>}
                       </span>
                     )}
+                    {!right && isItem(q) && q.explain && <RichText className="explain" text={q.explain} />}
                     <span className="muted small">
                       {typeInfo(q.typeId)?.label} · {formatSeconds(attempt.timeMs[i])}
                     </span>

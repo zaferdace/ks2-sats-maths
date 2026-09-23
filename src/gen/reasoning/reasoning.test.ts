@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { isCorrect, formatCorrect, type AnswerInput } from '../../answer/answer';
 import { isInt, ratFromString, toDecimalString, type Rational } from '../../math/rational';
 import { createRng } from '../rng';
-import type { Block, Difficulty, ReasoningQuestion } from '../types';
+import type { Block, Difficulty, ItemQuestion } from '../types';
 import { REASONING_BLUEPRINT, REASONING_MARKS, REASONING_QUESTIONS } from './blueprint';
 import { generateReasoningPaper, reasoningKey } from './paper';
 import { REASONING_TYPES } from './registry';
@@ -12,7 +12,7 @@ import { REASONING_TYPES } from './registry';
 const SEEDS = 1000;
 
 /** The input a pupil would give for the right answer. */
-export function correctInput(q: ReasoningQuestion): AnswerInput {
+export function correctInput(q: ItemQuestion): AnswerInput {
   const blank = { whole: '', num: '', den: '' };
   switch (q.input.kind) {
     case 'number':
@@ -24,6 +24,8 @@ export function correctInput(q: ReasoningQuestion): AnswerInput {
     case 'choice':
     case 'order':
       return { ...blank, sel: q.answer.split(',').map(Number) };
+    default:
+      throw new Error(`Reasoning templates do not use ${q.input.kind} inputs`);
   }
 }
 
@@ -38,7 +40,7 @@ function angleFromFigure(b: Extract<Block, { b: 'angles' }>): number | null {
   return (total - known) / unknown;
 }
 
-function problems(q: ReasoningQuestion): string[] {
+function problems(q: ItemQuestion): string[] {
   const out: string[] = [];
   const all = JSON.stringify(q);
   if (/NaN|undefined|Infinity|\[object/.test(all)) out.push('bad text');
@@ -70,7 +72,7 @@ function problems(q: ReasoningQuestion): string[] {
     if (idx.length !== input.pick || new Set(idx).size !== idx.length) out.push('wrong number of correct options');
     if (idx.some((i) => !(i >= 0 && i < input.options.length))) out.push('answer index out of range');
     if (input.options.length < input.pick + 2) out.push('too few options');
-  } else {
+  } else if (input.kind === 'order') {
     const idx = q.answer.split(',').map(Number);
     if (new Set(input.items).size !== input.items.length) out.push('duplicate order items');
     if ([...idx].sort((a, b) => a - b).join() !== input.items.map((_, i) => i).join()) out.push('order answer not a permutation');
@@ -107,7 +109,7 @@ describe.each(REASONING_TYPES.map((t) => [t.id, t] as const))('%s', (_id, type) 
     const keys = new Set<string>();
     for (let s = 0; s < SEEDS; s++) {
       const draft = type.generate(createRng(`${type.id}/${d}/${s}`), d);
-      const q: ReasoningQuestion = { format: 'reasoning', typeId: type.id, difficulty: d, marks: 1, ...draft };
+      const q: ItemQuestion = { format: 'reasoning', typeId: type.id, difficulty: d, marks: 1, ...draft };
       failures.push(...problems(q));
       keys.add(reasoningKey(q));
     }

@@ -1,0 +1,192 @@
+{
+  "id": "rt-fiction-02",
+  "title": "The Case of the Missing Cup",
+  "genre": "fiction",
+  "level": 1,
+  "paragraphs": [
+    "On Monday morning, Mrs Adams stood at the front of the hall with a worried frown. 'I'm afraid our silver football cup has vanished from its glass cabinet,' she announced. 'If anyone knows where it is, please tell me. The team photo is on Friday, and it won't be the same without the cup.'",
+    "At once, the hall buzzed with whispers. Somebody had seen Theo in the hall on Friday lunchtime, standing right next to the cabinet. By break time, half the class was staring at him. 'I only went back for my water bottle!' Theo protested, but his cheeks were burning.",
+    "His best friend, Priya, believed him. She had read dozens of detective stories, so she grabbed her notebook, and she and Theo marched straight to the hall. First, she examined the cabinet. The glass was not cracked, and the lock was not damaged. 'Whoever took the cup must have had a key,' she said thoughtfully.",
+    "Then Priya knelt down and peered under the cabinet. Something tiny glinted in the dust. It was a silver screw, no bigger than a grain of rice. 'I think something on the cup had come loose,' she whispered, and she dropped the screw carefully into her pencil case.",
+    "At the school office, Priya asked who kept the key to the cabinet. 'Only Mrs Adams and Mr Ward, the caretaker,' said the secretary. 'And Mrs Adams was at a meeting all Friday afternoon.' Priya and Theo looked at each other. Then they hurried across the playground to Mr Ward's workshop.",
+    "Mr Ward was bent over his workbench. In front of him, gleaming under the lamp, stood the silver cup! 'One of the handles was wobbly,' he explained. 'I took the cup on Friday afternoon to mend it before the photo. I left a note on the cabinet so that nobody would worry.' Priya held out the tiny screw. Mr Ward's eyes lit up. 'So that's where it went! I've been hunting for that since Friday.'",
+    "Later, Mr Ward found his note on the floor behind the cabinet, where it had slipped down. In assembly the next morning, Mrs Adams thanked Priya for solving the mystery, and the children who had blamed Theo said sorry. On Friday, the cup stood proudly in the middle of the team photo, shinier than ever, and Theo's smile was the biggest of all."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy **one** word that means disappeared.",
+      "accept": ["vanished"]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\n'At once, the hall buzzed with whispers.'\nWhat does this suggest?\nTick one.",
+      "options": [
+        "Some bees had flown into the hall.",
+        "Lots of children were quietly talking about the missing cup.",
+        "Mrs Adams was shouting at the children.",
+        "The children were singing a song in assembly."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhy were Theo's cheeks burning?\nTick one.",
+      "options": [
+        "He had just run in from the playground.",
+        "He felt upset and embarrassed that people thought he had taken the cup.",
+        "He was sitting too close to a radiator.",
+        "He was proud that everyone was looking at him."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\n'First, she **examined** the cabinet.'\nWhich word is closest in meaning to **examined**?\nTick one.",
+      "options": ["opened", "studied", "polished", "pushed"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhy did Priya decide that whoever took the cup must have had a key?\nTick one.",
+      "options": [
+        "Theo told her that the thief had a key.",
+        "The glass was not cracked and the lock was not damaged.",
+        "She found a key lying under the cabinet.",
+        "The secretary said that the cabinet was always left open."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\nWhat did Priya find under the cabinet?",
+      "accept": [
+        "a screw",
+        "screw",
+        "the screw",
+        "a silver screw",
+        "silver screw",
+        "a tiny screw",
+        "tiny screw",
+        "a tiny silver screw",
+        "tiny silver screw",
+        "a small screw",
+        "small screw",
+        "a small silver screw",
+        "small silver screw",
+        "a screw from the cup",
+        "a silver screw no bigger than a grain of rice"
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWho kept a key to the cabinet?\nTick two.",
+      "options": ["Mrs Adams", "Theo", "Mr Ward", "the secretary"],
+      "pick": 2,
+      "answer": [0, 2]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "The team photo was on Monday.",
+        "Theo said he had gone back to the hall for his water bottle.",
+        "Priya dropped the screw into her pencil case.",
+        "Mr Ward had left his note on the classroom door."
+      ],
+      "answer": [false, true, true, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of paragraphs 3 to 5?\nTick one.",
+      "options": [
+        "Priya looks for clues and works out who could have taken the cup.",
+        "Priya tells Mrs Adams that Theo took the cup.",
+        "Theo finds his water bottle under the cabinet.",
+        "Priya and Theo borrow a key from the secretary."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2h",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "How do the other children treat Theo at the end of the story, compared with the beginning?\nTick one.",
+      "options": [
+        "At first they blame him, but at the end they say sorry.",
+        "At first they help him, but at the end they ignore him.",
+        "They blame him all the way through the story.",
+        "At first they ignore him, but at the end they thank him for finding the cup."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "What impression do you get of Priya in this story?\nExplain fully, using evidence from the text.",
+      "model": "Priya is a loyal friend, because she 'believed him' when half the class was staring at Theo. She is also clever, because she noticed that 'the lock was not damaged' and worked out that 'Whoever took the cup must have had a key'.",
+      "points": [
+        "Gives one quality, such as loyal or a good friend, with evidence, e.g. she 'believed him' when others blamed Theo.",
+        "Gives a second quality, such as clever, observant or determined, with evidence, e.g. she 'examined the cabinet' or found the tiny screw."
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Priya finds a tiny silver screw.",
+        "Mrs Adams tells everyone that the cup has vanished.",
+        "Theo smiles in the team photo.",
+        "Priya asks the secretary who has a key.",
+        "Mr Ward explains why he took the cup."
+      ],
+      "answer": [1, 0, 3, 4, 2]
+    }
+  ]
+}

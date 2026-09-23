@@ -1,35 +1,45 @@
 import { formatBoxValue, type AnswerField, type AnswerInput } from '../answer/answer';
-import type { NumberBox, ReasoningQuestion } from '../gen/types';
+import type { ItemQuestion, NumberBox } from '../gen/types';
 import { AnswerBoxes } from './AnswerBoxes';
+import { GapAnswer, PassageRef, SelfAnswer, SpeakBlock, TextAnswer, TfAnswer, WordsAnswer, type EnglishAnswerProps } from './EnglishView';
 import { Figure } from './Figure';
 import { RichInline, RichText } from './RichText';
 
 /** Keypad target: a fraction field, or the index of a number box. */
 export type Focus = AnswerField | number;
 
-/** The question's paragraphs and figures. */
-export function ReasoningBody({ q }: { q: ReasoningQuestion }) {
+/** The question's paragraphs and figures. `review` shows it after marking. */
+export function ReasoningBody({ q, review }: { q: ItemQuestion; review?: boolean }) {
   return (
     <div className="r-body">
-      {q.body.map((block, i) =>
-        block.b === 'text' ? (
-          <RichText key={i} text={block.text} />
-        ) : (
-          <div key={i} className="r-figure">
-            <Figure block={block} />
-          </div>
-        ),
-      )}
+      {q.body.map((block, i) => {
+        switch (block.b) {
+          case 'text':
+            return <RichText key={i} text={block.text} />;
+          case 'speak':
+            return <SpeakBlock key={i} word={block.word} sentence={block.sentence} compact={review} />;
+          case 'passage':
+            return <PassageRef key={i} textId={block.textId} paragraph={block.paragraph} />;
+          default:
+            return (
+              <div key={i} className="r-figure">
+                <Figure block={block} />
+              </div>
+            );
+        }
+      })}
     </div>
   );
 }
 
 interface AnswerProps {
-  q: ReasoningQuestion;
+  q: ItemQuestion;
   answer: AnswerInput | null;
   focus?: Focus;
   onFocus?: (f: Focus) => void;
   onSelect?: (sel: number[]) => void;
+  /** Sets the whole answer (English inputs). */
+  onAnswer?: (a: AnswerInput | null) => void;
   mark?: 'right' | 'wrong';
 }
 
@@ -70,7 +80,7 @@ function NumberBoxView({
   );
 }
 
-function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: ReasoningQuestion & { input: { kind: 'number' } } }) {
+function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: ItemQuestion & { input: { kind: 'number' } } }) {
   const { boxes, layout, tokens } = q.input;
   const view = (i: number, placeholder?: string) => (
     <NumberBoxView
@@ -119,9 +129,11 @@ function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: Re
   return <div className="r-answer r-row">{boxes.map((_, i) => view(i))}</div>;
 }
 
-function ChoiceAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: ReasoningQuestion & { input: { kind: 'choice' } } }) {
+function ChoiceAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: ItemQuestion & { input: { kind: 'choice' } } }) {
   const { options, pick } = q.input;
   const sel = answer?.sel ?? [];
+  // Sentence-length options (English) read better one per line.
+  const long = options.some((o) => o.length > 32);
   const toggle = (i: number) => {
     if (!onSelect) return;
     if (pick === 1) onSelect(sel[0] === i ? [] : [i]);
@@ -130,7 +142,7 @@ function ChoiceAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: Reasonin
     else onSelect([...sel.slice(1), i]); // replace the oldest choice
   };
   return (
-    <div className={`r-answer r-choices ${mark ?? ''}`}>
+    <div className={`r-answer r-choices ${long ? 'long' : ''} ${mark ?? ''}`}>
       {options.map((o, i) => {
         const on = sel.includes(i);
         return (
@@ -153,15 +165,18 @@ function ChoiceAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: Reasonin
   );
 }
 
-function OrderAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: ReasoningQuestion & { input: { kind: 'order' } } }) {
+function OrderAnswer({ q, answer, onSelect, mark }: AnswerProps & { q: ItemQuestion & { input: { kind: 'order' } } }) {
   const { items } = q.input;
   const sel = answer?.sel ?? [];
+  // Events from a story are sentences: list them top to bottom.
+  const long = items.some((t) => t.length > 24);
   return (
-    <div className={`r-answer r-order ${mark ?? ''}`}>
+    <div className={`r-answer r-order ${long ? 'long' : ''} ${mark ?? ''}`}>
       <div className="r-order-row" aria-label="Your order">
         {items.map((_, slot) => (
           <span key={slot} className={`r-slot ${sel[slot] !== undefined ? 'filled' : ''}`}>
-            {sel[slot] !== undefined ? <RichInline text={items[sel[slot]]} /> : slot + 1}
+            {long && <span className="slot-num">{slot + 1}</span>}
+            {sel[slot] !== undefined ? <RichInline text={items[sel[slot]]} /> : long ? '' : slot + 1}
           </span>
         ))}
       </div>
@@ -199,7 +214,7 @@ export function ReasoningAnswer(props: AnswerProps) {
   const { q } = props;
   switch (q.input.kind) {
     case 'number':
-      return <NumberAnswer {...props} q={q as ReasoningQuestion & { input: { kind: 'number' } }} />;
+      return <NumberAnswer {...props} q={q as ItemQuestion & { input: { kind: 'number' } }} />;
     case 'fraction':
       return (
         <div className="r-answer r-fraction">
@@ -213,8 +228,18 @@ export function ReasoningAnswer(props: AnswerProps) {
         </div>
       );
     case 'choice':
-      return <ChoiceAnswer {...props} q={q as ReasoningQuestion & { input: { kind: 'choice' } }} />;
+      return <ChoiceAnswer {...props} q={q as ItemQuestion & { input: { kind: 'choice' } }} />;
     case 'order':
-      return <OrderAnswer {...props} q={q as ReasoningQuestion & { input: { kind: 'order' } }} />;
+      return <OrderAnswer {...props} q={q as ItemQuestion & { input: { kind: 'order' } }} />;
+    case 'text':
+      return <TextAnswer {...(props as EnglishAnswerProps<'text'>)} />;
+    case 'words':
+      return <WordsAnswer {...(props as EnglishAnswerProps<'words'>)} />;
+    case 'gap':
+      return <GapAnswer {...(props as EnglishAnswerProps<'gap'>)} />;
+    case 'tf':
+      return <TfAnswer {...(props as EnglishAnswerProps<'tf'>)} />;
+    case 'self':
+      return <SelfAnswer {...(props as EnglishAnswerProps<'self'>)} />;
   }
 }

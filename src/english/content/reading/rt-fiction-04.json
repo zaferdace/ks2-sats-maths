@@ -1,0 +1,183 @@
+{
+  "id": "rt-fiction-04",
+  "title": "The Winter Lamp",
+  "genre": "fiction",
+  "level": 2,
+  "paragraphs": [
+    "In the valley of Low Hollow, winter only ended when someone climbed Crooked Mountain and lit the Winter Lamp. For forty years, that someone had been Ravi's grandmother. But this year she had slipped on the icy doorstep and hurt her ankle, so on the longest night of the year, the lantern was handed to Ravi. He was ten years old, and he did not like heights.",
+    "'Keep the flame close,' Grandmother told him, wrapping a woolly scarf around his neck. 'And if the North Wind comes, remember this: it is only loud because nobody listens.' Ravi did not understand what she meant, but he nodded and set off into the snow.",
+    "The path wound up through a forest of silver birches, their frozen branches clinking together like tiny bells. Ravi's boots crunched and his breath puffed out in clouds. Inside the lantern, the little flame glowed steady and golden, and for a while he almost forgot to be afraid.",
+    "Halfway up the mountain, the trees came to an end, and the North Wind arrived. It came howling over the rocks, tugging at Ravi's scarf and rattling the lantern in his hands. The flame shrank to a trembling bead of orange. 'Stop it!' Ravi shouted, but the wind only screamed louder, and the snow stung his cheeks like needles.",
+    "Ravi crouched behind a boulder, shielding the lantern with his body. His heart was thumping. Then he remembered Grandmother's words. Taking a deep breath, he stopped shouting and asked, very softly, 'Why are you so angry?'",
+    "At once, the howling faded to a whisper. 'Nobody ever asks me that,' said the wind, in a thin, surprised voice. 'Every year, people hurry past with their lanterns and hide from me. I have blown all around the world. I have seen oceans and deserts, but nobody ever wants to hear about them.' So Ravi sat on the boulder and listened, while the wind told him about camels plodding across golden sand, coral reefs full of darting fish and cities glittering in the dark.",
+    "When the stories were finished, the wind gave a happy sigh. 'Come on,' it said. 'You'll be late.' It blew gently at Ravi's back, carrying him up the last steep slope as easily as a leaf. At the very top stood the Winter Lamp, as tall as a door. Ravi touched his tiny flame to its wick, and with a roar, the lamp blazed into golden light. Far below, the snow in the valley began to sparkle and melt.",
+    "It was nearly dawn when Ravi arrived home. Grandmother was sitting by the fire with her foot up on a stool. When she asked whether the North Wind had given him any trouble, Ravi grinned. 'No,' he said. 'We're friends now.' Grandmother only smiled and poured him a mug of hot chocolate, as if she had known all along."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nWhy was Ravi given the lantern this year?\nTick one.",
+      "options": [
+        "He had asked to go instead of his grandmother.",
+        "His grandmother had hurt her ankle.",
+        "He was the bravest child in Low Hollow.",
+        "His grandmother was too busy to go."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nWhat was the name of the mountain that Ravi had to climb?",
+      "accept": ["Crooked Mountain", "the Crooked Mountain", "Crooked", "Crooked Mountain."]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\nFind and copy **one** word that shows the flame was shaking.",
+      "accept": ["trembling"]
+    },
+    {
+      "id": "q4",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\n'the snow stung his cheeks like needles'\nWhat does this suggest about the snow?\nTick one.",
+      "options": [
+        "It was soft and gentle.",
+        "It was sharp and painful.",
+        "It was warm and wet.",
+        "It was falling very slowly."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\n'Ravi crouched behind a boulder, **shielding** the lantern with his body.'\nWhich word is closest in meaning to **shielding**?\nTick one.",
+      "options": ["protecting", "shaking", "lighting", "dropping"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nWhy had the North Wind been so angry?\nTick one.",
+      "options": [
+        "It was lonely because nobody ever listened to it.",
+        "It wanted to put out the Winter Lamp for ever.",
+        "It did not want anyone to climb its mountain.",
+        "It was tired after blowing all around the world."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Ravi enjoyed climbing to high places.",
+        "Ravi's grandmother had lit the Winter Lamp for forty years.",
+        "The North Wind had seen oceans and deserts.",
+        "The Winter Lamp was as small as a teacup."
+      ],
+      "answer": [false, true, true, false]
+    },
+    {
+      "id": "q8",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of paragraphs 4 to 6?\nTick one.",
+      "options": [
+        "The North Wind almost blows out the flame, but when Ravi speaks kindly to it, the wind calms down and shares its stories.",
+        "Ravi gets lost in the forest, and his grandmother comes to find him.",
+        "Ravi lights the Winter Lamp, and the snow in the valley begins to melt.",
+        "The North Wind blows out the flame, so Ravi has to go home."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nGrandmother smiled 'as if she had known all along'.\nWhat does this suggest?\nTick one.",
+      "options": [
+        "She had guessed that Ravi would make friends with the North Wind.",
+        "She had watched Ravi climb the mountain from her window.",
+        "She did not believe what Ravi told her.",
+        "She had expected the North Wind to blow out the flame."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2e",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Using the whole story, what is Ravi most likely to do next winter?\nTick one.",
+      "options": [
+        "Refuse to climb Crooked Mountain ever again.",
+        "Climb the mountain again and listen to more of the North Wind's stories.",
+        "Ask the North Wind to blow out the Winter Lamp.",
+        "Move away from Low Hollow."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "prompt": "Grandmother tells Ravi that the North Wind 'is only loud because nobody listens'.\nHow does this advice help Ravi on his journey? Explain fully, using evidence from the text.",
+      "model": "At first Ravi shouts at the wind, but 'the wind only screamed louder'. Then he remembers Grandmother's words, stops shouting and asks softly, 'Why are you so angry?' The wind calms down at once, because nobody has asked it that before. Ravi listens to its stories, so the wind becomes his friend and 'blew gently at Ravi's back' to carry him up the last steep slope to the Winter Lamp.",
+      "points": [
+        "Explains that shouting at the wind did not work, e.g. 'the wind only screamed louder'.",
+        "Explains that Ravi remembered the advice and spoke softly to the wind instead, which calmed it down, e.g. 'the howling faded to a whisper'.",
+        "Explains that because Ravi listened, the wind helped him to reach the top, e.g. it 'blew gently at Ravi's back'."
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "The North Wind tells Ravi about its travels.",
+        "Grandmother wraps a scarf around Ravi's neck.",
+        "The Winter Lamp blazes into golden light.",
+        "Ravi walks through a forest of silver birches.",
+        "Ravi hides behind a boulder."
+      ],
+      "answer": [1, 3, 4, 0, 2]
+    }
+  ]
+}

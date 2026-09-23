@@ -1,0 +1,192 @@
+{
+  "id": "rt-fiction-03",
+  "title": "The Line Down the Middle",
+  "genre": "fiction",
+  "level": 2,
+  "paragraphs": [
+    "Maya had never shared a bedroom before. Now, in the new house, she had to share one with Zara, her new stepsister. Zara was ten, a year younger than Maya, and she was loud. She sang while she brushed her hair, left her socks in little heaps on the floor and covered every surface with pencil shavings, because she drew on anything she could find.",
+    "On the fourth night, Maya fetched a roll of blue tape from the kitchen drawer. Without a word, she stuck a long line down the middle of the carpet, from the door to the window. 'That's my half,' she said. 'Don't cross it.' Zara glared at her. Then she made a sign that said KEEP OUT in enormous purple letters and propped it against her pillow.",
+    "For a whole week, the line stayed where it was. The girls brushed their teeth in silence and walked to school on opposite sides of the road. Mum and Zara's dad exchanged worried looks over dinner, but whenever they asked what was wrong, both girls said, 'Nothing.'",
+    "Then, one stormy Saturday evening, the lights went out. The whole house was plunged into darkness, and rain hammered against the window like handfuls of gravel. Maya reached under her bed for her torch. As she switched it on, a small, shaky voice came from the other side of the line. 'I don't like storms,' Zara whispered.",
+    "Zara was sitting bolt upright, clutching her pillow, and her face looked pale in the torchlight. Maya hesitated. She looked at the blue line. Then she stepped over it and sat down on the end of Zara's bed. 'Neither do I,' she admitted. 'But they're better with a torch.'",
+    "They pulled the duvet over their heads like a tent. At first, neither of them knew what to say. Then Zara said quietly, 'I miss my old house. There was a tree outside my window, and I used to draw it every day.'",
+    "Maya swallowed. 'I miss my old room too,' she said. 'I thought that if we shared, everything would change.' When Zara admitted that she had thought Maya hated her, Maya shook her head. 'I don't,' she said, and she was surprised to find that it was true.",
+    "To pass the time, Maya made up a story about a dragon who was afraid of the dark, and Zara drew it on the back of an old envelope. When the lights flickered on again an hour later, Mum found them still under the duvet, surrounded by drawings and giggling so much that they could hardly breathe.",
+    "The next morning, Maya peeled the blue tape off the carpet and squashed it into a sticky ball. Then the girls pinned Zara's dragon drawing to the wall between their beds. Underneath it, in Maya's neatest handwriting, was the title of their very first book together: The Dragon Who Needed a Torch."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nFind and copy **one** word that shows Zara looked at Maya angrily.",
+      "accept": ["glared"]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhat did Maya use to make the line down the middle of the carpet?",
+      "accept": [
+        "tape",
+        "blue tape",
+        "the tape",
+        "the blue tape",
+        "some tape",
+        "some blue tape",
+        "a roll of tape",
+        "roll of tape",
+        "a roll of blue tape",
+        "roll of blue tape",
+        "sticky tape",
+        "blue sticky tape"
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhy did Mum and Zara's dad exchange worried looks over dinner?\nTick one.",
+      "options": [
+        "They were worried that a storm was coming.",
+        "They could tell that the girls were not getting on.",
+        "They did not like the food they were eating.",
+        "They thought that the girls were going to be late for school."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q4",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\n'rain hammered against the window like handfuls of gravel'\nWhat does this suggest about the rain?\nTick one.",
+      "options": [
+        "It was light and gentle.",
+        "It was hitting the window hard and noisily.",
+        "It was about to stop.",
+        "It had stones mixed in with it."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\n'Maya **hesitated**.'\nWhich word is closest in meaning to **hesitated**?\nTick one.",
+      "options": ["paused", "shouted", "giggled", "hurried"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWhy do you think Maya said, 'Neither do I'?\nTick one.",
+      "options": [
+        "She wanted Zara to feel less alone.",
+        "She wanted to make fun of Zara for being scared.",
+        "She wanted Zara to give her the pillow.",
+        "She was cross that Zara had woken her up."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nWhat did Zara miss about her old house?\nTick one.",
+      "options": ["her friends next door", "the tree outside her window", "her big garden", "her own bathroom"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Zara is a year younger than Maya.",
+        "Zara's sign said KEEP OUT in purple letters.",
+        "The girls walked to school side by side that week.",
+        "The lights came back on the next morning."
+      ],
+      "answer": [true, true, false, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
+      "options": [
+        "Maya crosses the line to comfort Zara, and the two girls begin to make friends.",
+        "Zara is scared of the storm, so she runs downstairs to find her dad.",
+        "The girls argue about the line until the lights come back on.",
+        "Maya tells Zara to stay on her own side of the room."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2f",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "The blue tape is mentioned near the beginning and again at the end of the story.\nWhy do you think the writer does this?\nTick one.",
+      "options": [
+        "To show how the girls' feelings about each other have changed.",
+        "To explain how to decorate a bedroom.",
+        "To show that blue is Maya's favourite colour.",
+        "To show that the carpet needed to be cleaned."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "prompt": "Maya's feelings about Zara change during the story.\nExplain how they change, using evidence from the text.",
+      "model": "At the start, Maya is annoyed with Zara and does not want to share a room with her. She sticks tape down the carpet and says, 'That's my half. Don't cross it.' By the end, Maya likes Zara and they have become friends. She tells Zara that she does not hate her and 'was surprised to find that it was true', and the girls make their first book together.",
+      "points": [
+        "Explains that at first Maya is annoyed with Zara or does not want to share a room with her.",
+        "Explains that by the end Maya likes Zara, or that they have become friends.",
+        "Backs up both feelings with evidence, e.g. 'Don't cross it.' and 'she was surprised to find that it was true'."
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Zara makes a KEEP OUT sign.",
+        "The lights go out during a storm.",
+        "Maya sticks tape down the middle of the carpet.",
+        "The girls pin a drawing on the wall.",
+        "Maya makes up a story about a dragon."
+      ],
+      "answer": [2, 0, 1, 4, 3]
+    }
+  ]
+}

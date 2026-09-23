@@ -1,0 +1,224 @@
+{
+  "id": "rt-non-fiction-02",
+  "title": "Mary Anning: Fossil Hunter",
+  "genre": "non-fiction",
+  "level": 2,
+  "paragraphs": [
+    "On a stormy summer’s day in 1800, three women stood beneath a tree in Lyme Regis, watching a horse show. One of them was holding a baby girl. Suddenly, lightning struck the tree. All three women were killed, but, amazingly, the baby survived. Her name was Mary Anning, and she would grow up to become one of the greatest fossil hunters of all time.",
+    "Mary was born in 1799 in Lyme Regis, a small seaside town in the south of England. Her family was poor. Her father was a carpenter, but he also searched the crumbling cliffs near the town for fossils – the remains of ancient plants and animals, preserved in rock – and sold them to tourists. Mary and her brother, Joseph, often went with him.",
+    "In 1810, when Mary was eleven, her father died, leaving the family with debts. To earn money, Mary and Joseph carried on hunting for fossils. The next year, Joseph dug up a strange skull that looked a little like a crocodile’s, and months later Mary found the rest of the skeleton. It belonged to a sea creature that had lived millions of years earlier. Scientists named it Ichthyosaurus, which means “fish lizard”.",
+    "Fossil hunting was dangerous. The best time to search was in winter, when storms made parts of the cliffs slide down onto the beach, uncovering new fossils. Mary had to dig out her finds before the tide swept them away, and she had to keep watch for falling rocks. In 1833, a landslide killed her dog, Tray, and Mary herself only just escaped.",
+    "Mary had very little schooling, but she was eager to learn. She read every scientific paper she could borrow and copied many of them out by hand. She even cut open fish and cuttlefish to see how their bodies were built. Before long, experts were travelling to Lyme Regis to buy her fossils and ask for her advice.",
+    "In 1823, Mary found the first complete skeleton of a plesiosaur, a sea reptile with a small head, four flippers and an incredibly long neck. It looked so strange that a famous French scientist suggested it might be a fake. In the end, he admitted that he had been wrong. Five years later, Mary found the first skeleton of a flying reptile ever discovered in Britain.",
+    "Even so, Mary did not receive the respect she deserved. Scientists who bought her fossils often wrote about them without mentioning her name. The Geological Society of London, an important group of scientists who studied rocks, would not let her join, because women were not allowed to become members.",
+    "Mary died in 1847, aged 47. After her death, the president of the Geological Society praised her work in a speech to its members. Today, some of her fossils are displayed in the Natural History Museum in London, and in 2022 a statue of Mary was unveiled in Lyme Regis. The poor girl who survived a lightning strike is now remembered as a pioneer who helped the world to understand the amazing creatures of the distant past."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nFind and copy one word that tells you the cliffs were slowly breaking apart.",
+      "paragraph": 2,
+      "kind": "text",
+      "accept": [
+        "crumbling"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nWhy do you think Mary’s father collected fossils as well as working as a carpenter? Tick one.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "because he was a famous scientist",
+        "to decorate the family’s house",
+        "to earn extra money for his poor family",
+        "because carpenters needed fossils for their work"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "How old was Mary when her father died?",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "eleven",
+        "11",
+        "eleven years old",
+        "11 years old",
+        "she was eleven",
+        "she was 11",
+        "aged eleven",
+        "aged 11"
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "According to the text, why was winter the best time to search for fossils? Tick one.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "Storms made parts of the cliffs slide onto the beach, uncovering new fossils.",
+        "There were fewer tourists on the beach to get in the way.",
+        "The tide did not come in during the winter.",
+        "Fossils were easier to see in the snow."
+      ],
+      "pick": 1,
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nIn the end, he **admitted** that he had been wrong.\nWhich word is closest in meaning to **admitted**? Tick one.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "denied",
+        "pretended",
+        "forgot",
+        "confessed"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nWhat does the French scientist’s first reaction suggest about the plesiosaur? Tick one.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "It was badly broken.",
+        "It was unlike any animal that scientists had seen before.",
+        "It had been found in France.",
+        "It was smaller than an Ichthyosaurus."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "Mary’s father sold fossils to tourists.",
+        "Mary went to school for many years.",
+        "Mary was allowed to join the Geological Society of London.",
+        "Some of Mary’s fossils are in the Natural History Museum in London."
+      ],
+      "answer": [
+        true,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\nWhy does the writer describe Mary as “the poor girl who survived a lightning strike”? Tick one.",
+      "paragraph": 8,
+      "kind": "choice",
+      "options": [
+        "to suggest that she was often ill",
+        "to show that she was frightened of storms all her life",
+        "to show how remarkable it is that she achieved so much after such a difficult start",
+        "to suggest that she did not like living by the sea"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "What impressions of Mary Anning do you get from the text? Give two impressions, using evidence from the text to support each one.",
+      "kind": "self",
+      "model": "Mary was brave, because she searched the cliffs even though she “had to keep watch for falling rocks”, and a landslide nearly killed her. She was also hard-working and eager to learn: although she “had very little schooling”, she read scientific papers and “copied many of them out by hand”.",
+      "points": [
+        "One impression with evidence, e.g. brave: she searched cliffs where rocks could fall on her",
+        "A different impression with evidence, e.g. eager to learn: she copied scientific papers out by hand"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happened in Mary’s life.",
+      "kind": "order",
+      "items": [
+        "Mary found a complete plesiosaur skeleton.",
+        "Mary survived a lightning strike.",
+        "A landslide killed Mary’s dog, Tray.",
+        "Mary’s father died.",
+        "Joseph dug up a strange skull."
+      ],
+      "answer": [
+        1,
+        3,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why do you think the writer begins the text with the story of the lightning strike? Tick one.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "to grab the reader’s attention with a dramatic event",
+        "because it was Mary’s most important discovery",
+        "to explain how fossils are formed",
+        "to show that Mary was afraid of storms"
+      ],
+      "pick": 1,
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "Mary Anning survived a lightning strike and became famous for being lucky.",
+        "Mary Anning was a scientist who travelled around the world searching for dinosaurs.",
+        "Mary Anning and her brother, Joseph, ran a fossil museum in London.",
+        "Mary Anning grew up poor but became an important fossil hunter, even though she was not always given the credit she deserved."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

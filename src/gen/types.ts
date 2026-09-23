@@ -15,8 +15,23 @@ export type Part =
 export type AnswerKind = 'int' | 'dec' | 'frac';
 export type Difficulty = 1 | 2 | 3;
 
-/** Paper 1 is arithmetic; Papers 2 and 3 share the reasoning format. */
-export type PaperKind = 'arithmetic' | 'reasoning';
+/** Maths: Paper 1 arithmetic, Papers 2 and 3 reasoning. English: grammar and punctuation, spelling, reading. */
+export type PaperKind = 'arithmetic' | 'reasoning' | 'gps' | 'spelling' | 'reading';
+
+export const PAPER_KINDS: readonly PaperKind[] = ['arithmetic', 'reasoning', 'gps', 'spelling', 'reading'];
+
+/** Level a pupil picks for English: one difficulty throughout, or "mixed" (easy to hard, like the real test). */
+export type LevelChoice = Difficulty | 'mixed';
+
+export type Subject = 'maths' | 'english';
+
+export const SUBJECT_OF: Record<PaperKind, Subject> = {
+  arithmetic: 'maths',
+  reasoning: 'maths',
+  gps: 'english',
+  spelling: 'english',
+  reading: 'english',
+};
 
 export const TOPICS = [
   { id: 'place-value', label: 'Place value' },
@@ -32,6 +47,17 @@ export const TOPICS = [
   { id: 'geometry', label: 'Shapes & angles' },
   { id: 'position', label: 'Position & direction' },
   { id: 'statistics', label: 'Statistics' },
+  { id: 'word-classes', label: 'Word classes' },
+  { id: 'sentence-structure', label: 'Sentences and clauses' },
+  { id: 'verb-forms', label: 'Verbs and tenses' },
+  { id: 'standard-english', label: 'Standard English and formality' },
+  { id: 'punctuation', label: 'Punctuation' },
+  { id: 'vocabulary', label: 'Vocabulary' },
+  { id: 'spelling', label: 'Spelling' },
+  { id: 'reading-words', label: 'Reading: word meanings' },
+  { id: 'reading-retrieval', label: 'Reading: finding information' },
+  { id: 'reading-inference', label: 'Reading: inference and prediction' },
+  { id: 'reading-structure', label: 'Reading: summary, structure and language' },
 ] as const;
 
 export type TopicId = (typeof TOPICS)[number]['id'];
@@ -75,7 +101,11 @@ export type Block =
   | { b: 'rect'; labels: [string, string]; square?: boolean } // width label, height label; not to scale
   | { b: 'lshape'; labels: string[] } // six sides clockwise from the top; '' hides a label
   | { b: 'cuboid'; labels: [string, string, string] } // length, width, height
-  | { b: 'grid'; cols: number; rows: number; shaded: number[] };
+  | { b: 'grid'; cols: number; rows: number; shaded: number[] }
+  /** Spelling dictation: the word is spoken, the sentence is shown with the word blanked out. */
+  | { b: 'speak'; word: string; sentence: string }
+  /** A reading text, shown beside its questions; `paragraph` (1-based) is the one the question points to. */
+  | { b: 'passage'; textId: string; paragraph?: number };
 
 export interface NumberBox {
   label?: string; // before the box: "x", "□", "Ben"
@@ -90,25 +120,41 @@ export type InputSpec =
   | { kind: 'number'; boxes: NumberBox[]; layout?: 'row' | 'time' | 'coord' | 'sequence'; tokens?: (string | null)[] }
   | { kind: 'fraction' }
   | { kind: 'choice'; options: string[]; pick: number } // pick > 1: "tick two"
-  | { kind: 'order'; items: string[]; first: string }; // first: "smallest", "earliest", …
+  | { kind: 'order'; items: string[]; first: string } // first: "smallest", "earliest", …
+  /** A typed word or phrase on the letter keyboard. `spell` hides the word in feedback-free spelling tests. */
+  | { kind: 'text'; before?: string; after?: string; spell?: boolean }
+  /** Tap word(s) of a sentence. */
+  | { kind: 'words'; tokens: string[]; pick: number }
+  /** Tap where a punctuation mark goes; gap i is just after token i. */
+  | { kind: 'gap'; tokens: string[]; mark: string }
+  /** True or false for each statement. */
+  | { kind: 'tf'; statements: string[] }
+  /** Explanation question: the pupil compares with the model answer and gives themselves 0 to marks. */
+  | { kind: 'self'; model: string; points: string[] };
 
 /**
- * A reasoning question as stored with an attempt. Answer encoding by input kind:
- * number "n/d;n/d" (one per box) · fraction "n/d" · choice "0,3" (sorted) · order "2,0,1".
+ * A reasoning or English question as stored with an attempt. Answer encoding by input kind:
+ * number "n/d;n/d" (one per box) · fraction "n/d" · choice, words, gap "0,3" (sorted) ·
+ * order "2,0,1" · text "answer|other accepted answer" · tf "1,0,1" · self "" (pupil marks it).
  */
-export interface ReasoningQuestion {
-  format: 'reasoning';
+export interface ItemQuestion {
+  format: 'reasoning' | 'english';
   typeId: string;
   difficulty: Difficulty;
-  marks: 1 | 2;
+  marks: number;
   body: Block[];
+  /** Why the answer is right, shown after marking. */
+  explain?: string;
+  /** Bank entry the question came from (English), so papers can avoid repeats and revisit mistakes. */
+  sourceId?: string;
   input: InputSpec;
   answer: string;
 }
 
-export type AnyQuestion = Question | ReasoningQuestion;
+export type AnyQuestion = Question | ItemQuestion;
 
-export const isReasoning = (q: AnyQuestion): q is ReasoningQuestion => 'format' in q && q.format === 'reasoning';
+/** Any question built from blocks and an input (reasoning and English), as opposed to a Paper 1 calculation. */
+export const isItem = (q: AnyQuestion): q is ItemQuestion => 'format' in q;
 
 /** What a reasoning template returns; the paper builder adds the marks. */
 export interface ReasoningDraft {
