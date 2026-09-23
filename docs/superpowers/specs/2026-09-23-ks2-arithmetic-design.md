@@ -190,3 +190,56 @@ playing a Day session and a full paper end to end.
 4. UI: profiles, home, test, keypad, result.
 5. Statistics + report with heat maps.
 6. PWA, icons, iOS polish, README, deploy workflow, GitHub repo + Pages.
+
+---
+
+# Phase 2: Reasoning papers (Papers 2 and 3)
+
+Date: 2026-09-23 · Status: approved ("do Papers 2 and 3"), building autonomously
+
+## Format
+
+- Papers 2 and 3 share one format, so the app has one **reasoning paper** generator; each new
+  paper is a fresh draw. The UI labels it "Papers 2 & 3: Reasoning".
+- **25 questions, 35 marks**, easy → hard. Daily mode: 5 days × 5 questions, each day 3 one-mark
+  and 2 two-mark questions (7 marks). Full mode: all 25, suggested time 40 minutes (shown next to
+  the timer, never enforced).
+- Two-mark questions score 2 or 0: a typed answer cannot show working, so no method mark. Results
+  say this, since the real test can give 1 mark for a correct method.
+- Left out because they cannot be marked automatically: "Explain how you know", drawing
+  (reflections, nets, completing shapes), measuring with a protractor or ruler.
+
+## Question model
+
+`ReasoningQuestion` (discriminated by `format: 'reasoning'`; arithmetic questions stay as they are):
+`body` (paragraphs with light markup and figures: table, bar chart, line graph, pie chart,
+coordinate grid, angle diagrams, labelled shapes, cuboid, fraction grid), `input` (number boxes
+with prefix/suffix, negative/decimal flags and row/time/coordinate/sequence layouts; fraction;
+single or multiple choice; ordering), `marks` (1 or 2) and an encoded `answer`.
+
+Answers compare exactly: numbers as rationals per box (so £3.5 = £3.50), choices as sets,
+orderings as sequences.
+
+## Coverage (about 35 templates)
+
+Number and place value, calculation in context, fractions/decimals/percentages, ratio, algebra,
+measurement, geometry (shapes and angles), position and direction, statistics. New topics:
+ratio, algebra, measurement, geometry, position, statistics.
+
+## Data
+
+Schema version 2: attempts gain `paper: 'arithmetic' | 'reasoning'`, and `marks` holds awarded
+marks (0-2). Version 1 data and backups are migrated on load, never rejected. One unfinished paper
+per paper type, so a daily arithmetic paper and a daily reasoning paper can run side by side.
+
+## Report
+
+A paper filter (Paper 1 / Papers 2 & 3 / Both) scopes every chart. Heat-map rows are grouped by
+topic within the selected paper; the question-position map is shown per paper.
+
+## Verification
+
+Per template × difficulty over 1,000 seeds: no NaN/undefined, numbers in range, whole pence,
+exactly the declared number of correct choices, distinct options and order items, answers that the
+input can express. Then three full papers are printed and read for sense. The browser run plays a
+whole reasoning paper at 768×1024.

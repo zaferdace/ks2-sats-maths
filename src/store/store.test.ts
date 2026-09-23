@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { generatePaper } from '../gen/paper';
+import { generateReasoningPaper } from '../gen/reasoning/paper';
 import { ratFromString, toDecimalString } from '../math/rational';
 import {
   activeAttempt,
@@ -55,8 +56,9 @@ describe('attempts', () => {
     expect(data.currentProfileId).toBe('p1');
     const done = { ...createAttempt('p1', 'full', 'AAAAAA', paper, 10, 'old'), completedAt: 20 };
     data = addAttempt(addAttempt(data, done), createAttempt('p1', 'daily', 'BBBBBB', paper, 30, 'new'));
-    expect(activeAttempt(data, 'p1')?.id).toBe('new');
-    expect(activeAttempt(data, 'other')).toBeUndefined();
+    expect(activeAttempt(data, 'p1', 'arithmetic')?.id).toBe('new');
+    expect(activeAttempt(data, 'p1', 'reasoning')).toBeUndefined();
+    expect(activeAttempt(data, 'other', 'arithmetic')).toBeUndefined();
   });
 });
 
@@ -80,6 +82,25 @@ describe('persistence', () => {
     const data = addAttempt(addProfile(emptyStore(), 'Sam', 1, 'p1'), createAttempt('p1', 'full', 'TESTAB', paper, 2, 'a'));
     expect(saveStore(data, storage)).toBe(true);
     expect(loadStore(storage)).toEqual(data);
+  });
+
+  it('migrates version 1 data instead of rejecting it', () => {
+    const attempt = submitSession(createAttempt('p1', 'full', 'TESTAB', paper, 2, 'a'), 3);
+    const { paper: _dropped, ...v1Attempt } = attempt;
+    const v1 = { schemaVersion: 1, profiles: [{ id: 'p1', name: 'Sam', createdAt: 1 }], attempts: [v1Attempt], currentProfileId: 'p1' };
+    const migrated = parseStore(JSON.parse(JSON.stringify(v1)));
+    expect(migrated?.schemaVersion).toBe(2);
+    expect(migrated?.attempts[0].paper).toBe('arithmetic');
+    expect(migrated?.attempts[0].marks).toEqual(attempt.marks);
+  });
+
+  it('keeps reasoning attempts and their 2-mark scores', () => {
+    const r = createAttempt('p1', 'daily', 'RRRRRR', generateReasoningPaper('RRRRRR'), 5, 'r');
+    expect(r.paper).toBe('reasoning');
+    const day1 = submitSession(r, 6);
+    expect(scoreOf(day1, 0, 5).total).toBe(7);
+    const data = addAttempt(addProfile(emptyStore(), 'Sam', 1, 'p1'), day1);
+    expect(parseStore(JSON.parse(JSON.stringify(data)))).toEqual(data);
   });
 
   it('falls back to an empty store on bad data', () => {

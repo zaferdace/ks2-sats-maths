@@ -1,10 +1,11 @@
 // App data and the pure functions that change it. React state holds one StoreData value;
 // persist.ts writes it to localStorage.
-import { isCorrect, type AnswerInput } from '../answer/answer';
-import { QUESTIONS_PER_DAY, QUESTIONS_PER_PAPER } from '../gen/blueprint';
-import type { Question } from '../gen/types';
+import { markFor, maxMarks, type AnswerInput } from '../answer/answer';
+import { DAYS } from '../gen/blueprint';
+import { isReasoning, type AnyQuestion, type PaperKind } from '../gen/types';
 
-export const SCHEMA_VERSION = 1;
+/** 2: attempts carry `paper` and marks can be 0-2. Version 1 data is migrated on load. */
+export const SCHEMA_VERSION = 2;
 
 export interface Profile {
   id: string;
@@ -18,14 +19,15 @@ export interface Attempt {
   id: string;
   profileId: string;
   paperCode: string;
+  paper: PaperKind;
   mode: Mode;
   createdAt: number;
   completedAt: number | null;
-  questions: Question[]; // snapshot of the 40 questions
+  questions: AnyQuestion[]; // snapshot of the paper
   answers: (AnswerInput | null)[];
   flagged: boolean[];
   timeMs: number[]; // time spent on each question
-  marks: (0 | 1 | null)[]; // null until that question's session is submitted
+  marks: (number | null)[]; // awarded marks; null until that question's session is submitted
   markedAt: (number | null)[];
   current: number; // question on screen
 }
@@ -63,11 +65,14 @@ export function addProfile(data: StoreData, name: string, now: number, id = newI
 
 export const selectProfile = (data: StoreData, id: string | null): StoreData => ({ ...data, currentProfileId: id });
 
+export const paperOf = (questions: AnyQuestion[]): PaperKind =>
+  questions.length > 0 && isReasoning(questions[0]) ? 'reasoning' : 'arithmetic';
+
 export function createAttempt(
   profileId: string,
   mode: Mode,
   paperCode: string,
-  questions: Question[],
+  questions: AnyQuestion[],
   now: number,
   id = newId(),
 ): Attempt {
@@ -76,6 +81,7 @@ export function createAttempt(
     id,
     profileId,
     paperCode,
+    paper: paperOf(questions),
     mode,
     createdAt: now,
     completedAt: null,
@@ -102,18 +108,22 @@ export const replaceAttempt = (data: StoreData, attempt: Attempt): StoreData => 
 export const findAttempt = (data: StoreData, id: string): Attempt | undefined =>
   data.attempts.find((a) => a.id === id);
 
-/** The profile's unfinished paper, if any (the most recent one). */
-export function activeAttempt(data: StoreData, profileId: string): Attempt | undefined {
+/** The profile's unfinished paper of one kind, if any (the most recent one). */
+export function activeAttempt(data: StoreData, profileId: string, paper: PaperKind): Attempt | undefined {
   return data.attempts
-    .filter((a) => a.profileId === profileId && a.completedAt === null)
+    .filter((a) => a.profileId === profileId && a.paper === paper && a.completedAt === null)
     .sort((a, b) => b.createdAt - a.createdAt)[0];
 }
+
+/** Questions in one day of a daily paper: 8 for arithmetic, 5 for reasoning. */
+export const perDay = (attempt: Attempt): number => Math.ceil(attempt.questions.length / DAYS);
 
 /** Session containing a question index. */
 export function sessionAt(attempt: Attempt, index: number): Session {
   if (attempt.mode === 'full') return { from: 0, to: attempt.questions.length, day: null };
-  const day = Math.floor(index / QUESTIONS_PER_DAY) + 1;
-  return { from: (day - 1) * QUESTIONS_PER_DAY, to: day * QUESTIONS_PER_DAY, day };
+  const size = perDay(attempt);
+  const day = Math.floor(index / size) + 1;
+  return { from: (day - 1) * size, to: Math.min(day * size, attempt.questions.length), day };
 }
 
 /** The session still to be submitted, or null when the paper is complete. */
@@ -145,10 +155,9 @@ export function addTime(attempt: Attempt, index: number, ms: number): Attempt {
 export function submitSession(attempt: Attempt, now: number): Attempt {
   const session = openSession(attempt);
   if (!session) return attempt;
-  const marks = attempt.marks.map((m, i) =>
-    i >= session.from && i < session.to ? (isCorrect(attempt.questions[i], attempt.answers[i]) ? 1 : 0) : m,
-  );
-  const markedAt = attempt.markedAt.map((t, i) => (i >= session.from && i < session.to ? now : t));
+  const inSession = (i: number) => i >= session.from && i < session.to;
+  const marks = attempt.marks.map((m, i) => (inSession(i) ? markFor(attempt.questions[i], attempt.answers[i]) : m));
+  const markedAt = attempt.markedAt.map((t, i) => (inSession(i) ? now : t));
   const complete = marks.every((m) => m !== null);
   return {
     ...attempt,
@@ -159,11 +168,13 @@ export function submitSession(attempt: Attempt, now: number): Attempt {
   };
 }
 
-/** Score of the questions in [from, to). */
+/** Awarded and available marks for the questions in [from, to). */
 export function scoreOf(attempt: Attempt, from = 0, to = attempt.questions.length): { score: number; total: number } {
   let score = 0;
-  for (let i = from; i < to; i++) score += attempt.marks[i] ?? 0;
-  return { score, total: to - from };
+  let total = 0;
+  for (let i = from; i < to; i++) {
+    score += attempt.marks[i] ?? 0;
+    total += maxMarks(attempt.questions[i]);
+  }
+  return { score, total };
 }
-
-export const isPaperLength = (attempt: Attempt): boolean => attempt.questions.length === QUESTIONS_PER_PAPER;

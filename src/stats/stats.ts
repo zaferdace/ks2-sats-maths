@@ -1,30 +1,35 @@
 // Statistics and heat-map data, all derived from marked questions.
-import { DAYS, QUESTIONS_PER_DAY } from '../gen/blueprint';
-import { findType, QUESTION_TYPES } from '../gen/registry';
-import { TOPICS, type Difficulty, type TopicId } from '../gen/types';
-import type { Attempt, Mode } from '../store/model';
+import { maxMarks } from '../answer/answer';
+import { DAYS } from '../gen/blueprint';
+import { PAPER_LENGTH, typeInfo, type PaperFilter } from '../gen/catalog';
+import { TOPICS, type Difficulty, type PaperKind, type TopicId, type TypeInfo } from '../gen/types';
+import { perDay, type Attempt, type Mode } from '../store/model';
 
 export interface QuestionRecord {
   attemptId: string;
-  index: number; // 0-39
+  paper: PaperKind;
+  index: number; // position in the paper
   typeId: string;
   topic: TopicId | null;
   difficulty: Difficulty;
-  correct: boolean;
+  correct: boolean; // full marks
+  marks: number;
+  max: number;
   timeMs: number;
   at: number; // when it was marked
 }
 
 export interface SessionRecord {
   attemptId: string;
+  paper: PaperKind;
   paperCode: string;
   mode: Mode;
   day: number | null;
   at: number;
   from: number;
   to: number;
-  score: number;
-  total: number;
+  score: number; // marks
+  total: number; // available marks
   timeMs: number;
 }
 
@@ -38,17 +43,21 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 
 export const emptyTally = (): Tally => ({ correct: 0, total: 0, timeMs: 0 });
 
+function count(t: Tally, r: QuestionRecord): void {
+  t.total++;
+  t.correct += r.correct ? 1 : 0;
+  t.timeMs += r.timeMs;
+}
+
 export function tally(records: Iterable<QuestionRecord>): Tally {
   const t = emptyTally();
-  for (const r of records) {
-    t.total++;
-    t.correct += r.correct ? 1 : 0;
-    t.timeMs += r.timeMs;
-  }
+  for (const r of records) count(t, r);
   return t;
 }
 
 export const accuracyOf = (t: Tally): number | null => (t.total ? t.correct / t.total : null);
+
+export const inPaper = (paper: PaperFilter) => (r: { paper: PaperKind }) => paper === 'both' || r.paper === paper;
 
 export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
   const out: QuestionRecord[] = [];
@@ -56,13 +65,17 @@ export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
     a.questions.forEach((q, index) => {
       const mark = a.marks[index];
       if (mark === null) return;
+      const max = maxMarks(q);
       out.push({
         attemptId: a.id,
+        paper: a.paper,
         index,
         typeId: q.typeId,
-        topic: findType(q.typeId)?.topic ?? null,
+        topic: typeInfo(q.typeId)?.topic ?? null,
         difficulty: q.difficulty,
-        correct: mark === 1,
+        correct: mark >= max,
+        marks: mark,
+        max,
         timeMs: a.timeMs[index],
         at: a.markedAt[index] ?? a.createdAt,
       });
@@ -84,22 +97,25 @@ export function collectSessions(attempts: Attempt[]): SessionRecord[] {
       }
       const from = i;
       let score = 0;
+      let total = 0;
       let timeMs = 0;
       while (i < a.questions.length && a.markedAt[i] === at) {
         score += a.marks[i] ?? 0;
+        total += maxMarks(a.questions[i]);
         timeMs += a.timeMs[i];
         i++;
       }
       out.push({
         attemptId: a.id,
+        paper: a.paper,
         paperCode: a.paperCode,
         mode: a.mode,
-        day: a.mode === 'daily' ? Math.floor(from / QUESTIONS_PER_DAY) + 1 : null,
+        day: a.mode === 'daily' ? Math.floor(from / perDay(a)) + 1 : null,
         at,
         from,
         to: i,
         score,
-        total: i - from,
+        total,
         timeMs,
       });
     }
@@ -113,31 +129,37 @@ export interface TopicRow {
   tally: Tally;
 }
 
-export function byTopic(records: QuestionRecord[]): TopicRow[] {
-  return TOPICS.map((t) => ({ topic: t.id, label: t.label, tally: tally(records.filter((r) => r.topic === t.id)) }));
+/** Accuracy per topic, for the topics that have question types in `types`. */
+export function byTopic(records: QuestionRecord[], types: readonly TypeInfo[]): TopicRow[] {
+  const topics = new Set(types.map((t) => t.topic));
+  return TOPICS.filter((t) => topics.has(t.id)).map((t) => ({
+    topic: t.id,
+    label: t.label,
+    tally: tally(records.filter((r) => r.topic === t.id)),
+  }));
 }
 
 export interface TypeRow {
   typeId: string;
   label: string;
   topic: TopicId;
+  paper: PaperKind;
   tally: Tally;
 }
 
-/** Every question type, in registry order, including those not yet attempted. */
-export function byType(records: QuestionRecord[]): TypeRow[] {
+/** The given question types in order, including those not yet attempted. */
+export function byType(records: QuestionRecord[], types: readonly TypeInfo[]): TypeRow[] {
   const tallies = new Map<string, Tally>();
   for (const r of records) {
     const t = tallies.get(r.typeId) ?? emptyTally();
-    t.total++;
-    t.correct += r.correct ? 1 : 0;
-    t.timeMs += r.timeMs;
+    count(t, r);
     tallies.set(r.typeId, t);
   }
-  return QUESTION_TYPES.map((t) => ({
+  return types.map((t) => ({
     typeId: t.id,
     label: t.label,
     topic: t.topic,
+    paper: t.paper,
     tally: tallies.get(t.id) ?? emptyTally(),
   }));
 }
@@ -149,15 +171,14 @@ export function weakest(rows: TypeRow[], minAnswered = 3): TypeRow[] {
     .sort((a, b) => a.tally.correct / a.tally.total - b.tally.correct / b.tally.total || b.tally.total - a.tally.total);
 }
 
-/** Accuracy by position in the paper: DAYS rows × QUESTIONS_PER_DAY columns. */
-export function positionGrid(records: QuestionRecord[]): Tally[][] {
-  const grid = Array.from({ length: DAYS }, () => Array.from({ length: QUESTIONS_PER_DAY }, emptyTally));
+/** Accuracy by position in one kind of paper: DAYS rows × questions-per-day columns. */
+export function positionGrid(records: QuestionRecord[], paper: PaperKind): Tally[][] {
+  const size = Math.ceil(PAPER_LENGTH[paper] / DAYS);
+  const grid = Array.from({ length: DAYS }, () => Array.from({ length: size }, emptyTally));
   for (const r of records) {
-    const cell = grid[Math.floor(r.index / QUESTIONS_PER_DAY)]?.[r.index % QUESTIONS_PER_DAY];
-    if (!cell) continue;
-    cell.total++;
-    cell.correct += r.correct ? 1 : 0;
-    cell.timeMs += r.timeMs;
+    if (r.paper !== paper) continue;
+    const cell = grid[Math.floor(r.index / size)]?.[r.index % size];
+    if (cell) count(cell, r);
   }
   return grid;
 }
@@ -176,7 +197,7 @@ export interface WeeklyGrid {
 }
 
 /** Question types × the last `weeks` weeks. */
-export function weeklyGrid(records: QuestionRecord[], now: number, weeks = 8): WeeklyGrid {
+export function weeklyGrid(records: QuestionRecord[], now: number, types: readonly TypeInfo[], weeks = 8): WeeklyGrid {
   const current = weekStart(now);
   const weekStarts = Array.from({ length: weeks }, (_, i) => {
     const d = new Date(current);
@@ -184,7 +205,7 @@ export function weeklyGrid(records: QuestionRecord[], now: number, weeks = 8): W
     return d.getTime();
   });
   const column = new Map(weekStarts.map((w, i) => [w, i]));
-  const rows = QUESTION_TYPES.map((t) => ({
+  const rows = types.map((t) => ({
     typeId: t.id,
     label: t.label,
     topic: t.topic,
@@ -194,11 +215,7 @@ export function weeklyGrid(records: QuestionRecord[], now: number, weeks = 8): W
   for (const r of records) {
     const col = column.get(weekStart(r.at));
     const row = rowOf.get(r.typeId);
-    if (col === undefined || !row) continue;
-    const cell = row.cells[col];
-    cell.total++;
-    cell.correct += r.correct ? 1 : 0;
-    cell.timeMs += r.timeMs;
+    if (col !== undefined && row) count(row.cells[col], r);
   }
   return { weekStarts, rows };
 }

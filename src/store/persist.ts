@@ -1,6 +1,7 @@
 // localStorage persistence plus backup/restore. Everything stays on the device.
-import { emptyStore, SCHEMA_VERSION, type Attempt, type Profile, type StoreData } from './model';
+import { emptyStore, paperOf, SCHEMA_VERSION, type Attempt, type Profile, type StoreData } from './model';
 
+// The key name predates schema 2; it stays so existing results are found.
 export const STORAGE_KEY = 'ks2-arithmetic/v1';
 
 const isObject = (x: unknown): x is Record<string, unknown> => typeof x === 'object' && x !== null;
@@ -18,17 +19,22 @@ function isAttempt(x: unknown): x is Attempt {
     typeof x.paperCode === 'string' &&
     (x.mode === 'daily' || x.mode === 'full') &&
     typeof x.createdAt === 'number' &&
+    (x.paper === undefined || x.paper === 'arithmetic' || x.paper === 'reasoning') &&
     lists.every((k) => Array.isArray(x[k]) && (x[k] as unknown[]).length === (x.questions as unknown[]).length)
   );
 }
 
-/** Validates unknown JSON (a backup or localStorage) into StoreData, or null. */
+/**
+ * Validates unknown JSON (a backup or localStorage) into StoreData, or null. Version 1 data
+ * (arithmetic only, before `paper` existed) is migrated, never rejected.
+ */
 export function parseStore(json: unknown): StoreData | null {
-  if (!isObject(json) || json.schemaVersion !== SCHEMA_VERSION) return null;
+  if (!isObject(json) || (json.schemaVersion !== 1 && json.schemaVersion !== SCHEMA_VERSION)) return null;
   if (!Array.isArray(json.profiles) || !Array.isArray(json.attempts)) return null;
   if (!json.profiles.every(isProfile) || !json.attempts.every(isAttempt)) return null;
   const currentProfileId = typeof json.currentProfileId === 'string' ? json.currentProfileId : null;
-  return { schemaVersion: SCHEMA_VERSION, profiles: json.profiles, attempts: json.attempts, currentProfileId };
+  const attempts = json.attempts.map((a) => ({ ...a, paper: a.paper ?? paperOf(a.questions) }));
+  return { schemaVersion: SCHEMA_VERSION, profiles: json.profiles, attempts, currentProfileId };
 }
 
 const progress = (a: Attempt) => a.marks.filter((m) => m !== null).length;
