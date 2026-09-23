@@ -190,17 +190,17 @@
     "prompt": "Which verb form completes the sentence?\nPriya ___ every race so far this season.",
     "input": {
       "kind": "choice",
-      "options": ["win", "has won", "have won", "winned"],
+      "options": ["win", "have won", "has won", "winned"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [2],
     "explain": "So far this season links the past to now, so we use the present perfect: has won."
   },
   {
     "id": "gi-verb-forms-017",
     "type": "g-verb-forms",
     "level": 2,
-    "prompt": "Which tense is the underlined verb in?\nThe players __had trained__ hard before the final.",
+    "prompt": "Which verb form is underlined in the sentence below?\nThe players __had trained__ hard before the final.",
     "input": {
       "kind": "choice",
       "options": ["simple past", "present perfect", "past perfect", "past progressive"],
@@ -216,10 +216,10 @@
     "prompt": "Which word completes the sentence?\nThey have ___ home already.",
     "input": {
       "kind": "choice",
-      "options": ["went", "gone", "go", "going"],
+      "options": ["went", "go", "going", "gone"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "After have, we use the past participle gone, not went."
   },
   {
@@ -229,11 +229,11 @@
     "prompt": "Which sentence uses the present perfect correctly?",
     "input": {
       "kind": "choice",
-      "options": ["I have seen that film last week.", "I have seen that film twice.", "I have saw that film twice.", "I seen that film twice."],
+      "options": ["I have seen that film last week.", "I have saw that film twice.", "I have seen that film twice.", "I seen that film twice."],
       "pick": 1
     },
-    "answer": [1],
-    "explain": "Have seen is right, but with a finished time like last week we use the simple past instead."
+    "answer": [2],
+    "explain": "Have seen fits with twice, but with a finished time such as last week we use the simple past: I saw."
   },
   {
     "id": "gi-verb-forms-020",
@@ -242,16 +242,16 @@
     "prompt": "Which verb form best completes the sentence?\nBy the time the firefighters arrived, the fire ___ out.",
     "input": {
       "kind": "choice",
-      "options": ["has gone", "had gone", "goes", "is going"],
+      "options": ["has gone", "goes", "is going", "had gone"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "The past perfect (had gone) shows that one past event happened before another."
   },
   {
     "id": "gi-verb-forms-021",
     "type": "g-verb-forms",
-    "level": 3,
+    "level": 2,
     "prompt": "Complete the sentence with the present progressive form of the verb **to hop**.\nA rabbit ___ across the lawn.",
     "input": {
       "kind": "text"
@@ -292,23 +292,23 @@
     "prompt": "Which sentence shows an action that started in the past and is still true now?",
     "input": {
       "kind": "choice",
-      "options": ["Priya has lived in Leeds since she was five.", "Priya lived in Leeds when she was five.", "Priya had lived in Leeds before she moved.", "Priya was living in Leeds last year."],
+      "options": ["Priya lived in Leeds when she was five.", "Priya had lived in Leeds before she moved.", "Priya has lived in Leeds since she was five.", "Priya was living in Leeds last year."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "The present perfect (has lived) links the past to now."
   },
   {
     "id": "gi-verb-forms-025",
     "type": "g-verb-forms",
-    "level": 3,
+    "level": 2,
     "prompt": "Which verb form best completes the sentence?\nListen! Someone ___ at the door.",
     "input": {
       "kind": "choice",
-      "options": ["knocked", "is knocking", "had knocked", "knock"],
+      "options": ["knocked", "had knocked", "knock", "is knocking"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "Listen! shows it is happening now, so we use the present progressive: is knocking."
   },
   {
@@ -436,7 +436,7 @@
       "pick": 1
     },
     "answer": [0],
-    "explain": "The tests becomes the subject and the tense stays the same: marked becomes were marked."
+    "explain": "The tests become the subject, and the tense stays the same: marked becomes were marked."
   },
   {
     "id": "gi-active-passive-010",
@@ -506,10 +506,10 @@
     "prompt": "Which verb completes the sentence so that it is in the passive voice?\nThe posters ___ by Year 6 this morning.",
     "input": {
       "kind": "choice",
-      "options": ["made", "were made", "are making", "make"],
+      "options": ["made", "are making", "were made", "make"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [2],
     "explain": "Were made is passive: were + the past participle made."
   },
   {
@@ -531,10 +531,10 @@
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
       "kind": "choice",
-      "options": ["The goalkeeper was happy.", "The penalty was saved.", "The goalkeeper was diving.", "The goalkeeper saved the penalty."],
+      "options": ["The goalkeeper was happy.", "The goalkeeper was diving.", "The goalkeeper saved the penalty.", "The penalty was saved."],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "Was saved is passive (be + past participle); was happy and was diving are not."
   },
   {
@@ -568,10 +568,10 @@
     "prompt": "Which is the passive version of this sentence?\nThe children are planting trees.",
     "input": {
       "kind": "choice",
-      "options": ["Trees are being planted by the children.", "Trees were planted by the children.", "The children are being planted by trees.", "Trees are planting the children."],
+      "options": ["Trees were planted by the children.", "The children are being planted by trees.", "Trees are being planted by the children.", "Trees are planting the children."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "The tense stays the same, so are planting becomes are being planted."
   },
   {
@@ -581,10 +581,10 @@
     "prompt": "Which is the passive version of this sentence?\nOur class will perform the play.",
     "input": {
       "kind": "choice",
-      "options": ["The play will be performed by our class.", "The play was performed by our class.", "Our class will be performed by the play.", "The play will perform our class."],
+      "options": ["The play was performed by our class.", "Our class will be performed by the play.", "The play will perform our class.", "The play will be performed by our class."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Will perform becomes will be performed, and the play becomes the subject."
   },
   {
@@ -594,10 +594,10 @@
     "prompt": "Which sentence changes this active sentence into the passive correctly?\nThe wind blew the leaves across the field.",
     "input": {
       "kind": "choice",
-      "options": ["The leaves were blown across the field by the wind.", "The leaves blew across the field by the wind.", "The wind was blown across the field by the leaves.", "The leaves were blowing across the field."],
+      "options": ["The leaves blew across the field by the wind.", "The wind was blown across the field by the leaves.", "The leaves were blowing across the field.", "The leaves were blown across the field by the wind."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Blew becomes were blown, and the wind moves to the end after by."
   },
   {
@@ -620,10 +620,10 @@
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
       "kind": "choice",
-      "options": ["The shop was busy all day.", "The shop was closed early by the owner.", "The owner was closing the shop.", "The owner had closed the shop."],
+      "options": ["The shop was busy all day.", "The owner was closing the shop.", "The owner had closed the shop.", "The shop was closed early by the owner."],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "Was closed by the owner is passive; was closing and had closed are active verbs."
   },
   {
@@ -799,10 +799,10 @@
     "prompt": "Which modal verb completes the sentence to show that it is a **rule**?\nVisitors ___ show their tickets at the gate.",
     "input": {
       "kind": "choice",
-      "options": ["must", "might", "could", "may"],
+      "options": ["might", "could", "may", "must"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Must shows that something has to be done, like a rule."
   },
   {
@@ -812,10 +812,10 @@
     "prompt": "Which word could replace **might** without changing the meaning?\nIt might rain later.",
     "input": {
       "kind": "choice",
-      "options": ["may", "will", "must", "won't"],
+      "options": ["will", "must", "won't", "may"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Might and may both show that something is possible."
   },
   {
@@ -837,10 +837,10 @@
     "prompt": "Which word in the sentence is a modal verb?\nThe twins would often play chess after school.",
     "input": {
       "kind": "choice",
-      "options": ["would", "often", "play", "after"],
+      "options": ["often", "play", "after", "would"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Would is a modal verb; it comes before the main verb play."
   },
   {
@@ -863,10 +863,10 @@
     "prompt": "Which sentence shows that something is **impossible**?",
     "input": {
       "kind": "choice",
-      "options": ["That can't be Omar, because he is on holiday.", "That might be Omar.", "That could be Omar.", "That may be Omar."],
+      "options": ["That might be Omar.", "That could be Omar.", "That may be Omar.", "That can't be Omar, because he is on holiday."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Can't shows the speaker is sure it is not possible."
   },
   {
@@ -926,10 +926,10 @@
     "prompt": "Tick the **two** sentences that show something is **possible** but not certain.",
     "input": {
       "kind": "choice",
-      "options": ["The film may start late.", "The film will start late.", "The film could start late.", "The film won't start late."],
+      "options": ["The film may start late.", "The film could start late.", "The film will start late.", "The film won't start late."],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [0, 1],
     "explain": "May and could show possibility; will and won't show the speaker is sure."
   },
   {
@@ -989,7 +989,7 @@
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIf Leo ___ the captain, he would choose Ava first.",
     "input": {
       "kind": "choice",
-      "options": ["was", "were", "is", "be"],
+      "options": ["was", "were", "is", "are"],
       "pick": 1
     },
     "answer": [1],
@@ -1114,10 +1114,10 @@
     "prompt": "Which sentence uses the subjunctive form?",
     "input": {
       "kind": "choice",
-      "options": ["The teacher asked that Ella speak more slowly.", "The teacher asked Ella to speak more slowly.", "The teacher said that Ella speaks slowly.", "The teacher asked if Ella spoke slowly."],
+      "options": ["The teacher asked Ella to speak more slowly.", "The teacher said that Ella speaks slowly.", "The teacher asked if Ella spoke slowly.", "The teacher asked that Ella speak more slowly."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Speak (not speaks) after asked that is the subjunctive form."
   },
   {
@@ -1140,10 +1140,10 @@
     "prompt": "Tick the **two** sentences that use the subjunctive form.",
     "input": {
       "kind": "choice",
-      "options": ["If she were here, she would help us.", "If she was here, she would help us.", "We ask that he remain seated.", "We ask that he remains seated."],
+      "options": ["If she were here, she would help us.", "If she was here, she would help us.", "We ask that he remains seated.", "We ask that he remain seated."],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [0, 3],
     "explain": "Were after if, and remain with no -s after ask that, are both subjunctive forms."
   },
   {
@@ -1177,10 +1177,10 @@
     "prompt": "Which sentence is written in the subjunctive form?",
     "input": {
       "kind": "choice",
-      "options": ["Were I in charge, I would change the rules.", "Was I in charge, I would change the rules.", "I was in charge, so I changed the rules.", "When I am in charge, I will change the rules."],
+      "options": ["Was I in charge, I would change the rules.", "I was in charge, so I changed the rules.", "Were I in charge, I would change the rules.", "When I am in charge, I will change the rules."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Were I in charge is a formal subjunctive way of saying If I were in charge."
   },
   {
@@ -1201,10 +1201,10 @@
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIt is important that the dog ___ fed twice a day.",
     "input": {
       "kind": "choice",
-      "options": ["is", "be", "was", "are"],
+      "options": ["is", "was", "are", "be"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "After it is important that, the subjunctive uses be, even in a passive like be fed."
   },
   {
@@ -1227,10 +1227,10 @@
     "prompt": "Which verb completes the sentence in the subjunctive form?\nI propose that the meeting ___ on Friday.",
     "input": {
       "kind": "choice",
-      "options": ["be held", "is held", "was held", "been held"],
+      "options": ["is held", "was held", "be held", "been held"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "After propose that, the subjunctive uses the base form be: be held."
   },
   {
@@ -1240,10 +1240,10 @@
     "prompt": "In which sentence is **were** in the subjunctive form?",
     "input": {
       "kind": "choice",
-      "options": ["If I were an astronaut, I would visit Mars.", "We were late for school.", "They were playing outside.", "You were right about the weather."],
+      "options": ["We were late for school.", "They were playing outside.", "You were right about the weather.", "If I were an astronaut, I would visit Mars."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Were is subjunctive when it describes something imagined, like being an astronaut."
   },
   {
@@ -1330,10 +1330,10 @@
     "prompt": "Which sentence is written in Standard English?",
     "input": {
       "kind": "choice",
-      "options": ["Them shoes is too small.", "Those shoes are too small.", "Those shoes is too small.", "Them shoes are too small."],
+      "options": ["Those shoes are too small.", "Them shoes is too small.", "Those shoes is too small.", "Them shoes are too small."],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [0],
     "explain": "Standard English uses those shoes with the plural verb are."
   },
   {
@@ -1343,10 +1343,10 @@
     "prompt": "Which word completes the sentence in Standard English?\nPriya ___ been to France three times.",
     "input": {
       "kind": "choice",
-      "options": ["have", "has", "of", "is"],
+      "options": ["have", "of", "has", "is"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [2],
     "explain": "With one person, such as Priya, Standard English uses has."
   },
   {
@@ -1378,10 +1378,10 @@
     "prompt": "Which sentence is written in Standard English?",
     "input": {
       "kind": "choice",
-      "options": ["I didn't do nothing wrong.", "I didn't do anything wrong.", "I never done nothing wrong.", "I done nothing wrong."],
+      "options": ["I didn't do nothing wrong.", "I never done nothing wrong.", "I done nothing wrong.", "I didn't do anything wrong."],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "Standard English uses only one negative: I didn't do anything, not I didn't do nothing."
   },
   {
@@ -1465,10 +1465,10 @@
     "prompt": "Which word completes the sentence in Standard English?\nThere are ___ people in the queue today.",
     "input": {
       "kind": "choice",
-      "options": ["less", "fewer", "lesser", "littler"],
+      "options": ["less", "lesser", "littler", "fewer"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "We use fewer with things we can count, like people."
   },
   {
@@ -1502,10 +1502,10 @@
     "prompt": "Which word completes the sentence in Standard English?\nChloe and Isla helped ___ to more cake.",
     "input": {
       "kind": "choice",
-      "options": ["theirselves", "themselves", "theirself", "themself"],
+      "options": ["theirselves", "theirself", "themself", "themselves"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "The Standard English form is themselves."
   },
   {
@@ -1668,10 +1668,10 @@
     "prompt": "Which sentence is written in a formal style?",
     "input": {
       "kind": "choice",
-      "options": ["The school trip has been cancelled owing to poor weather.", "The school trip's off 'cos of the rain.", "No school trip – rubbish weather!", "Sorry, the trip's not happening."],
+      "options": ["The school trip's off 'cos of the rain.", "The school trip has been cancelled owing to poor weather.", "No school trip – rubbish weather!", "Sorry, the trip's not happening."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "It uses formal words (owing to) and the passive, with no slang or contractions."
   },
   {
@@ -1694,10 +1694,10 @@
     "prompt": "Which is the most formal way to replace the underlined words?\nWe need to __find out__ what happened.",
     "input": {
       "kind": "choice",
-      "options": ["discover", "suss out", "figure out", "check out"],
+      "options": ["suss out", "figure out", "discover", "check out"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Discover is more formal than find out; the other choices are informal phrases."
   },
   {
@@ -1720,10 +1720,10 @@
     "prompt": "Why is this sentence informal?\nIt's freezing today, isn't it?",
     "input": {
       "kind": "choice",
-      "options": ["It uses a contraction and a question tag.", "It uses the subjunctive.", "It uses the passive voice.", "It has no verb."],
+      "options": ["It uses the subjunctive.", "It uses the passive voice.", "It has no verb.", "It uses a contraction and a question tag."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "It's is a contraction and isn't it is a question tag; both are informal."
   },
   {
@@ -1744,10 +1744,10 @@
     "prompt": "Which word is the most formal way to say **ask for**?",
     "input": {
       "kind": "choice",
-      "options": ["request", "want", "grab", "beg"],
+      "options": ["want", "grab", "request", "beg"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Request is a formal way to say ask for."
   },
   {
@@ -1757,10 +1757,10 @@
     "prompt": "Tick the **two** sentences that are formal.",
     "input": {
       "kind": "choice",
-      "options": ["Visitors must sign in at reception.", "Guys, sign in over there!", "Pupils are requested to walk in the corridors.", "No running, OK?"],
+      "options": ["Guys, sign in over there!", "Visitors must sign in at reception.", "Pupils are requested to walk in the corridors.", "No running, OK?"],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [1, 2],
     "explain": "They use full, polite words, with no chatty words like guys or OK."
   },
   {
@@ -1770,10 +1770,10 @@
     "prompt": "Which is the most formal version of this sentence?\nThanks a lot for the cool present!",
     "input": {
       "kind": "choice",
-      "options": ["Thank you very much for the wonderful gift.", "Cheers for the awesome present!", "Ta for the great pressie.", "Thanks loads for the cool gift."],
+      "options": ["Cheers for the awesome present!", "Ta for the great pressie.", "Thanks loads for the cool gift.", "Thank you very much for the wonderful gift."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Thank you very much and wonderful gift are formal; cheers, ta, awesome and cool are informal."
   },
   {
@@ -1819,10 +1819,10 @@
     "prompt": "Which sentence is the most formal?",
     "input": {
       "kind": "choice",
-      "options": ["Should you require any help, please speak to a member of staff.", "If you need help, just ask someone.", "Need help? Give us a shout!", "Ask us if you get stuck."],
+      "options": ["If you need help, just ask someone.", "Need help? Give us a shout!", "Should you require any help, please speak to a member of staff.", "Ask us if you get stuck."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Should you require is a very formal way of saying if you need."
   },
   {
@@ -1832,10 +1832,10 @@
     "prompt": "Which feature makes this sentence formal?\nWere the weather to improve, the match would continue.",
     "input": {
       "kind": "choice",
-      "options": ["the subjunctive", "a question tag", "a contraction", "slang"],
+      "options": ["a question tag", "a contraction", "slang", "the subjunctive"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Were the weather to improve uses the subjunctive, which is formal."
   },
   {
@@ -1869,10 +1869,10 @@
     "prompt": "Which is the most formal way to complete the sentence?\nPupils ___ to bring a water bottle on the trip.",
     "input": {
       "kind": "choice",
-      "options": ["are required", "have got", "gotta remember", "should try and remember"],
+      "options": ["have got", "gotta remember", "are required", "should try and remember"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Are required is formal; have got, gotta and try and are informal."
   },
   {
@@ -1882,10 +1882,10 @@
     "prompt": "Which sentence uses the most formal vocabulary?",
     "input": {
       "kind": "choice",
-      "options": ["We will purchase the tickets in advance.", "We'll grab the tickets early.", "We're gonna get the tickets early.", "We'll sort the tickets out early."],
+      "options": ["We'll grab the tickets early.", "We're gonna get the tickets early.", "We'll sort the tickets out early.", "We will purchase the tickets in advance."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Purchase is a formal word for buy."
   },
   {
@@ -2085,10 +2085,10 @@
     "prompt": "Which conjunction best completes the sentence?\n___ it was snowing, the children still walked to school.",
     "input": {
       "kind": "choice",
-      "options": ["Although", "Because", "Unless", "Since"],
+      "options": ["Because", "Unless", "Although", "Since"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Although shows a contrast: the snow did not stop the children."
   },
   {
@@ -2098,10 +2098,10 @@
     "prompt": "Which word in this sentence is a subordinating conjunction?\nIf you finish early, you can read quietly or draw.",
     "input": {
       "kind": "choice",
-      "options": ["If", "can", "or", "quietly"],
+      "options": ["can", "or", "quietly", "If"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "If starts the subordinate clause if you finish early; or is a coordinating conjunction."
   },
   {
@@ -2135,10 +2135,10 @@
     "prompt": "In which sentence is **since** used as a conjunction?",
     "input": {
       "kind": "choice",
-      "options": ["We have lived here since 2019.", "Since it was late, we took a taxi.", "I have not seen Omar since Monday.", "It has been raining since breakfast."],
+      "options": ["We have lived here since 2019.", "I have not seen Omar since Monday.", "Since it was late, we took a taxi.", "It has been raining since breakfast."],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [2],
     "explain": "Since is a conjunction when it starts a clause: since it was late."
   },
   {
@@ -2148,10 +2148,10 @@
     "prompt": "Which conjunction best completes the sentence?\nOmar practised every day ___ he could win the competition.",
     "input": {
       "kind": "choice",
-      "options": ["so that", "unless", "or", "although"],
+      "options": ["unless", "or", "although", "so that"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "So that shows the purpose of Omar's practice."
   },
   {
@@ -2174,11 +2174,11 @@
     "prompt": "In which sentence does **and** join two main clauses?",
     "input": {
       "kind": "choice",
-      "options": ["Leo and Finn are twins.", "Leo plays the piano and Finn plays the drums.", "Leo bought bread and milk.", "Leo is tall and strong."],
+      "options": ["Leo and Finn are twins.", "Leo bought bread and milk.", "Leo is tall and strong.", "Leo plays the piano and Finn plays the drums."],
       "pick": 1
     },
-    "answer": [1],
-    "explain": "Leo plays the piano and Finn plays the drums are both main clauses: each could be a sentence on its own."
+    "answer": [3],
+    "explain": "Here and joins two main clauses (Leo plays the piano; Finn plays the drums), and each could be a sentence on its own."
   },
   {
     "id": "gi-conjunctions-024",
@@ -2199,10 +2199,10 @@
     "prompt": "Which conjunction best completes the sentence?\nYou will get wet ___ you take an umbrella.",
     "input": {
       "kind": "choice",
-      "options": ["unless", "because", "and", "so"],
+      "options": ["because", "and", "so", "unless"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Unless means if not: you will get wet if you do not take an umbrella."
   },
   {
@@ -2362,10 +2362,10 @@
     "prompt": "Which sentence contains a relative clause?",
     "input": {
       "kind": "choice",
-      "options": ["My cousin, who is a nurse, works at night.", "My cousin works at night.", "My cousin is a nurse and works at night.", "Because my cousin is a nurse, she works at night."],
+      "options": ["My cousin works at night.", "My cousin is a nurse and works at night.", "Because my cousin is a nurse, she works at night.", "My cousin, who is a nurse, works at night."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Who is a nurse is a relative clause: it starts with who and tells us more about my cousin."
   },
   {
@@ -2387,10 +2387,10 @@
     "prompt": "Which relative pronoun completes the sentence?\nThe artist ___ paintings we saw lives in our village.",
     "input": {
       "kind": "choice",
-      "options": ["whose", "who", "which", "that"],
+      "options": ["who", "which", "whose", "that"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Whose shows that the paintings belong to the artist."
   },
   {
@@ -2424,10 +2424,10 @@
     "prompt": "Which relative pronoun could replace **that** without changing the meaning?\nThe film that we watched was scary.",
     "input": {
       "kind": "choice",
-      "options": ["which", "who", "whose", "where"],
+      "options": ["who", "whose", "where", "which"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "The film is a thing, so which can replace that."
   },
   {
@@ -2463,10 +2463,10 @@
     "prompt": "In which sentence is **when** a relative pronoun?",
     "input": {
       "kind": "choice",
-      "options": ["I remember the day when we moved house.", "We cheered when the team scored.", "When will we arrive?", "Call me when you get home."],
+      "options": ["We cheered when the team scored.", "When will we arrive?", "I remember the day when we moved house.", "Call me when you get home."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Here when follows the noun day and starts a relative clause about it."
   },
   {
@@ -2487,24 +2487,24 @@
     "prompt": "Which is the relative clause in this sentence?\nThe cat that sleeps on our wall belongs to Zara.",
     "input": {
       "kind": "choice",
-      "options": ["The cat", "that sleeps on our wall", "belongs to Zara", "on our wall"],
+      "options": ["The cat", "belongs to Zara", "on our wall", "that sleeps on our wall"],
       "pick": 1
     },
-    "answer": [1],
+    "answer": [3],
     "explain": "The relative clause starts with the relative pronoun that and tells us which cat."
   },
   {
     "id": "gi-relative-pronouns-024",
     "type": "g-relative-pronouns",
-    "level": 3,
+    "level": 2,
     "prompt": "Tap the relative pronoun.",
     "input": {
       "kind": "words",
-      "tokens": ["When", "we", "reached", "the", "house", "where", "Grandad", "was", "born", ",", "we", "took", "a", "photo", "."],
+      "tokens": ["After", "we", "reached", "the", "house", "where", "Grandad", "was", "born", ",", "we", "took", "a", "photo", "."],
       "pick": 1
     },
     "answer": [5],
-    "explain": "Where starts a relative clause about the house; when is a subordinating conjunction here."
+    "explain": "Where starts a relative clause that tells us more about the house."
   },
   {
     "id": "gi-relative-pronouns-025",
@@ -2513,10 +2513,10 @@
     "prompt": "Tick the **two** sentences that contain a relative pronoun.",
     "input": {
       "kind": "choice",
-      "options": ["The girl who sings in the choir is my sister.", "Who sings in the choir?", "The song, which was very old, made us cry.", "Which song do you like best?"],
+      "options": ["Who sings in the choir?", "Which song do you like best?", "The girl who sings in the choir is my sister.", "The song, which was very old, made us cry."],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [2, 3],
     "explain": "Who and which are relative pronouns only when they start a relative clause about a noun."
   },
   {
@@ -2652,10 +2652,10 @@
     "prompt": "Which **two** words are determiners in this sentence?\nOur new neighbours have three dogs.",
     "input": {
       "kind": "choice",
-      "options": ["Our", "new", "three", "dogs"],
+      "options": ["Our", "three", "new", "dogs"],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [0, 1],
     "explain": "Our and three come before nouns and tell us whose and how many."
   },
   {
@@ -2688,10 +2688,10 @@
     "prompt": "Which sentence uses a number as a determiner?",
     "input": {
       "kind": "choice",
-      "options": ["Four ducks swam across the pond.", "The ducks swam across the pond.", "A duck swam across the pond.", "Some ducks swam across the pond."],
+      "options": ["The ducks swam across the pond.", "A duck swam across the pond.", "Four ducks swam across the pond.", "Some ducks swam across the pond."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Four comes before the noun ducks and tells us how many."
   },
   {
@@ -2714,10 +2714,10 @@
     "prompt": "Which determiner completes the sentence?\nHow ___ sweets are in the jar?",
     "input": {
       "kind": "choice",
-      "options": ["many", "much", "little", "a"],
+      "options": ["much", "little", "a", "many"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Sweets can be counted, so we use many."
   },
   {
@@ -2740,10 +2740,10 @@
     "prompt": "In which sentence is **that** a determiner?",
     "input": {
       "kind": "choice",
-      "options": ["That dog is barking again.", "That is my favourite song.", "I know that you are tired.", "The bag that I lost was red."],
+      "options": ["That is my favourite song.", "I know that you are tired.", "That dog is barking again.", "The bag that I lost was red."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "That is a determiner when it comes before a noun: that dog."
   },
   {
@@ -2753,10 +2753,10 @@
     "prompt": "In which sentence is **his** a determiner?",
     "input": {
       "kind": "choice",
-      "options": ["Noah lost his coat.", "That coat is his.", "Is this coat his?", "The coat was his."],
+      "options": ["That coat is his.", "Is this coat his?", "The coat was his.", "Noah lost his coat."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "His is a determiner when it comes before a noun: his coat."
   },
   {
@@ -2816,10 +2816,10 @@
     "prompt": "Which sentence uses **a** and **an** correctly?",
     "input": {
       "kind": "choice",
-      "options": ["We saw an owl and a unicorn in the film.", "We saw a owl and an unicorn in the film.", "We saw an owl and an unicorn in the film.", "We saw a owl and a unicorn in the film."],
+      "options": ["We saw a owl and an unicorn in the film.", "We saw an owl and an unicorn in the film.", "We saw a owl and a unicorn in the film.", "We saw an owl and a unicorn in the film."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Owl starts with a vowel sound (an owl), but unicorn starts with a y sound (a unicorn)."
   },
   {
@@ -2927,10 +2927,10 @@
     "prompt": "Which possessive pronoun completes the sentence?\nThat bike is not yours; it is ___.",
     "input": {
       "kind": "choice",
-      "options": ["mine", "my", "me", "I"],
+      "options": ["my", "mine", "me", "I"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Mine is a possessive pronoun: it shows who owns the bike and stands on its own."
   },
   {
@@ -2951,10 +2951,10 @@
     "prompt": "Which pronoun could replace the underlined words to avoid repeating them?\nThe puppy chased its tail until __the puppy__ fell over.",
     "input": {
       "kind": "choice",
-      "options": ["it", "they", "its", "them"],
+      "options": ["they", "its", "it", "them"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "It replaces the puppy as the subject of fell."
   },
   {
@@ -2964,10 +2964,10 @@
     "prompt": "Which is the best way to avoid repeating **the books** in this sentence?\nI picked up the books and put the books on the shelf.",
     "input": {
       "kind": "choice",
-      "options": ["I picked up the books and put them on the shelf.", "I picked up the books and put it on the shelf.", "I picked up the books and put they on the shelf.", "I picked up the books and put their on the shelf."],
+      "options": ["I picked up the books and put it on the shelf.", "I picked up the books and put they on the shelf.", "I picked up the books and put their on the shelf.", "I picked up the books and put them on the shelf."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Them replaces the books, which are plural, after the verb put."
   },
   {
@@ -2990,10 +2990,10 @@
     "prompt": "Which pronoun completes the sentence?\nAmir and ___ built a den in the woods.",
     "input": {
       "kind": "choice",
-      "options": ["I", "me", "myself", "mine"],
+      "options": ["me", "I", "myself", "mine"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Amir and I are the subject of the sentence, so we use I."
   },
   {
@@ -3015,10 +3015,10 @@
     "prompt": "What does the underlined pronoun refer to?\nWhen the kite got stuck in the tree, Dad climbed up to rescue __it__.",
     "input": {
       "kind": "choice",
-      "options": ["the kite", "the tree", "Dad", "the ladder"],
+      "options": ["the tree", "Dad", "the kite", "the ladder"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Dad climbed up to rescue the kite, so it refers to the kite."
   },
   {
@@ -3054,10 +3054,10 @@
     "prompt": "Which pronoun completes the sentence?\nThe prize is for Ravi and Kai, so it belongs to ___.",
     "input": {
       "kind": "choice",
-      "options": ["them", "they", "their", "theirs"],
+      "options": ["they", "their", "theirs", "them"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "After belongs to, we use the object pronoun them."
   },
   {
@@ -3067,10 +3067,10 @@
     "prompt": "Why is this sentence unclear?\nSam told Leo that he had won the prize.",
     "input": {
       "kind": "choice",
-      "options": ["We cannot tell whether he means Sam or Leo.", "It has no verb.", "It uses the wrong determiner.", "It should be written in the passive."],
+      "options": ["It has no verb.", "It uses the wrong determiner.", "We cannot tell whether he means Sam or Leo.", "It should be written in the passive."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "He could refer to either boy, so using a name would make the meaning clear."
   },
   {
@@ -3080,10 +3080,10 @@
     "prompt": "Which pronoun could replace the underlined words?\nThe coach thanked __Finn and me__.",
     "input": {
       "kind": "choice",
-      "options": ["us", "we", "them", "our"],
+      "options": ["we", "them", "our", "us"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Finn and me are the object of thanked, so we use us."
   },
   {
@@ -3094,7 +3094,7 @@
     "input": {
       "kind": "text"
     },
-    "answer": ["We", "we"],
+    "answer": ["we"],
     "explain": "We replaces Isla and I as the subject of the sentence."
   },
   {
@@ -3117,10 +3117,10 @@
     "prompt": "In which sentence is **this** a pronoun?",
     "input": {
       "kind": "choice",
-      "options": ["This is my house.", "This house is mine.", "I like this song.", "This song is new."],
+      "options": ["This house is mine.", "I like this song.", "This is my house.", "This song is new."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "This is a pronoun when it stands on its own instead of a noun."
   },
   {
@@ -3130,10 +3130,10 @@
     "prompt": "Which pronoun completes the sentence?\nThe teacher gave the prize to Ava and ___.",
     "input": {
       "kind": "choice",
-      "options": ["me", "I", "myself", "mine"],
+      "options": ["I", "myself", "mine", "me"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "After to, we need the object pronoun: to Ava and me."
   },
   {
@@ -3143,10 +3143,10 @@
     "prompt": "Tick the **two** sentences that contain a possessive pronoun.",
     "input": {
       "kind": "choice",
-      "options": ["The blue bike is his.", "The blue bike is fast.", "Is that umbrella yours?", "Is that umbrella wet?"],
+      "options": ["The blue bike is fast.", "The blue bike is his.", "Is that umbrella yours?", "Is that umbrella wet?"],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [1, 2],
     "explain": "His and yours are possessive pronouns: they show who owns something."
   },
   {
@@ -3208,10 +3208,10 @@
     "prompt": "Which preposition completes the sentence?\nMy birthday is ___ May.",
     "input": {
       "kind": "choice",
-      "options": ["in", "on", "at", "of"],
+      "options": ["on", "at", "in", "of"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "We use in with months."
   },
   {
@@ -3307,10 +3307,10 @@
     "prompt": "Tick the **two** prepositions of time.",
     "input": {
       "kind": "choice",
-      "options": ["after", "under", "during", "beside"],
+      "options": ["under", "beside", "after", "during"],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [2, 3],
     "explain": "After and during tell us when; under and beside tell us where."
   },
   {
@@ -3320,10 +3320,10 @@
     "prompt": "Which preposition best completes the sentence?\nThe children walked ___ the dark tunnel, holding their torches.",
     "input": {
       "kind": "choice",
-      "options": ["through", "at", "since", "of"],
+      "options": ["at", "since", "of", "through"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Through shows movement from one end of the tunnel to the other."
   },
   {
@@ -3333,10 +3333,10 @@
     "prompt": "Which preposition completes the sentence?\nThe library is open from Monday ___ Friday.",
     "input": {
       "kind": "choice",
-      "options": ["to", "at", "on", "in"],
+      "options": ["at", "to", "on", "in"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "From and to show when a period of time starts and ends."
   },
   {
@@ -3382,10 +3382,10 @@
     "prompt": "In which sentence is **after** used as a preposition?",
     "input": {
       "kind": "choice",
-      "options": ["We went home after the match.", "We went home after we had eaten.", "After we had eaten, we went home.", "Ravi arrived after Kai had left."],
+      "options": ["We went home after we had eaten.", "After we had eaten, we went home.", "Ravi arrived after Kai had left.", "We went home after the match."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "After is a preposition when a noun phrase follows it: after the match."
   },
   {
@@ -3395,10 +3395,10 @@
     "prompt": "In which sentence is **outside** a preposition?",
     "input": {
       "kind": "choice",
-      "options": ["The children waited outside the hall.", "The children played outside.", "The outside of the box was red.", "It was cold outside."],
+      "options": ["The children played outside.", "The children waited outside the hall.", "The outside of the box was red.", "It was cold outside."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Outside is a preposition when it is followed by a noun phrase: outside the hall."
   },
   {
@@ -3434,10 +3434,10 @@
     "prompt": "In which sentence is **until** a preposition?",
     "input": {
       "kind": "choice",
-      "options": ["We stayed at the party until midnight.", "We stayed until the fireworks finished.", "Wait here until I come back.", "Until you say sorry, I will not speak to you."],
+      "options": ["We stayed until the fireworks finished.", "Wait here until I come back.", "Until you say sorry, I will not speak to you.", "We stayed at the party until midnight."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Until is a preposition when a noun (midnight) follows it, rather than a clause."
   },
   {
@@ -3447,10 +3447,10 @@
     "prompt": "Which preposition completes the sentence?\nThe teacher sat ___ Ella and Theo.",
     "input": {
       "kind": "choice",
-      "options": ["between", "among", "during", "since"],
+      "options": ["among", "during", "since", "between"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "Between is used for a position with one person on each side."
   },
   {
@@ -3560,10 +3560,10 @@
     "prompt": "What does the underlined adverbial tell us?\nThe children played __in the park__.",
     "input": {
       "kind": "choice",
-      "options": ["where", "when", "how", "how often"],
+      "options": ["when", "how", "how often", "where"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [3],
     "explain": "In the park tells us where the children played."
   },
   {
@@ -3573,10 +3573,10 @@
     "prompt": "Which word is an adverb of **possibility**?",
     "input": {
       "kind": "choice",
-      "options": ["perhaps", "slowly", "yesterday", "here"],
+      "options": ["slowly", "perhaps", "yesterday", "here"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Perhaps shows how likely something is."
   },
   {
@@ -3586,10 +3586,10 @@
     "prompt": "Which adverb shows that something is **certain**?",
     "input": {
       "kind": "choice",
-      "options": ["definitely", "perhaps", "possibly", "maybe"],
+      "options": ["perhaps", "possibly", "definitely", "maybe"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Definitely shows certainty; perhaps, possibly and maybe show that something might not happen."
   },
   {
@@ -3612,10 +3612,10 @@
     "prompt": "What does the underlined adverbial tell us?\nWe visit our cousins __every summer__.",
     "input": {
       "kind": "choice",
-      "options": ["how often", "where", "how", "why"],
+      "options": ["where", "how often", "how", "why"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Every summer tells us how often we visit."
   },
   {
@@ -3649,10 +3649,10 @@
     "prompt": "Tick the **two** sentences that begin with a fronted adverbial.",
     "input": {
       "kind": "choice",
-      "options": ["Without a sound, the fox crept away.", "The fox crept away without a sound.", "Every morning, Dad makes porridge.", "Dad makes porridge every morning."],
+      "options": ["The fox crept away without a sound.", "Without a sound, the fox crept away.", "Every morning, Dad makes porridge.", "Dad makes porridge every morning."],
       "pick": 2
     },
-    "answer": [0, 2],
+    "answer": [1, 2],
     "explain": "A fronted adverbial comes at the start of the sentence, before the main clause."
   },
   {
@@ -3675,10 +3675,10 @@
     "prompt": "What is the underlined part of the sentence?\n__After a long wait__, the doors opened.",
     "input": {
       "kind": "choice",
-      "options": ["a fronted adverbial", "a relative clause", "a noun phrase", "a main clause"],
+      "options": ["a relative clause", "a noun phrase", "a fronted adverbial", "a main clause"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "After a long wait comes before the main clause and tells us when."
   },
   {
@@ -3688,10 +3688,10 @@
     "prompt": "Which sentence uses an adverb to show **how likely** something is?",
     "input": {
       "kind": "choice",
-      "options": ["We will probably go camping.", "We went camping yesterday.", "We often go camping.", "We camped near the lake."],
+      "options": ["We went camping yesterday.", "We will probably go camping.", "We often go camping.", "We camped near the lake."],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [1],
     "explain": "Probably is an adverb of possibility."
   },
   {
@@ -3765,10 +3765,10 @@
     "prompt": "What does the underlined fronted adverbial tell us?\n__Because of the snow__, the school was closed.",
     "input": {
       "kind": "choice",
-      "options": ["why", "where", "how often", "how"],
+      "options": ["where", "how often", "why", "how"],
       "pick": 1
     },
-    "answer": [0],
+    "answer": [2],
     "explain": "Because of the snow tells us why the school was closed."
   },
   {

@@ -3,6 +3,7 @@ import { createRng, type Rng } from '../../gen/rng';
 import type { ItemQuestion, LevelChoice } from '../../gen/types';
 import { GPS_ITEMS } from '../bank';
 import { freshFirst, type History } from '../history';
+import { shuffleOptions } from '../options';
 import type { GpsItem, Level } from '../types';
 import { GENERATORS, isGenerated } from './generated';
 
@@ -33,8 +34,13 @@ const encode = (answer: (number | string | boolean)[]): string => {
   return (answer as string[]).join('|');
 };
 
-export function fromGpsItem(item: GpsItem): ItemQuestion {
+/** A bank item as a question. With `rng`, choice options are shuffled. */
+export function fromGpsItem(item: GpsItem, rng?: Rng): ItemQuestion {
   const { input } = item;
+  if (input.kind === 'choice' && rng) {
+    const shuffled = shuffleOptions(input.options, item.answer as number[], rng);
+    return fromGpsItem({ ...item, input: { ...input, options: shuffled.options }, answer: shuffled.answer });
+  }
   const spec: ItemQuestion['input'] =
     input.kind === 'choice'
       ? { kind: 'choice', options: input.options, pick: input.pick }
@@ -66,7 +72,7 @@ function readyMade(type: string, level: Level, rng: Rng, used: Set<string>, hist
   // Now and then bring back something answered wrongly last time.
   const mistakes = pool.filter((it) => history.get(it.id)?.lastCorrect === false);
   const item = mistakes.length && rng.chance(0.3) ? rng.pick(mistakes) : freshFirst(pool, (it) => it.id, history, rng.shuffle)[0];
-  return fromGpsItem(item);
+  return fromGpsItem(item, rng);
 }
 
 function generated(type: string, level: Level, rng: Rng, used: Set<string>): ItemQuestion | null {

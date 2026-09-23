@@ -213,7 +213,7 @@
     "prompt": "Tap the **two** words that should start with a capital letter.",
     "input": {"kind": "words", "tokens": ["“", "can", "we", "go", "to", "the", "park", "?", "”", "asked", "ravi", "."], "pick": 2},
     "answer": [1, 10],
-    "explain": "The spoken words start with a capital letter, but **asked** carries on the sentence, so it does not."
+    "explain": "The spoken words start with a capital letter and **Ravi** is a name, but **asked** carries on the sentence, so it does not."
   },
   {
     "id": "gi-capitals-025",
@@ -222,7 +222,7 @@
     "prompt": "Tap the **two** words that should start with a capital letter.",
     "input": {"kind": "words", "tokens": ["“", "i", "think", ",", "”", "said", "ella", ",", "“", "that", "we", "should", "go", "home", ".", "”"], "pick": 2},
     "answer": [1, 6],
-    "explain": "**I** is always a capital letter, but **that** carries on Ella's spoken sentence, so it stays lower case."
+    "explain": "**I** is always a capital letter and **Ella** is a name, but **that** carries on Ella's spoken sentence, so it stays lower case."
   },
   {
     "id": "gi-capitals-026",
@@ -717,7 +717,7 @@
     "prompt": "Tick true or false for each sentence: it is punctuated correctly.",
     "input": {"kind": "tf", "statements": ["While we waited, Theo read a comic.", "The children, ran into the hall.", "If you finish early, you can read quietly.", "We ate sandwiches crisps, and fruit."]},
     "answer": [true, false, true, false],
-    "explain": "A comma follows a fronted clause, but it never splits a subject from its verb."
+    "explain": "A comma follows a fronted clause but never splits a subject from its verb, and the list should read **sandwiches, crisps and fruit**."
   },
   {
     "id": "gi-commas-020",
@@ -1338,7 +1338,7 @@
     "prompt": "Tap the **two** words that need an apostrophe.",
     "input": {"kind": "words", "tokens": ["The", "childrens", "paintings", "hung", "beside", "the", "teachers", "desk", "."], "pick": 2},
     "answer": [1, 6],
-    "explain": "The paintings belong to the children and the desk belongs to the teacher, but **paintings** is just a plural."
+    "explain": "The paintings belong to the children and the desk to the teacher (or teachers), but **paintings** is just a plural."
   },
   {
     "id": "gi-apostrophes-026",
@@ -1948,7 +1948,7 @@
     "type": "g-colons-semicolons",
     "level": 1,
     "prompt": "Which punctuation mark should go in the box?\nFor the cake, we need four things □ flour, eggs, butter and sugar.",
-    "input": {"kind": "choice", "options": ["semi-colon", "hyphen", "comma", "colon"], "pick": 1},
+    "input": {"kind": "choice", "options": ["semi-colon", "apostrophe", "comma", "colon"], "pick": 1},
     "answer": [3],
     "explain": "A colon introduces a list after a complete clause."
   },
@@ -2002,7 +2002,7 @@
     "type": "g-colons-semicolons",
     "level": 1,
     "prompt": "Which punctuation mark should go in the box?\nThe baby was asleep □ we tiptoed past her room.",
-    "input": {"kind": "choice", "options": ["apostrophe", "hyphen", "comma", "semi-colon"], "pick": 1},
+    "input": {"kind": "choice", "options": ["apostrophe", "question mark", "comma", "semi-colon"], "pick": 1},
     "answer": [3],
     "explain": "A semi-colon can join two main clauses, but a comma cannot."
   },
@@ -2092,7 +2092,7 @@
     "type": "g-colons-semicolons",
     "level": 2,
     "prompt": "Which punctuation mark should go in the box?\nThere was only one problem □ nobody had brought the tickets.",
-    "input": {"kind": "choice", "options": ["question mark", "hyphen", "comma", "colon"], "pick": 1},
+    "input": {"kind": "choice", "options": ["question mark", "apostrophe", "comma", "colon"], "pick": 1},
     "answer": [3],
     "explain": "A colon introduces the explanation of what the problem was."
   },
@@ -2173,7 +2173,7 @@
     "type": "g-colons-semicolons",
     "level": 3,
     "prompt": "Tick **two** punctuation marks that could go in the box.\nZara practised every day □ she wanted to win the competition.",
-    "input": {"kind": "choice", "options": ["hyphen", "comma", "colon", "semi-colon"], "pick": 2},
+    "input": {"kind": "choice", "options": ["question mark", "comma", "colon", "semi-colon"], "pick": 2},
     "answer": [2, 3],
     "explain": "A colon can introduce the explanation and a semi-colon can join the two main clauses, but a comma cannot."
   },

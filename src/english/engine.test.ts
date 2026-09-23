@@ -123,6 +123,20 @@ describe('GPS paper', () => {
     expect(repeats.length).toBeLessThanOrEqual(3);
   });
 
+  it('has answerable questions with the right answer in any position', () => {
+    if (!GPS_ITEMS.length || !SENTENCES.length) return;
+    const first: number[] = [];
+    for (let k = 0; k < 20; k++) {
+      const paper = buildGpsPaper(`POS${k}AB`, 'mixed', empty);
+      expect(paper.flatMap(checkQuestion)).toEqual([]);
+      for (const q of paper) if (q.input.kind === 'choice' && q.input.pick === 1) first.push(Number(q.answer) === 0 ? 1 : 0);
+    }
+    // With four options the right one should come first about a quarter of the time.
+    const share = first.reduce((s, x) => s + x, 0) / first.length;
+    expect(share).toBeGreaterThan(0.15);
+    expect(share).toBeLessThan(0.4);
+  });
+
   it('is the same paper for the same code and history', () => {
     if (!GPS_ITEMS.length || !SENTENCES.length) return;
     expect(buildGpsPaper('SAME22', 2, empty)).toEqual(buildGpsPaper('SAME22', 2, empty));
@@ -154,7 +168,9 @@ describe('reading', () => {
     const texts = new Set(one.map((q) => q.sourceId!.split('#')[0]));
     expect(texts.size).toBe(1);
     expect(one.every((q) => q.difficulty === 2)).toBe(true);
+    expect(one.flatMap(checkQuestion)).toEqual([]);
     const three = buildReading('READ33', 'mixed', empty, 3);
+    expect(three.flatMap(checkQuestion)).toEqual([]);
     const order = [...new Set(three.map((q) => q.sourceId!.split('#')[0]))];
     expect(order).toHaveLength(3);
     expect([...new Set(three.map((q) => q.difficulty))]).toEqual([1, 2, 3]);

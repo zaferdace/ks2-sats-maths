@@ -1,16 +1,19 @@
 // Reading sessions: one text with its questions, or a full paper of three texts (easy to hard).
-import { createRng } from '../gen/rng';
+import { createRng, type Rng } from '../gen/rng';
 import type { InputSpec, ItemQuestion } from '../gen/types';
 import { READING_TEXTS } from './bank';
 import { readingTypeId } from './catalog';
 import type { LevelChoice } from '../gen/types';
 import type { History } from './history';
+import { shuffleOptions } from './options';
 import type { Level, ReadingQuestion, ReadingText } from './types';
 
-function inputOf(q: ReadingQuestion): { input: InputSpec; answer: string } {
+function inputOf(q: ReadingQuestion, rng?: Rng): { input: InputSpec; answer: string } {
   switch (q.kind) {
-    case 'choice':
-      return { input: { kind: 'choice', options: q.options, pick: q.pick }, answer: [...q.answer].sort((a, b) => a - b).join(',') };
+    case 'choice': {
+      const { options, answer } = rng ? shuffleOptions(q.options, q.answer, rng) : { options: q.options, answer: q.answer };
+      return { input: { kind: 'choice', options, pick: q.pick }, answer: [...answer].sort((a, b) => a - b).join(',') };
+    }
     case 'tf':
       return { input: { kind: 'tf', statements: q.statements }, answer: q.answer.map((v) => (v ? '1' : '0')).join(',') };
     case 'order':
@@ -25,9 +28,10 @@ function inputOf(q: ReadingQuestion): { input: InputSpec; answer: string } {
 /** Questions that send the pupil to a paragraph ("Look at paragraph 3", "the second verse"). */
 const POINTS_TO_PART = /\b(paragraphs?|verses?|stanzas?)\b/i;
 
-export function readingQuestions(t: ReadingText): ItemQuestion[] {
+/** A text's questions. With `rng`, choice options are shuffled. */
+export function readingQuestions(t: ReadingText, rng?: Rng): ItemQuestion[] {
   return t.questions.map((q) => {
-    const { input, answer } = inputOf(q);
+    const { input, answer } = inputOf(q, rng);
     // Only highlight a paragraph the question itself points to: finding the place is part of the skill.
     const paragraph = q.paragraph && POINTS_TO_PART.test(q.prompt) ? q.paragraph : undefined;
     return {
@@ -70,5 +74,5 @@ export function buildReading(code: string, choice: LevelChoice, history: History
     const ordered = rng.shuffle(pool).sort((a, b) => (read.get(a.id) ?? 0) - (read.get(b.id) ?? 0));
     picked.push(ordered[0]);
   }
-  return picked.flatMap(readingQuestions);
+  return picked.flatMap((t) => readingQuestions(t, rng));
 }

@@ -167,13 +167,12 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
       explain: `"${unpunctuated(s)}" is ${kind === 'question' ? 'a question' : 'an exclamation'}, so it ends with ${kind === 'question' ? 'a' : 'an'} ${mark}.`,
     };
   }
-  const options = ['full stop', 'question mark', 'exclamation mark'];
-  const correct = options.indexOf(mark);
+  const { input, answer } = choices(rng, [mark], ['full stop', 'question mark', 'exclamation mark'].filter((m) => m !== mark));
   return {
     ...base('g-end-punctuation', level, s),
     body: [{ b: 'text', text: `Which punctuation mark should end this sentence?\n**${unpunctuated(s)}**` }],
-    input: { kind: 'choice', options, pick: 1 },
-    answer: String(correct),
+    input,
+    answer,
     explain: `This sentence is ${kind === 'question' ? 'a question' : 'an exclamation'}, so it ends with ${kind === 'question' ? 'a' : 'an'} ${mark}.`,
   };
 }
