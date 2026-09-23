@@ -6,6 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 const base = '/ks2-sats-maths/';
 
 export default defineConfig({
+  // The bundled English question bank makes one large script on purpose (it all works offline).
+  build: { chunkSizeWarningLimit: 2000 },
   base,
   plugins: [
     react(),
@@ -28,6 +30,8 @@ export default defineConfig({
       workbox: {
         // The plugin adds manifest.webmanifest itself; globbing it too creates a conflicting entry.
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        // The English question bank is bundled into the main script (about 1 MB); allow room to grow.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,
       },
     }),
