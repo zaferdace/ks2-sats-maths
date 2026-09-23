@@ -1,0 +1,263 @@
+[
+  {
+    "id": "gi-homophones-001",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nThe children hung ___ coats on the pegs.",
+    "input": {"kind": "choice", "options": ["there", "their", "they're"], "pick": 1},
+    "answer": [1],
+    "explain": "Their means belonging to them: the coats belong to the children."
+  },
+  {
+    "id": "gi-homophones-002",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nWe walked ___ the park after school.",
+    "input": {"kind": "choice", "options": ["too", "two", "to"], "pick": 1},
+    "answer": [2],
+    "explain": "To shows where we walked; too means also or very, and two is a number."
+  },
+  {
+    "id": "gi-homophones-003",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nCan you ___ the birds singing?",
+    "input": {"kind": "choice", "options": ["hear", "here"], "pick": 1},
+    "answer": [0],
+    "explain": "You hear with your ears; here means in this place."
+  },
+  {
+    "id": "gi-homophones-004",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nLeo ___ the race by a whole metre.",
+    "input": {"kind": "choice", "options": ["one", "won"], "pick": 1},
+    "answer": [1],
+    "explain": "Won is the past tense of win; one is a number."
+  },
+  {
+    "id": "gi-homophones-005",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Tap the homophone that is used incorrectly in this sentence.",
+    "input": {"kind": "words", "tokens": ["The", "children", "put", "on", "there", "coats", "and", "went", "outside", "."], "pick": 1},
+    "answer": [4],
+    "explain": "The coats belong to the children, so it should be their, not there."
+  },
+  {
+    "id": "gi-homophones-006",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Write the homophone of **peace** that completes the sentence.",
+    "input": {"kind": "text", "before": "Chloe gave everyone a", "after": "of her birthday cake."},
+    "answer": ["piece"],
+    "explain": "A piece is a part of something; peace means calm with no fighting."
+  },
+  {
+    "id": "gi-homophones-007",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Is the underlined word spelt correctly in each sentence? Tap true or false for each sentence.",
+    "input": {"kind": "tf", "statements": ["Ella ate a juicy __pear__ for her snack.", "Noah __road__ his bike to school.", "The wind __blew__ the leaves away.", "We could __here__ the thunder."]},
+    "answer": [true, false, true, false],
+    "explain": "Noah rode his bike, and we could hear the thunder."
+  },
+  {
+    "id": "gi-homophones-008",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nWhat are you going to ___ to the party?",
+    "input": {"kind": "choice", "options": ["wear", "where", "were"], "pick": 1},
+    "answer": [0],
+    "explain": "You wear clothes; where asks about a place, and were is a past form of be."
+  },
+  {
+    "id": "gi-homophones-009",
+    "type": "g-homophones",
+    "level": 1,
+    "prompt": "Which word completes the sentence correctly?\nThe brave ___ rode off to find the dragon.",
+    "input": {"kind": "choice", "options": ["night", "knight"], "pick": 1},
+    "answer": [1],
+    "explain": "A knight is a soldier in armour; night is when it is dark."
+  },
+  {
+    "id": "gi-homophones-010",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\n___ going to the cinema on Saturday.",
+    "input": {"kind": "choice", "options": ["They're", "There", "Their"], "pick": 1},
+    "answer": [0],
+    "explain": "They're is short for they are: they are going to the cinema."
+  },
+  {
+    "id": "gi-homophones-011",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nPupils are not ___ to run in the corridors.",
+    "input": {"kind": "choice", "options": ["aloud", "allowed"], "pick": 1},
+    "answer": [1],
+    "explain": "Allowed means permitted; aloud means out loud."
+  },
+  {
+    "id": "gi-homophones-012",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nWe could not decide ___ to go swimming or play tennis.",
+    "input": {"kind": "choice", "options": ["whether", "weather"], "pick": 1},
+    "answer": [0],
+    "explain": "Whether introduces a choice; the weather is the rain, sun or wind."
+  },
+  {
+    "id": "gi-homophones-013",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nBen squeezed the ___ to stop his bike.",
+    "input": {"kind": "choice", "options": ["brake", "break"], "pick": 1},
+    "answer": [0],
+    "explain": "A brake stops a bike; break means smash or have a rest."
+  },
+  {
+    "id": "gi-homophones-014",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Tap the **two** words that are the wrong homophones.",
+    "input": {"kind": "words", "tokens": ["Their", "going", "to", "the", "beach", "because", "the", "whether", "is", "sunny", "."], "pick": 2},
+    "answer": [0, 7],
+    "explain": "It should be They're (they are) going, and the weather is sunny."
+  },
+  {
+    "id": "gi-homophones-015",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Write the homophone of **bored** that completes the sentence.",
+    "input": {"kind": "text", "before": "Ravi wrote the date on the", "after": "at the front of the classroom."},
+    "answer": ["board"],
+    "explain": "A board is a flat surface you can write on; bored means fed up."
+  },
+  {
+    "id": "gi-homophones-016",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Read each sentence. Is the underlined word the correct one? Tap true or false for each sentence.",
+    "input": {"kind": "tf", "statements": ["We __passed__ the old church on our way home.", "In the __passed__, people wrote with quills.", "Nia ran __past__ the bus stop.", "Leo __past__ the ball to Finn."]},
+    "answer": [true, false, true, false],
+    "explain": "Passed is the past tense of the verb pass; past means time gone by or beyond."
+  },
+  {
+    "id": "gi-homophones-017",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nThe loud music might ___ the baby's sleep.",
+    "input": {"kind": "choice", "options": ["affect", "effect"], "pick": 1},
+    "answer": [0],
+    "explain": "Affect is a verb meaning to change something; effect is usually a noun meaning a result."
+  },
+  {
+    "id": "gi-homophones-018",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nEveryone came to the party ___ Theo, who was ill.",
+    "input": {"kind": "choice", "options": ["except", "accept"], "pick": 1},
+    "answer": [0],
+    "explain": "Except means not including; accept means to take or agree to something."
+  },
+  {
+    "id": "gi-homophones-019",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nFor ___, we had chocolate cake with ice cream.",
+    "input": {"kind": "choice", "options": ["dessert", "desert"], "pick": 1},
+    "answer": [0],
+    "explain": "A dessert is a sweet course after a meal; a desert is a dry, sandy place."
+  },
+  {
+    "id": "gi-homophones-020",
+    "type": "g-homophones",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\n___ bag is this on the floor?",
+    "input": {"kind": "choice", "options": ["Who's", "Whose"], "pick": 1},
+    "answer": [1],
+    "explain": "Whose asks who something belongs to; who's is short for who is or who has."
+  },
+  {
+    "id": "gi-homophones-021",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Which word completes the sentence correctly?\nMy piano teacher gave me some useful ___ before the concert.",
+    "input": {"kind": "choice", "options": ["advice", "advise"], "pick": 1},
+    "answer": [0],
+    "explain": "Advice with a c is the noun; advise with an s is the verb."
+  },
+  {
+    "id": "gi-homophones-022",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Which word completes the sentence correctly?\nOwen needs to ___ his spellings every evening.",
+    "input": {"kind": "choice", "options": ["practice", "practise"], "pick": 1},
+    "answer": [1],
+    "explain": "In UK English, practise with an s is the verb and practice with a c is the noun."
+  },
+  {
+    "id": "gi-homophones-023",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Which word completes the sentence correctly?\nThe new playground has had a great ___ on the whole school.",
+    "input": {"kind": "choice", "options": ["affect", "effect"], "pick": 1},
+    "answer": [1],
+    "explain": "The gap needs a noun after a great, and effect is the noun."
+  },
+  {
+    "id": "gi-homophones-024",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Which word completes the sentence correctly?\nThe lorry stayed ___ at the red traffic lights.",
+    "input": {"kind": "choice", "options": ["stationary", "stationery"], "pick": 1},
+    "answer": [0],
+    "explain": "Stationary means not moving; stationery means pens, paper and envelopes."
+  },
+  {
+    "id": "gi-homophones-025",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that use the underlined word correctly.",
+    "input": {"kind": "choice", "options": ["The team will __practise__ on Friday.", "Football __practise__ starts at four.", "I would __advise__ you to wear a coat.", "Thank you for your __advise__."], "pick": 2},
+    "answer": [0, 2],
+    "explain": "Practise and advise are verbs; the nouns are spelt practice and advice."
+  },
+  {
+    "id": "gi-homophones-026",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "One word in this sentence is the wrong homophone. Tap it.",
+    "input": {"kind": "words", "tokens": ["The", "head", "teacher", "asked", "everyone", "to", "except", "the", "new", "rules", "."], "pick": 1},
+    "answer": [6],
+    "explain": "It should be accept, which means agree to; except means not including."
+  },
+  {
+    "id": "gi-homophones-027",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Write **practice** or **practise** to complete the sentence.",
+    "input": {"kind": "text", "before": "Kai goes to football", "after": "every Tuesday evening."},
+    "answer": ["practice"],
+    "explain": "The gap needs a noun, and in UK English the noun is practice with a c."
+  },
+  {
+    "id": "gi-homophones-028",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Is the underlined word the correct homophone in each sentence? Tap true or false for each sentence.",
+    "input": {"kind": "tf", "statements": ["Kai __led__ the team onto the pitch.", "The __led__ in my pencil has snapped.", "We saw a __heard__ of cows in the field.", "Nia __guessed__ the answer straight away."]},
+    "answer": [true, false, false, true],
+    "explain": "The part of a pencil that writes is the lead, and a group of cows is a herd."
+  },
+  {
+    "id": "gi-homophones-029",
+    "type": "g-homophones",
+    "level": 3,
+    "prompt": "Which word completes the sentence correctly?\nThe ___ reason for the trip is to learn about rivers.",
+    "input": {"kind": "choice", "options": ["principle", "principal"], "pick": 1},
+    "answer": [1],
+    "explain": "Principal means most important; a principle is a rule or belief."
+  }
+]

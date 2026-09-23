@@ -1,0 +1,224 @@
+{
+  "id": "rt-non-fiction-08",
+  "title": "An Evacuee’s Diary",
+  "genre": "non-fiction",
+  "level": 2,
+  "paragraphs": [
+    "Friday 1st September 1939",
+    "Today, Stanley and I were evacuated. We had to be at school by eight o’clock, each with a label tied to our coat, a small suitcase and a gas mask in a cardboard box, which hung round our neck on a piece of string. Mum had packed our pyjamas, a change of clothes, a toothbrush and a stamped postcard, so that we could send her our new address. Our teachers said that mums could not come to the station, so we said goodbye at the school gate. Mum smiled and waved, but her eyes were wet. “Look after your brother, Peggy,” she whispered, and she hugged Stanley so tightly that he squeaked.",
+    "Nobody would tell us where we were going. The train was so crowded that Stanley had to sit on my knee, and the journey took hours. At last, we arrived in a village called Merrowby, and our teachers marched us into the village hall. We stood in a line while the grown-ups walked up and down, looking us over as if we were apples on a market stall. One by one, the other children were led away. Most people only wanted one child, and I had promised Mum that Stanley and I would stay together, so my heart sank lower and lower. In the end, we were the very last two left. Then Mrs Pryce, a farmer’s wife with rosy cheeks, bustled in and said that she would take us both.",
+    "Sunday 3rd September 1939",
+    "This morning, we all crowded round the wireless in Mrs Pryce’s kitchen. At quarter past eleven, the Prime Minister announced that Britain was at war with Germany. Nobody spoke. Mrs Pryce squeezed my hand, and Mr Pryce stared out of the window for a long time. I kept thinking about Mum and Dad in London. What if bombs fell on our street?",
+    "Saturday 16th September 1939",
+    "We have been in Merrowby for just over two weeks, and I am slowly getting used to country life. At first, I could hardly sleep because it was so quiet: there were no buses or trams rattling past, only an owl hooting in the dark. Every evening, we must draw thick blackout curtains before the lamps are lit, so that no light can be seen from outside. We share the village school with the local children. They have their lessons in the mornings, and we have ours in the afternoons. Stanley follows Mr Pryce everywhere and has announced that he is going to be a farmer. He even helps to collect the eggs.",
+    "This morning, a letter arrived from Mum. She says that London is quiet and that she and Dad are safe. She misses us terribly, but she is glad that we are somewhere safer. I read the letter three times and then tucked it under my pillow. I still miss home every single day, but when Mrs Pryce kisses us goodnight, I think that being an evacuee might not be so bad after all."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nWhat did each child carry their gas mask in?",
+      "paragraph": 2,
+      "kind": "text",
+      "accept": [
+        "cardboard box",
+        "a cardboard box",
+        "in a cardboard box",
+        "cardboard box on a string",
+        "cardboard boxes",
+        "box",
+        "in a box",
+        "boxes"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nMum smiled and waved, but her eyes were wet.\nWhat does this suggest about Mum? Tick one.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "She was glad that the children were leaving.",
+        "She had a bad cold.",
+        "She was cross with the teachers.",
+        "She was trying to hide how upset she felt."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\n…looking us over as if we were apples on a market stall.\nWhat does this comparison suggest about how Peggy felt? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "She felt hungry after the long journey.",
+        "She felt as if she was being inspected and picked, like something for sale.",
+        "She felt excited about living on a farm.",
+        "She felt proud to be chosen first."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nFind and copy one word that shows that Mrs Pryce came into the hall in a hurried, busy way.",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "bustled"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nAt what time did the Prime Minister make his announcement? Tick one.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "eight o’clock",
+        "quarter to eleven",
+        "quarter past eleven",
+        "half past twelve"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\n…Mr Pryce **stared** out of the window for a long time.\nWhich word is closest in meaning to **stared**? Tick one.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "glanced",
+        "shouted",
+        "climbed",
+        "gazed"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nWhy do you think the blackout curtains had to stop any light from being seen outside? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "to keep the house warm at night",
+        "so that enemy planes would not be able to spot the village in the dark",
+        "so that Stanley would fall asleep more quickly",
+        "because owls do not like bright lights"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the diary, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "Peggy’s mum went with the children to the station.",
+        "The train journey took hours.",
+        "The evacuees have their lessons in the mornings.",
+        "Stanley helps to collect the eggs."
+      ],
+      "answer": [
+        false,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happened.",
+      "kind": "order",
+      "items": [
+        "The children travelled on a crowded train.",
+        "A letter arrived from Mum.",
+        "The Prime Minister announced that Britain was at war.",
+        "Peggy and Stanley said goodbye to Mum at the school gate.",
+        "Mrs Pryce said that she would take Peggy and Stanley."
+      ],
+      "answer": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "How do Peggy’s feelings change during the diary? Explain, using evidence from the text.",
+      "kind": "self",
+      "model": "At the start, Peggy is sad and worried. She has to say goodbye to Mum at the school gate, and when most people only want one child, her “heart sank lower and lower” because she has promised to keep Stanley with her. When war is announced, she is frightened for her parents and wonders, “What if bombs fell on our street?” By the end, she is starting to feel settled and hopeful: she is “slowly getting used to country life” and thinks that being an evacuee “might not be so bad after all”, even though she still misses home every day.",
+      "points": [
+        "At the start she is sad or worried, e.g. her heart sank because she was afraid that she and Stanley would be split up",
+        "When war is announced she is frightened for her parents, e.g. she wonders what would happen if bombs fell on their street",
+        "By the end she feels more settled or hopeful, e.g. she thinks being an evacuee might not be so bad after all (although she still misses home)"
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why is the diary divided into sections that each begin with a date? Tick one.",
+      "kind": "choice",
+      "options": [
+        "to show how old Peggy was",
+        "to show that Peggy wrote each part on a different day",
+        "to show when each letter from Mum arrived",
+        "to list the most important dates of the war"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the diary? Tick one.",
+      "kind": "choice",
+      "options": [
+        "A girl describes how bombs destroyed her home in London.",
+        "A farmer’s wife explains why she chose to look after two evacuees.",
+        "A girl describes a summer holiday on a farm with her parents.",
+        "A girl describes being evacuated from London with her brother and slowly getting used to life in the countryside."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

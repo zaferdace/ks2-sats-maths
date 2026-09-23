@@ -1,0 +1,188 @@
+{
+  "id": "rt-fiction-11",
+  "title": "Fire Flowers",
+  "genre": "fiction",
+  "level": 3,
+  "paragraphs": [
+    "Grace woke to the clanging of bells. It was the middle of the night, early in September 1666, yet her attic room was filled with a strange orange light. Beyond the crooked rooftops of London, towards Pudding Lane, the sky was glowing like the inside of an oven. She hurried downstairs, where Father was peering through the shutters in his nightshirt. 'A baker's fire,' he yawned. 'They'll have it out by morning.' Then he went back to bed.",
+    "But by morning, the fire had not gone out. A fierce east wind was blowing, and it carried sparks from roof to roof like a flock of burning birds. The summer had been long and dry, and the tall wooden houses, which leaned so close together that neighbours could almost shake hands across the lanes, caught light as easily as kindling. By noon, the smoke was so thick that the sun hung over the city like a dull copper coin.",
+    "Father came home with soot streaked across his face. 'It's at the end of our street,' he said grimly. 'We must leave now.' He dug a hole in the yard and buried Mother's pewter plates and his best tools, wrapped in sacking, while Mother tied their clothes into bundles. Grace was given the most important job of all: to hold her little brother's hand and never, ever let go.",
+    "Tom, however, refused to move. 'I'm not going without the cat!' he sobbed, clinging to the doorpost. The cat had vanished the moment smoke began to curl under the door. Grace searched every room, calling softly, until at last she spotted two green eyes glinting from under the stairs. She scooped the trembling creature into her apron, grabbed Tom's hand and hurried out to join her parents in the street.",
+    "The steep lanes leading down to the river had become rivers themselves: heaving, shoving floods of people, carts and horses. A man staggered past with a feather mattress on his back, and a woman clutched a birdcage to her chest. Behind them, the fire roared like a furious beast, and ash drifted down on to their heads like grey snow. At the water's edge, dozens of boatmen were shouting their prices. Father handed over every coin he had, and the family squeezed into a tiny boat.",
+    "From the middle of the river, Grace looked back and could not speak. A wall of flame stretched along the bank as far as she could see, and church spires stood out against it like burnt matches. Pigeons circled above the rooftops, reluctant to leave their homes, until the heat singed their wings. Tom buried his face in Grace's shoulder. She held him tightly with one arm and the cat with the other, and she did not let go.",
+    "For four days, the family camped in a field on the far bank with hundreds of other people, watching the fire devour the city. On the third night, they saw the roof of the great cathedral of St Paul's glow red and then crash in. At last, the wind dropped. Men blew up rows of houses with gunpowder, leaving gaps that the flames could not leap across, and slowly, street by street, the fire died.",
+    "When a boat finally carried them home, the city they knew had gone. Where their street had been, there were only blackened chimneys and heaps of smoking rubble, and the ground was still so hot that it scorched their shoes. Father found the corner of the yard and dug. The plates and tools were still there, sooty but safe. Mother began to cry, but Father wrapped his arms around them all. 'Houses can be built again,' he said. 'We are all here, and that is what matters.'",
+    "The following spring, Grace took Tom back to the place where their house had stood. Builders were already at work, and this time, Father said, the new houses would be made of brick. Among the rubble, something bright caught Grace's eye: hundreds of tiny yellow flowers, pushing up through the ashes towards the sun. Tom crouched down beside them. 'Fire flowers,' he whispered, and for the first time in months, Grace laughed."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\n'the sky was glowing like the inside of an oven'\nWhat does this suggest about the sky?\nTick one.",
+      "options": [
+        "Someone was baking bread on a roof.",
+        "It was bright orange and looked burning hot.",
+        "The sun was rising over the city.",
+        "It was dark and cold."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nWhy did Father go back to bed?\nTick one.",
+      "options": [
+        "He was too frightened to watch the fire.",
+        "He thought it was a small fire that would soon be put out.",
+        "He had to get up early for work.",
+        "Grace had told him that there was nothing to worry about."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhich **two** of these helped the fire to spread?\nTick two.",
+      "options": ["a fierce east wind", "heavy rain", "a long, dry summer", "a lack of water in the river"],
+      "pick": 2,
+      "answer": [0, 2]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhy do you think holding Tom's hand was 'the most important job of all'?\nTick one.",
+      "options": [
+        "Tom might get lost or hurt in the crowded, burning streets.",
+        "Tom was frightened of the cat.",
+        "Grace was too young to carry a bundle.",
+        "Father wanted Tom to help him dig the hole."
+      ],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q5",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\nWhere did Grace find the cat?",
+      "accept": [
+        "under the stairs",
+        "from under the stairs",
+        "underneath the stairs",
+        "beneath the stairs",
+        "below the stairs",
+        "under the staircase",
+        "under the steps",
+        "under stairs"
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nFind and copy **one** word that shows the man with the mattress found it hard to walk.",
+      "accept": ["staggered"]
+    },
+    {
+      "id": "q7",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\n'Pigeons circled above the rooftops, **reluctant** to leave their homes'\nWhich word is closest in meaning to **reluctant**?\nTick one.",
+      "options": ["unwilling", "eager", "unable", "ready"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Mother tied the family's clothes into bundles.",
+        "The family crossed the river by walking over a bridge.",
+        "The family camped in a field for four days.",
+        "When they returned, their house was still standing."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Why do you think the writer ends the story with the yellow flowers?\nTick one.",
+      "options": [
+        "To show that the fire had started in a garden.",
+        "To show that there is hope, and new life is beginning after the fire.",
+        "To explain what grew in Father's yard before the fire.",
+        "To show that Tom wanted to become a gardener."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "prompt": "What impressions do you get of Grace during the fire?\nGive **two** impressions, using evidence from the text.",
+      "model": "Grace is brave. Even though smoke was curling under the door, she 'searched every room' until she found the cat. She is also caring and responsible. She looks after Tom as she was asked, and on the boat 'She held him tightly with one arm and the cat with the other, and she did not let go.' She puts her little brother and the cat first, even though she must be frightened herself.",
+      "points": [
+        "Gives one impression, e.g. brave, with evidence, e.g. she 'searched every room' for the cat while smoke curled under the door.",
+        "Gives a second impression, e.g. caring or responsible, with evidence, e.g. 'she did not let go' of Tom and the cat.",
+        "Explains how the evidence shows these impressions, e.g. she looks after Tom and the cat even though she must be frightened herself."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of the whole story?\nTick one.",
+      "options": [
+        "A baker starts a fire by accident and puts it out before morning.",
+        "Grace and Tom go on a boat trip to see the city from the river.",
+        "A family escapes from a great fire in London and, after losing their home, finds hope again.",
+        "A family's cat goes missing during a fire, and they never find it."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Father buries the pewter plates in the yard.",
+        "The family squeeze into a tiny boat.",
+        "Tom crouches down beside the yellow flowers.",
+        "Grace finds the cat.",
+        "Father says the fire will be out by morning."
+      ],
+      "answer": [4, 0, 3, 1, 2]
+    }
+  ]
+}

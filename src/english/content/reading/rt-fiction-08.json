@@ -7,10 +7,10 @@
     "Finn had been afraid of dogs for as long as he could remember. Whenever he saw one coming along the pavement, he crossed to the other side of the road. So when Jess from next door hobbled up the path one Saturday morning with the biggest dog he had ever seen, Finn stayed well back in the hallway.",
     "The dog was a Great Dane, as tall as the kitchen table, with a grey coat and paws the size of saucers. 'I've twisted my ankle,' Jess explained, leaning on her crutches. 'The doctor says I mustn't walk on it for a week. Could you possibly take him to the park for me?' Mum said yes at once. Finn's stomach did a somersault.",
     "That afternoon, Mum clipped on the lead and they set off for the park. Finn walked on the far side of Mum, keeping her between himself and the dog. The dog plodded along quietly, sniffing every lamppost, but whenever his huge tail swung near Finn's legs, Finn jumped.",
-    "At the park gate, Mum's phone rang. 'Hold this for a moment, love,' she said, and before Finn could argue, she had pressed the lead into his hand. Finn froze. The dog looked down at him with gentle brown eyes. Then he sat down and waited.",
+    "At the park gate, Mum's phone rang. 'Hold this for a moment, love,' she said, and before Finn could argue, she had pressed the lead into his hand. Finn froze. The dog gazed at him with gentle brown eyes. Then he sat down and waited.",
     "Just then, a small ginger cat strolled out from under a hedge. It stopped, arched its back and let out a furious hiss. Finn gripped the lead, sure that the dog would leap forward and drag him across the park. Instead, the enormous dog gave a whimper, tucked his tail between his legs and tried to hide behind Finn.",
     "Finn could hardly believe his eyes. The biggest dog in the street was trembling from nose to tail, and all because of a cat no bigger than a loaf of bread. Without thinking, Finn crouched down and stroked the dog's velvety ears. 'It's all right,' he said softly. 'I'll look after you.' The dog leaned his warm head against Finn's shoulder and slowly stopped shaking.",
-    "When Mum finished her phone call, she turned round and stopped in surprise. Finn was scratching the dog's chin, and he was smiling. 'Shall I take him now?' Mum asked. Finn shook his head. 'No thanks,' he said. 'We're fine.'",
+    "When Mum finished her phone call, she turned round and stopped in surprise. Finn was scratching the dog's chin, and he was smiling. Mum asked if she should take him now, but Finn shook his head. 'No thanks,' he said. 'We're fine.'",
     "For the rest of the week, Finn walked the Great Dane every afternoon. He discovered that the dog loved chasing leaves, hated puddles and was frightened of almost everything, from pigeons to plastic bags. On Saturday, when Jess's ankle was better, she offered to take the lead back. Finn looked at the dog, and the dog looked at Finn. 'Could I still come with you?' Finn asked. 'Just sometimes?'"
   ],
   "questions": [
@@ -95,7 +95,7 @@
       "kind": "text",
       "paragraph": 8,
       "prompt": "Look at paragraph 8.\nWhat did the dog love chasing?",
-      "accept": ["leaves", "the leaves", "some leaves", "leaf", "chasing leaves", "fallen leaves"]
+      "accept": ["leaves", "the leaves", "some leaves", "leaf", "chasing leaves"]
     },
     {
       "id": "q8",

@@ -1,0 +1,263 @@
+[
+  {
+    "id": "gi-suffixes-001",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which suffix means **without** when it is added to **care**, **hope** and **use**?",
+    "input": {"kind": "choice", "options": ["-ful", "-less", "-ness", "-ly"], "pick": 1},
+    "answer": [1],
+    "explain": "Careless, hopeless and useless mean without care, without hope and without use."
+  },
+  {
+    "id": "gi-suffixes-002",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which suffix turns **kind**, **dark** and **sad** into nouns?",
+    "input": {"kind": "choice", "options": ["-ly", "-ful", "-er", "-ness"], "pick": 1},
+    "answer": [3],
+    "explain": "Adding -ness makes the nouns kindness, darkness and sadness."
+  },
+  {
+    "id": "gi-suffixes-003",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which suffix turns the adjective **sad** into an adverb?",
+    "input": {"kind": "choice", "options": ["-ly", "-ness", "-er", "-est"], "pick": 1},
+    "answer": [0],
+    "explain": "Sadly is an adverb; sadness is a noun, and sadder and saddest are adjectives."
+  },
+  {
+    "id": "gi-suffixes-004",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Add the suffix **-ment** to **enjoy**. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["enjoyment"],
+    "explain": "Enjoy + ment = enjoyment; the root word does not change."
+  },
+  {
+    "id": "gi-suffixes-005",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which spelling is correct when **-ness** is added to **happy**?",
+    "input": {"kind": "choice", "options": ["happyness", "happiness", "happines", "hapiness"], "pick": 1},
+    "answer": [1],
+    "explain": "When a word ends in a consonant and y, the y changes to i before -ness: happiness."
+  },
+  {
+    "id": "gi-suffixes-006",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Tap the word with a suffix meaning **full of**.",
+    "input": {"kind": "words", "tokens": ["The", "colourful", "kite", "flew", "high", "above", "the", "trees", "."], "pick": 1},
+    "answer": [1],
+    "explain": "The suffix -ful means full of, so colourful means full of colour."
+  },
+  {
+    "id": "gi-suffixes-007",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Is the suffix spelt correctly in each word? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["hopeful", "carefull", "enjoyment", "sadnes"]},
+    "answer": [true, false, true, false],
+    "explain": "The suffix -ful has one l and -ness has a double s: careful and sadness."
+  },
+  {
+    "id": "gi-suffixes-008",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which word means **without fear**?",
+    "input": {"kind": "choice", "options": ["fearful", "feared", "fearless", "fearing"], "pick": 1},
+    "answer": [2],
+    "explain": "The suffix -less means without, so fearless means without fear."
+  },
+  {
+    "id": "gi-suffixes-009",
+    "type": "g-suffixes",
+    "level": 1,
+    "prompt": "Which word completes the sentence?\nThat was the ___ day of the whole summer.",
+    "input": {"kind": "choice", "options": ["hot", "hotter", "hotly", "hottest"], "pick": 1},
+    "answer": [3],
+    "explain": "Comparing one day with all the others needs -est, and the t doubles: hottest."
+  },
+  {
+    "id": "gi-suffixes-010",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Which suffix turns the noun **danger** into an adjective?",
+    "input": {"kind": "choice", "options": ["-ous", "-ment", "-ness", "-ly"], "pick": 1},
+    "answer": [0],
+    "explain": "Danger + ous = dangerous, an adjective."
+  },
+  {
+    "id": "gi-suffixes-011",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Which suffix turns the adjective **simple** into a verb?",
+    "input": {"kind": "choice", "options": ["-ly", "-ness", "-ify", "-er"], "pick": 1},
+    "answer": [2],
+    "explain": "Simplify is a verb; simply is an adverb and simpler is an adjective."
+  },
+  {
+    "id": "gi-suffixes-012",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Which suffix turns the adjective **active** into a verb?",
+    "input": {"kind": "choice", "options": ["-ness", "-en", "-ify", "-ate"], "pick": 1},
+    "answer": [3],
+    "explain": "Drop the e and add -ate to make the verb activate."
+  },
+  {
+    "id": "gi-suffixes-013",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Tap the noun that was made by adding the suffix **-ment** to a verb.",
+    "input": {"kind": "words", "tokens": ["The", "two", "friends", "finally", "reached", "an", "agreement", "about", "the", "game", "."], "pick": 1},
+    "answer": [6],
+    "explain": "Agreement is a noun made from the verb agree and the suffix -ment."
+  },
+  {
+    "id": "gi-suffixes-014",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nThe tiny insect was almost ___ to the naked eye.",
+    "input": {"kind": "choice", "options": ["invisable", "invisible", "unvisible", "invisibel"], "pick": 1},
+    "answer": [1],
+    "explain": "Invisible ends in -ible, like visible; -ible is common when the root is not a whole word."
+  },
+  {
+    "id": "gi-suffixes-015",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Add the suffix **-ful** to **beauty**. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["beautiful"],
+    "explain": "Change the y to i before adding -ful: beautiful."
+  },
+  {
+    "id": "gi-suffixes-016",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Add the suffix **-ation** to the verb **inform** to make a noun. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["information"],
+    "explain": "Inform + ation = information, a noun."
+  },
+  {
+    "id": "gi-suffixes-017",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Is each statement about suffixes true? Tap true or false for each one.",
+    "input": {"kind": "tf", "statements": ["Adding **-ness** to **kind** makes a noun.", "Adding **-ly** to **slow** makes an adjective.", "Adding **-en** to **wide** makes a verb.", "Adding **-ful** to **help** makes an adverb."]},
+    "answer": [true, false, true, false],
+    "explain": "Kindness is a noun and widen is a verb; slowly is an adverb and helpful is an adjective."
+  },
+  {
+    "id": "gi-suffixes-018",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "Which word completes the sentence?\nThe ___ of the new library will take two years.",
+    "input": {"kind": "choice", "options": ["construct", "constructive", "constructed", "construction"], "pick": 1},
+    "answer": [3],
+    "explain": "The gap needs a noun, and the suffix -ion turns the verb construct into the noun construction."
+  },
+  {
+    "id": "gi-suffixes-019",
+    "type": "g-suffixes",
+    "level": 2,
+    "prompt": "The suffix **-ous** is added to **fame** to make **famous**. Which word class is **famous**?",
+    "input": {"kind": "choice", "options": ["noun", "verb", "adjective", "adverb"], "pick": 1},
+    "answer": [2],
+    "explain": "The suffix -ous makes adjectives, such as famous and dangerous."
+  },
+  {
+    "id": "gi-suffixes-020",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Which suffix can be added to **solid**, **pure** and **just** to make verbs?",
+    "input": {"kind": "choice", "options": ["-ify", "-ise", "-ate", "-en"], "pick": 1},
+    "answer": [0],
+    "explain": "Solidify, purify and justify are all verbs made with -ify."
+  },
+  {
+    "id": "gi-suffixes-021",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Which suffix can be added to **deep**, **sharp** and **bright** to make verbs?",
+    "input": {"kind": "choice", "options": ["-ify", "-ate", "-en", "-ise"], "pick": 1},
+    "answer": [2],
+    "explain": "Deepen, sharpen and brighten are all verbs made with -en."
+  },
+  {
+    "id": "gi-suffixes-022",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Which suffix can be added to **real**, **final** and **modern** to make verbs?",
+    "input": {"kind": "choice", "options": ["-ate", "-en", "-ify", "-ise"], "pick": 1},
+    "answer": [3],
+    "explain": "Realise, finalise and modernise are all verbs made with -ise."
+  },
+  {
+    "id": "gi-suffixes-023",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "The suffix **-ment** is added to **argue**. Which spelling is correct?",
+    "input": {"kind": "choice", "options": ["argument", "arguement", "argumant", "arguemant"], "pick": 1},
+    "answer": [0],
+    "explain": "Argument is a tricky word: the e at the end of argue is dropped."
+  },
+  {
+    "id": "gi-suffixes-024",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "The suffix **-able** is added to **rely**. Which spelling is correct?",
+    "input": {"kind": "choice", "options": ["relyable", "reliable", "relyible", "relible"], "pick": 1},
+    "answer": [1],
+    "explain": "Change the y to i before adding -able: reliable."
+  },
+  {
+    "id": "gi-suffixes-025",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Tick the **two** words with the correct **-able** or **-ible** ending.",
+    "input": {"kind": "choice", "options": ["comfortable", "terrable", "horrible", "dependible"], "pick": 2},
+    "answer": [0, 2],
+    "explain": "The correct spellings are comfortable, terrible, horrible and dependable."
+  },
+  {
+    "id": "gi-suffixes-026",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Add the suffix **-ous** to **fury**. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["furious"],
+    "explain": "Change the y to i before adding -ous: furious."
+  },
+  {
+    "id": "gi-suffixes-027",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Add the suffix **-ation** to **admire**. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["admiration"],
+    "explain": "Drop the e at the end of admire before adding -ation: admiration."
+  },
+  {
+    "id": "gi-suffixes-028",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Tap the word in which **-ly** is a suffix that makes an adverb.",
+    "input": {"kind": "words", "tokens": ["Lily", "gently", "lifted", "the", "sleepy", "puppy", "onto", "the", "family", "sofa", "."], "pick": 1},
+    "answer": [1],
+    "explain": "Gently tells us how Lily lifted the puppy; in Lily and family, the letters ly are not a suffix."
+  },
+  {
+    "id": "gi-suffixes-029",
+    "type": "g-suffixes",
+    "level": 3,
+    "prompt": "Is each word spelt correctly after adding the suffix? Tap true or false for each one.",
+    "input": {"kind": "tf", "statements": ["**excite** + **ment** = excitement", "**adore** + **able** = adoreable", "**lazy** + **ness** = laziness", "**nerve** + **ous** = nerveous"]},
+    "answer": [true, false, true, false],
+    "explain": "Excitement and laziness are correct; the others should be adorable and nervous."
+  }
+]

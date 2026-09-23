@@ -1,0 +1,263 @@
+[
+  {
+    "id": "gi-families-001",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Which word is **not** in the same word family as **help**?",
+    "input": {"kind": "choice", "options": ["helpful", "helper", "helicopter", "helpless"], "pick": 1},
+    "answer": [2],
+    "explain": "Helpful, helper and helpless all come from help; a helicopter is not related."
+  },
+  {
+    "id": "gi-families-002",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Which word is in the same word family as **play**?",
+    "input": {"kind": "choice", "options": ["plate", "player", "plan", "plane"], "pick": 1},
+    "answer": [1],
+    "explain": "A player is someone who plays; the other words only share some letters."
+  },
+  {
+    "id": "gi-families-003",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Which word is **not** in the same word family as **joy**?",
+    "input": {"kind": "choice", "options": ["journey", "enjoy", "joyful", "enjoyment"], "pick": 1},
+    "answer": [0],
+    "explain": "Enjoy, joyful and enjoyment are all about joy; a journey is a trip."
+  },
+  {
+    "id": "gi-families-004",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Write a word from the same word family as **friend** to complete the sentence.",
+    "input": {"kind": "text", "before": "Our new neighbours are very", "after": "and always wave to us."},
+    "answer": ["friendly"],
+    "explain": "Friendly is an adjective in the friend word family."
+  },
+  {
+    "id": "gi-families-005",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Tap the **two** words in the sentence that are in the same word family.",
+    "input": {"kind": "words", "tokens": ["The", "baker", "has", "been", "baking", "bread", "since", "early", "morning", "."], "pick": 2},
+    "answer": [1, 4],
+    "explain": "Baker and baking both come from the root word bake."
+  },
+  {
+    "id": "gi-families-006",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Is each word in the same word family as **use**? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["useful", "fuse", "misuse", "user"]},
+    "answer": [true, false, true, true],
+    "explain": "Useful, misuse and user all come from use; a fuse is not related."
+  },
+  {
+    "id": "gi-families-007",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Which word is **not** in the same word family as **child**?",
+    "input": {"kind": "choice", "options": ["childhood", "children", "childish", "chilly"], "pick": 1},
+    "answer": [3],
+    "explain": "Childhood, children and childish come from child; chilly means cold."
+  },
+  {
+    "id": "gi-families-008",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Which word is in the same word family as **teach**?",
+    "input": {"kind": "choice", "options": ["team", "tear", "teacher", "tea"], "pick": 1},
+    "answer": [2],
+    "explain": "A teacher is someone who teaches."
+  },
+  {
+    "id": "gi-families-009",
+    "type": "g-word-families",
+    "level": 1,
+    "prompt": "Tick the **two** words that are in the same word family as **happy**.",
+    "input": {"kind": "choice", "options": ["happiness", "hippo", "unhappy", "hopping"], "pick": 2},
+    "answer": [0, 2],
+    "explain": "Happiness and unhappy are both built from the root word happy."
+  },
+  {
+    "id": "gi-families-010",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word is **not** in the same word family as **nation**?",
+    "input": {"kind": "choice", "options": ["national", "notion", "international", "nationality"], "pick": 1},
+    "answer": [1],
+    "explain": "National, international and nationality come from nation; a notion is an idea."
+  },
+  {
+    "id": "gi-families-011",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word is **not** in the same word family as **act**?",
+    "input": {"kind": "choice", "options": ["fact", "actor", "reaction", "active"], "pick": 1},
+    "answer": [0],
+    "explain": "Actor, reaction and active are to do with acting or doing; a fact is not."
+  },
+  {
+    "id": "gi-families-012",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Write a word from the same word family as **know** to complete the sentence.",
+    "input": {"kind": "text", "before": "Ravi has an amazing", "after": "of dinosaurs."},
+    "answer": ["knowledge"],
+    "explain": "Knowledge is the noun in the know word family."
+  },
+  {
+    "id": "gi-families-013",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word is **not** in the same word family as **courage**?",
+    "input": {"kind": "choice", "options": ["encourage", "courageous", "discourage", "course"], "pick": 1},
+    "answer": [3],
+    "explain": "Encourage, courageous and discourage all contain courage; a course is not related."
+  },
+  {
+    "id": "gi-families-014",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word is in the same word family as **power**?",
+    "input": {"kind": "choice", "options": ["empower", "powder", "pour", "tower"], "pick": 1},
+    "answer": [0],
+    "explain": "To empower someone is to give them power."
+  },
+  {
+    "id": "gi-families-015",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Is each word in the same word family as **sign**? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["signal", "single", "signature", "sing"]},
+    "answer": [true, false, true, false],
+    "explain": "A signal and a signature are both kinds of sign; single and sing are not related."
+  },
+  {
+    "id": "gi-families-016",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Tap the **two** words in the sentence that share the same root word.",
+    "input": {"kind": "words", "tokens": ["The", "inventor", "showed", "us", "her", "latest", "invention", "at", "the", "science", "fair", "."], "pick": 2},
+    "answer": [1, 6],
+    "explain": "Inventor and invention both come from the root word invent."
+  },
+  {
+    "id": "gi-families-017",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word is **not** in the same word family as **real**?",
+    "input": {"kind": "choice", "options": ["really", "ready", "reality", "unreal"], "pick": 1},
+    "answer": [1],
+    "explain": "Really, reality and unreal come from real; ready is not related."
+  },
+  {
+    "id": "gi-families-018",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "Which word belongs to the same word family as **create**?",
+    "input": {"kind": "choice", "options": ["cream", "crate", "creation", "crease"], "pick": 1},
+    "answer": [2],
+    "explain": "A creation is something that has been created."
+  },
+  {
+    "id": "gi-families-019",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "What does the root **micro** mean in **microscope** and **microchip**?",
+    "input": {"kind": "choice", "options": ["large", "light", "fast", "small"], "pick": 1},
+    "answer": [3],
+    "explain": "Micro means very small: a microscope helps you see tiny things."
+  },
+  {
+    "id": "gi-families-020",
+    "type": "g-word-families",
+    "level": 2,
+    "prompt": "The words **audience**, **audible** and **audio** share the root **aud**. What does **aud** mean?",
+    "input": {"kind": "choice", "options": ["see", "hear", "speak", "write"], "pick": 1},
+    "answer": [1],
+    "explain": "Aud is to do with hearing: an audience listens, and an audible sound can be heard."
+  },
+  {
+    "id": "gi-families-021",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Which word is **not** in the same word family as **solve**?",
+    "input": {"kind": "choice", "options": ["solid", "solution", "dissolve", "unsolved"], "pick": 1},
+    "answer": [0],
+    "explain": "Solution, dissolve and unsolved share the root solve; solid is not related."
+  },
+  {
+    "id": "gi-families-022",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Which word is **not** in the same word family as **centre**?",
+    "input": {"kind": "choice", "options": ["central", "century", "centralise", "epicentre"], "pick": 1},
+    "answer": [1],
+    "explain": "Central, centralise and epicentre come from centre; century comes from a word meaning a hundred."
+  },
+  {
+    "id": "gi-families-023",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Which word is **not** in the same word family as **mark**?",
+    "input": {"kind": "choice", "options": ["bookmark", "marker", "unmarked", "market"], "pick": 1},
+    "answer": [3],
+    "explain": "Bookmark, marker and unmarked all come from mark; a market is a place for buying and selling."
+  },
+  {
+    "id": "gi-families-024",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "The words **telescope**, **television** and **telephone** share the root **tele**. What does **tele** mean?",
+    "input": {"kind": "choice", "options": ["far", "small", "sound", "picture"], "pick": 1},
+    "answer": [0],
+    "explain": "Tele means far: a telescope lets you see things that are far away."
+  },
+  {
+    "id": "gi-families-025",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "What does the root **graph** mean in **autograph**, **paragraph** and **photograph**?",
+    "input": {"kind": "choice", "options": ["light", "self", "writing or drawing", "sound"], "pick": 1},
+    "answer": [2],
+    "explain": "Graph is to do with writing or drawing; photo means light and auto means self."
+  },
+  {
+    "id": "gi-families-026",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "The words **transport**, **export** and **portable** share the root **port**. What does **port** mean in these words?",
+    "input": {"kind": "choice", "options": ["sea", "door", "sell", "carry"], "pick": 1},
+    "answer": [3],
+    "explain": "Port means carry: something portable is easy to carry."
+  },
+  {
+    "id": "gi-families-027",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Write a word from the same word family as **medical** to complete the sentence.",
+    "input": {"kind": "text", "before": "The nurse gave Owen some", "after": "for his cough."},
+    "answer": ["medicine", "medication", "medicines"],
+    "explain": "Medicine and medical share the root medic."
+  },
+  {
+    "id": "gi-families-028",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Tap the **two** words in the sentence that come from the same root word.",
+    "input": {"kind": "words", "tokens": ["The", "spectators", "cheered", "as", "the", "referee", "inspected", "the", "damaged", "goalpost", "."], "pick": 2},
+    "answer": [1, 6],
+    "explain": "Spectators and inspected share the root spect, which means look."
+  },
+  {
+    "id": "gi-families-029",
+    "type": "g-word-families",
+    "level": 3,
+    "prompt": "Is each word in the same word family as **vision**? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["visible", "vicious", "television", "village"]},
+    "answer": [true, false, true, false],
+    "explain": "Visible and television share the root vis, meaning see; vicious and village are not related."
+  }
+]

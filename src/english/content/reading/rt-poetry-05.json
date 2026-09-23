@@ -1,0 +1,163 @@
+{
+  "id": "rt-poetry-05",
+  "title": "The Sock Monster",
+  "genre": "poetry",
+  "level": 1,
+  "paragraphs": [
+    "A monster lives in our kitchen.\nIt’s square and it’s shiny and white,\nwith one round eye made of glass\nthat watches us all day and night.",
+    "On Mondays, Dad feeds it our washing.\nIt gulps it all down with a slurp,\nthen it churns and it spins like a whirlwind\nand finishes off with a burp.",
+    "But when Dad takes out all the washing\nand sorts all the socks into pairs,\nthere’s always a sock that has vanished,\nand Dad scratches his head and just stares.",
+    "“It’s the monster!” I tell him. “It’s greedy!\nIt swallows our socks for its tea!\nIt sucks them up just like spaghetti!”\nBut Dad only chuckles at me.",
+    "So one Monday, I hid by the fridge,\nas quiet and still as a mouse,\nto catch that sock-gobbling monster\nbefore it could gobble the house.",
+    "Then a nose poked into the washing basket\nand pulled out a sock, stripy blue.\nIt trotted away with its treasure.\nI tiptoed behind it. Guess who?",
+    "It was our dog! In her bed in the hallway,\non a mountain of socks, she pretended to sleep.\nSo I crept back and patted the monster\nand said sorry. It gave a soft beep."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verses 1 and 2.\nWhat is the ‘monster’ really? Tick **one**.",
+      "kind": "choice",
+      "options": ["a fridge", "an oven", "a washing machine", "a toy robot"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at verse 2.\nThe monster ‘spins like a whirlwind’.\nWhat does this tell you about the monster? Tick **one**.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "It is standing outside in a storm.",
+        "It spins round very fast.",
+        "It spins round slowly and gently.",
+        "It blows cold air around the kitchen."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 3.\nThere is always a sock that ‘has vanished’.\nWhich word is closest in meaning to **vanished**? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": ["appeared", "shrunk", "disappeared", "tangled"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 3.\n‘Dad scratches his head and just stares.’\nHow does Dad feel? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": ["delighted", "puzzled", "proud", "sleepy"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 4.\nFind and copy **one** word that shows Dad thinks the speaker’s idea is funny.",
+      "paragraph": 4,
+      "kind": "text",
+      "accept": ["chuckles"]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The monster is square and shiny.",
+        "Dad feeds the monster every day.",
+        "The speaker hid by the fridge.",
+        "The monster has two glass eyes."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 6.\nWhich sock was pulled out of the washing basket? Tick **one**.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": ["a spotty red sock", "a plain white sock", "a stripy blue sock", "a fluffy green sock"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q8",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at verse 6.\nWhy does this verse end with the question ‘Guess who?’ Tick **one**.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "to show that Dad is asking the speaker a question",
+        "to show that the monster is talking to the speaker",
+        "to make the reader guess who took the sock before the next verse tells them",
+        "to show that the speaker has forgotten the dog’s name"
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q9",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 7.\nWhere was the dog’s bed?",
+      "paragraph": 7,
+      "kind": "text",
+      "accept": [
+        "in the hallway",
+        "hallway",
+        "in our hallway",
+        "our hallway",
+        "in their hallway",
+        "their hallway",
+        "in the hall",
+        "hall",
+        "in the speaker's hallway",
+        "speaker's hallway"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at verse 7.\nWhy does the speaker say sorry to the monster?\nExplain, using evidence from the poem.",
+      "paragraph": 7,
+      "kind": "self",
+      "model": "The speaker had blamed the monster for the missing socks, saying ‘It swallows our socks for its tea!’ But then the speaker found the dog lying ‘on a mountain of socks’, so the speaker realised that the dog had been taking them and the monster had done nothing wrong.",
+      "points": [
+        "Explains that the speaker had blamed the monster for eating the socks, with evidence, such as ‘It’s the monster!’ or ‘It swallows our socks for its tea!’",
+        "Explains that the dog had really taken the socks, so the monster was not to blame, with evidence, such as ‘on a mountain of socks’."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "A washing machine breaks down and floods the kitchen.",
+        "Dad buys new socks because all the old ones have holes in them.",
+        "A child blames the washing machine for eating socks, but finds out that the dog has been taking them.",
+        "A dog gets lost in the house while looking for its bed."
+      ],
+      "pick": 1,
+      "answer": [2]
+    }
+  ]
+}

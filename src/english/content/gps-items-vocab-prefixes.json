@@ -1,0 +1,254 @@
+[
+  {
+    "id": "gi-prefixes-001",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Which prefix can be added to all three words to make them mean the opposite?\n**happy**, **kind**, **lock**",
+    "input": {"kind": "choice", "options": ["un-", "dis-", "mis-", "re-"], "pick": 1},
+    "answer": [0],
+    "explain": "Unhappy, unkind and unlock are the opposites of happy, kind and lock."
+  },
+  {
+    "id": "gi-prefixes-002",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Which prefix can be added to all three words to make them mean the opposite?\n**agree**, **appear**, **obey**",
+    "input": {"kind": "choice", "options": ["un-", "dis-", "re-", "mis-"], "pick": 1},
+    "answer": [1],
+    "explain": "Disagree, disappear and disobey are the opposites of agree, appear and obey."
+  },
+  {
+    "id": "gi-prefixes-003",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Which prefix can be added to all three words?\n**behave**, **spell**, **understand**",
+    "input": {"kind": "choice", "options": ["dis-", "un-", "re-", "mis-"], "pick": 1},
+    "answer": [3],
+    "explain": "Misbehave, misspell and misunderstand all use mis-, which means wrongly or badly."
+  },
+  {
+    "id": "gi-prefixes-004",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "What does the prefix **re-** mean in **rewrite**, **replay** and **rebuild**?",
+    "input": {"kind": "choice", "options": ["again", "not", "before", "under"], "pick": 1},
+    "answer": [0],
+    "explain": "Rewrite means write again, and replay means play again."
+  },
+  {
+    "id": "gi-prefixes-005",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "What does the prefix **sub-** mean in **submarine** and **subway**?",
+    "input": {"kind": "choice", "options": ["over", "under", "again", "against"], "pick": 1},
+    "answer": [1],
+    "explain": "A submarine travels under the sea, and a subway goes under a road."
+  },
+  {
+    "id": "gi-prefixes-006",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Add a prefix to **tidy** so that it means the opposite. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["untidy"],
+    "explain": "The prefix un- means not, so untidy means not tidy."
+  },
+  {
+    "id": "gi-prefixes-007",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Add a prefix to **honest** so that it means the opposite. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["dishonest"],
+    "explain": "The prefix dis- makes the opposite of honest: dishonest."
+  },
+  {
+    "id": "gi-prefixes-008",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Tap the word with a prefix that means **not**.",
+    "input": {"kind": "words", "tokens": ["Theo", "was", "unable", "to", "find", "his", "football", "boots", "."], "pick": 1},
+    "answer": [2],
+    "explain": "The prefix un- means not, so unable means not able."
+  },
+  {
+    "id": "gi-prefixes-009",
+    "type": "g-prefixes",
+    "level": 1,
+    "prompt": "Does each word have the correct prefix? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["unhappy", "unagree", "disobey", "dispack"]},
+    "answer": [true, false, true, false],
+    "explain": "Unhappy and disobey are correct; the others should be disagree and unpack."
+  },
+  {
+    "id": "gi-prefixes-010",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Which prefix can be added to all three words to make them mean the opposite?\n**possible**, **patient**, **polite**",
+    "input": {"kind": "choice", "options": ["un-", "im-", "in-", "dis-"], "pick": 1},
+    "answer": [1],
+    "explain": "Impossible, impatient and impolite are the opposites of possible, patient and polite."
+  },
+  {
+    "id": "gi-prefixes-011",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Which word completes the sentence correctly?\nThe writing on the old map was so faded that it was ___.",
+    "input": {"kind": "choice", "options": ["unlegible", "inlegible", "illegible", "dislegible"], "pick": 1},
+    "answer": [2],
+    "explain": "Illegible means impossible to read, and it is spelt with the prefix il-."
+  },
+  {
+    "id": "gi-prefixes-012",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Which prefix makes **regular** mean the opposite?",
+    "input": {"kind": "choice", "options": ["un-", "il-", "dis-", "ir-"], "pick": 1},
+    "answer": [3],
+    "explain": "Irregular means not regular."
+  },
+  {
+    "id": "gi-prefixes-013",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "What does the prefix **pre-** mean in **preview** and **prehistoric**?",
+    "input": {"kind": "choice", "options": ["after", "again", "before", "against"], "pick": 1},
+    "answer": [2],
+    "explain": "A preview is a look before, and prehistoric means before written history."
+  },
+  {
+    "id": "gi-prefixes-014",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "What does the prefix **anti-** mean in **antiseptic** and **anticlockwise**?",
+    "input": {"kind": "choice", "options": ["before", "against", "half", "under"], "pick": 1},
+    "answer": [1],
+    "explain": "Anti- means against: an antiseptic works against germs."
+  },
+  {
+    "id": "gi-prefixes-015",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "What does the prefix **inter-** mean in **international** and **interact**?",
+    "input": {"kind": "choice", "options": ["inside", "not", "above", "between"], "pick": 1},
+    "answer": [3],
+    "explain": "Inter- means between: an international match is played between nations."
+  },
+  {
+    "id": "gi-prefixes-016",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "What does the prefix **auto-** mean in **autograph** and **autopilot**?",
+    "input": {"kind": "choice", "options": ["self", "car", "many", "far"], "pick": 1},
+    "answer": [0],
+    "explain": "Auto- means self: an autograph is your own signature."
+  },
+  {
+    "id": "gi-prefixes-017",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Tap the word with a prefix that means **again**.",
+    "input": {"kind": "words", "tokens": ["After", "the", "storm", ",", "the", "villagers", "worked", "together", "to", "rebuild", "the", "bridge", "."], "pick": 1},
+    "answer": [9],
+    "explain": "The prefix re- means again, so rebuild means build again."
+  },
+  {
+    "id": "gi-prefixes-018",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Add a prefix to **legal** so that it means the opposite. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["illegal"],
+    "explain": "The prefix il- makes the opposite of legal: illegal means against the law."
+  },
+  {
+    "id": "gi-prefixes-019",
+    "type": "g-prefixes",
+    "level": 2,
+    "prompt": "Is each statement about prefixes true? Tap true or false for each one.",
+    "input": {"kind": "tf", "statements": ["The prefix **sub-** means under.", "The prefix **super-** means below.", "The prefix **non-** means not.", "The prefix **mis-** means again."]},
+    "answer": [true, false, true, false],
+    "explain": "Super- means above or more than, and mis- means wrongly; re- is the prefix that means again."
+  },
+  {
+    "id": "gi-prefixes-020",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Which prefix can be added to all three words?\n**frost**, **value**, **code**",
+    "input": {"kind": "choice", "options": ["re-", "de-", "un-", "over-"], "pick": 1},
+    "answer": [1],
+    "explain": "Defrost, devalue and decode all use de-, which can mean remove or reverse."
+  },
+  {
+    "id": "gi-prefixes-021",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Which prefix can be added to all three words?\n**sleep**, **flow**, **cook**",
+    "input": {"kind": "choice", "options": ["pre-", "mis-", "over-", "sub-"], "pick": 1},
+    "answer": [2],
+    "explain": "Oversleep, overflow and overcook all use over-, which can mean too much."
+  },
+  {
+    "id": "gi-prefixes-022",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Which word means **to heat in advance**?",
+    "input": {"kind": "choice", "options": ["preheat", "reheat", "overheat", "unheated"], "pick": 1},
+    "answer": [0],
+    "explain": "The prefix pre- means before, so preheat means heat in advance."
+  },
+  {
+    "id": "gi-prefixes-023",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Which prefix makes **mature** mean the opposite?",
+    "input": {"kind": "choice", "options": ["un-", "in-", "dis-", "im-"], "pick": 1},
+    "answer": [3],
+    "explain": "Immature means not mature."
+  },
+  {
+    "id": "gi-prefixes-024",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Tick the **two** words in which the prefix **in-** means **not**.",
+    "input": {"kind": "choice", "options": ["invisible", "inside", "incorrect", "include"], "pick": 2},
+    "answer": [0, 2],
+    "explain": "Invisible means not visible and incorrect means not correct; in inside and include, in means in."
+  },
+  {
+    "id": "gi-prefixes-025",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Tap the **two** words with a prefix that means **wrongly**.",
+    "input": {"kind": "words", "tokens": ["Owen", "misread", "the", "question", "and", "then", "misplaced", "his", "pencil", "."], "pick": 2},
+    "answer": [1, 6],
+    "explain": "The prefix mis- means wrongly: misread means read wrongly and misplaced means put in the wrong place."
+  },
+  {
+    "id": "gi-prefixes-026",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Add a prefix to **responsible** so that it means the opposite. Write the new word.",
+    "input": {"kind": "text"},
+    "answer": ["irresponsible"],
+    "explain": "The prefix ir- makes the opposite of responsible: irresponsible."
+  },
+  {
+    "id": "gi-prefixes-027",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Is each word spelt with the correct prefix? Tap true or false for each word.",
+    "input": {"kind": "tf", "statements": ["illogical", "irrelevant", "inperfect", "unaccurate"]},
+    "answer": [true, true, false, false],
+    "explain": "Illogical and irrelevant are correct; the others should be imperfect and inaccurate."
+  },
+  {
+    "id": "gi-prefixes-028",
+    "type": "g-prefixes",
+    "level": 3,
+    "prompt": "Which prefix can be added to all three words?\n**total**, **heading**, **merge**",
+    "input": {"kind": "choice", "options": ["super-", "inter-", "sub-", "anti-"], "pick": 1},
+    "answer": [2],
+    "explain": "Subtotal, subheading and submerge all use the prefix sub-."
+  }
+]

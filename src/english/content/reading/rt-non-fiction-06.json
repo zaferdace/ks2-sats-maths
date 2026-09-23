@@ -1,0 +1,224 @@
+{
+  "id": "rt-non-fiction-06",
+  "title": "Stargazing: How to Find the North Star",
+  "genre": "non-fiction",
+  "level": 1,
+  "paragraphs": [
+    "Have you ever gazed up at the night sky and wondered how anyone finds their way around it? On a clear, dark night, you may see thousands of glittering stars, and at first they can look like a jumble of dots. This guide will show you how to find one of the most useful stars of all: the North Star.",
+    "Getting ready",
+    "First, choose a clear night with no clouds. Then, with an adult, find a safe place to watch from, such as a garden or a field, well away from street lights and brightly lit windows. The darker the sky, the more stars you will be able to see. Wrap up warmly, even in summer, because you will be standing still for quite a long time.",
+    "Once you are outside, be patient. Your eyes need about twenty minutes to get used to the dark, and as they adjust, more and more stars will seem to appear. Do not look at a phone screen during this time, or your eyes will have to start all over again. If you need a torch, cover the end with red cellophane, because red light does not spoil your night vision as much as white light.",
+    "Finding the North Star",
+    "Next, look for the Plough. The Plough is a group of seven bright stars that make the shape of a saucepan with a long, bent handle. It is part of a larger star pattern called the Great Bear. From Britain, you can see the Plough on every clear night of the year, although sometimes it is high above your head and sometimes low in the sky.",
+    "Then find the two stars at the end of the saucepan’s bowl, furthest from the handle. These are called the pointers. Imagine a line running through them and out of the top of the saucepan. Follow that line for about five times the distance between the two pointers, and you will reach a fairly bright star on its own. Well done – you have found the North Star!",
+    "The North Star, which is also called Polaris, is not the brightest star in the sky, but it is very special. It sits almost exactly above the North Pole, so while the other stars slowly wheel around it during the night, the North Star hardly moves at all. Whenever you face it, you are facing north. For hundreds of years, sailors and travellers have used it to find their way.",
+    "Finally, practise on other clear nights. Before long, you will spot the North Star in seconds, and you will be able to find north whenever the stars are out."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy one word that means shining with lots of tiny flashes of light.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": [
+        "glittering"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nWhy should you wrap up warmly, even in summer? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "because it often snows at night",
+        "because you will have to walk a long way",
+        "because you will be standing still for quite a long time",
+        "because warm clothes help your eyes to get used to the dark"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nWhy do you think the writer tells you to watch from a place well away from street lights? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "because street lights make the sky less dark, so you will see fewer stars",
+        "because street lights are too hot to stand near",
+        "because stars are easier to see through a window",
+        "because the Plough can only be seen from the countryside"
+      ],
+      "pick": 1,
+      "answer": [
+        0
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 4.\nIf you need a torch, what colour should you make its light?",
+      "paragraph": 4,
+      "kind": "text",
+      "accept": [
+        "red",
+        "red light",
+        "red torch",
+        "red colour",
+        "it should be red",
+        "make it red",
+        "red cellophane"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 4.\n…red light does not **spoil** your night vision as much as white light.\nWhich word is closest in meaning to **spoil**? Tick one.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "improve",
+        "test",
+        "ruin",
+        "share"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "You should choose a night with no clouds.",
+        "Looking at a phone screen helps your eyes to get used to the dark.",
+        "The Plough can only be seen in winter.",
+        "The North Star hardly moves during the night."
+      ],
+      "answer": [
+        true,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nThe writer says that the stars of the Plough “make the shape of a saucepan with a long, bent handle”.\nWhy has the writer described the Plough like this? Tick one.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "to show that the Plough is used for cooking",
+        "to help the reader picture its shape, so that they can spot it in the sky",
+        "to explain why the Plough is so bright",
+        "to suggest that the Plough is very small"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nWhy do you think these two stars are called “the pointers”? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "because they are the sharpest stars in the sky",
+        "because they are shaped like arrows",
+        "because they point towards the saucepan’s handle",
+        "because they point the way to the North Star"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at paragraph 8.\nWhy has the North Star been so useful to sailors and travellers? Explain, using evidence from the text.",
+      "paragraph": 8,
+      "kind": "self",
+      "model": "The North Star shows people which way is north, because “whenever you face it, you are facing north”, so sailors and travellers could work out which direction they were going in. It is also a star they could rely on, because it “hardly moves at all” while the other stars wheel around it, so it stays in the same place all night.",
+      "points": [
+        "Explains that it shows which way is north, so travellers could work out their direction",
+        "Explains that it stays in almost the same place all night (it hardly moves), so it can be relied on"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Some paragraphs begin with the words **First**, **Next**, **Then** and **Finally**.\nWhy has the writer used these words? Tick one.",
+      "kind": "choice",
+      "options": [
+        "to show which stars are the brightest",
+        "to make the guide sound like a poem",
+        "to show the order in which you should do things",
+        "to tell the reader how long each step takes"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these steps from 1 to 5 to show the order in which the guide tells you to do them.",
+      "kind": "order",
+      "items": [
+        "Look for the Plough.",
+        "Choose a clear night with no clouds.",
+        "Follow a line through the pointers.",
+        "Wait about twenty minutes for your eyes to get used to the dark.",
+        "Find a safe place away from street lights."
+      ],
+      "answer": [
+        1,
+        4,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "It tells the story of a sailor who used the stars to find his way home.",
+        "It explains why some stars are brighter than others.",
+        "It explains how to get ready to look at the stars and how to use the Plough to find the North Star.",
+        "It describes how the Plough got its name."
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    }
+  ]
+}

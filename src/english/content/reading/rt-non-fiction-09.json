@@ -1,0 +1,222 @@
+{
+  "id": "rt-non-fiction-09",
+  "title": "Your Amazing Heart",
+  "genre": "non-fiction",
+  "level": 2,
+  "paragraphs": [
+    "Place your hand on your chest, just to the left of the middle, and keep very still. Can you feel a steady thud, thud, thud? That is your heart at work. Whether you are running, reading or fast asleep, it keeps on beating, around 100,000 times every day. It never takes a day off, yet most of the time you do not even notice it.",
+    "A powerful pump",
+    "Your heart is a muscle about the size of your fist. It sits in the middle of your chest, tilted slightly to the left, and it is protected by your ribs. Inside, it is divided into four spaces called chambers: two at the top and two at the bottom. It also has valves, which work like doors that open to let blood through and then snap shut to stop it flowing backwards. The “lub-dub” sound of a heartbeat is made by these valves closing.",
+    "A journey around the body",
+    "Your heart is really two pumps side by side. The right side pumps blood to your lungs, where it picks up oxygen from the air you have breathed in. This blood, now rich in oxygen, flows back to the left side of your heart. The left side is the stronger pump: it pushes the blood out to every other part of your body, from your brain to the tips of your toes.",
+    "Blood travels through tubes called blood vessels. Arteries carry blood away from the heart, and veins carry it back again. The smallest blood vessels, called capillaries, are thinner than a hair. As blood flows through them, it delivers oxygen and nutrients from your food to every part of your body, and it collects waste, such as carbon dioxide, which you breathe out. Then the blood, which has given away much of its oxygen, returns through the veins to the right side of your heart, and the journey begins all over again.",
+    "People have not always understood how the heart works. For more than a thousand years, doctors believed an ancient idea that blood was made in the liver and then used up by the body, rather like fuel in a fire. In 1628, an English doctor called William Harvey showed that this was wrong. By carefully studying animals, and the veins in people’s arms, he proved that the same blood travels round and round the body, pumped by the heart. At first, many doctors refused to believe him, but today we know that he was right.",
+    "Looking after your heart",
+    "When you exercise, your muscles need extra oxygen, so your heart beats faster and harder to deliver it. You can feel this for yourself by finding your pulse: press two fingers gently on the inside of your wrist, just below your thumb, and count the beats. Your heart is a muscle, and like other muscles, it grows stronger when it is exercised regularly. To keep your heart healthy for the whole of your life, be active every day, eat plenty of fruit and vegetables, and never smoke."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nWhy has the writer used the words “thud, thud, thud”? Tick one.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "to show that the heart only beats three times",
+        "to show that the heart is broken",
+        "to help the reader imagine the sound and feel of a heartbeat",
+        "to describe the sound of someone running"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "According to paragraph 1, about how many times does your heart beat every day? Tick one.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "around 1,000",
+        "around 10,000",
+        "around 100,000",
+        "around 1,000,000"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nFind and copy one word that means kept safe from harm.",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "protected"
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nWhat are the four spaces inside the heart called?",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "chambers",
+        "chamber",
+        "they are called chambers",
+        "heart chambers"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraphs 5 and 6.\nWhy do you think the blood has to keep going back to the lungs? Tick one.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "because the lungs make new blood",
+        "to collect more nutrients from your food",
+        "because it gives away oxygen as it travels around the body, so it needs to collect more",
+        "because the lungs are the strongest part of the heart"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\n…it **delivers** oxygen and nutrients from your food to every part of your body…\nWhich word is closest in meaning to **delivers**? Tick one.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "hides",
+        "brings",
+        "wastes",
+        "makes"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "Your heart is about the size of a football.",
+        "Valves stop blood from flowing backwards.",
+        "Arteries carry blood away from the heart.",
+        "The left side of the heart pumps blood to the lungs."
+      ],
+      "answer": [
+        false,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these stages from 1 to 5 to show the journey of the blood, starting when it leaves the right side of the heart.",
+      "kind": "order",
+      "items": [
+        "The blood picks up oxygen in the lungs.",
+        "The blood returns to the right side of the heart through the veins.",
+        "The right side of the heart pumps the blood to the lungs.",
+        "The left side of the heart pumps the blood out to the body.",
+        "The blood flows back to the left side of the heart."
+      ],
+      "answer": [
+        2,
+        0,
+        4,
+        3,
+        1
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nWhy do you think many doctors refused to believe William Harvey at first? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "because he was not a real doctor",
+        "because he had never studied the heart",
+        "because he said that blood was made in the liver",
+        "because his idea was very different from what doctors had believed for more than a thousand years"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why has the writer included paragraph 7 in the text? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "to give instructions for finding your pulse",
+        "to explain how people found out that the heart pumps blood round and round the body",
+        "to describe what capillaries are",
+        "to show that doctors today still do not understand the heart"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "The title of the text is **Your Amazing Heart**.\nWhy do you think the writer describes the heart as amazing? Explain, using evidence from the text.",
+      "kind": "self",
+      "model": "The heart is amazing because it never stops working: it beats “around 100,000 times every day”, even while you are asleep. It is also really “two pumps side by side”: the right side sends blood to the lungs to pick up oxygen, and the left side pushes it “to every other part of your body”. It can even change to meet your needs, because when you exercise, it “beats faster and harder”, and it “grows stronger when it is exercised regularly”.",
+      "points": [
+        "It never stops working, e.g. it beats around 100,000 times a day, even while you sleep",
+        "It does a complicated job, e.g. it is two pumps in one, sending blood to the lungs and then to every part of the body",
+        "It changes to meet the body’s needs, e.g. it beats faster when you exercise and grows stronger with regular exercise"
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "The heart is a muscle that only works hard when you exercise.",
+        "The heart is a powerful pump that keeps blood moving around the body, and there are ways to help it stay healthy.",
+        "William Harvey was the first person to find out that the heart has four chambers.",
+        "Blood is made in the liver and then used up by the body."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    }
+  ]
+}

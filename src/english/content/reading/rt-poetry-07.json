@@ -1,0 +1,179 @@
+{
+  "id": "rt-poetry-07",
+  "title": "Run, Ravi, Run!",
+  "genre": "poetry",
+  "level": 2,
+  "paragraphs": [
+    "The field is marked with bright white lanes,\nas straight as the lines in a new exercise book.\nRavi crouches at the start,\nhis tummy full of butterflies,\nhis legs as wobbly as jelly.\nThe whistle shrieks. The crowd begins to chant:\nRun, Ravi, run!",
+    "He shoots off the line like an arrow.\nThe wind roars in his ears,\nthe finishing tape flutters far ahead,\nand for ten long strides\nhe is in front of everyone.\nRun, Ravi, run!",
+    "Then his shoelace catches.\nThe world tips sideways\nand the ground rushes up to meet him:\ngrass in his mouth, a sting in his knee.\nThe others thunder past\nin a blur of red and blue.\nThe chanting stops.",
+    "Ravi could stay there.\nHe could limp to the side\nand pretend he doesn’t care.\nBut then, from the crowd, one small voice:\nhis little sister Priya, high on Dad’s shoulders,\nshouting as loudly as she can,\nRun, Ravi, run!",
+    "So he gets up.\nHe runs with a grazed knee and a flapping lace,\nlong after the winner has crossed the line,\nand one by one, the crowd joins in\nuntil the whole field roars:\nRun, Ravi, run!",
+    "He finishes last.\nNo medal, no ribbon, no sticker,\njust the loudest cheer of the whole day\nand Priya’s arms around his neck.\nWell run, Ravi.\nWell run."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 1.\nHow does Ravi feel at the start of the race? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": ["bored", "nervous", "angry", "sleepy"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q2",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 1.\nFind and copy **one** word that shows the whistle makes a sudden, loud, high sound.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": ["shrieks"]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 3.\nWhat makes Ravi fall? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "Another runner pushes him.",
+        "His shoelace catches.",
+        "He slips on wet grass.",
+        "He trips over the finishing tape."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 3.\nWhy does the chanting stop? Tick **one**.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "The race has finished.",
+        "The crowd has lost their voices.",
+        "The crowd is shocked and worried because Ravi has fallen.",
+        "Ravi has won the race."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 4.\n‘He could limp to the side’\nWhich word is closest in meaning to **limp**? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": ["sprint", "hobble", "skip", "march"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 4.\nAfter Ravi falls, who is the first person in the crowd to shout to him?",
+      "paragraph": 4,
+      "kind": "text",
+      "accept": [
+        "Priya",
+        "his sister",
+        "his little sister",
+        "his sister Priya",
+        "his little sister Priya",
+        "Priya his sister",
+        "Priya his little sister",
+        "his sister called Priya",
+        "sister Priya",
+        "little sister Priya",
+        "Ravi's sister Priya",
+        "Ravi's little sister Priya",
+        "Ravi's sister",
+        "Ravi's little sister",
+        "Ravis sister",
+        "Ravis little sister",
+        "sister",
+        "little sister"
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The lanes on the field are white.",
+        "Ravi is in front of everyone for the whole race.",
+        "The other runners pass Ravi in a blur of red and blue.",
+        "Ravi wins a medal."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q8",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nWhy does the poet keep repeating ‘Run, Ravi, run!’? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "to show that Ravi is running away from the crowd",
+        "to show that people keep cheering Ravi on",
+        "to show that the race is very short",
+        "to show that Ravi keeps falling over"
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at verse 6.\nWhy does the poem end with ‘Well run, Ravi.’ instead of ‘Run, Ravi, run!’? Tick **one**.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "because Ravi has to run the race again",
+        "because the crowd is cross that Ravi came last",
+        "because the race is over, and Ravi is being praised for how he ran",
+        "because Ravi has won the race"
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at verses 5 and 6.\nRavi finishes last, but he gets ‘the loudest cheer of the whole day’. Why?\nExplain, using evidence from the poem.",
+      "kind": "self",
+      "model": "Ravi gets the loudest cheer because he does not give up. He falls and hurts his knee, but ‘he gets up’ and keeps running, even ‘long after the winner has crossed the line’. The crowd admire how brave and determined he is, so ‘one by one, the crowd joins in’ to cheer him all the way to the finish.",
+      "points": [
+        "Explains that Ravi fell but did not give up and finished the race, with evidence, such as ‘So he gets up.’ or ‘long after the winner has crossed the line’.",
+        "Explains that the crowd admired his courage or determination, with evidence, such as ‘one by one, the crowd joins in’."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "Ravi practises hard and wins his sports day race.",
+        "Ravi hurts his knee and has to stop running for the rest of the day.",
+        "Priya wins her race, and Ravi cheers for her.",
+        "Ravi falls over in a race, but he gets up and finishes, and the crowd cheers him loudly."
+      ],
+      "pick": 1,
+      "answer": [3]
+    }
+  ]
+}

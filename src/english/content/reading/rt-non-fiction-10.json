@@ -1,0 +1,222 @@
+{
+  "id": "rt-non-fiction-10",
+  "title": "Should We Stop Changing the Clocks?",
+  "genre": "non-fiction",
+  "level": 3,
+  "paragraphs": [
+    "Twice a year, something strange happens all over Britain. On the last Sunday in March, the clocks go forward by one hour, and everyone loses an hour in bed. On the last Sunday in October, they go back again, and everyone gains an extra hour. Many people remember which way to turn their clocks with the saying “spring forward, fall back”, which uses the American word for autumn. But why do we change the clocks at all – and is it time to stop?",
+    "In Britain, the idea came from a builder named William Willett. Early one summer morning, as he rode his horse near his home, he noticed that the sun was already shining, yet the blinds on many houses were still pulled down. To Willett, this was a terrible waste. In 1907, he published a leaflet called “The Waste of Daylight”, suggesting that the clocks should be moved forward during the summer months. Sadly, Willett died in 1915, a year before his idea was put into action. In 1916, during the First World War, Britain began changing its clocks in order to save coal: lighter evenings meant that less fuel was needed for lighting.",
+    "Reasons to keep changing the clocks",
+    "Supporters of the present system say that it gives us the best of both worlds. In summer, putting the clocks forward gives us long, light evenings for playing outside, sport and gardening. In winter, putting them back means that it gets light earlier in the morning. This matters most in the north of Britain, where winter days are shortest. If the clocks stayed forward all winter, the sun would not rise until about ten o’clock on the darkest mornings in parts of Scotland.",
+    "In fact, Britain has tried this before. From 1968 to 1971, as an experiment, the clocks were kept one hour ahead all year round. Some people enjoyed the lighter winter afternoons, but in Scotland, many children had to walk to school in the dark, and farmers, builders and postal workers complained that they had to start work in darkness. “I remember walking to school with a torch, and the frost still sparkling under the street lamps,” says Morag Innes, who grew up in the Highlands. In 1970, Members of Parliament voted by a huge majority to end the experiment.",
+    "Reasons to stop changing the clocks",
+    "Others argue that changing the clocks causes more problems than it solves. When the clocks go forward in spring, many people lose sleep, and it can take several days for their body clocks to adjust. Some scientists believe that tired drivers are more likely to have accidents in the days after the change. “Every spring, I feel like a zombie for a week,” says Dan Okafor, a nurse who starts work at seven o’clock in the morning. Animals can be affected, too: a cow that is used to being milked at the same time every day has no idea that the farmer’s clock has changed.",
+    "People who want to stop changing the clocks also point out that many countries manage perfectly well without doing so. Iceland keeps the same time all year round, and most countries near the equator do not change their clocks either, because the length of their days hardly changes during the year. If Britain kept summer time all year, they say, winter evenings would be lighter, so more people could travel home from school and work in daylight.",
+    "So, should Britain stop changing its clocks? The answer may depend on where you live. Families in the south of England might welcome lighter winter evenings, but for people in the far north of Scotland, it would mean mornings that stay dark until about ten o’clock. Both sides agree on one thing: daylight is precious. The question is how best to use it. What do you think?"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nWhat was William Willett’s job?",
+      "paragraph": 2,
+      "kind": "text",
+      "accept": [
+        "builder",
+        "a builder",
+        "he was a builder"
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 2.\nWhy did Willett think that the pulled-down blinds were a waste? Tick one.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "because the blinds were old and needed to be replaced",
+        "because he wanted to sell more blinds",
+        "because people were sleeping while it was light, instead of making use of the daylight",
+        "because he thought that sunlight was bad for people’s health"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraphs 4 and 5.\nWhy do you think many children in Scotland had to walk to school in the dark during the experiment? Tick one.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "because there were no street lamps in Scotland",
+        "because the experiment only took place in Scotland",
+        "because schools in Scotland started at six o’clock",
+        "because in the north of Britain, the sun rises later on winter mornings"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nWhich of these groups of workers complained about the experiment? Tick two.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "farmers",
+        "nurses",
+        "postal workers",
+        "shopkeepers"
+      ],
+      "pick": 2,
+      "answer": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nFind and copy one word that means a test that is carried out to find out what will happen.",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": [
+        "experiment"
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\n…it can take several days for their body clocks to **adjust**.\nWhich word is closest in meaning to **adjust**? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "stop",
+        "adapt",
+        "break",
+        "speed up"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\n“Every spring, I feel like a zombie for a week,” says Dan Okafor.\nWhat does Dan mean? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "He is frightened of the dark spring mornings.",
+        "He feels very tired and only half awake.",
+        "He is excited that summer is coming.",
+        "He is cross with his patients."
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "William Willett died before Britain first changed its clocks.",
+        "Britain first changed its clocks in order to save coal.",
+        "During the experiment, the clocks were kept one hour ahead only in summer.",
+        "Iceland changes its clocks twice a year."
+      ],
+      "answer": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happened.",
+      "kind": "order",
+      "items": [
+        "Britain began changing its clocks to save coal.",
+        "Members of Parliament voted to end the experiment.",
+        "Willett noticed that many blinds were still pulled down on a summer morning.",
+        "Britain began an experiment, keeping its clocks one hour ahead all year round.",
+        "Willett published a leaflet called “The Waste of Daylight”."
+      ],
+      "answer": [
+        2,
+        4,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why has the writer used the headings **Reasons to keep changing the clocks** and **Reasons to stop changing the clocks**? Tick one.",
+      "kind": "choice",
+      "options": [
+        "to persuade the reader that the clocks should never change again",
+        "to tell the story of William Willett’s life in order",
+        "to set out the arguments on both sides clearly, so that readers can make up their own minds",
+        "to give instructions for changing the time on a clock"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "Look at paragraph 9.\nThe writer says, “The answer may depend on where you live.”\nWhy do you think the writer says this? Explain, using evidence from the text.",
+      "paragraph": 9,
+      "kind": "self",
+      "model": "People in different parts of Britain would be affected in different ways. In the north, winter days are shortest, so if the clocks stayed forward, “the sun would not rise until about ten o’clock” in parts of Scotland. When Britain tried this from 1968 to 1971, many children in Scotland “had to walk to school in the dark”. People in the south of England, however, “might welcome lighter winter evenings”, so they might be happy to stop changing the clocks.",
+      "points": [
+        "In the north, winter mornings would stay dark until about ten o’clock if the clocks stayed forward",
+        "Evidence from the experiment, e.g. children in Scotland had to walk to school in the dark, or workers had to start work in darkness",
+        "People in the south might welcome lighter winter evenings, so they might prefer to stop changing the clocks"
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "William Willett was a builder who loved riding his horse early in the morning.",
+        "The text argues that Britain should keep summer time all year round.",
+        "The text explains how to change the time on a clock.",
+        "The text explains why Britain changes its clocks and sets out the arguments for and against stopping, leaving readers to decide."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

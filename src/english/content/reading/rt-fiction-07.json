@@ -7,11 +7,12 @@
     "When Gran went to stay with her sister for a week, she left her parrot with Omar's family. 'He's no trouble at all,' she promised, handing over a tall cage covered with a blanket. 'He just likes a little chat.' The parrot was grey, with a tail as red as a postbox. He tilted his head and studied Omar with one bright, beady eye.",
     "The next morning, the doorbell rang while Dad was making pancakes. He hurried to the door, still holding the frying pan, but nobody was there. Ten minutes later, the bell rang again. 'Not again!' Dad groaned. Once more, the doorstep was empty.",
     "By lunchtime, Dad had answered the door eleven times. He had peeped through the letterbox and hidden behind the curtains, hoping to catch the prankster, but nobody ever came. Then, as Omar sat doing his homework at the kitchen table, he heard it: a perfect ding-dong, right behind him. He spun round. The parrot was sitting on his perch, looking extremely pleased with himself.",
-    "'Dad!' Omar yelled. 'I've caught the prankster!' Dad rushed in just in time to see the parrot puff out his chest and go, 'Ding-dong!' In a gruff voice exactly like Dad's, the parrot added, 'Not again!' Dad stared at the cage with his mouth wide open. Then he laughed so hard that he had to sit down.",
+    "Omar yelled for Dad, who rushed in just in time to see the parrot puff out his chest and go, 'Ding-dong!' In a gruff voice exactly like Dad's, the parrot added, 'Not again!' Dad stared at the cage with his mouth wide open. Then he laughed so hard that he had to sit down.",
     "Over the next few days, the parrot showed off his whole collection of sounds. He copied the ping of the microwave, so Mum kept opening it to find nothing inside. He copied the ring of Dad's phone, so Dad kept searching under the sofa cushions. He even copied Omar's sneeze, which Omar thought was rather rude.",
     "Omar decided that the parrot should learn something useful instead. Every afternoon, he sat beside the cage with a handful of sunflower seeds. 'Welcome home, Gran!' he said, over and over again. The parrot ate every single seed. Then he went, 'Ding-dong!'",
-    "On Saturday, Gran came to collect him. The whole family gathered round the cage and held their breath. Gran bent down and smiled. 'Hello, my darling,' she said. 'Did you miss me?' The parrot fluffed up his feathers, looked her straight in the eye and announced, in Dad's gruffest voice, 'Not again!'",
-    "For a moment, nobody made a sound. Then Gran began to chuckle, and soon everyone was laughing, even Dad. As Gran carried the cage down the path to her car, a muffled voice came from under the blanket: 'Welcome home, Gran!' Omar grinned. 'Well,' he said, 'at least he learned it in the end.'"
+    "On Saturday, Gran came to collect him. The whole family gathered round the cage and held their breath. Gran bent down and smiled. 'Hello, my darling,' she said. 'Did you miss me?'",
+    "The parrot fluffed up his feathers, looked her straight in the eye and announced, in Dad's gruffest voice, 'Not again!' For a moment, nobody made a sound. Then Gran began to chuckle, and soon everyone was laughing, even Dad.",
+    "As Gran carried the cage down the path to her car, a muffled voice came from under the blanket: 'Welcome home, Gran!' Omar grinned. The parrot had learned it after all, even if his timing was terrible."
   ],
   "questions": [
     {
@@ -67,7 +68,7 @@
       "marks": 2,
       "kind": "self",
       "prompt": "In paragraphs 2 to 4, Dad's feelings change.\nExplain how they change, using evidence from the text.",
-      "model": "At first, Dad is annoyed because he keeps answering the door and nobody is there. When the bell rings again, 'Not again!' Dad groaned. When he finds out that the parrot has been making the noise, he is amazed and then thinks it is funny. He 'stared at the cage with his mouth wide open' and then 'laughed so hard that he had to sit down'.",
+      "model": "At first, Dad is annoyed because he keeps answering the door and nobody is there. When the bell rings again, he groans, 'Not again!' When he finds out that the parrot has been making the noise, he is amazed and then thinks it is funny. He 'stared at the cage with his mouth wide open' and then 'laughed so hard that he had to sit down'.",
       "points": [
         "Explains that at first Dad is annoyed or fed up, with evidence, e.g. 'Not again!' Dad groaned.",
         "Explains that when he finds out about the parrot he is amazed or amused, with evidence, e.g. he 'laughed so hard that he had to sit down'."
@@ -129,7 +130,7 @@
       "domain": "2f",
       "marks": 1,
       "kind": "choice",
-      "prompt": "The words 'Not again!' appear in paragraphs 2, 4 and 7.\nWhy do you think the writer repeats them?\nTick one.",
+      "prompt": "The words 'Not again!' appear in paragraphs 2, 4 and 8.\nWhy do you think the writer repeats them?\nTick one.",
       "options": [
         "To build up to a joke: the parrot learns Dad's words and then says them to Gran.",
         "To show that Dad says 'Not again!' whenever he is happy.",

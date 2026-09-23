@@ -114,7 +114,7 @@
     "prompt": "Which word is an antonym of the underlined word?\nKai found the spelling test really __hard__.",
     "input": {"kind": "choice", "options": ["soft", "easy", "long", "strict"], "pick": 1},
     "answer": [1],
-    "explain": "Here hard means difficult, so its opposite is easy; soft is the opposite of hard only for materials."
+    "explain": "Here hard means difficult, so its opposite is easy, not soft."
   },
   {
     "id": "gi-antonyms-014",
@@ -148,8 +148,8 @@
     "type": "g-antonyms",
     "level": 2,
     "prompt": "Write a word that means the opposite of **arrived** to complete the sentence.",
-    "input": {"kind": "text", "before": "The train", "after": "from the station at nine o'clock."},
-    "answer": ["departed", "left"],
+    "input": {"kind": "text", "before": "Yesterday, the train", "after": "from the station at nine o'clock."},
+    "answer": ["departed", "left", "set off"],
     "explain": "Arrived means came in, so the opposite is departed or left."
   },
   {

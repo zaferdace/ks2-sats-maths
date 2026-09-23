@@ -1,0 +1,195 @@
+{
+  "id": "rt-fiction-09",
+  "title": "Calling Out",
+  "genre": "fiction",
+  "level": 2,
+  "paragraphs": [
+    "Every Saturday, long before the rest of the city was awake, the market under the railway arches burst into life. Traders heaved crates from their vans, striped awnings flapped in the breeze, and the air filled with the smells of fresh bread, roasting coffee and ripe fruit. In the middle of it all stood Grandad's fruit and vegetable stall, and behind it stood Grandad, whose booming voice could be heard from one end of the market to the other.",
+    "'Sweet, juicy pears!' he would bellow. 'Strawberries as red as rubies!' But this Saturday, when Grandad opened his mouth, only a croak came out, like the creak of a rusty gate. He had caught a terrible cold. 'You'll have to do the calling today,' he whispered to Amir, pressing a hand to his throat.",
+    "Amir's heart sank. He loved helping at the stall: he could stack oranges into perfect pyramids and count out change faster than anyone. Shouting in front of strangers, however, was a different matter altogether. He took a deep breath and opened his mouth. 'Apples,' he said. It came out as barely more than a whisper. A woman with a pushchair walked straight past without even glancing at the stall.",
+    "Opposite them, Aisha was bellowing about her fresh mackerel, and a crowd had gathered around the fish stall. By eleven o'clock, Grandad had sold only three bags of potatoes, and in the warm sunshine the strawberries were beginning to soften. Grandad said nothing, but Amir noticed him glancing anxiously at the strawberries and then at the cash box, which was almost empty.",
+    "Amir stared at the strawberries. Then he remembered the silly rhymes he made up at bedtime to make his little sister giggle. Before he could change his mind, he dragged an empty crate to the front of the stall and climbed on to it. His knees were wobbling, but he cupped his hands around his mouth. 'Strawberries, strawberries, juicy and sweet! The tastiest treat that you ever could eat!'",
+    "His voice squeaked on the last word, and his cheeks burned. But a man with a newspaper stopped and chuckled, and a girl tugged at her mother's sleeve and pointed. Amir tried another. 'Potatoes for chips and onions for stew, and a big shiny apple for someone like you!' This time, his voice did not squeak at all.",
+    "Soon a small crowd had gathered in front of the stall. People laughed and clapped, and children shouted out fruit and vegetables for Amir to rhyme, from bananas to cabbages. Amir made up a rhyme for every one, while Grandad filled paper bags as fast as his hands could move. Even Aisha wandered over from the fish stall to listen, wiping her hands on her apron.",
+    "By two o'clock, the stall was almost bare. Every strawberry had gone, and the only thing left was one knobbly potato that nobody seemed to want. Grandad squeezed Amir's shoulder. 'You've found your voice,' he croaked, and his eyes were shining.",
+    "The next Saturday, Grandad's cold had gone, and his booming voice was back. As the first shoppers drifted through the arches, he filled his lungs to shout. Then he stopped, winked at Amir and pushed the empty crate towards him with his foot."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nWhich **two** of these smells does the writer mention?\nTick two.",
+      "options": ["fresh bread", "frying onions", "roasting coffee", "cut flowers"],
+      "pick": 2,
+      "answer": [0, 2]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\n'only a croak came out, like the creak of a rusty gate'\nWhat does this suggest about Grandad's voice?\nTick one.",
+      "options": [
+        "It was as loud as ever.",
+        "It sounded rough and scratchy.",
+        "It was clear and sweet.",
+        "It sounded high and cheerful."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\n'It came out as **barely** more than a whisper.'\nWhich word is closest in meaning to **barely**?\nTick one.",
+      "options": ["hardly", "much", "always", "loudly"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhy did Amir's heart sink?\nTick one.",
+      "options": [
+        "He did not like helping at the stall.",
+        "He was nervous about shouting in front of strangers.",
+        "He had forgotten how to count out change.",
+        "He wanted to work on the fish stall instead."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\nFind and copy **one** word that shows Grandad was worried.",
+      "accept": ["anxiously"]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 5,
+      "prompt": "Look at paragraph 5.\nWhat did Amir climb on to?",
+      "accept": [
+        "an empty crate",
+        "empty crate",
+        "the empty crate",
+        "a crate",
+        "crate",
+        "the crate",
+        "on to an empty crate",
+        "onto an empty crate",
+        "on to the empty crate",
+        "onto the empty crate",
+        "on to a crate",
+        "onto a crate",
+        "on to the crate",
+        "onto the crate"
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nWhy did Amir's cheeks burn?\nTick one.",
+      "options": [
+        "He had caught Grandad's cold.",
+        "He was cross with the man with the newspaper.",
+        "He had just eaten a hot pepper.",
+        "He was embarrassed because his voice had squeaked."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "Grandad's stall sold fruit and vegetables.",
+        "A woman with a pushchair bought some apples.",
+        "Aisha ran the flower stall opposite Grandad's.",
+        "Grandad's cold had gone by the next Saturday."
+      ],
+      "answer": [true, false, false, true]
+    },
+    {
+      "id": "q9",
+      "domain": "2e",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 9,
+      "prompt": "Look at paragraph 9.\nWhat is Amir most likely to do next?\nTick one.",
+      "options": [
+        "Go home, because he is still too shy to shout.",
+        "Climb on to the crate and call out his rhymes.",
+        "Help Aisha to sell her fish.",
+        "Ask Grandad to do all the calling."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "prompt": "At the start of the story, Amir is too shy to call out, but by the end he is confident.\nExplain how the writer shows this change, using evidence from the text.",
+      "model": "At first, Amir is nervous. When he tries to call out, 'It came out as barely more than a whisper', and when he climbs on to the crate, 'His knees were wobbling'. When a man chuckles and a girl points at his first rhyme, he feels encouraged and tries another. By the end he is confident: 'This time, his voice did not squeak at all', and he 'made up a rhyme for every one' while a crowd gathered.",
+      "points": [
+        "Shows that Amir is shy or nervous at first, with evidence, e.g. 'It came out as barely more than a whisper' or 'His knees were wobbling'.",
+        "Shows that he becomes confident, with evidence, e.g. 'This time, his voice did not squeak at all' or he 'made up a rhyme for every one'.",
+        "Explains what helped him to change, e.g. people stopped, laughed and clapped at his rhymes, so he felt encouraged."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of the whole story?\nTick one.",
+      "options": [
+        "Grandad loses his voice, so he closes his stall and goes home.",
+        "Amir and Aisha have a competition to see who can shout the loudest.",
+        "A boy's rhymes are so bad that nobody buys anything.",
+        "A shy boy finds his voice by making up rhymes and helps Grandad to sell almost everything on the stall."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "A girl tugs at her mother's sleeve and points.",
+        "Grandad pushes the crate towards Amir with his foot.",
+        "A woman with a pushchair walks straight past the stall.",
+        "Aisha wanders over to listen.",
+        "Grandad finds that he can only croak."
+      ],
+      "answer": [4, 2, 0, 3, 1]
+    }
+  ]
+}

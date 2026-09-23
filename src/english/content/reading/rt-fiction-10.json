@@ -1,0 +1,180 @@
+{
+  "id": "rt-fiction-10",
+  "title": "First Rain",
+  "genre": "fiction",
+  "level": 3,
+  "paragraphs": [
+    "Kai had seen Earth every single day of his life, but only ever through glass. From the observation deck of Crescent Base, it hung in the black sky like a marble streaked with blue and white, so close that he sometimes felt he could reach out and pluck it from the darkness. Home, for Kai, was a string of domes and tunnels half buried in grey dust. The air was pumped in, the temperature never changed, and the only plants were lettuces, growing in tidy rows under purple lamps.",
+    "Now, at the age of eleven, he was going to Earth for the first time, to meet Gran. For months, he had exercised on a treadmill with heavy weights strapped to his ankles, because the doctors had warned him that Earth's gravity was six times stronger than the Moon's. Even so, when the shuttle landed after its three-day journey and Kai tried to stand, he gasped. His arms and legs felt as though they had been filled with wet sand, and his head seemed far too heavy for his neck.",
+    "But the gravity was not the worst part. When the doors of the spaceport slid open, Kai stopped dead. Above him there was no dome and no ceiling: just a vast, pale-blue emptiness that stretched on for ever. His hand flew to his throat, feeling for the seal of a helmet that was not there. At home, an opening to the sky meant only one thing. Alarms would wail, emergency doors would slam shut, and the precious air would come rushing out into space. 'It's all right,' Mum said gently, taking his hand. 'The air here doesn't go anywhere. The whole planet holds it down.' Kai nodded, but all the way to Gran's cottage he kept his eyes fixed firmly on the ground.",
+    "Gran lived at the edge of a village, where the lane ran out and the fields began. She was smaller than she looked on the video screen, and she hugged him very carefully, as if he might break. That night, Kai lay awake in a narrow bed under a sloping ceiling, listening. On the Moon, the only sound at night was the steady hum of the air machines. Here, everything seemed to have something to say: the wind whispered in the chimney, an owl hooted somewhere in the darkness, and a dog barked on a distant farm.",
+    "The next morning, Gran led him out into the garden. The grass was cool and damp beneath his bare feet, and Kai crouched down to run his fingers through it, amazed that nobody had planted it in rows. A small brown bird hopped along the fence, watching him with its head on one side. On Earth, it seemed, things were simply allowed to grow wherever they liked.",
+    "Then the sky began to change. Clouds the colour of wet slate rolled over the hills, the light grew dim, and a strange, fresh smell rose from the earth. Something cold struck Kai's cheek, then his arm, then the top of his head. He looked up in alarm and saw water falling out of the sky: thousands upon thousands of drops, pattering on the leaves and drumming on the roof of the shed. On the Moon, every drop of water was measured, cleaned and used again, and wasting it was the worst thing anyone could do. 'Gran!' he yelled. 'The sky's leaking!'",
+    "Gran laughed so much that she had to hold on to the fence. 'That's rain, love,' she said, when she could speak again. 'It's meant to do that.'",
+    "Kai stood very still. He had read about rain and watched films of it, but nothing had told him how it would feel: soft and cool, tapping on his skin like a thousand tiny fingers. He tipped back his head, closed his eyes and let it run down his face. When Mum came out with an umbrella, he shook his head. By the time they went inside, he was soaked to the skin and grinning from ear to ear.",
+    "That night, Kai sent a message to his best friend, Dev, back at Crescent Base. He tried to describe the grass, the birdsong and the enormous sky, but none of the words seemed big enough. In the end, he deleted everything and wrote just one line: 'You have to come and see it for yourself.'"
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 1,
+      "prompt": "Look at paragraph 1.\nWhich **two** things does the writer tell us about Kai's home on the Moon?\nTick two.",
+      "options": ["The air was pumped in.", "Flowers grew in every room.", "The temperature never changed.", "It was built beside a lake."],
+      "pick": 2,
+      "answer": [0, 2]
+    },
+    {
+      "id": "q2",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 2,
+      "prompt": "Look at paragraph 2.\nWhen Kai tried to stand, what did his arms and legs feel as though they had been filled with?",
+      "accept": ["wet sand", "sand", "some wet sand", "some sand"]
+    },
+    {
+      "id": "q3",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\nWhy did Kai's hand fly to his throat?\nTick one.",
+      "options": [
+        "He had a sore throat after the long journey.",
+        "He was used to an open sky meaning danger, so he reached for a helmet.",
+        "He was trying not to shout with excitement.",
+        "He wanted to take off his helmet to breathe the fresh air."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 3,
+      "prompt": "Look at paragraph 3.\n'the **precious** air would come rushing out into space'\nWhich word is closest in meaning to **precious**?\nTick one.",
+      "options": ["valuable", "fresh", "invisible", "noisy"],
+      "pick": 1,
+      "answer": [0]
+    },
+    {
+      "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 4,
+      "prompt": "Look at paragraph 4.\n'everything seemed to have something to say'\nWhat does the writer suggest with these words?\nTick one.",
+      "options": [
+        "The animals on Earth could talk to Kai.",
+        "Kai could hear many different sounds, unlike on the quiet Moon base.",
+        "Gran talked to Kai for most of the night.",
+        "The village was completely silent."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nFind and copy **one** word that shows Kai was frightened when he looked up.",
+      "accept": ["alarm"]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "choice",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nWhy did Kai think that the sky was leaking?\nTick one.",
+      "options": [
+        "He could see a hole in the roof of the shed.",
+        "Gran had told him that the sky often leaked.",
+        "He had never been out in real rain before, so he thought something had gone wrong.",
+        "He was playing a joke on Gran."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "tf",
+      "prompt": "Using information from the text, tick one box in each row to show whether each statement is **true** or **false**.",
+      "statements": [
+        "The journey from the Moon to Earth took three weeks.",
+        "Gran lived at the edge of a village.",
+        "The clouds that rolled over the hills were the colour of wet slate.",
+        "Kai used the umbrella that Mum brought out."
+      ],
+      "answer": [false, true, true, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2h",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Compare how Kai feels about being under the open sky in paragraph 3 with how he feels in paragraph 8.\nTick one.",
+      "options": [
+        "In paragraph 3 he enjoys it, but in paragraph 8 he is frightened.",
+        "In paragraph 3 he is frightened, but in paragraph 8 he is enjoying himself.",
+        "He is frightened in both paragraphs.",
+        "He is bored in both paragraphs."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "kind": "self",
+      "paragraph": 9,
+      "prompt": "Look at paragraph 9.\nWhy do you think Kai deleted everything and wrote just one line?\nExplain fully, using evidence from the text.",
+      "model": "Kai could not describe Earth properly, because 'none of the words seemed big enough'. He had learned for himself that reading about rain and watching films of it was not the same as being there, because 'nothing had told him how it would feel'. Earth had amazed him so much that he wanted his best friend to experience it too, so he told Dev, 'You have to come and see it for yourself.'",
+      "points": [
+        "Explains that Kai could not find the words to describe Earth, e.g. 'none of the words seemed big enough'.",
+        "Explains that Kai has learned that reading or watching films is not the same as being there, e.g. 'nothing had told him how it would feel'.",
+        "Explains that Kai wants Dev to experience Earth for himself, because it has amazed him so much."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "choice",
+      "prompt": "Which is the best summary of the whole story?\nTick one.",
+      "options": [
+        "A family leaves Earth to start a new life on the Moon.",
+        "A boy who has grown up on the Moon visits Earth for the first time and is amazed by it.",
+        "A boy on the Moon base mends a broken air machine.",
+        "A boy visits Gran on the Moon and helps her to grow lettuces."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "kind": "order",
+      "prompt": "Number these events 1 to 5 in the order they happen in the story.",
+      "items": [
+        "Kai lets the rain run down his face.",
+        "Kai hears an owl hooting in the darkness.",
+        "Kai exercises with weights strapped to his ankles.",
+        "Kai sends a message to Dev.",
+        "Kai feels for a helmet that is not there."
+      ],
+      "answer": [2, 4, 1, 0, 3]
+    }
+  ]
+}

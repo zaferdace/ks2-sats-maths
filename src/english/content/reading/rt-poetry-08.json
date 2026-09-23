@@ -1,0 +1,165 @@
+{
+  "id": "rt-poetry-08",
+  "title": "Launch Day",
+  "genre": "poetry",
+  "level": 3,
+  "paragraphs": [
+    "T minus ten minutes.\nMy new blazer is a spacesuit,\nstiff at the shoulders, a size too big.\n“You’ll grow into it,” says Mission Control,\nstraightening my tie for the third time\nand pressing a packed lunch into my hands\nlike emergency supplies.",
+    "Three, two, one.\nThe front door seals behind me like an airlock,\nand the bus blasts off\npast the park, past the corner shop,\npast my old school, where the little ones are lining up,\nuntil everything I know\nshrinks to a dot in the back window.",
+    "The new planet is enormous.\nIts corridors twist like the inside of a shell,\nthe bell wails like a siren,\nand giants in ties stride past me,\nspeaking a language I don’t understand:\nperiods, sets, double science.",
+    "At lunch, I float alone\nin a galaxy of tables\nwhere every seat is saved for someone else.\nMy tray is heavy. My mouth is dry.\nEarth has never felt so far away.",
+    "Then a voice crackles through the silence:\n“Are you lost too?”\nA boy called Noah, his tie crooked,\nhis map held upside down.\nWe laugh. Then, two astronauts together,\nwe set off, charting every corridor and stair,\nuntil the planet starts to shrink.",
+    "At four o’clock, I splash down at the kitchen table.\n“How did it go?” asks Mission Control.\n“Fine,” I say.\nBut what I mean is:\nI landed.\nI explored.\nI can breathe here."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 1.\nWhat does Mission Control do for the third time? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "checks the speaker’s shoes",
+        "counts down from ten",
+        "straightens the speaker’s tie",
+        "brushes the speaker’s hair"
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q2",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nWhat is the speaker really describing? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "a real journey into space",
+        "a dream about becoming an astronaut",
+        "a school trip to watch a rocket launch",
+        "their first day at a new school"
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q3",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 3.\nFind and copy **one** word that shows the corridors are not straight.",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": ["twist"]
+    },
+    {
+      "id": "q4",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at verse 4.\nAt lunch, the speaker floats alone ‘in a galaxy of tables’.\nWhat does this suggest? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "The tables in the dining hall are decorated with stars.",
+        "The speaker feels small and alone in a huge hall full of tables.",
+        "The speaker is enjoying lunch with lots of new friends.",
+        "The tables are floating around the room."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 5.\nNoah and the speaker set off, ‘charting every corridor and stair’.\nWhich word is closest in meaning to **charting**? Tick **one**.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": ["cleaning", "mapping", "decorating", "avoiding"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 5.\n‘until the planet starts to shrink’\nWhat does this suggest? Tick **one**.",
+      "paragraph": 5,
+      "kind": "choice",
+      "options": [
+        "The school is being knocked down.",
+        "The speaker is growing taller.",
+        "The school starts to feel smaller and less frightening as the speaker gets to know it.",
+        "The speaker and Noah get lost again."
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 6.\nWhen Mission Control asks, ‘How did it go?’, what does the speaker reply?",
+      "paragraph": 6,
+      "kind": "text",
+      "accept": ["fine", "fine i say", "i say fine", "it was fine"]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "The speaker’s blazer is a size too big.",
+        "The speaker travels to the new school by train.",
+        "Noah is holding his map upside down.",
+        "At lunch, the speaker sits with a big group of friends."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "The poem begins with a countdown and ends with the speaker splashing down at home.\nWhy has the poet organised the poem like this? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "to show that the speaker is afraid of rockets",
+        "to show that the speaker’s school day was very short",
+        "to present the whole day as one space mission, from launch to landing",
+        "to show that the speaker would rather be an astronaut than go to school"
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "How do the speaker’s feelings change during the day?\nExplain, using evidence from the poem.",
+      "kind": "self",
+      "model": "At the start, the speaker feels nervous and small: the new school is ‘enormous’ and full of ‘giants in ties’ speaking ‘a language I don’t understand’. At lunch, the speaker feels lonely and homesick, floating ‘alone’ where ‘every seat is saved for someone else’, and ‘Earth has never felt so far away’. Meeting Noah changes things: they ‘laugh’ and explore together ‘until the planet starts to shrink’. By the end, the speaker feels relieved and proud. They only say ‘Fine’, but what they mean is ‘I landed’, ‘I explored’ and ‘I can breathe here’.",
+      "points": [
+        "Describes how the speaker feels at the start or at lunch, such as nervous, lost or lonely, with evidence, such as ‘I float alone’ or ‘Earth has never felt so far away’.",
+        "Explains that meeting Noah makes the speaker feel better, with evidence, such as ‘We laugh’ or ‘until the planet starts to shrink’.",
+        "Explains how the speaker feels at the end, such as relieved, proud or at home, with evidence, such as ‘I landed’ or ‘I can breathe here’."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "An astronaut gets lost on a strange planet until another astronaut rescues him.",
+        "A pupil misses the bus and arrives late on the first day at a new school.",
+        "A pupil describes their first day at a new school as if it were a space mission, from a lonely start to a hopeful end.",
+        "Two friends build a model rocket in a science lesson."
+      ],
+      "pick": 1,
+      "answer": [2]
+    }
+  ]
+}

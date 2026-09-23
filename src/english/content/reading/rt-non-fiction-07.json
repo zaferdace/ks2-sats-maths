@@ -1,0 +1,222 @@
+{
+  "id": "rt-non-fiction-07",
+  "title": "Life in a Pond",
+  "genre": "non-fiction",
+  "level": 1,
+  "paragraphs": [
+    "A pond may look like nothing more than a patch of still water, but take a closer look and you will discover a busy hidden world. Ponds are home to a huge variety of creatures, from tiny snails to fierce hunting beetles. Some live on the surface of the water, some swim below it and some creep through the mud at the bottom.",
+    "On the surface",
+    "Pond skaters are insects that can stand on the surface of the water without sinking. Their long legs are covered in tiny hairs that keep them dry, so they skim across the pond as if it were ice. When an insect falls into the water, the pond skater feels the ripples it makes. It dashes over to the struggling insect, grabs it and sucks out its juices.",
+    "Under the water",
+    "In early spring, frogs gather in ponds to lay their eggs, which are called frogspawn. Each egg is a black dot inside a ball of clear jelly. Within a few weeks, tiny tadpoles wriggle out. They grow back legs and then front legs, and their tails slowly disappear. By the summer, they have turned into froglets that are ready to leave the water.",
+    "Among the weeds lurks the great diving beetle, one of the fiercest hunters in the pond. It eats insects, tadpoles and even small fish. Like us, it needs to breathe air, so every so often it swims up to the surface and traps a bubble of air under its wing cases. This works like a diver’s air tank, allowing the beetle to stay underwater for a long time.",
+    "Dragonflies begin their lives in ponds, too. A young dragonfly, called a nymph, hatches from an egg and spends months, or even years, underwater. It hunts other creatures by shooting out its hinged jaw to grab them. When it is fully grown, the nymph climbs up a plant stem and out of the water. Its skin splits open, and the adult dragonfly slowly pulls itself out. It waits for its new wings to dry and harden, and then it flies away.",
+    "Going pond dipping",
+    "Pond dipping is the best way to discover pond life for yourself. Always go with an adult, and kneel at the edge of the pond instead of standing, so that you do not fall in. Pour a little pond water into a white tray. Then sweep your net slowly through the water in a figure of eight, and gently tip your catch into the tray. When you have finished looking, carefully return every creature to the pond."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nHow does a pond skater know that an insect has fallen into the water? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "It hears a loud splash.",
+        "It sees the insect from the bottom of the pond.",
+        "It feels the ripples that the insect makes.",
+        "It smells the insect’s juices."
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q2",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nIt **dashes** over to the struggling insect…\nWhich word is closest in meaning to **dashes**? Tick one.",
+      "paragraph": 3,
+      "kind": "choice",
+      "options": [
+        "floats",
+        "rushes",
+        "creeps",
+        "sinks"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nWhat are frogs’ eggs called?",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": [
+        "frogspawn",
+        "frog spawn",
+        "frog-spawn",
+        "spawn",
+        "they are called frogspawn",
+        "they are called frog spawn"
+      ]
+    },
+    {
+      "id": "q4",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nFind and copy one word that means waits in hiding, ready to attack.",
+      "paragraph": 6,
+      "kind": "text",
+      "accept": [
+        "lurks"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nThe writer says that the bubble of air “works like a diver’s air tank”.\nWhat does this comparison help the reader to understand? Tick one.",
+      "paragraph": 6,
+      "kind": "choice",
+      "options": [
+        "that the beetle is as big as a diver",
+        "that the beetle can breathe water like a fish",
+        "that divers often find beetles in ponds",
+        "that the beetle carries its own supply of air, so it can stay underwater"
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    },
+    {
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Using information from the text, decide whether each statement is true or false.",
+      "kind": "tf",
+      "statements": [
+        "Pond skaters eat insects that fall into the water.",
+        "Frogs lay their eggs in the autumn.",
+        "The great diving beetle eats small fish.",
+        "Dragonfly nymphs live on dry land."
+      ],
+      "answer": [
+        true,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "id": "q7",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nWhy do you think the nymph climbs out of the water before the adult dragonfly comes out of its skin? Tick one.",
+      "paragraph": 7,
+      "kind": "choice",
+      "options": [
+        "so that it can catch more creatures",
+        "so that the adult’s new wings can dry before it flies away",
+        "because the water has become too cold",
+        "so that it can lay its eggs"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Number these events from 1 to 5 to show the order in which they happen in a dragonfly’s life.",
+      "kind": "order",
+      "items": [
+        "The adult dragonfly flies away.",
+        "The nymph climbs up a plant stem.",
+        "A nymph hatches from an egg.",
+        "The nymph’s skin splits open.",
+        "The nymph hunts underwater for months or years."
+      ],
+      "answer": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Why do you think a pond can be a dangerous place for small creatures? Explain, using evidence from the text.",
+      "kind": "self",
+      "model": "A pond is full of hunters. The great diving beetle is “one of the fiercest hunters in the pond”, and it eats “insects, tadpoles and even small fish”. Dragonfly nymphs catch other creatures by “shooting out” their hinged jaws, and pond skaters grab insects that fall into the water and suck out their juices.",
+      "points": [
+        "Explains, with evidence, that one creature hunts others, e.g. the great diving beetle eats insects, tadpoles and even small fish",
+        "Gives evidence of a different hunter, e.g. dragonfly nymphs grab creatures with their hinged jaws, or pond skaters grab insects that fall in"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 9.\nWhy do you think you should pour a little pond water into the tray before you tip your catch into it? Tick one.",
+      "paragraph": 9,
+      "kind": "choice",
+      "options": [
+        "so that the tray does not blow away",
+        "so that the creatures you catch stay in water while you look at them",
+        "so that the tray is easier to carry",
+        "to wash the mud off your net"
+      ],
+      "pick": 1,
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Why has the writer used the headings **On the surface** and **Under the water**? Tick one.",
+      "kind": "choice",
+      "options": [
+        "to give instructions for building a pond",
+        "to show the order in which the creatures were discovered",
+        "to group the creatures by the part of the pond where they live",
+        "to tell the reader which creatures are the most dangerous"
+      ],
+      "pick": 1,
+      "answer": [
+        2
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which of these is the best summary of the whole text? Tick one.",
+      "kind": "choice",
+      "options": [
+        "Ponds are dangerous places that children should stay away from.",
+        "Frogs are the most important creatures in a pond.",
+        "Dragonflies spend their whole lives flying over ponds.",
+        "A pond is a busy world full of creatures that live in different ways, and pond dipping is a good way to discover them."
+      ],
+      "pick": 1,
+      "answer": [
+        3
+      ]
+    }
+  ]
+}

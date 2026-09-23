@@ -1,0 +1,176 @@
+{
+  "id": "rt-poetry-06",
+  "title": "Pigeon and Fox",
+  "genre": "poetry",
+  "level": 2,
+  "paragraphs": [
+    "**Pigeon:**\nBy day, the city is mine.\nI strut across the square in my smart grey suit\nwhile buses grumble up the high street\nand people spill out of the station\nlike marbles from a bag.\nEvery café table is my breakfast.",
+    "**Fox:**\nBy night, the city is mine.\nWhen the last bus has rumbled home to bed,\nI slip out of my den by the railway line\nand glide through the shadows like smoke.\nThe moon is my streetlamp,\nand every dustbin is a feast.",
+    "**Pigeon:**\nYour city? You leave it in a terrible mess!\nYou knock the lids off the bins,\ndrag chicken bones across the pavement\nand leave muddy pawprints on the cars.\nAnd who has to tidy up the crumbs? Me!",
+    "**Fox:**\nAnd what about you, featherbrain?\nYou squabble over one soggy chip,\nyou flap in people’s faces,\nand you sit on the statue’s head all day\nas if you owned the place.",
+    "**Pigeon:**\nHmph. But when you trot home at dawn,\ntired and muddy,\nI still leave you the crust of my breakfast\non the station wall.",
+    "**Fox:**\nI know. And when I pass your windowsill at night,\nI tread softly\nso that I don’t wake you.",
+    "**Pigeon and Fox:**\nBy day,\nby night,\nthe city is ours."
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 1.\nFind and copy **one** word that shows Pigeon walks in a proud, showy way.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": ["strut"]
+    },
+    {
+      "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at verse 1.\nPeople spill out of the station ‘like marbles from a bag’.\nWhat does this suggest? Tick **one**.",
+      "paragraph": 1,
+      "kind": "choice",
+      "options": [
+        "The people are carrying bags of marbles.",
+        "Lots of people rush out of the station at once, going in all directions.",
+        "Only a few people leave the station, one at a time.",
+        "The people are playing a game outside the station."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q3",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 2.\nWhere is Fox’s den? Tick **one**.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": ["under a café table", "inside the station", "by the railway line", "on the high street"],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q4",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 2.\n‘When the last bus has rumbled home to bed’\nWhat does this tell you about when Fox comes out? Tick **one**.",
+      "paragraph": 2,
+      "kind": "choice",
+      "options": [
+        "early in the morning, when the first buses start",
+        "at lunchtime, when the cafés are busy",
+        "late at night, after the buses have stopped",
+        "after school, when the buses are full"
+      ],
+      "pick": 1,
+      "answer": [2]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 4.\n‘You squabble over one soggy chip’\nWhich word is closest in meaning to **squabble**? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": ["share", "argue", "dance", "sing"],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q6",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 4.\nFox calls Pigeon ‘featherbrain’.\nWhat does this suggest? Tick **one**.",
+      "paragraph": 4,
+      "kind": "choice",
+      "options": [
+        "Fox thinks Pigeon is clever.",
+        "Fox thinks Pigeon is silly.",
+        "Fox is frightened of Pigeon.",
+        "Fox wants to borrow Pigeon’s feathers."
+      ],
+      "pick": 1,
+      "answer": [1]
+    },
+    {
+      "id": "q7",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at verse 5.\nWhere does Pigeon leave the crust for Fox?",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": [
+        "on the station wall",
+        "station wall",
+        "on the station's wall",
+        "station's wall",
+        "on the wall of the station",
+        "wall of the station",
+        "on the wall",
+        "on a wall",
+        "on the wall at the station",
+        "on the wall by the station",
+        "wall",
+        "at the station",
+        "by the station",
+        "station"
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "kind": "tf",
+      "statements": [
+        "Pigeon says that Fox leaves muddy pawprints on the cars.",
+        "Pigeon walks across the square at night.",
+        "Fox says that Pigeon flaps in people’s faces.",
+        "Fox passes Pigeon’s windowsill in the daytime."
+      ],
+      "answer": [true, false, true, false]
+    },
+    {
+      "id": "q9",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "How is the poem organised? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "Pigeon speaks in the first half of the poem, and Fox speaks in the second half.",
+        "A narrator describes Pigeon and Fox, but they never speak.",
+        "Each verse describes the city at a different time of year.",
+        "Pigeon and Fox take turns to speak, and in the last verse they speak together."
+      ],
+      "pick": 1,
+      "answer": [3]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at verses 3 to 6.\nHow do Pigeon and Fox really feel about each other?\nExplain, using evidence from the poem.",
+      "kind": "self",
+      "model": "On the surface, they seem to dislike each other and they argue: Pigeon says Fox leaves the city ‘in a terrible mess’, and Fox calls Pigeon ‘featherbrain’. But really they care about each other: Pigeon still leaves Fox ‘the crust of my breakfast’, and Fox treads softly past Pigeon’s windowsill ‘so that I don’t wake you’.",
+      "points": [
+        "Explains that they seem to dislike each other or argue, with evidence, such as ‘You leave it in a terrible mess!’ or ‘featherbrain’.",
+        "Explains that really they care about each other, with evidence, such as Pigeon leaving ‘the crust of my breakfast’ or Fox treading softly ‘so that I don’t wake you’."
+      ]
+    },
+    {
+      "id": "q11",
+      "domain": "2c",
+      "marks": 1,
+      "prompt": "Which is the best summary of the whole poem? Tick **one**.",
+      "kind": "choice",
+      "options": [
+        "A fox chases a pigeon through the city streets at night.",
+        "A pigeon and a fox leave the busy city to live in the countryside.",
+        "A pigeon and a fox argue about who owns the city, but they secretly care about each other and share it.",
+        "A pigeon teaches a fox how to find food in the daytime."
+      ],
+      "pick": 1,
+      "answer": [2]
+    }
+  ]
+}
