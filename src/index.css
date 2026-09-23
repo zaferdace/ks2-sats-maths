@@ -2301,3 +2301,9 @@ tr.clickable:active {
   margin-bottom: 8px;
   color: var(--ink-2);
 }
+
+.passage-para.heading .rich {
+  font-weight: 700;
+  font-size: 1.08em;
+  margin-top: 6px;
+}

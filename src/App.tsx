@@ -6,7 +6,7 @@ import { buildSpellingTest } from './english/spelling';
 import { generatePaper } from './gen/paper';
 import { buildMathsPractice } from './gen/practice';
 import { generateReasoningPaper } from './gen/reasoning/paper';
-import { SUBJECT_OF, type AnyQuestion } from './gen/types';
+import { isItem, SUBJECT_OF, type AnyQuestion } from './gen/types';
 import { newPaperCode } from './gen/rng';
 import { HomeScreen } from './screens/HomeScreen';
 import { ProfilesScreen } from './screens/ProfilesScreen';
@@ -19,12 +19,14 @@ import {
   addProfile,
   createAttempt,
   findAttempt,
+  openSession,
   replaceAttempt,
   selectProfile,
   type Attempt,
   type StartRequest,
   type StoreData,
 } from './store/model';
+import { dictate } from './ui/speech';
 import { useStore, type Update } from './useStore';
 
 // Screens live in memory: no URL routing, so the home-screen app never loses its place.
@@ -65,6 +67,15 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
 
   const goHome = useCallback(() => setScreen({ name: 'home' }), []);
 
+  // Opens a test. A spelling test reads its word straight away: this runs inside the tap that
+  // opened it, and iPadOS only lets a page speak in response to a tap.
+  const openTest = (attempt: Attempt) => {
+    const q = attempt.questions[Math.min(attempt.current, attempt.questions.length - 1)];
+    const speak = q && isItem(q) ? q.body.find((b) => b.b === 'speak') : undefined;
+    if (speak?.b === 'speak' && openSession(attempt)) dictate(speak.word, speak.sentence);
+    setScreen({ name: 'test', attemptId: attempt.id });
+  };
+
   const startPaper = ({ paper, mode, level = 'mixed', size, types, groups, topic }: StartRequest) => {
     if (!profile) return;
     const code = newPaperCode();
@@ -93,7 +104,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     const created = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
     const attempt = topic ? { ...created, topic } : created;
     update((d) => addAttempt(d, attempt));
-    setScreen({ name: 'test', attemptId: attempt.id });
+    openTest(attempt);
   };
 
   let body;
@@ -131,7 +142,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         at={screen.at}
         onHome={goHome}
         onReport={() => setScreen({ name: 'report' })}
-        onContinue={() => setScreen({ name: 'test', attemptId: attempt.id })}
+        onContinue={() => openTest(attempt)}
       />
     ) : null;
   } else if (screen.name === 'report') {
@@ -144,7 +155,10 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         data={data}
         profile={profile}
         onStart={startPaper}
-        onContinue={(attemptId) => setScreen({ name: 'test', attemptId })}
+        onContinue={(attemptId) => {
+          const attempt = findAttempt(data, attemptId);
+          if (attempt) openTest(attempt);
+        }}
         onOpenResult={(attemptId, at) => setScreen({ name: 'result', attemptId, at })}
         onReport={() => setScreen({ name: 'report' })}
         onSettings={() => setScreen({ name: 'settings' })}

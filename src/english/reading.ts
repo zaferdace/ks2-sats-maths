@@ -22,16 +22,21 @@ function inputOf(q: ReadingQuestion): { input: InputSpec; answer: string } {
   }
 }
 
+/** Questions that send the pupil to a paragraph ("Look at paragraph 3", "the second verse"). */
+const POINTS_TO_PART = /\b(paragraphs?|verses?|stanzas?)\b/i;
+
 export function readingQuestions(t: ReadingText): ItemQuestion[] {
   return t.questions.map((q) => {
     const { input, answer } = inputOf(q);
+    // Only highlight a paragraph the question itself points to: finding the place is part of the skill.
+    const paragraph = q.paragraph && POINTS_TO_PART.test(q.prompt) ? q.paragraph : undefined;
     return {
       format: 'english',
       typeId: readingTypeId(q.domain),
       difficulty: t.level,
       marks: q.marks,
       body: [
-        { b: 'passage', textId: t.id, ...(q.paragraph && { paragraph: q.paragraph }) },
+        { b: 'passage', textId: t.id, ...(paragraph && { paragraph }) },
         { b: 'text', text: q.prompt },
       ],
       input,

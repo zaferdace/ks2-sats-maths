@@ -4,6 +4,9 @@ import { RichText } from './RichText';
 
 const GENRE: Record<string, string> = { fiction: 'Story', 'non-fiction': 'Non-fiction', poetry: 'Poem' };
 
+/** A subheading in a leaflet or report: short, with no closing punctuation. */
+const isHeading = (p: string) => p.length < 60 && !/[.!?:"”’']$/.test(p.trim());
+
 interface Props {
   textId: string;
   /** 1-based paragraph the current question points to: highlighted and scrolled into view. */
@@ -31,7 +34,11 @@ export function Passage({ textId, paragraph, className }: Props) {
       <div className="passage-genre">{GENRE[text.genre]}</div>
       <h2 className="passage-title">{text.title}</h2>
       {text.paragraphs.map((p, i) => (
-        <div key={i} data-paragraph={i + 1} className={`passage-para ${paragraph === i + 1 ? 'current' : ''}`}>
+        <div
+          key={i}
+          data-paragraph={i + 1}
+          className={`passage-para ${paragraph === i + 1 ? 'current' : ''} ${!poem && isHeading(p) ? 'heading' : ''}`}
+        >
           <span className="para-num" aria-label={`${poem ? 'Verse' : 'Paragraph'} ${i + 1}`}>
             {i + 1}
           </span>

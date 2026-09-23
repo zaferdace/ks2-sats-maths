@@ -20,6 +20,9 @@ const indexes = (s: string): number[] => (s ? s.split(',').map(Number) : []);
 
 const isWord = (t: string) => /[A-Za-z0-9]/.test(t);
 
+const NUMBER_WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+const howMany = (n: number, noun: string) => `${NUMBER_WORDS[n] ?? n} ${noun}${n === 1 ? '' : 's'}`;
+
 /** Tap one or more words in a sentence. */
 export function WordsAnswer({ q, answer, onAnswer, mark }: EnglishAnswerProps<'words'>) {
   const { tokens, pick } = q.input;
@@ -59,7 +62,7 @@ export function WordsAnswer({ q, answer, onAnswer, mark }: EnglishAnswerProps<'w
       </p>
       {onAnswer && (
         <p className="muted small">
-          Tap {pick === 1 ? 'one word' : `${pick} words`}. Tap again to undo.
+          Tap {howMany(pick, 'word')}. Tap again to undo.
         </p>
       )}
     </div>
