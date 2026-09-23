@@ -102,7 +102,19 @@
       "prompt": "Look at verse 6.\nWhen Mission Control asks, ‘How did it go?’, what does the speaker reply?",
       "paragraph": 6,
       "kind": "text",
-      "accept": ["fine", "fine i say", "i say fine", "it was fine"]
+      "accept": [
+        "fine",
+        "'fine'",
+        "fine i say",
+        "'fine' i say",
+        "i say fine",
+        "i say 'fine'",
+        "i said fine",
+        "they say fine",
+        "they said fine",
+        "the speaker says fine",
+        "it was fine"
+      ]
     },
     {
       "id": "q8",
@@ -153,7 +165,7 @@
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",
       "kind": "choice",
       "options": [
-        "An astronaut gets lost on a strange planet until another astronaut rescues him.",
+        "An astronaut is sent to a strange planet and never comes home.",
         "A pupil misses the bus and arrives late on the first day at a new school.",
         "A pupil describes their first day at a new school as if it were a space mission, from a lonely start to a hopeful end.",
         "Two friends build a model rocket in a science lesson."

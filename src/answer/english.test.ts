@@ -23,6 +23,14 @@ describe('typed English answers', () => {
     expect(markFor(q, { ...emptyAnswer(), text: ' ' })).toBe(0);
   });
 
+  it('ignore quotation marks around the whole answer, but not an apostrophe', () => {
+    expect(normText("'fine'")).toBe('fine');
+    expect(normText('“Fine.”')).toBe('fine');
+    expect(normText("'fine.'")).toBe('fine');
+    expect(normText("James'")).toBe("james'");
+    expect(normText("'twas")).toBe("'twas");
+  });
+
   it('ignore a leading article on a phrase', () => {
     const tape = item({ kind: 'text' }, 'a roll of blue tape|tape');
     expect(markFor(tape, { ...emptyAnswer(), text: 'roll of blue tape' })).toBe(1);

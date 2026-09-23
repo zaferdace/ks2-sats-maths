@@ -127,6 +127,13 @@
         "their hallway",
         "in the hall",
         "hall",
+        "in a hallway",
+        "in a hall",
+        "in our hall",
+        "our hall",
+        "in their hall",
+        "their hall",
+        "it was in the hallway",
         "in the speaker's hallway",
         "speaker's hallway"
       ]
@@ -135,8 +142,7 @@
       "id": "q10",
       "domain": "2d",
       "marks": 2,
-      "prompt": "Look at verse 7.\nWhy does the speaker say sorry to the monster?\nExplain, using evidence from the poem.",
-      "paragraph": 7,
+      "prompt": "Look at verses 4 to 7.\nWhy does the speaker say sorry to the monster?\nExplain, using evidence from the poem.",
       "kind": "self",
       "model": "The speaker had blamed the monster for the missing socks, saying ‘It swallows our socks for its tea!’ But then the speaker found the dog lying ‘on a mountain of socks’, so the speaker realised that the dog had been taking them and the monster had done nothing wrong.",
       "points": [

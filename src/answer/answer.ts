@@ -78,15 +78,23 @@ const sameSet = (a: number[], b: number[]) => {
   return x.length === y.length && x.every((v, i) => v === y[i]);
 };
 
-/** Typed words compared without case, extra spaces, curly quotes or a final full stop. */
-export const normText = (s: string): string =>
-  s
-    .toLowerCase()
-    .replace(/[‘’`]/g, "'")
-    .replace(/[“”]/g, '"')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\s*[.!?]+$/, '');
+const endMark = (s: string) => s.trim().replace(/\s*[.!?]+$/, '');
+
+/**
+ * Typed words compared without case, extra spaces, curly quotes, a final full stop or quotation
+ * marks around the whole answer ('fine' = fine). A single apostrophe stays: James' ≠ James.
+ */
+export const normText = (s: string): string => {
+  const t = endMark(
+    s
+      .toLowerCase()
+      .replace(/[‘’`]/g, "'")
+      .replace(/[“”]/g, '"')
+      .replace(/\s+/g, ' '),
+  );
+  const quoted = /^(['"])(.+)\1$/.exec(t);
+  return quoted ? endMark(quoted[2]) : t;
+};
 
 /** Every accepted typed answer of a text question. */
 export const acceptedTexts = (q: ItemQuestion): string[] => q.answer.split('|');
