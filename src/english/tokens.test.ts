@@ -1,15 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { spaceBefore, splitAround } from './tokens';
-
-const show = (tokens: string[]) => {
-  const space = spaceBefore(tokens);
-  return tokens.map((t, i) => (space[i] ? ` ${t}` : t)).join('');
-};
+import { joinTokens as show, splitAround } from './tokens';
 
 describe('sentences from tokens', () => {
   it('put no space before closing marks or after opening ones', () => {
     expect(show(['Sam', ',', 'my', 'friend', '(', 'aged', 'ten', ')', ',', 'waved', '.'])).toBe('Sam, my friend (aged ten), waved.');
   });
+  it('join hyphens and space dashes', () => {
+    expect(show(['a', 'bad', '-', 'tempered', 'parrot', '.'])).toBe('a bad-tempered parrot.');
+    expect(show(['The', 'fox', '–', 'hungry', 'and', 'tired', '–', 'crept', 'away', '.'])).toBe('The fox – hungry and tired – crept away.');
+    expect(show(['Mr', 'Hughes', 'said', ',', '“', 'Tidy', 'up', ',', 'please', '.', '”'])).toBe('Mr Hughes said, “Tidy up, please.”');
+  });
+
   it('pair straight inverted commas', () => {
     expect(show(['"', 'Stop', '!', '"', 'shouted', 'Mum', '.'])).toBe('"Stop!" shouted Mum.');
     expect(show(['Mum', 'said', ',', '"', 'Come', 'here', '.', '"'])).toBe('Mum said, "Come here."');

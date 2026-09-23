@@ -243,3 +243,95 @@ Per template × difficulty over 1,000 seeds: no NaN/undefined, numbers in range,
 exactly the declared number of correct choices, distinct options and order items, answers that the
 input can express. Then three full papers are printed and read for sense. The browser run plays a
 whole reasoning paper at 768×1024.
+
+---
+
+# Phase 3: English (grammar, punctuation, spelling and reading)
+
+Date: 2026-09-23 · Status: requested ("think it through and build it autonomously, with lots of
+questions and an easy/medium/hard choice"), building autonomously
+
+## Format
+
+The 2027 KS2 English tests keep the current format (gov.uk, *2027 key stage 2 tests: information
+for parents*; tests run 10–13 May 2027):
+
+| App paper | Real paper | Shape in the app |
+|---|---|---|
+| Grammar, punctuation & vocabulary | GPS Paper 1: 50 marks, 45 minutes | 50 one-mark questions; daily (10 a day for 5 days) or full |
+| Spelling | GPS Paper 2: 20 words, about 15 minutes | Quick test (10 words) or full test (20 words), read aloud by the device voice |
+| Reading | Reading: 3 texts, 50 marks, 60 minutes | One text with its questions, or a full paper of three texts |
+
+Every English paper takes a **level**: Easy, Medium, Hard, or Mixed (easy to hard through the
+paper, like the real test). The level is stored on the attempt and shown on the result.
+
+## Content bank
+
+English cannot be generated from numbers, so the app ships a bank of original content in
+`src/english/content/*.json`, checked by `validate.ts` in the test run:
+
+- **Annotated sentences** (word class per token, sentence type, tense, voice, subject, clause
+  spans). Ten templates turn one sentence into many questions: word class of an underlined word,
+  tap the nouns/verbs/…, sentence type, end punctuation, tense, subject, subordinate and relative
+  clauses, fronted adverbials, expanded noun phrases, passive voice. Templates skip sentences
+  where the answer could be argued (possessive determiners, noun pairs, clauses inside clauses).
+- **Ready-made GPS items** for what templates can't cover: punctuation (capitals, commas,
+  parenthesis, apostrophes, contractions, inverted commas, colons, semi-colons, dashes, hyphens),
+  verb forms, modals, subjunctive, Standard English, formality, conjunctions, relative pronouns,
+  determiners, pronouns, prepositions, adverbials and vocabulary (synonyms, antonyms, prefixes,
+  suffixes, word families, homophones).
+- **Spelling words** from the Year 3/4 and Year 5/6 statutory word lists and the spelling rules
+  (suffixes, prefixes, ei/ie, ough, silent letters, homophones, hyphens), each with its own
+  sentence and a reminder hint.
+- **Reading texts**: stories, poems and non-fiction (information, biography, report, explanation,
+  persuasion) with questions across the content domains 2a–2h.
+
+## Building a paper
+
+- **GPS**: ten slots repeated five times (word classes, punctuation, sentences, verbs,
+  punctuation, vocabulary, word classes, punctuation, sentences, verbs or Standard English), so a
+  paper is about 55% grammar, 30% punctuation and 10–15% vocabulary. Types are rotated so a paper
+  covers as many as possible; a bank entry is used once per paper.
+- **Spelling**: mixed tests take 25% easy, 45% medium and 30% hard words.
+- **Reading**: a mixed full paper takes one easy, one medium and one hard text.
+- **History**: each pupil's answers are remembered by bank id. New papers prefer items never seen,
+  then those seen longest ago; items answered wrongly last time come back (up to a third of a
+  spelling test).
+
+## Answering
+
+- **Letter keyboard** (letters, apostrophe, hyphen, space), because the iPad keyboard would
+  autocorrect spellings and cover the question.
+- **Tap a word** (or every word of a clause), **tap a gap** where a punctuation mark goes,
+  **true/false** tables, choices and orderings.
+- **Spelling**: "Hear the word" reads *The word is …*, the sentence, then the word again, in a
+  British voice. The sentence is printed with the word replaced by the answer box. iPadOS only
+  speaks after a tap, so the next word is read when Next is tapped.
+- **Reading**: the text stays beside the questions (above them in portrait) and scrolls to the
+  paragraph a question points at. Explanation questions (2–3 marks) are self-marked: the pupil
+  writes an answer, taps *Check my answer*, sees a model answer and the marking points and gives
+  themselves marks. The written answer is kept for a grown-up to read on the results screen.
+
+Marking of typed answers ignores case, extra spaces, curly quotes, a final full stop and a leading
+"a", "an" or "the". Every typed answer in the bank can be written with letters only.
+
+## Data
+
+Attempts gain `paper: 'gps' | 'spelling' | 'reading'` and an optional `level`. Results move from
+localStorage (about 5 MB in Safari) to IndexedDB, with a localStorage copy while it fits; the
+newer copy wins on load, so nothing is lost when the app updates.
+
+## Report
+
+The report gains a subject filter (Everything / Maths / English) and a paper filter within it.
+English topics (word classes, sentences and clauses, verbs, Standard English, punctuation,
+vocabulary, spelling, and four reading groups) appear in the topic chart and heat maps.
+
+## Verification
+
+Content tests validate every entry. Engine tests check that every ready-made item, every
+generated question (60 per template and level), every spelling word and every reading question
+scores full marks with its stored answer and nothing when blank, and that papers have the right
+size, levels, coverage and repeat behaviour. Independent reviewers read every reading question
+and the grammar annotations against KS2 rules. The browser run plays each paper type at 1024×768
+and 768×1024.

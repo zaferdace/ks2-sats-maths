@@ -4,7 +4,7 @@ import type { PaperKind, Subject } from '../gen/types';
 import { LEVELS, levelOf, pctText } from '../report/levels';
 import { Legend, PositionHeat, SkillMap, WeeklyHeat } from '../report/Heatmaps';
 import { ScoreHistory } from '../report/ScoreHistory';
-import type { Profile, StoreData } from '../store/model';
+import { findAttempt, type Profile, type StoreData } from '../store/model';
 import {
   byTopic,
   byType,
@@ -16,6 +16,7 @@ import {
   weakest,
   weeklyGrid,
 } from '../stats/stats';
+import { sessionTitle } from '../ui/labels';
 import { formatSeconds } from '../ui/time';
 
 interface Props {
@@ -107,7 +108,7 @@ export function ReportScreen({ data, profile, onBack }: Props) {
         {subject !== 'all' && (
           <div className="segmented" role="radiogroup" aria-label="Paper">
             <button type="button" role="radio" aria-checked={paperChoice === null} className={paperChoice === null ? 'on' : ''} onClick={() => setPaperChoice(null)}>
-              All {subject}
+              All {subject === 'english' ? 'English' : 'maths'}
             </button>
             {PAPERS_OF[subject].map((k) => (
               <button
@@ -178,7 +179,13 @@ export function ReportScreen({ data, profile, onBack }: Props) {
 
           <section className="card">
             <h2>Score per session</h2>
-            <ScoreHistory sessions={view.sessions} />
+            <ScoreHistory
+              sessions={view.sessions}
+              titleOf={(s) => {
+                const attempt = findAttempt(data, s.attemptId);
+                return attempt ? sessionTitle(attempt, s.day) : s.day ? `Day ${s.day}` : 'Full paper';
+              }}
+            />
           </section>
 
           <section className="card">

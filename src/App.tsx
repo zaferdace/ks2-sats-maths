@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { buildGpsPaper } from './english/gps/paper';
+import { buildGpsPaper, buildGpsPractice } from './english/gps/paper';
 import { englishHistory } from './english/history';
 import { buildReading } from './english/reading';
 import { buildSpellingTest } from './english/spelling';
 import { generatePaper } from './gen/paper';
+import { buildMathsPractice } from './gen/practice';
 import { generateReasoningPaper } from './gen/reasoning/paper';
 import { SUBJECT_OF, type AnyQuestion } from './gen/types';
 import { newPaperCode } from './gen/rng';
@@ -64,7 +65,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
 
   const goHome = useCallback(() => setScreen({ name: 'home' }), []);
 
-  const startPaper = ({ paper, mode, level = 'mixed', size }: StartRequest) => {
+  const startPaper = ({ paper, mode, level = 'mixed', size, types, groups, topic }: StartRequest) => {
     if (!profile) return;
     const code = newPaperCode();
     // English papers avoid what this pupil has already seen and bring back mistakes.
@@ -72,16 +73,16 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     let questions: AnyQuestion[];
     switch (paper) {
       case 'arithmetic':
-        questions = generatePaper(code);
+        questions = types ? buildMathsPractice(code, 'arithmetic', types) : generatePaper(code);
         break;
       case 'reasoning':
-        questions = generateReasoningPaper(code);
+        questions = types ? buildMathsPractice(code, 'reasoning', types) : generateReasoningPaper(code);
         break;
       case 'gps':
-        questions = buildGpsPaper(code, level, history());
+        questions = types ? buildGpsPractice(code, types, level, history()) : buildGpsPaper(code, level, history());
         break;
       case 'spelling':
-        questions = buildSpellingTest(code, level, history(), size);
+        questions = buildSpellingTest(code, level, history(), size, groups);
         break;
       case 'reading':
         questions = buildReading(code, level, history(), size === 3 ? 3 : 1);
@@ -89,7 +90,8 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     }
     if (!questions.length) return;
     const english = SUBJECT_OF[paper] === 'english';
-    const attempt = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
+    const created = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
+    const attempt = topic ? { ...created, topic } : created;
     update((d) => addAttempt(d, attempt));
     setScreen({ name: 'test', attemptId: attempt.id });
   };

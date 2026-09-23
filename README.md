@@ -1,23 +1,40 @@
-# KS2 Arithmetic
+# KS2 SATs
 
-SATs-style maths practice for Year 6 (Paper 1 arithmetic and Papers 2 and 3 reasoning), as an
-offline web app made for an iPad.
+SATs-style practice for Year 6, maths and English, as an offline web app made for an iPad.
 
-- **Unlimited papers.** Paper 1 has 40 arithmetic questions worth 1 mark each. A reasoning paper
-  (Papers 2 and 3 share the format) has 25 questions worth 35 marks, with tables, charts, angle
-  diagrams and coordinate grids. Both run from easy to hard and can be done as a daily paper
-  (five days) or in one go.
-- **31 arithmetic question types** (place value, the four operations, long multiplication and
-  long division, order of operations, squares and cubes, fractions, decimals, percentages) and
-  **40 reasoning templates** across number, calculation, fractions, ratio, algebra, measurement,
-  geometry, position and statistics. Each has three difficulty bands.
-- **Two-mark questions** score 2 or 0, because a typed answer cannot show working.
-- **Marked like the real test.** Answers are checked when the session is finished. Any
-  equivalent form scores: 3/4, 6/8 and 0.75 are all right for 3/4.
+**Maths**
+
+- **Paper 1: Arithmetic.** 40 questions worth 1 mark each, generated on the device from 31
+  question types (place value, the four operations, long multiplication and division, order of
+  operations, squares and cubes, fractions, decimals, percentages).
+- **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 40 templates, with tables,
+  charts, angle diagrams and coordinate grids. Two-mark questions score 2 or 0, because a typed
+  answer cannot show working.
+- Both run from easy to hard and can be done as a daily paper (five days) or in one go. Any
+  equivalent answer scores: 3/4, 6/8 and 0.75 are all right for 3/4.
+
+**English**
+
+- **Grammar, punctuation & vocabulary (GPS Paper 1).** 50 one-mark questions: ready-made items
+  and questions built from annotated sentences (word classes, clauses, tenses, the passive and
+  more). Answers are tapped (words, gaps for punctuation, choices, true/false) or typed on an
+  on-screen letter keyboard.
+- **Spelling (GPS Paper 2).** The iPad reads each word, a sentence and the word again in a British
+  voice; the pupil types the word into the printed sentence. Words come from the statutory
+  Year 3/4 and Year 5/6 lists and the spelling rules. Misspelt words come back in later tests.
+- **Reading.** Stories, poems and non-fiction texts with questions across the reading domains
+  (vocabulary, retrieval, inference, summary, structure, language). The text stays on screen
+  beside the questions. Explanation questions are self-marked against a model answer, and what the
+  pupil wrote is kept for a grown-up to read.
+- **Levels.** Every English paper can be Easy, Medium, Hard or Mixed (easy to hard, like the real
+  test). New papers prefer questions not seen before.
+
+**Everywhere**
+
 - **Report.** Score per session, accuracy by topic, a skill heat map of every question type,
-  progress by week, accuracy by question number, and the question types to practise next.
-- **Private.** Questions are generated on the device and results stay in the browser's storage.
-  Settings has backup and restore.
+  progress by week and the question types to practise next, for maths, English or both.
+- **Private.** Everything happens on the device; results stay in the browser's storage
+  (IndexedDB). Settings has backup and restore.
 
 ## Install on an iPad
 
@@ -26,13 +43,14 @@ offline web app made for an iPad.
 3. Open the app from its icon. After the first visit it also works offline.
 
 Make a backup from Settings now and then: clearing Safari's website data removes the results.
+Spelling tests need the sound on.
 
 ## Development
 
 ```bash
 npm install
 npm run dev      # http://localhost:5173/ks2-sats-maths/
-npm test         # unit and property tests
+npm test         # unit, property and content tests
 npm run build    # type-check and build to dist/
 ```
 
@@ -45,13 +63,18 @@ npm run build    # type-check and build to dist/
 | `src/math/rational.ts` | Exact fractions, so 0.1 + 0.2 is 0.3 and answers compare exactly |
 | `src/gen/generators/` | One arithmetic generator per question type, each with three difficulty bands |
 | `src/gen/reasoning/` | Reasoning templates, the 25-question blueprint and the paper builder |
-| `src/gen/blueprint.ts` | The 40 slots of a paper, eight a day, easy to hard |
 | `src/gen/paper.ts` | Paper code → seeded random numbers → the same 40 questions every time |
 | `src/gen/evaluate.ts` | An independent evaluator the tests use to check every generated answer |
+| `src/english/content/` | The English bank: annotated sentences, GPS items, spelling words, reading texts |
+| `src/english/validate.ts` | Checks every bank entry (run by `content.test.ts`) |
+| `src/english/gps/` | Sentence templates and the 50-question GPS paper builder |
+| `src/english/spelling.ts`, `reading.ts` | Spelling tests and reading sessions |
 | `src/stats/stats.ts` | Statistics and heat-map data |
 
-The property tests generate 1,000 questions per type and difficulty and check each answer by
-re-evaluating the calculation with the answer put back in the box.
+The maths property tests generate 1,000 questions per type and difficulty and check each answer
+by re-evaluating the calculation with the answer put back in the box. The English tests check
+that every bank entry and every generated question scores full marks with its stored answer and
+nothing when left blank.
 
 ## Deployment
 

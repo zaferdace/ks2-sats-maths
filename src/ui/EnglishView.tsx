@@ -4,7 +4,7 @@ import { readingText } from '../english/bank';
 import type { Block, InputSpec, ItemQuestion } from '../gen/types';
 import { RichInline, RichText } from './RichText';
 import { canSpeak, dictate, sayWord } from './speech';
-import { CLOSERS, OPENERS, spaceBefore, splitAround } from './tokens';
+import { CLOSERS, OPENERS, spaceBefore, splitAround } from '../english/tokens';
 
 type ItemOf<K extends InputSpec['kind']> = ItemQuestion & { input: Extract<InputSpec, { kind: K }> };
 

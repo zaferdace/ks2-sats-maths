@@ -6,12 +6,22 @@ export const canSpeak = (): boolean =>
 
 let chosen: SpeechSynthesisVoice | null = null;
 
+/** Natural British voices on Apple devices, best first. */
+const PREFERRED = ['Daniel', 'Serena', 'Kate', 'Arthur', 'Martha', 'Oliver', 'Stephanie'];
+
 function britishVoice(): SpeechSynthesisVoice | null {
   if (chosen) return chosen;
   const voices = window.speechSynthesis.getVoices();
   const lang = (v: SpeechSynthesisVoice) => v.lang.replace('_', '-').toLowerCase();
   const gb = voices.filter((v) => lang(v) === 'en-gb');
-  chosen = gb.find((v) => v.localService) ?? gb[0] ?? voices.find((v) => lang(v).startsWith('en')) ?? null;
+  // Names like "Grandma (English (United Kingdom))" are novelty voices that sound robotic;
+  // "Daniel (Enhanced)" and "Serena (Premium)" are the better downloads of the normal ones.
+  const plain = gb.filter((v) => !v.name.includes('(English'));
+  const quality = (v: SpeechSynthesisVoice) => (/Premium/.test(v.name) ? 0 : /Enhanced/.test(v.name) ? 1 : 2);
+  const named = PREFERRED.map((n) =>
+    plain.filter((v) => v.name.startsWith(n)).sort((a, b) => quality(a) - quality(b))[0],
+  ).find(Boolean);
+  chosen = named ?? plain[0] ?? gb[0] ?? voices.find((v) => lang(v).startsWith('en')) ?? null;
   return chosen;
 }
 

@@ -1,3 +1,4 @@
+import { joinTokens } from '../english/tokens';
 import { formatNumber, formatValue } from '../gen/format';
 import { isItem, type AnyQuestion, type InputSpec, type NumberBox, type ItemQuestion } from '../gen/types';
 import { add, eq, fromDecimalString, rat, ratFromString, toDecimalString, type Rational } from '../math/rational';
@@ -38,7 +39,8 @@ export const isBlank = (a: AnswerInput | null | undefined): boolean =>
     !(a.tf ?? []).some((v) => v !== null && v !== undefined) &&
     a.self === undefined);
 
-const TEXT_MAX = 40;
+/** Longest typed answer the letter keyboard allows. */
+export const TEXT_MAX = 40;
 
 /** Applies one letter-keyboard key to a typed answer. */
 export function typeLetter(value: string, key: string): string {
@@ -181,13 +183,10 @@ function formatNumbers(input: NumberInput, values: (string | Rational)[]): strin
 /** Strips the light markup (**bold**, __underline__, [[3/4]]) for plain-text display. */
 export const plain = (s: string): string => s.replace(/\*\*|__/g, '').replace(/\[\[(?:(\d+) )?(\d+)\/(\d+)\]\]/g, (_, w, n, d) => (w ? `${w} ${n}/${d}` : `${n}/${d}`));
 
-/** A sentence with a punctuation mark put into the chosen gaps. */
+/** A sentence with a punctuation mark put into the chosen gaps (gap i is after token i). */
 export function withMarks(tokens: string[], gaps: number[], mark: string): string {
   const set = new Set(gaps);
-  return tokens
-    .map((t, i) => (set.has(i) ? `${t}${mark === '(' || mark === '"' ? ` ${mark}` : mark}` : t))
-    .join(' ')
-    .replace(/ ([.,!?;:)])/g, '$1');
+  return joinTokens(tokens.flatMap((t, i) => (set.has(i) ? [t, mark] : [t])));
 }
 
 function formatSelection(q: ItemQuestion, sel: number[]): string {

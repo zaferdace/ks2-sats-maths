@@ -118,7 +118,7 @@
       "prompt": "Look at paragraph 5.\nAccording to Dad, how many long blasts on a whistle mean ‘Help!’?",
       "paragraph": 5,
       "kind": "text",
-      "accept": ["six", "6", "six long blasts", "6 long blasts", "six blasts", "6 blasts", "six long ones"]
+      "accept": ["six", "six long blasts", "six blasts", "six long", "six long ones"]
     },
     {
       "id": "q9",

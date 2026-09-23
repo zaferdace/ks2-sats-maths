@@ -37,7 +37,7 @@
       "kind": "text",
       "paragraph": 1,
       "prompt": "Look at paragraph 1.\nWhat was the name of the mountain that Ravi had to climb?",
-      "accept": ["Crooked Mountain", "the Crooked Mountain", "Crooked", "Crooked Mountain."]
+      "accept": ["Crooked Mountain", "the Crooked Mountain", "Crooked"]
     },
     {
       "id": "q3",

@@ -2239,3 +2239,65 @@ tr.clickable:active {
     font-size: 24px;
   }
 }
+
+.review-reasoning .e-sentence,
+.review-reasoning .e-text,
+.review-reasoning .e-dictation {
+  text-align: left;
+  font-size: 22px;
+}
+
+.review-reasoning .e-gap {
+  width: 16px;
+}
+
+/* Topic practice */
+.practice-card .suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-btn {
+  border: 1px solid var(--axis);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.chip-btn:active {
+  background: var(--accent-wash);
+}
+
+.modal-wide {
+  width: min(860px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.topic-lists {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 4px;
+}
+
+.topic-lists h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--ink-2);
+}

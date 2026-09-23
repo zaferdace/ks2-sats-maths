@@ -10,7 +10,7 @@ const TICKS = [0, 0.25, 0.5, 0.75, 1];
 const MAX_SESSIONS = 20;
 
 const pct = (s: SessionRecord) => s.score / s.total;
-const name = (s: SessionRecord) => `${PAPER_NAME[s.paper]} · ${s.day ? `Day ${s.day}` : 'full paper'}`;
+const dayOrPaper = (s: SessionRecord) => (s.day ? `Day ${s.day}` : 'Full paper');
 
 /** Column path: 4px rounded data end, square at the baseline. */
 function column(x: number, w: number, top: number, bottom: number): string {
@@ -21,7 +21,15 @@ function column(x: number, w: number, top: number, bottom: number): string {
 }
 
 /** Percentage score of each session, oldest to newest. */
-export function ScoreHistory({ sessions }: { sessions: SessionRecord[] }) {
+export function ScoreHistory({
+  sessions,
+  titleOf = dayOrPaper,
+}: {
+  sessions: SessionRecord[];
+  /** "Day 2", "20 words", a reading text's title… */
+  titleOf?: (s: SessionRecord) => string;
+}) {
+  const name = (s: SessionRecord) => `${PAPER_NAME[s.paper]} · ${titleOf(s)}`;
   const shown = sessions.slice(-MAX_SESSIONS);
   const [sel, setSel] = useState<number | null>(null);
   const plotW = W - PAD.l - PAD.r;

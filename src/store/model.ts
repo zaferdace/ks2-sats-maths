@@ -13,14 +13,20 @@ export interface Profile {
   createdAt: number;
 }
 
-export type Mode = 'daily' | 'full';
+/** A daily paper (five sessions), a whole paper in one go, or a short practice of one topic. */
+export type Mode = 'daily' | 'full' | 'practice';
 
-/** What the home screen asks for. `size`: words in a spelling test, texts in a reading paper. */
+/** What the home screen asks for. */
 export interface StartRequest {
   paper: PaperKind;
   mode: Mode;
   level?: LevelChoice;
+  /** Words in a spelling test, texts in a reading paper. */
   size?: number;
+  /** Practice: the GPS question types or spelling groups to draw from, and their name. */
+  types?: string[];
+  groups?: string[];
+  topic?: string;
 }
 
 export interface Attempt {
@@ -31,6 +37,8 @@ export interface Attempt {
   mode: Mode;
   /** English only: the level picked when the paper was made. */
   level?: LevelChoice;
+  /** Practice only: what is being practised ("Commas", "Silent letters"). */
+  topic?: string;
   createdAt: number;
   completedAt: number | null;
   questions: AnyQuestion[]; // snapshot of the paper
@@ -122,10 +130,17 @@ export const replaceAttempt = (data: StoreData, attempt: Attempt): StoreData => 
 export const findAttempt = (data: StoreData, id: string): Attempt | undefined =>
   data.attempts.find((a) => a.id === id);
 
-/** The profile's unfinished paper of one kind, if any (the most recent one). */
+/** The profile's unfinished paper of one kind, if any (the most recent one). Practice is separate. */
 export function activeAttempt(data: StoreData, profileId: string, paper: PaperKind): Attempt | undefined {
   return data.attempts
-    .filter((a) => a.profileId === profileId && a.paper === paper && a.completedAt === null)
+    .filter((a) => a.profileId === profileId && a.paper === paper && a.mode !== 'practice' && a.completedAt === null)
+    .sort((a, b) => b.createdAt - a.createdAt)[0];
+}
+
+/** The profile's unfinished topic practice, if any. */
+export function activePractice(data: StoreData, profileId: string): Attempt | undefined {
+  return data.attempts
+    .filter((a) => a.profileId === profileId && a.mode === 'practice' && a.completedAt === null)
     .sort((a, b) => b.createdAt - a.createdAt)[0];
 }
 
@@ -134,7 +149,7 @@ export const perDay = (attempt: Attempt): number => Math.ceil(attempt.questions.
 
 /** Session containing a question index. */
 export function sessionAt(attempt: Attempt, index: number): Session {
-  if (attempt.mode === 'full') return { from: 0, to: attempt.questions.length, day: null };
+  if (attempt.mode !== 'daily') return { from: 0, to: attempt.questions.length, day: null };
   const size = perDay(attempt);
   const day = Math.floor(index / size) + 1;
   return { from: (day - 1) * size, to: Math.min(day * size, attempt.questions.length), day };

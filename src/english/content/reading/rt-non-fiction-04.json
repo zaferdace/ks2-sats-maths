@@ -8,8 +8,8 @@
     "The Earth is made up of layers, a little like a peach. On the outside is the crust, a thin skin of solid rock that is thinnest beneath the oceans. Under the crust lies the mantle, a thick layer of extremely hot rock. Although most of the mantle is solid, it is so hot that, over millions of years, it can slowly creep and flow. At the very centre lies the core, made mostly of iron, where temperatures reach thousands of degrees Celsius.",
     "The crust is not one unbroken shell. Instead, it is cracked into enormous pieces called tectonic plates, which fit together like the pieces of a jigsaw. The plates rest on the mantle and move very slowly – only a few centimetres each year, which is about as fast as your fingernails grow. Most volcanoes are found near the edges of plates, where two plates are pulling apart or where one plate is being forced beneath another.",
     "In these places, some of the rock deep underground melts to form magma: hot, liquid rock that contains gases such as water vapour. Because magma is lighter than the solid rock around it, it slowly rises, squeezing through cracks. Often, it collects in a huge underground pool called a magma chamber, which may lie a few kilometres beneath the surface.",
-    "As more magma pushes into the chamber, the pressure inside it grows. At the same time, the gases in the magma begin to form bubbles, just as bubbles appear when you open a bottle of fizzy drink. Eventually, the pressure becomes so great that the magma forces its way up through a weak point in the crust, called a vent, and bursts out at the surface. Once magma reaches the surface, it is called lava. Lava can be hotter than 1,000 degrees Celsius.",
-    "Not all eruptions are alike. When magma is runny, gas escapes from it easily, and lava pours gently out of the volcano like a glowing river. When magma is thick and sticky, however, the gas becomes trapped. The pressure builds and builds until the volcano explodes violently, blasting clouds of ash high into the air. Volcanic ash is nothing like the soft, powdery ash left by a bonfire: it is made of tiny, sharp pieces of rock and glass. In 2010, ash from an eruption in Iceland drifted across Europe, and thousands of flights were cancelled because the ash could damage aircraft engines.",
+    "As more magma pushes into the chamber, the pressure inside it grows. Eventually, the pressure becomes so great that the magma forces its way up through cracks in the crust. As it rises, there is less rock pressing down on it, so the gases in the magma begin to form bubbles, just as bubbles appear when you open a bottle of fizzy drink. The bubbles push the magma upwards even faster, until it bursts out at the surface through an opening called a vent. Once magma reaches the surface, it is called lava. Lava can be hotter than 1,000 degrees Celsius.",
+    "Not all eruptions are alike. When magma is runny, gas escapes from it easily, and lava pours gently out of the volcano like a glowing river. When magma is thick and sticky, however, the gas becomes trapped. The pressure builds and builds until the volcano explodes violently, blasting clouds of ash high into the air. Volcanic ash is nothing like the soft, powdery ash left by a bonfire: it is made of tiny, sharp pieces of rock and glass. In 2010, ash from an eruption in Iceland drifted across Europe, and tens of thousands of flights were cancelled because the ash could damage aircraft engines.",
     "Each time a volcano erupts, its lava and ash cool and harden into new rock. Eruption after eruption, layer upon layer builds up, forming the cone shape that many volcanoes have. Scientists describe volcanoes as active, dormant or extinct. An active volcano has erupted recently or may erupt soon. A dormant volcano has been quiet for a long time but could erupt again, while an extinct volcano is not expected ever to erupt again. Edinburgh Castle, in Scotland, stands on the remains of a volcano that has been extinct for millions of years.",
     "Despite the dangers, millions of people around the world live close to volcanoes. The soil on their slopes is often extremely rich, because volcanic ash and rock break down into minerals that help plants to grow, so farmers can harvest plentiful crops. In Iceland, heat from deep underground warms most people’s homes. To keep people safe, scientists called volcanologists watch active volcanoes closely. They measure tiny earthquakes, check whether the ground is swelling as magma pushes up beneath it and test the gases escaping from the vent. These clues can give people time to leave their homes before an eruption begins."
   ],
@@ -19,6 +19,7 @@
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraphs 2 and 3.\nUsing information from these paragraphs, decide whether each statement is true or false.",
+      "paragraph": 2,
       "kind": "tf",
       "statements": [
         "The crust is thinnest beneath the oceans.",
@@ -84,7 +85,7 @@
       "id": "q5",
       "domain": "2b",
       "marks": 1,
-      "prompt": "What is the weak point in the crust that magma bursts out through called?",
+      "prompt": "Look at paragraph 5.\nWhat is the opening that magma bursts out through called?",
       "paragraph": 5,
       "kind": "text",
       "accept": [
@@ -188,6 +189,7 @@
       "domain": "2f",
       "marks": 1,
       "prompt": "Why does the writer explain what the inside of the Earth is like (paragraphs 2 and 3) before describing how a volcano erupts? Tick one.",
+      "paragraph": 2,
       "kind": "choice",
       "options": [
         "because the layers of the Earth are more exciting than eruptions",

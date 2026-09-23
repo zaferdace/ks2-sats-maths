@@ -1,6 +1,7 @@
 // Structural checks for English content. They cannot tell whether a grammar tag is right, only
 // whether an entry is well formed and self-consistent, so content is also read by a person.
-import { normText } from '../answer/answer';
+import { normText, TEXT_MAX } from '../answer/answer';
+import { joinTokens } from './tokens';
 import {
   GPS_ITEM_TYPES,
   READING_DOMAINS,
@@ -20,19 +21,12 @@ const RELATIVE_WORDS = ['who', 'whom', 'which', 'that', 'whose', 'where', 'when'
 
 export const words = (text: string): number => text.split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
 
-/** The letter keyboard has letters, space, apostrophe and hyphen only: no digits or other marks. */
-export const typeable = (answer: string): boolean => /^[a-z' -]+$/.test(normText(answer));
+/** The letter keyboard has letters, space, apostrophe and hyphen only, up to 40 characters. */
+export const typeable = (answer: string): boolean => {
+  const t = normText(answer);
+  return t.length <= TEXT_MAX && /^[a-z' -]+$/.test(t);
+};
 
-/** Sentence text from tokens: no space before closing punctuation or after an opening bracket. */
-export function joinTokens(tokens: string[]): string {
-  let out = '';
-  tokens.forEach((t, i) => {
-    const prev = tokens[i - 1];
-    const glue = i === 0 || /^[.,!?;:)]/.test(t) || prev === '(' ? '' : ' ';
-    out += glue + t;
-  });
-  return out;
-}
 
 function spanOk(span: Span | undefined, s: GrammarSentence, label: string, out: string[]): void {
   if (!span) return;

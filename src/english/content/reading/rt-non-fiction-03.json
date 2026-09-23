@@ -5,7 +5,7 @@
   "level": 2,
   "paragraphs": [
     "A time capsule buried by schoolchildren in 1976 to mark their school’s fiftieth birthday has been dug up by builders at Hollowmere Primary School, half a century after it was placed in the ground. The discovery has brought back happy memories for the former pupils who filled it – and delighted the children who attend the school today.",
-    "The builders were digging the foundations for a new outdoor classroom last Tuesday when a spade struck something hard. “At first, we thought it was an old pipe,” said builder Dan Walsh. “Then we scraped away the mud and saw the words ‘DO NOT OPEN UNTIL 2001’ painted on the lid. We downed tools straight away and fetched the head teacher.”",
+    "The builders were digging the foundations for a new outdoor classroom last month when a spade struck something hard. “At first, we thought it was an old pipe,” said builder Dan Walsh. “Then we scraped away the mud and saw the words ‘DO NOT OPEN UNTIL 2001’ painted on the lid. We downed tools straight away and fetched the head teacher.”",
     "Head teacher Mrs Helen Carter could hardly believe her eyes. “There have always been stories about a time capsule, but nobody knew where it was,” she explained. “The teacher who organised it retired long ago, and the tree that marked the spot was cut down when our school hall was built. In the end, everyone simply forgot about it.”",
     "Mrs Carter decided that the capsule should not be opened until the people who had filled it could be there. She placed an appeal in the local newspaper and on the school’s website. Within a fortnight, more than thirty former pupils had been in touch, including one who now lives in Canada.",
     "On Friday afternoon, the rusty metal box was finally opened in front of a packed school hall. Inside, wrapped in plastic bags, were letters written by the pupils, a class photograph, a school tie, a cassette tape of the school choir and a newspaper from the day the capsule was buried. Some of the letters had been damaged by damp, but most could still be read.",
@@ -36,7 +36,9 @@
         "an old pipe",
         "old pipe",
         "a pipe",
-        "pipe"
+        "pipe",
+        "it was an old pipe",
+        "it was a pipe"
       ]
     },
     {

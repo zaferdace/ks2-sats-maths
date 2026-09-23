@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react';
 import { isBlank } from '../answer/answer';
 import { GPS_ITEMS, READING_TEXTS, SPELLING_WORDS } from '../english/bank';
+import { ENGLISH_TYPES } from '../english/catalog';
 import { englishHistory } from '../english/history';
+import { SPELLING_GROUPS } from '../english/types';
 import { DAYS } from '../gen/blueprint';
-import { LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
-import type { LevelChoice, PaperKind, Subject } from '../gen/types';
+import { ALL_TYPES, LEVEL_NAME, PAPER_NAME, typeInfo } from '../gen/catalog';
+import { SUBJECT_OF, TOPICS, type LevelChoice, type PaperKind, type Subject } from '../gen/types';
 import {
   activeAttempt,
+  activePractice,
   findAttempt,
   openSession,
   perDay,
@@ -16,7 +19,7 @@ import {
   type StartRequest,
   type StoreData,
 } from '../store/model';
-import { collectRecords, collectSessions, streakDays, tally } from '../stats/stats';
+import { byType, collectRecords, collectSessions, streakDays, tally, weakest } from '../stats/stats';
 import { sessionTitle } from '../ui/labels';
 import { formatDateTime } from '../ui/time';
 
@@ -99,6 +102,78 @@ const ENGLISH: PaperCard[] = [
 
 const LEVELS: LevelChoice[] = [1, 2, 3, 'mixed'];
 
+interface PracticeTopic {
+  label: string;
+  request: Omit<StartRequest, 'level'>;
+}
+
+const gpsPractice = (ids: string[], topic: string): Omit<StartRequest, 'level'> => ({
+  paper: 'gps',
+  mode: 'practice',
+  types: ids,
+  topic,
+});
+
+const spellingPractice = (group: string, label: string): Omit<StartRequest, 'level'> => ({
+  paper: 'spelling',
+  mode: 'practice',
+  groups: [group],
+  size: 10,
+  topic: `Spelling: ${label}`,
+});
+
+const mathsPractice = (paper: 'arithmetic' | 'reasoning', ids: string[], topic: string): Omit<StartRequest, 'level'> => ({
+  paper,
+  mode: 'practice',
+  types: ids,
+  topic,
+});
+
+type PracticeGroup = { heading: string; topics: PracticeTopic[] };
+
+/** Maths question types of one paper, one group per topic, each with an "(all)" choice. */
+const mathsGroups = (paper: 'arithmetic' | 'reasoning', name: string): PracticeGroup[] =>
+  TOPICS.filter((t) => ALL_TYPES.some((e) => e.paper === paper && e.topic === t.id)).map((t) => {
+    const types = ALL_TYPES.filter((e) => e.paper === paper && e.topic === t.id);
+    return {
+      heading: `${name} · ${t.label}`,
+      topics: [
+        ...(types.length > 1 ? [{ label: `${t.label} (all)`, request: mathsPractice(paper, types.map((e) => e.id), t.label) }] : []),
+        ...types.map((e) => ({ label: e.label, request: mathsPractice(paper, [e.id], e.label) })),
+      ],
+    };
+  });
+
+/** Everything that can be practised on its own, grouped for the chooser. */
+const PRACTICE: Record<Subject, PracticeGroup[]> = {
+  maths: [...mathsGroups('arithmetic', 'Arithmetic'), ...mathsGroups('reasoning', 'Reasoning')],
+  english: [
+    ...TOPICS.filter((t) => ENGLISH_TYPES.some((e) => e.paper === 'gps' && e.topic === t.id)).map((t) => {
+      const types = ENGLISH_TYPES.filter((e) => e.paper === 'gps' && e.topic === t.id);
+      return {
+        heading: t.label,
+        topics: [
+          { label: `${t.label} (all)`, request: gpsPractice(types.map((e) => e.id), t.label) },
+          ...types.map((e) => ({ label: e.label, request: gpsPractice([e.id], e.label) })),
+        ],
+      };
+    }),
+    {
+      heading: 'Spelling rules and word lists',
+      topics: Object.entries(SPELLING_GROUPS).map(([group, label]) => ({ label, request: spellingPractice(group, label) })),
+    },
+  ],
+};
+
+/** A practice for one question type from the report (reading questions belong to their texts). */
+function practiceFor(typeId: string, label: string): Omit<StartRequest, 'level'> | null {
+  const paper = typeInfo(typeId)?.paper;
+  if (paper === 'arithmetic' || paper === 'reasoning') return mathsPractice(paper, [typeId], label);
+  if (paper === 'spelling') return spellingPractice(typeId.slice(2), label);
+  if (paper === 'gps') return gpsPractice([typeId], label);
+  return null;
+}
+
 // Small per-device preferences; the app works the same when storage is unavailable.
 function loadPref<T extends string>(key: string, fallback: T, allowed: readonly string[]): T {
   try {
@@ -163,6 +238,7 @@ function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () =>
 export function HomeScreen(props: Props) {
   const { data, profile, onStart, onContinue, onOpenResult } = props;
   const [confirm, setConfirm] = useState<StartRequest | null>(null);
+  const [choosing, setChoosing] = useState(false);
   const [subject, setSubject] = useState<Subject>(() => loadPref<Subject>(SUBJECT_KEY, 'maths', ['maths', 'english']));
   const [level, setLevel] = useState<LevelChoice>(() => {
     const v = loadPref(LEVEL_KEY, 'mixed', ['1', '2', '3', 'mixed']);
@@ -189,8 +265,26 @@ export function HomeScreen(props: Props) {
     reading: { have: READING_TEXTS.length, note: `${textsRead} of ${READING_TEXTS.length} texts read` },
   };
 
-  const start = (request: StartRequest) =>
-    activeAttempt(data, profile.id, request.paper) ? setConfirm(request) : onStart(request);
+  const busy = (request: StartRequest) =>
+    request.mode === 'practice' ? activePractice(data, profile.id) : activeAttempt(data, profile.id, request.paper);
+  const start = (request: StartRequest) => (busy(request) ? setConfirm(request) : onStart(request));
+  const practise = (request: Omit<StartRequest, 'level'>) => {
+    setChoosing(false);
+    start(subject === 'english' ? { ...request, level } : request);
+  };
+
+  // Weakest question types of this subject (at least 3 answers, under 85%) that can be practised.
+  const subjectRecords = collectRecords(attempts).filter((r) => SUBJECT_OF[r.paper] === subject);
+  const subjectTypes = ALL_TYPES.filter((t) => SUBJECT_OF[t.paper] === subject);
+  const suggestions = weakest(byType(subjectRecords, subjectTypes))
+    .filter((row) => row.tally.correct / row.tally.total < 0.85)
+    .flatMap((row) => {
+      const request = practiceFor(row.typeId, row.label);
+      return request ? [{ row, request }] : [];
+    })
+    .slice(0, 4);
+  const unfinished = activePractice(data, profile.id);
+  const practice = unfinished && SUBJECT_OF[unfinished.paper] === subject ? unfinished : undefined;
 
   const chooseSubject = (s: Subject) => {
     setSubject(s);
@@ -297,6 +391,39 @@ export function HomeScreen(props: Props) {
         })}
       </div>
 
+      <section className="card paper-card practice-card">
+        <h2>Practise a topic</h2>
+        <p className="muted">
+          {subject === 'english'
+            ? 'Ten questions on one thing, at the level chosen above.'
+            : 'Ten questions on one thing, from easy to hard.'}
+        </p>
+        {practice && <Progress attempt={practice} onContinue={() => onContinue(practice.id)} />}
+        {suggestions.length > 0 && (
+          <div className="suggestions">
+            <div className="muted small">Suggested from your results</div>
+            <div className="chips">
+              {suggestions.map(({ row, request }) => (
+                <button key={row.typeId} type="button" className="chip-btn" onClick={() => practise(request)}>
+                  {row.label}
+                  <span className="muted small"> {Math.round((row.tally.correct / row.tally.total) * 100)}%</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        <div className="choices">
+          <button type="button" className="choice" onClick={() => setChoosing(true)}>
+            <strong>Choose a topic</strong>
+            <span className="muted">
+              {subject === 'english'
+                ? 'Grammar, punctuation, vocabulary or a spelling rule'
+                : 'Any arithmetic or reasoning question type'}
+            </span>
+          </button>
+        </div>
+      </section>
+
       <section className="card">
         <div className="row">
           <h2 className="grow">Recent results</h2>
@@ -332,11 +459,46 @@ export function HomeScreen(props: Props) {
         )}
       </section>
 
+      {choosing && (
+        <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="choose-title" onClick={() => setChoosing(false)}>
+          <div className="modal modal-wide" onClick={(e) => e.stopPropagation()}>
+            <div className="row">
+              <h2 id="choose-title" className="grow">
+                Practise a topic{subject === 'english' ? ` · ${LEVEL_NAME[level]}` : ''}
+              </h2>
+              <button type="button" className="btn" onClick={() => setChoosing(false)}>
+                Close
+              </button>
+            </div>
+            <div className="topic-lists">
+              {PRACTICE[subject].map((group) => (
+                <section key={group.heading}>
+                  <h3>{group.heading}</h3>
+                  <div className="chips">
+                    {group.topics.map((t) => (
+                      <button key={t.label} type="button" className="chip-btn" onClick={() => practise(t.request)}>
+                        {t.label}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {confirm && (
         <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="new-title">
           <div className="modal">
-            <h2 id="new-title">Start a new {PAPER_NAME[confirm.paper].toLowerCase()} paper?</h2>
-            <p>The {PAPER_NAME[confirm.paper].toLowerCase()} paper in progress will be put aside. Its marked days stay in the report.</p>
+            <h2 id="new-title">
+              {confirm.mode === 'practice' ? 'Start a new practice?' : `Start a new ${PAPER_NAME[confirm.paper].toLowerCase()} paper?`}
+            </h2>
+            <p>
+              {confirm.mode === 'practice'
+                ? 'The practice in progress will be put aside.'
+                : `The ${PAPER_NAME[confirm.paper].toLowerCase()} paper in progress will be put aside. Its marked days stay in the report.`}
+            </p>
             <div className="row">
               <button type="button" className="btn grow" onClick={() => setConfirm(null)}>
                 Cancel
@@ -349,7 +511,7 @@ export function HomeScreen(props: Props) {
                   setConfirm(null);
                 }}
               >
-                Start new paper
+                {confirm.mode === 'practice' ? 'Start practice' : 'Start new paper'}
               </button>
             </div>
           </div>

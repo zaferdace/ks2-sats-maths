@@ -8,6 +8,7 @@ import { perDay, type Attempt, type Mode } from '../store/model';
 export interface QuestionRecord {
   attemptId: string;
   paper: PaperKind;
+  mode: Mode;
   index: number; // position in the paper
   typeId: string;
   topic: TopicId | null;
@@ -69,6 +70,7 @@ export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
       out.push({
         attemptId: a.id,
         paper: a.paper,
+        mode: a.mode,
         index,
         typeId: q.typeId,
         topic: typeInfo(q.typeId)?.topic ?? null,
@@ -176,7 +178,7 @@ export function positionGrid(records: QuestionRecord[], paper: MathsPaper): Tall
   const size = Math.ceil(PAPER_LENGTH[paper] / DAYS);
   const grid = Array.from({ length: DAYS }, () => Array.from({ length: size }, emptyTally));
   for (const r of records) {
-    if (r.paper !== paper) continue;
+    if (r.paper !== paper || r.mode === 'practice') continue; // positions only mean something in a paper
     const cell = grid[Math.floor(r.index / size)]?.[r.index % size];
     if (cell) count(cell, r);
   }
@@ -253,7 +255,7 @@ export function summarize(attempts: Attempt[], records: QuestionRecord[], sessio
   const t = tally(records);
   const timed = records.filter((r) => r.timeMs > 0);
   return {
-    papersCompleted: attempts.filter((a) => a.completedAt !== null).length,
+    papersCompleted: attempts.filter((a) => a.completedAt !== null && a.mode !== 'practice').length,
     sessions: sessions.length,
     questions: t.total,
     correct: t.correct,

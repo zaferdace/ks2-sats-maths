@@ -20,7 +20,7 @@ function isAttempt(x: unknown): x is Attempt {
     typeof x.id === 'string' &&
     typeof x.profileId === 'string' &&
     typeof x.paperCode === 'string' &&
-    (x.mode === 'daily' || x.mode === 'full') &&
+    (x.mode === 'daily' || x.mode === 'full' || x.mode === 'practice') &&
     typeof x.createdAt === 'number' &&
     (x.paper === undefined || (PAPER_KINDS as readonly unknown[]).includes(x.paper)) &&
     lists.every((k) => Array.isArray(x[k]) && (x[k] as unknown[]).length === (x.questions as unknown[]).length)

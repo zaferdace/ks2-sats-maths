@@ -110,13 +110,13 @@ export function buildGpsPaper(code: string, choice: LevelChoice, history: Histor
   return out;
 }
 
-/** A short practice set of one GPS type or topic at one level. */
-export function buildGpsPractice(code: string, types: string[], level: Level, history: History, count = 10): ItemQuestion[] {
+/** A short practice set of some GPS question types ("mixed" goes from easy to hard). */
+export function buildGpsPractice(code: string, types: string[], choice: LevelChoice, history: History, count = 10): ItemQuestion[] {
   const rng = createRng(`GP${code}`);
   const used = new Set<string>();
   const out: ItemQuestion[] = [];
   for (let i = 0; i < count * 3 && out.length < count; i++) {
-    const q = question(rng.pick(types), level, rng, used, history);
+    const q = question(rng.pick(types), levelAt(out.length, count, choice), rng, used, history);
     if (!q) continue;
     out.push(q);
     if (q.sourceId) used.add(q.sourceId);

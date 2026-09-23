@@ -6,7 +6,7 @@ import type { Rng } from '../../gen/rng';
 import type { ItemQuestion } from '../../gen/types';
 import { SENTENCES } from '../bank';
 import type { GrammarSentence, Level, Span, Tag } from '../types';
-import { joinTokens } from '../validate';
+import { joinTokens } from '../tokens';
 
 export type GeneratedGpsType =
   | 'g-word-class'
@@ -104,9 +104,12 @@ const NUMBER_WORDS = ['', 'the', 'the two', 'the three'];
 function findWord(rng: Rng, level: Level): ItemQuestion | null {
   const target = rng.pick<Target>(['noun', 'verb', 'adj', 'adv', 'prep', 'det', 'pron', 'conj']);
   const hits = (s: GrammarSentence) => s.tokens.map((t, i) => (targetOf(t[1]) === target ? i : -1)).filter((i) => i >= 0);
+  // Words tagged "other" (noun modifiers like "school" in "school gates", "not", "please",
+  // question words, infinitive "to") could each be argued into some class, so "tap every …"
+  // questions avoid sentences that have any.
   const risky = (s: GrammarSentence) =>
+    s.tokens.some(([, t]) => t === 'other') ||
     (target === 'verb' && s.tokens.some(([w, t]) => t === 'aux' || t === 'modal' || isContraction(w))) ||
-    (target === 'adv' && s.tokens.some(([w, t]) => t === 'other' && (w.toLowerCase() === 'not' || isContraction(w)))) ||
     ((target === 'det' || target === 'pron') && hasPossessive(s)) ||
     (target === 'noun' && hasNounPair(s));
   const candidates = pool(level, (s) => hits(s).length >= 1 && hits(s).length <= 3 && !risky(s));

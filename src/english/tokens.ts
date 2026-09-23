@@ -15,10 +15,16 @@ export function spaceBefore(tokens: string[]): boolean[] {
       inQuote = !inQuote;
       return space;
     }
-    if (CLOSERS.test(t)) space = false;
-    afterOpener = OPENERS.has(t);
+    if (CLOSERS.test(t) || t === '-') space = false; // a hyphen joins the words either side
+    afterOpener = OPENERS.has(t) || t === '-';
     return space;
   });
+}
+
+/** Sentence text from tokens: "Sam (my friend) said, “Hi.”" */
+export function joinTokens(tokens: string[]): string {
+  const space = spaceBefore(tokens);
+  return tokens.map((t, i) => (space[i] ? ` ${t}` : t)).join('');
 }
 
 /** Splits a dictation sentence around its word: ["The ", " was loud."]. */

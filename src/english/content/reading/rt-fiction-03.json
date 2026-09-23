@@ -32,8 +32,8 @@
       "paragraph": 2,
       "prompt": "Look at paragraph 2.\nWhat did Maya use to make the line down the middle of the carpet?",
       "accept": [
-        "tape",
         "blue tape",
+        "tape",
         "the tape",
         "the blue tape",
         "some tape",
@@ -166,7 +166,7 @@
       "marks": 3,
       "kind": "self",
       "prompt": "Maya's feelings about Zara change during the story.\nExplain how they change, using evidence from the text.",
-      "model": "At the start, Maya is annoyed with Zara and does not want to share a room with her. She sticks tape down the carpet and says, 'That's my half. Don't cross it.' By the end, Maya likes Zara and they have become friends. She tells Zara that she does not hate her and 'was surprised to find that it was true', and the girls make their first book together.",
+      "model": "At the start, Maya is annoyed with Zara and does not want to share a room with her. She sticks tape down the carpet and says, 'That's my half,' and then, 'Don't cross it.' By the end, Maya likes Zara and they have become friends. She tells Zara that she does not hate her and 'was surprised to find that it was true', and the girls make their first book together.",
       "points": [
         "Explains that at first Maya is annoyed with Zara or does not want to share a room with her.",
         "Explains that by the end Maya likes Zara, or that they have become friends.",

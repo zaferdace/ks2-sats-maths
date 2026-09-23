@@ -47,18 +47,18 @@
       "id": "q3",
       "domain": "2b",
       "marks": 1,
-      "prompt": "How old was Mary when her father died?",
+      "prompt": "How old was Mary when her father died? Tick one.",
       "paragraph": 3,
-      "kind": "text",
-      "accept": [
+      "kind": "choice",
+      "options": [
+        "nine",
         "eleven",
-        "11",
-        "eleven years old",
-        "11 years old",
-        "she was eleven",
-        "she was 11",
-        "aged eleven",
-        "aged 11"
+        "twelve",
+        "forty-seven"
+      ],
+      "pick": 1,
+      "answer": [
+        1
       ]
     },
     {
