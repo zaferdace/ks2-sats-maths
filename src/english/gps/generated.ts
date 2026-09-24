@@ -51,11 +51,11 @@ const hasPossessive = (s: GrammarSentence) => s.tokens.some(([w]) => isPossessiv
 /** Two nouns side by side ("football boots", "Mr Patel") make "tap the nouns" arguable. */
 const hasNounPair = (s: GrammarSentence) => s.tokens.some(([, t], i) => t === 'noun' && s.tokens[i + 1]?.[1] === 'noun');
 
-/** Sentences at the level, or any sentence when none match. */
+/** Sentences at the level, topped up from the other levels when the level has only a few. */
 function pool(level: Level, ok: (s: GrammarSentence) => boolean): GrammarSentence[] {
   const all = SENTENCES.filter(ok);
   const exact = all.filter((s) => s.level === level);
-  return exact.length ? exact : all;
+  return exact.length >= 12 ? exact : all;
 }
 
 /** A sentence with one word underlined. */
@@ -302,17 +302,16 @@ function fronted(rng: Rng, level: Level): ItemQuestion | null {
 }
 
 function nounPhrase(rng: Rng, level: Level): ItemQuestion | null {
-  // Only when the phrase is the whole subject, so where it ends is not in doubt.
-  const candidates = pool(level, (s) => {
-    const np = s.expandedNounPhrase;
-    return np?.[0] === 0 && s.subject?.[0] === 0 && s.subject[1] === np[1];
-  });
+  // Annotated sentences have exactly one expanded noun phrase, and the screen says how many
+  // words to tap, so where the phrase ends is not left to guesswork.
+  const candidates = pool(level, (s) => Boolean(s.expandedNounPhrase));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const span = s.expandedNounPhrase!;
+  const start = span[0] === 0 ? 'This sentence starts with an' : 'This sentence contains an';
   return {
     ...base('g-noun-phrase', level, s),
-    body: [{ b: 'text', text: 'This sentence starts with an **expanded noun phrase**. Tap every word in it.' }],
+    body: [{ b: 'text', text: `${start} **expanded noun phrase**. Tap every word in it.` }],
     ...tapSpan(s, span),
     explain: `The expanded noun phrase is "${spanText(s, span)}".`,
   };

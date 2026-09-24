@@ -47,6 +47,8 @@ export default function App() {
 function Main({ data, update, saveFailed }: { data: StoreData; update: Update; saveFailed: boolean }) {
   const profile = data.profiles.find((p) => p.id === data.currentProfileId);
   const [screen, setScreen] = useState<Screen>(() => ({ name: profile ? 'home' : 'profiles' }) as Screen);
+  // A message for the screen it was raised on; it goes away when the screen changes.
+  const [notice, setNotice] = useState<{ text: string; on: Screen } | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -99,7 +101,10 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         questions = buildReading(code, level, history(), size === 3 ? 3 : 1);
         break;
     }
-    if (!questions.length) return;
+    if (!questions.length) {
+      setNotice({ text: 'There are not enough questions for that yet. Try another topic or level.', on: screen });
+      return;
+    }
     const english = SUBJECT_OF[paper] === 'english';
     const created = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
     const attempt = topic ? { ...created, topic } : created;
@@ -172,6 +177,11 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
 
   return (
     <div className="app">
+      {notice?.on === screen && (
+        <div className="banner page" role="status">
+          {notice.text}
+        </div>
+      )}
       {saveFailed && (
         <div className="banner page">
           This iPad refused to save the latest answers (storage may be full). Open Settings and save a backup.
