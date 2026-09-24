@@ -8,7 +8,7 @@
     "On the surface",
     "Pond skaters are insects that can stand on the surface of the water without sinking. Their long legs are covered in tiny hairs that keep them dry, so they skim across the pond as if it were ice. When an insect falls into the water, the pond skater feels the ripples it makes. It dashes over to the struggling insect, grabs it and sucks out its juices.",
     "Under the water",
-    "In early spring, frogs gather in ponds to lay their eggs, which are called frogspawn. Each egg is a black dot inside a ball of clear jelly. Within a few weeks, tiny tadpoles wriggle out. They grow back legs and then front legs, and their tails slowly disappear. By the summer, they have turned into froglets that are ready to leave the water.",
+    "In late winter or early spring, frogs gather in ponds to lay their eggs, which are called frogspawn. Each egg is a black dot inside a ball of clear jelly. Within a few weeks, tiny tadpoles wriggle out. They grow back legs and then front legs, and their tails slowly disappear. By the summer, they have turned into froglets that are ready to leave the water.",
     "Among the weeds lurks the great diving beetle, one of the fiercest hunters in the pond. It eats insects, tadpoles and even small fish. Like us, it needs to breathe air, so every so often it swims up to the surface and traps a bubble of air under its wing cases. This works like a diver’s air tank, allowing the beetle to stay underwater for a long time.",
     "Dragonflies begin their lives in ponds, too. A young dragonfly, called a nymph, hatches from an egg and spends months, or even years, underwater. It hunts other creatures by shooting out its hinged jaw to grab them. When it is fully grown, the nymph climbs up a plant stem and out of the water. Its skin splits open, and the adult dragonfly slowly pulls itself out. It waits for its new wings to dry and harden, and then it flies away.",
     "Going pond dipping",
@@ -62,9 +62,13 @@
         "frogspawn",
         "frog spawn",
         "frog-spawn",
+        "frogs spawn",
+        "frog's spawn",
+        "frogs' spawn",
         "spawn",
         "they are called frogspawn",
-        "they are called frog spawn"
+        "they are called frog spawn",
+        "they're called frogspawn"
       ]
     },
     {

@@ -10,7 +10,7 @@
     "Sunday 3rd September 1939",
     "This morning, we all crowded round the wireless in Mrs Pryce’s kitchen. At quarter past eleven, the Prime Minister announced that Britain was at war with Germany. Nobody spoke. Mrs Pryce squeezed my hand, and Mr Pryce stared out of the window for a long time. I kept thinking about Mum and Dad in London. What if bombs fell on our street?",
     "Saturday 16th September 1939",
-    "We have been in Merrowby for just over two weeks, and I am slowly getting used to country life. At first, I could hardly sleep because it was so quiet: there were no buses or trams rattling past, only an owl hooting in the dark. Every evening, we must draw thick blackout curtains before the lamps are lit, so that no light can be seen from outside. We share the village school with the local children. They have their lessons in the mornings, and we have ours in the afternoons. Stanley follows Mr Pryce everywhere and has announced that he is going to be a farmer. He even helps to collect the eggs.",
+    "We have been in Merrowby for just over two weeks, and I am slowly getting used to country life. At first, I could hardly sleep because it was so quiet: there were no buses or trams rattling past, only an owl hooting in the dark. Every evening, we must draw thick blackout curtains before the lamps are lit, so that no light can be seen from outside, not even from an aeroplane flying overhead. We share the village school with the local children. They have their lessons in the mornings, and we have ours in the afternoons. Stanley follows Mr Pryce everywhere and has announced that he is going to be a farmer. He even helps to collect the eggs.",
     "This morning, a letter arrived from Mum. She says that London is quiet and that she and Dad are safe. She misses us terribly, but she is glad that we are somewhere safer. I read the letter three times and then tucked it under my pillow. I still miss home every single day, but when Mrs Pryce kisses us goodnight, I think that being an evacuee might not be so bad after all."
   ],
   "questions": [
@@ -25,11 +25,16 @@
         "cardboard box",
         "a cardboard box",
         "in a cardboard box",
-        "cardboard box on a string",
         "cardboard boxes",
+        "in cardboard boxes",
+        "cardboard box on a string",
+        "cardboard box on string",
+        "cardboard box on a piece of string",
+        "in a cardboard box on a string",
         "box",
         "in a box",
-        "boxes"
+        "boxes",
+        "box on a string"
       ]
     },
     {

@@ -7,7 +7,7 @@
     "Have you ever gazed up at the night sky and wondered how anyone finds their way around it? On a clear, dark night, you may see thousands of glittering stars, and at first they can look like a jumble of dots. This guide will show you how to find one of the most useful stars of all: the North Star.",
     "Getting ready",
     "First, choose a clear night with no clouds. Then, with an adult, find a safe place to watch from, such as a garden or a field, well away from street lights and brightly lit windows. The darker the sky, the more stars you will be able to see. Wrap up warmly, even in summer, because you will be standing still for quite a long time.",
-    "Once you are outside, be patient. Your eyes need about twenty minutes to get used to the dark, and as they adjust, more and more stars will seem to appear. Do not look at a phone screen during this time, or your eyes will have to start all over again. If you need a torch, cover the end with red cellophane, because red light does not spoil your night vision as much as white light.",
+    "Once you are outside, be patient. Your eyes need about twenty minutes to get used to the dark, and as they adjust, more and more stars will seem to appear. Do not look at a phone screen during this time, or your eyes will have to start all over again. If you need a torch, cover the end with a piece of see-through red plastic, because red light does not spoil your night vision as much as white light.",
     "Finding the North Star",
     "Next, look for the Plough. The Plough is a group of seven bright stars that make the shape of a saucepan with a long, bent handle. It is part of a larger star pattern called the Great Bear. From Britain, you can see the Plough on every clear night of the year, although sometimes it is high above your head and sometimes low in the sky.",
     "Then find the two stars at the end of the saucepan’s bowl, furthest from the handle. These are called the pointers. Imagine a line running through them and out of the top of the saucepan. Follow that line for about five times the distance between the two pointers, and you will reach a fairly bright star on its own. Well done – you have found the North Star!",
@@ -72,11 +72,14 @@
       "accept": [
         "red",
         "red light",
-        "red torch",
         "red colour",
+        "colour red",
+        "red torch",
+        "red plastic",
+        "see-through red plastic",
         "it should be red",
         "make it red",
-        "red cellophane"
+        "make its light red"
       ]
     },
     {
@@ -159,7 +162,7 @@
       "prompt": "Look at paragraph 8.\nWhy has the North Star been so useful to sailors and travellers? Explain, using evidence from the text.",
       "paragraph": 8,
       "kind": "self",
-      "model": "The North Star shows people which way is north, because “whenever you face it, you are facing north”, so sailors and travellers could work out which direction they were going in. It is also a star they could rely on, because it “hardly moves at all” while the other stars wheel around it, so it stays in the same place all night.",
+      "model": "The North Star shows people which way is north: “Whenever you face it, you are facing north.” This means that sailors and travellers could use it to work out which direction they were going in. It is also a star they could rely on, because it “hardly moves at all” while the other stars wheel around it, so it stays in the same place all night.",
       "points": [
         "Explains that it shows which way is north, so travellers could work out their direction",
         "Explains that it stays in almost the same place all night (it hardly moves), so it can be relied on"
