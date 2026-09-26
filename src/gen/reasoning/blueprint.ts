@@ -40,13 +40,13 @@ export const REASONING_BLUEPRINT: readonly ReasoningSlot[] = [
   two(o('r-time', 1), o('r-perimeter-area', 2)),
   // Day 4
   one(o('r-equation', 1, 2), o('r-pattern', 1, 2), o('r-sequence', 1, 2), o('r-equation', 3)),
-  one(o('r-angles-polygon', 1, 2), o('r-shapes', 2), o('r-angles-line', 2), o('r-perimeter-area', 1)),
+  one(o('r-angles-polygon', 1, 2), o('r-shapes', 2), o('r-angles-line', 2), o('r-perimeter-area', 1), o('r-area-formula', 1, 2)),
   one(o('r-fdp', 1, 2), o('r-scale', 1, 2), o('r-shaded', 3)),
   two(o('r-percent-context', 2), o('r-fraction-context', 3)),
   two(o('r-perimeter-area', 3), o('r-volume', 2, 3)),
   // Day 5: hardest
   one(o('r-rounding', 2, 3), o('r-digit-value', 2, 3), o('r-order-numbers', 2, 3), o('r-factors', 3), o('r-roman', 2, 3)),
-  one(o('r-angles-triangle', 2, 3), o('r-angles-polygon', 3), o('r-coordinates', 2, 3), o('r-transform', 2, 3), o('r-shapes', 3)),
+  one(o('r-angles-triangle', 2, 3), o('r-angles-polygon', 3), o('r-coordinates', 2, 3), o('r-transform', 2, 3), o('r-shapes', 3), o('r-area-formula', 3)),
   one(o('r-compare-fractions', 2, 3), o('r-fdp', 3), o('r-bar-chart', 2, 3), o('r-table', 2, 3), o('r-negative', 3)),
   two(o('r-ratio-share', 2, 3), o('r-scale', 3), o('r-time', 3), o('r-mean', 1, 2, 3), o('r-pie-chart', 3)),
   two(o('r-two-unknowns', 1, 2, 3), o('r-money', 3), o('r-multistep', 3), o('r-inverse', 3), o('r-sequence', 3)),

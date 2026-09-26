@@ -166,24 +166,8 @@ export const perimeterArea: ReasoningType = {
         nums(2 * (w + l)),
       );
     }
-    if (rng.chance(0.4)) {
-      const base = rng.int(4, 16);
-      const height = rng.int(3, 12);
-      const area = base * height;
-      if (rng.chance(0.5)) {
-        return draft(
-          [text(`A triangle has a base of **${base} cm** and a perpendicular height of **${height} cm**.\nWhat is its area?`)],
-          number({ decimal: true, suffix: 'cm²' }),
-          nums(rat(area, 2)),
-        );
-      }
-      return draft(
-        [text(`A parallelogram has a base of **${base} cm** and a perpendicular height of **${height} cm**.\nWhat is its area?`)],
-        number({ suffix: 'cm²' }),
-        nums(area),
-      );
-    }
-    // L-shape: a W × H rectangle with a w × h corner cut from the top right.
+    // L-shape: a W × H rectangle with a w × h corner cut from the top right. (Triangles and
+    // parallelograms, one formula each, are the 1-mark r-area-formula questions.)
     return retry(() => {
       const W = rng.int(6, 14);
       const H = rng.int(5, 12);
@@ -206,6 +190,29 @@ export const perimeterArea: ReasoningType = {
         nums(2 * (W + H)),
       );
     });
+  },
+};
+
+export const areaFormula: ReasoningType = {
+  id: 'r-area-formula',
+  label: 'Area of triangles and parallelograms',
+  topic: 'measurement',
+  generate(rng, d) {
+    const base = rng.int(d === 3 ? 9 : 4, d === 3 ? 24 : 16);
+    const height = rng.int(3, d === 3 ? 15 : 12);
+    const area = base * height;
+    if (d === 1) {
+      return draft(
+        [text(`A parallelogram has a base of **${base} cm** and a perpendicular height of **${height} cm**.\nWhat is its area?`)],
+        number({ suffix: 'cm²' }),
+        nums(area),
+      );
+    }
+    return draft(
+      [text(`A triangle has a base of **${base} cm** and a perpendicular height of **${height} cm**.\nWhat is its area?`)],
+      number({ decimal: true, suffix: 'cm²' }),
+      nums(rat(area, 2)),
+    );
   },
 };
 

@@ -2,7 +2,7 @@ import type { ReasoningType } from '../types';
 import { inverse, moneyProblems, multiStep, remainders } from './calculation';
 import { compareFractions, decimalContext, fdpConvert, fractionContext, percentContext, shadedFraction } from './fdp';
 import { anglesLinePoint, anglesPolygon, anglesTriangle, coordinates, shapeProperties, transformations } from './geometry';
-import { convertUnits, perimeterArea, timeProblems, volume } from './measurement';
+import { areaFormula, convertUnits, perimeterArea, timeProblems, volume } from './measurement';
 import { digitValue, estimating, factorsMultiples, negatives, orderNumbers, romanNumerals, rounding } from './number';
 import { equations, formulae, patterns, ratioShare, recipes, scale, sequences, twoUnknowns } from './ratioAlgebra';
 import { barCharts, lineGraphs, mean, pieCharts, tables } from './statistics';
@@ -37,6 +37,7 @@ export const REASONING_TYPES: readonly ReasoningType[] = [
   convertUnits,
   timeProblems,
   perimeterArea,
+  areaFormula,
   volume,
   anglesLinePoint,
   anglesTriangle,

@@ -289,6 +289,9 @@ describe('reasoning blueprint', () => {
     ['r-equation', 3],
     ['r-volume', 1],
     ['r-perimeter-area', 1],
+    ['r-area-formula', 1],
+    ['r-area-formula', 2],
+    ['r-area-formula', 3],
   ] as const;
 
   it('keeps one-step problems out of the two-mark slots', () => {
