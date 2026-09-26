@@ -4,8 +4,9 @@
 import { choices } from '../../gen/reasoning/helpers';
 import type { Rng } from '../../gen/rng';
 import type { ItemQuestion } from '../../gen/types';
+import { withArticle } from '../../gen/wording';
 import { SENTENCES } from '../bank';
-import type { GrammarSentence, Level, Span, Tag } from '../types';
+import { TENSES, type GrammarSentence, type Level, type Span, type Tag } from '../types';
 import { joinTokens } from '../tokens';
 
 export type GeneratedGpsType =
@@ -51,11 +52,22 @@ const hasPossessive = (s: GrammarSentence) => s.tokens.some(([w]) => isPossessiv
 /** Two nouns side by side ("football boots", "Mr Patel") make "tap the nouns" arguable. */
 const hasNounPair = (s: GrammarSentence) => s.tokens.some(([, t], i) => t === 'noun' && s.tokens[i + 1]?.[1] === 'noun');
 
-/** Sentences at the level, topped up from the other levels when the level has only a few. */
+/** Fewer sentences than this at a level and the pool is topped up from the nearest level. */
+const POOL_MIN = 12;
+
+/**
+ * Sentences at the level. When the level has only a few, they are topped up from the nearest
+ * level (level 1 from level 2 before level 3), and each question records the level of the
+ * sentence it actually uses.
+ */
 function pool(level: Level, ok: (s: GrammarSentence) => boolean): GrammarSentence[] {
   const all = SENTENCES.filter(ok);
-  const exact = all.filter((s) => s.level === level);
-  return exact.length >= 12 ? exact : all;
+  let out: GrammarSentence[] = [];
+  for (const distance of [0, 1, 2]) {
+    out = [...out, ...all.filter((s) => Math.abs(s.level - level) === distance)];
+    if (out.length >= POOL_MIN) break;
+  }
+  return out;
 }
 
 /** A sentence with one word underlined. */
@@ -63,10 +75,11 @@ function underlined(s: GrammarSentence, index: number): string {
   return joinTokens(words(s).map((w, i) => (i === index ? `__${w}__` : w)));
 }
 
-const base = (typeId: GeneratedGpsType, level: Level, s: GrammarSentence): Pick<ItemQuestion, 'format' | 'typeId' | 'difficulty' | 'marks' | 'sourceId'> => ({
+/** The question's difficulty is the level of the sentence it is built from, whatever was asked for. */
+const base = (typeId: GeneratedGpsType, s: GrammarSentence): Pick<ItemQuestion, 'format' | 'typeId' | 'difficulty' | 'marks' | 'sourceId'> => ({
   format: 'english',
   typeId,
-  difficulty: level,
+  difficulty: s.level,
   marks: 1,
   sourceId: s.id,
 });
@@ -91,11 +104,11 @@ function wordClass(rng: Rng, level: Level): ItemQuestion | null {
   );
   const { input, answer } = choices(rng, [LABEL[target]], rng.shuffle(others).slice(0, 3).map((t) => LABEL[t]));
   return {
-    ...base('g-word-class', level, s),
+    ...base('g-word-class', s),
     body: [{ b: 'text', text: `What is the word class of the underlined word?\n**${underlined(s, i)}**` }],
     input,
     answer,
-    explain: `"${s.tokens[i][0]}" is a ${LABEL[target]} in this sentence.`,
+    explain: `"${s.tokens[i][0]}" is ${withArticle(LABEL[target])} in this sentence.`,
   };
 }
 
@@ -119,7 +132,7 @@ function findWord(rng: Rng, level: Level): ItemQuestion | null {
   const n = answerIdx.length;
   const noun = n === 1 ? LABEL[target] : `${LABEL[target]}s`;
   return {
-    ...base('g-find-word', level, s),
+    ...base('g-find-word', s),
     body: [{ b: 'text', text: `Tap ${NUMBER_WORDS[n]} ${noun} in this sentence.` }],
     input: { kind: 'words', tokens: words(s), pick: n },
     answer: answerIdx.join(','),
@@ -136,11 +149,11 @@ function sentenceType(rng: Rng, level: Level): ItemQuestion | null {
   const s = rng.pick(candidates);
   const options = [...TYPES];
   return {
-    ...base('g-sentence-type', level, s),
+    ...base('g-sentence-type', s),
     body: [{ b: 'text', text: `What type of sentence is this?\n**${text(s)}**` }],
     input: { kind: 'choice', options: [...options], pick: 1 },
     answer: String(options.indexOf(s.type)),
-    explain: `It is a ${s.type}.`,
+    explain: `It is ${withArticle(s.type)}.`,
   };
 }
 
@@ -160,7 +173,7 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
     if (statements.length < 3) return null;
     const { input, answer } = choices(rng, [unpunctuated(s)], rng.shuffle(statements).slice(0, 3).map(unpunctuated));
     return {
-      ...base('g-end-punctuation', level, s),
+      ...base('g-end-punctuation', s),
       body: [{ b: 'text', text: `Which sentence should end with ${kind === 'question' ? 'a' : 'an'} **${mark}**?` }],
       input,
       answer,
@@ -169,7 +182,7 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
   }
   const { input, answer } = choices(rng, [mark], ['full stop', 'question mark', 'exclamation mark'].filter((m) => m !== mark));
   return {
-    ...base('g-end-punctuation', level, s),
+    ...base('g-end-punctuation', s),
     body: [{ b: 'text', text: `Which punctuation mark should end this sentence?\n**${unpunctuated(s)}**` }],
     input,
     answer,
@@ -178,14 +191,15 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
 }
 
 function tense(rng: Rng, level: Level): ItemQuestion | null {
-  const candidates = pool(level, (s) => Boolean(s.tense));
+  // TENSES has no "future": English has no future tense ("will" is a modal verb), so sentences
+  // about the future are never keyed with a tense.
+  const candidates = pool(level, (s) => (TENSES as readonly string[]).includes(s.tense ?? ''));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
-  const all = ['simple present', 'simple past', 'present progressive', 'past progressive', 'present perfect', 'past perfect', 'future'];
-  const { input, answer } = choices(rng, [s.tense!], rng.shuffle(all.filter((t) => t !== s.tense)).slice(0, 3));
+  const { input, answer } = choices(rng, [s.tense!], rng.shuffle(TENSES.filter((t) => t !== s.tense)).slice(0, 3));
   const where = s.subordinateClause || s.relativeClause ? 'in the main clause of this sentence' : 'in this sentence';
   return {
-    ...base('g-tense', level, s),
+    ...base('g-tense', s),
     body: [{ b: 'text', text: `Which tense is used ${where}?\n**${text(s)}**` }],
     input,
     answer,
@@ -220,7 +234,7 @@ function subject(rng: Rng, level: Level): ItemQuestion | null {
   if (wrong.length < 2) return null;
   const { input, answer } = choices(rng, [right], wrong);
   return {
-    ...base('g-subject', level, s),
+    ...base('g-subject', s),
     body: [{ b: 'text', text: `What is the subject of this sentence?\n**${text(s)}**` }],
     input,
     answer,
@@ -247,7 +261,7 @@ function clauses(rng: Rng, level: Level): ItemQuestion | null {
     const s = rng.pick(withRel);
     const { input, answer } = choices(rng, [text(s)], rng.shuffle(without).slice(0, 3).map(text));
     return {
-      ...base('g-clauses', level, s),
+      ...base('g-clauses', s),
       body: [{ b: 'text', text: 'Which sentence contains a **relative clause**?' }],
       input,
       answer,
@@ -264,7 +278,7 @@ function clauses(rng: Rng, level: Level): ItemQuestion | null {
   const s = rng.pick(candidates);
   const span = (variant === 'subordinate' ? s.subordinateClause : s.relativeClause)!;
   return {
-    ...base('g-clauses', level, s),
+    ...base('g-clauses', s),
     body: [{ b: 'text', text: `Tap every word in the **${variant} clause**.` }],
     ...tapSpan(s, span),
     explain: `The ${variant} clause is "${spanText(s, span)}".`,
@@ -282,7 +296,7 @@ function fronted(rng: Rng, level: Level): ItemQuestion | null {
     const s = rng.pick(candidates);
     const { input, answer } = choices(rng, [text(s)], rng.shuffle(plainStart).slice(0, 3).map(text));
     return {
-      ...base('g-fronted', level, s),
+      ...base('g-fronted', s),
       body: [{ b: 'text', text: 'Which sentence begins with a **fronted adverbial**?' }],
       input,
       answer,
@@ -294,23 +308,71 @@ function fronted(rng: Rng, level: Level): ItemQuestion | null {
   const s = rng.pick(candidates);
   const span = s.frontedAdverbial!;
   return {
-    ...base('g-fronted', level, s),
+    ...base('g-fronted', s),
     body: [{ b: 'text', text: 'Tap every word in the **fronted adverbial**.' }],
     ...tapSpan(s, span),
     explain: `The fronted adverbial is "${spanText(s, span)}".`,
   };
 }
 
+/**
+ * Whether token j can sit in front of a noun inside an expanded noun phrase: an adjective, a noun
+ * modifier ("football" in "the football pitch", tagged noun or other), an adverb in front of an
+ * adjective ("very old") or "and"/a comma between two adjectives ("red and yellow").
+ */
+function premodifier(s: GrammarSentence, j: number): boolean {
+  const [w, t] = s.tokens[j];
+  const between = s.tokens[j - 1]?.[1] === 'adj' && s.tokens[j + 1]?.[1] === 'adj';
+  return (
+    t === 'adj' ||
+    t === 'noun' ||
+    (t === 'other' && !NOT_MODIFIERS.has(w.toLowerCase())) ||
+    (t === 'adv' && s.tokens[j + 1]?.[1] === 'adj') ||
+    ((t === 'conj-co' || w === ',') && between)
+  );
+}
+
+/**
+ * Expanded noun phrases outside `avoid`: a noun with at least one adjective or noun modifier in
+ * front of it, and its determiner if it has one ("the football pitch", "heavy rain"). The
+ * National Curriculum counts noun modifiers as expansions ("the strict maths teacher").
+ */
+function premodifiedNounPhrases(s: GrammarSentence, avoid: Span): Span[] {
+  const inside = (i: number) => i >= avoid[0] && i < avoid[1];
+  const out: Span[] = [];
+  s.tokens.forEach(([, tag], i) => {
+    if (tag !== 'noun' || inside(i) || s.tokens[i + 1]?.[1] === 'noun') return;
+    let a = i;
+    while (a > 0 && !inside(a - 1) && premodifier(s, a - 1)) a--;
+    if (a === i) return; // a bare noun is not expanded
+    if (a > 0 && !inside(a - 1) && s.tokens[a - 1][1] === 'det') a--;
+    out.push([a, i + 1]);
+  });
+  return out;
+}
+
+/**
+ * The screen says how many words to tap, so a sentence can only be used when no other expanded
+ * noun phrase has as many words as the keyed one: in "The heavy rain had flooded the football
+ * pitch." a pupil who taps "the football pitch" is right too.
+ */
+export function nounPhraseAskable(s: GrammarSentence): boolean {
+  const span = s.expandedNounPhrase;
+  if (!span) return false;
+  const size = spanWords(s, span).length;
+  return premodifiedNounPhrases(s, span).every((p) => spanWords(s, p).length !== size);
+}
+
 function nounPhrase(rng: Rng, level: Level): ItemQuestion | null {
-  // Annotated sentences have exactly one expanded noun phrase, and the screen says how many
-  // words to tap, so where the phrase ends is not left to guesswork.
-  const candidates = pool(level, (s) => Boolean(s.expandedNounPhrase));
+  // The keyed phrase is the only expanded noun phrase with that many words, and the screen says
+  // how many words to tap, so where the phrase ends is not left to guesswork.
+  const candidates = pool(level, nounPhraseAskable);
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const span = s.expandedNounPhrase!;
   const start = span[0] === 0 ? 'This sentence starts with an' : 'This sentence contains an';
   return {
-    ...base('g-noun-phrase', level, s),
+    ...base('g-noun-phrase', s),
     body: [{ b: 'text', text: `${start} **expanded noun phrase**. Tap every word in it.` }],
     ...tapSpan(s, span),
     explain: `The expanded noun phrase is "${spanText(s, span)}".`,
@@ -324,7 +386,7 @@ function voice(rng: Rng, level: Level): ItemQuestion | null {
   const s = rng.pick(passive);
   const { input, answer } = choices(rng, [text(s)], rng.shuffle(active).slice(0, 3).map(text));
   return {
-    ...base('g-voice', level, s),
+    ...base('g-voice', s),
     body: [{ b: 'text', text: 'Which sentence is written in the **passive** voice?' }],
     input,
     answer,

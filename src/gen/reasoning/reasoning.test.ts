@@ -5,7 +5,9 @@ import { formNote, isCorrect, formatCorrect, markFor, typedValue, type AnswerInp
 import { isInt, ratFromString, toDecimalString, type Rational } from '../../math/rational';
 import { createRng } from '../rng';
 import type { Block, Difficulty, ItemQuestion } from '../types';
+import { wordingProblems } from '../wording';
 import { REASONING_BLUEPRINT, REASONING_MARKS, REASONING_QUESTIONS } from './blueprint';
+import { nums } from './helpers';
 import { generateReasoningPaper, reasoningKey } from './paper';
 import { REASONING_TYPES } from './registry';
 
@@ -42,11 +44,58 @@ function angleFromFigure(b: Extract<Block, { b: 'angles' }>): number | null {
   return (total - known) / unknown;
 }
 
+/** Every piece of text a pupil reads: paragraphs, options, order items, table cells, figure labels. */
+function textsOf(q: ItemQuestion): string[] {
+  const out: string[] = [];
+  for (const b of q.body) {
+    if (b.b === 'text') out.push(b.text);
+    if (b.b === 'table') out.push(...b.head, ...b.rows.flat());
+    if (b.b === 'pie') out.push(...b.slices.map((s) => s.label));
+  }
+  if (q.input.kind === 'choice') out.push(...q.input.options);
+  if (q.input.kind === 'order') out.push(...q.input.items);
+  return out;
+}
+
+const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : a);
+
+/**
+ * A pie chart sector can be read without judging by eye when it has a right-angle mark (a
+ * quarter), is a half (its edges make a straight line) or has its angle printed. Returns the
+ * sectors that cannot, and checks the answer against the figure.
+ */
+function pieProblems(q: ItemQuestion, b: Extract<Block, { b: 'pie' }>): string[] {
+  const out: string[] = [];
+  for (const s of b.slices) {
+    const angle = Math.round(s.turn * 360);
+    const printed = s.label.match(/ (\d+)°$/);
+    if (printed && Number(printed[1]) !== angle) out.push(`pie label ${s.label} is not ${angle}°`);
+    if (!printed && angle !== 90 && angle !== 180) out.push(`pie sector ${s.label} (${angle}°) can only be judged by eye`);
+  }
+  const text = q.body.flatMap((x) => (x.b === 'text' ? [x.text] : [])).join('\n');
+  const total = Number(text.match(/\*\*(\d+)\*\* children chose/)?.[1]);
+  const asked = text.match(/How many children chose \*\*(.+?)\*\*/)?.[1];
+  const slice = b.slices.find((s) => s.label === asked || s.label.startsWith(`${asked} `));
+  if (!slice) out.push('pie question asks about a sector that is not there');
+  else if (q.input.kind === 'number' && ratFromString(q.answer).n !== total * slice.turn) out.push('pie answer does not match the figure');
+  return out;
+}
+
 function problems(q: ItemQuestion): string[] {
   const out: string[] = [];
   const all = JSON.stringify(q);
   if (/NaN|undefined|Infinity|\[object/.test(all)) out.push('bad text');
   if (!q.body.length) out.push('empty body');
+  // "an equilateral triangle", "1 litre", "1 hour 1 minute"
+  for (const t of textsOf(q)) out.push(...wordingProblems(t));
+  for (const t of textsOf(q)) {
+    // Ratios are given in their simplest form unless the question is about simplifying.
+    if (/simplest|simplify/i.test(t)) continue;
+    for (const [, a, b] of t.matchAll(/(\d+) : (\d+)/g)) if (gcd(Number(a), Number(b)) !== 1) out.push(`ratio ${a} : ${b} not in simplest form`);
+    for (const [, a, b] of t.matchAll(/for every \*\*(\d+)[^*]*\*\* there (?:is|are) \*\*(\d+)/g)) {
+      if (gcd(Number(a), Number(b)) !== 1) out.push(`"for every ${a} … ${b}" not in simplest form`);
+    }
+  }
   const input = q.input;
   if (input.kind === 'number') {
     const values: Rational[] = q.answer.split(';').map(ratFromString);
@@ -83,6 +132,19 @@ function problems(q: ItemQuestion): string[] {
     if (b.b === 'bar' && (b.values.some((v) => v < 0 || v > b.max) || b.values.length !== b.labels.length)) out.push('bar data');
     if (b.b === 'line' && b.values.some((v) => v < b.min || v > b.max)) out.push('line data');
     if (b.b === 'pie' && Math.abs(b.slices.reduce((s, x) => s + x.turn, 0) - 1) > 1e-9) out.push('pie does not add up');
+    if (b.b === 'pie') out.push(...pieProblems(q, b));
+    if (b.b === 'rect') {
+      const [w, h] = b.labels.map((l) => parseFloat(l));
+      if (Boolean(b.square) !== (w === h)) out.push('rect: a square must be marked square, and only a square');
+    }
+    const text = q.body.flatMap((x) => (x.b === 'text' ? [x.text] : [])).join('\n');
+    if (b.b === 'coords' && /parallelogram/i.test(text)) {
+      // "ABCD is a parallelogram": corners in order, so D is opposite B and D = A + C − B.
+      // "Three corners of a parallelogram" would also allow B + C − A and A + B − C.
+      const [A, B, C] = ['A', 'B', 'C'].map((l) => b.points.find((p) => p.label === l)!);
+      if (!text.includes('**ABCD** is a parallelogram')) out.push('parallelogram corners are not named in order');
+      if (q.answer !== nums(A.x + C.x - B.x, A.y + C.y - B.y)) out.push('parallelogram D is not A + C − B');
+    }
     if (b.b === 'coords' && b.points.some((p) => p.x < b.min || p.x > b.max || p.y < b.min || p.y > b.max)) out.push('point off grid');
     if (b.b === 'grid' && (new Set(b.shaded).size !== b.shaded.length || b.shaded.some((i) => i < 0 || i >= b.cols * b.rows))) {
       out.push('grid shading');

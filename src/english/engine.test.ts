@@ -5,6 +5,7 @@ import { emptyAnswer, markFor, type AnswerInput } from '../answer/answer';
 import { typeInfo } from '../gen/catalog';
 import { createRng } from '../gen/rng';
 import type { ItemQuestion } from '../gen/types';
+import { wordingProblems } from '../gen/wording';
 import { createAttempt, submitSession, setAnswer } from '../store/model';
 import { GPS_ITEMS, READING_TEXTS, SENTENCES, SPELLING_WORDS } from './bank';
 import { buildGpsPaper, fromGpsItem, GPS_QUESTIONS } from './gps/paper';
@@ -82,6 +83,33 @@ describe('English questions are answerable', () => {
     expect(problems).toEqual([]);
   });
 
+  it('generated GPS questions are worded correctly and are as hard as their sentence', () => {
+    const levelOf = new Map(SENTENCES.map((s) => [s.id, s.level]));
+    const rng = createRng('gen-wording');
+    const problems = new Set<string>();
+    for (const [type, generate] of Object.entries(GENERATORS)) {
+      for (const level of [1, 2, 3] as Level[]) {
+        for (let k = 0; k < 200; k++) {
+          const q = generate(rng, level);
+          if (!q) continue;
+          const where = `${type} ${q.sourceId}`;
+          // "is an adverb", "It is an exclamation."
+          const texts = [...q.body.flatMap((b) => (b.b === 'text' ? [b.text] : [])), q.explain ?? ''];
+          if (q.input.kind === 'choice') texts.push(...q.input.options);
+          for (const p of texts.flatMap(wordingProblems)) problems.add(`${where}: ${p}`);
+          // The report shows how hard each question was: the level of the sentence it uses,
+          // which is the level asked for or the one next to it.
+          const actual = levelOf.get(q.sourceId!);
+          if (q.difficulty !== actual) problems.add(`${where}: difficulty ${q.difficulty}, sentence level ${actual}`);
+          if (Math.abs(q.difficulty - level) > 1) problems.add(`${where}: asked for level ${level}, got ${q.difficulty}`);
+          // English has no future tense.
+          if (type === 'g-tense' && q.input.kind === 'choice' && q.input.options.includes('future')) problems.add(`${where}: offers "future"`);
+        }
+      }
+    }
+    expect([...problems]).toEqual([]);
+  });
+
   it('spelling words', () => {
     expect(SPELLING_WORDS.flatMap((w) => checkQuestion(spellingQuestion(w)))).toEqual([]);
   });
@@ -112,6 +140,25 @@ describe('GPS paper', () => {
       const paper = buildGpsPaper(`LV${level}XYZ`, level, empty);
       expect(paper.filter((q) => q.difficulty === level).length).toBeGreaterThanOrEqual(45);
     }
+  });
+
+  it('stays full and at the level asked for, whatever the code', () => {
+    // Generated questions record their sentence's real level, so a paper must choose on-level
+    // questions rather than borrow easier or harder ones under the wrong label.
+    if (!GPS_ITEMS.length || !SENTENCES.length) return;
+    const wrong: string[] = [];
+    for (let k = 0; k < 20; k++) {
+      for (const level of [1, 2, 3] as Level[]) {
+        const paper = buildGpsPaper(`LVL${k}${level}`, level, empty);
+        if (paper.length !== GPS_QUESTIONS) wrong.push(`LVL${k}${level}: ${paper.length} questions`);
+        for (const q of paper) if (q.difficulty !== level) wrong.push(`LVL${k}${level}: ${q.typeId} ${q.sourceId} is level ${q.difficulty}`);
+      }
+      const mixed = buildGpsPaper(`MIX${k}`, 'mixed', empty);
+      if (!mixed.slice(0, 10).every((q) => q.difficulty === 1) || !mixed.slice(-10).every((q) => q.difficulty === 3)) {
+        wrong.push(`MIX${k}: does not run from easy to hard`);
+      }
+    }
+    expect(wrong).toEqual([]);
   });
 
   it('prefers ready-made items not seen before', () => {

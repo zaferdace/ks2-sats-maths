@@ -1300,6 +1300,12 @@ tr.clickable:active {
   font-weight: 600;
 }
 
+.fig-note {
+  font-size: 12px;
+  font-style: italic;
+  fill: var(--ink-2);
+}
+
 .fig-unknown {
   font-size: 22px;
   font-style: italic;

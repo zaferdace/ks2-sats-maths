@@ -110,9 +110,14 @@ export const pieCharts: ReasoningType = {
       const i = rng.int(0, labels.length - 1);
       const answer = total * turns[i];
       if (!Number.isInteger(answer)) return undefined;
-      const slices = labels.map((label, k) => ({ label: d === 3 ? `${label} ${Math.round(turns[k] * 360)}°` : label, turn: turns[k] }));
+      // Every sector must be readable without judging by eye. Right angles carry a mark, but a
+      // 45° or 135° sector cannot be told from its neighbours, so at difficulty 2 every sector
+      // that is not a right angle shows its angle (at difficulty 3 every sector does).
+      const rightAngle = (turn: number) => Math.abs(turn - 1 / 4) < 1e-9;
+      const showAngle = (turn: number) => d === 3 || (d === 2 && !rightAngle(turn));
+      const slices = labels.map((label, k) => ({ label: showAngle(turns[k]) ? `${label} ${Math.round(turns[k] * 360)}°` : label, turn: turns[k] }));
       const chart = { b: 'pie' as const, title: 'Favourite sport', slices };
-      const note = d === 3 ? 'The angle of each sector is shown.' : 'Right angles are marked.';
+      const note = d === 3 ? 'The angle of each sector is shown.' : d === 2 ? 'Right angles are marked and the other angles are shown.' : 'Right angles are marked.';
       return draft(
         [text(`**${total}** children chose their favourite sport. The pie chart shows the results. ${note}`), chart, text(`How many children chose **${labels[i]}**?`)],
         number({ suffix: 'children' }),

@@ -1,6 +1,7 @@
 // Shapes and angles; position and direction.
 import { retry } from '../build';
 import type { Block, ReasoningType } from '../types';
+import { article } from '../wording';
 import { choices, coordBox, draft, fmt, number, nums, text } from './helpers';
 
 const deg = (n: number) => `${n}°`;
@@ -126,7 +127,7 @@ export const anglesPolygon: ReasoningType = {
       }
       if (d === 2) {
         const [name, angle] = rng.pick(REGULAR);
-        return draft([text(`What is the size of **each** angle inside a **${name}**?`)], number({ suffix: '°' }), nums(angle));
+        return draft([text(`What is the size of **each** angle inside ${article(name)} **${name}**?`)], number({ suffix: '°' }), nums(angle));
       }
       const small = rng.int(35, 85);
       return draft(
@@ -184,7 +185,7 @@ export const shapeProperties: ReasoningType = {
         ['edges', edges],
         ['vertices', vertices],
       ] as const);
-      return draft([text(`How many **${what}** does a **${name}** have?`)], number(), nums(value));
+      return draft([text(`How many **${what}** does ${article(name)} **${name}** have?`)], number(), nums(value));
     }
     const right = QUADS.filter((q) => q.equalSides).map((q) => q.name);
     const wrong = rng.shuffle(QUADS.filter((q) => !q.equalSides)).slice(0, 3).map((q) => q.name);
@@ -214,7 +215,8 @@ export const coordinates: ReasoningType = {
       const h = rng.int(2, max - y1);
       if (d > 1 && (x1 >= 0 || y1 >= 0 || x1 + w <= 0)) return undefined; // spread over the quadrants
       if (d === 3 && rng.chance(0.5)) {
-        // Parallelogram: D = A + C − B
+        // Parallelogram ABCD, corners in order, so D is opposite B: D = A + C − B. ("Three
+        // corners of a parallelogram" alone would also allow B + C − A and A + B − C.)
         const shift = rng.int(1, 3);
         const A = { x: x1, y: y1 };
         const B = { x: x1 + w, y: y1 };
@@ -223,7 +225,7 @@ export const coordinates: ReasoningType = {
         if (C.x > max) return undefined;
         return draft(
           [
-            text('**A**, **B** and **C** are three corners of a parallelogram. **AB** is parallel to **DC**.\nWhat are the coordinates of the fourth corner, **D**?'),
+            text('**ABCD** is a parallelogram. The corners **A**, **B** and **C** are marked.\nWhat are the coordinates of the fourth corner, **D**?'),
             grid(min, max, [
               { label: 'A', ...A },
               { label: 'B', ...B },

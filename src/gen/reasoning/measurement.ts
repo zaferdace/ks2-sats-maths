@@ -1,8 +1,14 @@
 // Measurement: converting units, time and timetables, perimeter and area, volume.
 import { rat } from '../../math/rational';
 import { retry } from '../build';
-import type { ReasoningType } from '../types';
-import { draft, fmt, NAMES, number, nums, text, timeBox } from './helpers';
+import type { Block, ReasoningType } from '../types';
+import { withArticle } from '../wording';
+import { draft, fmt, NAMES, number, nums, plural, text, timeBox } from './helpers';
+
+const capitalise = (s: string) => s[0].toUpperCase() + s.slice(1);
+
+/** A w × h rectangle figure; a square is drawn as one. */
+const rectangle = (w: number, h: number): Block => ({ b: 'rect', labels: [`${w} cm`, `${h} cm`], ...(w === h && { square: true }) });
 
 const hhmm = (minutes: number) =>
   `${String(Math.floor(minutes / 60) % 24).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`;
@@ -75,8 +81,9 @@ export const timeProblems: ReasoningType = {
         return m % 60 === 0 ? undefined : m;
       });
       const what = rng.pick(['film', 'football match', 'concert', 'play']);
+      const lasts = `${plural(Math.floor(length / 60), 'hour')} ${plural(length % 60, 'minute')}`; // "1 hour 1 minute"
       return draft(
-        [text(`A ${what} starts at **${hhmm(start)}**. It lasts **${Math.floor(length / 60)} hour${length >= 120 ? 's' : ''} ${length % 60} minutes**.\nWhat time does it finish?`)],
+        [text(`${capitalise(withArticle(what))} starts at **${hhmm(start)}**. It lasts **${lasts}**.\nWhat time does it finish?`)],
         timeBox(),
         nums(Math.floor((start + length) / 60) % 24, (start + length) % 60),
       );
@@ -129,15 +136,16 @@ export const perimeterArea: ReasoningType = {
     if (d === 1) {
       const w = rng.int(3, 15);
       const h = rng.int(2, 12);
+      const shape = w === h ? 'square' : 'rectangle';
       if (rng.chance(0.5)) {
         return draft(
-          [text('Calculate the **area** of this rectangle.'), { b: 'rect', labels: [`${w} cm`, `${h} cm`] }],
+          [text(`Calculate the **area** of this ${shape}.`), rectangle(w, h)],
           number({ suffix: 'cm²' }),
           nums(w * h),
         );
       }
       return draft(
-        [text('Calculate the **perimeter** of this rectangle.'), { b: 'rect', labels: [`${w} cm`, `${h} cm`] }],
+        [text(`Calculate the **perimeter** of this ${shape}.`), rectangle(w, h)],
         number({ suffix: 'cm' }),
         nums(2 * (w + h)),
       );

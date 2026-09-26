@@ -1713,6 +1713,20 @@
     "sentence": "Being independent means learning to solve small problems by yourself."
   },
   {
+    "word": "vacancy",
+    "level": 2,
+    "group": "suffix-ant-ent",
+    "sentence": "The hotel has a vacancy for one more family this weekend.",
+    "hint": "from vacant: -ant becomes -ancy"
+  },
+  {
+    "word": "hesitancy",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "There was no hesitancy in Maya's voice when she gave her answer.",
+    "hint": "from hesitant: -ant becomes -ancy"
+  },
+  {
     "word": "adorable",
     "level": 1,
     "group": "suffix-able-ible",
@@ -1791,6 +1805,48 @@
     "level": 1,
     "group": "suffix-able-ible",
     "sentence": "The weather turned horrible just as the match was about to start."
+  },
+  {
+    "word": "possibly",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "We could possibly finish the jigsaw before bedtime.",
+    "hint": "from possible: -ible becomes -ibly"
+  },
+  {
+    "word": "horribly",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "The plan went horribly wrong when the tent blew away.",
+    "hint": "from horrible: -ible becomes -ibly"
+  },
+  {
+    "word": "sensibly",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "Please walk sensibly along the corridor to the hall.",
+    "hint": "from sensible: -ible becomes -ibly"
+  },
+  {
+    "word": "terribly",
+    "level": 2,
+    "group": "suffix-able-ible",
+    "sentence": "Kai missed his friends terribly when he moved to a new town.",
+    "hint": "from terrible: -ible becomes -ibly"
+  },
+  {
+    "word": "comfortably",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The cat was curled up comfortably on the warm cushion.",
+    "hint": "from comfortable: -able becomes -ably"
+  },
+  {
+    "word": "reasonably",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The test was reasonably easy, so Omar finished it early.",
+    "hint": "from reasonable: -able becomes -ably"
   },
   {
     "word": "poisonous",
@@ -2799,5 +2855,33 @@
     "group": "tricky-sounds",
     "sentence": "The dog's tongue lolled out after chasing the ball for ages.",
     "hint": "gue makes a g sound"
+  },
+  {
+    "word": "unique",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "Every snowflake has a unique pattern of tiny ice crystals.",
+    "hint": "que makes a k sound"
+  },
+  {
+    "word": "antique",
+    "level": 2,
+    "group": "tricky-sounds",
+    "sentence": "Grandad keeps his antique clock on a shelf in the hall.",
+    "hint": "que makes a k sound"
+  },
+  {
+    "word": "cheque",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "Aunt Rosa sent Priya a cheque for her tenth birthday.",
+    "hint": "que makes a k sound; a cheque is a way to pay"
+  },
+  {
+    "word": "technique",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "Our swimming coach showed us a new technique for diving.",
+    "hint": "ch and que both make a k sound"
   }
 ]
