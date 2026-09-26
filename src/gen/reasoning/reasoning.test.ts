@@ -22,8 +22,11 @@ export function correctInput(q: ItemQuestion): AnswerInput {
       return { ...blank, boxes: q.answer.split(';').map((s, i) => typedValue(ratFromString(s), boxes[i] ?? {})) };
     }
     case 'fraction': {
+      // As a mixed number when the question asks for one, otherwise as a fraction.
       const r = ratFromString(q.answer);
-      return { ...blank, num: String(r.n), den: String(r.d) };
+      if (q.input.form !== 'mixed') return { ...blank, num: String(r.n), den: String(r.d) };
+      const whole = Math.floor(r.n / r.d);
+      return { ...blank, whole: String(whole), num: String(r.n - whole * r.d), den: String(r.d) };
     }
     case 'choice':
     case 'order':
@@ -138,7 +141,10 @@ function problems(q: ItemQuestion): string[] {
       out.push('sequence gaps ≠ boxes');
     }
   } else if (input.kind === 'fraction') {
-    if (ratFromString(q.answer).n <= 0) out.push('fraction answer not positive');
+    const v = ratFromString(q.answer);
+    if (v.n <= 0) out.push('fraction answer not positive');
+    // A mixed number or an improper fraction is only asked for a value above 1 that is not whole.
+    if (input.form && (v.n <= v.d || v.d === 1)) out.push(`${input.form} form asked for ${v.n}/${v.d}`);
   } else if (input.kind === 'choice') {
     const idx = q.answer.split(',').map(Number);
     if (new Set(input.options).size !== input.options.length) out.push('duplicate options');

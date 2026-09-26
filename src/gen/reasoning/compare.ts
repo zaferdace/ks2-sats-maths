@@ -270,22 +270,28 @@ export const mixedNumbers: ReasoningType = {
         const w = rng.int(1, 4);
         if (gcd(n, den) !== 1) return undefined;
         if (rng.chance(0.5)) {
-          // Mixed number to improper fraction: the numerator, as a number of parts. (A fraction box
-          // would show the right answer as a mixed number on the results screen.)
+          // Mixed number to improper fraction: as a number of parts, or written as a fraction.
+          if (rng.chance(0.5)) {
+            return draft(
+              [text(`How many **${PARTS[den]}** are there in ${mixed(w, n, den).text}?\n(This is the numerator when ${mixed(w, n, den).text} is written as an improper fraction.)`)],
+              number({ suffix: PARTS[den] }),
+              nums(w * den + n),
+            );
+          }
           return draft(
-            [text(`How many **${PARTS[den]}** are there in ${mixed(w, n, den).text}?\n(This is the numerator when ${mixed(w, n, den).text} is written as an improper fraction.)`)],
-            number({ suffix: PARTS[den] }),
-            nums(w * den + n),
+            [text(`Write ${mixed(w, n, den).text} as an **improper fraction**.`)],
+            { kind: 'fraction', form: 'improper' },
+            nums(rat(w * den + n, den)),
           );
         }
-        return draft([text(`Write ${frac(w * den + n, den).text} as a **mixed number**.`)], { kind: 'fraction' }, nums(rat(w * den + n, den)));
+        return draft([text(`Write ${frac(w * den + n, den).text} as a **mixed number**.`)], { kind: 'fraction', form: 'mixed' }, nums(rat(w * den + n, den)));
       }
       if (d === 2) {
         const den = rng.pick([3, 4, 5, 6, 7, 8, 9, 10, 12]);
         const n = rng.int(1, den - 1);
         const w = rng.int(1, 5);
         if (gcd(n, den) !== 1) return undefined;
-        return draft([text(`Write ${frac(w * den + n, den).text} as a **mixed number**.`)], { kind: 'fraction' }, nums(rat(w * den + n, den)));
+        return draft([text(`Write ${frac(w * den + n, den).text} as a **mixed number**.`)], { kind: 'fraction', form: 'mixed' }, nums(rat(w * den + n, den)));
       }
       if (rng.chance(0.5)) {
         const food = rng.pick(FOOD);
@@ -294,7 +300,7 @@ export const mixedNumbers: ReasoningType = {
         if (left % den === 0) return undefined;
         return draft(
           [text(`At a party, each ${food.one} is cut into **${den}** equal slices. At the end, **${left}** slices are left.\nHow many ${food.many} is that? Write your answer as a **mixed number**.`)],
-          { kind: 'fraction' },
+          { kind: 'fraction', form: 'mixed' },
           nums(rat(left, den)),
         );
       }
@@ -304,7 +310,7 @@ export const mixedNumbers: ReasoningType = {
       const name = rng.pick(NAMES);
       return draft(
         [text(`${name} drinks [[${n}/${den}]] of a litre of water every day.\nHow many litres does ${name} drink in **${days}** days? Write your answer as a **mixed number**.`)],
-        { kind: 'fraction' },
+        { kind: 'fraction', form: 'mixed' },
         nums(rat(n * days, den)),
       );
     });

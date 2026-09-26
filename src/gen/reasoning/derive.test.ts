@@ -195,6 +195,13 @@ const DERIVE: Record<string, (q: ItemQuestion) => string> = {
       if (PARTS[name] !== Number(d)) return `${name} are not 1/${d}`;
       return nums(Number(w) * Number(d) + Number(n));
     }
+    const toImproper = /Write \[\[(\d+) (\d+)\/(\d+)\]\] as an \*\*improper fraction\*\*/.exec(t);
+    if (toImproper) {
+      if (q.input.kind !== 'fraction' || q.input.form !== 'improper') return 'not asked as an improper fraction';
+      const [, w, n, d] = toImproper.map(Number);
+      return n < d ? nums(rat(w * d + n, d)) : 'not a mixed number';
+    }
+    if (/mixed number/.test(t) && (q.input.kind !== 'fraction' || q.input.form !== 'mixed')) return 'not asked as a mixed number';
     const improper = /Write \[\[(\d+)\/(\d+)\]\] as a \*\*mixed number\*\*/.exec(t);
     if (improper) return Number(improper[1]) > Number(improper[2]) ? nums(rat(Number(improper[1]), Number(improper[2]))) : 'not improper';
     const slices = /cut into \*\*(\d+)\*\* equal slices\. At the end, \*\*(\d+)\*\* slices/.exec(t);

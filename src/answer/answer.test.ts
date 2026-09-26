@@ -1,7 +1,19 @@
 import { describe, expect, it } from 'vitest';
-import type { Question } from '../gen/types';
+import type { ItemQuestion, Question } from '../gen/types';
 import { rat } from '../math/rational';
-import { formatInput, formNote, hoursComplete, incompleteFraction, isCorrect, parseAnswer, typeKey, typeTimeKey, type AnswerInput } from './answer';
+import {
+  formatCorrect,
+  formatInput,
+  formNote,
+  hoursComplete,
+  incompleteFraction,
+  isCorrect,
+  markFor,
+  parseAnswer,
+  typeKey,
+  typeTimeKey,
+  type AnswerInput,
+} from './answer';
 
 const a = (whole: string, num = '', den = ''): AnswerInput => ({ whole, num, den });
 const q = (answer: string, kind: Question['kind'] = 'frac'): Question => ({
@@ -101,5 +113,42 @@ describe('typeKey', () => {
     expect(formatInput(a('2', '3', '4'))).toBe('2 3/4');
     expect(formatInput(a('', '5', ''))).toBe('5/?');
     expect(formatInput(null)).toBe('');
+  });
+});
+
+describe('fraction questions that ask for a form', () => {
+  /** "Write 11/4 as a mixed number" (form mixed), "Write 2 3/4 as an improper fraction" (form improper). */
+  const ask = (form?: 'mixed' | 'improper'): ItemQuestion => ({
+    format: 'reasoning',
+    typeId: 'r-mixed-numbers',
+    difficulty: 1,
+    marks: 1,
+    body: [],
+    input: { kind: 'fraction', form },
+    answer: '11/4',
+  });
+
+  it('a mixed number is asked for: 2 3/4 scores, 11/4 typed back does not', () => {
+    expect(markFor(ask('mixed'), a('2', '3', '4'))).toBe(1);
+    expect(markFor(ask('mixed'), a('2', '6', '8'))).toBe(1);
+    expect(markFor(ask('mixed'), a('', '11', '4'))).toBe(0);
+    expect(formNote(ask('mixed'), a('', '11', '4'))).toMatch(/asks for a mixed number/);
+    // Still not a mixed number when its fraction is improper.
+    expect(markFor(ask('mixed'), a('1', '7', '4'))).toBe(0);
+    expect(formatCorrect(ask('mixed'))).toBe('2 3/4');
+  });
+
+  it('an improper fraction is asked for: 11/4 scores, 2 3/4 does not, and the answer shows as 11/4', () => {
+    expect(markFor(ask('improper'), a('', '11', '4'))).toBe(1);
+    expect(markFor(ask('improper'), a('', '22', '8'))).toBe(1);
+    expect(markFor(ask('improper'), a('2', '3', '4'))).toBe(0);
+    expect(formNote(ask('improper'), a('2', '3', '4'))).toMatch(/asks for an improper fraction/);
+    expect(formatCorrect(ask('improper'))).toBe('11/4');
+  });
+
+  it('with no form asked for, either form scores and a wrong value gets no form note', () => {
+    expect(markFor(ask(), a('2', '3', '4'))).toBe(1);
+    expect(markFor(ask(), a('', '11', '4'))).toBe(1);
+    expect(formNote(ask('mixed'), a('', '10', '4'))).toBeNull();
   });
 });

@@ -70,6 +70,16 @@ export function parseAnswer(a: AnswerInput | null | undefined): Rational | null 
   return fromDecimalString(whole);
 }
 
+/**
+ * Whether a fraction answer is in the form the question asks for: a mixed number has a whole number
+ * and a fraction (its fraction proper, which parseAnswer checks); an improper fraction has no whole number.
+ */
+function fractionFormOk(a: AnswerInput, form: 'mixed' | 'improper' | undefined): boolean {
+  if (form === 'mixed') return Boolean(a.whole && a.num && a.den);
+  if (form === 'improper') return !a.whole && Boolean(a.num && a.den);
+  return true;
+}
+
 /** A fraction with only its top or only its bottom number filled in. */
 export const incompleteFraction = (a: AnswerInput | null | undefined): boolean => Boolean(a && Boolean(a.num) !== Boolean(a.den));
 
@@ -139,7 +149,7 @@ function itemCorrect(q: ItemQuestion, a: AnswerInput): boolean {
       // "What fraction…?" and "Write … as a fraction" need a fraction: a decimal does not answer them.
       if (a.whole.includes('.')) return false;
       const v = parseAnswer(a);
-      return v !== null && eq(v, ratFromString(q.answer));
+      return v !== null && eq(v, ratFromString(q.answer)) && fractionFormOk(a, q.input.form);
     }
     case 'choice':
     case 'words':
@@ -177,6 +187,12 @@ export function formNote(q: AnyQuestion, a: AnswerInput | null | undefined): str
     }
     if (input && whole.includes('.')) return 'The question asks for a fraction, so a decimal does not score.';
     if (incompleteFraction(a)) return 'The fraction was missing its top or bottom number.';
+    const v = parseAnswer(a);
+    if (input?.form && v !== null && eq(v, ratFromString(q.answer)) && !fractionFormOk(a, input.form)) {
+      return input.form === 'mixed'
+        ? 'The value is right, but the question asks for a mixed number: a whole number and a fraction.'
+        : 'The value is right, but the question asks for an improper fraction: no whole number, a top number bigger than the bottom one.';
+    }
     return null;
   }
   if (input.kind !== 'number') return null;
@@ -301,8 +317,10 @@ export function formatCorrect(q: AnyQuestion): string {
   switch (q.input.kind) {
     case 'number':
       return formatNumbers(q.input, q.answer.split(';').map(ratFromString));
-    case 'fraction':
-      return formatValue(ratFromString(q.answer), 'frac');
+    case 'fraction': {
+      const r = ratFromString(q.answer);
+      return q.input.form === 'improper' ? `${r.n}/${r.d}` : formatValue(r, 'frac');
+    }
     case 'choice':
     case 'order':
     case 'words':

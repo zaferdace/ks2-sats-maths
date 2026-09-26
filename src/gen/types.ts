@@ -139,7 +139,11 @@ export interface NumberBox {
 
 export type InputSpec =
   | { kind: 'number'; boxes: NumberBox[]; layout?: 'row' | 'time' | 'coord' | 'sequence'; tokens?: (string | null)[] }
-  | { kind: 'fraction' }
+  /**
+   * A fraction answer (whole number, numerator, denominator boxes). `form` is the form the question
+   * asks for, as the real test marks it: "Write 11/4 as a mixed number" does not accept 11/4 back.
+   */
+  | { kind: 'fraction'; form?: 'mixed' | 'improper' }
   | { kind: 'choice'; options: string[]; pick: number } // pick > 1: "tick two"
   | { kind: 'order'; items: string[]; first: string } // first: "smallest", "earliest", …
   /** A typed word or phrase on the letter keyboard. `spell` hides the word in feedback-free spelling tests. */
