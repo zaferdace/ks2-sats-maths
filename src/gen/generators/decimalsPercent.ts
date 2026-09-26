@@ -1,5 +1,5 @@
 import { add, cmp, isInt, mul, rat, sub, type Rational } from '../../math/rational';
-import { dec, gcd, intNoTrailingZero, num, op, pct, retry, scaled } from '../build';
+import { carries, dec, gcd, intNoTrailingZero, num, op, pct, retry, scaled } from '../build';
 import type { Generated, Part, QuestionType } from '../types';
 
 const decQ = (parts: Part[], answer: Rational): Generated => ({
@@ -22,8 +22,12 @@ export const decAdd: QuestionType = {
       a = scaled(intNoTrailingZero(rng, 11, 99), 1);
       b = scaled(intNoTrailingZero(rng, 101, 999), 2);
     } else {
-      a = scaled(intNoTrailingZero(rng, 1001, 9999), 2);
-      b = scaled(intNoTrailingZero(rng, 11, 999), 1);
+      // 2 dp + 1 dp with at least one carry: 67.81 + 64.7
+      [a, b] = retry<[Rational, Rational]>(() => {
+        const hundredths = intNoTrailingZero(rng, 1001, 9999);
+        const tenths = intNoTrailingZero(rng, 11, 999);
+        return carries(hundredths, tenths * 10) > 0 ? [scaled(hundredths, 2), scaled(tenths, 1)] : undefined;
+      });
     }
     if (rng.chance(0.5)) [a, b] = [b, a];
     return decQ([dec(a), op('+'), dec(b)], add(a, b));
@@ -62,17 +66,23 @@ export const decMul: QuestionType = {
     let a: Rational;
     let k: number;
     if (d === 1) {
-      a = scaled(intNoTrailingZero(rng, 1, 99), 1);
-      k = rng.int(2, 9);
+      // 1 dp × 1-digit, more than 1: 0.4 × 7 (not 0.1 × 2)
+      [a, k] = retry<[Rational, number]>(() => {
+        const x = scaled(intNoTrailingZero(rng, 1, 99), 1);
+        const y = rng.int(2, 9);
+        return cmp(mul(x, rat(y)), rat(1)) > 0 ? [x, y] : undefined;
+      });
     } else if (d === 2) {
+      // 1 dp × a multiple of 10: 2.4 × 90
       a = scaled(intNoTrailingZero(rng, 11, 99), 1);
-      k = rng.chance(0.6) ? 10 * rng.int(2, 9) : rng.int(11, 19);
+      k = 10 * rng.int(2, 9);
     } else if (rng.chance(0.5)) {
       a = scaled(intNoTrailingZero(rng, 101, 999), 2);
       k = rng.int(3, 9);
     } else {
+      // 1 dp × a 2-digit number that is not a multiple of 10 (those are the medium level)
       a = scaled(intNoTrailingZero(rng, 11, 99), 1);
-      k = rng.int(12, 49);
+      k = intNoTrailingZero(rng, 12, 49);
     }
     const parts = rng.chance(0.75) ? [dec(a), op('×'), num(k)] : [num(k), op('×'), dec(a)];
     return decQ(parts, mul(a, rat(k)));
@@ -87,8 +97,13 @@ export const decDiv: QuestionType = {
     let q: Rational;
     let k: number;
     if (d === 1) {
-      q = scaled(intNoTrailingZero(rng, 1, 99), 1);
-      k = rng.int(2, 9);
+      // 1 dp ÷ 1-digit, more than 1: 7.2 ÷ 4 (not 1 ÷ 2, which divides a whole number, or 0.3 ÷ 3)
+      [q, k] = retry<[Rational, number]>(() => {
+        const answer = scaled(intNoTrailingZero(rng, 1, 99), 1);
+        const divisor = rng.int(2, 9);
+        const dividend = mul(answer, rat(divisor));
+        return isInt(dividend) || cmp(dividend, rat(1)) < 0 ? undefined : [answer, divisor];
+      });
     } else if (d === 2) {
       q = scaled(intNoTrailingZero(rng, 1, 999), 2);
       k = rng.int(2, 9);
@@ -106,15 +121,22 @@ const PERCENTS: Record<1 | 2 | 3, number[]> = {
   3: [12, 15, 35, 45, 60],
 };
 
+/** Multiples of 10%, worked out from 10% (30% of 320): 40% of the medium level. */
+const TENS = [30, 40, 70, 80, 90];
+
 export const pctOf: QuestionType = {
   id: 'pct-of',
   label: 'Percentages of amounts',
   topic: 'percentages',
   generate(rng, d) {
-    const p = rng.pick(PERCENTS[d]);
+    const p = d === 2 && rng.chance(0.4) ? rng.pick(TENS) : rng.pick(PERCENTS[d]);
     const step = 100 / gcd(p, 100); // amounts that give a whole-number answer
-    const [lo, hi] = d === 1 ? [20, 900] : d === 2 ? [100, 2000] : [100, 5000];
-    const amount = step * rng.int(Math.ceil(lo / step), Math.floor(hi / step));
-    return { parts: [pct(p), op('of'), num(amount)], answer: rat((p * amount) / 100), kind: 'int' };
+    // Never x% of 100, and 1% of at least 1,000: the question should not give the answer away.
+    const [lo, hi] = d === 1 ? [40, 900] : d === 2 ? [p === 1 ? 1000 : 200, 2000] : [200, 5000];
+    return retry<Generated>(() => {
+      const amount = step * rng.int(Math.ceil(lo / step), Math.floor(hi / step));
+      if (amount === 100) return undefined;
+      return { parts: [pct(p), op('of'), num(amount)], answer: rat((p * amount) / 100), kind: 'int' };
+    });
   },
 };

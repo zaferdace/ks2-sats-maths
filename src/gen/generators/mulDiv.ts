@@ -1,5 +1,5 @@
 import { rat } from '../../math/rational';
-import { box, nDigits, num, op, pow, retry } from '../build';
+import { box, nDigits, num, op, pow, retry, sometimesBoxFirst } from '../build';
 import type { Rng } from '../rng';
 import type { Generated, Part, QuestionType } from '../types';
 
@@ -46,16 +46,16 @@ export const mulMental: QuestionType = {
       if (rng.chance(0.5)) {
         const a = rng.int(2, 9);
         const b = 10 * rng.int(2, 9);
-        return intQ([num(a), op('×'), num(b)], a * b);
+        return intQ(sometimesBoxFirst(rng, d, [num(a), op('×'), num(b)]), a * b);
       }
       const a = rng.int(1, 9);
       const b = rng.int(11, 30);
-      return intQ([num(a), op('×'), num(b), op('×'), num(10)], a * b * 10);
+      return intQ(sometimesBoxFirst(rng, d, [num(a), op('×'), num(b), op('×'), num(10)]), a * b * 10);
     }
     if (d === 2) {
       const a = 10 * rng.int(2, 9);
       const b = 10 * rng.int(2, 9);
-      return intQ([num(a), op('×'), num(b)], a * b);
+      return intQ(sometimesBoxFirst(rng, d, [num(a), op('×'), num(b)]), a * b);
     }
     switch (rng.int(0, 2)) {
       case 0: {
@@ -70,7 +70,8 @@ export const mulMental: QuestionType = {
         return intQ([num(a), op('×'), num(b), op('×'), num(c)], a * b * c);
       }
       default: {
-        const a = rng.pick([25, 50, 125, 250]);
+        // 125 × 40 (not 50 × 70, which is the medium level)
+        const a = rng.pick([25, 125, 250]);
         const b = 10 * rng.int(2, 8);
         return intQ([num(a), op('×'), num(b)], a * b);
       }
@@ -85,7 +86,7 @@ export const mulShort: QuestionType = {
   generate(rng, d) {
     const a = notRound(rng, 10 ** d + 2, 10 ** (d + 1) - 1);
     const b = rng.int(3, 9);
-    return intQ([num(a), op('×'), num(b)], a * b);
+    return intQ(sometimesBoxFirst(rng, d, [num(a), op('×'), num(b)]), a * b);
   },
 };
 
@@ -98,7 +99,7 @@ export const divShort: QuestionType = {
     const lo = d === 1 ? Math.max(11 * k, 20) : 10 ** d;
     const hi = 10 ** (d + 1) - 1;
     const q = rng.int(Math.ceil(lo / k), Math.floor(hi / k));
-    return intQ([num(q * k), op('÷'), num(k)], q);
+    return intQ(sometimesBoxFirst(rng, d, [num(q * k), op('÷'), num(k)]), q);
   },
 };
 
@@ -223,12 +224,12 @@ export const orderOps: QuestionType = {
         return intQ([open, x(a), plus, x(c * k - a), close, divide, x(c), times, x(e)], k * e);
       }
       default: {
-        // a − b × c + e
-        const b = rng.int(2, 12);
-        const c = rng.int(2, 12);
-        const a = b * c + rng.int(1, 80);
-        const e = rng.int(2, 50);
-        return intQ([x(a), minus, x(b), times, x(c), plus, x(e)], a - b * c + e);
+        // a − (b + c) × e
+        const b = rng.int(2, 9);
+        const c = rng.int(2, 9);
+        const e = rng.int(2, 6);
+        const a = (b + c) * e + rng.int(1, 60);
+        return intQ([x(a), minus, open, x(b), plus, x(c), close, times, x(e)], a - (b + c) * e);
       }
     }
   },
