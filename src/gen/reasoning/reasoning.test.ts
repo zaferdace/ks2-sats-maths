@@ -28,6 +28,8 @@ export function correctInput(q: ItemQuestion): AnswerInput {
     case 'choice':
     case 'order':
       return { ...blank, sel: q.answer.split(',').map(Number) };
+    case 'tf':
+      return { ...blank, tf: q.answer.split(',').map((v) => v === '1') };
     default:
       throw new Error(`Reasoning templates do not use ${q.input.kind} inputs`);
   }
@@ -35,8 +37,9 @@ export function correctInput(q: ItemQuestion): AnswerInput {
 
 const n = (label: string) => Number(label.replace('°', ''));
 
-/** Re-derives an angle answer from the diagram labels alone. */
+/** Re-derives an angle answer from the diagram labels alone (crossing lines are checked in derive.test.ts). */
 function angleFromFigure(b: Extract<Block, { b: 'angles' }>): number | null {
+  if (b.shape === 'cross') return null;
   const unknown = b.labels.filter((l) => l === 'a').length;
   if (!unknown || b.labels.some((l) => l !== 'a' && !/^\d+°$/.test(l))) return null;
   const known = b.labels.filter((l) => l !== 'a').reduce((s, l) => s + n(l), 0);
@@ -54,6 +57,25 @@ function textsOf(q: ItemQuestion): string[] {
   }
   if (q.input.kind === 'choice') out.push(...q.input.options);
   if (q.input.kind === 'order') out.push(...q.input.items);
+  if (q.input.kind === 'tf') out.push(...q.input.statements);
+  return out;
+}
+
+/** A printed label as a number: "1,000", "−2.5". */
+const labelValue = (text: string) => Number(text.replace(/,/g, '').replace('−', '-'));
+
+/** Problems with a scale's labels: fewer than two, off the scale, or not evenly spaced. */
+function scaleProblems(ticks: number, labels: { at: number; text: string }[], pointer: number): string[] {
+  const out: string[] = [];
+  if (labels.length < 2) out.push('scale has fewer than two labels');
+  if (labels.some((l) => l.at < 0 || l.at > ticks || !Number.isInteger(l.at))) out.push('scale label off the scale');
+  if (!(pointer > 0 && pointer < ticks) || !Number.isInteger(pointer * 2)) out.push('scale pointer off the scale');
+  if (labels.some((l) => l.at === pointer)) out.push('scale points at a label');
+  const [a, b] = labels;
+  if (a && b) {
+    const step = (labelValue(b.text) - labelValue(a.text)) / (b.at - a.at);
+    if (labels.some((l) => Math.abs(labelValue(l.text) - (labelValue(a.text) + step * (l.at - a.at))) > 1e-9)) out.push('scale labels not evenly spaced');
+  }
   return out;
 }
 
@@ -127,6 +149,11 @@ function problems(q: ItemQuestion): string[] {
     const idx = q.answer.split(',').map(Number);
     if (new Set(input.items).size !== input.items.length) out.push('duplicate order items');
     if ([...idx].sort((a, b) => a - b).join() !== input.items.map((_, i) => i).join()) out.push('order answer not a permutation');
+  } else if (input.kind === 'tf') {
+    const marks = q.answer.split(',');
+    if (new Set(input.statements).size !== input.statements.length) out.push('duplicate statements');
+    if (marks.length !== input.statements.length || marks.some((m) => m !== '0' && m !== '1')) out.push('true/false answer does not fit the statements');
+    if (!marks.includes('0') || !marks.includes('1')) out.push('statements all true or all false');
   }
   for (const b of q.body) {
     if (b.b === 'bar' && (b.values.some((v) => v < 0 || v > b.max) || b.values.length !== b.labels.length)) out.push('bar data');
@@ -151,6 +178,44 @@ function problems(q: ItemQuestion): string[] {
     }
     if (b.b === 'table' && b.rows.some((r) => r.length !== b.head.length)) out.push('table row length');
     if (b.b === 'lshape' && b.labels.length !== 6) out.push('lshape labels');
+    if (b.b === 'grid' && b.shape && b.shape.some(([x, y]) => x < 0 || x > b.cols || y < 0 || y > b.rows || !Number.isInteger(x) || !Number.isInteger(y))) {
+      out.push('grid shape corner off the grid');
+    }
+    if (b.b === 'line' && b.xAxis) {
+      // A conversion graph: a straight line through 0.
+      const rate = b.values[1] / Number(b.labels[1]);
+      if (b.labels.some((l, i) => Math.abs(Number(l) * rate - b.values[i]) > 1e-9)) out.push('conversion graph is not a straight line from 0');
+    }
+    if (b.b === 'numberline') out.push(...scaleProblems(b.ticks, b.labels, b.arrow));
+    if (b.b === 'scale') {
+      out.push(...scaleProblems(b.ticks, b.labels, b.level));
+      const [l0, l1] = b.labels;
+      const bottom = labelValue(l0.text) - ((labelValue(l1.text) - labelValue(l0.text)) / (l1.at - l0.at)) * l0.at;
+      if (b.kind === 'jug' && bottom !== 0) out.push('measuring jug does not start at 0');
+    }
+    if (b.b === 'column') {
+      const letters = [...new Set([...b.rows, b.total].join('').match(/[A-Z]/g) ?? [])];
+      const boxes = input.kind === 'number' ? input.boxes.map((x) => x.label) : [];
+      if (letters.join() !== boxes.join()) out.push('lettered boxes do not match the answer boxes');
+      const columns = [...b.rows, b.total].flatMap((row) => [...row].flatMap((ch, i) => (/[A-Z]/.test(ch) ? [row.length - i] : [])));
+      if (new Set(columns).size !== columns.length) out.push('two missing digits in one column');
+    }
+    if (b.b === 'cubes') {
+      const hs = b.heights;
+      if (!hs.length || !hs[0][0]) out.push('no cubes');
+      // Each stack no taller than the one behind it or to its left, so every stack top can be seen.
+      hs.forEach((row, r) =>
+        row.forEach((h, c) => {
+          if (!Number.isInteger(h) || h < 0 || h > 4) out.push('bad stack height');
+          if ((r && h > hs[r - 1][c]) || (c && h > row[c - 1])) out.push('a stack hides behind a taller one');
+        }),
+      );
+    }
+    if (b.b === 'polygon' && !(b.sides >= 5 && b.sides <= 10)) out.push('polygon sides');
+    // Angles sorted by eye: none close to a right angle (except a marked one) or to a straight line.
+    if (b.b === 'angleset' && b.angles.some((a) => !(a > 0 && a < 360) || (a !== 90 && Math.abs(a - 90) < 15) || Math.abs(a - 180) < 15)) {
+      out.push('angle to sort is unclear');
+    }
     if (b.b === 'angles') {
       const expected = angleFromFigure(b);
       if (expected !== null && q.input.kind === 'number' && Number(q.answer.split('/')[0]) !== expected) {
@@ -292,6 +357,49 @@ describe('reasoning blueprint', () => {
     ['r-area-formula', 1],
     ['r-area-formula', 2],
     ['r-area-formula', 3],
+    // Reading a value off a number line, scale or graph
+    ['r-number-line', 1],
+    ['r-number-line', 2],
+    ['r-number-line', 3],
+    ['r-scales', 1],
+    ['r-scales', 2],
+    ['r-conversion-graph', 1],
+    ['r-conversion-graph', 2],
+    // One calculation, fact or comparison
+    ['r-known-facts', 1],
+    ['r-known-facts', 2],
+    ['r-known-facts', 3],
+    ['r-compare-signs', 1],
+    ['r-compare-signs', 2],
+    ['r-mixed-numbers', 1],
+    ['r-mixed-numbers', 2],
+    ['r-mixed-numbers', 3],
+    ['r-order-fdp', 1],
+    ['r-order-fdp', 2],
+    ['r-order-fdp', 3],
+    ['r-true-false', 1],
+    ['r-true-false', 2],
+    ['r-time-units', 1],
+    ['r-time-units', 2],
+    ['r-round-large', 1],
+    ['r-round-large', 2],
+    ['r-round-large', 3],
+    ['r-lcm', 1],
+    ['r-pairs', 1],
+    ['r-missing-digits', 1],
+    ['r-missing-digits', 2],
+    // One geometric fact, or counting
+    ['r-angles-cross', 1],
+    ['r-angles-cross', 2],
+    ['r-angle-types', 1],
+    ['r-angle-types', 2],
+    ['r-angle-types', 3],
+    ['r-regular-polygon', 1],
+    ['r-cubes', 1],
+    ['r-cubes', 2],
+    ['r-area-squares', 1],
+    ['r-area-squares', 2],
+    ['r-area-squares', 3],
   ] as const;
 
   it('keeps one-step problems out of the two-mark slots', () => {

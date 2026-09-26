@@ -110,6 +110,16 @@ export const fdpConvert: ReasoningType = {
   },
 };
 
+/** Things in a sale and their usual price range, in pounds (multiples of 5). */
+const SALE_ITEMS: [string, number, number][] = [
+  ['coat', 30, 120],
+  ['tent', 60, 300],
+  ['bike', 100, 400],
+  ['scooter', 40, 150],
+  ['guitar', 60, 250],
+  ['pair of trainers', 30, 90],
+];
+
 export const percentContext: ReasoningType = {
   id: 'r-percent-context',
   label: 'Percentages in context',
@@ -129,11 +139,12 @@ export const percentContext: ReasoningType = {
     }
     if (d === 2) {
       const p = rng.pick([10, 15, 20, 25, 30, 40]);
+      // Prices a family might pay, in whole pounds.
+      const [item, lo, hi] = rng.pick(SALE_ITEMS);
       const cost = retry(() => {
-        const c = rng.int(4, 60) * 20; // whole pounds
-        return (c * p) % 100 === 0 ? c : undefined;
+        const c = rng.int(lo / 5, hi / 5) * 5;
+        return (c * p) % 100 === 0 ? c : undefined; // the saving is whole pounds
       });
-      const item = rng.pick(['bike', 'coat', 'scooter', 'tent', 'guitar']);
       return draft(
         [text(`A ${item} costs **£${fmt(cost)}**. In a sale, the price is reduced by **${p}%**.\nWhat is the sale price?`)],
         moneyBox(),
@@ -161,7 +172,8 @@ export const fractionContext: ReasoningType = {
         const den = rng.pick([3, 4, 5, 6, 8]);
         const num = rng.int(1, den - 1);
         if (gcd(num, den) !== 1) return undefined;
-        const total = den * rng.int(3, 8);
+        // A real class: 20 to 34 children.
+        const total = den * rng.int(Math.ceil(20 / den), Math.floor(34 / den));
         const pet = rng.pick(['a dog', 'a cat', 'a bike', 'a brother']);
         return draft(
           [text(`There are **${total}** children in a class. ${frac(num, den)} of them have ${pet}.\nHow many children have ${pet}?`)],

@@ -69,16 +69,23 @@ export const remainders: ReasoningType = {
   generate(rng, d) {
     return retry(() => {
       if (d === 1) {
-        const size = rng.int(4, 9);
-        const people = rng.int(3, 12) * size + rng.int(1, size - 1);
+        // Groups a school really uses: a minibus seats 12 to 16, a tent sleeps 4 or 6, a table seats 6 or 8.
+        const [what, many, size, people] = rng.pick([
+          () => ['minibus', 'minibuses', rng.pick([12, 14, 15, 16]), rng.int(30, 110)] as const,
+          () => ['tent', 'tents', rng.pick([4, 6]), rng.int(15, 58)] as const,
+          () => ['table', 'tables', rng.pick([6, 8]), rng.int(25, 90)] as const,
+        ])();
+        if (people % size === 0) return undefined;
+        const verb = what === 'minibus' ? 'can take' : what === 'tent' ? 'sleeps' : 'seats';
+        const trip = what === 'tent' ? 'on a camping trip' : what === 'table' ? 'at a school party' : 'going on a trip';
         return draft(
-          [text(`**${people}** children are going on a trip. Each car can take **${size}** children.\nHow many cars are needed?`)],
-          number({ suffix: 'cars' }),
+          [text(`There are **${people}** children ${trip}. Each ${what} ${verb} **${size}** children.\nHow many ${many} are needed?`)],
+          number({ suffix: many }),
           nums(Math.ceil(people / size)),
         );
       }
       if (d === 2) {
-        const size = rng.pick([6, 8, 12, 15]);
+        const size = rng.pick([6, 10, 12, 15]); // egg boxes come in these sizes
         const total = rng.int(8, 30) * size + rng.int(1, size - 1);
         return draft(
           [text(`Eggs are packed in boxes of **${size}**. A farmer has **${fmt(total)}** eggs.\nHow many **full** boxes can the farmer fill?`)],

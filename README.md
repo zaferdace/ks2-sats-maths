@@ -7,9 +7,10 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
 - **Paper 1: Arithmetic.** 40 questions worth 1 mark each, generated on the device from 31
   question types (place value, the four operations, long multiplication and division, order of
   operations, squares and cubes, fractions, decimals, percentages).
-- **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 40 templates, with tables,
-  charts, angle diagrams and coordinate grids. Two-mark questions score 2 or 0, because a typed
-  answer cannot show working.
+- **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 60 templates, with tables,
+  charts, conversion graphs, angle diagrams, coordinate grids, number lines, measuring jugs and
+  thermometers, column calculations with missing digits, shapes made of cubes and shapes on
+  square grids. Two-mark questions score 2 or 0, because a typed answer cannot show working.
 - Both run from easy to hard and can be done as a daily paper (five days) or in one go. Any
   equivalent answer scores: 3/4, 6/8 and 0.75 are all right for 3/4.
 

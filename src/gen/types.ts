@@ -96,14 +96,32 @@ export type Block =
   | { b: 'text'; text: string }
   | { b: 'table'; head: string[]; rows: string[][] }
   | { b: 'bar'; title: string; labels: string[]; values: number[]; axis: string; max: number; step: number }
-  | { b: 'line'; title: string; labels: string[]; values: number[]; axis: string; min: number; max: number; step: number }
+  /** `xAxis` names the horizontal axis (a conversion graph); `dots: false` draws the line alone. */
+  | { b: 'line'; title: string; labels: string[]; values: number[]; axis: string; min: number; max: number; step: number; xAxis?: string; dots?: boolean }
   | { b: 'pie'; title: string; slices: { label: string; turn: number }[] } // turn: share of the circle, 0-1
   | { b: 'coords'; min: number; max: number; points: { label: string; x: number; y: number }[]; join: boolean }
-  | { b: 'angles'; shape: 'triangle' | 'line' | 'point' | 'quad'; labels: string[] } // not to scale
+  /** Not to scale. `cross`: straight lines crossing at a point, labels for the angles clockwise from the top ('' = none). */
+  | { b: 'angles'; shape: 'triangle' | 'line' | 'point' | 'quad' | 'cross'; labels: string[] }
   | { b: 'rect'; labels: [string, string]; square?: boolean } // width label, height label; not to scale
   | { b: 'lshape'; labels: string[] } // six sides clockwise from the top; '' hides a label
   | { b: 'cuboid'; labels: [string, string, string] } // length, width, height
-  | { b: 'grid'; cols: number; rows: number; shaded: number[] }
+  /** Squares, some shaded; `shape` is a shaded polygon through grid points [x, y] (y down, 0 to cols and rows). */
+  | { b: 'grid'; cols: number; rows: number; shaded: number[]; shape?: [number, number][] }
+  /** A number line of `ticks` equal steps; `labels` sit under some tick marks; the arrow points at `arrow` (a tick, or halfway: 3.5). */
+  | { b: 'numberline'; ticks: number; labels: { at: number; text: string }[]; arrow: number }
+  /** A measuring jug or thermometer: `ticks` equal steps from the bottom mark, labelled marks, filled up to `level`. */
+  | { b: 'scale'; kind: 'jug' | 'thermometer'; ticks: number; labels: { at: number; text: string }[]; level: number; unit: string }
+  /** A written column calculation. Capital letters are missing digits, drawn as lettered boxes. */
+  | { b: 'column'; op: '+' | '−' | '×'; rows: string[]; total: string }
+  /** Cubes stacked on a table, drawn in 3D: heights[row][col], back row first. */
+  | { b: 'cubes'; heights: number[][] }
+  /**
+   * A regular polygon with one angle marked: inside it, outside it on an extended side, between a side
+   * and a diagonal, or with lines from every corner to the centre, at the centre or between a side and a line.
+   */
+  | { b: 'polygon'; sides: number; mark: 'interior' | 'exterior' | 'diagonal' | 'centre' | 'spoke'; label: string }
+  /** Angles drawn to scale in a row, lettered A, B, C, … */
+  | { b: 'angleset'; angles: number[] }
   /** Spelling dictation: the word is spoken, the sentence is shown with the word blanked out. */
   | { b: 'speak'; word: string; sentence: string }
   /** A reading text, shown beside its questions; `paragraph` (1-based) is the one the question points to. */

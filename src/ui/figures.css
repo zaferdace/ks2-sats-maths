@@ -1,0 +1,122 @@
+/* Figures added for scales, written calculations, cubes, regular polygons and angle types. */
+
+.fig-numberline {
+  max-width: 560px;
+}
+
+.fig-scale {
+  max-width: 280px;
+}
+
+.fig-column {
+  max-width: 340px;
+}
+
+.fig-cubes,
+.fig-polygon {
+  max-width: 380px;
+}
+
+.fig-mark {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.fig-arrow {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.fig-arrow-head {
+  fill: var(--accent);
+}
+
+.fig-glass {
+  fill: #fff;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.fig-glass-fill {
+  fill: #fff;
+}
+
+.fig-handle {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+}
+
+.fig-water {
+  fill: var(--accent-wash);
+}
+
+.fig-water-top {
+  stroke: var(--series-1);
+  stroke-width: 3;
+}
+
+.fig-red {
+  fill: var(--critical);
+}
+
+.fig-digit {
+  font-size: 30px;
+  font-weight: 600;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.fig-digit-box {
+  fill: #fff;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+.fig-box-letter {
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--accent);
+}
+
+.fig-rule {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.fig-cube-top,
+.fig-cube-left,
+.fig-cube-right {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.fig-cube-top {
+  fill: #eef5fd;
+}
+
+.fig-cube-left {
+  fill: #b7d3f6;
+}
+
+.fig-cube-right {
+  fill: #86b6ef;
+}
+
+/* See-through, so the pupil can count the squares under the shape. */
+.fig-area {
+  fill: #86b6ef;
+  fill-opacity: 0.6;
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.fig-arc {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
