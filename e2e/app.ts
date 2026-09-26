@@ -44,8 +44,8 @@ export function item(q: AnyQuestion): ItemQuestion {
   return q;
 }
 
-/** Marks for a question: 1 for Paper 1, as stored for the others. */
-export const marksOf = (q: AnyQuestion): number => (isItem(q) ? q.marks : 1);
+/** Marks for a question as stored (Paper 1: 1, or 2 for long multiplication and division). */
+export const marksOf = (q: AnyQuestion): number => (isItem(q) ? q.marks : (q.marks ?? 1));
 
 // ---- Answers -----------------------------------------------------------------
 
@@ -216,9 +216,21 @@ export async function answerArithmetic(page: Page, q: Question): Promise<void> {
 }
 
 /** Types the right answer to a reasoning question with one number box. */
+/**
+ * How a pupil writes a value in a box to get the mark, as in the real test: money with two digits
+ * for the pence (£4.40, not £4.4) and rounding to the decimal places asked for (50.0).
+ */
+export function writtenFor(answer: string, box: { prefix?: string; dp?: number }): string {
+  const value = decimal(answer);
+  const places = box.dp ?? (box.prefix === '£' && value.includes('.') ? 2 : undefined);
+  if (places === undefined || places === 0) return value;
+  const [whole, frac = ''] = value.split('.');
+  return `${whole}.${frac.padEnd(places, '0')}`;
+}
+
 export async function answerNumber(page: Page, q: ItemQuestion): Promise<void> {
   if (q.input.kind !== 'number' || q.input.boxes.length !== 1) throw new Error(`Not a one-box number question: ${q.typeId}`);
-  const value = decimal(q.answer);
+  const value = writtenFor(q.answer, q.input.boxes[0]);
   note(q, value);
   // The box taking keypad input is the pressed one; it has focus when the question opens.
   const box = page.getByRole('button', { pressed: true });

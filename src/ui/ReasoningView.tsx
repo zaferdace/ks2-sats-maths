@@ -50,6 +50,7 @@ function NumberBoxView({
   onFocus,
   mark,
   placeholder,
+  name,
 }: {
   box: NumberBox;
   value: string;
@@ -57,10 +58,12 @@ function NumberBoxView({
   onFocus?: () => void;
   mark?: 'right' | 'wrong';
   placeholder?: string;
+  /** What the box holds when its position says it ("Hours", "Minutes", "x"), for screen readers. */
+  name?: string;
 }) {
   const shown = value ? formatBoxValue(value, { plain: box.plain }) : '';
   const cls = ['abox', 'rbox', focused ? 'focus caret' : '', mark ?? '', shown ? '' : 'empty'].filter(Boolean).join(' ');
-  const label = `${box.label ? `${box.label}: ` : ''}${shown || 'blank'}`;
+  const label = `${box.label ?? name ? `${box.label ?? name}: ` : ''}${shown || 'blank'}`;
   const inner = shown || (placeholder && !focused ? <span className="placeholder">{placeholder}</span> : '');
   return (
     <span className="rbox-wrap">
@@ -82,7 +85,7 @@ function NumberBoxView({
 
 function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: ItemQuestion & { input: { kind: 'number' } } }) {
   const { boxes, layout, tokens } = q.input;
-  const view = (i: number, placeholder?: string) => (
+  const view = (i: number, placeholder?: string, name?: string) => (
     <NumberBoxView
       key={`b${i}`}
       box={boxes[i]}
@@ -91,14 +94,15 @@ function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: It
       onFocus={onFocus ? () => onFocus(i) : undefined}
       mark={mark}
       placeholder={placeholder}
+      name={name}
     />
   );
   if (layout === 'time') {
     return (
       <div className="r-answer r-time">
-        {view(0, 'hh')}
+        {view(0, 'hh', 'Hours')}
         <span className="r-sep">:</span>
-        {view(1, 'mm')}
+        {view(1, 'mm', 'Minutes')}
       </div>
     );
   }
@@ -106,9 +110,9 @@ function NumberAnswer({ q, answer, focus, onFocus, mark }: AnswerProps & { q: It
     return (
       <div className="r-answer r-coord">
         <span className="r-sep">(</span>
-        {view(0, 'x')}
+        {view(0, 'x', 'x')}
         <span className="r-sep">,</span>
-        {view(1, 'y')}
+        {view(1, 'y', 'y')}
         <span className="r-sep">)</span>
       </div>
     );

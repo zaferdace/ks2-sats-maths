@@ -20,6 +20,7 @@ import {
   questionChip,
   resultScore,
   startPaper,
+  tapNumber,
 } from './app';
 import { expect, test } from './fixtures';
 
@@ -94,3 +95,44 @@ test('reasoning full paper: numbers typed on the keypad score their marks', asyn
   await expect(resultScore(page)).toHaveText(`${scored} / ${total}`);
   for (const i of picked) await expectMarkedRight(page, i);
 });
+
+test('time answers: typed as the timetable shows them (08:58), the leading zero stays and the minutes follow', async ({ page }) => {
+  await createProfile(page);
+  await page.getByRole('button', { name: /Choose a topic/ }).tap();
+  await page.locator('.topic-lists').getByRole('button', { name: 'Time and timetables', exact: true }).tap();
+  const paper = await openedPaper(page);
+  const index = paper.questions.findIndex((q) => isItem(q) && q.input.kind === 'number' && q.input.layout === 'time');
+  expect(index, 'the practice has a question answered with a time').toBeGreaterThanOrEqual(0);
+  const [h, m] = item(paper.questions[index]).answer.split(';').map((v) => fraction(v).n);
+  const hh = String(h).padStart(2, '0');
+  const mm = String(m).padStart(2, '0');
+
+  await goToQuestion(page, index);
+  await tapNumber(page, hh + mm);
+  await expect(page.getByRole('button', { name: `Hours: ${hh}` })).toBeVisible();
+  await expect(page.getByRole('button', { name: `Minutes: ${mm}` })).toBeVisible();
+
+  await finish(page, 1, paper.questions.length);
+  await expectMarkedRight(page, index);
+});
+
+test('portrait: the box being typed into is never hidden under the keypad', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'ipad-portrait', 'the keypad sits below the question only in portrait');
+  await createProfile(page);
+  const paper = await startPaper(page, 'Papers 2 & 3: Reasoning', 'New full paper');
+  const clearOfKeypad = () =>
+    page.evaluate(() => {
+      const box = document.querySelector('.question-card .abox.focus')?.getBoundingClientRect();
+      const pad = document.querySelector('.keypad-wrap')?.getBoundingClientRect();
+      return box !== undefined && pad !== undefined && box.bottom <= pad.top + 1;
+    });
+  let checked = 0;
+  for (const [i, q] of paper.questions.entries()) {
+    if (!isItem(q) || q.input.kind !== 'number' || checked === 8) continue;
+    await goToQuestion(page, i);
+    await expect.poll(clearOfKeypad, { message: `question ${i + 1}: the answer box is above the keypad` }).toBe(true);
+    checked++;
+  }
+  expect(checked, 'the paper has questions with number boxes').toBeGreaterThan(0);
+});
+

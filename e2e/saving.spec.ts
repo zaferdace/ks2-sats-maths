@@ -38,8 +38,9 @@ test('resume: a typed answer is still there after the app is closed and opened a
   await expectAnswered(page, 0);
 });
 
-test('backup: the backup text restores the profile and its paper on a fresh iPad', async ({ page, newAppPage }) => {
-  // Copying is blocked, so the app puts the backup in the text box to copy by hand.
+/** A profile with one finished Day 1 (1 / 8), and the backup text the app offers to copy by hand. */
+async function backupWithOnePaper(page: import('@playwright/test').Page) {
+  // Copying is blocked, so the app puts the backup in a box to copy by hand.
   await page.addInitScript(() => {
     const blocked = () => Promise.reject(new DOMException('Blocked by the test', 'NotAllowedError'));
     Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: blocked } });
@@ -54,20 +55,19 @@ test('backup: the backup text restores the profile and its paper on a fresh iPad
   await page.getByRole('button', { name: 'Settings' }).tap();
   await page.getByRole('button', { name: 'Copy backup text' }).tap();
   await expect(page.getByText('Copying is blocked here.')).toBeVisible();
-  const backup = await page.getByLabel('Backup text').inputValue();
+  const backup = await page.getByLabel('Backup text to copy').inputValue();
   expect(JSON.parse(backup)).toMatchObject({ profiles: [{ name: 'Ava' }], attempts: [{ id: paper.id }] });
+  return { paper, backup };
+}
 
-  // A fresh iPad: someone new, then restore the backup from Settings.
+test('backup: a new iPad restores it from the first screen, with no profile to make first', async ({ page, newAppPage }) => {
+  const { paper, backup } = await backupWithOnePaper(page);
+
   const fresh = await newAppPage();
-  await createProfile(fresh, 'Ben');
-  await fresh.getByRole('button', { name: 'Settings' }).tap();
-  await fresh.getByLabel('Backup text').fill(backup);
+  await fresh.goto('./');
+  await fresh.getByRole('button', { name: 'Restore from a backup…' }).tap();
+  await fresh.getByLabel('Backup text', { exact: true }).fill(backup);
   await fresh.getByRole('button', { name: 'Restore pasted text' }).tap();
-  await expect(fresh.getByText('Restored 1 paper and 1 profile')).toBeVisible();
-  await fresh.getByRole('button', { name: 'Done' }).tap();
-
-  await fresh.getByRole('button', { name: 'Switch' }).tap();
-  await fresh.getByRole('button', { name: 'Ava', exact: true }).tap();
   await expect(fresh.getByRole('heading', { name: 'Hi, Ava' })).toBeVisible();
   await expect(fresh.getByRole('row').filter({ hasText: 'Arithmetic · Day 1' })).toContainText('1 / 8');
 
@@ -75,4 +75,21 @@ test('backup: the backup text restores the profile and its paper on a fresh iPad
   await card(fresh, 'Paper 1: Arithmetic').getByRole('button', { name: 'Start Day 2' }).tap();
   await expect(fresh.getByText(`Paper ${paper.paperCode} · 1 of 8 today`)).toBeVisible();
   await expect(questionChip(fresh, 8)).toHaveAttribute('aria-current', 'true');
+});
+
+test('backup: restoring in Settings switches to the restored profile and keeps the others', async ({ page, newAppPage }) => {
+  const { backup } = await backupWithOnePaper(page);
+
+  const fresh = await newAppPage();
+  await createProfile(fresh, 'Ben');
+  await fresh.getByRole('button', { name: 'Settings' }).tap();
+  await fresh.getByLabel('Backup text', { exact: true }).fill(backup);
+  await fresh.getByRole('button', { name: 'Restore pasted text' }).tap();
+  await expect(fresh.getByText('Restored 1 paper and 1 profile')).toBeVisible();
+  await fresh.getByRole('button', { name: 'Done' }).tap();
+  await expect(fresh.getByRole('heading', { name: 'Hi, Ava' })).toBeVisible();
+
+  await fresh.getByRole('button', { name: 'Switch' }).tap();
+  await expect(fresh.getByRole('button', { name: 'Ben', exact: true })).toBeVisible();
+  await expect(fresh.getByRole('button', { name: 'Ava', exact: true })).toBeVisible();
 });
