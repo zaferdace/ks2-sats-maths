@@ -186,17 +186,20 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         const box = q.input.boxes[focus];
         const time = q.input.layout === 'time';
         const type = (value: string) => (time ? typeTimeKey(value, key) : typeBoxKey(value, key, box));
-        const current = attempt.answers[i]?.boxes?.[focus] ?? '';
-        const typed = type(current);
+        // The store applies an edit at once, so the box's value before and after this key is known here.
+        let before = '';
+        let after = '';
         edit((a) => {
           const prev: AnswerInput = a.answers[i] ?? emptyAnswer();
           const boxes = q.input.kind === 'number' ? q.input.boxes.map((_, k) => prev.boxes?.[k] ?? '') : [];
-          boxes[focus] = type(boxes[focus]);
+          before = boxes[focus];
+          after = type(before);
+          boxes[focus] = after;
           const next = { ...prev, boxes };
           return setAnswer(a, i, isBlank(next) ? null : next);
         });
         // Hours typed in full ("08", "14", or a single 3-9): move on to the minutes.
-        if (time && focus === 0 && /^\d$/.test(key) && typed !== current && hoursComplete(typed)) setFocus(1);
+        if (time && focus === 0 && /^\d$/.test(key) && after !== before && hoursComplete(after)) setFocus(1);
         return;
       }
       if (typeof focus !== 'string') return;
@@ -207,7 +210,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         return setAnswer(a, i, isBlank(next) ? null : next);
       });
     },
-    [attempt.questions, attempt.answers, edit, focus, setFocus],
+    [attempt.questions, edit, focus, setFocus],
   );
 
   const onLetter = useCallback(
