@@ -3,6 +3,7 @@ import { buildGpsPaper, buildGpsPractice } from './english/gps/paper';
 import { englishHistory } from './english/history';
 import { buildReading } from './english/reading';
 import { buildSpellingTest } from './english/spelling';
+import { maxMarks } from './answer/answer';
 import { MOCK_MINUTES } from './gen/exam';
 import { generatePaper } from './gen/paper';
 import { buildMathsPractice } from './gen/practice';
@@ -128,7 +129,9 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     const english = SUBJECT_OF[paper] === 'english';
     const now = Date.now();
     const created = createAttempt(profile.id, mode, code, questions, now, undefined, paper, english ? level : undefined);
-    const minutes = mock ? MOCK_MINUTES[paper] : undefined;
+    // Paper 1's time goes with its marks (30 minutes for the real 40), so any mock length is fair.
+    const marks = questions.reduce((sum, q) => sum + maxMarks(q), 0);
+    const minutes = !mock ? undefined : paper === 'arithmetic' ? Math.round((30 * marks) / 40) : MOCK_MINUTES[paper];
     const attempt = {
       ...created,
       ...(topic && { topic }),

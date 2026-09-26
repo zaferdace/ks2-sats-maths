@@ -73,7 +73,7 @@ const MATHS: PaperCard[] = [
       { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },
       {
         title: 'Mock test',
-        about: 'Like the real paper: 36 questions, 40 marks, 30 minutes',
+        about: 'Timed at the real pace: 30 minutes for 40 marks',
         request: { paper: 'arithmetic', mode: 'full', mock: true },
       },
     ],
