@@ -1,7 +1,7 @@
 // Small helpers shared by the question generators.
 import { rat, toDecimalString, type Rational } from '../math/rational';
 import type { Rng } from './rng';
-import type { Op, Part } from './types';
+import type { Difficulty, Op, Part } from './types';
 
 export const num = (v: number): Part => {
   if (!Number.isSafeInteger(v) || v < 0) throw new Error(`num() needs a non-negative integer, got ${v}`);
@@ -23,6 +23,19 @@ export const box = (): Part => ({ t: 'box' });
 /** [a, b, c] joined by one operator: a + b + c. */
 export function chain(operands: Part[], o: Op): Part[] {
   return operands.flatMap((p, i) => (i === 0 ? [p] : [op(o), p]));
+}
+
+/** True when a prompt starts with its answer box: □ = 6 × 70. */
+export const isBoxFirst = (parts: Part[]): boolean =>
+  parts.length > 2 && parts[0].t === 'box' && parts[1].t === 'op' && parts[1].v === '=';
+
+/**
+ * Real papers print some calculations with the answer box first (□ = 7,000 − 3, □ = 6 × 70).
+ * Easy and medium +, −, × and ÷ items do so about a quarter of the time. Call it once the numbers
+ * are chosen: the choice is the last random draw, so it never changes the numbers.
+ */
+export function sometimesBoxFirst(rng: Rng, d: Difficulty, parts: Part[]): Part[] {
+  return d <= 2 && rng.chance(0.25) ? [box(), op('='), ...parts] : parts;
 }
 
 /** Value of a (possibly mixed) fraction w n/d. */

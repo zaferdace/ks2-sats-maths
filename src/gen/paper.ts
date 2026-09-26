@@ -1,9 +1,10 @@
 import { ratToString } from '../math/rational';
-import { BLUEPRINT } from './blueprint';
+import { BLUEPRINT, MOCK_BLUEPRINT } from './blueprint';
+import { isBoxFirst } from './build';
 import { promptText } from './format';
 import { getType } from './registry';
 import { createRng } from './rng';
-import type { Difficulty, Generated, Question, QuestionType } from './types';
+import type { Difficulty, Generated, Part, Question, QuestionType } from './types';
 
 export function toQuestion(type: QuestionType, difficulty: Difficulty, g: Generated): Question {
   return {
@@ -17,24 +18,37 @@ export function toQuestion(type: QuestionType, difficulty: Difficulty, g: Genera
   };
 }
 
-/** Builds the 40 questions of a paper. The same code always gives the same paper. */
-export function generatePaper(code: string, _options: { mock?: boolean } = {}): Question[] {
+/** The calculation of a prompt, wherever its answer box is: "□ = 6 × 70" is the same as "6 × 70 = □". */
+export const calculationKey = (parts: Part[]): string => promptText(isBoxFirst(parts) ? parts.slice(2) : parts);
+
+export interface PaperOptions {
+  /** A mock in the real format: 36 questions, 40 marks (see MOCK_BLUEPRINT). */
+  mock?: boolean;
+}
+
+/**
+ * Builds the 40 questions of a paper, or the 36 of a mock. The same code always gives the same
+ * paper, and the same mock (a mock is not the paper with four questions missing: its seeds differ).
+ */
+export function generatePaper(code: string, options: PaperOptions = {}): Question[] {
+  const blueprint = options.mock ? MOCK_BLUEPRINT : BLUEPRINT;
+  const prefix = options.mock ? 'M' : '';
   const seen = new Set<string>();
-  return BLUEPRINT.map((options, i) => {
+  return blueprint.map((slotOptions, i) => {
     // Every slot has its own seed, so changing one generator never reshuffles the others.
     for (let reroll = 0; reroll < 50; reroll++) {
-      const rng = createRng(`${code}#${i + 1}#${reroll}`);
-      const option = rng.pick(options);
+      const rng = createRng(`${prefix}${code}#${i + 1}#${reroll}`);
+      const option = rng.pick(slotOptions);
       const difficulty = rng.pick(option.d);
       const type = getType(option.type);
       const q = toQuestion(type, difficulty, type.generate(rng, difficulty));
-      const key = promptText(q.parts);
+      const key = calculationKey(q.parts);
       if (!seen.has(key)) {
         seen.add(key);
         return q;
       }
     }
-    throw new Error(`Could not build a unique question for slot ${i + 1} of paper ${code}`);
+    throw new Error(`Could not build a unique question for slot ${i + 1} of ${options.mock ? 'mock' : 'paper'} ${code}`);
   });
 }
 

@@ -18,6 +18,7 @@ import {
   openedPaper,
   promptDigits,
   questionChip,
+  questionMap,
   resultScore,
   startPaper,
   tapNumber,
@@ -134,5 +135,16 @@ test('portrait: the box being typed into is never hidden under the keypad', asyn
     checked++;
   }
   expect(checked, 'the paper has questions with number boxes').toBeGreaterThan(0);
+});
+
+test('mock arithmetic paper: the real format (36 questions, 40 marks) and a 30-minute countdown', async ({ page }) => {
+  await createProfile(page);
+  const paper = await startPaper(page, 'Paper 1: Arithmetic', 'Mock test');
+  expect(paper.questions).toHaveLength(36);
+  expect(paper.questions.reduce((sum, q) => sum + marksOf(q), 0)).toBe(40);
+  expect(paper.timeLimitMs).toBe(30 * 60_000);
+  await expect(page.getByText('Arithmetic · Mock test')).toBeVisible();
+  await expect(page.getByLabel('Time left in the mock test')).toContainText(/(30:00|29:5\d) left/);
+  await expect(questionMap(page).getByRole('button')).toHaveCount(36);
 });
 

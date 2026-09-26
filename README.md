@@ -4,14 +4,17 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
 
 **Maths**
 
-- **Paper 1: Arithmetic.** 40 questions worth 1 mark each, generated on the device from 31
-  question types (place value, the four operations, long multiplication and division, order of
-  operations, squares and cubes, fractions, decimals, percentages).
+- **Paper 1: Arithmetic.** 40 questions generated on the device from 31 question types (place
+  value, the four operations, long multiplication and division, order of operations, squares and
+  cubes, fractions, decimals, percentages). Long multiplication and division are worth 2 marks, as
+  in the real test, so a paper has 44 marks; the mock test is the real format: 36 questions, 40
+  marks, 30 minutes.
 - **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 40 templates, with tables,
   charts, angle diagrams and coordinate grids. Two-mark questions score 2 or 0, because a typed
   answer cannot show working.
-- Both run from easy to hard and can be done as a daily paper (five days) or in one go. Any
-  equivalent answer scores: 3/4, 6/8 and 0.75 are all right for 3/4.
+- Both run from easy to hard and can be done as a daily paper (five days), in one go, or as a
+  timed mock test. Equivalent answers score as in the real mark schemes (3/4, 6/8 and 0.75 for 3/4),
+  and forms the real test refuses do not: 6 9/8 for 7 1/8, £4.4 for £4.40, 50 for 50.0.
 
 **English**
 
@@ -27,12 +30,16 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
   beside the questions. Explanation questions are self-marked against a model answer, and what the
   pupil wrote is kept for a grown-up to read.
 - **Levels.** Every English paper can be Easy, Medium, Hard or Mixed (easy to hard, like the real
-  test). New papers prefer questions not seen before.
+  test). New papers prefer questions not seen before. Mock tests (grammar 45 minutes, reading
+  60 minutes) are Mixed, like the real papers.
+- **Written answers** are marked after Finish against a model answer and marking points, ideally
+  with a grown-up, who can also accept a typed reading answer with a spelling slip.
 
 **Everywhere**
 
-- **Report.** Score per session, accuracy by topic, a skill heat map of every question type,
-  progress by week and the question types to practise next, for maths, English or both.
+- **Report.** A SATs estimate (recent full papers scaled to the real tests, against the 2025
+  expected standard), score per session, accuracy by topic, a skill heat map of every question
+  type, progress by week and the question types to practise next, for maths, English or both.
 - **Private.** Everything happens on the device; results stay in the browser's storage
   (IndexedDB). Settings has backup and restore.
 

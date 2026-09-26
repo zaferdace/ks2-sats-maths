@@ -11,8 +11,10 @@ pupil is weak (statistics + heat maps).
 ## Scope (v1)
 
 - Paper 1 arithmetic only. Reasoning papers (2 and 3) are a later phase.
-- Paper format: **40 questions, 1 mark each, easy → hard, split into Day 1–5 (8 a day)**,
-  the format of the practice papers the class teacher sends.
+- Paper format: **40 questions, easy → hard, split into Day 1–5 (8 a day)**,
+  the format of the practice papers the class teacher sends. 1 mark each, except long
+  multiplication and division (2 marks, as in the real test): 44 marks. A **mock paper** has the
+  real Paper 1 format (see *Mock paper*).
 - Out of scope for v1: targeted "weak spot" practice sets, cloud sync, on-screen scratchpad,
   timed countdown, reasoning papers.
 
@@ -43,8 +45,9 @@ UI language is English (the pupil is taught in English). Light theme only.
 - Keypad: 0–9, `.`, ⌫, Clear. Boxes are display elements, not `<input>`s.
 - Marking is exact rational comparison: any equivalent form scores (3/4 = 6/8 = 0.75,
   9/8 = 1 1/8). Empty or malformed answers score 0.
-- "Show your method" questions (long multiplication / long division) score 1 mark on the
-  answer; working is done on paper.
+- "Show your method" questions (long multiplication / long division) are worth 2 marks, as in
+  the real test; a correct answer scores both (working is done on paper, so there is no method
+  mark).
 
 ## Question model
 
@@ -66,6 +69,7 @@ interface Question {
   answer: string;        // exact rational "n/d"
   kind: 'int' | 'dec' | 'frac';
   showMethod?: boolean;
+  marks?: number;        // 2 for long multiplication and division, else 1
 }
 ```
 
@@ -77,20 +81,20 @@ interface Question {
 |---|---|---|---|---|
 | Place value | `pv-partition` | 4-digit, N = parts with one □ | 5-digit | decimal with 2 dp |
 | | `pv-add-sub-power` | 3-digit ± 10/100, no bridging | 4-digit ± 10/100/1000, bridging | 5–6-digit ± 1000/10000, bridging |
-| | `pv-mul-div-10` | whole × 10/100 | whole ÷ 10/100 → decimal, decimal × 10/100 | decimal ÷ 10/100/1000, decimal × 1000 |
+| | `pv-mul-div-10` | whole × 10/100/1,000 (34 × 1,000), ÷ 10/100/1,000 with a whole answer (5,600 ÷ 100) | whole ÷ 10/100 → decimal, decimal × 10/100 | decimal ÷ 10/100/1000, decimal × 1000 |
 | Addition & subtraction | `add-column` | 3-digit + 3-digit | 4-digit + 4-digit, carries | 5-digit + 4/5-digit |
 | | `add-three` | three 2-digit | 4-digit + 3-digit + 2-digit | 5-digit + 4-digit + 3-digit |
 | | `sub-column` | 2/3-digit − 2-digit | 4-digit − 4-digit, exchange | 5-digit with zeros − 4/5-digit |
-| | `sub-round` | 1,000 − hundreds/tens | 2,000–9,000 − 3-digit | 10,000 / 100,000 − 4/5-digit |
-| | `missing-add-sub` | □ ± a = c, 2–3-digit | 3–4-digit | 4–5-digit |
+| | `sub-round` | 1,000 − hundreds/tens; 7,000 − 3 | 2,000–9,000 − 3-digit | 10,000 / 100,000 − 4/5-digit |
+| | `missing-add-sub` | □ ± a = c, 2–3-digit | 3–4-digit, or ± 10/100/1,000 | 4–5-digit |
 | Multiplication & division | `mul-div-0-1` | n × 1, n ÷ 1, n × 0, 0 ÷ n, n ÷ n | larger n | larger n |
-| | `mul-mental` | 1-digit × multiple of 10, a × b × 10 | 30 × 40 | 600 × 70, 3 × 50 × 20 |
+| | `mul-mental` | 1-digit × multiple of 10, a × b × 10 | 30 × 40 | 600 × 70, 3 × 50 × 20, 125 × 40 |
 | | `mul-short` | 2-digit × 1-digit | 3-digit × 1-digit | 4-digit × 1-digit |
 | | `div-short` | 2-digit ÷ 1-digit, exact | 3-digit ÷ 1-digit | 4-digit ÷ 1-digit |
 | | `mul-long` (method) | 3-digit × 2-digit | 4-digit × 2-digit (11–49) | 4-digit × 2-digit (31–99) |
 | | `div-long` (method) | 3-digit ÷ 11–19, exact | 4-digit ÷ 12–25 | 4-digit ÷ 26–59 |
 | | `missing-mul-div` | times tables with □ | multiples of 10 | 3-digit × 1-digit, □ × 210 = 1,470 |
-| Order & powers | `order-ops` | a + b × c, a + b ÷ c | a − b × c, (a + b) × c | brackets + 3 operations |
+| Order & powers | `order-ops` | a + b × c, a + b ÷ c | a − b × c, (a + b) × c | brackets + 3 operations: a × (b − c) + e, (a + b) ÷ c × e, a − (b + c) × e |
 | | `squares-cubes` | n², n ≤ 12 | n³, n ≤ 5 or 10 | a² + b³, a³ − b², a² × b |
 | Fractions | `frac-add-same` | sum < 1 | sum > 1 | three fractions / mixed + proper |
 | | `frac-sub-same` | a/d − b/d | 1 − a/d, 2 − a/d | whole − mixed |
@@ -98,26 +102,57 @@ interface Question {
 | | `frac-sub-diff` | related | related, larger | unrelated |
 | | `frac-mixed` | same denominator, no exchange | exchange / related denominators | different denominators |
 | | `frac-mul-frac` | unit × unit | proper × proper | proper × proper, cancelling |
-| | `frac-mul-whole` | unit fraction × whole | non-unit × whole | mixed × whole |
+| | `frac-mul-whole` | unit fraction × whole | non-unit × whole; a third with a whole answer (3/4 × 16) | mixed × whole |
 | | `frac-div-whole` | unit ÷ whole | non-unit ÷ whole | numerator divisible / mixed ÷ whole |
 | | `frac-of` | unit fraction of amount | non-unit of amount | 7/12 of 1,800 style |
-| Decimals | `dec-add` | 1 dp + 1 dp | mixed dp | 2 dp + 1 dp, carries |
+| Decimals | `dec-add` | 1 dp + 1 dp | mixed dp | 2 dp + 1 dp, at least one carry |
 | | `dec-sub` | 1 dp − 1 dp | whole − decimal | mixed dp, exchange |
-| | `dec-mul` | 1 dp × 1-digit | 1 dp × multiple of 10 | 2 dp × 1-digit, 1 dp × 2-digit |
-| | `dec-div` | 1 dp ÷ 1-digit | 2 dp answers | 2 dp ÷ 1-digit |
-| Percentages | `pct-of` | 10 / 25 / 50 % | 1 / 4 / 5 / 20 / 75 % | 12 / 15 / 35 / 45 / 60 % |
+| | `dec-mul` | 1 dp × 1-digit, answer > 1 | 1 dp × multiple of 10 | 2 dp × 1-digit, 1 dp × 2-digit (not a multiple of 10) |
+| | `dec-div` | 1 dp (more than 1) ÷ 1-digit | 2 dp answers | 2 dp ÷ 1-digit |
+| Percentages | `pct-of` | 10 / 25 / 50 % | 1 / 4 / 5 / 20 / 75 %; 30 / 40 / 70 / 80 / 90 % (2 in 5) | 12 / 15 / 35 / 45 / 60 % |
 
 All answers are positive; division answers are exact; percentage and fraction-of-amount answers
-are whole numbers.
+are whole numbers (never x% of 100; 1% of 1,000 or more).
+
+**Box first.** About a quarter of the d1–d2 items of `add-column`, `add-three`, `sub-column`,
+`sub-round`, `mul-mental`, `mul-short` and `div-short` put the answer box first (□ = 7,000 − 3,
+□ = 6 × 70), as real papers do. A paper never has the same calculation twice, whichever side the
+box is on.
 
 ## Paper blueprint
 
 40 ordered slots; each slot lists `{ type, d: [difficulties] }` options. Generation picks an
 option and a difficulty with a seeded RNG. Each slot derives its own seed from
 `paperCode + slot`, so a paper code always regenerates the same paper. Exact duplicate prompts
-inside one paper are rerolled. Day 1 is warm-up (+, −, place value), long multiplication first
-appears at Q16, decimals / squares on Day 3, percentages and fraction × on Day 4, unlike
-denominators, mixed numbers and long division on Day 5. Every type appears in some slot.
+inside one paper are rerolled.
+
+Each slot stays within one topic group, so every paper has the same balance, close to recent
+real papers:
+
+- fractions, decimals and percentages: 14 questions (8 fractions, 4 decimals, 2 percentages),
+  14 of the 44 marks, about a third;
+- multiplication and division 13: short division 4 times (Q6, Q12, Q21, Q26), long
+  multiplication at Q16 and Q37, long division at Q30 and Q40 (2 marks each), 5 others;
+- place value 4, addition and subtraction 6, order of operations and powers 3.
+
+Easy to hard: Day 1 is warm-up (+, −, ×, ÷, place value, 1 dp decimals, same-denominator
+fractions); Day 2 has the other easy levels (times tables, squares and cubes, a + b × c,
+3-digit ÷ 1-digit) and the first long multiplication at Q16; Day 3 is 5-digit + and −, decimal
+place value, mixed-dp decimals, the first percentage and unlike denominators; Day 4 is 4-digit
+× and ÷ 1-digit, fraction × and ÷, decimal × and ÷, mixed numbers and long division; Day 5 is the
+hardest level of fractions, decimals, percentages, order of operations and long × and ÷. No slot
+after Day 2 offers a level that is trivial there (n², n³, 20 × 20, × 0, 1% of 100). Every type ×
+difficulty is reachable; `src/gen/blueprint.ts` lists the slots.
+
+### Mock paper
+
+`generatePaper(code, { mock: true })` builds a paper in the real Paper 1 format: **36 questions,
+40 marks** (the four long multiplications and divisions are worth 2), easy to hard, in one
+sitting (30 minutes in the real test). Its 36 slots are the blueprint without four easy one-mark
+slots whose skills other slots also test: Q4 (place value), Q7 (1 dp + and −), Q11 (4-digit + and
+−) and Q18 (mental ×). It keeps the ramp, the four short divisions, both percentages and 13 marks
+of fractions, decimals and percentages (a third of 40). Its seeds are prefixed `M`, so a code gives
+the same mock every time, with other questions than the 40-question paper of that code.
 
 Paper codes are 6 characters from an unambiguous alphabet (no 0/O/1/I/L).
 
@@ -175,8 +210,15 @@ Vitest:
 - Property tests per type × difficulty over 1,000 seeds: never throws, answer re-derived by an
   independent evaluator of the prompt (box substituted, both sides of `=` compared), positive
   answers, integer answers where required, bounded decimal places, no `NaN`/`undefined` in
-  rendered text.
-- Paper: 40 questions, deterministic per code, every type reachable, no duplicate prompts.
+  rendered text, answers that fit the answer boxes (9 characters; numerator and denominator 4
+  digits). A second, float check reads the rendered text with plain JavaScript numbers (commas,
+  −, ×, ÷, "of", %, ², ³, mixed numbers, brackets, the shown answer in the box) and compares both
+  sides to 1e-9, so a bug in the rational arithmetic, which the generators and the exact evaluator
+  share, cannot pass. The table's rules (box-first share, 10% multiples, whole answers, carries,
+  brackets) are checked level by level.
+- Paper: over 3,000 codes, 40 questions and 44 marks, deterministic per code, every type × difficulty
+  reached, the same balance every time, no duplicate calculations, box-first items present; mocks:
+  36 questions and 40 marks, deterministic, never throws.
 - Statistics aggregation on fixtures; store merge/validation.
 
 Manual: production build previewed in the browser at tablet sizes (768×1024, 1024×768),

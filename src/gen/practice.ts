@@ -1,6 +1,5 @@
 // Short practice sets of chosen maths question types, easy to hard, for working on weak spots.
-import { promptText } from './format';
-import { toQuestion } from './paper';
+import { calculationKey, toQuestion } from './paper';
 import { REASONING_BLUEPRINT } from './reasoning/blueprint';
 import { reasoningKey } from './reasoning/paper';
 import { getReasoningType } from './reasoning/registry';
@@ -36,7 +35,7 @@ export function buildMathsPractice(code: string, paper: 'arithmetic' | 'reasonin
       const type = getType(typeId);
       const question = toQuestion(type, difficulty, type.generate(rng, difficulty));
       q = question;
-      key = promptText(question.parts);
+      key = calculationKey(question.parts); // "□ = 6 × 70" is a repeat of "6 × 70 = □"
     } else {
       const draft = getReasoningType(typeId).generate(rng, difficulty);
       const item: ItemQuestion = { format: 'reasoning', typeId, difficulty, marks: marksOf(typeId, difficulty), ...draft };

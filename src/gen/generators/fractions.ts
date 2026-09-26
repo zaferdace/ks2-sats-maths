@@ -204,6 +204,8 @@ export const fracMulWhole: QuestionType = {
   label: 'Multiplying a fraction by a whole number',
   topic: 'fractions',
   generate(rng, d) {
+    // A third of the medium level has a whole-number answer, as real papers do: 3/4 × 16 = 12.
+    const whole = d === 2 && rng.chance(1 / 3);
     return retry(() => {
       let f: F;
       let k: number;
@@ -213,13 +215,13 @@ export const fracMulWhole: QuestionType = {
       } else if (d === 2) {
         f = proper(rng, rng.int(3, 10));
         if (f.n === 1) return undefined;
-        k = rng.int(2, 9);
+        k = whole ? f.d * rng.int(2, 6) : rng.int(2, 9);
       } else {
         f = { ...proper(rng, rng.int(2, 8)), w: rng.int(1, 4) };
         k = rng.int(2, 6);
       }
       const answer = mul(value(f), rat(k));
-      if (d > 1 && isInt(answer)) return undefined;
+      if (d > 1 && isInt(answer) !== whole) return undefined;
       const parts = rng.chance(0.5) ? [part(f), op('×'), num(k)] : [num(k), op('×'), part(f)];
       return fracQ(parts, answer);
     });

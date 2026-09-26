@@ -75,13 +75,14 @@ export const pvMulDiv10: QuestionType = {
   topic: 'place-value',
   generate(rng, d) {
     if (d === 1) {
-      if (rng.chance(0.6)) {
+      // Whole numbers only: 34 × 1,000 and 5,600 ÷ 100.
+      const p = rng.pick([10, 100, 1000]);
+      if (rng.chance(0.55)) {
         const a = rng.int(12, 999);
-        const p = rng.pick([10, 100]);
         return { parts: [num(a), op('×'), num(p)], answer: rat(a * p), kind: 'int' };
       }
       const q = rng.int(12, 999);
-      return { parts: [num(q * 10), op('÷'), num(10)], answer: rat(q), kind: 'int' };
+      return { parts: [num(q * p), op('÷'), num(p)], answer: rat(q), kind: 'int' };
     }
     if (d === 2) {
       const p = rng.pick([10, 100]);
