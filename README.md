@@ -52,6 +52,7 @@ npm install
 npm run dev      # http://localhost:5173/ks2-sats-maths/
 npm test         # unit, property and content tests
 npm run build    # type-check and build to dist/
+npm run e2e      # browser smoke tests at iPad sizes (builds, then serves dist/ on port 4173)
 ```
 
 `.npmrc` pins the public npm registry so installs work on machines with a different default.
@@ -78,5 +79,6 @@ nothing when left blank.
 
 ## Deployment
 
-Every push to `main` runs the tests, builds the app and publishes it to GitHub Pages
+Every push to `main` lints, runs the tests, builds the app, runs the browser smoke tests
+(`e2e/`) on that build and only then publishes it to GitHub Pages
 (`.github/workflows/deploy.yml`). The design notes are in `docs/superpowers/specs/`.

@@ -28,3 +28,8 @@ dist-ssr
 
 # local tooling
 .claude/
+
+# Playwright (npm run e2e)
+test-results/
+playwright-report/
+blob-report/
