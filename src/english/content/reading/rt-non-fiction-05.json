@@ -39,25 +39,6 @@
     },
     {
       "id": "q2",
-      "domain": "2b",
-      "marks": 1,
-      "prompt": "According to the leaflet, where do many young people in Wrenfield practise at the moment? Tick two.",
-      "paragraph": 3,
-      "kind": "choice",
-      "options": [
-        "the recreation ground",
-        "the supermarket car park",
-        "the old tennis courts",
-        "the market square"
-      ],
-      "pick": 2,
-      "answer": [
-        1,
-        3
-      ]
-    },
-    {
-      "id": "q3",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nWhat impression does this paragraph give of the writers? Tick one.",
@@ -75,7 +56,7 @@
       ]
     },
     {
-      "id": "q4",
+      "id": "q3",
       "domain": "2b",
       "marks": 1,
       "prompt": "In which town is the nearest skate park?",
@@ -89,7 +70,7 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 5.\nFind and copy one word that means an area of land that is empty and not being used.",
@@ -100,16 +81,32 @@
       ]
     },
     {
+      "id": "q5",
+      "domain": "2b",
+      "marks": 2,
+      "prompt": "Look at the section headed **The perfect spot** (paragraphs 4 and 5).\nGive **two** reasons why the writers think this land is a good place for a skate park.",
+      "paragraph": 4,
+      "kind": "self",
+      "model": "The land is flat and it is next to a bus stop, so it is easy to get to. Also, the nearest house is more than 200 metres away, so the noise of the wheels would not disturb anyone.",
+      "points": [
+        "each different reason (1 mark each), such as:",
+        "it is flat",
+        "it is next to a bus stop, so it is easy to get to",
+        "the nearest house is more than 200 metres away, so the noise would not disturb anyone",
+        "the land is not being used (it is covered in weeds and broken glass), so a skate park would make it useful again"
+      ]
+    },
+    {
       "id": "q6",
       "domain": "2b",
       "marks": 1,
       "prompt": "Using information from the leaflet, decide whether each statement is true or false.",
       "kind": "tf",
       "statements": [
-        "The tennis courts have not been used for more than ten years.",
+        "The nearest skate park is fifteen miles away.",
         "The group has already raised enough money to build the skate park.",
-        "The nearest house is more than 200 metres from the land.",
-        "The council meeting will be held at the library."
+        "The group has promised to hold a litter-pick every month.",
+        "The council meeting will be held on a Saturday."
       ],
       "answer": [
         true,
@@ -138,24 +135,6 @@
     },
     {
       "id": "q8",
-      "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at paragraph 8.\nWhy do you think the writer mentions that some Olympic medal winners were just twelve or thirteen years old? Tick one.",
-      "paragraph": 8,
-      "kind": "choice",
-      "options": [
-        "to suggest that young skaters from Wrenfield could achieve great things if they had somewhere to practise",
-        "to show that the Olympic Games are only for children",
-        "to argue that skateboarding is too dangerous for young people",
-        "to prove that Wrenfield skaters are too old to win medals"
-      ],
-      "pick": 1,
-      "answer": [
-        0
-      ]
-    },
-    {
-      "id": "q9",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at the section headed **What about noise and litter?** (paragraphs 9 and 10).\nWhy has the writer included this section? Tick one.",
@@ -173,7 +152,7 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q9",
       "domain": "2d",
       "marks": 3,
       "prompt": "Look at paragraphs 10 and 12.\nWhy do you think the group wants young people to help design the skate park? Explain, using evidence from the text.",
@@ -184,6 +163,25 @@
         "They will be proud of it and look after it, like the young designers in Castleton",
         "It would answer worries that the park would bring noise, litter and trouble",
         "It will have what skaters want, so they will use it instead of the car park or market square"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 12.\nName **one** place where people can sign the petition.",
+      "paragraph": 12,
+      "kind": "text",
+      "accept": [
+        "the library",
+        "the post office",
+        "at the library",
+        "at the post office",
+        "the library or the post office",
+        "library or post office",
+        "at the library or the post office",
+        "the library and the post office",
+        "library and post office"
       ]
     },
     {
@@ -207,6 +205,23 @@
     },
     {
       "id": "q12",
+      "domain": "2g",
+      "marks": 2,
+      "prompt": "The writers want to persuade readers to support their campaign.\nGive **two** ways they try to do this, with an example of each from the leaflet.",
+      "kind": "self",
+      "model": "The writers use facts and numbers, for example that health experts say children should be active for “at least sixty minutes a day”. They also answer people’s worries, for example by explaining that the park would have plenty of bins and that the group will hold a litter-pick every month.",
+      "points": [
+        "each different way that is backed up with an example from the leaflet (1 mark each), such as:",
+        "asking the reader questions, e.g. “Where can a young person in Wrenfield go to have fun, keep fit and meet friends?”",
+        "using facts and numbers, e.g. “at least sixty minutes a day”; they have raised “£6,000”",
+        "giving an example from another town, e.g. in Castleton, complaints have fallen since the skate park opened",
+        "answering people’s worries, e.g. the section on noise and litter",
+        "talking straight to the reader and saying what to do, e.g. “Now we need you.”; sign the petition; come to the council meeting",
+        "an exciting idea, e.g. the next Olympic champion “could be a Wrenfield skater”"
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the leaflet? Tick one.",

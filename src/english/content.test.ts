@@ -3,8 +3,18 @@ import { describe, expect, it } from 'vitest';
 import { createRng } from '../gen/rng';
 import { GPS_GENERATED_TYPES } from './catalog';
 import { GENERATORS, nounPhraseAskable } from './gps/generated';
-import { GPS_ITEM_TYPES, SPELLING_GROUPS, type GpsItem, type GrammarSentence, type Level, type ReadingText, type SpellingWord } from './types';
-import { checkGpsItem, checkReading, checkSentence, checkSpelling } from './validate';
+import {
+  GPS_ITEM_TYPES,
+  READING_DOMAINS,
+  SPELLING_GROUPS,
+  type GpsItem,
+  type GrammarSentence,
+  type Level,
+  type ReadingQuestion,
+  type ReadingText,
+  type SpellingWord,
+} from './types';
+import { checkGpsItem, checkReading, checkSentence, checkSpelling, isWritten } from './validate';
 
 const files = import.meta.glob<{ default: unknown }>('./content/**/*.json', { eager: true });
 
@@ -123,11 +133,47 @@ describe('spelling words', () => {
 
 describe('reading texts', () => {
   const all = of<ReadingText>(/reading\/.*\.json$/).map((f) => f.data);
+  const marksOf = (qs: ReadingQuestion[]) => qs.reduce((s, q) => s + q.marks, 0);
+  const questions = all.flatMap((t) => t.questions);
+
   it('are well formed', () => {
     expect(report('text', all, checkReading)).toEqual([]);
   });
   it('have unique ids', () => {
     const ids = all.map((t) => t.id);
     expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([]);
+  });
+  it('give written answers at least 45% of the marks, as the real test does', () => {
+    // Released papers ask for copied words, short answers and explanations far more often than
+    // for ticks: a bank of tick-one questions would overstate how a pupil will do in May.
+    expect(marksOf(questions.filter(isWritten)) / marksOf(questions)).toBeGreaterThanOrEqual(0.45);
+    // Every kind of written answer is practised: typed words, and explanations worth 1, 2 or 3 marks.
+    const count = (kind: ReadingQuestion['kind'], marks: number) => questions.filter((q) => q.kind === kind && q.marks === marks).length;
+    expect(count('text', 1)).toBeGreaterThanOrEqual(all.length);
+    for (const m of [1, 2, 3]) expect(count('self', m)).toBeGreaterThanOrEqual(10);
+  });
+  it('have multi-mark questions of more than one kind', () => {
+    // Not only "explain, using evidence" (2d): impressions, predictions, language and comparisons too.
+    const multiMark = new Set(questions.filter((q) => q.marks > 1).map((q) => q.domain));
+    for (const d of ['2b', '2d', '2e', '2g', '2h']) expect(multiMark).toContain(d);
+  });
+  it('ask about every content domain, with predictions in at least 8 texts', () => {
+    const asked = new Set(questions.map((q) => q.domain));
+    expect([...asked].sort()).toEqual(Object.keys(READING_DOMAINS).sort());
+    expect(all.filter((t) => t.questions.some((q) => q.domain === '2e')).length).toBeGreaterThanOrEqual(8);
+  });
+  it('make any three-text paper about as long as the real 50-mark test', () => {
+    const totals = (level: Level) => all.filter((t) => t.level === level).map((t) => marksOf(t.questions));
+    const [easy, medium, hard] = ([1, 2, 3] as Level[]).map(totals);
+    // A mixed paper has one text of each level; a paper at one level has any three texts of it.
+    const mixed = easy.flatMap((a) => medium.flatMap((b) => hard.map((c) => a + b + c)));
+    const sameLevel = [easy, medium, hard].flatMap((ts) => {
+      const sorted = [...ts].sort((a, b) => a - b);
+      return [sorted[0] + sorted[1] + sorted[2], sorted[sorted.length - 1] + sorted[sorted.length - 2] + sorted[sorted.length - 3]];
+    });
+    for (const total of [...mixed, ...sameLevel]) {
+      expect(total).toBeGreaterThanOrEqual(47);
+      expect(total).toBeLessThanOrEqual(52);
+    }
   });
 });

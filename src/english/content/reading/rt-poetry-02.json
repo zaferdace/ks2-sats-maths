@@ -53,6 +53,7 @@
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at stanzas 2 to 4.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "paragraph": 2,
       "kind": "tf",
       "statements": [
         "The clouds came in from the west.",
@@ -64,6 +65,25 @@
     },
     {
       "id": "q5",
+      "domain": "2g",
+      "marks": 2,
+      "prompt": "Look at stanzas 3 and 4.\nHow does the poet make the wind and the sea seem powerful?\nGive **two** examples from the poem and explain what each one suggests.",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "The wind ‘snatched the washing’ and ‘tossed the gulls across the sky like scraps of torn paper’, which makes it sound like a bully that is so strong that even the birds are helpless. The sea ‘heaved its great grey shoulders and hurled itself at the harbour wall’, as if it were a huge, angry giant attacking the harbour again and again.",
+      "points": [
+        "each example from stanza 3 or 4 that is explained (1 mark each), such as:",
+        "the wind ‘rattled our windows’: it was strong enough to shake the house",
+        "the wind ‘snatched the washing’: it grabbed things like a thief",
+        "it ‘tossed the gulls across the sky like scraps of torn paper’: even the birds were helpless",
+        "the sea ‘heaved its great grey shoulders’: it was like a huge, strong giant",
+        "it ‘hurled itself at the harbour wall, again and again’: it attacked the harbour violently, over and over",
+        "it was ‘flinging foam as high as the lamp posts’: the waves were enormous",
+        "An example copied without an explanation does not score."
+      ]
+    },
+    {
+      "id": "q6",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at the fourth stanza.\nWhy has the poet put the word ‘again’ on three separate lines? Tick **one**.",
@@ -79,7 +99,16 @@
       "answer": [1]
     },
     {
-      "id": "q6",
+      "id": "q7",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\nFind and copy **one** word that shows the thunder made a low, rumbling sound.",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": ["grumbled"]
+    },
+    {
+      "id": "q8",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at the fifth stanza.\nThe boats ‘tugged at their ropes like ponies desperate to bolt’.\nWhat does **bolt** mean here? Tick **one**.",
@@ -90,7 +119,19 @@
       "answer": [2]
     },
     {
-      "id": "q7",
+      "id": "q9",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\n‘Lightning split the sky\nlike a crack across a china plate.’\nWhat does this tell you about the lightning?",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "The lightning was a sudden, bright, jagged line across the sky, as if the sky had cracked like a broken plate.",
+      "points": [
+        "explaining that the lightning was a sudden, jagged or zigzag line, or that it looked as if the sky was breaking or cracking."
+      ]
+    },
+    {
+      "id": "q10",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at the fifth stanza.\nHow does the speaker feel about the storm?\nExplain, using evidence from the poem.",
@@ -103,25 +144,23 @@
       ]
     },
     {
-      "id": "q8",
+      "id": "q11",
       "domain": "2d",
       "marks": 1,
-      "prompt": "Look at the third stanza and the last stanza.\nWhere had the shirt on the lamp post most likely come from? Tick **one**.",
-      "kind": "choice",
-      "options": [
-        "The speaker hung it there to dry.",
-        "A gull carried it there to build a nest.",
-        "The wind snatched it from the neighbour’s washing line.",
-        "Someone tied it there as a flag for the boats."
-      ],
-      "pick": 1,
-      "answer": [2]
+      "prompt": "Look at the third stanza and the last stanza.\nWhere do you think the shirt on the lamp post came from? Use evidence from the poem.",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "I think it came from the neighbour’s washing line, because in the third stanza the wind ‘snatched the washing from our neighbour’s line’, so it must have blown the shirt on to the lamp post.",
+      "points": [
+        "explaining that the wind blew it off the neighbour’s washing line, e.g. the wind ‘snatched the washing from our neighbour’s line’."
+      ]
     },
     {
-      "id": "q9",
+      "id": "q12",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at the first stanza and the last stanza.\nWhy does the last stanza repeat lines from the first stanza? Tick **one**.",
+      "paragraph": 1,
       "kind": "choice",
       "options": [
         "to show that the harbour is calm again, just as it was in the morning",
@@ -133,10 +172,11 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q13",
       "domain": "2h",
       "marks": 1,
       "prompt": "Compare the first stanza with the fourth stanza.\nHow has the sea changed? Tick **one**.",
+      "paragraph": 1,
       "kind": "choice",
       "options": [
         "It has changed from wild and rough to calm and still.",
@@ -148,7 +188,7 @@
       "answer": [3]
     },
     {
-      "id": "q11",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

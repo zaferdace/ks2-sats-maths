@@ -40,14 +40,13 @@
     },
     {
       "id": "q3",
-      "domain": "2b",
+      "domain": "2g",
       "marks": 1,
-      "prompt": "Look at verse 2.\nWhere is Fox’s den? Tick **one**.",
+      "prompt": "Look at verse 2.\nFox says that he glides ‘through the shadows like smoke’.\nWhat does this tell you about the way Fox moves?",
       "paragraph": 2,
-      "kind": "choice",
-      "options": ["under a café table", "inside the station", "by the railway line", "on the high street"],
-      "pick": 1,
-      "answer": [2]
+      "kind": "self",
+      "model": "Fox moves smoothly and silently, and he is hard to see in the dark, just like smoke drifting through the shadows.",
+      "points": ["explaining that Fox moves smoothly, quietly or secretly, or that he is hard to see."]
     },
     {
       "id": "q4",
@@ -113,8 +112,7 @@
         "wall at the station",
         "on the wall by the station",
         "wall",
-        "at the station",
-        "station"
+        "at the station"
       ]
     },
     {
@@ -148,9 +146,26 @@
     },
     {
       "id": "q10",
+      "domain": "2h",
+      "marks": 2,
+      "prompt": "Using the whole poem, give **two** ways that Pigeon’s life in the city is different from Fox’s.",
+      "kind": "self",
+      "model": "Pigeon is out in the city by day, but Fox only comes out at night, after the last bus. Also, Pigeon eats from café tables, but Fox finds his food in dustbins.",
+      "points": [
+        "each difference that makes clear what is different for the two animals (1 mark each), such as:",
+        "Pigeon is out by day, but Fox comes out by night",
+        "Pigeon eats from café tables, but Fox eats from dustbins",
+        "Pigeon struts across the square, but Fox slips and glides through the shadows",
+        "Fox lives in a den by the railway line, but Pigeon has a windowsill",
+        "Fox is messy (he knocks the lids off the bins), but Pigeon tidies up the crumbs"
+      ]
+    },
+    {
+      "id": "q11",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at verses 3 to 6.\nHow do Pigeon and Fox really feel about each other?\nExplain, using evidence from the poem.",
+      "paragraph": 3,
       "kind": "self",
       "model": "On the surface, they seem to dislike each other and they argue: Pigeon says Fox leaves the city ‘in a terrible mess’, and Fox calls Pigeon ‘featherbrain’. But really they care about each other: Pigeon still leaves Fox ‘the crust of my breakfast’, and Fox treads softly past Pigeon’s windowsill ‘so that I don’t wake you’.",
       "points": [
@@ -159,7 +174,19 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "What do you think will happen the next time Pigeon and Fox meet?\nUse evidence from the poem to support your prediction.",
+      "kind": "self",
+      "model": "I think they will argue and call each other names again, because they enjoy complaining about each other: Fox calls Pigeon ‘featherbrain’. But I think they will still look after each other, because Pigeon leaves Fox ‘the crust of my breakfast’ and Fox treads softly ‘so that I don’t wake you’.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. they will argue again but still be kind to each other; they will share the city; Pigeon will leave Fox some food.",
+        "evidence from the poem that supports the prediction (1 mark), e.g. they argue (‘featherbrain’; ‘You leave it in a terrible mess!’); Pigeon still leaves Fox ‘the crust of my breakfast’; Fox treads softly past Pigeon’s windowsill; at the end they say ‘the city is ours’."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

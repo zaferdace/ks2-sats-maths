@@ -14,14 +14,17 @@
   "questions": [
     {
       "id": "q1",
-      "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at verse 1.\nHow does Ravi feel at the start of the race? Tick **one**.",
+      "domain": "2g",
+      "marks": 2,
+      "prompt": "Look at verse 1.\nHow does the poet show that Ravi is nervous before the race?\nGive **two** examples from the poem.",
       "paragraph": 1,
-      "kind": "choice",
-      "options": ["bored", "nervous", "angry", "sleepy"],
-      "pick": 1,
-      "answer": [1]
+      "kind": "self",
+      "model": "The poet says that Ravi has ‘his tummy full of butterflies’, which means he feels fluttery and sick with nerves. His legs are also ‘as wobbly as jelly’, which shows that they are shaking.",
+      "points": [
+        "each different example from verse 1 (1 mark each), such as:",
+        "‘his tummy full of butterflies’: he feels fluttery or sick with nerves",
+        "‘his legs as wobbly as jelly’: his legs are shaking"
+      ]
     },
     {
       "id": "q2",
@@ -50,6 +53,18 @@
     },
     {
       "id": "q4",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at verse 3.\n‘The world tips sideways\nand the ground rushes up to meet him’\nWhat do these lines tell you about Ravi’s fall?",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "They show that the fall happens suddenly and fast: Ravi loses his balance, everything seems to tilt, and he hits the ground before he knows what is happening.",
+      "points": [
+        "explaining that the fall is sudden or fast, or that Ravi loses his balance and everything seems to tilt as he hits the ground."
+      ]
+    },
+    {
+      "id": "q5",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at verse 3.\nWhy does the chanting stop? Tick **one**.",
@@ -65,7 +80,7 @@
       "answer": [2]
     },
     {
-      "id": "q5",
+      "id": "q6",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at verse 4.\n‘He could limp to the side’\nWhich word is closest in meaning to **limp**? Tick **one**.",
@@ -76,7 +91,7 @@
       "answer": [1]
     },
     {
-      "id": "q6",
+      "id": "q7",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at verse 4.\nAfter Ravi falls, who is the first person in the crowd to shout to him?",
@@ -110,7 +125,7 @@
       ]
     },
     {
-      "id": "q7",
+      "id": "q8",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
@@ -124,7 +139,7 @@
       "answer": [true, false, true, false]
     },
     {
-      "id": "q8",
+      "id": "q9",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at the whole poem.\nWhy does the poet keep repeating ‘Run, Ravi, run!’? Tick **one**.",
@@ -139,7 +154,7 @@
       "answer": [1]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at verse 6.\nWhy does the poem end with ‘Well run, Ravi.’ instead of ‘Run, Ravi, run!’? Tick **one**.",
@@ -155,10 +170,11 @@
       "answer": [2]
     },
     {
-      "id": "q10",
+      "id": "q11",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at verses 5 and 6.\nRavi finishes last, but he gets ‘the loudest cheer of the whole day’. Why?\nExplain, using evidence from the poem.",
+      "paragraph": 5,
       "kind": "self",
       "model": "Ravi gets the loudest cheer because he does not give up. He falls and hurts his knee, but ‘he gets up’ and keeps running, even ‘long after the winner has crossed the line’. The crowd admire how brave and determined he is, so ‘one by one, the crowd joins in’ to cheer him all the way to the finish.",
       "points": [
@@ -167,7 +183,19 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "What do you think Ravi will do at next year’s sports day?\nUse evidence from the poem to support your prediction.",
+      "kind": "self",
+      "model": "I think Ravi will run in the race again and try his hardest, because he did not give up this year: ‘So he gets up.’ He will probably tie his laces tightly first, because this year ‘his shoelace catches’ and made him fall. Remembering ‘the loudest cheer of the whole day’ will help him to feel brave.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. he will run again and not give up; he will tie his laces tightly; he will be less nervous.",
+        "evidence from the poem that supports the prediction (1 mark), e.g. he got up and finished the race; his shoelace caught and made him fall; he got ‘the loudest cheer of the whole day’; Priya cheered for him."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",
@@ -175,7 +203,7 @@
       "options": [
         "Ravi practises hard and wins his sports day race.",
         "Ravi hurts his knee and has to stop running for the rest of the day.",
-        "Priya wins her race, and Ravi cheers for her.",
+        "Ravi watches the race from the crowd and cheers for the winner.",
         "Ravi falls over in a race, but he gets up and finishes, and the crowd cheers him loudly."
       ],
       "pick": 1,

@@ -35,17 +35,14 @@
       "id": "q2",
       "domain": "2d",
       "marks": 1,
-      "kind": "choice",
+      "kind": "self",
       "paragraph": 1,
-      "prompt": "Look at paragraph 1.\nWhy did Father go back to bed?\nTick one.",
-      "options": [
-        "He was too frightened to watch the fire.",
-        "He thought it was a small fire that would soon be put out.",
-        "He had to get up early for work.",
-        "Grace had told him that there was nothing to worry about."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "prompt": "Look at paragraph 1.\nWhy did Father go back to bed?",
+      "model": "He thought it was only a small baker's fire that would soon be put out, so he did not think there was any danger: 'They'll have it out by morning.'",
+      "points": [
+        "explaining that he thought the fire was small or not dangerous, or that it would soon be put out, e.g. 'They'll have it out by morning.'",
+        "Do not accept 'he was tired' on its own."
+      ]
     },
     {
       "id": "q3",
@@ -60,22 +57,6 @@
     },
     {
       "id": "q4",
-      "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 3,
-      "prompt": "Look at paragraph 3.\nWhy do you think holding Tom's hand was 'the most important job of all'?\nTick one.",
-      "options": [
-        "Tom might get lost or hurt in the crowded, burning streets.",
-        "Tom was frightened of the cat.",
-        "Grace was too young to carry a bundle.",
-        "Father wanted Tom to help him dig the hole."
-      ],
-      "pick": 1,
-      "answer": [0]
-    },
-    {
-      "id": "q5",
       "domain": "2b",
       "marks": 1,
       "kind": "text",
@@ -93,13 +74,31 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q5",
       "domain": "2a",
       "marks": 1,
       "kind": "text",
       "paragraph": 5,
       "prompt": "Look at paragraph 5.\nFind and copy **one** word that shows the man with the mattress found it hard to walk.",
       "accept": ["staggered"]
+    },
+    {
+      "id": "q6",
+      "domain": "2g",
+      "marks": 2,
+      "kind": "self",
+      "paragraph": 5,
+      "prompt": "Look at paragraphs 5 and 6.\nHow does the writer make the fire seem terrifying?\nGive **two** examples from the text and explain what each one suggests.",
+      "model": "The writer says that 'the fire roared like a furious beast', which makes it sound like a huge, angry animal that could attack at any moment. The writer also describes 'A wall of flame' that 'stretched along the bank as far as she could see', which shows that the fire was enormous and impossible to escape.",
+      "points": [
+        "each example from the text that is explained (1 mark each), such as:",
+        "'the fire roared like a furious beast': it sounds like a wild, angry animal",
+        "'A wall of flame stretched along the bank as far as she could see': it was enormous and nobody could get past it",
+        "church spires stood out 'like burnt matches': even huge buildings looked tiny and destroyed",
+        "'ash drifted down on to their heads like grey snow': so much was burning that ash filled the air",
+        "the heat 'singed' the pigeons' wings: it was so hot that it burned birds in the sky",
+        "An example copied without an explanation does not score."
+      ]
     },
     {
       "id": "q7",
@@ -171,6 +170,19 @@
     },
     {
       "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "paragraph": 9,
+      "prompt": "Look at paragraph 9.\nWhat do you think will happen to Grace's family after the story ends?\nUse evidence from the text to support your prediction.",
+      "model": "I think the family will move into a new brick house where their old one stood, and they will be happy again. Builders 'were already at work', and Father said that 'the new houses would be made of brick', so they will be safer from fire. The yellow flowers pushing up 'through the ashes towards the sun' and Grace laughing 'for the first time in months' suggest that things are getting better.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. they will live in a new brick house; their home will be safer from fire; they will be happy again.",
+        "evidence from the text that supports the prediction (1 mark), e.g. 'Builders were already at work'; 'the new houses would be made of brick'; Father said, 'Houses can be built again'; Grace laughed 'for the first time in months'."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

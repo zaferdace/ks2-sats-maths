@@ -14,19 +14,15 @@
   "questions": [
     {
       "id": "q1",
-      "domain": "2b",
+      "domain": "2d",
       "marks": 1,
-      "prompt": "Look at verse 1.\nWhat does Mission Control do for the third time? Tick **one**.",
+      "prompt": "Look at verse 1.\nWho do you think ‘Mission Control’ really is?",
       "paragraph": 1,
-      "kind": "choice",
-      "options": [
-        "checks the speaker’s shoes",
-        "counts down from ten",
-        "straightens the speaker’s tie",
-        "brushes the speaker’s hair"
-      ],
-      "pick": 1,
-      "answer": [2]
+      "kind": "self",
+      "model": "Mission Control is the speaker’s mum or dad, who gets the speaker ready for the first day by straightening their tie and giving them a packed lunch.",
+      "points": [
+        "a parent or carer, e.g. Mum or Dad. (Evidence might be that Mission Control straightens the speaker’s tie, packs their lunch and later asks ‘How did it go?’ at the kitchen table.)"
+      ]
     },
     {
       "id": "q2",
@@ -55,18 +51,21 @@
     {
       "id": "q4",
       "domain": "2g",
-      "marks": 1,
-      "prompt": "Look at verse 4.\nAt lunch, the speaker floats alone ‘in a galaxy of tables’.\nWhat does this suggest? Tick **one**.",
-      "paragraph": 4,
-      "kind": "choice",
-      "options": [
-        "The tables in the dining hall are decorated with stars.",
-        "The speaker feels small and alone in a huge hall full of tables.",
-        "The speaker is enjoying lunch with lots of new friends.",
-        "The tables are floating around the room."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "marks": 2,
+      "prompt": "Look at verses 3 and 4.\nHow does the poet make the new school seem strange and frightening?\nGive **two** examples from the poem and explain what each one suggests.",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "The poet calls the school ‘The new planet’ and says it is ‘enormous’, which suggests that it feels huge and unfamiliar. The older pupils are ‘giants in ties’ who speak ‘a language I don’t understand’, which shows that the speaker feels small and confused by new words such as ‘periods, sets, double science’.",
+      "points": [
+        "each example from verse 3 or 4 that is explained (1 mark each), such as:",
+        "‘The new planet is enormous’: the school feels huge and unfamiliar",
+        "the corridors ‘twist like the inside of a shell’: they are confusing and easy to get lost in",
+        "‘the bell wails like a siren’: the bell is loud and alarming",
+        "‘giants in ties’: the older pupils seem huge and scary",
+        "‘a language I don’t understand’: the new words (periods, sets, double science) are confusing",
+        "‘a galaxy of tables’: the dining hall is huge and the speaker feels tiny and alone",
+        "An example copied without an explanation does not score."
+      ]
     },
     {
       "id": "q5",
@@ -104,7 +103,6 @@
       "kind": "text",
       "accept": [
         "fine",
-        "'fine'",
         "fine i say",
         "'fine' i say",
         "i say fine",
@@ -160,6 +158,18 @@
     },
     {
       "id": "q11",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "What do you think the speaker’s second day at the new school will be like?\nUse evidence from the poem to support your prediction.",
+      "kind": "self",
+      "model": "I think the second day will be easier, because the speaker has made a friend, Noah, and they have already explored the school together, ‘charting every corridor and stair’. The school already seems smaller (‘the planet starts to shrink’), and the speaker says ‘I can breathe here’, so they will feel more relaxed.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. it will be easier or less frightening; the speaker will spend time with Noah; the speaker will not get lost.",
+        "evidence from the poem that supports the prediction (1 mark), e.g. the speaker has made a friend, Noah; they have explored ‘every corridor and stair’; ‘the planet starts to shrink’; ‘I can breathe here’."
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

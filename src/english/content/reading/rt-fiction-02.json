@@ -42,17 +42,14 @@
       "id": "q3",
       "domain": "2d",
       "marks": 1,
-      "kind": "choice",
+      "kind": "self",
       "paragraph": 2,
-      "prompt": "Look at paragraph 2.\nWhy were Theo's cheeks burning?\nTick one.",
-      "options": [
-        "He had just run in from the playground.",
-        "He felt upset and embarrassed that people thought he had taken the cup.",
-        "He was sitting too close to a radiator.",
-        "He was proud that everyone was looking at him."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "prompt": "Look at paragraph 2.\n'Theo protested, but his cheeks were burning.'\nWhat does this tell you about how Theo was feeling?",
+      "model": "Theo was embarrassed and upset, because half the class was staring at him and people thought he had taken the cup.",
+      "points": [
+        "a feeling that fits, e.g. embarrassed, upset, ashamed, angry or hurt that people thought he had taken the cup.",
+        "Do not accept answers about being hot, e.g. 'he had been running'."
+      ]
     },
     {
       "id": "q4",
@@ -67,19 +64,12 @@
     },
     {
       "id": "q5",
-      "domain": "2d",
+      "domain": "2a",
       "marks": 1,
-      "kind": "choice",
+      "kind": "text",
       "paragraph": 3,
-      "prompt": "Look at paragraph 3.\nWhy did Priya decide that whoever took the cup must have had a key?\nTick one.",
-      "options": [
-        "Theo told her that the thief had a key.",
-        "The glass was not cracked and the lock was not damaged.",
-        "She found a key lying under the cabinet.",
-        "The secretary said that the cabinet was always left open."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "prompt": "Look at paragraph 3.\nFind and copy **one** word that shows Priya and Theo walked to the hall in a determined way.",
+      "accept": ["marched"]
     },
     {
       "id": "q6",
@@ -120,6 +110,34 @@
     },
     {
       "id": "q8",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "paragraph": 3,
+      "prompt": "Look at paragraphs 3 to 5.\nExplain how Priya worked out who had taken the cup.\nUse evidence from the text.",
+      "model": "Priya saw that 'The glass was not cracked, and the lock was not damaged', so whoever took the cup must have had a key. Then the secretary told her that only Mrs Adams and Mr Ward kept a key, and that Mrs Adams had been at a meeting all Friday afternoon, so it must have been Mr Ward.",
+      "points": [
+        "each clue that is explained (1 mark each), such as:",
+        "the glass was not cracked and the lock was not damaged, so whoever took the cup must have had a key",
+        "only Mrs Adams and Mr Ward kept a key, and Mrs Adams was at a meeting all Friday afternoon, so it must have been Mr Ward",
+        "the tiny screw showed that something on the cup had come loose, so someone might be mending it"
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 1,
+      "kind": "self",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\n'Mr Ward's eyes lit up.'\nWhat does this tell you about how Mr Ward felt?",
+      "model": "He was delighted and relieved, because he had been hunting for the screw since Friday and needed it to mend the cup.",
+      "points": [
+        "a feeling that fits, e.g. happy, delighted, excited or relieved that the screw had been found.",
+        "Do not accept answers that take the words literally, e.g. 'his eyes shone like a lamp'."
+      ]
+    },
+    {
+      "id": "q10",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -127,16 +145,17 @@
       "statements": [
         "The team photo was on Monday.",
         "Theo said he had gone back to the hall for his water bottle.",
-        "Priya dropped the screw into her pencil case.",
+        "Priya dropped what she found into her pencil case.",
         "Mr Ward had left his note on the classroom door."
       ],
       "answer": [false, true, true, false]
     },
     {
-      "id": "q9",
+      "id": "q11",
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 3,
       "prompt": "Which is the best summary of paragraphs 3 to 5?\nTick one.",
       "options": [
         "Priya looks for clues and works out who could have taken the cup.",
@@ -148,7 +167,7 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2h",
       "marks": 1,
       "kind": "choice",
@@ -163,7 +182,7 @@
       "answer": [0]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2d",
       "marks": 2,
       "kind": "self",
@@ -175,14 +194,14 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "kind": "order",
       "prompt": "Number these events 1 to 5 in the order they happen in the story.",
       "items": [
-        "Priya finds a tiny silver screw.",
-        "Mrs Adams tells everyone that the cup has vanished.",
+        "Priya finds something tiny under the cabinet.",
+        "Mrs Adams tells everyone that the cup is missing.",
         "Theo smiles in the team photo.",
         "Priya asks the secretary who has a key.",
         "Mr Ward explains why he took the cup."

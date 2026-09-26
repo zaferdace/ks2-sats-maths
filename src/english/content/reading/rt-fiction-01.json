@@ -36,22 +36,6 @@
     },
     {
       "id": "q3",
-      "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 4,
-      "prompt": "Look at paragraph 4.\nWhy did Leo want to carry the pup into the waves himself?\nTick one.",
-      "options": [
-        "He wanted to find out whether seals could swim.",
-        "He was worried that the pup had been left behind and was not safe.",
-        "Gran had asked him to help the pup.",
-        "He wanted to take the pup home as a pet."
-      ],
-      "pick": 1,
-      "answer": [1]
-    },
-    {
-      "id": "q4",
       "domain": "2b",
       "marks": 1,
       "kind": "text",
@@ -60,7 +44,7 @@
       "accept": ["binoculars", "a pair of binoculars", "pair of binoculars", "some binoculars", "her binoculars", "binocular", "a binocular"]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2g",
       "marks": 1,
       "kind": "choice",
@@ -74,6 +58,15 @@
       ],
       "pick": 1,
       "answer": [1]
+    },
+    {
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nFind and copy **one** word that shows the spaniel was lively and full of energy.",
+      "accept": ["bouncy"]
     },
     {
       "id": "q6",
@@ -90,33 +83,27 @@
       "id": "q7",
       "domain": "2d",
       "marks": 1,
-      "kind": "choice",
+      "kind": "self",
       "paragraph": 8,
-      "prompt": "Look at paragraph 8.\nWhy did Leo clap a hand over his mouth after he cheered?\nTick one.",
-      "options": [
-        "He remembered that he was supposed to stay quiet near the seals.",
-        "He did not want Ella to hear what he said.",
-        "He was trying to stop himself from yawning.",
-        "He had got sand in his mouth."
-      ],
-      "pick": 1,
-      "answer": [0]
+      "prompt": "Look at paragraph 8.\nWhy did Leo clap a hand over his mouth after he cheered?",
+      "model": "He remembered that he was supposed to be quiet near the seals, so he did not want his cheer to frighten them.",
+      "points": [
+        "explaining that Leo remembered he should be quiet, e.g. so that he would not frighten the seals, or because Ella had said they needed to 'wait quietly'.",
+        "Do not accept answers that have nothing to do with keeping quiet, e.g. 'he had sand in his mouth'."
+      ]
     },
     {
       "id": "q8",
       "domain": "2e",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 8,
-      "prompt": "Look at paragraph 8.\nWhat is Leo most likely to do when he is older?\nTick one.",
-      "options": [
-        "Keep away from the beach.",
-        "Try to keep a seal as a pet.",
-        "Help to look after seals, like Ella does.",
-        "Become a fisherman at Pebble Bay."
-      ],
-      "pick": 1,
-      "answer": [2]
+      "marks": 2,
+      "kind": "self",
+      "prompt": "If Leo sees a seal pup alone on the beach again, what do you think he will do?\nUse evidence from the text to support your prediction.",
+      "model": "I think Leo will stay back, watch the pup quietly and ask a grown-up to phone the seal rescue team. Ella told him that 'Mother seals often leave their pups on the beach while they hunt', so he will know that the pup is probably not lost. He also tells Gran that when he is older, he is 'going to rescue seals too', so he will want to help.",
+      "points": [
+        "a sensible prediction that fits the story (1 mark), e.g. he will keep his distance and watch; he will phone, or ask a grown-up to phone, the seal rescue team; he will keep people and dogs away from the pup.",
+        "evidence from the text that supports the prediction (1 mark), e.g. Ella told him that mother seals often leave their pups on the beach while they hunt; he wants to 'rescue seals too'; last time he 'kept watch like a guard'.",
+        "Do not accept a prediction that goes against the story, e.g. he will pick the pup up and carry it into the sea."
+      ]
     },
     {
       "id": "q9",
@@ -137,6 +124,7 @@
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 5,
       "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
       "options": [
         "Leo carries the pup into the sea, and a volunteer thanks him.",
@@ -152,6 +140,21 @@
       "domain": "2d",
       "marks": 2,
       "kind": "self",
+      "prompt": "Give **two** impressions of Gran.\nUse evidence from the text to support your answer.",
+      "model": "Gran is sensible, because she 'gently caught his arm' and told Leo to 'Stay back' so that the mother seal would not be frightened away. She also knows a lot about seals, because she explains that 'Its mother is probably out at sea, catching fish.'",
+      "points": [
+        "each different impression that is backed up with evidence from the text (1 mark each), such as:",
+        "calm or sensible: she told Leo to 'Stay back' and phoned the seal rescue team",
+        "knows a lot about seals: she explains that the mother is 'probably out at sea, catching fish'",
+        "gentle or kind: she 'gently caught his arm'",
+        "relaxed: she 'strolled along behind him, sipping tea from her flask'"
+      ]
+    },
+    {
+      "id": "q12",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
       "prompt": "How does Leo feel about the seal pup before its mother comes back?\nExplain fully, using evidence from the text.",
       "model": "Leo feels worried about the pup. When it cries, 'Leo's stomach twisted into a knot', and he asks, 'But what if she never comes back?' He also feels protective of it, because he 'kept watch like a guard' and asked the man with the spaniel to walk the other way.",
       "points": [
@@ -160,7 +163,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

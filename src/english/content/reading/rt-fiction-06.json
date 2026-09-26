@@ -17,22 +17,6 @@
   "questions": [
     {
       "id": "q1",
-      "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at paragraph 1.\nWhy did Owen run ahead? Tick **one**.",
-      "paragraph": 1,
-      "kind": "choice",
-      "options": [
-        "He wanted to get to the top before his sister.",
-        "Dad had asked him to check the path.",
-        "He had seen the fog coming.",
-        "He was looking for his whistle."
-      ],
-      "pick": 1,
-      "answer": [0]
-    },
-    {
-      "id": "q2",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 1.\nFind and copy **one** word that means walking slowly and heavily.",
@@ -41,10 +25,11 @@
       "accept": ["plodding"]
     },
     {
-      "id": "q3",
+      "id": "q2",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraphs 1 to 5.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "paragraph": 1,
       "kind": "tf",
       "statements": [
         "Owen noticed the cloud as soon as it appeared.",
@@ -55,7 +40,7 @@
       "answer": [false, true, true, false]
     },
     {
-      "id": "q4",
+      "id": "q3",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at paragraph 3.\n‘The fog rolled up the mountainside and swallowed everything’.\nWhat does the word **swallowed** suggest? Tick **one**.",
@@ -71,7 +56,7 @@
       "answer": [1]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nFind and copy **one** word that shows the sound of Owen’s boots was quieter and less clear.",
@@ -80,7 +65,7 @@
       "accept": ["muffled"]
     },
     {
-      "id": "q6",
+      "id": "q5",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 4.\nWhy did Owen freeze? Tick **one**.",
@@ -96,7 +81,7 @@
       "answer": [2]
     },
     {
-      "id": "q7",
+      "id": "q6",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why is paragraph 5 a turning point in the story? Tick **one**.",
@@ -112,7 +97,7 @@
       "answer": [3]
     },
     {
-      "id": "q8",
+      "id": "q7",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraph 5.\nAccording to Dad, how many long blasts on a whistle mean ‘Help!’?",
@@ -121,16 +106,32 @@
       "accept": ["six", "six long blasts", "six blasts", "six long", "six long ones"]
     },
     {
-      "id": "q9",
+      "id": "q8",
       "domain": "2d",
       "marks": 3,
       "prompt": "Look at paragraphs 4 to 6.\nHow do Owen’s feelings change?\nExplain, using evidence from the text.",
+      "paragraph": 4,
       "kind": "self",
       "model": "At first Owen is frightened: ‘His heart began to thump’, and he ‘froze’ when he heard the stones clatter down the slope. When he remembers Dad’s advice, he becomes calmer and more sensible, even though his fingers are still ‘trembling’: he pulls his hat down, zips up his coat and finds his whistle. When he hears the three short blasts, he is hugely relieved, because his ‘legs went wobbly with relief’.",
       "points": [
         "Frightened or panicky when he is lost, with evidence, such as ‘His heart began to thump’ or ‘Owen froze’.",
         "Calmer or more sensible when he remembers Dad’s advice, with evidence, such as pulling his hat down and zipping up his coat.",
         "Relieved when he hears the answer, with evidence, such as his ‘legs went wobbly with relief’."
+      ]
+    },
+    {
+      "id": "q9",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at paragraph 8.\nHow does Nia feel when Owen is found?\nGive **two** feelings, using evidence from the text to support each one.",
+      "paragraph": 8,
+      "kind": "self",
+      "model": "Nia is relieved and glad that Owen is safe, because she ‘bumped her shoulder against his’, which was her way of saying ‘that she was glad he was safe’. She is also upset, because ‘her voice wobbled’ and ‘she was blinking very fast’, as if she was trying not to cry.",
+      "points": [
+        "each different feeling that is backed up with evidence from paragraph 8 (1 mark each), such as:",
+        "relieved or glad that he is safe: she ‘bumped her shoulder against his’; ‘For once, his sister did not argue.’",
+        "upset, or trying not to cry because she had been so worried: ‘her voice wobbled’; ‘she was blinking very fast’",
+        "still a little cross with Owen, or pretending not to care: she ‘hung back with her arms folded’; ‘So you won the race, then’"
       ]
     },
     {
@@ -177,6 +178,19 @@
       ],
       "pick": 1,
       "answer": [1]
+    },
+    {
+      "id": "q13",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "What do you think Owen will do the next time his family goes walking in the mountains?\nUse evidence from the text to support your prediction.",
+      "kind": "self",
+      "model": "I think Owen will stay close to Dad and Nia instead of racing ahead, because at the end ‘he stayed exactly where Dad could see him’ and he said that ‘he should never have run off’. I also think he will listen carefully to Dad’s advice, because remembering it is what saved him.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. he will stay close to his family; he will not race ahead; he will listen to Dad’s advice; he will keep his whistle ready.",
+        "evidence from the text that supports the prediction (1 mark), e.g. ‘this time he stayed exactly where Dad could see him’; he said he ‘should never have run off’; Dad’s advice about the whistle helped him to be found.",
+        "Do not accept a prediction that ignores how the story ends, e.g. he will run off on his own again."
+      ]
     }
   ]
 }

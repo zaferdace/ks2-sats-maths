@@ -47,33 +47,6 @@
     },
     {
       "id": "q4",
-      "domain": "2a",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 3,
-      "prompt": "Look at paragraph 3.\n'The dog **plodded** along quietly'\nWhich of these is closest in meaning to **plodded**?\nTick one.",
-      "options": ["walked slowly", "ran fast", "jumped", "barked"],
-      "pick": 1,
-      "answer": [0]
-    },
-    {
-      "id": "q5",
-      "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 4,
-      "prompt": "Look at paragraph 4.\n'Finn froze.'\nWhy did Finn freeze?\nTick one.",
-      "options": [
-        "He was feeling very cold.",
-        "He was cross that Mum's phone had rung.",
-        "He was scared now that he was holding the dog's lead.",
-        "He had just seen a cat under the hedge."
-      ],
-      "pick": 1,
-      "answer": [2]
-    },
-    {
-      "id": "q6",
       "domain": "2d",
       "marks": 1,
       "kind": "choice",
@@ -89,7 +62,16 @@
       "answer": [1]
     },
     {
-      "id": "q7",
+      "id": "q5",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nFind and copy **one** word that shows the dog's ears felt very soft.",
+      "accept": ["velvety"]
+    },
+    {
+      "id": "q6",
       "domain": "2b",
       "marks": 1,
       "kind": "text",
@@ -98,7 +80,7 @@
       "accept": ["leaves", "the leaves", "some leaves", "leaf", "chasing leaves"]
     },
     {
-      "id": "q8",
+      "id": "q7",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -112,13 +94,13 @@
       "answer": [false, true, false, true]
     },
     {
-      "id": "q9",
+      "id": "q8",
       "domain": "2h",
       "marks": 1,
       "kind": "choice",
       "prompt": "Think about the whole story.\nIn what way are Finn and the dog alike?\nTick one.",
       "options": [
-        "They both love chasing leaves.",
+        "They both love chasing pigeons.",
         "They are both frightened of things.",
         "They have both hurt an ankle.",
         "They both hate going to the park."
@@ -127,7 +109,7 @@
       "answer": [1]
     },
     {
-      "id": "q10",
+      "id": "q9",
       "domain": "2d",
       "marks": 2,
       "kind": "self",
@@ -136,6 +118,18 @@
       "points": [
         "Explains that at the start Finn is frightened of the dog, with evidence, e.g. 'Finn froze' or he kept Mum 'between himself and the dog'.",
         "Explains that by the end Finn likes or cares about the dog, with evidence, e.g. 'I'll look after you' or 'Could I still come with you?'"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2g",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "The story is called **The Gentle Giant**.\nExplain why this is a good title for the story, using evidence from the text.",
+      "model": "The dog is a giant because he is a Great Dane 'as tall as the kitchen table', with 'paws the size of saucers', and he is 'the biggest dog he had ever seen'. But he is gentle, because he has 'gentle brown eyes', he 'sat down and waited' when Finn held the lead, and he was so timid that he hid from a small cat.",
+      "points": [
+        "explaining that the dog is huge, like a giant, with evidence (1 mark), e.g. 'as tall as the kitchen table'; 'paws the size of saucers'; 'the biggest dog he had ever seen'.",
+        "explaining that the dog is gentle or timid, not fierce, with evidence (1 mark), e.g. 'gentle brown eyes'; he 'sat down and waited'; he hid from a cat 'no bigger than a loaf of bread'; he 'leaned his warm head against Finn's shoulder'."
       ]
     },
     {
@@ -155,6 +149,18 @@
     },
     {
       "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "At the end of the story, Finn asks Jess, 'Could I still come with you?'\nWhat do you think will happen next?\nUse evidence from the text to support your prediction.",
+      "model": "I think Jess will say yes, and Finn will keep going on walks with her and the dog, because Finn and the dog have become friends: 'Finn looked at the dog, and the dog looked at Finn.' I also think Finn will not be so afraid of dogs any more, because he has found out that even the biggest dog in the street can be gentle.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. Jess will say yes and Finn will still walk the dog; Finn and the dog will stay friends; Finn will be less afraid of other dogs.",
+        "evidence from the text that supports the prediction (1 mark), e.g. Finn walked the dog every afternoon for a week; he told the dog, 'I'll look after you'; 'Finn looked at the dog, and the dog looked at Finn'."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",
