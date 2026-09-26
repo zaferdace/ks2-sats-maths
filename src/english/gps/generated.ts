@@ -14,6 +14,7 @@ export type GeneratedGpsType =
   | 'g-find-word'
   | 'g-sentence-type'
   | 'g-clauses'
+  | 'g-main-clause'
   | 'g-subject'
   | 'g-fronted'
   | 'g-noun-phrase'
@@ -87,11 +88,16 @@ const base = (typeId: GeneratedGpsType, s: GrammarSentence): Pick<ItemQuestion, 
 /** Easy questions stick to the word classes met first. */
 const EASY_CLASSES: Target[] = ['noun', 'verb', 'adj', 'adv', 'pron'];
 
-function wordClass(rng: Rng, level: Level): ItemQuestion | null {
-  const askable = ([w, tag]: [string, Tag]) => {
+/** A word "What is the word class of the underlined word?" may ask about at this level. */
+const askableWord =
+  (level: Level) =>
+  ([w, tag]: [string, Tag]): boolean => {
     const target = targetOf(tag);
     return target !== null && !isPossessive(w) && (level > 1 || EASY_CLASSES.includes(target));
   };
+
+function wordClass(rng: Rng, level: Level): ItemQuestion | null {
+  const askable = askableWord(level);
   const candidates = pool(level, (s) => s.tokens.some(askable));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
@@ -114,21 +120,33 @@ function wordClass(rng: Rng, level: Level): ItemQuestion | null {
 
 const NUMBER_WORDS = ['', 'the', 'the two', 'the three'];
 
+const FIND_TARGETS: Target[] = ['noun', 'verb', 'adj', 'adv', 'prep', 'det', 'pron', 'conj'];
+
+const hitsOf = (s: GrammarSentence, target: Target) =>
+  s.tokens.map((t, i) => (targetOf(t[1]) === target ? i : -1)).filter((i) => i >= 0);
+
+/** Whether "Tap every <word class> in this sentence" has one right answer in this sentence. */
+const findWordOk =
+  (target: Target) =>
+  (s: GrammarSentence): boolean => {
+    // Words tagged "other" (noun modifiers like "school" in "school gates", "not", "please",
+    // question words, infinitive "to") could each be argued into some class, so "tap every …"
+    // questions avoid sentences that have any.
+    const risky =
+      s.tokens.some(([, t]) => t === 'other') ||
+      (target === 'verb' && s.tokens.some(([w, t]) => t === 'aux' || t === 'modal' || isContraction(w))) ||
+      ((target === 'det' || target === 'pron') && hasPossessive(s)) ||
+      (target === 'noun' && hasNounPair(s));
+    const n = hitsOf(s, target).length;
+    return n >= 1 && n <= 3 && !risky;
+  };
+
 function findWord(rng: Rng, level: Level): ItemQuestion | null {
-  const target = rng.pick<Target>(['noun', 'verb', 'adj', 'adv', 'prep', 'det', 'pron', 'conj']);
-  const hits = (s: GrammarSentence) => s.tokens.map((t, i) => (targetOf(t[1]) === target ? i : -1)).filter((i) => i >= 0);
-  // Words tagged "other" (noun modifiers like "school" in "school gates", "not", "please",
-  // question words, infinitive "to") could each be argued into some class, so "tap every …"
-  // questions avoid sentences that have any.
-  const risky = (s: GrammarSentence) =>
-    s.tokens.some(([, t]) => t === 'other') ||
-    (target === 'verb' && s.tokens.some(([w, t]) => t === 'aux' || t === 'modal' || isContraction(w))) ||
-    ((target === 'det' || target === 'pron') && hasPossessive(s)) ||
-    (target === 'noun' && hasNounPair(s));
-  const candidates = pool(level, (s) => hits(s).length >= 1 && hits(s).length <= 3 && !risky(s));
+  const target = rng.pick<Target>(FIND_TARGETS);
+  const candidates = pool(level, findWordOk(target));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
-  const answerIdx = hits(s);
+  const answerIdx = hitsOf(s, target);
   const n = answerIdx.length;
   const noun = n === 1 ? LABEL[target] : `${LABEL[target]}s`;
   return {
@@ -190,10 +208,12 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
   };
 }
 
+// TENSES has no "future": English has no future tense ("will" is a modal verb), so sentences
+// about the future are never keyed with a tense.
+const hasTense = (s: GrammarSentence): boolean => (TENSES as readonly string[]).includes(s.tense ?? '');
+
 function tense(rng: Rng, level: Level): ItemQuestion | null {
-  // TENSES has no "future": English has no future tense ("will" is a modal verb), so sentences
-  // about the future are never keyed with a tense.
-  const candidates = pool(level, (s) => (TENSES as readonly string[]).includes(s.tense ?? ''));
+  const candidates = pool(level, hasTense);
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const { input, answer } = choices(rng, [s.tense!], rng.shuffle(TENSES.filter((t) => t !== s.tense)).slice(0, 3));
@@ -225,20 +245,31 @@ function otherNounPhrases(s: GrammarSentence, avoid: Span): string[] {
   return out;
 }
 
+/** Noun phrases other than the subject, offered as wrong answers. */
+const subjectDistractors = (s: GrammarSentence): string[] =>
+  [...new Set(otherNounPhrases(s, s.subject!))].filter((w) => w !== spanText(s, s.subject!));
+
+const subjectOk = (s: GrammarSentence): boolean =>
+  Boolean(s.subject) && s.type !== 'command' && subjectDistractors(s).length >= 2;
+
 function subject(rng: Rng, level: Level): ItemQuestion | null {
-  const candidates = pool(level, (s) => Boolean(s.subject) && s.type !== 'command' && otherNounPhrases(s, s.subject!).length >= 2);
+  const candidates = pool(level, subjectOk);
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const right = spanText(s, s.subject!);
-  const wrong = [...new Set(otherNounPhrases(s, s.subject!))].filter((w) => w !== right).slice(0, 3);
-  if (wrong.length < 2) return null;
+  const wrong = subjectDistractors(s).slice(0, 3);
   const { input, answer } = choices(rng, [right], wrong);
+  // Every clause has a subject, so with two clauses the question names the main one.
+  const twoClauses = Boolean(s.subordinateClause || s.relativeClause);
+  const what = twoClauses ? 'the main clause in this sentence' : 'this sentence';
   return {
     ...base('g-subject', s),
-    body: [{ b: 'text', text: `What is the subject of this sentence?\n**${text(s)}**` }],
+    body: [{ b: 'text', text: `What is the subject of ${what}?\n**${text(s)}**` }],
     input,
     answer,
-    explain: `The subject is "${right}": it is who or what the sentence is about.`,
+    explain: twoClauses
+      ? `The subject of the main clause is "${right}": it is who or what the main clause is about.`
+      : `The subject is "${right}": it is who or what the sentence is about.`,
   };
 }
 
@@ -252,10 +283,15 @@ function tapSpan(s: GrammarSentence, span: Span): Pick<ItemQuestion, 'input' | '
   return { input: { kind: 'words', tokens: words(s), pick: answer.length }, answer: answer.join(',') };
 }
 
+// A relative clause is a kind of subordinate clause too, so "the subordinate clause" needs a
+// sentence without one.
+const hasSubordinate = (s: GrammarSentence): boolean => Boolean(s.subordinateClause) && !s.relativeClause;
+const hasRelative = (s: GrammarSentence): boolean => Boolean(s.relativeClause);
+
 function clauses(rng: Rng, level: Level): ItemQuestion | null {
   const variant = rng.pick(['subordinate', 'relative', 'which-relative'] as const);
   if (variant === 'which-relative') {
-    const withRel = pool(level, (s) => Boolean(s.relativeClause));
+    const withRel = pool(level, hasRelative);
     const without = SENTENCES.filter((s) => !s.relativeClause && !s.tokens.some(([w]) => ['who', 'which', 'that', 'whose'].includes(w.toLowerCase())));
     if (!withRel.length || without.length < 3) return null;
     const s = rng.pick(withRel);
@@ -268,12 +304,7 @@ function clauses(rng: Rng, level: Level): ItemQuestion | null {
       explain: `"${spanText(s, s.relativeClause!)}" is a relative clause.`,
     };
   }
-  // A relative clause is a kind of subordinate clause too, so "the subordinate clause" needs a
-  // sentence without one.
-  const candidates =
-    variant === 'subordinate'
-      ? pool(level, (s) => Boolean(s.subordinateClause) && !s.relativeClause)
-      : pool(level, (s) => Boolean(s.relativeClause));
+  const candidates = pool(level, variant === 'subordinate' ? hasSubordinate : hasRelative);
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const span = (variant === 'subordinate' ? s.subordinateClause : s.relativeClause)!;
@@ -282,6 +313,52 @@ function clauses(rng: Rng, level: Level): ItemQuestion | null {
     body: [{ b: 'text', text: `Tap every word in the **${variant} clause**.` }],
     ...tapSpan(s, span),
     explain: `The ${variant} clause is "${spanText(s, span)}".`,
+  };
+}
+
+/**
+ * The main clause, tokens [start, end), when a sentence is one main clause and one subordinate
+ * clause, the subordinate clause first (followed by its comma) or last. Otherwise null: a relative
+ * clause, a second main clause after "and" or "but", a clause inside a clause (each part must
+ * have exactly one verb, so "to" + verb counts as a second clause) or a comma inside the main
+ * clause (a fronted adverbial, a name being spoken to) would let a pupil argue about which words
+ * belong to it.
+ */
+export function mainClauseSpan(s: GrammarSentence): Span | null {
+  const sub = s.subordinateClause;
+  if (!sub || s.relativeClause || s.frontedAdverbial) return null;
+  const [a, b] = sub;
+  const end = s.tokens.length - 1; // the full stop, question mark or exclamation mark
+  let span: Span;
+  if (a === 0 && s.tokens[b]?.[0] === ',') span = [b + 1, end];
+  else if (b === end && a > 0) span = [0, a];
+  else return null;
+  const main = s.tokens.slice(...span);
+  const part = s.tokens.slice(a, b);
+  const count = (tokens: [string, Tag][], tag: Tag) => tokens.filter(([, t]) => t === tag).length;
+  const ok =
+    main.length > 0 &&
+    count(main, 'verb') === 1 &&
+    count(part, 'verb') === 1 &&
+    count(main, 'conj-sub') === 0 &&
+    count(part, 'conj-sub') === 1 &&
+    count(main, 'punct') === 0 &&
+    count(part, 'punct') === 0;
+  return ok ? span : null;
+}
+
+const mainClauseAskable = (s: GrammarSentence): boolean => mainClauseSpan(s) !== null;
+
+function mainClause(rng: Rng, level: Level): ItemQuestion | null {
+  const candidates = pool(level, mainClauseAskable);
+  if (!candidates.length) return null;
+  const s = rng.pick(candidates);
+  const span = mainClauseSpan(s)!;
+  return {
+    ...base('g-main-clause', s),
+    body: [{ b: 'text', text: 'Tap every word of the **main clause**.' }],
+    ...tapSpan(s, span),
+    explain: `The main clause is "${spanText(s, span)}": it makes sense on its own. "${spanText(s, s.subordinateClause!)}" is the subordinate clause.`,
   };
 }
 
@@ -399,6 +476,7 @@ export const GENERATORS: Record<GeneratedGpsType, (rng: Rng, level: Level) => It
   'g-find-word': findWord,
   'g-sentence-type': sentenceType,
   'g-clauses': clauses,
+  'g-main-clause': mainClause,
   'g-subject': subject,
   'g-fronted': fronted,
   'g-noun-phrase': nounPhrase,
@@ -408,3 +486,28 @@ export const GENERATORS: Record<GeneratedGpsType, (rng: Rng, level: Level) => It
 };
 
 export const isGenerated = (type: string): type is GeneratedGpsType => type in GENERATORS;
+
+/**
+ * The sentences of exactly this level that each template, and each way a template can ask
+ * ("g-find-word adj", "g-clauses relative"), is able to use. A level with fewer than POOL_MIN
+ * borrows from the next level, so the tests check every level has enough of its own.
+ */
+export function sentencesFor(level: Level): Record<string, GrammarSentence[]> {
+  const at = SENTENCES.filter((s) => s.level === level);
+  const askable = askableWord(level);
+  return {
+    'g-word-class': at.filter((s) => s.tokens.some(askable)),
+    ...Object.fromEntries(FIND_TARGETS.map((t) => [`g-find-word ${t}`, at.filter(findWordOk(t))])),
+    ...Object.fromEntries(TYPES.map((k) => [`g-sentence-type ${k}`, at.filter((s) => s.type === k)])),
+    'g-end-punctuation question': at.filter((s) => s.type === 'question'),
+    'g-end-punctuation exclamation': at.filter((s) => s.type === 'exclamation'),
+    'g-clauses subordinate': at.filter(hasSubordinate),
+    'g-clauses relative': at.filter(hasRelative),
+    'g-main-clause': at.filter(mainClauseAskable),
+    'g-subject': at.filter(subjectOk),
+    'g-fronted': at.filter((s) => Boolean(s.frontedAdverbial)),
+    'g-noun-phrase': at.filter(nounPhraseAskable),
+    'g-tense': at.filter(hasTense),
+    'g-voice': at.filter((s) => s.voice === 'passive'),
+  };
+}

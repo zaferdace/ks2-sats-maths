@@ -1,0 +1,749 @@
+[
+  {
+    "id": "gi-ellipsis-001",
+    "type": "g-ellipsis",
+    "level": 1,
+    "prompt": "What is the name of this punctuation mark?\n**…**",
+    "input": {
+      "kind": "choice",
+      "options": ["ellipsis", "hyphen", "colon", "semi-colon"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Three dots in a row (…) are called an ellipsis."
+  },
+  {
+    "id": "gi-ellipsis-002",
+    "type": "g-ellipsis",
+    "level": 1,
+    "prompt": "Which sentence uses an **ellipsis**?",
+    "input": {
+      "kind": "choice",
+      "options": ["The cave was dark… and very cold.", "The cave was dark: it had no windows.", "The cave was dark; it was cold too.", "The cave – which was dark – felt cold."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "An ellipsis is three dots (…); the other sentences use a colon, a semi-colon and dashes."
+  },
+  {
+    "id": "gi-ellipsis-003",
+    "type": "g-ellipsis",
+    "level": 1,
+    "prompt": "Why has the writer used an ellipsis in this sentence?\nSlowly, the lid of the box began to lift… and a green hand appeared.",
+    "input": {
+      "kind": "choice",
+      "options": ["to make the reader pause before a surprise", "to show that someone is speaking", "to separate the items in a list", "to show that something belongs to someone"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The ellipsis makes the reader pause and wonder what will happen, which builds suspense."
+  },
+  {
+    "id": "gi-ellipsis-004",
+    "type": "g-ellipsis",
+    "level": 1,
+    "prompt": "Sam stopped speaking before he had finished his sentence. Which sentence shows this?",
+    "input": {
+      "kind": "choice",
+      "options": ["“I thought I heard…” whispered Sam.", "“I thought I heard a noise,” whispered Sam.", "“I thought I heard a noise!” whispered Sam.", "“Did you hear a noise?” whispered Sam."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "An ellipsis at the end of the spoken words shows that Sam trailed off without finishing."
+  },
+  {
+    "id": "gi-ellipsis-005",
+    "type": "g-ellipsis",
+    "level": 2,
+    "prompt": "A newspaper printed part of what the mayor said.\n“The new park … will open in May.”\nWhy is there an ellipsis?",
+    "input": {
+      "kind": "choice",
+      "options": ["to show that some words have been left out", "to show that the mayor was shouting", "to introduce a list", "to show that the mayor asked a question"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In a quotation, an ellipsis shows where words have been left out."
+  },
+  {
+    "id": "gi-ellipsis-006",
+    "type": "g-ellipsis",
+    "level": 2,
+    "prompt": "Tick **two** things that an ellipsis can show.",
+    "input": {
+      "kind": "choice",
+      "options": ["a pause that builds suspense", "that some words have been left out", "that something belongs to someone", "the start of a list"],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "An ellipsis can show a pause or missing words; an apostrophe shows belonging and a colon can start a list."
+  },
+  {
+    "id": "gi-ellipsis-007",
+    "type": "g-ellipsis",
+    "level": 2,
+    "prompt": "Is each statement about the ellipsis (…) true or false? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["An ellipsis is made of three dots.", "An ellipsis can show that words have been left out.", "An ellipsis shows who owns something.", "An ellipsis can make the reader pause."]
+    },
+    "answer": [true, true, false, true],
+    "explain": "An ellipsis is three dots that show a pause or missing words; an apostrophe shows who owns something."
+  },
+  {
+    "id": "gi-ellipsis-008",
+    "type": "g-ellipsis",
+    "level": 2,
+    "prompt": "Which sentence uses an ellipsis to show that Dad is hesitating?",
+    "input": {
+      "kind": "choice",
+      "options": ["“Well… I suppose so,” said Dad slowly.", "“Well, I suppose so,” said Dad slowly.", "“Well! I suppose so,” said Dad slowly.", "“Well? I suppose so,” said Dad slowly."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The ellipsis after Well shows a pause while Dad makes up his mind."
+  },
+  {
+    "id": "gi-ellipsis-009",
+    "type": "g-ellipsis",
+    "level": 3,
+    "prompt": "Here is a sentence from a leaflet.\nThe museum, which is next to the river, opens at nine o'clock.\nWhich shortened version uses an ellipsis correctly to show where words have been left out?",
+    "input": {
+      "kind": "choice",
+      "options": ["The museum … opens at nine o'clock.", "The museum opens at nine o'clock …", "… The museum opens at nine o'clock.", "The museum opens … at nine o'clock."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The words **which is next to the river** have been left out, so the ellipsis goes where they were."
+  },
+  {
+    "id": "gi-ellipsis-010",
+    "type": "g-ellipsis",
+    "level": 3,
+    "prompt": "In which sentence does the ellipsis show that words have been left out of a quotation?",
+    "input": {
+      "kind": "choice",
+      "options": ["The report said, “The pupils … were polite and helpful.”", "“Well… I'm not sure,” said Mia.", "The tunnel was dark… very dark.", "Slowly… slowly… the door opened."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The report is being quoted and the ellipsis marks words that have been cut out; in the other sentences it shows a pause."
+  },
+  {
+    "id": "gi-ellipsis-011",
+    "type": "g-ellipsis",
+    "level": 3,
+    "prompt": "Ellipsis also means leaving out words that the reader can work out for themselves.\nI can't come to the party, but my sister can.\nWhich words have been left out at the end of this sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["come to the party", "my sister", "I can't", "but"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The sentence means my sister can **come to the party**: those words are left out because the reader can work them out."
+  },
+  {
+    "id": "gi-ellipsis-012",
+    "type": "g-ellipsis",
+    "level": 3,
+    "prompt": "Ellipsis also means leaving out words that the reader can work out for themselves. Which sentence does this?",
+    "input": {
+      "kind": "choice",
+      "options": ["Mum can swim, but Dad can't.", "Mum can swim, but Dad is scared of water.", "Mum and Dad can swim.", "Mum can swim because she had lessons."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Dad can't means Dad can't **swim**: the word is left out because the reader can work it out."
+  },
+  {
+    "id": "gi-bullet-points-001",
+    "type": "g-bullet-points",
+    "level": 1,
+    "prompt": "Which punctuation mark should go in the box?\nYou will need these things for the trip □\n• a packed lunch\n• a waterproof coat\n• a pair of boots",
+    "input": {
+      "kind": "choice",
+      "options": ["colon", "semi-colon", "question mark", "comma"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "A colon introduces a list, and that includes a list of bullet points."
+  },
+  {
+    "id": "gi-bullet-points-002",
+    "type": "g-bullet-points",
+    "level": 1,
+    "prompt": "Which bullet point is punctuated differently from the others?\nFor the picnic, we packed these things:\n• some sandwiches\n• a bottle of water\n• Two apples.\n• a blanket",
+    "input": {
+      "kind": "choice",
+      "options": ["some sandwiches", "a bottle of water", "Two apples.", "a blanket"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The other bullet points start with a lower-case letter and have no full stop, so this one should be **two apples**."
+  },
+  {
+    "id": "gi-bullet-points-003",
+    "type": "g-bullet-points",
+    "level": 1,
+    "prompt": "These bullet points are full sentences, but their punctuation is missing.\nPlease follow these rules:\n• walk in the corridors\n• put your hand up to speak\n• listen when others are talking\nHow should each bullet point begin and end?",
+    "input": {
+      "kind": "choice",
+      "options": ["with a capital letter and a full stop", "with a lower-case letter and a comma", "with a capital letter and a comma", "with a lower-case letter and a semi-colon"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "A bullet point that is a full sentence starts with a capital letter and ends with a full stop, like any sentence."
+  },
+  {
+    "id": "gi-bullet-points-004",
+    "type": "g-bullet-points",
+    "level": 1,
+    "prompt": "Why has the writer used bullet points?\nTo make a bird feeder, you will need these things:\n• a plastic bottle\n• two wooden spoons\n• some string\n• some seeds",
+    "input": {
+      "kind": "choice",
+      "options": ["to set out a list clearly", "to show that someone is speaking", "to join two main clauses", "to show that words have been left out"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Bullet points set out the items in a list clearly, one under another."
+  },
+  {
+    "id": "gi-bullet-points-005",
+    "type": "g-bullet-points",
+    "level": 2,
+    "prompt": "Follow these steps to plant a seed:\n• Fill a pot with soil.\n• Push the seed into the soil.\n• ___\nWhich is the correct way to write the last bullet point?",
+    "input": {
+      "kind": "choice",
+      "options": ["Water it every day.", "water it every day", "water it every day.", "Water it every day"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The other bullet points are full sentences with a capital letter and a full stop, so the last one must match."
+  },
+  {
+    "id": "gi-bullet-points-006",
+    "type": "g-bullet-points",
+    "level": 2,
+    "prompt": "One bullet point is missing from this list.\nOn our trip to the zoo, we saw these animals:\n• two lions\n• ___\n• a family of meerkats\nWhich is the correct way to write the missing bullet point?",
+    "input": {
+      "kind": "choice",
+      "options": ["a tall giraffe", "A tall giraffe.", "a tall giraffe.", "A tall giraffe"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The other bullet points start with a lower-case letter and have no full stop, so the missing one must match."
+  },
+  {
+    "id": "gi-bullet-points-007",
+    "type": "g-bullet-points",
+    "level": 2,
+    "prompt": "Which bullet point is punctuated differently from the others?\nBefore you leave the classroom, please remember these rules:\n• Push your chair under the table.\n• Put your books away.\n• turn off the lights\n• Close the door quietly.",
+    "input": {
+      "kind": "choice",
+      "options": ["Push your chair under the table.", "Put your books away.", "turn off the lights", "Close the door quietly."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Each bullet point is a full sentence, so this one needs a capital letter and a full stop too: **Turn off the lights.**"
+  },
+  {
+    "id": "gi-bullet-points-008",
+    "type": "g-bullet-points",
+    "level": 2,
+    "prompt": "Why is a colon used before this list?\nPack the following items:\n• a torch\n• a map\n• a compass",
+    "input": {
+      "kind": "choice",
+      "options": ["to introduce the list", "to join two main clauses", "to show a pause for effect", "to show that words have been left out"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The colon comes after the words that introduce the list of bullet points."
+  },
+  {
+    "id": "gi-bullet-points-009",
+    "type": "g-bullet-points",
+    "level": 3,
+    "prompt": "Look at this list.\nOur class will need these things:\n• pencils\n• Rulers\n• glue sticks.\n• scissors\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The words before the list end with a colon.", "Every bullet point starts with a lower-case letter.", "Only one bullet point ends with a full stop.", "The list is punctuated consistently."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Rulers should start with a lower-case letter and glue sticks should have no full stop, so that every bullet point matches."
+  },
+  {
+    "id": "gi-bullet-points-010",
+    "type": "g-bullet-points",
+    "level": 3,
+    "prompt": "Which **two** bullet points must change so that the list is punctuated consistently?\nThe museum has lots to see:\n• dinosaur bones\n• Ancient coins.\n• a Viking ship\n• Old maps\n• a stone statue",
+    "input": {
+      "kind": "choice",
+      "options": ["dinosaur bones", "Ancient coins.", "a Viking ship", "Old maps", "a stone statue"],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "Most bullet points start with a lower-case letter and have no full stop, so these two should be **ancient coins** and **old maps**."
+  },
+  {
+    "id": "gi-bullet-points-011",
+    "type": "g-bullet-points",
+    "level": 3,
+    "prompt": "Which bullet point does not match the others?\nThere are many good reasons to have a school garden:\n• It would give us fresh vegetables.\n• It would attract bees and butterflies.\n• fun to look after\n• It would teach us about plants.",
+    "input": {
+      "kind": "choice",
+      "options": ["It would give us fresh vegetables.", "It would attract bees and butterflies.", "fun to look after", "It would teach us about plants."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The others are full sentences with a capital letter and a full stop, so this one should be too: **It would be fun to look after.**"
+  },
+  {
+    "id": "gi-bullet-points-012",
+    "type": "g-bullet-points",
+    "level": 3,
+    "prompt": "Look at the bullet points.\nOur school council has three aims:\n• to make the playground greener;\n• to raise money for charity;\n• to help new pupils settle in.\nWhich statement is true?",
+    "input": {
+      "kind": "choice",
+      "options": ["The bullet points are punctuated consistently.", "Each bullet point needs a capital letter.", "The last bullet point should end with a semi-colon.", "There should be a full stop instead of the colon."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Every bullet point starts with a lower-case letter and ends with a semi-colon, except the last, which ends the sentence with a full stop: one pattern all the way down."
+  },
+  {
+    "id": "gi-object-001",
+    "type": "g-object",
+    "level": 1,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Maya", "kicked", "the", "ball", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "**The ball** is the object: it is what Maya kicked."
+  },
+  {
+    "id": "gi-object-002",
+    "type": "g-object",
+    "level": 1,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "loud", "thunder", "frightened", "me", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "**Me** is the object: it is who the thunder frightened."
+  },
+  {
+    "id": "gi-object-003",
+    "type": "g-object",
+    "level": 1,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Our", "cat", "caught", "a", "mouse", "."],
+      "pick": 2
+    },
+    "answer": [3, 4],
+    "explain": "**A mouse** is the object: it is what our cat caught. **Our cat** is the subject."
+  },
+  {
+    "id": "gi-object-004",
+    "type": "g-object",
+    "level": 1,
+    "prompt": "What is the **object** in this sentence?\nThe hungry fox chased a rabbit.",
+    "input": {
+      "kind": "choice",
+      "options": ["a rabbit", "The hungry fox", "chased", "hungry"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "**A rabbit** is the object: it is what the fox chased. **The hungry fox** is the subject."
+  },
+  {
+    "id": "gi-object-005",
+    "type": "g-object",
+    "level": 2,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["After", "lunch", ",", "Leo", "lost", "his", "favourite", "hat", "."],
+      "pick": 3
+    },
+    "answer": [5, 6, 7],
+    "explain": "**His favourite hat** is the object: it is what Leo lost."
+  },
+  {
+    "id": "gi-object-006",
+    "type": "g-object",
+    "level": 2,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "children", "built", "a", "huge", "sandcastle", "on", "the", "beach", "."],
+      "pick": 3
+    },
+    "answer": [3, 4, 5],
+    "explain": "**A huge sandcastle** is the object: it is what the children built. **On the beach** tells us where."
+  },
+  {
+    "id": "gi-object-007",
+    "type": "g-object",
+    "level": 2,
+    "prompt": "Which sentence has an **object**?",
+    "input": {
+      "kind": "choice",
+      "options": ["The baby dropped her rattle.", "The baby laughed.", "The baby slept soundly.", "The baby is happy."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "**Her rattle** is the object: it is what the baby dropped. The verbs in the other sentences have no object."
+  },
+  {
+    "id": "gi-object-008",
+    "type": "g-object",
+    "level": 2,
+    "prompt": "In which sentence is **Sam** the object?",
+    "input": {
+      "kind": "choice",
+      "options": ["The ball hit Sam.", "Sam kicked the ball.", "Sam ran to school.", "Sam and Leo played football."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In **The ball hit Sam**, the ball does the action and Sam has it done to him, so Sam is the object."
+  },
+  {
+    "id": "gi-object-009",
+    "type": "g-object",
+    "level": 3,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["When", "the", "bell", "rang", ",", "the", "children", "grabbed", "their", "coats", "."],
+      "pick": 2
+    },
+    "answer": [8, 9],
+    "explain": "**Their coats** is the object: it is what the children grabbed."
+  },
+  {
+    "id": "gi-object-010",
+    "type": "g-object",
+    "level": 3,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Priya", "put", "the", "books", "on", "the", "shelf", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "**The books** is the object of the verb put; **on the shelf** tells us where she put them."
+  },
+  {
+    "id": "gi-object-011",
+    "type": "g-object",
+    "level": 3,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "goalkeeper", "caught", "the", "ball", "with", "both", "hands", "."],
+      "pick": 2
+    },
+    "answer": [3, 4],
+    "explain": "**The ball** is the object: it is what the goalkeeper caught. **With both hands** tells us how."
+  },
+  {
+    "id": "gi-object-012",
+    "type": "g-object",
+    "level": 3,
+    "prompt": "Tap the **object** in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Every", "morning", ",", "my", "little", "brother", "feeds", "our", "two", "goldfish", "."],
+      "pick": 3
+    },
+    "answer": [7, 8, 9],
+    "explain": "**Our two goldfish** is the object: it is what my little brother feeds. **My little brother** is the subject."
+  },
+  {
+    "id": "gi-standard-english-027",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which word completes the sentence in Standard English?\nThat red bike is ___.",
+    "input": {
+      "kind": "choice",
+      "options": ["mine", "mines", "my", "me"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Standard English uses mine, not mines."
+  },
+  {
+    "id": "gi-standard-english-028",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["She gave me a sweet yesterday.", "She give me a sweet yesterday.", "She gived me a sweet yesterday.", "She given me a sweet yesterday."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The simple past of give is gave."
+  },
+  {
+    "id": "gi-standard-english-029",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Tap the word that is **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Can", "I", "lend", "your", "pencil", ",", "please", "?"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "In Standard English you borrow something from someone and lend something to someone, so this should be borrow."
+  },
+  {
+    "id": "gi-standard-english-030",
+    "type": "g-standard-english",
+    "level": 1,
+    "prompt": "Which verb completes the sentence in Standard English?\nThe dogs next door ___ barking all night.",
+    "input": {
+      "kind": "choice",
+      "options": ["were", "was", "is", "be"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "There is more than one dog, so Standard English uses were."
+  },
+  {
+    "id": "gi-standard-english-031",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which sentence is written in Standard English?",
+    "input": {
+      "kind": "choice",
+      "options": ["We were sitting on the wall when the bus arrived.", "We was sat on the wall when the bus arrived.", "We were sat on the wall when the bus arrived.", "We was sitting on the wall when the bus arrived."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Standard English uses we were sitting, not we was or were sat."
+  },
+  {
+    "id": "gi-standard-english-032",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Which word completes the sentence in Standard English?\nMia ran ___ than anyone else in the race.",
+    "input": {
+      "kind": "choice",
+      "options": ["faster", "more faster", "more fast", "fastest"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The comparative of fast is faster; Standard English does not put more in front of it."
+  },
+  {
+    "id": "gi-standard-english-033",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Tap the word that is **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "team", "played", "brilliant", "in", "the", "final", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "To say how the team played, Standard English uses the adverb brilliantly."
+  },
+  {
+    "id": "gi-standard-english-034",
+    "type": "g-standard-english",
+    "level": 2,
+    "prompt": "Rewrite the underlined word in Standard English.\nI have __wrote__ a letter to my pen pal.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["written"],
+    "explain": "After have, Standard English uses written, not wrote."
+  },
+  {
+    "id": "gi-standard-english-035",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Tick the **two** sentences that are written in Standard English.",
+    "input": {
+      "kind": "choice",
+      "options": ["We should have gone earlier.", "We should have went earlier.", "They didn't see anybody.", "They didn't see nobody."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Standard English uses should have gone (not went) and only one negative: didn't see anybody."
+  },
+  {
+    "id": "gi-standard-english-036",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Tap the **two** words that are **not** written in Standard English.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Them", "boys", "was", "playing", "football", "in", "the", "park", "."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Standard English uses those boys (not them boys) and were (not was) with a plural subject."
+  },
+  {
+    "id": "gi-standard-english-037",
+    "type": "g-standard-english",
+    "level": 3,
+    "prompt": "Rewrite the underlined word in Standard English.\nLast week, the children __sung__ a song for the visitors.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["sang", "had sung"],
+    "explain": "The simple past of sing is sang (had sung also works); sung needs has, have or had before it."
+  },
+  {
+    "id": "gi-formality-026",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which is the most formal way to say **help**?",
+    "input": {
+      "kind": "choice",
+      "options": ["assist", "give a hand", "help out", "lend a hand"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Assist is a formal word for help; the others are everyday phrases."
+  },
+  {
+    "id": "gi-formality-027",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Which sentence would be best in a letter to a museum?",
+    "input": {
+      "kind": "choice",
+      "options": ["I would like to request information about school visits.", "Can you send us some stuff about trips?", "Tell us about school trips, OK?", "Any info on trips would be cool."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It uses formal words like request and information, with no slang."
+  },
+  {
+    "id": "gi-formality-028",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "Tap the word that is too informal for a newspaper report.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "mayor", "said", "that", "the", "new", "park", "was", "awesome", "."],
+      "pick": 1
+    },
+    "answer": [8],
+    "explain": "Awesome is a chatty, informal word; a report might say excellent instead."
+  },
+  {
+    "id": "gi-formality-029",
+    "type": "g-formality",
+    "level": 1,
+    "prompt": "You are writing a letter to someone, but you do not know their name. Which greeting is the most formal?",
+    "input": {
+      "kind": "choice",
+      "options": ["Dear Sir or Madam", "Hi there", "Hey", "Hiya"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Dear Sir or Madam is the formal greeting when you do not know the name of the person."
+  },
+  {
+    "id": "gi-formality-030",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which is the most formal way to replace the underlined words?\nThe match has been __put off__ because of the snow.",
+    "input": {
+      "kind": "choice",
+      "options": ["postponed", "pushed back", "called off", "moved"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Postponed is a formal word for put off."
+  },
+  {
+    "id": "gi-formality-031",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Which sentence uses the passive voice to sound formal?",
+    "input": {
+      "kind": "choice",
+      "options": ["Mobile phones must be switched off during the performance.", "Switch off your phones, everyone!", "You've got to turn your phones off.", "Can you all turn your phones off?"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Must be switched off is passive: it does not say who does the action, which makes it sound formal."
+  },
+  {
+    "id": "gi-formality-032",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Tap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["Contractions, such as can't, make writing more formal.", "The passive voice can make writing sound more formal.", "Question tags, such as isn't it, are common in formal writing.", "The subjunctive, such as if I were, is used in formal writing."]
+    },
+    "answer": [false, true, false, true],
+    "explain": "The passive and the subjunctive are typical of formal writing; contractions and question tags are informal."
+  },
+  {
+    "id": "gi-formality-033",
+    "type": "g-formality",
+    "level": 2,
+    "prompt": "Tap the **two** words that make this sentence informal.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "science", "show", "was", "super", "exciting", "and", "we", "learned", "loads", "."],
+      "pick": 2
+    },
+    "answer": [4, 9],
+    "explain": "Super and loads are chatty words; formal writing might say extremely and a great deal."
+  },
+  {
+    "id": "gi-formality-034",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "A letter begins **Dear Sir or Madam**. Which is the correct formal way to end it?",
+    "input": {
+      "kind": "choice",
+      "options": ["Yours faithfully", "Yours sincerely", "Lots of love", "See you soon"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "A letter that begins Dear Sir or Madam ends Yours faithfully; Yours sincerely is used when you know the person's name."
+  },
+  {
+    "id": "gi-formality-035",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which sentence is the most formal?",
+    "input": {
+      "kind": "choice",
+      "options": ["I am writing to express my disappointment with the service I received.", "I'm dead annoyed about how you treated me.", "Your service was rubbish, to be honest.", "I wasn't happy with the service, you know."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "It uses formal words such as express and disappointment, and it has no contractions or slang."
+  },
+  {
+    "id": "gi-formality-036",
+    "type": "g-formality",
+    "level": 3,
+    "prompt": "Which is the most formal way to replace the underlined words?\nThe headteacher will __look into__ the problem.",
+    "input": {
+      "kind": "choice",
+      "options": ["investigate", "check out", "dig into", "suss out"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Investigate is a formal word for look into."
+  }
+]

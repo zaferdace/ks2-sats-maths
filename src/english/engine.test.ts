@@ -8,12 +8,12 @@ import type { ItemQuestion } from '../gen/types';
 import { wordingProblems } from '../gen/wording';
 import { createAttempt, submitSession, setAnswer } from '../store/model';
 import { GPS_ITEMS, READING_TEXTS, SENTENCES, SPELLING_WORDS } from './bank';
-import { buildGpsPaper, fromGpsItem, GPS_QUESTIONS } from './gps/paper';
-import { GENERATORS } from './gps/generated';
+import { buildGpsPaper, buildGpsPractice, fromGpsItem, GPS_QUESTIONS, GPS_TYPES_IN_PAPER } from './gps/paper';
+import { GENERATORS, mainClauseSpan, sentencesFor } from './gps/generated';
 import { englishHistory, type History } from './history';
 import { buildReading, readingQuestions } from './reading';
 import { buildSpellingTest, spellingQuestion } from './spelling';
-import type { Level } from './types';
+import type { GrammarSentence, Level, Tag } from './types';
 
 const indexes = (s: string) => (s ? s.split(',').map(Number) : []);
 
@@ -187,6 +187,99 @@ describe('GPS paper', () => {
   it('is the same paper for the same code and history', () => {
     if (!GPS_ITEMS.length || !SENTENCES.length) return;
     expect(buildGpsPaper('SAME22', 2, empty)).toEqual(buildGpsPaper('SAME22', 2, empty));
+  });
+});
+
+/** A sentence for the tests: "When/conj-sub it/pron rains/verb ,/punct ...". */
+function sentence(text: string, spans: Partial<Pick<GrammarSentence, 'subordinateClause' | 'relativeClause' | 'frontedAdverbial'>>): GrammarSentence {
+  const tokens = text.split(' ').map((t) => t.split('/') as [string, Tag]);
+  return { id: 'gs999', level: 1, tokens, type: 'statement', voice: 'active', ...spans };
+}
+
+describe('tap the main clause', () => {
+  const byId = new Map(SENTENCES.map((s) => [s.id, s]));
+  const generate = GENERATORS['g-main-clause'];
+
+  it('scores full marks with the stored answer and nothing when blank, at every level', () => {
+    const rng = createRng('main-clause-marks');
+    const problems: string[] = [];
+    for (const level of [1, 2, 3] as Level[]) {
+      for (let k = 0; k < 200; k++) {
+        const q = generate(rng, level);
+        if (!q) problems.push(`level ${level}: no question`);
+        else problems.push(...checkQuestion(q));
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it('is never ambiguous: the answer is every word outside the one subordinate clause', () => {
+    const rng = createRng('main-clause-answer');
+    const problems = new Set<string>();
+    for (const level of [1, 2, 3] as Level[]) {
+      for (let k = 0; k < 300; k++) {
+        const q = generate(rng, level)!;
+        const s = byId.get(q.sourceId!)!;
+        const [a, b] = s.subordinateClause!;
+        const outside = s.tokens.map((_, i) => i).filter((i) => (i < a || i >= b) && s.tokens[i][1] !== 'punct');
+        if (q.answer !== outside.join(',')) problems.add(`${s.id}: answer is not every word outside the subordinate clause`);
+        if (q.input.kind !== 'words' || q.input.pick !== outside.length) problems.add(`${s.id}: wrong number of words to tap`);
+        if (s.relativeClause || s.frontedAdverbial) problems.add(`${s.id}: another clause or adverbial could be argued in or out`);
+        if (s.tokens.filter(([, t]) => t === 'conj-sub').length !== 1) problems.add(`${s.id}: not exactly one subordinate clause`);
+        if (s.tokens.filter(([, t]) => t === 'verb').length !== 2) problems.add(`${s.id}: not exactly two clauses`);
+      }
+    }
+    expect([...problems]).toEqual([]);
+  });
+
+  it('is asked at every level from sentences of that level', () => {
+    for (const level of [1, 2, 3] as Level[]) {
+      expect(sentencesFor(level)['g-main-clause'].length).toBeGreaterThanOrEqual(16);
+      const rng = createRng(`main-clause-${level}`);
+      for (let k = 0; k < 50; k++) expect(generate(rng, level)?.difficulty).toBe(level);
+      const practice = buildGpsPractice(`MAIN${level}`, ['g-main-clause'], level, empty);
+      expect(practice).toHaveLength(10);
+      expect(practice.every((q) => q.typeId === 'g-main-clause' && q.difficulty === level)).toBe(true);
+    }
+  });
+
+  it('only uses sentences whose main clause cannot be argued about', () => {
+    const ok = sentence('When/conj-sub it/pron rains/verb ,/punct we/pron play/verb indoors/adv ./punct', { subordinateClause: [0, 3] });
+    expect(mainClauseSpan(ok)).toEqual([4, 7]);
+    const last = sentence('We/pron play/verb indoors/adv when/conj-sub it/pron rains/verb ./punct', { subordinateClause: [3, 6] });
+    expect(mainClauseSpan(last)).toEqual([0, 3]);
+    const arguable = [
+      // Two main clauses joined by "and".
+      sentence('When/conj-sub the/det bell/noun rings/verb ,/punct walk/verb to/prep the/det hall/noun and/conj-co sit/verb down/adv ./punct', { subordinateClause: [0, 4] }),
+      // "to" + verb is a clause inside the main clause.
+      sentence('Once/conj-sub the/det paint/noun dries/verb ,/punct use/verb a/det brush/noun to/other add/verb details/noun ./punct', { subordinateClause: [0, 4] }),
+      // A fronted adverbial could be argued in or out of the main clause.
+      sentence('Luckily/adv ,/punct we/pron stayed/verb dry/adj because/conj-sub we/pron had/verb umbrellas/noun ./punct', { subordinateClause: [5, 9], frontedAdverbial: [0, 1] }),
+      // A relative clause is a second subordinate clause.
+      sentence('We/pron saw/verb the/det dog/noun that/pron barks/verb when/conj-sub we/pron walked/verb past/prep ./punct', { subordinateClause: [6, 10], relativeClause: [4, 6] }),
+      // The subordinate clause in the middle splits the main clause.
+      sentence('We/pron ,/punct when/conj-sub it/pron rained/verb ,/punct stayed/verb indoors/adv ./punct', { subordinateClause: [2, 5] }),
+      // A comma before a final subordinate clause.
+      sentence('We/pron stayed/verb indoors/adv ,/punct because/conj-sub it/pron rained/verb ./punct', { subordinateClause: [4, 7] }),
+    ];
+    expect(arguable.map(mainClauseSpan)).toEqual(arguable.map(() => null));
+  });
+
+  it('is in the GPS paper with the new ready-made types', () => {
+    for (const type of ['g-main-clause', 'g-object', 'g-ellipsis', 'g-bullet-points']) expect(GPS_TYPES_IN_PAPER).toContain(type);
+  });
+});
+
+describe('the subject of a sentence', () => {
+  it('names the main clause when the sentence has two clauses', () => {
+    const byId = new Map(SENTENCES.map((s) => [s.id, s]));
+    const rng = createRng('subject-main');
+    for (let k = 0; k < 300; k++) {
+      const q = GENERATORS['g-subject'](rng, rng.pick([1, 2, 3] as Level[]))!;
+      const s = byId.get(q.sourceId!)!;
+      const prompt = q.body[0].b === 'text' ? q.body[0].text : '';
+      expect(prompt.startsWith('What is the subject of the main clause')).toBe(Boolean(s.subordinateClause || s.relativeClause));
+    }
   });
 });
 
