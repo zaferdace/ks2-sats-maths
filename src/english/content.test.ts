@@ -47,6 +47,13 @@ const NC_HOMOPHONES: string[][] = [
   ['draft', 'draught'],
 ];
 
+/**
+ * NC homophones never dictated. "lead", the metal, sounds like "led", but a device voice reading
+ * "The word is: lead." may say the verb ("leed"), a word the sentence does not use, so the pair
+ * is practised with "led", which has one pronunciation.
+ */
+const NOT_DICTATED = ['lead'];
+
 /** The homophones in spelling-homophones.json, by level: Years 3/4 easy, 5/6 medium, the hardest pairs hard. */
 const ADDED_HOMOPHONES: Record<Level, string[]> = {
   1: [
@@ -56,7 +63,7 @@ const ADDED_HOMOPHONES: Record<Level, string[]> = {
   ],
   2: [
     'aisle', 'isle', 'cereal', 'serial', 'desert', 'dessert', 'draft', 'draught', 'farther', 'father', 'guessed',
-    'guest', 'herd', 'led', 'lead', 'morning', 'mourning', 'profit', 'prophet', 'steal', 'steel', 'wary', 'weary',
+    'guest', 'herd', 'led', 'morning', 'mourning', 'profit', 'prophet', 'steal', 'steel', 'wary', 'weary',
     'device', 'devise', 'licence', 'license',
   ],
   3: [
@@ -120,12 +127,15 @@ describe('grammar sentences', () => {
   it('have no future tense', () => {
     expect(all.filter((s) => (s.tense as string | undefined) === 'future').map((s) => s.id)).toEqual([]);
   });
-  it('give every template at least 16 easy sentences of its own', () => {
-    // With fewer than 12 a level borrows sentences from the next level up, and the question is
-    // recorded at that level: easy clause practice used to come out as medium.
-    const short = Object.entries(sentencesFor(1))
-      .filter(([, ss]) => ss.length < 16)
-      .map(([template, ss]) => `${template}: ${ss.length}`);
+  it('give every template at least 16 sentences of its own at every level', () => {
+    // With fewer than 12 a level borrows sentences from the next level, and the question is
+    // recorded at that level: easy clause practice used to come out as medium, and medium or hard
+    // commands, exclamations and questions as easy or hard.
+    const short = ([1, 2, 3] as Level[]).flatMap((level) =>
+      Object.entries(sentencesFor(level))
+        .filter(([, ss]) => ss.length < 16)
+        .map(([template, ss]) => `level ${level} ${template}: ${ss.length}`),
+    );
     expect(short).toEqual([]);
   });
   it('give "tap the main clause" one right answer', () => {
@@ -211,9 +221,10 @@ describe('spelling words', () => {
     // A 20-word hard test used to run out of hard words during the third test.
     for (const level of [1, 2, 3]) expect(all.filter((w) => w.level === level).length).toBeGreaterThanOrEqual(5 * SPELLING_QUESTIONS);
   });
-  it('include every homophone the National Curriculum lists for Years 3 to 6', () => {
-    const missing = NC_HOMOPHONES.flat().filter((word) => !all.some((w) => w.word === word));
+  it('include every homophone the National Curriculum lists for Years 3 to 6, except those a voice may misread', () => {
+    const missing = NC_HOMOPHONES.flat().filter((word) => !NOT_DICTATED.includes(word) && !all.some((w) => w.word === word));
     expect(missing).toEqual([]);
+    expect(all.filter((w) => NOT_DICTATED.includes(w.word)).map((w) => w.word)).toEqual([]);
     // Added as homophones, at the level of their year group; the hardest pairs are hard.
     const wrong = Object.entries(ADDED_HOMOPHONES).flatMap(([level, list]) =>
       list.filter((word) => !all.some((w) => w.word === word && w.group === 'homophones' && w.level === Number(level))),
