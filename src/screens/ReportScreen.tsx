@@ -3,6 +3,7 @@ import { matchesFilter, PAPER_NAME, typesOf, type MathsPaper, type PaperFilter }
 import type { PaperKind, Subject } from '../gen/types';
 import { LEVELS, levelOf, pctText } from '../report/levels';
 import { Legend, PositionHeat, SkillMap, WeeklyHeat } from '../report/Heatmaps';
+import { Readiness } from '../report/Readiness';
 import { ScoreHistory } from '../report/ScoreHistory';
 import { findAttempt, replacedBy, type Profile, type StartRequest, type StoreData } from '../store/model';
 import {
@@ -26,6 +27,8 @@ interface Props {
   onBack: () => void;
   /** Starts a topic practice for a weak question type. */
   onPractise: (request: StartRequest) => void;
+  /** Opens a session's results. */
+  onOpenResult: (attemptId: string, at: number) => void;
 }
 
 /** Types at this accuracy or above are secure and not suggested for practice. */
@@ -52,7 +55,7 @@ const PAPERS_OF: Record<Subject, PaperKind[]> = {
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export function ReportScreen({ data, profile, onBack, onPractise }: Props) {
+export function ReportScreen({ data, profile, onBack, onPractise, onOpenResult }: Props) {
   const [range, setRange] = useState<RangeId>('all');
   const [confirm, setConfirm] = useState<StartRequest | null>(null);
   const [subject, setSubject] = useState<'all' | Subject>('all');
@@ -100,6 +103,8 @@ export function ReportScreen({ data, profile, onBack, onPractise }: Props) {
           Home
         </button>
       </header>
+
+      <Readiness attempts={data.attempts.filter((a) => a.profileId === profile.id)} />
 
       <div className="row">
         <div className="segmented" role="radiogroup" aria-label="Subject">
@@ -195,6 +200,7 @@ export function ReportScreen({ data, profile, onBack, onPractise }: Props) {
             <h2>Score per session</h2>
             <ScoreHistory
               sessions={view.sessions}
+              onOpen={(s) => onOpenResult(s.attemptId, s.at)}
               titleOf={(s) => {
                 const attempt = findAttempt(data, s.attemptId);
                 return attempt ? sessionTitle(attempt, s.day) : s.day ? `Day ${s.day}` : 'Full paper';

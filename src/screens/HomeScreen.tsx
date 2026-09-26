@@ -5,6 +5,7 @@ import { ENGLISH_TYPES } from '../english/catalog';
 import { englishHistory } from '../english/history';
 import { SPELLING_GROUPS } from '../english/types';
 import { DAYS } from '../gen/blueprint';
+import { daysToSats } from '../gen/exam';
 import { ALL_TYPES, LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
 import { SUBJECT_OF, TOPICS, type LevelChoice, type PaperKind, type Subject } from '../gen/types';
 import {
@@ -21,6 +22,7 @@ import {
   type StoreData,
 } from '../store/model';
 import { byType, collectRecords, collectSessions, streakDays, tally, weakest } from '../stats/stats';
+import { Readiness } from '../report/Readiness';
 import { sessionTitle } from '../ui/labels';
 import {
   englishLevel,
@@ -69,6 +71,11 @@ const MATHS: PaperCard[] = [
     options: [
       { title: 'New daily paper', about: '8 questions a day for 5 days', request: { paper: 'arithmetic', mode: 'daily' } },
       { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },
+      {
+        title: 'Mock test',
+        about: 'Like the real paper: 36 questions, 40 marks, 30 minutes',
+        request: { paper: 'arithmetic', mode: 'full', mock: true },
+      },
     ],
   },
   {
@@ -78,6 +85,7 @@ const MATHS: PaperCard[] = [
     options: [
       { title: 'New daily paper', about: '5 questions a day for 5 days', request: { paper: 'reasoning', mode: 'daily' } },
       { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'reasoning', mode: 'full' } },
+      { title: 'Mock test', about: 'Timed like the real paper: 40 minutes', request: { paper: 'reasoning', mode: 'full', mock: true } },
     ],
   },
 ];
@@ -90,6 +98,7 @@ const ENGLISH: PaperCard[] = [
     options: [
       { title: 'New daily paper', about: '10 questions a day for 5 days', request: { paper: 'gps', mode: 'daily' } },
       { title: 'New full paper', about: 'All 50 questions in one go', request: { paper: 'gps', mode: 'full' } },
+      { title: 'Mock test', about: '50 questions in 45 minutes, easy to hard', request: { paper: 'gps', mode: 'full', mock: true } },
     ],
   },
   {
@@ -108,6 +117,7 @@ const ENGLISH: PaperCard[] = [
     options: [
       { title: 'One text', about: 'A story, poem or information text', request: { paper: 'reading', mode: 'full', size: 1 } },
       { title: 'Full reading paper', about: '3 texts, about 60 minutes', request: { paper: 'reading', mode: 'full', size: 3 } },
+      { title: 'Mock test', about: '3 texts in 60 minutes, easy to hard', request: { paper: 'reading', mode: 'full', size: 3, mock: true } },
     ],
   },
 ];
@@ -206,6 +216,7 @@ export function HomeScreen(props: Props) {
   const [now] = useState(() => Date.now());
   const lastWeek = tally(collectRecords(attempts).filter((r) => r.at > now - WEEK_MS));
   const streak = streakDays(sessions, now);
+  const toGo = daysToSats(now);
   const history = useMemo(() => englishHistory(attempts), [attempts]);
 
   const seen = (ids: string[]) => ids.filter((id) => history.has(id)).length;
@@ -222,7 +233,7 @@ export function HomeScreen(props: Props) {
     reading: { have: READING_TEXTS.length, note: `${textsRead} of ${READING_TEXTS.length} texts read` },
   };
 
-  const busy = (request: StartRequest) => replacedBy(data, profile.id, request.paper, request.mode);
+  const busy = (request: StartRequest) => replacedBy(data, profile.id, request.paper, request.mode, request.mock);
   const start = (request: StartRequest) => (busy(request) ? setConfirm(request) : onStart(request));
   const practise = (request: Omit<StartRequest, 'level'>) => {
     setChoosing(false);
@@ -265,6 +276,12 @@ export function HomeScreen(props: Props) {
       </header>
 
       <div className="tiles">
+        {toGo > 0 && (
+          <div className="tile">
+            <div className="label">Days to the SATs</div>
+            <div className="value">{toGo}</div>
+          </div>
+        )}
         <div className="tile">
           <div className="label">Practice streak</div>
           <div className="value">
@@ -280,6 +297,8 @@ export function HomeScreen(props: Props) {
           <div className="value">{lastWeek.total ? `${Math.round((lastWeek.correct / lastWeek.total) * 100)}%` : '—'}</div>
         </div>
       </div>
+
+      {attempts.some((a) => a.completedAt !== null && a.mode !== 'practice') && <Readiness attempts={attempts} compact />}
 
       <div className="segmented subject-switch" role="radiogroup" aria-label="Subject">
         {(['maths', 'english'] as const).map((s) => (
@@ -316,6 +335,7 @@ export function HomeScreen(props: Props) {
       <div className="papers">
         {cards.map((p) => {
           const active = activeAttempt(data, profile.id, p.paper);
+          const mock = activeAttempt(data, profile.id, p.paper, true);
           const content = bank[p.paper];
           const empty = content !== undefined && content.have === 0;
           return (
@@ -323,6 +343,7 @@ export function HomeScreen(props: Props) {
               <h2>{p.title}</h2>
               <p className="muted">{p.about}</p>
               {active && <Progress attempt={active} onContinue={() => onContinue(active.id)} />}
+              {mock && <Progress attempt={mock} onContinue={() => onContinue(mock.id)} />}
               {empty ? (
                 <p className="banner small">Questions for this paper are on their way.</p>
               ) : (

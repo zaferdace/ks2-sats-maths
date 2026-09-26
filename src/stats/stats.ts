@@ -18,6 +18,7 @@ export interface QuestionRecord {
   max: number;
   timeMs: number;
   at: number; // when it was marked
+  slots: number; // questions in its paper (a mock arithmetic paper has 36, a normal one 40)
 }
 
 export interface SessionRecord {
@@ -80,6 +81,7 @@ export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
         max,
         timeMs: a.timeMs[index],
         at: a.markedAt[index] ?? a.createdAt,
+        slots: a.questions.length,
       });
     });
   }
@@ -181,7 +183,8 @@ export function positionGrid(records: QuestionRecord[], paper: MathsPaper): Tall
   const size = Math.ceil(PAPER_LENGTH[paper] / DAYS);
   const grid = Array.from({ length: DAYS }, () => Array.from({ length: size }, emptyTally));
   for (const r of records) {
-    if (r.paper !== paper || r.mode === 'practice') continue; // positions only mean something in a paper
+    // Positions only mean something in a paper of the usual length (not practice, not a shorter mock).
+    if (r.paper !== paper || r.mode === 'practice' || r.slots !== PAPER_LENGTH[paper]) continue;
     const cell = grid[Math.floor(r.index / size)]?.[r.index % size];
     if (cell) count(cell, r);
   }

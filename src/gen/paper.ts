@@ -18,7 +18,7 @@ export function toQuestion(type: QuestionType, difficulty: Difficulty, g: Genera
 }
 
 /** Builds the 40 questions of a paper. The same code always gives the same paper. */
-export function generatePaper(code: string): Question[] {
+export function generatePaper(code: string, _options: { mock?: boolean } = {}): Question[] {
   const seen = new Set<string>();
   return BLUEPRINT.map((options, i) => {
     // Every slot has its own seed, so changing one generator never reshuffles the others.

@@ -364,3 +364,16 @@ describe('written answers and grown-up marking', () => {
   });
 });
 
+describe('mock tests', () => {
+  it('run beside a daily paper without putting it aside', () => {
+    let data = addProfile(emptyStore(), 'Sam', 1, 'p1');
+    const daily = createAttempt('p1', 'daily', 'DDDDDD', paper, 10, 'daily');
+    data = startAttempt(data, daily, 10);
+    const mock = { ...createAttempt('p1', 'full', 'MMMMMM', paper, 20, 'mock'), timeLimitMs: 30 * 60_000 };
+    data = startAttempt(data, mock, 20);
+    expect(activeAttempt(data, 'p1', 'arithmetic')?.id).toBe('daily');
+    expect(activeAttempt(data, 'p1', 'arithmetic', true)?.id).toBe('mock');
+    expect(data.attempts.find((a) => a.id === 'daily')?.abandonedAt).toBeUndefined();
+  });
+});
+

@@ -2371,3 +2371,66 @@ tr.clickable:active {
 .self-mark .btn {
   min-height: 44px;
 }
+
+/* A mock test's last five minutes */
+.timer.timer-low {
+  color: var(--critical-text);
+  font-weight: 700;
+}
+
+/* A short "how to" under a wrong Paper 1 answer */
+.method-tip {
+  display: block;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+
+/* SATs estimate: a bar per test with the expected-standard line */
+.readiness-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.readiness-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-bottom: 6px;
+}
+
+.readiness-track {
+  position: relative;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--grid);
+}
+
+.readiness-bar {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--warning);
+}
+
+.readiness-bar.met {
+  background: var(--good);
+}
+
+.readiness-line {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--ink);
+}
+
+.good-text {
+  color: var(--good-text);
+}
+
+.critical-text {
+  color: var(--critical-text);
+}

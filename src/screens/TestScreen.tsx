@@ -15,7 +15,8 @@ import {
 } from '../answer/answer';
 import { LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
 import { promptText } from '../gen/format';
-import { isItem, type AnyQuestion, type Block, type PaperKind } from '../gen/types';
+import { PACE } from '../gen/exam';
+import { isItem, type AnyQuestion, type Block } from '../gen/types';
 import {
   addTime,
   openSession,
@@ -83,20 +84,13 @@ const speakOf = (q: AnyQuestion | undefined) =>
 const passageOf = (q: AnyQuestion | undefined) =>
   q && isItem(q) ? q.body.find((b): b is PassageBlock => b.b === 'passage') : undefined;
 
-/** Real test timings: [marks, minutes]. The arithmetic paper shows no target. */
-const TIMING: Partial<Record<PaperKind, [number, number]>> = {
-  reasoning: [35, 40],
-  gps: [50, 45],
-  spelling: [20, 15],
-  reading: [50, 60],
-};
-
 export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const session = openSession(attempt);
   const index = session ? Math.min(Math.max(attempt.current, session.from), session.to - 1) : 0;
   const question = attempt.questions[index];
   const [focus, setFocus] = useState<Focus>(firstFocus(question));
   const [confirming, setConfirming] = useState(false);
+  const [overTimeOk, setOverTimeOk] = useState(false);
   // Clock for the on-screen timer, and when the current timing segment began (null while hidden).
   const [clock, setClock] = useState(() => Date.now());
   const [segmentStart, setSegmentStart] = useState<number | null>(null);
@@ -270,8 +264,12 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const allowDecimal = box ? Boolean(box.decimal) && numberInput?.layout !== 'time' : !item && focus === 'whole';
   const allowNegative = Boolean(box?.negative);
   const sessionMarks = indexes.reduce((s, i) => s + maxMarks(attempt.questions[i]), 0);
-  const timing = TIMING[attempt.paper];
-  const suggested = timing ? Math.round((sessionMarks / timing[0]) * timing[1]) * 60_000 : null;
+  // A mock counts down from the real test's time; other papers show the real pace as a guide.
+  const limit = attempt.timeLimitMs ?? null;
+  const left = limit !== null ? limit - elapsed : null;
+  const pace = PACE[attempt.paper];
+  const suggested = limit === null && pace ? Math.max(Math.round((sessionMarks / pace[0]) * pace[1]), 1) * 60_000 : null;
+  const timeUp = left !== null && left <= 0 && !overTimeOk && !confirming;
 
   const nav = (where: string) => (
     <div className={`q-nav ${where}`}>
@@ -329,8 +327,16 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
             {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
           </div>
         </div>
-        <div className="timer" aria-label="Time on this session">
-          ⏱ {formatDuration(elapsed)}
+        <div
+          className={`timer ${left !== null && left <= 5 * 60_000 ? 'timer-low' : ''}`}
+          aria-label={left !== null ? 'Time left in the mock test' : 'Time on this session'}
+        >
+          ⏱{' '}
+          {left === null
+            ? formatDuration(elapsed)
+            : left >= 0
+              ? `${formatDuration(left)} left`
+              : `${formatDuration(-left)} over`}
           {suggested !== null && <span className="muted small"> / {formatDuration(suggested)}</span>}
         </div>
         <button type="button" className="btn btn-primary" onClick={() => setConfirming(true)}>
@@ -417,16 +423,36 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         {keyboard === 'numbers' && (
           <aside className="keypad-wrap">
             {nav('keypad-nav')}
-            <Keypad onKey={onKey} allowDecimal={allowDecimal} allowNegative={allowNegative} enabled={!confirming} />
+            <Keypad onKey={onKey} allowDecimal={allowDecimal} allowNegative={allowNegative} enabled={!confirming && !timeUp} />
           </aside>
         )}
         {keyboard === 'letters' && (
           <aside className="keypad-wrap letters-wrap">
             {nav('keypad-nav')}
-            <LetterKeyboard onKey={onLetter} enabled={!confirming} />
+            <LetterKeyboard onKey={onLetter} enabled={!confirming && !timeUp} />
           </aside>
         )}
       </div>
+
+      {timeUp && (
+        <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="timeup-title">
+          <div className="modal">
+            <h2 id="timeup-title">Time is up</h2>
+            <p>
+              In the real test you would put your pencil down now. You have answered <strong>{answered}</strong> of {count}{' '}
+              questions.
+            </p>
+            <div className="row">
+              <button type="button" className="btn grow" onClick={() => setOverTimeOk(true)}>
+                Keep going (over time)
+              </button>
+              <button type="button" className="btn btn-primary grow" onClick={finish}>
+                Finish and mark
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {confirming && (
         <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="finish-title">

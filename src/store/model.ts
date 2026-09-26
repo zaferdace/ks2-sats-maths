@@ -27,6 +27,8 @@ export interface StartRequest {
   types?: string[];
   groups?: string[];
   topic?: string;
+  /** A timed mock test: the real paper's length, time and (English) mixed level. */
+  mock?: boolean;
 }
 
 export interface Attempt {
@@ -43,6 +45,8 @@ export interface Attempt {
   completedAt: number | null;
   /** Set when a new paper of the same kind was started instead: it no longer counts as in progress. */
   abandonedAt?: number;
+  /** A mock test's time allowed, as in the real test. */
+  timeLimitMs?: number;
   questions: AnyQuestion[]; // snapshot of the paper
   answers: (AnswerInput | null)[];
   flagged: boolean[];
@@ -149,10 +153,15 @@ export const findAttempt = (data: StoreData, id: string): Attempt | undefined =>
 
 const inProgress = (a: Attempt) => a.completedAt === null && a.abandonedAt === undefined;
 
-/** The profile's unfinished paper of one kind, if any (the most recent one). Practice is separate. */
-export function activeAttempt(data: StoreData, profileId: string, paper: PaperKind): Attempt | undefined {
+export const isMock = (a: Attempt): boolean => a.timeLimitMs !== undefined;
+
+/**
+ * The profile's unfinished paper of one kind, if any (the most recent one). Practice is separate, and
+ * so are mock tests: starting a mock never puts a daily paper aside.
+ */
+export function activeAttempt(data: StoreData, profileId: string, paper: PaperKind, mock = false): Attempt | undefined {
   return data.attempts
-    .filter((a) => a.profileId === profileId && a.paper === paper && a.mode !== 'practice' && inProgress(a))
+    .filter((a) => a.profileId === profileId && a.paper === paper && a.mode !== 'practice' && isMock(a) === mock && inProgress(a))
     .sort((a, b) => b.createdAt - a.createdAt)[0];
 }
 
@@ -163,14 +172,14 @@ export function activePractice(data: StoreData, profileId: string, subject: Subj
     .sort((a, b) => b.createdAt - a.createdAt)[0];
 }
 
-/** The unfinished paper or practice a new start would replace. */
-export function replacedBy(data: StoreData, profileId: string, paper: PaperKind, mode: Mode): Attempt | undefined {
-  return mode === 'practice' ? activePractice(data, profileId, SUBJECT_OF[paper]) : activeAttempt(data, profileId, paper);
+/** The unfinished paper, mock or practice a new start would replace. */
+export function replacedBy(data: StoreData, profileId: string, paper: PaperKind, mode: Mode, mock = false): Attempt | undefined {
+  return mode === 'practice' ? activePractice(data, profileId, SUBJECT_OF[paper]) : activeAttempt(data, profileId, paper, mock);
 }
 
 /** Starts a paper: the unfinished one of the same kind is put aside (kept, but no longer in progress). */
 export function startAttempt(data: StoreData, attempt: Attempt, now: number): StoreData {
-  const old = replacedBy(data, attempt.profileId, attempt.paper, attempt.mode);
+  const old = replacedBy(data, attempt.profileId, attempt.paper, attempt.mode, isMock(attempt));
   const kept = old ? replaceAttempt(data, { ...old, abandonedAt: now }) : data;
   return addAttempt(kept, attempt);
 }

@@ -3,6 +3,7 @@ import { buildGpsPaper, buildGpsPractice } from './english/gps/paper';
 import { englishHistory } from './english/history';
 import { buildReading } from './english/reading';
 import { buildSpellingTest } from './english/spelling';
+import { MOCK_MINUTES } from './gen/exam';
 import { generatePaper } from './gen/paper';
 import { buildMathsPractice } from './gen/practice';
 import { generateReasoningPaper } from './gen/reasoning/paper';
@@ -94,15 +95,18 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     setScreen({ name: 'test', attemptId: attempt.id });
   };
 
-  const startPaper = ({ paper, mode, level = 'mixed', size, types, groups, topic }: StartRequest) => {
+  const startPaper = (request: StartRequest) => {
     if (!profile) return;
+    const { paper, mode, size, types, groups, topic, mock } = request;
+    // A mock is the real test: mixed levels (easy to hard) and its full length.
+    const level = mock ? 'mixed' : (request.level ?? 'mixed');
     const code = newPaperCode();
     // English papers avoid what this pupil has already seen and bring back mistakes.
     const history = () => englishHistory(data.attempts.filter((a) => a.profileId === profile.id));
     let questions: AnyQuestion[];
     switch (paper) {
       case 'arithmetic':
-        questions = types ? buildMathsPractice(code, 'arithmetic', types) : generatePaper(code);
+        questions = types ? buildMathsPractice(code, 'arithmetic', types) : generatePaper(code, { mock });
         break;
       case 'reasoning':
         questions = types ? buildMathsPractice(code, 'reasoning', types) : generateReasoningPaper(code);
@@ -114,7 +118,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         questions = buildSpellingTest(code, level, history(), size, groups);
         break;
       case 'reading':
-        questions = buildReading(code, level, history(), size === 3 ? 3 : 1);
+        questions = buildReading(code, level, history(), mock || size === 3 ? 3 : 1);
         break;
     }
     if (!questions.length) {
@@ -124,7 +128,12 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     const english = SUBJECT_OF[paper] === 'english';
     const now = Date.now();
     const created = createAttempt(profile.id, mode, code, questions, now, undefined, paper, english ? level : undefined);
-    const attempt = topic ? { ...created, topic } : created;
+    const minutes = mock ? MOCK_MINUTES[paper] : undefined;
+    const attempt = {
+      ...created,
+      ...(topic && { topic }),
+      ...(minutes && { timeLimitMs: minutes * 60_000 }),
+    };
     update((d) => startAttempt(d, attempt, now));
     openTest(attempt);
   };
@@ -176,10 +185,19 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         onContinue={() => openTest(attempt)}
         onSelfMark={(index, marks) => editAttempt(attempt.id)((a) => setSelfMark(a, index, marks))}
         onAccept={(index, accepted) => editAttempt(attempt.id)((a) => setAccepted(a, index, accepted))}
+        onPractise={startPaper}
       />
     ) : null;
   } else if (screen.name === 'report') {
-    body = <ReportScreen data={data} profile={profile} onBack={goHome} onPractise={startPaper} />;
+    body = (
+      <ReportScreen
+        data={data}
+        profile={profile}
+        onBack={goHome}
+        onPractise={startPaper}
+        onOpenResult={(attemptId, at) => setScreen({ name: 'result', attemptId, at })}
+      />
+    );
   } else if (screen.name === 'settings') {
     body = <SettingsScreen data={data} update={update} onBack={goHome} />;
   } else {

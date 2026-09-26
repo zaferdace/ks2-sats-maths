@@ -24,10 +24,13 @@ function column(x: number, w: number, top: number, bottom: number): string {
 export function ScoreHistory({
   sessions,
   titleOf = dayOrPaper,
+  onOpen,
 }: {
   sessions: SessionRecord[];
   /** "Day 2", "20 words", a reading text's title… */
   titleOf?: (s: SessionRecord) => string;
+  /** Opens the chosen session's results. */
+  onOpen?: (s: SessionRecord) => void;
 }) {
   const name = (s: SessionRecord) => `${PAPER_NAME[s.paper]} · ${titleOf(s)}`;
   const shown = sessions.slice(-MAX_SESSIONS);
@@ -54,6 +57,14 @@ export function ScoreHistory({
               pct(current) * 100,
             )}%) · ${formatDuration(current.timeMs)}`
           : ''}
+        {current && onOpen && (
+          <>
+            {' '}
+            <button type="button" className="btn btn-ghost small" onClick={() => onOpen(current)}>
+              Open the answers
+            </button>
+          </>
+        )}
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Score for each session, as a percentage">
         {TICKS.map((t) => (

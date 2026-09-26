@@ -13,6 +13,7 @@ export function textsOf(attempt: Attempt): string[] {
 export function sessionTitle(attempt: Attempt, day: number | null): string {
   if (day) return `Day ${day}`;
   if (attempt.mode === 'practice') return `Practice: ${attempt.topic ?? 'mixed'}`;
+  if (attempt.timeLimitMs !== undefined) return 'Mock test';
   if (attempt.paper === 'spelling') return `${attempt.questions.length} words`;
   if (attempt.paper === 'reading') {
     const texts = textsOf(attempt);

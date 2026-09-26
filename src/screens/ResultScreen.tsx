@@ -1,8 +1,9 @@
 import { awaitingMark, formatCorrect, formatInput, formNote, isBlank, maxMarks } from '../answer/answer';
 import { readingText } from '../english/bank';
 import { LEVEL_NAME, PAPER_NAME, typeInfo } from '../gen/catalog';
-import { isItem, SUBJECT_OF, TOPICS } from '../gen/types';
-import { openSession, scoreOf, sessionAt, type Attempt } from '../store/model';
+import { isItem, TOPICS } from '../gen/types';
+import { METHOD_TIPS } from '../gen/tips';
+import { openSession, scoreOf, sessionAt, type Attempt, type StartRequest } from '../store/model';
 import { AnswerBoxes } from '../ui/AnswerBoxes';
 import { sessionTitle, textsOf } from '../ui/labels';
 import { MathText } from '../ui/MathText';
@@ -10,6 +11,7 @@ import { Passage } from '../ui/Passage';
 import { ReasoningAnswer, ReasoningBody } from '../ui/ReasoningView';
 import { RichText } from '../ui/RichText';
 import { formatDateTime, formatDuration, formatSeconds } from '../ui/time';
+import { gpsPractice, mathsPractice } from './practiceRequests';
 
 interface Props {
   attempt: Attempt;
@@ -21,7 +23,12 @@ interface Props {
   onSelfMark: (index: number, marks: number) => void;
   /** A grown-up accepts, or stops accepting, a typed reading answer marked wrong. */
   onAccept: (index: number, accepted: boolean) => void;
+  /** Starts a topic practice (the question types that went wrong). */
+  onPractise: (request: StartRequest) => void;
 }
+
+/** At most this many question types in a "practise what went wrong" set. */
+const PRACTISE_TYPES = 6;
 
 function praise(pct: number): string {
   if (pct >= 90) return 'Brilliant work!';
@@ -30,7 +37,7 @@ function praise(pct: number): string {
   return 'Keep practising. Go through the corrections below.';
 }
 
-export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelfMark, onAccept }: Props) {
+export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelfMark, onAccept, onPractise }: Props) {
   const first = attempt.markedAt.indexOf(at);
   if (first === -1) {
     return (
@@ -48,8 +55,8 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
   const indexes = Array.from({ length: session.to - session.from }, (_, k) => session.from + k);
   const timeMs = indexes.reduce((s, i) => s + attempt.timeMs[i], 0);
   const soFar = scoreOf(attempt);
-  const maths = SUBJECT_OF[attempt.paper] === 'maths';
-  const hasTwoMarkers = maths && indexes.some((i) => maxMarks(attempt.questions[i]) > 1);
+  // Paper 1's two-mark questions (long multiplication and division) get their own note below.
+  const hasTwoMarkers = attempt.paper === 'reasoning' && indexes.some((i) => maxMarks(attempt.questions[i]) > 1);
   const hasMethod = indexes.some((i) => {
     const q = attempt.questions[i];
     return !isItem(q) && q.showMethod;
@@ -61,6 +68,23 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
     return isItem(q) && q.input.kind === 'self';
   });
   const paperName = PAPER_NAME[attempt.paper];
+  const limit = attempt.timeLimitMs;
+  // Question types that went wrong, to practise straight away (maths and grammar questions come in types).
+  const wrongTypes = [
+    ...new Set(
+      indexes
+        .filter((i) => attempt.marks[i] !== maxMarks(attempt.questions[i]) && !awaitingMark(attempt.questions[i], attempt.answers[i]))
+        .map((i) => attempt.questions[i].typeId),
+    ),
+  ].slice(0, PRACTISE_TYPES);
+  const practiceRequest: StartRequest | null =
+    wrongTypes.length === 0
+      ? null
+      : attempt.paper === 'arithmetic' || attempt.paper === 'reasoning'
+        ? { ...mathsPractice(attempt.paper, wrongTypes, 'What went wrong'), level: 'mixed' }
+        : attempt.paper === 'gps'
+          ? { ...gpsPractice(wrongTypes, 'What went wrong'), level: attempt.level ?? 'mixed' }
+          : null;
   const texts = textsOf(attempt);
 
   const topics = TOPICS.map((t) => {
@@ -123,6 +147,14 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
         )}
       </div>
 
+      {limit !== undefined && (
+        <p className={timeMs <= limit ? 'banner ok small' : 'banner small'}>
+          Mock test:{' '}
+          {timeMs <= limit
+            ? `finished with ${formatDuration(limit - timeMs)} to spare out of ${formatDuration(limit)}.`
+            : `${formatDuration(timeMs - limit)} over the ${formatDuration(limit)} allowed. In the real test, answers written after the time is up do not count.`}
+        </p>
+      )}
       {hasTwoMarkers && (
         <p className="banner small">
           Two-mark questions score 2 or 0 here. In the real test, a correct method can still earn 1 mark when the
@@ -153,6 +185,11 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
         {next && (
           <button type="button" className="btn btn-primary btn-big" onClick={onContinue}>
             Start Day {next.day}
+          </button>
+        )}
+        {practiceRequest && (
+          <button type="button" className="btn btn-big" onClick={() => onPractise(practiceRequest)}>
+            Practise what went wrong
           </button>
         )}
         <button type="button" className="btn btn-big" onClick={onReport}>
@@ -197,7 +234,14 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
             const acceptable = isItem(q) && q.input.kind === 'text' && attempt.paper === 'reading' && !isBlank(given);
             return (
               <li key={i} className={`review-item ${waiting ? 'is-waiting' : right ? 'is-right' : 'is-wrong'}`}>
-                <span className="q-number small-num">{i + 1}</span>
+                <span className="q-number small-num">
+                  {i + 1}
+                  {attempt.flagged[i] && (
+                    <span className="flag-mark" aria-label="flagged">
+                      ⚑
+                    </span>
+                  )}
+                </span>
                 <div className="review-main">
                   {isItem(q) ? (
                     <div className="review-reasoning">
@@ -251,6 +295,11 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
                       </span>
                     )}
                     {note && <span className="form-note">{note}</span>}
+                    {!right && !isItem(q) && METHOD_TIPS[q.typeId] && (
+                      <span className="method-tip">
+                        <strong>How to do it:</strong> {METHOD_TIPS[q.typeId]}
+                      </span>
+                    )}
                     {acceptable && (!right || given?.accepted) && (
                       <button type="button" className="btn btn-ghost small" onClick={() => onAccept(i, !given?.accepted)}>
                         {given?.accepted ? 'Undo: mark it wrong again' : 'Grown-up: the meaning is right (a spelling slip), accept it'}
