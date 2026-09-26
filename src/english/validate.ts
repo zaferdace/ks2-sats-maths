@@ -1,6 +1,7 @@
 // Structural checks for English content. They cannot tell whether a grammar tag is right, only
 // whether an entry is well formed and self-consistent, so content is also read by a person.
 import { normText, TEXT_MAX } from '../answer/answer';
+import { withArticle } from '../gen/wording';
 import { gapPossible, joinTokens } from './tokens';
 import {
   GPS_ITEM_TYPES,
@@ -55,8 +56,9 @@ export function checkSentence(s: GrammarSentence): string[] {
   const last = text[text.length - 1];
   const end = { statement: ['.'], question: ['?'], command: ['.', '!'], exclamation: ['!'] }[s.type];
   if (!end) out.push(`unknown type "${s.type}"`);
-  else if (!end.includes(last)) out.push(`a ${s.type} must end with ${end.join(' or ')}`);
-  if (s.tense && !(TENSES as readonly string[]).includes(s.tense)) out.push(`unknown tense "${s.tense}"`);
+  else if (!end.includes(last)) out.push(`${withArticle(s.type)} must end with ${end.join(' or ')}`);
+  if ((s.tense as string) === 'future') out.push('English has no future tense ("will" is a modal verb): leave tense out');
+  else if (s.tense && !(TENSES as readonly string[]).includes(s.tense)) out.push(`unknown tense "${s.tense}"`);
   if (s.voice && s.voice !== 'active' && s.voice !== 'passive') out.push(`unknown voice "${s.voice}"`);
   spanOk(s.subject, s, 'subject', out);
   spanOk(s.subordinateClause, s, 'subordinateClause', out);
@@ -157,6 +159,11 @@ export function checkReading(t: ReadingText): string[] {
     if (!(q.domain in READING_DOMAINS)) out.push(`${where}: unknown domain`);
     if (!q.prompt?.trim()) out.push(`${where}: empty prompt`);
     if (q.paragraph !== undefined && (q.paragraph < 1 || q.paragraph > t.paragraphs.length)) out.push(`${where}: paragraph out of range`);
+    // "Look at paragraphs 9 and 10": the paragraph shown to the pupil is the first one named.
+    const named = /\b(?:paragraphs?|verses?|stanzas?)\s+(\d+)/i.exec(q.prompt);
+    if (named && q.paragraph !== undefined && q.paragraph !== Number(named[1])) {
+      out.push(`${where}: the prompt starts at paragraph ${named[1]}, but "paragraph" is ${q.paragraph}`);
+    }
     switch (q.kind) {
       case 'choice':
         if (q.options.length < 3 || new Set(q.options).size !== q.options.length) out.push(`${where}: choice needs 3+ distinct options`);

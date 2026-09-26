@@ -1,6 +1,6 @@
 // Ratio and proportion; algebra.
 import { rat } from '../../math/rational';
-import { retry } from '../build';
+import { gcd, retry } from '../build';
 import type { ReasoningType } from '../types';
 import { choices, draft, fmt, moneyBox, NAMES, number, nums, penceAnswer, plural, text, twoNames } from './helpers';
 
@@ -75,6 +75,7 @@ export const ratioShare: ReasoningType = {
       const a = rng.int(1, 5);
       const b = rng.int(2, 7);
       if (a === b || a >= b + 3 || (d === 3 && b <= a)) return undefined; // d3 asks how many more green
+      if (gcd(a, b) !== 1) return undefined; // a ratio is given in its simplest form: 2 : 1, never 4 : 2
       const k = rng.int(2, 9);
       if (d === 1) {
         return draft(

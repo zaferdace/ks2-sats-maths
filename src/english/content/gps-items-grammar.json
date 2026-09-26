@@ -1970,13 +1970,13 @@
     "id": "gi-conjunctions-007",
     "type": "g-conjunctions",
     "level": 1,
-    "prompt": "Is each word a coordinating conjunction? Tap true or false for each one.",
+    "prompt": "Is each word a co-ordinating conjunction? Tap true or false for each one.",
     "input": {
       "kind": "tf",
       "statements": ["and", "but", "because", "or", "when"]
     },
     "answer": [true, true, false, true, false],
-    "explain": "And, but and or are coordinating conjunctions; because and when are subordinating conjunctions."
+    "explain": "And, but and or are co-ordinating conjunctions; because and when are subordinating conjunctions."
   },
   {
     "id": "gi-conjunctions-008",
@@ -1995,14 +1995,14 @@
     "id": "gi-conjunctions-009",
     "type": "g-conjunctions",
     "level": 2,
-    "prompt": "Which word is a **coordinating** conjunction?",
+    "prompt": "Which word is a **co-ordinating** conjunction?",
     "input": {
       "kind": "choice",
       "options": ["although", "if", "or", "since"],
       "pick": 1
     },
     "answer": [2],
-    "explain": "Or joins two parts of equal importance, so it is a coordinating conjunction."
+    "explain": "Or joins two parts of equal importance, so it is a co-ordinating conjunction."
   },
   {
     "id": "gi-conjunctions-010",
@@ -2021,7 +2021,7 @@
     "id": "gi-conjunctions-011",
     "type": "g-conjunctions",
     "level": 2,
-    "prompt": "Write a coordinating conjunction to complete the sentence.\nWould you like to walk ___ would you rather take the bus?",
+    "prompt": "Write a co-ordinating conjunction to complete the sentence.\nWould you like to walk ___ would you rather take the bus?",
     "input": {
       "kind": "text"
     },
@@ -2076,7 +2076,7 @@
       "pick": 2
     },
     "answer": [1, 3],
-    "explain": "While and if start subordinate clauses; but and or are coordinating conjunctions."
+    "explain": "While and if start subordinate clauses; but and or are co-ordinating conjunctions."
   },
   {
     "id": "gi-conjunctions-016",
@@ -2102,7 +2102,7 @@
       "pick": 1
     },
     "answer": [3],
-    "explain": "If starts the subordinate clause if you finish early; or is a coordinating conjunction."
+    "explain": "If starts the subordinate clause if you finish early; or is a co-ordinating conjunction."
   },
   {
     "id": "gi-conjunctions-018",
@@ -2158,14 +2158,14 @@
     "id": "gi-conjunctions-022",
     "type": "g-conjunctions",
     "level": 3,
-    "prompt": "Tap the **coordinating** conjunction.",
+    "prompt": "Tap the **co-ordinating** conjunction.",
     "input": {
       "kind": "words",
       "tokens": ["Although", "the", "path", "was", "muddy", ",", "we", "walked", "to", "the", "lake", "and", "back", "."],
       "pick": 1
     },
     "answer": [11],
-    "explain": "And is a coordinating conjunction; although is a subordinating conjunction."
+    "explain": "And is a co-ordinating conjunction; although is a subordinating conjunction."
   },
   {
     "id": "gi-conjunctions-023",
@@ -2187,7 +2187,7 @@
     "prompt": "Read the sentence.\nWhile Mum cooked dinner, Isla laid the table and Leo filled the jug.\nTap true or false for each statement.",
     "input": {
       "kind": "tf",
-      "statements": ["The word \"While\" is a subordinating conjunction.", "The word \"and\" is a coordinating conjunction.", "The sentence contains only one conjunction."]
+      "statements": ["The word \"While\" is a subordinating conjunction.", "The word \"and\" is a co-ordinating conjunction.", "The sentence contains only one conjunction."]
     },
     "answer": [true, true, false],
     "explain": "While starts a subordinate clause, and the word and joins two main clauses, so there are two conjunctions."

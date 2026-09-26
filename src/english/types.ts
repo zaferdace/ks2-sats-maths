@@ -19,6 +19,11 @@ export type Span = [number, number];
 export const TAGS = ['noun', 'verb', 'aux', 'modal', 'adj', 'adv', 'prep', 'det', 'pron', 'conj-co', 'conj-sub', 'punct', 'other'] as const;
 export type Tag = (typeof TAGS)[number];
 
+/**
+ * The tenses KS2 names. There is no future tense: the National Curriculum glossary, which the STA
+ * follows, says English has no future tense form ("will" is a modal verb). A sentence about the
+ * future ("We will visit the zoo.") has no `tense`.
+ */
 export const TENSES = [
   'simple present',
   'simple past',
@@ -26,7 +31,6 @@ export const TENSES = [
   'past progressive',
   'present perfect',
   'past perfect',
-  'future',
 ] as const;
 export type Tense = (typeof TENSES)[number];
 
@@ -47,7 +51,13 @@ export interface GrammarSentence {
   relativeClause?: Span;
   /** Fronted adverbial at the start of the sentence, without the comma after it. */
   frontedAdverbial?: Span;
-  /** An expanded noun phrase (determiner + at least one adjective or a prepositional phrase + noun). */
+  /**
+   * An expanded noun phrase: a noun with words that add detail. In front of the noun these are
+   * adjectives or noun modifiers ("the heavy rain", "the football pitch", "the strict maths
+   * teacher"); after it, a prepositional phrase ("the man in the moon"). The determiner is part
+   * of the phrase. The noun-phrase question only uses a sentence when no other expanded noun
+   * phrase in it has as many words (see `nounPhraseAskable`).
+   */
   expandedNounPhrase?: Span;
 }
 
@@ -137,7 +147,7 @@ export const SPELLING_GROUPS = {
   homophones: 'Homophones and near-homophones',
   hyphens: 'Hyphens (co-, re-)',
   'ture-sure': '-ture and -sure',
-  'tricky-sounds': 'Tricky sounds (y as i, ou, ch as sh or k, gue, que)',
+  'tricky-sounds': 'Tricky sounds (y as i, ou, ch as sh or k, -gue, -que)',
 } as const;
 export type SpellingGroup = keyof typeof SPELLING_GROUPS;
 

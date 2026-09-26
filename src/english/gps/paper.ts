@@ -75,13 +75,20 @@ function readyMade(type: string, level: Level, rng: Rng, used: Set<string>, hist
   return fromGpsItem(item, rng);
 }
 
+/**
+ * A question from a sentence template. When a level has only a few sentences the template may use
+ * one from the nearest level (and says so in `difficulty`); a question at the level asked for wins.
+ */
 function generated(type: string, level: Level, rng: Rng, used: Set<string>): ItemQuestion | null {
   if (!isGenerated(type)) return null;
+  let otherLevel: ItemQuestion | null = null;
   for (let t = 0; t < 12; t++) {
     const q = GENERATORS[type](rng, level);
-    if (q && !used.has(q.sourceId ?? '')) return q;
+    if (!q || used.has(q.sourceId ?? '')) continue;
+    if (q.difficulty === level) return q;
+    otherLevel ??= q;
   }
-  return null;
+  return otherLevel;
 }
 
 function question(type: string, level: Level, rng: Rng, used: Set<string>, history: History): ItemQuestion | null {
@@ -90,7 +97,11 @@ function question(type: string, level: Level, rng: Rng, used: Set<string>, histo
   return isGenerated(type) && type !== 'g-end-punctuation' ? generated(type, level, rng, used) : readyMade(type, level, rng, used, history);
 }
 
-/** Builds a GPS paper. Types rotate so one paper covers as much as possible. */
+/**
+ * Builds a GPS paper. Types rotate so one paper covers as much as possible. Each slot takes a
+ * question at its level if any type has one, so the paper stays full and every question's
+ * recorded difficulty is the real one.
+ */
 export function buildGpsPaper(code: string, choice: LevelChoice, history: History, count = GPS_QUESTIONS): ItemQuestion[] {
   const rng = createRng(`G${code}`);
   const used = new Set<string>();
@@ -100,14 +111,20 @@ export function buildGpsPaper(code: string, choice: LevelChoice, history: Histor
     const level = levelAt(i, count, choice);
     const pools = [CYCLE[i % CYCLE.length], GPS_TYPES_IN_PAPER];
     let q: ItemQuestion | null = null;
+    let otherLevel: ItemQuestion | null = null;
     for (const pool of pools) {
       const types = rng.shuffle(pool).sort((a, b) => (typeUse.get(a) ?? 0) - (typeUse.get(b) ?? 0));
       for (const type of types) {
-        q = question(type, level, rng, used, history);
-        if (q) break;
+        const candidate = question(type, level, rng, used, history);
+        if (candidate?.difficulty === level) {
+          q = candidate;
+          break;
+        }
+        otherLevel ??= candidate;
       }
       if (q) break;
     }
+    q ??= otherLevel;
     if (!q) break; // no content at all
     out.push(q);
     if (q.sourceId) used.add(q.sourceId);

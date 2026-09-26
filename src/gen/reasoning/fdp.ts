@@ -211,8 +211,9 @@ export const decimalContext: ReasoningType = {
       const jug = rng.pick([1, 1.5, 2, 2.5]) * 1000;
       const pour = rng.int(5, Math.floor(jug / 50) - 2) * 50 - rng.pick([0, 20, 30]);
       const left: Rational = sub(rat(jug, 1000), rat(pour, 1000));
+      const litres = (ml: number) => `${fmt(rat(ml, 1000))} ${ml === 1000 ? 'litre' : 'litres'}`; // "1 litre", "1.5 litres"
       return draft(
-        [text(`A jug holds **${fmt(rat(jug, 1000))} litres** of juice. ${rng.pick(NAMES)} pours out **${fmt(rat(pour, 1000))} litres**.\nHow much juice is left in the jug?`)],
+        [text(`A jug holds **${litres(jug)}** of juice. ${rng.pick(NAMES)} pours out **${litres(pour)}**.\nHow much juice is left in the jug?`)],
         number({ decimal: true, suffix: 'litres' }),
         nums(left),
       );

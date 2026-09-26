@@ -1,5 +1,7 @@
 // Exam-style figures for reasoning questions. Everything is plain SVG or HTML, drawn from the
-// question's data; shapes marked "not to scale" use fixed, tidy proportions.
+// question's data. Angle diagrams, L-shapes and cuboids use fixed, tidy proportions and
+// rectangles follow their labels; the shapes say "Not drawn to scale" (angle questions say it
+// in their text).
 import type { Block } from '../gen/types';
 import { formatNumber } from '../gen/format';
 
@@ -128,31 +130,46 @@ function PieChart({ b }: { b: Extract<Block, { b: 'pie' }> }) {
   const c = S / 2;
   const R = 130;
   const starts = b.slices.map((_, i) => b.slices.slice(0, i).reduce((sum, x) => sum + x.turn, 0));
+  const sectors = b.slices.map((s, i) => {
+    const start = starts[i];
+    const end = start + s.turn;
+    const mid = (start + end) / 2;
+    const outside = s.turn < 0.1;
+    // "Swimming 135°" goes on two lines inside a sector, so it fits a narrow one.
+    const angle = / \d+°$/.exec(s.label);
+    const lines = angle && !outside ? [s.label.slice(0, angle.index), angle[0].trim()] : [s.label];
+    return { s, i, start, end, mid, label: polar(c, c, outside ? R + 22 : R * 0.58, mid), lines };
+  });
+  // Sectors first, then right-angle marks, then every label, so no sector paints over a label
+  // that spills out of a narrow neighbour.
   return (
     <svg className="fig-svg fig-pie" viewBox={`0 0 ${S} ${S}`} role="img" aria-label={`Pie chart: ${b.title}`}>
-      {b.slices.map((s, i) => {
-        const start = starts[i];
-        const end = start + s.turn;
+      {sectors.map(({ s, i, start, end }) => {
         const p0 = polar(c, c, R, start);
         const p1 = polar(c, c, R, end);
         const large = s.turn > 0.5 ? 1 : 0;
-        const mid = (start + end) / 2;
-        const outside = s.turn < 0.1;
-        const lp = polar(c, c, outside ? R + 22 : R * 0.58, mid);
-        const right = Math.abs(s.turn - 0.25) < 1e-9;
+        return (
+          <path key={s.label} d={`M${c},${c} L${p0.x},${p0.y} A${R},${R} 0 ${large} 1 ${p1.x},${p1.y} Z`} fill={PIE_FILLS[i % PIE_FILLS.length]} className="fig-slice" />
+        );
+      })}
+      {sectors.map(({ s, start, end, mid }) => {
+        if (Math.abs(s.turn - 0.25) >= 1e-9) return null;
         const m0 = polar(c, c, 16, start);
         const m1 = polar(c, c, 16 * Math.SQRT2, mid);
         const m2 = polar(c, c, 16, end);
-        return (
-          <g key={s.label}>
-            <path d={`M${c},${c} L${p0.x},${p0.y} A${R},${R} 0 ${large} 1 ${p1.x},${p1.y} Z`} fill={PIE_FILLS[i % PIE_FILLS.length]} className="fig-slice" />
-            {right && <path d={`M${m0.x},${m0.y} L${m1.x},${m1.y} L${m2.x},${m2.y}`} className="fig-right" />}
-            <text x={lp.x} y={lp.y} className="fig-label" textAnchor="middle" dominantBaseline="middle">
-              {s.label}
-            </text>
-          </g>
-        );
+        return <path key={s.label} d={`M${m0.x},${m0.y} L${m1.x},${m1.y} L${m2.x},${m2.y}`} className="fig-right" />;
       })}
+      {sectors.map(({ s, label, lines }) => (
+        <text key={s.label} x={label.x} y={label.y} className="fig-label" textAnchor="middle" dominantBaseline="middle">
+          {lines.length === 1
+            ? lines[0]
+            : lines.map((line, k) => (
+                <tspan key={k} x={label.x} dy={k === 0 ? '-0.6em' : '1.2em'}>
+                  {line}
+                </tspan>
+              ))}
+        </text>
+      ))}
     </svg>
   );
 }
@@ -299,23 +316,49 @@ function AngleFigure({ b }: { b: Extract<Block, { b: 'angles' }> }) {
   );
 }
 
-function Rect({ b }: { b: Extract<Block, { b: 'rect' }> }) {
+/** "Not drawn to scale", small, in the bottom right corner of a W × H figure. */
+function NotToScale({ W, H }: { W: number; H: number }) {
   return (
-    <svg className="fig-svg fig-small" viewBox="0 0 360 220" role="img" aria-label={`Rectangle ${b.labels[0]} by ${b.labels[1]}, not to scale`}>
-      <rect x={50} y={30} width={230} height={140} className="fig-shape" />
-      <text x={165} y={195} className="fig-label" textAnchor="middle">
+    <text x={W - 8} y={H - 8} className="fig-note" textAnchor="end">
+      Not drawn to scale
+    </text>
+  );
+}
+
+/** The longer side of a rectangle is drawn at most this many times the shorter one. */
+const MAX_ASPECT = 2.5;
+
+function Rect({ b }: { b: Extract<Block, { b: 'rect' }> }) {
+  // In proportion to the labels, so the longer label is on the longer side and a square looks
+  // square; the proportion is capped so a 15 cm by 2 cm rectangle still has room for its labels.
+  const [W, H] = [360, 220];
+  const [lw, lh] = b.labels.map((l) => parseFloat(l.replace(/,/g, '')));
+  const known = lw > 0 && lh > 0;
+  const aspect = b.square || (known && lw === lh) ? 1 : known ? Math.min(Math.max(lw / lh, 1 / MAX_ASPECT), MAX_ASPECT) : 1.6;
+  const area = { x: 40, y: 20, w: 240, h: 150 };
+  const w = Math.min(area.w, area.h * aspect);
+  const h = w / aspect;
+  const x = area.x + (area.w - w) / 2;
+  const y = area.y + (area.h - h) / 2;
+  return (
+    <svg className="fig-svg fig-small" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${aspect === 1 ? 'Square' : 'Rectangle'} ${b.labels[0]} by ${b.labels[1]}, not to scale`}>
+      <rect x={x} y={y} width={w} height={h} className="fig-shape" />
+      <text x={x + w / 2} y={y + h + 24} className="fig-label" textAnchor="middle">
         {b.labels[0]}
       </text>
-      <text x={292} y={100} className="fig-label" dominantBaseline="middle">
+      <text x={x + w + 12} y={y + h / 2} className="fig-label" dominantBaseline="middle">
         {b.labels[1]}
       </text>
+      <NotToScale W={W} H={H} />
     </svg>
   );
 }
 
 function LShape({ b }: { b: Extract<Block, { b: 'lshape' }> }) {
-  // A 260 × 180 rectangle with a 100 × 80 corner cut from the top right; sides clockwise from the top.
-  const [x0, y0, W, H, w, h] = [50, 30, 260, 180, 100, 80];
+  // A 260 × 180 rectangle with a 100 × 80 corner cut from the top right; sides clockwise from the
+  // top. Centred, so the labels of the left and right sides both have room.
+  const [VW, VH] = [400, 240];
+  const [x0, y0, W, H, w, h] = [66, 30, 260, 180, 100, 80];
   const pts = [
     { x: x0, y: y0 },
     { x: x0 + W - w, y: y0 },
@@ -333,7 +376,7 @@ function LShape({ b }: { b: Extract<Block, { b: 'lshape' }> }) {
     { x: x0 - 10, y: y0 + H / 2, a: 'end' },
   ];
   return (
-    <svg className="fig-svg fig-small" viewBox="0 0 400 240" role="img" aria-label="Shape made of rectangles, not to scale">
+    <svg className="fig-svg fig-small" viewBox={`0 0 ${VW} ${VH}`} role="img" aria-label="Shape made of rectangles, not to scale">
       <polygon points={pts.map((p) => `${p.x},${p.y}`).join(' ')} className="fig-shape" />
       {b.labels.map((l, i) =>
         l ? (
@@ -342,17 +385,19 @@ function LShape({ b }: { b: Extract<Block, { b: 'lshape' }> }) {
           </text>
         ) : null,
       )}
+      <NotToScale W={VW} H={VH} />
     </svg>
   );
 }
 
 function Cuboid({ b }: { b: Extract<Block, { b: 'cuboid' }> }) {
+  const [VW, VH] = [400, 240];
   const [x, y, w, h, dx, dy] = [60, 80, 220, 120, 70, -50];
   const front = `${x},${y} ${x + w},${y} ${x + w},${y + h} ${x},${y + h}`;
   const top = `${x},${y} ${x + dx},${y + dy} ${x + w + dx},${y + dy} ${x + w},${y}`;
   const side = `${x + w},${y} ${x + w + dx},${y + dy} ${x + w + dx},${y + h + dy} ${x + w},${y + h}`;
   return (
-    <svg className="fig-svg fig-small" viewBox="0 0 400 240" role="img" aria-label={`Cuboid ${b.labels.join(' by ')}, not to scale`}>
+    <svg className="fig-svg fig-small" viewBox={`0 0 ${VW} ${VH}`} role="img" aria-label={`Cuboid ${b.labels.join(' by ')}, not to scale`}>
       <polygon points={top} className="fig-face-top" />
       <polygon points={side} className="fig-face-side" />
       <polygon points={front} className="fig-face" />
@@ -365,6 +410,7 @@ function Cuboid({ b }: { b: Extract<Block, { b: 'cuboid' }> }) {
       <text x={x - 10} y={y + h / 2} className="fig-label" textAnchor="end" dominantBaseline="middle">
         {b.labels[2]}
       </text>
+      <NotToScale W={VW} H={VH} />
     </svg>
   );
 }
