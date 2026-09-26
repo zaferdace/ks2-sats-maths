@@ -1,0 +1,548 @@
+[
+  {
+    "word": "accept",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Mum was happy to accept the invitation to the party.",
+    "hint": "accept means to take or agree to something"
+  },
+  {
+    "word": "except",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Everyone went swimming except Zara, who had a cold.",
+    "hint": "except means apart from"
+  },
+  {
+    "word": "ball",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Kai kicked the ball over the garden fence.",
+    "hint": "a ball is round and used in games"
+  },
+  {
+    "word": "bawl",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The toddler began to bawl when his ice cream fell on the floor.",
+    "hint": "bawl means cry or shout loudly"
+  },
+  {
+    "word": "berry",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "A bright red berry was growing on the holly bush.",
+    "hint": "a berry is a small, juicy fruit"
+  },
+  {
+    "word": "bury",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Our dog likes to bury its bones in the garden.",
+    "hint": "bury means hide in the ground; it sounds like berry"
+  },
+  {
+    "word": "brake",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Dad pressed the brake to slow the car down.",
+    "hint": "a brake slows or stops a vehicle"
+  },
+  {
+    "word": "break",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Be careful not to break the glass vase.",
+    "hint": "break means smash, or a short rest"
+  },
+  {
+    "word": "fair",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "It is not fair that my brother always gets the biggest slice.",
+    "hint": "fair means equal and right (or a funfair)"
+  },
+  {
+    "word": "fare",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Mum paid the bus fare for both of us.",
+    "hint": "a fare is the price of a journey"
+  },
+  {
+    "word": "grate",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Please grate some cheese to sprinkle on the pizza.",
+    "hint": "grate means rub food into tiny pieces"
+  },
+  {
+    "word": "great",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "We had a great time at the seaside.",
+    "hint": "great means very good or very big"
+  },
+  {
+    "word": "groan",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Everyone let out a groan when the rain started again.",
+    "hint": "a groan is a low sound of pain or annoyance"
+  },
+  {
+    "word": "grown",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Our sunflower has grown taller than the fence.",
+    "hint": "grown comes from grow"
+  },
+  {
+    "word": "heel",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "My new shoes rubbed the back of my heel.",
+    "hint": "your heel is the back of your foot"
+  },
+  {
+    "word": "heal",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The doctor said the cut on my knee would heal in a few days.",
+    "hint": "heal means get better"
+  },
+  {
+    "word": "he'll",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Dad says he'll pick us up after the match.",
+    "hint": "he'll is short for he will"
+  },
+  {
+    "word": "knot",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The sailor tied a tight knot in the rope.",
+    "hint": "a knot is tied in string or rope; the k is silent"
+  },
+  {
+    "word": "not",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "We could not find our way through the thick fog.",
+    "hint": "not makes a sentence negative"
+  },
+  {
+    "word": "mail",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The postman delivered our mail before breakfast.",
+    "hint": "mail is letters and parcels"
+  },
+  {
+    "word": "male",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The male peacock spreads out his beautiful tail feathers.",
+    "hint": "male means a man or boy, or a boy animal"
+  },
+  {
+    "word": "main",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The main road into town was closed for repairs.",
+    "hint": "main means most important or biggest"
+  },
+  {
+    "word": "mane",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The horse shook its long, silky mane.",
+    "hint": "a mane is the long hair on a horse's or lion's neck"
+  },
+  {
+    "word": "meat",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Vegetarians do not eat meat or fish.",
+    "hint": "meat is food that comes from animals"
+  },
+  {
+    "word": "meet",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "We will meet our new teacher on Monday.",
+    "hint": "meet means come together"
+  },
+  {
+    "word": "medal",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Priya won a gold medal for swimming.",
+    "hint": "a medal is a prize you can wear"
+  },
+  {
+    "word": "meddle",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Please do not meddle with my model while the glue is drying.",
+    "hint": "meddle means interfere"
+  },
+  {
+    "word": "missed",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Leo missed the bus and had to walk to school.",
+    "hint": "missed is the past tense of miss"
+  },
+  {
+    "word": "mist",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "A thick mist covered the hills, so we could not see far.",
+    "hint": "mist is thin fog"
+  },
+  {
+    "word": "peace",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "After the noisy party, we enjoyed the peace and quiet of the garden.",
+    "hint": "peace means calm, or no war"
+  },
+  {
+    "word": "piece",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Would you like another piece of cake?",
+    "hint": "a piece of pie: piece begins with pie"
+  },
+  {
+    "word": "plain",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "I would like a plain biscuit without any chocolate.",
+    "hint": "plain means simple, or a wide flat area of land"
+  },
+  {
+    "word": "plane",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The plane landed safely at the airport.",
+    "hint": "a plane flies: it is short for aeroplane"
+  },
+  {
+    "word": "rain",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Heavy rain fell all afternoon, so the match was cancelled.",
+    "hint": "rain is water falling from clouds"
+  },
+  {
+    "word": "rein",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The rider pulled gently on the rein to turn her horse.",
+    "hint": "a rein is a strap for steering a horse"
+  },
+  {
+    "word": "scene",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "The first scene of the play takes place in a dark forest.",
+    "hint": "a scene is part of a play, or a view"
+  },
+  {
+    "word": "seen",
+    "level": 1,
+    "group": "homophones",
+    "sentence": "Have you seen my blue scarf anywhere?",
+    "hint": "seen comes from see: I have seen"
+  },
+  {
+    "word": "aisle",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "We walked down the aisle of the supermarket looking for rice.",
+    "hint": "an aisle is a walkway between rows of seats or shelves"
+  },
+  {
+    "word": "isle",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The ferry carried us across the sea to a small Scottish isle.",
+    "hint": "an isle is an island; both have a silent s"
+  },
+  {
+    "word": "cereal",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "For breakfast, I have a bowl of cereal with cold milk.",
+    "hint": "cereal is a breakfast food made from grain"
+  },
+  {
+    "word": "serial",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The story was shown as a serial, with a new episode every week.",
+    "hint": "a serial is a story told in parts, like a series"
+  },
+  {
+    "word": "desert",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Camels can survive for days in the hot, dry desert.",
+    "hint": "a desert is a very dry place: one s"
+  },
+  {
+    "word": "dessert",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "For dessert, we had strawberries and ice cream.",
+    "hint": "dessert is pudding: two s's, like sweet stuff"
+  },
+  {
+    "word": "draft",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Write a first draft of your story, then check it for mistakes.",
+    "hint": "a draft is an early version of a piece of writing"
+  },
+  {
+    "word": "draught",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "A cold draught was blowing under the front door.",
+    "hint": "a draught is a current of cold air"
+  },
+  {
+    "word": "farther",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Our tent was farther from the river than we had thought.",
+    "hint": "farther means at a greater distance"
+  },
+  {
+    "word": "father",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "My father makes pancakes every Sunday.",
+    "hint": "father means dad"
+  },
+  {
+    "word": "guessed",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Nobody guessed the answer to the riddle.",
+    "hint": "guessed is the past tense of guess"
+  },
+  {
+    "word": "guest",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Our special guest at the assembly was a real astronaut.",
+    "hint": "a guest is a visitor"
+  },
+  {
+    "word": "herd",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "A herd of cows was grazing in the meadow.",
+    "hint": "a herd is a large group of animals such as cows; heard comes from hear"
+  },
+  {
+    "word": "led",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The guide led us through the dark tunnels.",
+    "hint": "led is the past tense of lead (show the way)"
+  },
+  {
+    "word": "lead",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The old water pipes in the house were made of lead.",
+    "hint": "lead (said like led) is a heavy grey metal"
+  },
+  {
+    "word": "morning",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The sun rose early on the first morning of the holiday.",
+    "hint": "morning is the early part of the day"
+  },
+  {
+    "word": "mourning",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "In Victorian times, people wore black clothes when they were in mourning.",
+    "hint": "mourning means grieving after someone has died"
+  },
+  {
+    "word": "profit",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Our class sold cakes and made a profit of forty pounds.",
+    "hint": "a profit is money you gain"
+  },
+  {
+    "word": "prophet",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "In the old legend, a wise prophet warned the people about the flood.",
+    "hint": "a prophet says what will happen in the future"
+  },
+  {
+    "word": "steal",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The magpie tried to steal a shiny ring from the table.",
+    "hint": "steal means take without permission"
+  },
+  {
+    "word": "steel",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The new bridge is made of strong steel.",
+    "hint": "steel is a strong metal"
+  },
+  {
+    "word": "wary",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "Be wary of the ice on the pond because it might be thin.",
+    "hint": "wary means careful or cautious"
+  },
+  {
+    "word": "weary",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "After the long hike, the weary walkers sat down to rest.",
+    "hint": "weary means very tired"
+  },
+  {
+    "word": "device",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "A calculator is a useful device for checking answers.",
+    "hint": "device is the noun, like advice"
+  },
+  {
+    "word": "devise",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The children had to devise a plan to rescue the kitten.",
+    "hint": "devise is the verb (to plan or invent), like advise"
+  },
+  {
+    "word": "licence",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "You need a licence to drive a car.",
+    "hint": "licence is the noun in British English, like practice"
+  },
+  {
+    "word": "license",
+    "level": 2,
+    "group": "homophones",
+    "sentence": "The council will license the new market to open on Sundays.",
+    "hint": "license is the verb in British English, like practise"
+  },
+  {
+    "word": "altar",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "In the old church, candles were burning on the altar.",
+    "hint": "an altar is a holy table in a church or temple"
+  },
+  {
+    "word": "alter",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The tailor had to alter my trousers because they were too long.",
+    "hint": "alter means change"
+  },
+  {
+    "word": "ascent",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The climbers began their slow ascent of the steep mountain.",
+    "hint": "ascent means going up, like ascend"
+  },
+  {
+    "word": "assent",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The headteacher nodded her assent, so the trip could go ahead.",
+    "hint": "assent means agreement"
+  },
+  {
+    "word": "bridal",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The bride wore a long bridal veil.",
+    "hint": "bridal means to do with a bride"
+  },
+  {
+    "word": "bridle",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The rider fitted the bridle over the horse's head.",
+    "hint": "a bridle is the set of straps on a horse's head for steering it"
+  },
+  {
+    "word": "compliment",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "My teacher paid me a compliment about my neat handwriting.",
+    "hint": "a compliment is praise: I like compliments"
+  },
+  {
+    "word": "complement",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "Warm custard is the perfect complement to apple crumble.",
+    "hint": "a complement goes well with something and completes it"
+  },
+  {
+    "word": "descent",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The plane began its descent towards the runway.",
+    "hint": "descent means going down, like descend"
+  },
+  {
+    "word": "dissent",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The footballer was shown a yellow card for dissent after arguing with the referee.",
+    "hint": "dissent means disagreement"
+  },
+  {
+    "word": "precede",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "A short warm-up should always precede a hard run.",
+    "hint": "precede means come before: pre- means before"
+  },
+  {
+    "word": "proceed",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "Passengers should now proceed to the boarding gate.",
+    "hint": "proceed means go forward or carry on"
+  },
+  {
+    "word": "prophecy",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The wizard's prophecy said that a young girl would save the kingdom.",
+    "hint": "prophecy is the noun (a prediction), like advice"
+  },
+  {
+    "word": "prophesy",
+    "level": 3,
+    "group": "homophones",
+    "sentence": "The fortune teller claimed that she could prophesy the future.",
+    "hint": "prophesy is the verb (to predict), like advise"
+  }
+]

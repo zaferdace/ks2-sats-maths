@@ -10,10 +10,33 @@ import { GENERATORS, isGenerated } from './generated';
 export const GPS_QUESTIONS = 50;
 
 const WORD_CLASSES = ['g-word-class', 'g-find-word', 'g-determiners', 'g-pronouns', 'g-prepositions'];
-const SENTENCES = ['g-sentence-type', 'g-clauses', 'g-subject', 'g-fronted', 'g-noun-phrase', 'g-conjunctions', 'g-relative-pronouns', 'g-adverbials'];
+const SENTENCES = [
+  'g-sentence-type',
+  'g-clauses',
+  'g-main-clause',
+  'g-subject',
+  'g-object',
+  'g-fronted',
+  'g-noun-phrase',
+  'g-conjunctions',
+  'g-relative-pronouns',
+  'g-adverbials',
+];
 const VERBS = ['g-tense', 'g-verb-forms', 'g-voice', 'g-active-passive', 'g-modals', 'g-subjunctive'];
 const STANDARD = ['g-standard-english', 'g-formality'];
-const PUNCTUATION = ['g-capitals', 'g-end-punctuation', 'g-commas', 'g-parenthesis', 'g-apostrophes', 'g-contractions', 'g-speech', 'g-colons-semicolons', 'g-hyphens'];
+const PUNCTUATION = [
+  'g-capitals',
+  'g-end-punctuation',
+  'g-commas',
+  'g-parenthesis',
+  'g-apostrophes',
+  'g-contractions',
+  'g-speech',
+  'g-colons-semicolons',
+  'g-hyphens',
+  'g-ellipsis',
+  'g-bullet-points',
+];
 const VOCABULARY = ['g-synonyms', 'g-antonyms', 'g-prefixes', 'g-suffixes', 'g-word-families', 'g-homophones'];
 
 /** Ten slots repeated five times: grammar about 55%, punctuation 30%, vocabulary 10%. */

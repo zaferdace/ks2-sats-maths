@@ -1,0 +1,611 @@
+[
+  {
+    "word": "conscientious",
+    "level": 3,
+    "group": "suffix-cious-tious",
+    "sentence": "Amira is a conscientious pupil who always checks her work carefully.",
+    "hint": "con-sci-en-tious: ends in -tious"
+  },
+  {
+    "word": "superstitious",
+    "level": 3,
+    "group": "suffix-cious-tious",
+    "sentence": "My superstitious uncle never walks under a ladder.",
+    "hint": "from superstition, so it ends in -tious"
+  },
+  {
+    "word": "atrocious",
+    "level": 3,
+    "group": "suffix-cious-tious",
+    "sentence": "The weather on sports day was atrocious, so the races were cancelled.",
+    "hint": "ends in -cious, like ferocious"
+  },
+  {
+    "word": "substantial",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "We ate a substantial lunch before the long walk.",
+    "hint": "-tial comes after a consonant letter"
+  },
+  {
+    "word": "torrential",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "Torrential rain flooded the streets in minutes.",
+    "hint": "from torrent, so it keeps the t"
+  },
+  {
+    "word": "superficial",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "Luckily, the cut on my knee was only superficial.",
+    "hint": "-cial comes after a vowel letter"
+  },
+  {
+    "word": "residential",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "We live on a quiet residential street.",
+    "hint": "from resident, so it keeps the t"
+  },
+  {
+    "word": "martial",
+    "level": 3,
+    "group": "suffix-cial-tial",
+    "sentence": "Karate is a martial art from Japan.",
+    "hint": "-tial comes after a consonant letter"
+  },
+  {
+    "word": "occurrence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "Snow in April is a rare occurrence in our town.",
+    "hint": "double c, double r, then -ence"
+  },
+  {
+    "word": "correspondence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "The two pen pals kept in touch through regular correspondence.",
+    "hint": "correspond + ence"
+  },
+  {
+    "word": "interference",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "The radio crackled because of interference from the storm.",
+    "hint": "from interfere: drop the last e and add -ence"
+  },
+  {
+    "word": "obedience",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "The puppy goes to obedience classes every Saturday.",
+    "hint": "from obedient: -ent becomes -ence"
+  },
+  {
+    "word": "coincidence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "By coincidence, my best friend and I have the same birthday.",
+    "hint": "co-in-ci-dence: ends in -ence"
+  },
+  {
+    "word": "consequence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "As a consequence of the heavy snow, the school was closed.",
+    "hint": "-ence comes after qu"
+  },
+  {
+    "word": "independence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "The country celebrated one hundred years of independence.",
+    "hint": "from independent: -ent becomes -ence"
+  },
+  {
+    "word": "assistance",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "If you need any assistance, please ask at the front desk.",
+    "hint": "from assistant: -ant becomes -ance"
+  },
+  {
+    "word": "intelligence",
+    "level": 3,
+    "group": "suffix-ant-ent",
+    "sentence": "Dolphins are famous for their intelligence.",
+    "hint": "-ence comes after a soft g"
+  },
+  {
+    "word": "irresistible",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The smell of fresh bread was irresistible.",
+    "hint": "ir- + resist, then -ible"
+  },
+  {
+    "word": "accessible",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The new ramp makes the library accessible to wheelchair users.",
+    "hint": "double c, double s, then -ible"
+  },
+  {
+    "word": "incredibly",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The final of the competition was incredibly exciting.",
+    "hint": "incredible becomes incredibly"
+  },
+  {
+    "word": "responsibly",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "Please use the class tablets responsibly.",
+    "hint": "responsible becomes responsibly"
+  },
+  {
+    "word": "considerably",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The puppy has grown considerably since last month.",
+    "hint": "considerable becomes considerably"
+  },
+  {
+    "word": "understandably",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "Ella was understandably upset when her tower fell down.",
+    "hint": "understand + ably"
+  },
+  {
+    "word": "unforgettable",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "Swimming with dolphins was an unforgettable experience.",
+    "hint": "forget doubles its t before -able"
+  },
+  {
+    "word": "invincible",
+    "level": 3,
+    "group": "suffix-able-ible",
+    "sentence": "The superhero in the comic believed that he was invincible.",
+    "hint": "ends in -ible"
+  },
+  {
+    "word": "outrageous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "The price of the concert tickets was outrageous.",
+    "hint": "keep the e to keep the soft g, like courageous"
+  },
+  {
+    "word": "hideous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "The monster in the story had a hideous green face.",
+    "hint": "hid-e-ous: an e before -ous"
+  },
+  {
+    "word": "courteous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "The courteous waiter held the door open for us.",
+    "hint": "cour-te-ous: an e before -ous"
+  },
+  {
+    "word": "gorgeous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "We watched a gorgeous sunset over the sea.",
+    "hint": "-geous: the e keeps the g soft"
+  },
+  {
+    "word": "ridiculous",
+    "level": 3,
+    "group": "suffix-ous",
+    "sentence": "Wearing shorts in the snow would be ridiculous.",
+    "hint": "starts with ri-, not re-"
+  },
+  {
+    "word": "transference",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "The transference of heat from the pan made the handle hot.",
+    "hint": "one r: the stress is not on -fer"
+  },
+  {
+    "word": "transferring",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "Our class is transferring to a new classroom next week.",
+    "hint": "double r: the stress stays on -fer"
+  },
+  {
+    "word": "inferred",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "From the muddy footprints, the detective inferred that the thief had come through the garden.",
+    "hint": "double r: the stress stays on -fer"
+  },
+  {
+    "word": "inference",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "Making an inference means using clues to work something out.",
+    "hint": "one r: the stress is not on -fer"
+  },
+  {
+    "word": "preferable",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "A walk in the sunshine is preferable to sitting indoors all day.",
+    "hint": "one r: the stress moves to pref-"
+  },
+  {
+    "word": "conference",
+    "level": 3,
+    "group": "suffix-fer",
+    "sentence": "Our teacher went to a science conference in London.",
+    "hint": "one r: the stress is not on -fer"
+  },
+  {
+    "word": "deceit",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "The fox won the race by deceit, not by speed.",
+    "hint": "ei after c, like deceive"
+  },
+  {
+    "word": "conceited",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "The conceited peacock thought he was the most beautiful bird in the world.",
+    "hint": "ei after c, like conceive"
+  },
+  {
+    "word": "protein",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "Eggs, beans and fish are all good sources of protein.",
+    "hint": "an exception: ei, but not after c"
+  },
+  {
+    "word": "shriek",
+    "level": 3,
+    "group": "ei-ie",
+    "sentence": "We heard a loud shriek from the haunted house.",
+    "hint": "i before e when it is not after c"
+  },
+  {
+    "word": "drought",
+    "level": 3,
+    "group": "ough",
+    "sentence": "The long drought left the rivers almost dry.",
+    "hint": "ough sounds like ow, as in plough"
+  },
+  {
+    "word": "sought",
+    "level": 3,
+    "group": "ough",
+    "sentence": "The explorers sought shelter from the storm in a cave.",
+    "hint": "ough sounds like or, as in bought"
+  },
+  {
+    "word": "trough",
+    "level": 3,
+    "group": "ough",
+    "sentence": "The horses drank from the water trough.",
+    "hint": "ough sounds like off, as in cough"
+  },
+  {
+    "word": "thoroughly",
+    "level": 3,
+    "group": "ough",
+    "sentence": "Wash the vegetables thoroughly before you cook them.",
+    "hint": "thorough + ly"
+  },
+  {
+    "word": "throughout",
+    "level": 3,
+    "group": "ough",
+    "sentence": "It rained throughout the whole holiday.",
+    "hint": "through + out"
+  },
+  {
+    "word": "hymn",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "The choir sang a beautiful hymn at the end of the service.",
+    "hint": "silent n, like autumn; y makes an i sound"
+  },
+  {
+    "word": "debt",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "Dad paid off the debt that he owed to the bank.",
+    "hint": "silent b, like doubt"
+  },
+  {
+    "word": "subtle",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "There was a subtle taste of lemon in the cake.",
+    "hint": "silent b: sub-tle"
+  },
+  {
+    "word": "gnaw",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "Rats can gnaw through wood with their sharp teeth.",
+    "hint": "silent g, like gnome"
+  },
+  {
+    "word": "salmon",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "Bears catch salmon as the fish leap up the waterfall.",
+    "hint": "silent l"
+  },
+  {
+    "word": "campaign",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "The children started a campaign to save the old oak tree.",
+    "hint": "silent g, like foreign"
+  },
+  {
+    "word": "exhausted",
+    "level": 3,
+    "group": "silent-letters",
+    "sentence": "After the marathon, the runners were exhausted.",
+    "hint": "silent h after the x"
+  },
+  {
+    "word": "re-examine",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "The scientists decided to re-examine the old bones.",
+    "hint": "a hyphen after re-, so two e's do not meet"
+  },
+  {
+    "word": "re-enact",
+    "level": 3,
+    "group": "hyphens",
+    "sentence": "Our class will re-enact a Viking battle in the playground.",
+    "hint": "a hyphen after re-, so two e's do not meet"
+  },
+  {
+    "word": "equipped",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The explorers were well equipped for the freezing weather.",
+    "hint": "equip doubles its p before -ed"
+  },
+  {
+    "word": "equipment",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Please put the sports equipment back in the shed.",
+    "hint": "equip + ment: only one p"
+  },
+  {
+    "word": "embarrassment",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Leo went red with embarrassment when he tripped on the stage.",
+    "hint": "embarrass (double r, double s) + ment"
+  },
+  {
+    "word": "definitely",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "I will definitely remember my swimming kit tomorrow.",
+    "hint": "definite + ly"
+  },
+  {
+    "word": "occurred",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The accident occurred just outside the school gates.",
+    "hint": "occur doubles its r before -ed"
+  },
+  {
+    "word": "accommodation",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The hotel offered cheap accommodation for families.",
+    "hint": "double c, double m, like accommodate"
+  },
+  {
+    "word": "apparently",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The dog had apparently eaten the whole cake.",
+    "hint": "apparent + ly: double p"
+  },
+  {
+    "word": "criticism",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The chef listened to the criticism and changed the recipe.",
+    "hint": "critic + ism"
+  },
+  {
+    "word": "guaranteed",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Sunshine is never guaranteed on a British holiday.",
+    "hint": "gua- at the start, like guard"
+  },
+  {
+    "word": "desperately",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "The thirsty traveller was desperately searching for water.",
+    "hint": "desperate + ly"
+  },
+  {
+    "word": "neighbourhood",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "Our neighbourhood has a lovely park and a small library.",
+    "hint": "neighbour + hood, with the British -our"
+  },
+  {
+    "word": "persuasion",
+    "level": 3,
+    "group": "y56-list",
+    "sentence": "After a lot of persuasion, Mum agreed to buy a puppy.",
+    "hint": "persuade becomes persuasion"
+  },
+  {
+    "word": "orchestra",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "The school orchestra played at the summer concert.",
+    "hint": "ch makes a k sound"
+  },
+  {
+    "word": "architect",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "An architect drew the plans for the new library.",
+    "hint": "ch makes a k sound"
+  },
+  {
+    "word": "brochure",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "We read a holiday brochure about sunny beaches.",
+    "hint": "ch makes a sh sound"
+  },
+  {
+    "word": "parachute",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "The skydiver opened her parachute high above the fields.",
+    "hint": "ch makes a sh sound"
+  },
+  {
+    "word": "moustache",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "Grandad has a grey moustache that tickles when he kisses me.",
+    "hint": "ch makes a sh sound; British spelling with ou"
+  },
+  {
+    "word": "catalogue",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "We chose a new tent from the camping catalogue.",
+    "hint": "-gue makes a g sound"
+  },
+  {
+    "word": "dialogue",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "The dialogue in the play was very funny.",
+    "hint": "-gue makes a g sound"
+  },
+  {
+    "word": "symmetry",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "A butterfly's wings show perfect symmetry.",
+    "hint": "y makes an i sound, and double m"
+  },
+  {
+    "word": "oxygen",
+    "level": 3,
+    "group": "tricky-sounds",
+    "sentence": "Plants give out oxygen, which we need to breathe.",
+    "hint": "y makes an i sound"
+  },
+  {
+    "word": "irrelevant",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "Your answer is interesting, but it is irrelevant to the question.",
+    "hint": "ir- + relevant, so double r"
+  },
+  {
+    "word": "illegible",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "The note was so messy that it was illegible.",
+    "hint": "il- + legible, so double l"
+  },
+  {
+    "word": "misspell",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "It is easy to misspell long words when you are in a hurry.",
+    "hint": "mis- + spell, so double s"
+  },
+  {
+    "word": "unnecessary",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "Please do not make unnecessary noise in the library.",
+    "hint": "un- + necessary, so double n"
+  },
+  {
+    "word": "dissatisfied",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "The customer was dissatisfied with her cold soup.",
+    "hint": "dis- + satisfied, so double s"
+  },
+  {
+    "word": "illogical",
+    "level": 3,
+    "group": "prefixes",
+    "sentence": "It is illogical to wear sunglasses in the dark.",
+    "hint": "il- + logical, so double l"
+  },
+  {
+    "word": "politician",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "The politician gave a speech about building new schools.",
+    "hint": "-cian for a person, from politics"
+  },
+  {
+    "word": "electrician",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "An electrician came to fix the broken lights.",
+    "hint": "-cian for a person: electric ends in c"
+  },
+  {
+    "word": "mathematician",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "A famous mathematician solved the puzzle in minutes.",
+    "hint": "-cian for a person, from mathematics"
+  },
+  {
+    "word": "comprehension",
+    "level": 3,
+    "group": "suffix-tion-sion",
+    "sentence": "We answered comprehension questions about the story.",
+    "hint": "comprehend ends in d, so -sion"
+  },
+  {
+    "word": "argument",
+    "level": 3,
+    "group": "suffix-other",
+    "sentence": "The twins had an argument about the television remote.",
+    "hint": "argue drops its e: argument"
+  },
+  {
+    "word": "ninth",
+    "level": 3,
+    "group": "suffix-other",
+    "sentence": "Our team finished ninth out of twelve teams.",
+    "hint": "nine drops its e: ninth"
+  }
+]

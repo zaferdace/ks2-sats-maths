@@ -2,7 +2,9 @@
 import { describe, expect, it } from 'vitest';
 import { createRng } from '../gen/rng';
 import { GPS_GENERATED_TYPES } from './catalog';
-import { GENERATORS, nounPhraseAskable } from './gps/generated';
+import { GENERATORS, mainClauseSpan, nounPhraseAskable, sentencesFor } from './gps/generated';
+import { SPELLING_QUESTIONS } from './spelling';
+import { splitAround } from './tokens';
 import {
   GPS_ITEM_TYPES,
   READING_DOMAINS,
@@ -28,6 +30,40 @@ function report<T extends { id?: string; word?: string }>(label: string, entries
 }
 
 const wordCount = (s: GrammarSentence, [a, b]: [number, number]) => s.tokens.slice(a, b).filter(([, t]) => t !== 'punct').length;
+
+/** Homophones and near-homophones in the National Curriculum spelling appendix, Years 3/4 then 5/6. */
+const NC_HOMOPHONES: string[][] = [
+  ['accept', 'except'], ['affect', 'effect'], ['ball', 'bawl'], ['berry', 'bury'], ['brake', 'break'],
+  ['fair', 'fare'], ['grate', 'great'], ['groan', 'grown'], ['here', 'hear'], ['heel', 'heal', "he'll"],
+  ['knot', 'not'], ['mail', 'male'], ['main', 'mane'], ['meat', 'meet'], ['medal', 'meddle'],
+  ['missed', 'mist'], ['peace', 'piece'], ['plain', 'plane'], ['rain', 'rein', 'reign'], ['scene', 'seen'],
+  ['weather', 'whether'], ['whose', "who's"],
+  ['advice', 'advise'], ['device', 'devise'], ['licence', 'license'], ['practice', 'practise'],
+  ['prophecy', 'prophesy'], ['farther', 'father'], ['guessed', 'guest'], ['heard', 'herd'], ['led', 'lead'],
+  ['morning', 'mourning'], ['past', 'passed'], ['precede', 'proceed'], ['principal', 'principle'],
+  ['profit', 'prophet'], ['stationary', 'stationery'], ['steal', 'steel'], ['wary', 'weary'],
+  ['aisle', 'isle'], ['aloud', 'allowed'], ['altar', 'alter'], ['ascent', 'assent'], ['bridal', 'bridle'],
+  ['cereal', 'serial'], ['compliment', 'complement'], ['descent', 'dissent'], ['desert', 'dessert'],
+  ['draft', 'draught'],
+];
+
+/** The homophones in spelling-homophones.json, by level: Years 3/4 easy, 5/6 medium, the hardest pairs hard. */
+const ADDED_HOMOPHONES: Record<Level, string[]> = {
+  1: [
+    'accept', 'except', 'ball', 'bawl', 'berry', 'bury', 'brake', 'break', 'fair', 'fare', 'grate', 'great',
+    'groan', 'grown', 'heel', 'heal', "he'll", 'knot', 'not', 'mail', 'male', 'main', 'mane', 'meat', 'meet',
+    'medal', 'meddle', 'missed', 'mist', 'peace', 'piece', 'plain', 'plane', 'rain', 'rein', 'scene', 'seen',
+  ],
+  2: [
+    'aisle', 'isle', 'cereal', 'serial', 'desert', 'dessert', 'draft', 'draught', 'farther', 'father', 'guessed',
+    'guest', 'herd', 'led', 'lead', 'morning', 'mourning', 'profit', 'prophet', 'steal', 'steel', 'wary', 'weary',
+    'device', 'devise', 'licence', 'license',
+  ],
+  3: [
+    'altar', 'alter', 'ascent', 'assent', 'bridal', 'bridle', 'compliment', 'complement', 'descent', 'dissent',
+    'precede', 'proceed', 'prophecy', 'prophesy',
+  ],
+};
 
 /**
  * Word counts of the expanded noun phrases outside the keyed one, found independently of the
@@ -84,6 +120,41 @@ describe('grammar sentences', () => {
   it('have no future tense', () => {
     expect(all.filter((s) => (s.tense as string | undefined) === 'future').map((s) => s.id)).toEqual([]);
   });
+  it('give every template at least 16 easy sentences of its own', () => {
+    // With fewer than 12 a level borrows sentences from the next level up, and the question is
+    // recorded at that level: easy clause practice used to come out as medium.
+    const short = Object.entries(sentencesFor(1))
+      .filter(([, ss]) => ss.length < 16)
+      .map(([template, ss]) => `${template}: ${ss.length}`);
+    expect(short).toEqual([]);
+  });
+  it('give "tap the main clause" one right answer', () => {
+    // Worked out again from the annotation, independently of mainClauseSpan: two clauses in all
+    // (one conj-sub, one verb in each), the subordinate clause first (then its comma) or last, and
+    // the main clause is every other word, in one unbroken run.
+    const problems: string[] = [];
+    for (const s of all) {
+      const span = mainClauseSpan(s);
+      if (!span) continue;
+      const [a, b] = s.subordinateClause!;
+      const end = s.tokens.length - 1;
+      const wordsOutside = s.tokens.map((_, i) => i).filter((i) => (i < a || i >= b) && s.tokens[i][1] !== 'punct');
+      const tapped = s.tokens.map((_, i) => i).filter((i) => i >= span[0] && i < span[1]);
+      const tags = (idx: number[]) => idx.map((i) => s.tokens[i][1]);
+      const inside = s.tokens.slice(a, b).map(([, t]) => t);
+      if (tapped.join() !== wordsOutside.join()) problems.push(`${s.id}: main clause is not every word outside the subordinate clause`);
+      if (tapped.some((i, k) => k > 0 && i !== tapped[k - 1] + 1)) problems.push(`${s.id}: main clause is broken up`);
+      if (!(a === 0 && s.tokens[b][0] === ',') && b !== end) problems.push(`${s.id}: subordinate clause is in the middle`);
+      if (s.relativeClause || s.frontedAdverbial) problems.push(`${s.id}: has a relative clause or fronted adverbial`);
+      if (s.tokens.filter(([, t]) => t === 'conj-sub').length !== 1) problems.push(`${s.id}: more than one subordinate clause`);
+      if (tags(tapped).filter((t) => t === 'verb').length !== 1 || inside.filter((t) => t === 'verb').length !== 1) {
+        problems.push(`${s.id}: a clause without exactly one verb (a second clause or "to" + verb)`);
+      }
+      if (tags(tapped).includes('punct')) problems.push(`${s.id}: punctuation inside the main clause`);
+    }
+    expect(problems).toEqual([]);
+    for (const level of [1, 2, 3]) expect(all.filter((s) => s.level === level && mainClauseSpan(s)).length).toBeGreaterThanOrEqual(16);
+  });
 });
 
 describe('GPS items', () => {
@@ -105,6 +176,16 @@ describe('GPS items', () => {
     ];
     expect(everywhere.filter(([, text]) => /\bcoordinat(?:ing|ion)\b/i.test(text)).map(([where]) => where)).toEqual([]);
   });
+  it('give every ready-made type questions at every level', () => {
+    // Practice needs ten different questions of a type, and a paper at one level needs some at
+    // that level (ellipsis, bullet points and the object were once never asked at all).
+    const thin = Object.keys(GPS_ITEM_TYPES).flatMap((type) => {
+      const mine = all.filter((i) => i.type === type);
+      const perLevel = [1, 2, 3].map((l) => mine.filter((i) => i.level === l).length);
+      return mine.length < 10 || perLevel.some((n) => n < 3) ? [`${type}: ${perLevel.join('/')}`] : [];
+    });
+    expect(thin).toEqual([]);
+  });
 });
 
 describe('spelling words', () => {
@@ -112,9 +193,44 @@ describe('spelling words', () => {
   it('are well formed', () => {
     expect(report('word', all, checkSpelling)).toEqual([]);
   });
-  it('are unique', () => {
+  it('are unique across every spelling file', () => {
     const ws = all.map((w) => w.word);
     expect(ws.filter((w, i) => ws.indexOf(w) !== i)).toEqual([]);
+  });
+  it('sit in their sentence as a whole word, where the dictation blanks them out', () => {
+    // The screen blanks out the first match; it must be the word itself, not part of
+    // "heel-to-toe" or "Sam's", and it must be the one occurrence the sentence has.
+    const wrong = all.filter((w) => {
+      const [before, after] = splitAround(w.sentence, w.word);
+      const shown = w.sentence.slice(before.length, w.sentence.length - after.length);
+      return shown.toLowerCase() !== w.word || /[A-Za-z'’-]$/.test(before) || /^[A-Za-z'’-]/.test(after);
+    });
+    expect(wrong.map((w) => w.word)).toEqual([]);
+  });
+  it('have enough words at every level for five tests without a repeat', () => {
+    // A 20-word hard test used to run out of hard words during the third test.
+    for (const level of [1, 2, 3]) expect(all.filter((w) => w.level === level).length).toBeGreaterThanOrEqual(5 * SPELLING_QUESTIONS);
+  });
+  it('include every homophone the National Curriculum lists for Years 3 to 6', () => {
+    const missing = NC_HOMOPHONES.flat().filter((word) => !all.some((w) => w.word === word));
+    expect(missing).toEqual([]);
+    // Added as homophones, at the level of their year group; the hardest pairs are hard.
+    const wrong = Object.entries(ADDED_HOMOPHONES).flatMap(([level, list]) =>
+      list.filter((word) => !all.some((w) => w.word === word && w.group === 'homophones' && w.level === Number(level))),
+    );
+    expect(wrong).toEqual([]);
+  });
+  it('never put a homophone’s partner in its sentence', () => {
+    // The sentence is what tells the pupil which spelling is meant, so it must not contain the other one.
+    const has = (sentence: string, word: string) =>
+      new RegExp(`(^|[^A-Za-z'-])${word.replace(/[-']/g, (c) => `\\${c}`)}(?![A-Za-z'-])`, 'i').test(sentence);
+    const clashes = NC_HOMOPHONES.flatMap((set) =>
+      set.flatMap((word) => {
+        const entry = all.find((w) => w.word === word);
+        return entry ? set.filter((other) => other !== word && has(entry.sentence, other)).map((other) => `${word}: ${other}`) : [];
+      }),
+    );
+    expect(clashes).toEqual([]);
   });
   it('include every spelling pattern their group label names', () => {
     // "-able/-ably and -ible/-ibly" promises -ably and -ibly words; "(co-, re-)" promises words
