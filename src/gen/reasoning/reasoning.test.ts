@@ -214,3 +214,33 @@ describe('answers are marked as the real test marks them', () => {
     if (decimal) expect(markFor(q, { ...blank, whole: decimal })).toBe(0);
   });
 });
+
+describe('reasoning blueprint', () => {
+  // One calculation (or one step of reasoning): worth 1 mark, not 2.
+  const ONE_STEP = [
+    ['r-money', 1],
+    ['r-fraction-context', 1],
+    ['r-percent-context', 1],
+    ['r-recipe', 1],
+    ['r-inverse', 1],
+    ['r-time', 2],
+    ['r-equation', 3],
+    ['r-volume', 1],
+    ['r-perimeter-area', 1],
+  ] as const;
+
+  it('keeps one-step problems out of the two-mark slots', () => {
+    for (const slot of REASONING_BLUEPRINT.filter((s) => s.marks === 2)) {
+      for (const o of slot.options) {
+        for (const [type, d] of ONE_STEP) expect(o.type === type && o.d.includes(d), `${type} d${d} in a 2-mark slot`).toBe(false);
+      }
+    }
+  });
+
+  it('still reaches every template at every difficulty it has in a slot', () => {
+    for (const [type, d] of ONE_STEP) {
+      expect(REASONING_BLUEPRINT.some((s) => s.options.some((o) => o.type === type && o.d.includes(d))), `${type} d${d}`).toBe(true);
+    }
+  });
+});
+
