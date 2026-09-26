@@ -10,11 +10,12 @@ export const recipes: ReasoningType = {
   topic: 'ratio',
   generate(rng, d) {
     if (d === 1) {
-      const people = rng.pick([2, 3, 4]);
+      // About 15 to 25 g of flour for each pancake.
+      const pancakes = rng.pick([6, 8, 10, 12]);
       const k = rng.pick([2, 3]);
-      const flour = rng.int(5, 20) * 10;
+      const flour = Math.round((pancakes * rng.int(15, 25)) / 10) * 10;
       return draft(
-        [text(`A recipe for **${people}** pancakes uses **${flour} g** of flour.\nHow much flour is needed for **${people * k}** pancakes?`)],
+        [text(`A recipe for **${pancakes}** pancakes uses **${flour} g** of flour.\nHow much flour is needed for **${pancakes * k}** pancakes?`)],
         number({ suffix: 'g' }),
         nums(flour * k),
       );
@@ -29,10 +30,16 @@ export const recipes: ReasoningType = {
           [3, 5],
           [5, 8],
         ]);
-        const amount = rng.int(3, 20) * 5 * from;
+        // A helping for one person, in grams (a multiple of 5).
+        const [food, lo, hi] = rng.pick([
+          ['pasta', 70, 100],
+          ['rice', 60, 90],
+          ['potatoes', 150, 250],
+          ['cheese', 20, 50],
+        ] as const);
+        const amount = rng.int(lo / 5, hi / 5) * 5 * from;
         const answer = (amount * to) / from;
-        if (!Number.isInteger(answer) || amount > 1000) return undefined;
-        const food = rng.pick(['pasta', 'rice', 'potatoes', 'cheese']);
+        if (!Number.isInteger(answer) || amount > 1500 || answer > 1500) return undefined;
         return draft(
           [text(`A recipe for **${from}** people uses **${fmt(amount)} g** of ${food}.\nHow many grams of ${food} are needed for **${to}** people?`)],
           number({ suffix: 'g' }),
@@ -127,11 +134,17 @@ export const scale: ReasoningType = {
         nums(rat(mapCm.n * km, mapCm.d)),
       );
     }
-    const ratioTo = rng.pick([10, 20, 25, 50]);
-    const modelCm = rng.int(8, 24);
+    // Real lengths: a car is about 3.5 to 5 m long, a bus about 10 to 12 m.
+    const [what, lo, hi] = rng.pick([
+      ['car', 350, 500],
+      ['car', 350, 500],
+      ['bus', 1000, 1200],
+    ] as const);
+    const ratioTo = rng.pick(what === 'car' ? [10, 20, 25, 50] : [50, 100]);
+    const modelCm = rng.int(Math.ceil(lo / ratioTo), Math.floor(hi / ratioTo));
     const realCm = modelCm * ratioTo;
     return draft(
-      [text(`A model car is made to a scale of **1 : ${ratioTo}**. The model is **${modelCm} cm** long.\nHow long is the real car in **metres**?`)],
+      [text(`A model ${what} is made to a scale of **1 : ${ratioTo}**. The model is **${modelCm} cm** long.\nHow long is the real ${what} in **metres**?`)],
       number({ decimal: true, suffix: 'm' }),
       nums(rat(realCm, 100)),
     );

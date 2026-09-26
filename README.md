@@ -9,9 +9,10 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
   cubes, fractions, decimals, percentages). Long multiplication and division are worth 2 marks, as
   in the real test, so a paper has 44 marks; the mock test is the real format: 36 questions, 40
   marks, 30 minutes.
-- **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 40 templates, with tables,
-  charts, angle diagrams and coordinate grids. Two-mark questions score 2 or 0, because a typed
-  answer cannot show working.
+- **Papers 2 and 3: Reasoning.** 25 questions worth 35 marks from 60 templates, with tables,
+  charts, conversion graphs, angle diagrams, coordinate grids, number lines, measuring jugs and
+  thermometers, column calculations with missing digits, shapes made of cubes and shapes on
+  square grids. Two-mark questions score 2 or 0, because a typed answer cannot show working.
 - Both run from easy to hard and can be done as a daily paper (five days), in one go, or as a
   timed mock test. Equivalent answers score as in the real mark schemes (3/4, 6/8 and 0.75 for 3/4),
   and forms the real test refuses do not: 6 9/8 for 7 1/8, £4.4 for £4.40, 50 for 50.0.

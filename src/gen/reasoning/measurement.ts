@@ -75,12 +75,18 @@ export const timeProblems: ReasoningType = {
   topic: 'measurement',
   generate(rng, d) {
     if (d === 1) {
-      const start = rng.int(9 * 12, 20 * 12) * 5; // minutes after midnight, 09:00-20:00
+      // How long each event really lasts (minutes) and when it can start (hours).
+      const [what, shortest, longest, from, to] = rng.pick([
+        ['film', 80, 160, 10, 20],
+        ['football match', 95, 115, 12, 19],
+        ['concert', 70, 150, 17, 20],
+        ['play', 70, 150, 13, 19],
+      ] as const);
+      const start = rng.int(from * 12, to * 12) * 5; // minutes after midnight
       const length = retry(() => {
-        const m = rng.int(70, 170);
+        const m = rng.int(shortest, longest);
         return m % 60 === 0 ? undefined : m;
       });
-      const what = rng.pick(['film', 'football match', 'concert', 'play']);
       const lasts = `${plural(Math.floor(length / 60), 'hour')} ${plural(length % 60, 'minute')}`; // "1 hour 1 minute"
       return draft(
         [text(`${capitalise(withArticle(what))} starts at **${hhmm(start)}**. It lasts **${lasts}**.\nWhat time does it finish?`)],

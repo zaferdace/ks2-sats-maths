@@ -18,7 +18,7 @@ function isProfile(x: unknown): x is Profile {
   return isObject(x) && typeof x.id === 'string' && typeof x.name === 'string' && typeof x.createdAt === 'number';
 }
 
-const BLOCKS = new Set(['text', 'table', 'bar', 'line', 'pie', 'coords', 'angles', 'rect', 'lshape', 'cuboid', 'grid', 'speak', 'passage']);
+const BLOCKS = new Set(['text', 'table', 'bar', 'line', 'pie', 'coords', 'angles', 'rect', 'lshape', 'cuboid', 'grid', 'numberline', 'scale', 'column', 'cubes', 'polygon', 'angleset', 'speak', 'passage']);
 
 /** An input and its encoded answer, checked closely enough that marking and display cannot throw. */
 function isInputAndAnswer(input: unknown, answer: unknown): boolean {

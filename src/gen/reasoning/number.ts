@@ -89,6 +89,18 @@ export const rounding: ReasoningType = {
   },
 };
 
+/** Midday temperatures a city can have on a winter's day, in °C. */
+const WINTER_MIDDAY: [string, number, number][] = [
+  ['London', -2, 9],
+  ['Berlin', -6, 6],
+  ['Oslo', -10, 3],
+  ['Helsinki', -14, 1],
+  ['Moscow', -16, -2],
+  ['Toronto', -12, 4],
+  ['Madrid', 3, 14],
+  ['Rome', 4, 15],
+];
+
 export const negatives: ReasoningType = {
   id: 'r-negative',
   label: 'Negative numbers',
@@ -105,18 +117,21 @@ export const negatives: ReasoningType = {
       );
     }
     if (d === 2) {
-      const cold = -rng.int(3, 12);
-      const warm = rng.int(2, 14);
+      // A cold winter morning to the afternoon: a rise of 5 to 16 degrees.
+      const cold = -rng.int(2, 9);
+      const warm = cold + rng.int(Math.max(5, 2 - cold), 16);
       return draft(
         [text(`At 6 am the temperature was **${fmt(cold)}°C**. At 3 pm it was **${fmt(warm)}°C**.\nHow many degrees warmer was it at 3 pm?`)],
         number({ suffix: 'degrees' }),
         nums(warm - cold),
       );
     }
-    const cities = rng.shuffle(['Oslo', 'Moscow', 'Helsinki', 'Toronto', 'London', 'Berlin']).slice(0, 5);
+    // Midday on one winter's day: each city stays within what it really gets.
+    const places = rng.shuffle(WINTER_MIDDAY).slice(0, 5);
+    const cities = places.map(([city]) => city);
     const temps = retry(() => {
-      const t = cities.map(() => rng.int(-15, 20));
-      return new Set(t).size === t.length && t.some((x) => x < 0) && t.some((x) => x > 0) ? t : undefined;
+      const t = places.map(([, lo, hi]) => rng.int(lo, hi));
+      return new Set(t).size === t.length && t.some((x) => x < 0) && t.some((x) => x > 0 && x <= 6) ? t : undefined;
     });
     if (rng.chance(0.5)) {
       return draft(
@@ -129,8 +144,9 @@ export const negatives: ReasoningType = {
         nums(Math.max(...temps) - Math.min(...temps)),
       );
     }
-    const i = temps.findIndex((t) => t > 0);
-    const fall = rng.int(temps[i] + 2, temps[i] + 12);
+    // A mild city that drops a few degrees below freezing overnight.
+    const i = temps.findIndex((t) => t > 0 && t <= 6);
+    const fall = rng.int(temps[i] + 1, temps[i] + 5);
     return draft(
       [
         text('The table shows the temperature in five cities at midday.'),
@@ -153,7 +169,7 @@ export const romanNumerals: ReasoningType = {
       return draft([text(`What number is written as **${roman(n)}** in Roman numerals?`)], number(), nums(n));
     }
     if (d === 2) {
-      const year = rng.int(1900, 2030);
+      const year = rng.int(1850, 2020); // carved on a building, so in the past
       return draft([text(`A building has the year **${roman(year)}** carved above the door.\nWrite this year in digits.`)], number({ plain: true }), nums(year));
     }
     const a = rng.int(1940, 1999);
