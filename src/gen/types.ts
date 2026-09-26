@@ -114,6 +114,7 @@ export interface NumberBox {
   negative?: boolean; // allow "−"
   decimal?: boolean; // allow "."
   plain?: boolean; // no thousands commas (years)
+  dp?: number; // exactly this many decimal places, as asked ("to one decimal place" → 50.0)
 }
 
 export type InputSpec =

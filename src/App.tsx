@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { buildGpsPaper, buildGpsPractice } from './english/gps/paper';
 import { englishHistory } from './english/history';
 import { buildReading } from './english/reading';
@@ -15,18 +15,26 @@ import { ResultScreen } from './screens/ResultScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { TestScreen } from './screens/TestScreen';
 import {
-  addAttempt,
   addProfile,
   createAttempt,
   findAttempt,
   openSession,
+  removeProfile,
+  renameProfile,
   replaceAttempt,
   selectProfile,
+  setAccepted,
+  setSelfMark,
+  startAttempt,
   type Attempt,
   type StartRequest,
   type StoreData,
 } from './store/model';
+import { restoreBackup } from './store/persist';
+import { ErrorBoundary } from './ui/ErrorBoundary';
+import { restoredMessage } from './ui/backup';
 import { dictate } from './ui/speech';
+import { dismissHomeScreenTip, homeScreenTipDismissed, isAppleTouchDevice, isStandalone } from './ui/standalone';
 import { useStore, type Update } from './useStore';
 
 // Screens live in memory: no URL routing, so the home-screen app never loses its place.
@@ -41,7 +49,12 @@ type Screen =
 export default function App() {
   const { data, update, saveFailed } = useStore();
   // Results load from IndexedDB in a moment; until then the page stays empty.
-  return data ? <Main data={data} update={update} saveFailed={saveFailed} /> : <div className="app" aria-busy="true" />;
+  if (!data) return <div className="app" aria-busy="true" />;
+  return (
+    <ErrorBoundary backup={() => JSON.stringify(data)}>
+      <Main data={data} update={update} saveFailed={saveFailed} />
+    </ErrorBoundary>
+  );
 }
 
 function Main({ data, update, saveFailed }: { data: StoreData; update: Update; saveFailed: boolean }) {
@@ -49,8 +62,11 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
   const [screen, setScreen] = useState<Screen>(() => ({ name: profile ? 'home' : 'profiles' }) as Screen);
   // A message for the screen it was raised on; it goes away when the screen changes.
   const [notice, setNotice] = useState<{ text: string; on: Screen } | null>(null);
+  const [homeScreenTip, setHomeScreenTip] = useState(() => isAppleTouchDevice() && !isStandalone() && !homeScreenTipDismissed());
 
-  useEffect(() => {
+  // A layout effect, so it runs before a new screen's own effects (e.g. the test screen bringing the
+  // answer box into view) rather than undoing them.
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, [screen]);
 
@@ -106,11 +122,14 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
       return;
     }
     const english = SUBJECT_OF[paper] === 'english';
-    const created = createAttempt(profile.id, mode, code, questions, Date.now(), undefined, paper, english ? level : undefined);
+    const now = Date.now();
+    const created = createAttempt(profile.id, mode, code, questions, now, undefined, paper, english ? level : undefined);
     const attempt = topic ? { ...created, topic } : created;
-    update((d) => addAttempt(d, attempt));
+    update((d) => startAttempt(d, attempt, now));
     openTest(attempt);
   };
+
+  const backup = () => JSON.stringify(data);
 
   let body;
   if (!profile || screen.name === 'profiles') {
@@ -124,6 +143,13 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         onCreate={(name) => {
           update((d) => addProfile(d, name, Date.now()));
           setScreen({ name: 'home' });
+        }}
+        onRename={(id, name) => update((d) => renameProfile(d, id, name))}
+        onRemove={(id) => update((d) => removeProfile(d, id))}
+        onRestore={(incoming) => {
+          update((d) => restoreBackup(d, incoming));
+          setScreen({ name: 'home' });
+          return restoredMessage(incoming);
         }}
       />
     );
@@ -148,10 +174,12 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         onHome={goHome}
         onReport={() => setScreen({ name: 'report' })}
         onContinue={() => openTest(attempt)}
+        onSelfMark={(index, marks) => editAttempt(attempt.id)((a) => setSelfMark(a, index, marks))}
+        onAccept={(index, accepted) => editAttempt(attempt.id)((a) => setAccepted(a, index, accepted))}
       />
     ) : null;
   } else if (screen.name === 'report') {
-    body = <ReportScreen data={data} profile={profile} onBack={goHome} />;
+    body = <ReportScreen data={data} profile={profile} onBack={goHome} onPractise={startPaper} />;
   } else if (screen.name === 'settings') {
     body = <SettingsScreen data={data} update={update} onBack={goHome} />;
   } else {
@@ -175,8 +203,28 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     );
   }
 
+  const onStartScreen = !profile || screen.name === 'home' || screen.name === 'profiles';
+
   return (
     <div className="app">
+      {homeScreenTip && onStartScreen && (
+        <div className="banner page tip" role="note">
+          <span>
+            Add this app to the Home Screen: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. Safari can
+            delete the results of a website that isn't opened for a week; the Home Screen app keeps them.
+          </span>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => {
+              dismissHomeScreenTip();
+              setHomeScreenTip(false);
+            }}
+          >
+            OK
+          </button>
+        </div>
+      )}
       {notice?.on === screen && (
         <div className="banner page" role="status">
           {notice.text}
@@ -187,14 +235,16 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
           This iPad refused to save the latest answers (storage may be full). Open Settings and save a backup.
         </div>
       )}
-      {body ?? (
-        <div className="page">
-          <p>That paper could not be found.</p>
-          <button type="button" className="btn" onClick={goHome}>
-            Home
-          </button>
-        </div>
-      )}
+      <ErrorBoundary resetKey={screen} onHome={goHome} backup={backup}>
+        {body ?? (
+          <div className="page">
+            <p>That paper could not be found.</p>
+            <button type="button" className="btn" onClick={goHome}>
+              Home
+            </button>
+          </div>
+        )}
+      </ErrorBoundary>
     </div>
   );
 }

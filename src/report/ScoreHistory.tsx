@@ -43,6 +43,11 @@ export function ScoreHistory({
 
   return (
     <figure className="chart">
+      {sessions.length > MAX_SESSIONS && (
+        <p className="muted small">
+          The last {MAX_SESSIONS} of {sessions.length} sessions.
+        </p>
+      )}
       <p className="readout" aria-live="polite">
         {current
           ? `${formatDateTime(current.at)} · ${name(current)} · ${current.score}/${current.total} (${Math.round(

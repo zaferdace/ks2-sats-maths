@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { typesOf } from '../gen/catalog';
 import { generatePaper } from '../gen/paper';
 import { ratFromString } from '../math/rational';
+import { levelOf } from '../report/levels';
 import { addTime, createAttempt, setAnswer, submitSession, type Attempt } from '../store/model';
 import {
   byTopic,
@@ -97,3 +98,20 @@ describe('stats', () => {
     expect(streakDays([s(NOW - 2 * DAY)], NOW)).toBe(0);
   });
 });
+
+describe('report details', () => {
+  it('colours a tally by the percentage printed with it', () => {
+    expect(levelOf({ correct: 11, total: 13, timeMs: 0 })).toBe('good'); // 84.6% shows as 85%
+    expect(levelOf({ correct: 16, total: 23, timeMs: 0 })).toBe('warning'); // 69.6% shows as 70%
+    expect(levelOf({ correct: 0, total: 0, timeMs: 0 })).toBe('none');
+  });
+
+  it('counts the streak over every session, whatever the time range', () => {
+    const attempts = [fixture()];
+    const all = collectSessions(attempts);
+    const lastDayOnly = all.filter((x) => x.at >= NOW - DAY / 2);
+    expect(summarize(attempts, collectRecords(attempts), lastDayOnly, NOW).streakDays).toBe(1);
+    expect(summarize(attempts, collectRecords(attempts), lastDayOnly, NOW, all).streakDays).toBe(2);
+  });
+});
+

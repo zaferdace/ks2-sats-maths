@@ -1,7 +1,7 @@
 // Invariant tests for every reasoning template, plus independent checks where the figure alone
 // determines the answer (angles). Wording is checked by reading printed papers, not here.
 import { describe, expect, it } from 'vitest';
-import { isCorrect, formatCorrect, type AnswerInput } from '../../answer/answer';
+import { formNote, isCorrect, formatCorrect, markFor, typedValue, type AnswerInput } from '../../answer/answer';
 import { isInt, ratFromString, toDecimalString, type Rational } from '../../math/rational';
 import { createRng } from '../rng';
 import type { Block, Difficulty, ItemQuestion } from '../types';
@@ -15,8 +15,10 @@ const SEEDS = 1000;
 export function correctInput(q: ItemQuestion): AnswerInput {
   const blank = { whole: '', num: '', den: '' };
   switch (q.input.kind) {
-    case 'number':
-      return { ...blank, boxes: q.answer.split(';').map((s) => toDecimalString(ratFromString(s)) ?? 'x') };
+    case 'number': {
+      const boxes = q.input.boxes;
+      return { ...blank, boxes: q.answer.split(';').map((s, i) => typedValue(ratFromString(s), boxes[i] ?? {})) };
+    }
     case 'fraction': {
       const r = ratFromString(q.answer);
       return { ...blank, num: String(r.n), den: String(r.d) };
@@ -154,5 +156,61 @@ describe('generateReasoningPaper', () => {
       expect(new Set(paper.map((q) => q.typeId)).size).toBeGreaterThanOrEqual(20);
       for (const q of paper) expect(problems(q)).toEqual([]);
     }
+  });
+});
+
+describe('answers are marked as the real test marks them', () => {
+  const byId = (id: string) => REASONING_TYPES.find((t) => t.id === id)!;
+  const make = (id: string, d: Difficulty, seed: string): ItemQuestion => ({
+    format: 'reasoning',
+    typeId: id,
+    difficulty: d,
+    marks: 1,
+    ...byId(id).generate(createRng(seed), d),
+  });
+  const blank = { whole: '', num: '', den: '' };
+
+  it('money needs two digits for the pence', () => {
+    let checked = 0;
+    for (let s = 0; s < 400 && checked < 20; s++) {
+      const q = make('r-money', 2, `money-${s}`);
+      if (q.input.kind !== 'number') continue;
+      const v = ratFromString(q.answer);
+      const short = toDecimalString(v)!; // e.g. 4.4
+      if (!/\.\d$/.test(short)) continue;
+      checked++;
+      expect(markFor(q, { ...blank, boxes: [short] })).toBe(0);
+      expect(formNote(q, { ...blank, boxes: [short] })).toMatch(/two digits/);
+      expect(markFor(q, { ...blank, boxes: [`${short}0`] })).toBe(q.marks);
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+
+  it('rounding to one decimal place needs one decimal place, even for a whole number', () => {
+    let wholes = 0;
+    for (let s = 0; s < 400; s++) {
+      const q = make('r-rounding', 3, `round-${s}`);
+      if (q.input.kind !== 'number' || q.input.boxes[0].dp !== 1) continue;
+      const v = ratFromString(q.answer);
+      const exact = typedValue(v, q.input.boxes[0]);
+      expect(exact).toMatch(/\.\d$/);
+      expect(markFor(q, { ...blank, boxes: [exact] })).toBe(1);
+      expect(markFor(q, { ...blank, boxes: [`${exact}0`] })).toBe(0);
+      if (isInt(v)) {
+        wholes++;
+        expect(markFor(q, { ...blank, boxes: [String(v.n)] })).toBe(0);
+        expect(formatCorrect(q)).toMatch(/\.0$/);
+      }
+    }
+    expect(wholes).toBeGreaterThan(0);
+  });
+
+  it('"write as a fraction" needs a fraction, not a decimal', () => {
+    const q = make('r-fdp', 3, 'fdp');
+    if (q.input.kind !== 'fraction') return;
+    const v = ratFromString(q.answer);
+    const decimal = toDecimalString(v);
+    expect(markFor(q, correctInput(q))).toBe(1);
+    if (decimal) expect(markFor(q, { ...blank, whole: decimal })).toBe(0);
   });
 });

@@ -20,8 +20,10 @@ export interface AnswerInput {
   tf?: (boolean | null)[];
   /** Explanation question: the model answer has been shown, so the written answer is locked. */
   checked?: boolean;
-  /** Marks a pupil gave themselves on an explanation question. */
+  /** Marks given to an explanation question (after Finish, with a grown-up). */
   self?: number;
+  /** A grown-up accepted a typed reading answer the app marked wrong (a misspelling, say). */
+  accepted?: boolean;
 }
 
 export type AnswerField = 'whole' | 'num' | 'den';
@@ -51,17 +53,38 @@ export function typeLetter(value: string, key: string): string {
   return value + key.toLowerCase();
 }
 
-/** Exact value of a whole/fraction answer, or null when it is empty or not a number. */
+/**
+ * Exact value of a whole/fraction answer, or null when it is empty, not a number, or in a form the
+ * real test does not credit: a mixed number's fraction must be proper (7 1/8, not 6 9/8).
+ */
 export function parseAnswer(a: AnswerInput | null | undefined): Rational | null {
   if (!a || (!a.whole && !a.num && !a.den)) return null;
   const { whole, num, den } = a;
   if (num || den) {
     if (!/^\d+$/.test(num) || !/^\d+$/.test(den) || Number(den) === 0) return null;
     if (whole && !/^\d+$/.test(whole)) return null;
+    if (whole && Number(num) >= Number(den)) return null;
     return add(rat(whole ? Number(whole) : 0), rat(Number(num), Number(den)));
   }
   if (!/^(\d+\.?\d*|\.\d+)$/.test(whole)) return null;
   return fromDecimalString(whole);
+}
+
+/** A fraction with only its top or only its bottom number filled in. */
+export const incompleteFraction = (a: AnswerInput | null | undefined): boolean => Boolean(a && Boolean(a.num) !== Boolean(a.den));
+
+/** Decimal places typed in a number box ("3.50" → 2, "12" → 0). */
+const placesOf = (s: string): number => (s.includes('.') ? s.length - s.indexOf('.') - 1 : 0);
+
+/**
+ * Whether a typed box value is written the way the real test credits: money in pounds with no pence
+ * or exactly two decimal places (£4.40, not £4.4), and rounding answers to the places asked for (50.0).
+ */
+export function boxFormOk(s: string | undefined, box: NumberBox): boolean {
+  if (!s) return false;
+  if (box.dp !== undefined) return placesOf(s) === box.dp;
+  if (box.prefix === '£' && s.includes('.')) return placesOf(s) === 2;
+  return true;
 }
 
 /** Value typed into one number box: "12", "-6", "3.50". */
@@ -105,13 +128,16 @@ const loose = (s: string): string => normText(s).replace(/^(a|an|the) (?=\S)/, '
 function itemCorrect(q: ItemQuestion, a: AnswerInput): boolean {
   switch (q.input.kind) {
     case 'number': {
+      const input = q.input;
       const expected = q.answer.split(';').map(ratFromString);
       return expected.every((e, i) => {
         const v = parseBox(a.boxes?.[i]);
-        return v !== null && eq(v, e);
+        return v !== null && eq(v, e) && boxFormOk(a.boxes?.[i], input.boxes[i] ?? {});
       });
     }
     case 'fraction': {
+      // "What fraction…?" and "Write … as a fraction" need a fraction: a decimal does not answer them.
+      if (a.whole.includes('.')) return false;
       const v = parseAnswer(a);
       return v !== null && eq(v, ratFromString(q.answer));
     }
@@ -137,6 +163,34 @@ function itemCorrect(q: ItemQuestion, a: AnswerInput): boolean {
   }
 }
 
+/**
+ * Why an answer with the right value still scores 0, in the words of the real test's marking, or null.
+ * Shown with the correction so "but 6 9/8 is 7 1/8!" gets an answer.
+ */
+export function formNote(q: AnyQuestion, a: AnswerInput | null | undefined): string | null {
+  if (!a || isBlank(a)) return null;
+  const input = isItem(q) ? q.input : null;
+  if (!input || input.kind === 'fraction') {
+    const { whole, num, den } = a;
+    if (whole && /^\d+$/.test(num) && /^\d+$/.test(den) && Number(den) > 0 && Number(num) >= Number(den)) {
+      return 'In a mixed number the fraction part must be less than 1, so change it into wholes (7 1/8, not 6 9/8).';
+    }
+    if (input && whole.includes('.')) return 'The question asks for a fraction, so a decimal does not score.';
+    if (incompleteFraction(a)) return 'The fraction was missing its top or bottom number.';
+    return null;
+  }
+  if (input.kind !== 'number') return null;
+  const expected = q.answer.split(';').map(ratFromString);
+  for (const [i, box] of input.boxes.entries()) {
+    const typed = a.boxes?.[i];
+    const v = parseBox(typed);
+    if (v === null || !eq(v, expected[i]) || boxFormOk(typed, box)) continue;
+    if (box.dp !== undefined) return `Rounded to ${box.dp === 1 ? 'one decimal place' : `${box.dp} decimal places`}, the answer needs exactly ${box.dp === 1 ? 'one digit' : `${box.dp} digits`} after the point (e.g. ${formatBoxValue(expected[i], box)}).`;
+    if (box.prefix === '£') return 'Money in pounds needs two digits for the pence (£4.40, not £4.4).';
+  }
+  return null;
+}
+
 /** Marks for one question: all or nothing, except self-marked explanations (the pupil's own mark). */
 export function markFor(q: AnyQuestion, a: AnswerInput | null | undefined): number {
   if (!a) return 0;
@@ -145,8 +199,13 @@ export function markFor(q: AnyQuestion, a: AnswerInput | null | undefined): numb
     return v !== null && eq(v, ratFromString(q.answer)) ? 1 : 0;
   }
   if (q.input.kind === 'self') return Math.max(0, Math.min(a.self ?? 0, q.marks));
+  if (a.accepted && q.input.kind === 'text' && a.text?.trim()) return q.marks;
   return itemCorrect(q, a) ? q.marks : 0;
 }
+
+/** A written explanation that has not been given its marks yet: left out of scores and statistics. */
+export const awaitingMark = (q: AnyQuestion, a: AnswerInput | null | undefined): boolean =>
+  isItem(q) && q.input.kind === 'self' && a?.self === undefined && Boolean(a?.text?.trim());
 
 export const maxMarks = (q: AnyQuestion): number => (isItem(q) ? q.marks : 1);
 
@@ -163,6 +222,21 @@ export function keyboardFor(q: AnyQuestion): 'numbers' | 'letters' | null {
 
 type NumberInput = Extract<InputSpec, { kind: 'number' }>;
 
+/** What a pupil types for a value in a box: "4.40" in a £ box, "50.0" when one decimal place is asked for. */
+export function typedValue(value: Rational, box: NumberBox): string {
+  const s = toDecimalString(value) ?? '';
+  if (box.dp !== undefined) return withPlaces(s, box.dp);
+  if (box.prefix === '£' && s.includes('.')) return withPlaces(s, 2);
+  return s;
+}
+
+/** A terminating decimal string padded with zeros to `places` decimal places ("3.5" → "3.50", "50" → "50.0"). */
+function withPlaces(s: string, places: number): string {
+  if (places === 0) return s;
+  const [int, frac = ''] = s.split('.');
+  return `${int}.${frac.padEnd(places, '0')}`;
+}
+
 /** A typed or expected box value as shown: "1,635", "−6", "£3.50", "1924" for years. */
 export function formatBoxValue(value: string | Rational, box: NumberBox): string {
   let text: string;
@@ -170,7 +244,8 @@ export function formatBoxValue(value: string | Rational, box: NumberBox): string
     text = box.plain ? value.replace('-', '−') : formatNumber(value);
   } else {
     let s = toDecimalString(value) ?? `${value.n}/${value.d}`;
-    if (box.prefix === '£') s = s.includes('.') ? s.replace(/\.(\d)$/, '.$10') : `${s}.00`; // £3.50, £44.00
+    if (box.prefix === '£') s = withPlaces(s, 2); // £3.50, £44.00
+    if (box.dp !== undefined) s = withPlaces(s, box.dp); // 50.0
     text = box.plain ? s.replace('-', '−') : formatNumber(s);
   }
   const suffix = !box.suffix ? '' : /^[°%]/.test(box.suffix) ? box.suffix : ` ${box.suffix}`;
@@ -180,7 +255,8 @@ export function formatBoxValue(value: string | Rational, box: NumberBox): string
 function formatNumbers(input: NumberInput, values: (string | Rational)[]): string {
   if (input.layout === 'time') {
     const [h, m] = values.map((v) => (typeof v === 'string' ? v : String(v.n)));
-    return `${h ?? ''}:${(m ?? '').padStart(2, '0')}`;
+    const two = (v: string | undefined) => (v ? v.padStart(2, '0') : '__');
+    return `${two(h)}:${two(m)}`;
   }
   const shown = input.boxes.map((b, i) => formatBoxValue(values[i] ?? '', b));
   if (input.layout === 'coord') return `(${shown.join(', ')})`;
@@ -273,6 +349,17 @@ export function typeKey(value: string, key: string, field: AnswerField): string 
   if (value === '0' && field === 'whole') return key;
   return value + key;
 }
+
+/** Applies one keypad key to an hours or minutes box: up to two digits, a leading zero kept ("08"). */
+export function typeTimeKey(value: string, key: string): string {
+  if (key === 'back') return value.slice(0, -1);
+  if (key === 'clear') return '';
+  if (!/^\d$/.test(key) || value.length >= 2) return value;
+  return value + key;
+}
+
+/** The hours box is complete: two digits, or one that can only be a single-digit hour (3-9). */
+export const hoursComplete = (hours: string): boolean => hours.length === 2 || /^[3-9]$/.test(hours);
 
 /** Applies one keypad key to a reasoning number box, honouring its decimal and negative flags. */
 export function typeBoxKey(value: string, key: string, box: NumberBox): string {

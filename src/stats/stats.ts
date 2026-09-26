@@ -1,5 +1,5 @@
 // Statistics and heat-map data, all derived from marked questions.
-import { maxMarks } from '../answer/answer';
+import { awaitingMark, maxMarks } from '../answer/answer';
 import { DAYS } from '../gen/blueprint';
 import { matchesFilter, PAPER_LENGTH, typeInfo, type MathsPaper, type PaperFilter } from '../gen/catalog';
 import { TOPICS, type Difficulty, type PaperKind, type TopicId, type TypeInfo } from '../gen/types';
@@ -65,7 +65,7 @@ export function collectRecords(attempts: Attempt[]): QuestionRecord[] {
   for (const a of attempts) {
     a.questions.forEach((q, index) => {
       const mark = a.marks[index];
-      if (mark === null) return;
+      if (mark === null || awaitingMark(q, a.answers[index])) return;
       const max = maxMarks(q);
       out.push({
         attemptId: a.id,
@@ -102,11 +102,14 @@ export function collectSessions(attempts: Attempt[]): SessionRecord[] {
       let total = 0;
       let timeMs = 0;
       while (i < a.questions.length && a.markedAt[i] === at) {
-        score += a.marks[i] ?? 0;
-        total += maxMarks(a.questions[i]);
+        if (!awaitingMark(a.questions[i], a.answers[i])) {
+          score += a.marks[i] ?? 0;
+          total += maxMarks(a.questions[i]);
+        }
         timeMs += a.timeMs[i];
         i++;
       }
+      if (total === 0) continue; // only written answers, none marked yet
       out.push({
         attemptId: a.id,
         paper: a.paper,
@@ -251,7 +254,17 @@ export interface Summary {
   streakDays: number;
 }
 
-export function summarize(attempts: Attempt[], records: QuestionRecord[], sessions: SessionRecord[], now: number): Summary {
+/**
+ * Totals for the report. `attempts`, `records` and `sessions` are the ones in the chosen time range;
+ * the streak counts back from today over `allSessions`, so a range never cuts it short.
+ */
+export function summarize(
+  attempts: Attempt[],
+  records: QuestionRecord[],
+  sessions: SessionRecord[],
+  now: number,
+  allSessions: SessionRecord[] = sessions,
+): Summary {
   const t = tally(records);
   const timed = records.filter((r) => r.timeMs > 0);
   return {
@@ -262,6 +275,6 @@ export function summarize(attempts: Attempt[], records: QuestionRecord[], sessio
     accuracy: accuracyOf(t),
     avgTimeMs: timed.length ? timed.reduce((s, r) => s + r.timeMs, 0) / timed.length : null,
     questionsLast7Days: records.filter((r) => r.at > now - 7 * DAY_MS).length,
-    streakDays: streakDays(sessions, now),
+    streakDays: streakDays(allSessions, now),
   };
 }

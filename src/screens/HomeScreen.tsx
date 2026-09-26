@@ -5,7 +5,7 @@ import { ENGLISH_TYPES } from '../english/catalog';
 import { englishHistory } from '../english/history';
 import { SPELLING_GROUPS } from '../english/types';
 import { DAYS } from '../gen/blueprint';
-import { ALL_TYPES, LEVEL_NAME, PAPER_NAME, typeInfo } from '../gen/catalog';
+import { ALL_TYPES, LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
 import { SUBJECT_OF, TOPICS, type LevelChoice, type PaperKind, type Subject } from '../gen/types';
 import {
   activeAttempt,
@@ -13,6 +13,7 @@ import {
   findAttempt,
   openSession,
   perDay,
+  replacedBy,
   scoreOf,
   type Attempt,
   type Profile,
@@ -21,6 +22,17 @@ import {
 } from '../store/model';
 import { byType, collectRecords, collectSessions, streakDays, tally, weakest } from '../stats/stats';
 import { sessionTitle } from '../ui/labels';
+import {
+  englishLevel,
+  gpsPractice,
+  LEVEL_KEY,
+  loadPref,
+  mathsPractice,
+  practiceFor,
+  savePref,
+  spellingPractice,
+  SUBJECT_KEY,
+} from './practiceRequests';
 import { formatDateTime } from '../ui/time';
 
 interface Props {
@@ -107,28 +119,6 @@ interface PracticeTopic {
   request: Omit<StartRequest, 'level'>;
 }
 
-const gpsPractice = (ids: string[], topic: string): Omit<StartRequest, 'level'> => ({
-  paper: 'gps',
-  mode: 'practice',
-  types: ids,
-  topic,
-});
-
-const spellingPractice = (group: string, label: string): Omit<StartRequest, 'level'> => ({
-  paper: 'spelling',
-  mode: 'practice',
-  groups: [group],
-  size: 10,
-  topic: `Spelling: ${label}`,
-});
-
-const mathsPractice = (paper: 'arithmetic' | 'reasoning', ids: string[], topic: string): Omit<StartRequest, 'level'> => ({
-  paper,
-  mode: 'practice',
-  types: ids,
-  topic,
-});
-
 type PracticeGroup = { heading: string; topics: PracticeTopic[] };
 
 /** Maths question types of one paper, one group per topic, each with an "(all)" choice. */
@@ -164,36 +154,6 @@ const PRACTICE: Record<Subject, PracticeGroup[]> = {
     },
   ],
 };
-
-/** A practice for one question type from the report (reading questions belong to their texts). */
-function practiceFor(typeId: string, label: string): Omit<StartRequest, 'level'> | null {
-  const paper = typeInfo(typeId)?.paper;
-  if (paper === 'arithmetic' || paper === 'reasoning') return mathsPractice(paper, [typeId], label);
-  if (paper === 'spelling') return spellingPractice(typeId.slice(2), label);
-  if (paper === 'gps') return gpsPractice([typeId], label);
-  return null;
-}
-
-// Small per-device preferences; the app works the same when storage is unavailable.
-function loadPref<T extends string>(key: string, fallback: T, allowed: readonly string[]): T {
-  try {
-    const v = localStorage.getItem(key);
-    return v !== null && allowed.includes(v) ? (v as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function savePref(key: string, value: string): void {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // not saved: fine
-  }
-}
-
-const SUBJECT_KEY = 'ks2-sats/subject';
-const LEVEL_KEY = 'ks2-sats/english-level';
 
 function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () => void }) {
   const session = openSession(attempt);
@@ -240,10 +200,7 @@ export function HomeScreen(props: Props) {
   const [confirm, setConfirm] = useState<StartRequest | null>(null);
   const [choosing, setChoosing] = useState(false);
   const [subject, setSubject] = useState<Subject>(() => loadPref<Subject>(SUBJECT_KEY, 'maths', ['maths', 'english']));
-  const [level, setLevel] = useState<LevelChoice>(() => {
-    const v = loadPref(LEVEL_KEY, 'mixed', ['1', '2', '3', 'mixed']);
-    return v === 'mixed' ? 'mixed' : (Number(v) as 1 | 2 | 3);
-  });
+  const [level, setLevel] = useState<LevelChoice>(englishLevel);
   const attempts = useMemo(() => data.attempts.filter((a) => a.profileId === profile.id), [data.attempts, profile.id]);
   const sessions = collectSessions(attempts);
   const [now] = useState(() => Date.now());
@@ -265,8 +222,7 @@ export function HomeScreen(props: Props) {
     reading: { have: READING_TEXTS.length, note: `${textsRead} of ${READING_TEXTS.length} texts read` },
   };
 
-  const busy = (request: StartRequest) =>
-    request.mode === 'practice' ? activePractice(data, profile.id) : activeAttempt(data, profile.id, request.paper);
+  const busy = (request: StartRequest) => replacedBy(data, profile.id, request.paper, request.mode);
   const start = (request: StartRequest) => (busy(request) ? setConfirm(request) : onStart(request));
   const practise = (request: Omit<StartRequest, 'level'>) => {
     setChoosing(false);
@@ -283,8 +239,7 @@ export function HomeScreen(props: Props) {
       return request ? [{ row, request }] : [];
     })
     .slice(0, 4);
-  const unfinished = activePractice(data, profile.id);
-  const practice = unfinished && SUBJECT_OF[unfinished.paper] === subject ? unfinished : undefined;
+  const practice = activePractice(data, profile.id, subject);
 
   const chooseSubject = (s: Subject) => {
     setSubject(s);

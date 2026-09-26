@@ -5,6 +5,7 @@ import type { Block, InputSpec, ItemQuestion } from '../gen/types';
 import { RichInline, RichText } from './RichText';
 import { canSpeak, dictate, sayWord } from './speech';
 import { gapPossible, spaceBefore, splitAround } from '../english/tokens';
+import { onBeforeSave } from '../useStore';
 
 type ItemOf<K extends InputSpec['kind']> = ItemQuestion & { input: Extract<InputSpec, { kind: K }> };
 
@@ -199,8 +200,9 @@ export function TextAnswer({ q, answer, onAnswer, mark }: EnglishAnswerProps<'te
 }
 
 /**
- * Explanation questions: the pupil writes an answer (or says it), then sees a model answer and
- * gives themselves marks. What they wrote is kept for a grown-up to look at.
+ * Explanation questions: the pupil writes an answer during the test, like the real one. After Finish
+ * it is marked against a model answer on the results screen, ideally with a grown-up. (Papers begun
+ * before that change showed the model during the test; those answers still show it here.)
  */
 export function SelfAnswer({ q, answer, onAnswer }: EnglishAnswerProps<'self'>) {
   const { model, points } = q.input;
@@ -213,7 +215,14 @@ export function SelfAnswer({ q, answer, onAnswer }: EnglishAnswerProps<'self'>) 
     pending.current.save();
     pending.current = null;
   };
-  useEffect(() => flush, []);
+  useEffect(() => {
+    // Typing saved before the app is hidden, too.
+    const off = onBeforeSave(flush);
+    return () => {
+      off();
+      flush();
+    };
+  }, []);
 
   const commit = (patch: Partial<AnswerInput>) => {
     if (!onAnswer) return;
@@ -243,23 +252,13 @@ export function SelfAnswer({ q, answer, onAnswer }: EnglishAnswerProps<'self'>) 
             maxLength={600}
             rows={4}
             autoCapitalize="sentences"
-            placeholder="Write your answer here, or say it out loud."
+            placeholder="Write your answer here."
             onChange={(e) => write(e.target.value)}
             onBlur={flush}
           />
-          <div className="row">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                flush();
-                commit({ checked: true });
-              }}
-            >
-              Check my answer
-            </button>
-            <span className="muted small grow">Then give yourself marks. After checking, the answer can't be changed.</span>
-          </div>
+          <p className="muted small">
+            Explain with evidence from the text, as in the real test. You will mark it after you finish, using a model answer.
+          </p>
         </>
       ) : (
         <>

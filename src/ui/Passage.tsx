@@ -23,8 +23,12 @@ export function Passage({ textId, paragraph, className }: Props) {
     const box = panel.current;
     if (!box || !paragraph) return;
     const el = box.querySelector<HTMLElement>(`[data-paragraph="${paragraph}"]`);
-    // Scroll the panel only, never the page.
-    if (el && box.scrollHeight > box.clientHeight) box.scrollTo({ top: Math.max(el.offsetTop - box.offsetTop - 12, 0) });
+    // Scroll the panel only, never the page. Measured on screen, so it is right whether or not the
+    // panel is the paragraph's offset parent (a sticky panel is).
+    if (el && box.scrollHeight > box.clientHeight) {
+      const offset = el.getBoundingClientRect().top - box.getBoundingClientRect().top;
+      box.scrollTo({ top: Math.max(box.scrollTop + offset - 12, 0) });
+    }
   }, [paragraph, textId]);
 
   if (!text) return <aside className={`passage ${className ?? ''}`}>This text is missing.</aside>;

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from '../gen/types';
 import { rat } from '../math/rational';
-import { formatInput, isCorrect, parseAnswer, typeKey, type AnswerInput } from './answer';
+import { formatInput, formNote, hoursComplete, incompleteFraction, isCorrect, parseAnswer, typeKey, typeTimeKey, type AnswerInput } from './answer';
 
 const a = (whole: string, num = '', den = ''): AnswerInput => ({ whole, num, den });
 const q = (answer: string, kind: Question['kind'] = 'frac'): Question => ({
@@ -44,6 +44,40 @@ describe('isCorrect', () => {
     expect(isCorrect(nineEighths, a('1.125'))).toBe(true);
     expect(isCorrect(q('56/1', 'int'), a('56.0'))).toBe(true);
     expect(isCorrect(q('56/1', 'int'), null)).toBe(false);
+  });
+});
+
+describe('the real test\'s forms', () => {
+  it('a mixed number needs a proper fraction part; an improper fraction on its own is fine', () => {
+    const sevenAndAnEighth = q('57/8');
+    expect(isCorrect(sevenAndAnEighth, a('7', '1', '8'))).toBe(true);
+    expect(isCorrect(sevenAndAnEighth, a('', '57', '8'))).toBe(true);
+    expect(isCorrect(sevenAndAnEighth, a('7.125'))).toBe(true);
+    expect(isCorrect(sevenAndAnEighth, a('6', '9', '8'))).toBe(false);
+    expect(isCorrect(q('5/2'), a('1', '6', '4'))).toBe(false);
+    expect(formNote(sevenAndAnEighth, a('6', '9', '8'))).toMatch(/less than 1/);
+    expect(formNote(sevenAndAnEighth, a('7', '1', '8'))).toBeNull();
+  });
+
+  it('spots a fraction with a missing top or bottom number', () => {
+    expect(incompleteFraction(a('', '3', ''))).toBe(true);
+    expect(incompleteFraction(a('', '', '4'))).toBe(true);
+    expect(incompleteFraction(a('2', '3', '4'))).toBe(false);
+    expect(incompleteFraction(a('3'))).toBe(false);
+  });
+});
+
+describe('typing times', () => {
+  it('keeps a leading zero and knows when the hours are complete', () => {
+    let h = '';
+    for (const k of ['0', '8']) h = typeTimeKey(h, k);
+    expect(h).toBe('08');
+    expect(typeTimeKey('08', '5')).toBe('08');
+    expect(hoursComplete('08')).toBe(true);
+    expect(hoursComplete('0')).toBe(false);
+    expect(hoursComplete('1')).toBe(false);
+    expect(hoursComplete('2')).toBe(false);
+    expect(hoursComplete('8')).toBe(true);
   });
 });
 

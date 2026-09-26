@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   emptyAnswer,
+  hoursComplete,
+  incompleteFraction,
   isBlank,
   keyboardFor,
   maxMarks,
   typeBoxKey,
   typeKey,
   typeLetter,
+  typeTimeKey,
   type AnswerField,
   type AnswerInput,
 } from '../answer/answer';
@@ -31,6 +34,7 @@ import { ReasoningAnswer, ReasoningBody, type Focus } from '../ui/ReasoningView'
 import { dictate, stopSpeaking } from '../ui/speech';
 import { sessionTitle } from '../ui/labels';
 import { formatDuration } from '../ui/time';
+import { onBeforeSave } from '../useStore';
 
 interface Props {
   attempt: Attempt;
@@ -46,6 +50,29 @@ const MAX_CHUNK_MS = 60_000; // ignore gaps such as the iPad going to sleep
 function firstFocus(q: AnyQuestion): Focus {
   if (!isItem(q)) return q.kind === 'frac' ? 'num' : 'whole';
   return q.input.kind === 'number' ? 0 : 'num';
+}
+
+/**
+ * Scrolls the page so the answer box being typed into is not hidden: in portrait the keypad (or
+ * letter keyboard) sits over the bottom of the page and a reading text over the top.
+ */
+function revealAnswerBox() {
+  const box = document.querySelector<HTMLElement>('.question-card .abox.focus');
+  if (!box) return;
+  const r = box.getBoundingClientRect();
+  const over = (selector: string) => {
+    const el = document.querySelector(selector)?.getBoundingClientRect();
+    return el && el.left < r.right && el.right > r.left ? el : null;
+  };
+  const pad = over('.test-body .keypad-wrap');
+  const passage = over('.test-body .passage-panel');
+  const margin = 16;
+  // A keypad below the question (portrait) is either stuck over the bottom of the screen or further down
+  // the page, so its top edge is always the limit.
+  const bottom = Math.min(pad ? pad.top : window.innerHeight, window.innerHeight) - margin;
+  const top = (passage && passage.top <= 1 ? passage.bottom : 0) + margin;
+  if (r.bottom > bottom) window.scrollBy({ top: Math.max(Math.min(r.bottom - bottom, r.top - top), 0) });
+  else if (r.top < top) window.scrollBy({ top: r.top - top });
 }
 
 type SpeakBlock = Extract<Block, { b: 'speak' }>;
@@ -103,7 +130,10 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
     const ticker = window.setInterval(() => setClock(Date.now()), 1000);
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', onVisibility);
+    // When the app is hidden, the time on this question is saved with everything else.
+    const off = onBeforeSave(flush);
     return () => {
+      off();
       flush();
       stopSpeaking();
       window.clearInterval(timer);
@@ -124,9 +154,12 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
     if (finished) onExit();
   }, [finished, onExit]);
 
-  // On a tall question the answer box can sit under the keypad: bring it into view.
+  // On a tall question the answer box can sit under the keypad: bring it into view (again on the
+  // next frame, once a sticky reading text has settled at the top).
   useEffect(() => {
-    document.querySelector('.question-card .abox.focus')?.scrollIntoView({ block: 'nearest' });
+    revealAnswerBox();
+    const frame = requestAnimationFrame(revealAnswerBox);
+    return () => cancelAnimationFrame(frame);
   }, [index, focus]);
 
   // In a long paper's scrolling question map, keep the current question in sight (sideways only,
@@ -157,17 +190,19 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
       const q = attempt.questions[i];
       if (isItem(q) && q.input.kind === 'number' && typeof focus === 'number') {
         const box = q.input.boxes[focus];
+        const time = q.input.layout === 'time';
+        const type = (value: string) => (time ? typeTimeKey(value, key) : typeBoxKey(value, key, box));
         const current = attempt.answers[i]?.boxes?.[focus] ?? '';
-        const typed = typeBoxKey(current, key, box);
+        const typed = type(current);
         edit((a) => {
           const prev: AnswerInput = a.answers[i] ?? emptyAnswer();
           const boxes = q.input.kind === 'number' ? q.input.boxes.map((_, k) => prev.boxes?.[k] ?? '') : [];
-          boxes[focus] = typeBoxKey(boxes[focus], key, box);
+          boxes[focus] = type(boxes[focus]);
           const next = { ...prev, boxes };
           return setAnswer(a, i, isBlank(next) ? null : next);
         });
-        // Hours typed in full: move on to the minutes.
-        if (q.input.layout === 'time' && focus === 0 && typed.length === 2 && /^\d$/.test(key)) setFocus(1);
+        // Hours typed in full ("08", "14", or a single 3-9): move on to the minutes.
+        if (time && focus === 0 && /^\d$/.test(key) && typed !== current && hoursComplete(typed)) setFocus(1);
         return;
       }
       if (typeof focus !== 'string') return;
@@ -212,6 +247,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const indexes = Array.from({ length: count }, (_, k) => session.from + k);
   const answered = indexes.filter((i) => !isBlank(attempt.answers[i])).length;
   const flagged = indexes.filter((i) => attempt.flagged[i]).length;
+  const halfFractions = indexes.filter((i) => incompleteFraction(attempt.answers[i])).map((i) => i + 1);
   const unmarked = indexes.filter((i) => {
     const q = attempt.questions[i];
     const a = attempt.answers[i];
@@ -228,8 +264,10 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const marks = maxMarks(question);
   const keyboard = keyboardFor(question);
   const passage = passageOf(question);
-  const box = item && question.input.kind === 'number' && typeof focus === 'number' ? question.input.boxes[focus] : undefined;
-  const allowDecimal = box ? Boolean(box.decimal) : focus === 'whole';
+  const numberInput = item && question.input.kind === 'number' ? question.input : undefined;
+  const box = numberInput && typeof focus === 'number' ? numberInput.boxes[focus] : undefined;
+  // Reasoning fraction questions ask for a fraction; Paper 1 accepts an exact decimal instead.
+  const allowDecimal = box ? Boolean(box.decimal) && numberInput?.layout !== 'time' : !item && focus === 'whole';
   const allowNegative = Boolean(box?.negative);
   const sessionMarks = indexes.reduce((s, i) => s + maxMarks(attempt.questions[i]), 0);
   const timing = TIMING[attempt.paper];
@@ -399,10 +437,16 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
               {answered < count && ` ${count - answered} blank ${count - answered === 1 ? 'answer scores' : 'answers score'} 0.`}
               {flagged > 0 && ` ${flagged} flagged.`}
             </p>
-            {unmarked > 0 && (
+            {halfFractions.length > 0 && (
               <p className="banner small">
-                {unmarked === 1 ? 'One written answer still needs' : `${unmarked} written answers still need`} your marks.
-                Tap “Check my answer” and choose a mark, or it scores 0.
+                {halfFractions.length === 1 ? `Question ${halfFractions[0]} has` : `Questions ${halfFractions.join(', ')} have`} a
+                fraction with only a top or only a bottom number, which scores 0. A whole number goes in the big box.
+              </p>
+            )}
+            {unmarked > 0 && (
+              <p className="small">
+                {unmarked === 1 ? 'Your written answer is' : `Your ${unmarked} written answers are`} marked after you finish:
+                compare with a model answer, with a grown-up if you can.
               </p>
             )}
             <div className="row">

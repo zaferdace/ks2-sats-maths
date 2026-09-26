@@ -39,12 +39,13 @@ export const LEVEL_ORDER: Level[] = ['good', 'warning', 'serious', 'critical', '
 /** Fewer answers than this and a cell is shown faded: too little evidence to judge. */
 export const LOW_DATA = 3;
 
+/** The band of a tally, judged on the whole percentage that is printed with it (11/13 shows 85%: Secure). */
 export function levelOf(t: Tally): Level {
   if (!t.total) return 'none';
-  const acc = t.correct / t.total;
-  if (acc >= 0.85) return 'good';
-  if (acc >= 0.7) return 'warning';
-  if (acc >= 0.5) return 'serious';
+  const pct = Math.round((t.correct / t.total) * 100);
+  if (pct >= 85) return 'good';
+  if (pct >= 70) return 'warning';
+  if (pct >= 50) return 'serious';
   return 'critical';
 }
 

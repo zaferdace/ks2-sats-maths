@@ -1,6 +1,8 @@
-import { useState, type ChangeEvent } from 'react';
+import { useState } from 'react';
 import type { StoreData } from '../store/model';
-import { backupFileName, mergeStores, parseStore } from '../store/persist';
+import { backupFileName, restoreBackup } from '../store/persist';
+import { restoredMessage, saveBackupFile } from '../ui/backup';
+import { RestoreBackup } from '../ui/RestoreBackup';
 import type { Update } from '../useStore';
 
 interface Props {
@@ -15,27 +17,13 @@ const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 
 export function SettingsScreen({ data, update, onBack }: Props) {
   const [note, setNote] = useState<Note>(null);
-  const [pasted, setPasted] = useState('');
+  const [copyBox, setCopyBox] = useState('');
   const json = () => JSON.stringify(data);
 
   const saveBackup = async () => {
-    const file = new File([json()], backupFileName(), { type: 'application/json' });
-    try {
-      if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'KS2 SATs backup' });
-        setNote({ kind: 'ok', text: 'Backup shared. Save it to Files or send it to yourself.' });
-        return;
-      }
-    } catch (e) {
-      if ((e as Error).name === 'AbortError') return;
-    }
-    const url = URL.createObjectURL(file);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = file.name;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 10_000);
-    setNote({ kind: 'ok', text: `Backup saved as ${file.name}.` });
+    const result = await saveBackupFile(json());
+    if (result === 'shared') setNote({ kind: 'ok', text: 'Backup shared. Save it to Files or send it to yourself.' });
+    if (result === 'downloaded') setNote({ kind: 'ok', text: `Backup saved as ${backupFileName()}.` });
   };
 
   const copyBackup = async () => {
@@ -43,39 +31,14 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       await navigator.clipboard.writeText(json());
       setNote({ kind: 'ok', text: 'Backup copied. Paste it into Notes or a message to keep it safe.' });
     } catch {
-      setPasted(json());
+      setCopyBox(json());
       setNote({ kind: 'error', text: 'Copying is blocked here. The backup is in the box below: select it and copy.' });
     }
   };
 
-  const restore = (text: string) => {
-    let incoming: StoreData | null = null;
-    try {
-      incoming = parseStore(JSON.parse(text));
-    } catch {
-      incoming = null;
-    }
-    if (!incoming) {
-      setNote({ kind: 'error', text: 'That does not look like a KS2 SATs backup.' });
-      return;
-    }
-    const restored = incoming;
-    update((d) => mergeStores(d, restored));
-    setNote({
-      kind: 'ok',
-      text: `Restored ${plural(restored.attempts.length, 'paper')} and ${plural(restored.profiles.length, 'profile')} (merged with what was here).`,
-    });
-    setPasted('');
-  };
-
-  const onFile = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    e.target.value = '';
-    if (file) restore(await file.text());
-  };
-
   const papers = data.attempts.length;
   const marked = data.attempts.reduce((s, a) => s + a.marks.filter((m) => m !== null).length, 0);
+  const unreadable = data.unreadable?.length ?? 0;
 
   return (
     <div className="page narrow">
@@ -94,6 +57,12 @@ export function SettingsScreen({ data, update, onBack }: Props) {
           Results live only on this iPad ({plural(papers, 'paper')}, {plural(marked, 'marked question')}). Save a backup now and then
           so nothing is lost if Safari data is cleared.
         </p>
+        {unreadable > 0 && (
+          <p className="muted small">
+            {plural(unreadable, 'item')} saved by a newer version of the app will be read after the next update. They are kept in
+            backups.
+          </p>
+        )}
         <div className="row">
           <button type="button" className="btn btn-primary" onClick={saveBackup}>
             Save backup file
@@ -102,29 +71,18 @@ export function SettingsScreen({ data, update, onBack }: Props) {
             Copy backup text
           </button>
         </div>
+        {copyBox && <textarea rows={4} readOnly value={copyBox} aria-label="Backup text to copy" onFocus={(e) => e.target.select()} />}
       </section>
 
       <section className="card">
         <h2>Restore</h2>
         <p className="muted">Restoring merges a backup into what is here; nothing is deleted.</p>
-        <div className="row">
-          <label className="btn file-btn">
-            Choose backup file
-            <input type="file" accept="application/json,.json" onChange={onFile} hidden />
-          </label>
-        </div>
-        <textarea
-          rows={4}
-          value={pasted}
-          placeholder="…or paste backup text here"
-          aria-label="Backup text"
-          onChange={(e) => setPasted(e.target.value)}
+        <RestoreBackup
+          onRestore={(incoming) => {
+            update((d) => restoreBackup(d, incoming));
+            return restoredMessage(incoming);
+          }}
         />
-        <div className="row">
-          <button type="button" className="btn" disabled={!pasted.trim()} onClick={() => restore(pasted)}>
-            Restore pasted text
-          </button>
-        </div>
       </section>
 
       <section className="card">

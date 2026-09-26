@@ -4,7 +4,7 @@ import type { PaperKind, Subject } from '../gen/types';
 import { LEVELS, levelOf, pctText } from '../report/levels';
 import { Legend, PositionHeat, SkillMap, WeeklyHeat } from '../report/Heatmaps';
 import { ScoreHistory } from '../report/ScoreHistory';
-import { findAttempt, type Profile, type StoreData } from '../store/model';
+import { findAttempt, replacedBy, type Profile, type StartRequest, type StoreData } from '../store/model';
 import {
   byTopic,
   byType,
@@ -18,12 +18,18 @@ import {
 } from '../stats/stats';
 import { sessionTitle } from '../ui/labels';
 import { formatSeconds } from '../ui/time';
+import { englishLevel, practiceFor } from './practiceRequests';
 
 interface Props {
   data: StoreData;
   profile: Profile;
   onBack: () => void;
+  /** Starts a topic practice for a weak question type. */
+  onPractise: (request: StartRequest) => void;
 }
+
+/** Types at this accuracy or above are secure and not suggested for practice. */
+const SECURE = 0.85;
 
 const RANGES = [
   { id: 'all', label: 'All time', days: null },
@@ -46,8 +52,9 @@ const PAPERS_OF: Record<Subject, PaperKind[]> = {
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-export function ReportScreen({ data, profile, onBack }: Props) {
+export function ReportScreen({ data, profile, onBack, onPractise }: Props) {
   const [range, setRange] = useState<RangeId>('all');
+  const [confirm, setConfirm] = useState<StartRequest | null>(null);
   const [subject, setSubject] = useState<'all' | Subject>('all');
   const [paperChoice, setPaperChoice] = useState<PaperKind | null>(null);
   const [now] = useState(() => Date.now());
@@ -58,17 +65,21 @@ export function ReportScreen({ data, profile, onBack }: Props) {
     const since = days === null ? -Infinity : now - days * DAY_MS;
     const attempts = data.attempts.filter((a) => a.profileId === profile.id && inPaper(filter)(a));
     const records = collectRecords(attempts).filter((r) => r.at >= since);
-    const sessions = collectSessions(attempts).filter((s) => s.at >= since);
+    const allSessions = collectSessions(attempts);
+    const sessions = allSessions.filter((s) => s.at >= since);
+    const inRange = attempts.filter((a) => a.completedAt !== null && a.completedAt >= since);
     const typeList = typesOf(filter);
     const types = byType(records, typeList);
     const papers = (['arithmetic', 'reasoning'] as MathsPaper[]).filter((k) => matchesFilter(filter, k));
     return {
       records,
       sessions,
-      summary: summarize(attempts, records, sessions, now),
+      summary: summarize(inRange, records, sessions, now, allSessions),
       topics: byTopic(records, typeList),
       types,
-      weak: weakest(types).slice(0, 5),
+      weak: weakest(types)
+        .filter((row) => row.tally.correct / row.tally.total < SECURE)
+        .slice(0, 5),
       weekly: weeklyGrid(records, now, typeList),
       positions: papers
         .map((k) => ({ paper: k, grid: positionGrid(records, k) }))
@@ -77,6 +88,9 @@ export function ReportScreen({ data, profile, onBack }: Props) {
   }, [data.attempts, profile.id, range, filter, now]);
 
   const { summary } = view;
+
+  const practise = (request: StartRequest) =>
+    replacedBy(data, profile.id, request.paper, request.mode) ? setConfirm(request) : onPractise(request);
 
   return (
     <div className="page">
@@ -218,11 +232,16 @@ export function ReportScreen({ data, profile, onBack }: Props) {
           <section className="card">
             <h2>Practise these next</h2>
             {view.weak.length === 0 ? (
-              <p className="muted">Not enough answers yet: each type needs at least 3.</p>
+              <p className="muted">
+                {view.types.some((r) => r.tally.total >= 3)
+                  ? 'Every question type with enough answers is secure (85% or more). Well done!'
+                  : 'Not enough answers yet: each type needs at least 3.'}
+              </p>
             ) : (
               <ol className="weak-list">
                 {view.weak.map((r) => {
                   const level = LEVELS[levelOf(r.tally)];
+                  const request = practiceFor(r.typeId, r.label);
                   return (
                     <li key={r.typeId}>
                       <span className="legend-swatch" style={{ background: level.color, color: level.ink }} aria-hidden="true">
@@ -232,6 +251,13 @@ export function ReportScreen({ data, profile, onBack }: Props) {
                       <span className="num">
                         {r.tally.correct}/{r.tally.total} · {pctText(r.tally)}
                       </span>
+                      {request ? (
+                        <button type="button" className="btn" onClick={() => practise({ ...request, level: englishLevel() })}>
+                          Practise
+                        </button>
+                      ) : (
+                        <span className="muted small">Practise with a reading text</span>
+                      )}
                     </li>
                   );
                 })}
@@ -285,6 +311,31 @@ export function ReportScreen({ data, profile, onBack }: Props) {
             </div>
           </section>
         </>
+      )}
+
+      {confirm && (
+        <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="practise-title">
+          <div className="modal">
+            <h2 id="practise-title">Start a new practice?</h2>
+            <p>The practice in progress will be put aside. Its answers are kept.</p>
+            <div className="row">
+              <button type="button" className="btn grow" onClick={() => setConfirm(null)}>
+                Keep it
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary grow"
+                onClick={() => {
+                  const request = confirm;
+                  setConfirm(null);
+                  onPractise(request);
+                }}
+              >
+                Start the new one
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

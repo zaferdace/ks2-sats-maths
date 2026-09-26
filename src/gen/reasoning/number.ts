@@ -74,7 +74,7 @@ export const rounding: ReasoningType = {
       const n = rat(scaled, 1000);
       if (rng.chance(0.5)) {
         const rounded = Math.floor(scaled / 100 + 0.5); // tenths
-        return draft([text(`Round **${fmt(n)}** to one decimal place.`)], number({ decimal: true }), nums(rat(rounded, 10)));
+        return draft([text(`Round **${fmt(n)}** to one decimal place.`)], number({ decimal: true, dp: 1 }), nums(rat(rounded, 10)));
       }
       const rounded = Math.floor(scaled / 1000 + 0.5);
       return draft([text(`Round **${fmt(n)}** to the nearest whole number.`)], number({ decimal: true }), nums(rounded));
