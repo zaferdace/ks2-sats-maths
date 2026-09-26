@@ -2798,4 +2798,9 @@ svg.flag-mark,
   height: 24px;
 }
 
+/* True/false statements at reading size (the global table cell size is for data tables). */
+.e-tf td {
+  font-size: 20px;
+}
+
 } /* legacy */
