@@ -86,7 +86,7 @@
       "id": "q5",
       "domain": "2a",
       "marks": 1,
-      "prompt": "Look at paragraph 4.\n…red light does not **spoil** your night vision as much as white light.\nWhich word is closest in meaning to **spoil**? Tick one.",
+      "prompt": "Look at paragraph 4.\n…does not **spoil** your night vision as much as white light.\nWhich word is closest in meaning to **spoil**? Tick one.",
       "paragraph": 4,
       "kind": "choice",
       "options": [
@@ -141,22 +141,39 @@
       "id": "q8",
       "domain": "2d",
       "marks": 1,
-      "prompt": "Look at paragraph 7.\nWhy do you think these two stars are called “the pointers”? Tick one.",
+      "prompt": "Look at paragraph 7.\nWhy do you think these two stars are called “the pointers”?",
       "paragraph": 7,
-      "kind": "choice",
-      "options": [
-        "because they are the sharpest stars in the sky",
-        "because they are shaped like arrows",
-        "because they point towards the saucepan’s handle",
-        "because they point the way to the North Star"
-      ],
-      "pick": 1,
-      "answer": [
-        3
+      "kind": "self",
+      "model": "Because if you follow a line through them, they point the way to the North Star.",
+      "points": [
+        "explaining that they point to (show the way to) the North Star.",
+        "Do not accept answers such as “they are pointed” or “they are shaped like arrows”."
       ]
     },
     {
       "id": "q9",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\nWhat is another name for the North Star?",
+      "paragraph": 8,
+      "kind": "text",
+      "accept": [
+        "Polaris"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\nFind and copy **one** word that shows the other stars move round in a circle.",
+      "paragraph": 8,
+      "kind": "text",
+      "accept": [
+        "wheel"
+      ]
+    },
+    {
+      "id": "q11",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at paragraph 8.\nWhy has the North Star been so useful to sailors and travellers? Explain, using evidence from the text.",
@@ -169,24 +186,23 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2f",
-      "marks": 1,
-      "prompt": "Some paragraphs begin with the words **First**, **Next**, **Then** and **Finally**.\nWhy has the writer used these words? Tick one.",
-      "kind": "choice",
-      "options": [
-        "to show which stars are the brightest",
-        "to make the guide sound like a poem",
-        "to show the order in which you should do things",
-        "to tell the reader how long each step takes"
-      ],
-      "pick": 1,
-      "answer": [
-        2
+      "marks": 2,
+      "prompt": "This text is a guide that gives instructions.\nGive **two** ways the writer makes the instructions easy to follow.",
+      "kind": "self",
+      "model": "The writer uses headings, such as “Getting ready” and “Finding the North Star”, to split the guide into sections. The steps also begin with words that show their order, such as “First”, “Next”, “Then” and “Finally”.",
+      "points": [
+        "each different way that is backed up with an example from the text (1 mark each), such as:",
+        "headings that split the guide into sections, e.g. “Getting ready”; “Finding the North Star”",
+        "words that show the order of the steps, e.g. “First”, “Next”, “Then”, “Finally”",
+        "commands that say exactly what to do, e.g. “choose a clear night”; “Wrap up warmly”; “look for the Plough”",
+        "reasons for the steps, e.g. red light “does not spoil your night vision as much as white light”",
+        "describing what to look for, e.g. the Plough makes “the shape of a saucepan with a long, bent handle”"
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these steps from 1 to 5 to show the order in which the guide tells you to do them.",
@@ -207,7 +223,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",

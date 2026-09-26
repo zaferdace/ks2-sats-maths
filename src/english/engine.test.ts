@@ -223,6 +223,18 @@ describe('reading', () => {
     expect([...new Set(three.map((q) => q.difficulty))]).toEqual([1, 2, 3]);
   });
 
+  it('makes a three-text paper about as long as the real 50-mark test, at every level', () => {
+    const wrong: string[] = [];
+    for (const choice of ['mixed', 1, 2, 3] as const) {
+      for (let k = 0; k < 12; k++) {
+        const code = `MARKS${k}${choice}`;
+        const marks = buildReading(code, choice, empty, 3).reduce((s, q) => s + q.marks, 0);
+        if (marks < 47 || marks > 52) wrong.push(`${code}: ${marks} marks`);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+
   it('picks a text not read before', () => {
     const level1 = READING_TEXTS.filter((t) => t.level === 1);
     if (level1.length < 2) return;

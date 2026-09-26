@@ -73,6 +73,22 @@
     },
     {
       "id": "q4",
+      "domain": "2b",
+      "marks": 2,
+      "prompt": "Look at paragraph 5.\nDescribe **two** ways that a tadpole changes as it grows into a froglet.",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "First, the tadpole grows back legs and then front legs. Then its tail slowly disappears, and by the summer it has turned into a froglet that is ready to leave the water.",
+      "points": [
+        "each different change (1 mark each), such as:",
+        "it grows back legs",
+        "it grows front legs",
+        "its tail slowly disappears",
+        "it becomes ready to leave the water"
+      ]
+    },
+    {
+      "id": "q5",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 6.\nFind and copy one word that means waits in hiding, ready to attack.",
@@ -83,7 +99,27 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nWhere does the great diving beetle trap a bubble of air?",
+      "paragraph": 6,
+      "kind": "text",
+      "accept": [
+        "under its wing cases",
+        "under its wing case",
+        "under the wing cases",
+        "under wing cases",
+        "beneath its wing cases",
+        "its wing cases",
+        "wing cases",
+        "under its wings",
+        "under its wing",
+        "under the wings"
+      ]
+    },
+    {
+      "id": "q7",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at paragraph 6.\nThe writer says that the bubble of air “works like a diver’s air tank”.\nWhat does this comparison help the reader to understand? Tick one.",
@@ -101,7 +137,7 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q8",
       "domain": "2b",
       "marks": 1,
       "prompt": "Using information from the text, decide whether each statement is true or false.",
@@ -120,25 +156,20 @@
       ]
     },
     {
-      "id": "q7",
+      "id": "q9",
       "domain": "2d",
       "marks": 1,
-      "prompt": "Look at paragraph 7.\nWhy do you think the nymph climbs out of the water before the adult dragonfly comes out of its skin? Tick one.",
+      "prompt": "Look at paragraph 7.\nWhy do you think the nymph climbs out of the water before the adult dragonfly comes out of its skin?",
       "paragraph": 7,
-      "kind": "choice",
-      "options": [
-        "so that it can catch more creatures",
-        "so that the adult’s new wings can dry before it flies away",
-        "because the water has become too cold",
-        "so that it can lay its eggs"
-      ],
-      "pick": 1,
-      "answer": [
-        1
+      "kind": "self",
+      "model": "So that the adult dragonfly’s new wings can dry and harden in the air. They could not dry underwater, and the dragonfly needs dry, hard wings to fly away.",
+      "points": [
+        "explaining that the new wings need to dry (and harden) before the dragonfly can fly, which cannot happen underwater.",
+        "Do not accept answers such as “to catch more creatures” or “to lay its eggs”."
       ]
     },
     {
-      "id": "q8",
+      "id": "q10",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these events from 1 to 5 to show the order in which they happen in a dragonfly’s life.",
@@ -159,7 +190,7 @@
       ]
     },
     {
-      "id": "q9",
+      "id": "q11",
       "domain": "2d",
       "marks": 2,
       "prompt": "Why do you think a pond can be a dangerous place for small creatures? Explain, using evidence from the text.",
@@ -171,7 +202,7 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 9.\nWhy do you think you should pour a little pond water into the tray before you tip your catch into it? Tick one.",
@@ -189,7 +220,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why has the writer used the headings **On the surface** and **Under the water**? Tick one.",
@@ -206,7 +237,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",

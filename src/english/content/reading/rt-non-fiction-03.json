@@ -45,18 +45,13 @@
       "id": "q3",
       "domain": "2d",
       "marks": 1,
-      "prompt": "Look at paragraph 2.\nWhy do you think the builders “downed tools straight away”? Tick one.",
+      "prompt": "Look at paragraph 2.\nWhy do you think the builders “downed tools straight away”?",
       "paragraph": 2,
-      "kind": "choice",
-      "options": [
-        "They were frightened that the box might explode.",
-        "They realised the box might be important to the school.",
-        "Their spade had broken.",
-        "It was time for their lunch break."
-      ],
-      "pick": 1,
-      "answer": [
-        1
+      "kind": "self",
+      "model": "They realised that the box was a time capsule that might be important to the school, so they stopped digging in case they damaged it, and fetched the head teacher.",
+      "points": [
+        "explaining that they realised the box was important or special (a time capsule), so they did not want to damage it or open it themselves, e.g. because it said “DO NOT OPEN UNTIL 2001” on the lid.",
+        "Do not accept answers such as “it was their lunch break” or “their spade broke”."
       ]
     },
     {
@@ -117,6 +112,18 @@
       "id": "q7",
       "domain": "2b",
       "marks": 1,
+      "prompt": "Look at paragraph 5.\nName **two** things that were inside the time capsule.",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "There were letters written by the pupils and a class photograph.",
+      "points": [
+        "any two of: letters written by the pupils; a class photograph; a school tie; a cassette tape of the school choir; a newspaper from the day it was buried."
+      ]
+    },
+    {
+      "id": "q8",
+      "domain": "2b",
+      "marks": 1,
       "prompt": "Using information from the text, decide whether each statement is true or false.",
       "kind": "tf",
       "statements": [
@@ -133,7 +140,7 @@
       ]
     },
     {
-      "id": "q8",
+      "id": "q9",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at paragraph 6.\nHow do you think Margaret Price felt as she read her letter aloud? Give two different feelings, using evidence from the text to support each one.",
@@ -146,25 +153,33 @@
       ]
     },
     {
-      "id": "q9",
-      "domain": "2d",
+      "id": "q10",
+      "domain": "2a",
       "marks": 1,
-      "prompt": "Look at paragraph 8.\nWhy do you think the spot where the new capsule is buried will be marked on a map, with copies kept in three places? Tick one.",
-      "paragraph": 8,
-      "kind": "choice",
-      "options": [
-        "so that visitors can dig it up whenever they like",
-        "because the builders asked for a map",
-        "so that new pupils can find their way around the school",
-        "so that it is not forgotten like the first one"
-      ],
-      "pick": 1,
-      "answer": [
-        3
+      "prompt": "Look at paragraph 7.\nFind and copy **one** word that shows the school’s pupils were very interested in the discovery.",
+      "paragraph": 7,
+      "kind": "text",
+      "accept": [
+        "fascinated"
       ]
     },
     {
-      "id": "q10",
+      "id": "q11",
+      "domain": "2h",
+      "marks": 3,
+      "prompt": "Look at paragraphs 3 and 8.\nThe first time capsule was forgotten for many years. How will the school make sure that the new one is not forgotten?\nExplain fully, using evidence from both paragraphs.",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "The first capsule was lost because the only thing that marked the spot was a tree, and “the tree that marked the spot was cut down” when the school hall was built. This time, “the exact spot will be marked on a map”. Also, the teacher who organised the first capsule retired, so nobody knew where it was. This time, copies of the map will be kept “at the school, the town museum and the local library”, so even if one copy is lost, the others will still be there.",
+      "points": [
+        "3 marks: two ways the new plan is different, with at least one linked to why the first capsule was lost.",
+        "2 marks: two ways the school will make sure it is not forgotten, or one way linked to why the first capsule was lost.",
+        "1 mark: one way, e.g. the spot will be marked on a map.",
+        "Points include: the exact spot will be marked on a map (the first spot was marked only by a tree, which was cut down); copies of the map will be kept in three places, the school, the town museum and the local library (the teacher who knew about the first capsule retired, and everyone forgot about it)."
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these events from 1 to 5 to show the order in which they happened.",
@@ -185,7 +200,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why does the report begin with a paragraph that sums up the whole story? Tick one.",
@@ -203,7 +218,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the report? Tick one.",

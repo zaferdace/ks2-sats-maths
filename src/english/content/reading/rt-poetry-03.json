@@ -65,22 +65,31 @@
     },
     {
       "id": "q4",
-      "domain": "2d",
+      "domain": "2g",
       "marks": 1,
-      "prompt": "Look at the third stanza.\n‘I keep their secrets. I never tell.’\nWhat does this suggest about the tree? Tick **one**.",
+      "prompt": "Look at the third stanza.\n‘In summer, I am an umbrella of shade.’\nWhat does this tell you about the tree in summer?",
       "paragraph": 3,
-      "kind": "choice",
-      "options": [
-        "It can be trusted.",
-        "It cannot hear the children.",
-        "It does not like the children.",
-        "It forgets things easily."
-      ],
-      "pick": 1,
-      "answer": [0]
+      "kind": "self",
+      "model": "Its leafy branches spread out over the playground and keep the children out of the hot sun, just as an umbrella shelters you.",
+      "points": [
+        "explaining that the tree’s branches or leaves spread out and give the children shade, or protect them from the sun."
+      ]
     },
     {
       "id": "q5",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at the third stanza.\n‘I keep their secrets.\nI never tell.’\nWhat does this suggest about the tree?",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "It suggests that the tree can be trusted: it is a loyal friend to the children.",
+      "points": [
+        "a quality that fits, e.g. it can be trusted; it is loyal; it is a good friend to the children; it is kind.",
+        "Do not accept answers that take the words literally, e.g. “trees cannot talk”."
+      ]
+    },
+    {
+      "id": "q6",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at the fourth stanza.\nThe conkers are ‘glossy’.\nWhich word is closest in meaning to **glossy**? Tick **one**.",
@@ -91,7 +100,7 @@
       "answer": [1]
     },
     {
-      "id": "q6",
+      "id": "q7",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at the fourth stanza.\nFind and copy **one** word that shows the children move quickly and untidily to get the conkers.",
@@ -100,7 +109,16 @@
       "accept": ["scramble"]
     },
     {
-      "id": "q7",
+      "id": "q8",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\nFind and copy **one** word that shows the tree felt cold.",
+      "paragraph": 5,
+      "kind": "text",
+      "accept": ["shiver"]
+    },
+    {
+      "id": "q9",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
@@ -114,10 +132,11 @@
       "answer": [false, true, false, true]
     },
     {
-      "id": "q8",
+      "id": "q10",
       "domain": "2h",
       "marks": 1,
       "prompt": "Compare the fourth stanza with the fifth stanza.\nHow is winter different from autumn for the tree? Tick **one**.",
+      "paragraph": 4,
       "kind": "choice",
       "options": [
         "In autumn the tree feels lonely, but in winter it feels happy.",
@@ -129,7 +148,7 @@
       "answer": [2]
     },
     {
-      "id": "q9",
+      "id": "q11",
       "domain": "2f",
       "marks": 1,
       "prompt": "How is the poem organised? Tick **one**.",
@@ -144,7 +163,7 @@
       "answer": [1]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2d",
       "marks": 2,
       "prompt": "How does the tree feel about the children?\nExplain, using evidence from the poem.",
@@ -156,7 +175,20 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at the last stanza.\nWhy do you think the tree says, ‘But I am patient’?\nExplain, using evidence from the poem.",
+      "paragraph": 6,
+      "kind": "self",
+      "model": "The tree is patient because it knows that the children always come back. It has ‘waited through a hundred winters’, and ‘every spring the children run back to me’, so it does not mind waiting through the cold, lonely winter.",
+      "points": [
+        "explaining that the tree knows the children will come back in spring (1 mark), e.g. ‘every spring the children run back to me’.",
+        "explaining that the tree is used to waiting because it is so old (1 mark), e.g. it has ‘waited through a hundred winters’."
+      ]
+    },
+    {
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",
@@ -165,7 +197,7 @@
         "A tree is cut down to make room for a new playground.",
         "Children plant a conker and watch it grow into a tree.",
         "A tree describes one exciting day when the children found its conkers.",
-        "An old tree describes how it has watched over the children through the seasons for a hundred years."
+        "An old tree describes how it has watched over the children through the seasons for many years."
       ],
       "pick": 1,
       "answer": [3]

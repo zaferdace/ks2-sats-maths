@@ -16,6 +16,17 @@
   "questions": [
     {
       "id": "q1",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nFind and copy **one** word that means melted.",
+      "paragraph": 1,
+      "kind": "text",
+      "accept": [
+        "molten"
+      ]
+    },
+    {
+      "id": "q2",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraphs 2 and 3.\nUsing information from these paragraphs, decide whether each statement is true or false.",
@@ -35,7 +46,7 @@
       ]
     },
     {
-      "id": "q2",
+      "id": "q3",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nFind and copy one word that means extremely large.",
@@ -46,7 +57,7 @@
       ]
     },
     {
-      "id": "q3",
+      "id": "q4",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nUsing the information in this paragraph, where would you be least likely to find a volcano? Tick one.",
@@ -64,7 +75,7 @@
       ]
     },
     {
-      "id": "q4",
+      "id": "q5",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at paragraph 5.\nWhy does the writer compare the gas bubbles in magma to the bubbles in a bottle of fizzy drink? Tick one.",
@@ -82,7 +93,7 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q6",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraph 5.\nWhat is the opening that magma bursts out through called?",
@@ -96,7 +107,7 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q7",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 6.\nWhat does the eruption in Iceland in 2010 show about volcanoes? Tick one.",
@@ -114,25 +125,33 @@
       ]
     },
     {
-      "id": "q7",
-      "domain": "2b",
-      "marks": 1,
-      "prompt": "According to paragraph 7, what is an extinct volcano? Tick one.",
-      "paragraph": 7,
-      "kind": "choice",
-      "options": [
-        "a volcano that has erupted recently",
-        "a volcano that is not expected ever to erupt again",
-        "a volcano that has been quiet for a long time but could erupt again",
-        "a volcano that is hidden under the sea"
-      ],
-      "pick": 1,
-      "answer": [
-        1
+      "id": "q8",
+      "domain": "2h",
+      "marks": 2,
+      "prompt": "Look at paragraph 6.\nExplain how an eruption of runny magma is different from an eruption of thick, sticky magma.",
+      "paragraph": 6,
+      "kind": "self",
+      "model": "When magma is runny, the gas escapes from it easily, so the lava pours gently out of the volcano like a glowing river. When magma is thick and sticky, the gas becomes trapped, so the pressure builds up until the volcano explodes violently and blasts clouds of ash high into the air.",
+      "points": [
+        "what happens with runny magma (1 mark), e.g. the gas escapes easily; the lava pours gently out “like a glowing river”.",
+        "what happens with thick, sticky magma (1 mark), e.g. the gas is trapped and the pressure builds up; the volcano “explodes violently”, blasting clouds of ash high into the air."
       ]
     },
     {
-      "id": "q8",
+      "id": "q9",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 7.\nWhich building in Scotland stands on the remains of an extinct volcano?",
+      "paragraph": 7,
+      "kind": "text",
+      "accept": [
+        "Edinburgh Castle",
+        "the castle in Edinburgh",
+        "Edinburgh's castle"
+      ]
+    },
+    {
+      "id": "q10",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 8.\n…check whether the ground is **swelling** as magma pushes up beneath it…\nWhich word is closest in meaning to **swelling**? Tick one.",
@@ -150,7 +169,7 @@
       ]
     },
     {
-      "id": "q9",
+      "id": "q11",
       "domain": "2d",
       "marks": 3,
       "prompt": "Look at paragraph 8.\nWhy do you think so many people live close to volcanoes, even though volcanoes can be dangerous? Explain, using evidence from the text.",
@@ -164,7 +183,7 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these stages from 1 to 5 to show the order in which they happen.",
@@ -185,7 +204,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why does the writer explain what the inside of the Earth is like (paragraphs 2 and 3) before describing how a volcano erupts? Tick one.",
@@ -203,7 +222,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",

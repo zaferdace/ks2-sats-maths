@@ -26,44 +26,6 @@
     },
     {
       "id": "q2",
-      "domain": "2b",
-      "marks": 1,
-      "kind": "text",
-      "paragraph": 2,
-      "prompt": "Look at paragraph 2.\nWhat did Maya use to make the line down the middle of the carpet?",
-      "accept": [
-        "blue tape",
-        "tape",
-        "the tape",
-        "the blue tape",
-        "some tape",
-        "some blue tape",
-        "a roll of tape",
-        "roll of tape",
-        "a roll of blue tape",
-        "roll of blue tape",
-        "sticky tape",
-        "blue sticky tape"
-      ]
-    },
-    {
-      "id": "q3",
-      "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 3,
-      "prompt": "Look at paragraph 3.\nWhy did Mum and Zara's dad exchange worried looks over dinner?\nTick one.",
-      "options": [
-        "They were worried that a storm was coming.",
-        "They could tell that the girls were not getting on.",
-        "They did not like the food they were eating.",
-        "They thought that the girls were going to be late for school."
-      ],
-      "pick": 1,
-      "answer": [1]
-    },
-    {
-      "id": "q4",
       "domain": "2g",
       "marks": 1,
       "kind": "choice",
@@ -79,7 +41,7 @@
       "answer": [1]
     },
     {
-      "id": "q5",
+      "id": "q3",
       "domain": "2a",
       "marks": 1,
       "kind": "choice",
@@ -90,7 +52,7 @@
       "answer": [0]
     },
     {
-      "id": "q6",
+      "id": "q4",
       "domain": "2d",
       "marks": 1,
       "kind": "choice",
@@ -106,7 +68,7 @@
       "answer": [0]
     },
     {
-      "id": "q7",
+      "id": "q5",
       "domain": "2b",
       "marks": 1,
       "kind": "choice",
@@ -117,7 +79,25 @@
       "answer": [1]
     },
     {
-      "id": "q8",
+      "id": "q6",
+      "domain": "2b",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nWhat did Zara draw the dragon on?",
+      "accept": [
+        "the back of an old envelope",
+        "on the back of an old envelope",
+        "an old envelope",
+        "on an old envelope",
+        "an envelope",
+        "on an envelope",
+        "the back of an envelope",
+        "on the back of an envelope"
+      ]
+    },
+    {
+      "id": "q7",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -131,10 +111,11 @@
       "answer": [true, true, false, false]
     },
     {
-      "id": "q9",
+      "id": "q8",
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 5,
       "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
       "options": [
         "Maya crosses the line to comfort Zara, and the two girls begin to make friends.",
@@ -146,7 +127,7 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q9",
       "domain": "2f",
       "marks": 1,
       "kind": "choice",
@@ -159,6 +140,22 @@
       ],
       "pick": 1,
       "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "Give **two** impressions of Zara.\nUse evidence from the text to support your answer.",
+      "model": "Zara is creative, because she 'drew on anything she could find' and drew Maya's dragon story on the back of an old envelope. She is also frightened of storms, because she says 'I don't like storms' in 'a small, shaky voice' and sits 'clutching her pillow'.",
+      "points": [
+        "each different impression that is backed up with evidence from the text (1 mark each), such as:",
+        "loud or lively: 'she was loud' and 'She sang while she brushed her hair'",
+        "messy: she 'left her socks in little heaps on the floor' and covered every surface with pencil shavings",
+        "artistic or creative: she 'drew on anything she could find' and drew the dragon story",
+        "scared of storms: 'I don't like storms,' she said in 'a small, shaky voice'",
+        "homesick: 'I miss my old house'"
+      ]
     },
     {
       "id": "q11",
@@ -175,6 +172,18 @@
     },
     {
       "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "At the end of the story, the girls make 'their very first book together'.\nWhat do you think the girls will do next?\nUse evidence from the text to support your prediction.",
+      "model": "I think they will make more books together, with Maya writing the stories and Zara drawing the pictures. The words 'their very first book' suggest that there will be more, and they worked well together when Maya 'made up a story about a dragon' and Zara 'drew it'. Now that the tape has gone, I think they will keep getting on well and share their room happily.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. they will make more books together; Maya will write the stories and Zara will draw the pictures; they will stay friends and share the room happily.",
+        "evidence from the text that supports the prediction (1 mark), e.g. 'their very first book' suggests there will be more; they enjoyed making the dragon story together and were 'giggling so much that they could hardly breathe'; Maya peeled the blue tape off the carpet."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

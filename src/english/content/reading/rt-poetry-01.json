@@ -55,6 +55,28 @@
     },
     {
       "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at the second stanza.\nWhere was Ruby when she let out the string?",
+      "paragraph": 2,
+      "kind": "text",
+      "accept": [
+        "at the top of the hill",
+        "the top of the hill",
+        "on top of the hill",
+        "on the top of the hill",
+        "at the top of a hill",
+        "the top of a hill",
+        "on top of a hill",
+        "on the hill",
+        "the hill",
+        "on a hill",
+        "up the hill",
+        "up a hill"
+      ]
+    },
+    {
+      "id": "q5",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at the third stanza.\nThe kite became ‘a speck in the blue’.\nWhat is a **speck**? Tick **one**.",
@@ -65,7 +87,7 @@
       "answer": [2]
     },
     {
-      "id": "q5",
+      "id": "q6",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at the third stanza.\n‘But the kite didn’t listen.’\nWhat do these words make the kite sound like? Tick **one**.",
@@ -81,10 +103,28 @@
       "answer": [0]
     },
     {
-      "id": "q6",
+      "id": "q7",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "Look at stanzas 3 and 4.\nHow can you tell that Ruby really wanted her kite back?\nGive **two** pieces of evidence from the poem.",
+      "paragraph": 3,
+      "kind": "self",
+      "model": "Ruby shouted ‘Come back!’ and raced down the hill after the kite. She kept going through the market and down the lane, and she even ‘splashed through the puddles’, until she ‘found it at last’.",
+      "points": [
+        "each different piece of evidence (1 mark each), such as:",
+        "she cried ‘Come back!’",
+        "she ‘raced down the hill’ after it",
+        "she ran through the market and down the lane",
+        "she ‘splashed through the puddles’",
+        "she did not give up ‘Till she found it at last’"
+      ]
+    },
+    {
+      "id": "q8",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at stanzas 3 to 5.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
+      "paragraph": 3,
       "kind": "tf",
       "statements": [
         "The string snapped while the kite was flying.",
@@ -95,7 +135,7 @@
       "answer": [true, false, true, false]
     },
     {
-      "id": "q7",
+      "id": "q9",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at the fifth stanza.\nHow does Ruby feel when she sits on the bench? Tick **one**.",
@@ -106,7 +146,19 @@
       "answer": [2]
     },
     {
-      "id": "q8",
+      "id": "q10",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at the fifth stanza.\n‘Then the wind gave the branches a playful shove’\nWhat does the word **playful** suggest about the wind?",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "It suggests that the wind was being friendly and fun, as if it were playing a game, and that it helped Ruby by pushing the kite down.",
+      "points": [
+        "explaining that the wind was friendly, fun, cheeky or helpful (not angry or dangerous), as if it were playing a game."
+      ]
+    },
+    {
+      "id": "q11",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at the last stanza.\nHow does Ruby feel about her kite at the end of the poem?\nExplain, using evidence from the poem.",
@@ -119,7 +171,7 @@
       ]
     },
     {
-      "id": "q9",
+      "id": "q12",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at the last stanza.\nHow is it different from the other stanzas? Tick **one**.",
@@ -135,10 +187,11 @@
       "answer": [1]
     },
     {
-      "id": "q10",
+      "id": "q13",
       "domain": "2h",
       "marks": 1,
       "prompt": "Compare the second stanza with the fourth stanza.\nHow does the mood change? Tick **one**.",
+      "paragraph": 2,
       "kind": "choice",
       "options": [
         "It changes from sad to cheerful.",
@@ -150,7 +203,7 @@
       "answer": [3]
     },
     {
-      "id": "q11",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

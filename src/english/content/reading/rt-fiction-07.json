@@ -30,12 +30,18 @@
       "id": "q2",
       "domain": "2b",
       "marks": 1,
-      "kind": "choice",
+      "kind": "text",
       "paragraph": 2,
-      "prompt": "Look at paragraph 2.\nWhat was Dad making when the doorbell first rang?\nTick one.",
-      "options": ["pancakes", "a cup of tea", "sandwiches", "a birthday cake"],
-      "pick": 1,
-      "answer": [0]
+      "prompt": "Look at paragraph 2.\nWhat was Dad making when the doorbell first rang?",
+      "accept": [
+        "pancakes",
+        "pancake",
+        "some pancakes",
+        "making pancakes",
+        "he was making pancakes",
+        "Dad was making pancakes",
+        "pancakes for breakfast"
+      ]
     },
     {
       "id": "q3",
@@ -49,24 +55,9 @@
     {
       "id": "q4",
       "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 3,
-      "prompt": "Look at paragraph 3.\nWhy was the parrot 'looking extremely pleased with himself'?\nTick one.",
-      "options": [
-        "He had just eaten Omar's homework.",
-        "He had been fooling everyone by making the doorbell sound.",
-        "Gran had just arrived to take him home.",
-        "Dad had given him a pancake."
-      ],
-      "pick": 1,
-      "answer": [1]
-    },
-    {
-      "id": "q5",
-      "domain": "2d",
       "marks": 2,
       "kind": "self",
+      "paragraph": 2,
       "prompt": "In paragraphs 2 to 4, Dad's feelings change.\nExplain how they change, using evidence from the text.",
       "model": "At first, Dad is annoyed because he keeps answering the door and nobody is there. When the bell rings again, he groans, 'Not again!' When he finds out that the parrot has been making the noise, he is amazed and then thinks it is funny. He 'stared at the cage with his mouth wide open' and then 'laughed so hard that he had to sit down'.",
       "points": [
@@ -75,7 +66,7 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q5",
       "domain": "2g",
       "marks": 1,
       "kind": "choice",
@@ -91,7 +82,7 @@
       "answer": [0]
     },
     {
-      "id": "q7",
+      "id": "q6",
       "domain": "2b",
       "marks": 1,
       "kind": "text",
@@ -110,26 +101,23 @@
       ]
     },
     {
-      "id": "q8",
+      "id": "q7",
       "domain": "2d",
       "marks": 1,
-      "kind": "choice",
-      "paragraph": 7,
-      "prompt": "Look at paragraph 7.\nWhy did the whole family hold their breath?\nTick one.",
-      "options": [
-        "They hoped the parrot would say 'Welcome home, Gran!'",
-        "They were scared that the parrot would bite Gran.",
-        "Gran had told them to keep very quiet.",
-        "They were trying hard not to sneeze."
-      ],
-      "pick": 1,
-      "answer": [0]
+      "kind": "self",
+      "paragraph": 9,
+      "prompt": "Look at paragraph 9.\n'The parrot had learned it after all, even if his timing was terrible.'\nWhy was the parrot's timing terrible?",
+      "model": "He said 'Welcome home, Gran!' just as Gran was leaving with him, instead of when she arrived. When she arrived, he said 'Not again!'",
+      "points": [
+        "explaining that the parrot said 'Welcome home, Gran!' when Gran was leaving (not when she arrived), or that he said 'Not again!' when she arrived."
+      ]
     },
     {
-      "id": "q9",
+      "id": "q8",
       "domain": "2f",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 2,
       "prompt": "The words 'Not again!' appear in paragraphs 2, 4 and 8.\nWhy do you think the writer repeats them?\nTick one.",
       "options": [
         "To build up to a joke: the parrot learns Dad's words and then says them to Gran.",
@@ -141,7 +129,7 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q9",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -153,6 +141,21 @@
         "Gran came to collect the parrot on Sunday."
       ],
       "answer": [true, false, true, false]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "Give **two** impressions of Gran's parrot.\nUse evidence from the text to support your answer.",
+      "model": "The parrot is clever, because he can copy the doorbell, the microwave, Dad's phone and even Dad's voice. He is also cheeky, because he fooled Dad into answering the door eleven times and then looked 'extremely pleased with himself'.",
+      "points": [
+        "each different impression that is backed up with evidence from the text (1 mark each), such as:",
+        "clever or good at copying: he copies the doorbell, the microwave, Dad's phone, Omar's sneeze and Dad's voice",
+        "cheeky or mischievous: Dad answered the door eleven times, and the parrot looked 'extremely pleased with himself'",
+        "a show-off: he 'showed off his whole collection of sounds' and puffed out his chest",
+        "greedy: he 'ate every single seed'"
+      ]
     },
     {
       "id": "q11",
@@ -171,6 +174,18 @@
     },
     {
       "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "At the end of the story, Gran takes the parrot home.\nWhat do you think the parrot will do at Gran's house?\nUse evidence from the text to support your prediction.",
+      "model": "I think the parrot will play tricks on Gran by copying the sounds in her house, such as her doorbell or her phone, because at Omar's house he copied 'the ping of the microwave' and 'the ring of Dad's phone'. He will probably say 'Welcome home, Gran!' at the wrong moments too, because 'his timing was terrible'.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. he will copy the sounds in Gran's house and trick her; he will say 'Welcome home, Gran!' at the wrong times; he will say 'Not again!' in Dad's voice.",
+        "evidence from the text that supports the prediction (1 mark), e.g. he copied the doorbell, the microwave and Dad's phone; he learned 'Welcome home, Gran!', but 'his timing was terrible'."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

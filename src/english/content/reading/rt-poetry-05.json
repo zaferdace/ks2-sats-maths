@@ -18,6 +18,7 @@
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at verses 1 and 2.\nWhat is the ‘monster’ really? Tick **one**.",
+      "paragraph": 1,
       "kind": "choice",
       "options": ["a fridge", "an oven", "a washing machine", "a toy robot"],
       "pick": 1,
@@ -97,6 +98,15 @@
     },
     {
       "id": "q8",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at verse 6.\nFind and copy **one** word that shows the speaker moved very quietly.",
+      "paragraph": 6,
+      "kind": "text",
+      "accept": ["tiptoed"]
+    },
+    {
+      "id": "q9",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at verse 6.\nWhy does this verse end with the question ‘Guess who?’ Tick **one**.",
@@ -112,7 +122,7 @@
       "answer": [2]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at verse 7.\nWhere was the dog’s bed?",
@@ -139,10 +149,23 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q11",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at verse 7.\nWhy do you think the dog ‘pretended to sleep’?",
+      "paragraph": 7,
+      "kind": "self",
+      "model": "The dog knew that she had been caught taking the socks, so she pretended to be asleep to look innocent and stay out of trouble.",
+      "points": [
+        "explaining that the dog did not want to be caught or blamed, e.g. she wanted to look innocent, or she knew she had been naughty."
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2d",
       "marks": 2,
       "prompt": "Look at verses 4 to 7.\nWhy does the speaker say sorry to the monster?\nExplain, using evidence from the poem.",
+      "paragraph": 4,
       "kind": "self",
       "model": "The speaker had blamed the monster for the missing socks, saying ‘It swallows our socks for its tea!’ But then the speaker found the dog lying ‘on a mountain of socks’, so the speaker realised that the dog had been taking them and the monster had done nothing wrong.",
       "points": [
@@ -151,7 +174,19 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "What do you think the speaker will do the next time Dad does the washing?\nUse evidence from the poem to support your prediction.",
+      "kind": "self",
+      "model": "I think the speaker will tell Dad that the dog has been taking the socks, and they will keep the washing basket where the dog cannot reach it. The speaker found the dog ‘on a mountain of socks’, so now they know who the real sock thief is, and they will want to show Dad, who only chuckled at the monster idea.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. tell Dad that the dog takes the socks; keep the washing basket away from the dog; watch the dog; look in the dog’s bed for the missing socks.",
+        "evidence from the poem that supports the prediction (1 mark), e.g. the dog pulled a sock out of the washing basket; the dog was lying ‘on a mountain of socks’; Dad did not believe the monster story (‘Dad only chuckles at me’)."
+      ]
+    },
+    {
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

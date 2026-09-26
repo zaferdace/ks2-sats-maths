@@ -32,22 +32,6 @@
     },
     {
       "id": "q2",
-      "domain": "2d",
-      "marks": 1,
-      "kind": "choice",
-      "paragraph": 2,
-      "prompt": "Look at paragraph 2.\n'You'll do,' said Mrs Hollis, and that was all.\nWhat impression does this give of Mrs Hollis at this point in the story?\nTick one.",
-      "options": [
-        "She is cheerful and chatty.",
-        "She is a woman of few words who does not show her feelings.",
-        "She is cross with Ruby for being the last child left.",
-        "She has been longing for weeks to meet Ruby."
-      ],
-      "pick": 1,
-      "answer": [1]
-    },
-    {
-      "id": "q3",
       "domain": "2a",
       "marks": 1,
       "kind": "text",
@@ -56,7 +40,7 @@
       "accept": ["curt"]
     },
     {
-      "id": "q4",
+      "id": "q3",
       "domain": "2b",
       "marks": 1,
       "kind": "text",
@@ -80,23 +64,20 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2d",
       "marks": 1,
-      "kind": "choice",
+      "kind": "self",
       "paragraph": 5,
-      "prompt": "Look at paragraph 5.\nWhy do you think Mrs Hollis **really** asked Ruby to read the letter?\nTick one.",
-      "options": [
-        "She was too busy on the farm to read it herself.",
-        "She was afraid that it might contain bad news about Oscar.",
-        "She wanted to find out whether Ruby could read.",
-        "Her eyes were too weak to read the small writing."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "prompt": "Look at paragraph 5.\nMrs Hollis says, 'My eyes aren't what they were.'\nWhy do you think she **really** asked Ruby to read the letter?",
+      "model": "I think she was frightened that the letter might bring bad news about Oscar, so she could not bear to open it herself. Her fingers were trembling, and she turned the envelope 'over and over' without opening it.",
+      "points": [
+        "explaining that she was afraid of what the letter might say, e.g. that it might bring bad news about Oscar, or that she was too nervous or upset to read it herself.",
+        "Do not accept 'her eyes were weak': paragraph 7 shows that there was nothing wrong with her eyes."
+      ]
     },
     {
-      "id": "q6",
+      "id": "q5",
       "domain": "2a",
       "marks": 1,
       "kind": "choice",
@@ -107,7 +88,7 @@
       "answer": [0]
     },
     {
-      "id": "q7",
+      "id": "q6",
       "domain": "2b",
       "marks": 1,
       "kind": "choice",
@@ -123,7 +104,7 @@
       "answer": [1, 3]
     },
     {
-      "id": "q8",
+      "id": "q7",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -137,10 +118,11 @@
       "answer": [true, false, true, true]
     },
     {
-      "id": "q9",
+      "id": "q8",
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 5,
       "prompt": "Which is the best summary of paragraphs 5 to 7?\nTick one.",
       "options": [
         "Good news in a letter from Oscar helps Mrs Hollis and Ruby to become closer.",
@@ -152,7 +134,7 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q9",
       "domain": "2h",
       "marks": 1,
       "kind": "choice",
@@ -165,6 +147,22 @@
       ],
       "pick": 1,
       "answer": [0]
+    },
+    {
+      "id": "q10",
+      "domain": "2d",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "What impressions do you get of Mrs Hollis?\nGive **two** impressions, using evidence from the text to support each one.",
+      "model": "At first, Mrs Hollis seems cold and unfriendly: she only says 'You'll do' when she chooses Ruby, and she gives 'curt orders'. She is also very hard-working, because she runs the farm alone and works 'from before dawn until after dark'.",
+      "points": [
+        "each different impression that is backed up with evidence from the text (1 mark each), such as:",
+        "unfriendly or cold at first: 'You'll do'; she gives 'curt orders'; she 'hardly seemed to notice Ruby at all'",
+        "hard-working: she ran the farm alone and 'worked from before dawn until after dark'",
+        "sharp-eyed: she 'could spot a stray lamb on the far side of the valley'",
+        "a loving, worried mother: her fingers trembled when Oscar's letter came",
+        "kind and patient later on: she teaches Ruby to knead dough and lets her name the calf"
+      ]
     },
     {
       "id": "q11",
@@ -181,6 +179,18 @@
     },
     {
       "id": "q12",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "At the end of the story, Ruby writes that Mrs Hollis 'is not very good at smiling, but she is getting better'.\nWhat do you think will happen between Ruby and Mrs Hollis after the story ends?\nUse evidence from the text to support your prediction.",
+      "model": "I think they will become even closer, and Mrs Hollis will smile more and more. She is already 'getting better' at smiling, she is teaching Ruby to make bread and she let Ruby name the calf. They will probably keep reading Oscar's letters together by the stove in the evenings.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. they will become closer or good friends; Mrs Hollis will smile more; Ruby will learn more about the farm; they will be sad to say goodbye when Ruby goes home.",
+        "evidence from the text that supports the prediction (1 mark), e.g. Mrs Hollis is 'getting better' at smiling; she is teaching Ruby to make bread; she let Ruby name the calf Clementine; they sit by the stove reading Oscar's letters together."
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

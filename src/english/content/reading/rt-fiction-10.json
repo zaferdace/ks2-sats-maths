@@ -89,19 +89,16 @@
     },
     {
       "id": "q7",
-      "domain": "2d",
+      "domain": "2g",
       "marks": 1,
-      "kind": "choice",
-      "paragraph": 6,
-      "prompt": "Look at paragraph 6.\nWhy did Kai think that the sky was leaking?\nTick one.",
-      "options": [
-        "He could see a hole in the roof of the shed.",
-        "Gran had told him that the sky often leaked.",
-        "He had never been out in real rain before, so he thought something had gone wrong.",
-        "He was playing a joke on Gran."
-      ],
-      "pick": 1,
-      "answer": [2]
+      "kind": "self",
+      "paragraph": 8,
+      "prompt": "Look at paragraph 8.\nThe rain was 'tapping on his skin like a thousand tiny fingers'.\nWhat does this tell you about how the rain felt to Kai?",
+      "model": "It felt soft and gentle, like lots of light little touches, and it was pleasant rather than frightening.",
+      "points": [
+        "explaining that the rain felt gentle, soft or light, like lots of tiny touches, or that it felt pleasant.",
+        "Do not accept answers saying that the rain hurt or was heavy."
+      ]
     },
     {
       "id": "q8",
@@ -120,17 +117,19 @@
     {
       "id": "q9",
       "domain": "2h",
-      "marks": 1,
-      "kind": "choice",
-      "prompt": "Compare how Kai feels about being under the open sky in paragraph 3 with how he feels in paragraph 8.\nTick one.",
-      "options": [
-        "In paragraph 3 he enjoys it, but in paragraph 8 he is frightened.",
-        "In paragraph 3 he is frightened, but in paragraph 8 he is enjoying himself.",
-        "He is frightened in both paragraphs.",
-        "He is bored in both paragraphs."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "marks": 2,
+      "kind": "self",
+      "prompt": "Using the whole text, give **two** ways in which life on the Moon base is different from life on Earth.",
+      "model": "On the Moon base, the air is pumped in and an opening to the sky is an emergency, but on Earth 'The whole planet holds it down'. Also, on the Moon the only plants are lettuces growing in tidy rows under purple lamps, but on Earth grass grows wherever it likes.",
+      "points": [
+        "each difference that makes clear what is different in the two places (1 mark each), such as:",
+        "air: on the Moon it is pumped in and an opening to the sky lets it rush out; on Earth the planet holds it down",
+        "plants: on the Moon only lettuces grow, in rows under purple lamps; on Earth grass grows wherever it likes",
+        "sounds at night: on the Moon there is only the hum of the air machines; on Earth there are wind, owls and dogs",
+        "water: on the Moon every drop is measured, cleaned and used again; on Earth rain falls from the sky",
+        "the sky: on the Moon Kai lives in domes and tunnels; on Earth there is a vast open sky",
+        "gravity: Earth's gravity is six times stronger, so Kai feels heavy"
+      ]
     },
     {
       "id": "q10",
@@ -148,6 +147,19 @@
     },
     {
       "id": "q11",
+      "domain": "2e",
+      "marks": 2,
+      "kind": "self",
+      "prompt": "Do you think Kai will want to visit Earth again?\nUse evidence from the text to support your prediction.",
+      "model": "Yes. I think he will want to come back, because by the end of the story he loves Earth. He let the rain run down his face and was 'grinning from ear to ear', he was amazed by the grass, and he tells Dev, 'You have to come and see it for yourself.' He might even bring Dev with him next time.",
+      "points": [
+        "a prediction (1 mark), e.g. yes, he will want to come back; he will want to bring Dev with him.",
+        "evidence from the text that supports the prediction (1 mark), e.g. he was 'grinning from ear to ear' in the rain; he refused the umbrella; he tells Dev, 'You have to come and see it for yourself'.",
+        "A 'no' answer can score only if it is backed up with evidence, e.g. Earth's gravity made his arms and legs feel as though they 'had been filled with wet sand'."
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
@@ -162,7 +174,7 @@
       "answer": [1]
     },
     {
-      "id": "q12",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

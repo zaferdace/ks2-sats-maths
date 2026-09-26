@@ -48,24 +48,6 @@
     },
     {
       "id": "q3",
-      "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at paragraphs 4 and 5.\nWhy do you think many children in Scotland had to walk to school in the dark during the experiment? Tick one.",
-      "paragraph": 4,
-      "kind": "choice",
-      "options": [
-        "because there were no street lamps in Scotland",
-        "because the experiment only took place in Scotland",
-        "because schools in Scotland started at six o’clock",
-        "because in the north of Britain, the sun rises later on winter mornings"
-      ],
-      "pick": 1,
-      "answer": [
-        3
-      ]
-    },
-    {
-      "id": "q4",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraph 5.\nWhich of these groups of workers complained about the experiment? Tick two.",
@@ -84,14 +66,28 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2a",
       "marks": 1,
-      "prompt": "Look at paragraph 5.\nFind and copy one word that means a test that is carried out to find out what will happen.",
+      "prompt": "Look at paragraph 5.\nFind and copy a group of words that shows that most Members of Parliament wanted to end the experiment.",
       "paragraph": 5,
       "kind": "text",
       "accept": [
-        "experiment"
+        "by a huge majority",
+        "a huge majority",
+        "voted by a huge majority"
+      ]
+    },
+    {
+      "id": "q5",
+      "domain": "2f",
+      "marks": 1,
+      "prompt": "Look at paragraph 5.\nWhy do you think the writer includes what Morag Innes remembers?",
+      "paragraph": 5,
+      "kind": "self",
+      "model": "Her memory shows what the experiment was really like for children in Scotland. Hearing from someone who was there, walking to school in the dark with a torch, makes the point more real and easier to believe.",
+      "points": [
+        "explaining that it shows what the experiment was like for real people (children walking to school in the dark), or that a real person’s memory makes the text more interesting or easier to believe."
       ]
     },
     {
@@ -172,6 +168,18 @@
     },
     {
       "id": "q10",
+      "domain": "2b",
+      "marks": 2,
+      "prompt": "The text gives reasons for and against changing the clocks.\nGive **one** reason to keep changing the clocks and **one** reason to stop.",
+      "kind": "self",
+      "model": "A reason to keep changing the clocks is that it gets light earlier on winter mornings, which matters most in the north of Britain. A reason to stop is that many people lose sleep when the clocks go forward, and it can take several days for their body clocks to adjust.",
+      "points": [
+        "a reason to keep changing the clocks (1 mark), e.g. it gets light earlier on winter mornings, which matters most in the north; long, light summer evenings for playing outside, sport and gardening; when the clocks stayed forward all year, children in Scotland walked to school in the dark.",
+        "a reason to stop (1 mark), e.g. people lose sleep and take several days to adjust; tired drivers may have more accidents; animals such as cows are affected; many countries manage without changing their clocks; winter evenings would be lighter."
+      ]
+    },
+    {
+      "id": "q11",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why has the writer used the headings **Reasons to keep changing the clocks** and **Reasons to stop changing the clocks**? Tick one.",
@@ -188,7 +196,18 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q12",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 9.\nFind and copy **one** word that shows both sides think daylight is very valuable.",
+      "paragraph": 9,
+      "kind": "text",
+      "accept": [
+        "precious"
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2d",
       "marks": 3,
       "prompt": "Look at paragraph 9.\nThe writer says, “The answer may depend on where you live.”\nWhy do you think the writer says this? Explain, using evidence from the text.",
@@ -202,13 +221,13 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",
       "kind": "choice",
       "options": [
-        "William Willett was a builder who loved riding his horse early in the morning.",
+        "William Willett loved riding his horse early in the morning.",
         "The text argues that Britain should keep summer time all year round.",
         "The text explains how to change the time on a clock.",
         "The text explains why Britain changes its clocks and sets out the arguments for and against stopping, leaving readers to decide."

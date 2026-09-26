@@ -51,18 +51,18 @@
     {
       "id": "q4",
       "domain": "2g",
-      "marks": 1,
-      "kind": "choice",
+      "marks": 2,
+      "kind": "self",
       "paragraph": 4,
-      "prompt": "Look at paragraph 4.\n'the snow stung his cheeks like needles'\nWhat does this suggest about the snow?\nTick one.",
-      "options": [
-        "It was soft and gentle.",
-        "It was sharp and painful.",
-        "It was warm and wet.",
-        "It was falling very slowly."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "prompt": "Look at paragraph 4.\nHow does the writer make the North Wind seem frightening?\nGive **two** ways, using evidence from the text.",
+      "model": "The wind sounds like an angry animal, because it 'came howling over the rocks' and 'screamed louder' when Ravi shouted. It also seems to attack Ravi, 'tugging at Ravi's scarf and rattling the lantern in his hands', so that the flame 'shrank to a trembling bead of orange'.",
+      "points": [
+        "each different way that is backed up with words from paragraph 4 (1 mark each), such as:",
+        "it makes frightening noises, like an angry creature: it 'came howling over the rocks' and 'screamed louder'",
+        "it seems to attack Ravi: it is 'tugging at Ravi's scarf and rattling the lantern in his hands'",
+        "it nearly blows out the flame: 'The flame shrank to a trembling bead of orange.'",
+        "it hurts: 'the snow stung his cheeks like needles'"
+      ]
     },
     {
       "id": "q5",
@@ -93,6 +93,15 @@
     },
     {
       "id": "q7",
+      "domain": "2a",
+      "marks": 1,
+      "kind": "text",
+      "paragraph": 6,
+      "prompt": "Look at paragraph 6.\nFind and copy **one** word that shows the fish moved quickly.",
+      "accept": ["darting"]
+    },
+    {
+      "id": "q8",
       "domain": "2b",
       "marks": 1,
       "kind": "tf",
@@ -106,10 +115,11 @@
       "answer": [false, true, true, false]
     },
     {
-      "id": "q8",
+      "id": "q9",
       "domain": "2c",
       "marks": 1,
       "kind": "choice",
+      "paragraph": 4,
       "prompt": "Which is the best summary of paragraphs 4 to 6?\nTick one.",
       "options": [
         "The North Wind almost blows out the flame, but when Ravi speaks kindly to it, the wind calms down and shares its stories.",
@@ -121,7 +131,7 @@
       "answer": [0]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2d",
       "marks": 1,
       "kind": "choice",
@@ -137,22 +147,20 @@
       "answer": [0]
     },
     {
-      "id": "q10",
+      "id": "q11",
       "domain": "2e",
-      "marks": 1,
-      "kind": "choice",
-      "prompt": "Using the whole story, what is Ravi most likely to do next winter?\nTick one.",
-      "options": [
-        "Refuse to climb Crooked Mountain ever again.",
-        "Climb the mountain again and listen to more of the North Wind's stories.",
-        "Ask the North Wind to blow out the Winter Lamp.",
-        "Move away from Low Hollow."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "marks": 2,
+      "kind": "self",
+      "prompt": "If Ravi climbs the mountain again next winter, what do you think will happen?\nUse evidence from the text to support your prediction.",
+      "model": "I think the North Wind will be friendly and help Ravi up the mountain again, because at the end Ravi tells Grandmother, 'We're friends now.' Ravi will probably sit and listen to more of the wind's stories, because the wind was lonely ('Nobody ever asks me that') and it gave 'a happy sigh' when he listened.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. the wind will be kind and help him up the mountain; Ravi will listen to more of its stories; Ravi will be less frightened this time.",
+        "evidence from the text that supports the prediction (1 mark), e.g. Ravi says, 'We're friends now'; the wind 'blew gently at Ravi's back' to carry him up the slope; the wind gave 'a happy sigh' after Ravi listened.",
+        "Do not accept a prediction that goes against the story, e.g. the wind will blow out his flame."
+      ]
     },
     {
-      "id": "q11",
+      "id": "q12",
       "domain": "2d",
       "marks": 3,
       "kind": "self",
@@ -165,7 +173,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "kind": "order",

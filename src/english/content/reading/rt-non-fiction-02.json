@@ -47,22 +47,33 @@
       "id": "q3",
       "domain": "2b",
       "marks": 1,
-      "prompt": "How old was Mary when her father died? Tick one.",
+      "prompt": "How old was Mary when her father died?",
       "paragraph": 3,
-      "kind": "choice",
-      "options": [
-        "nine",
+      "kind": "text",
+      "accept": [
         "eleven",
-        "twelve",
-        "forty-seven"
-      ],
-      "pick": 1,
-      "answer": [
-        1
+        "eleven years old",
+        "eleven years",
+        "she was eleven",
+        "she was eleven years old",
+        "aged eleven"
       ]
     },
     {
       "id": "q4",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 3.\nWhat does the name **Ichthyosaurus** mean?",
+      "paragraph": 3,
+      "kind": "text",
+      "accept": [
+        "fish lizard",
+        "fish-lizard",
+        "it means fish lizard"
+      ]
+    },
+    {
+      "id": "q5",
       "domain": "2b",
       "marks": 1,
       "prompt": "According to the text, why was winter the best time to search for fossils? Tick one.",
@@ -80,7 +91,7 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q6",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 6.\nIn the end, he **admitted** that he had been wrong.\nWhich word is closest in meaning to **admitted**? Tick one.",
@@ -95,24 +106,6 @@
       "pick": 1,
       "answer": [
         3
-      ]
-    },
-    {
-      "id": "q6",
-      "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at paragraph 6.\nWhat does the French scientist’s first reaction suggest about the plesiosaur? Tick one.",
-      "paragraph": 6,
-      "kind": "choice",
-      "options": [
-        "It was badly broken.",
-        "It was unlike any animal that scientists had seen before.",
-        "It had been found in France.",
-        "It was smaller than an Ichthyosaurus."
-      ],
-      "pick": 1,
-      "answer": [
-        1
       ]
     },
     {
@@ -154,6 +147,17 @@
     },
     {
       "id": "q9",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\nFind and copy **one** word that shows Mary was one of the first people to explore a new area of knowledge.",
+      "paragraph": 8,
+      "kind": "text",
+      "accept": [
+        "pioneer"
+      ]
+    },
+    {
+      "id": "q10",
       "domain": "2d",
       "marks": 2,
       "prompt": "What impressions of Mary Anning do you get from the text? Give two impressions, using evidence from the text to support each one.",
@@ -165,7 +169,21 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q11",
+      "domain": "2d",
+      "marks": 3,
+      "prompt": "The writer says that Mary “did not receive the respect she deserved”.\nExplain fully why the writer thinks this, using evidence from the text.",
+      "kind": "self",
+      "model": "Mary’s discoveries were very important: she found the first complete plesiosaur skeleton and the first skeleton of a flying reptile ever found in Britain, and experts travelled to Lyme Regis to ask for her advice. Even so, scientists who bought her fossils “often wrote about them without mentioning her name”, and the Geological Society of London would not let her join “because women were not allowed to become members”. She was only praised by the Society after her death.",
+      "points": [
+        "3 marks: two different points, with evidence for each: that Mary’s work was important, and that she was not given the credit for it.",
+        "2 marks: two points without evidence, or one point with evidence.",
+        "1 mark: one point, e.g. she was not allowed to join the Geological Society.",
+        "Points include: her discoveries were important (the first complete plesiosaur; the first flying reptile found in Britain; experts came to buy her fossils and ask her advice); scientists wrote about her fossils “without mentioning her name”; the Geological Society would not let her join because she was a woman; a famous scientist suggested her plesiosaur might be a fake; she was only praised after her death."
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these events from 1 to 5 to show the order in which they happened in Mary’s life.",
@@ -186,7 +204,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why do you think the writer begins the text with the story of the lightning strike? Tick one.",
@@ -204,7 +222,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",

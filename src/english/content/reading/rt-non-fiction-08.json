@@ -86,20 +86,13 @@
     },
     {
       "id": "q5",
-      "domain": "2b",
+      "domain": "2a",
       "marks": 1,
-      "prompt": "Look at paragraph 5.\nAt what time did the Prime Minister make his announcement? Tick one.",
+      "prompt": "Look at paragraph 5.\nFind and copy **one** word that the diary uses for a radio.",
       "paragraph": 5,
-      "kind": "choice",
-      "options": [
-        "eight o’clock",
-        "quarter to eleven",
-        "quarter past eleven",
-        "half past twelve"
-      ],
-      "pick": 1,
-      "answer": [
-        2
+      "kind": "text",
+      "accept": [
+        "wireless"
       ]
     },
     {
@@ -140,6 +133,19 @@
     },
     {
       "id": "q8",
+      "domain": "2d",
+      "marks": 1,
+      "prompt": "Look at paragraph 8.\n“I read the letter three times and then tucked it under my pillow.”\nWhat does this suggest about how Peggy felt?",
+      "paragraph": 8,
+      "kind": "self",
+      "model": "It suggests that the letter was very precious to her. She missed Mum so much that she wanted to keep Mum’s words close to her.",
+      "points": [
+        "explaining that the letter meant a lot to her, e.g. she missed Mum and wanted to keep the letter close; she was relieved or happy to hear that Mum and Dad were safe.",
+        "Do not accept answers such as “she could not read it properly”."
+      ]
+    },
+    {
+      "id": "q9",
       "domain": "2b",
       "marks": 1,
       "prompt": "Using information from the diary, decide whether each statement is true or false.",
@@ -158,7 +164,7 @@
       ]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these events from 1 to 5 to show the order in which they happened.",
@@ -179,7 +185,22 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q11",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "What impressions do you get of Mrs Pryce?\nGive **two** impressions, using evidence from the text to support each one.",
+      "kind": "self",
+      "model": "Mrs Pryce is kind and generous, because when nobody else wanted two children, she said that she would take Peggy and Stanley both. She is also caring, because she squeezed Peggy’s hand when war was announced, and she kisses the children goodnight.",
+      "points": [
+        "each different impression that is backed up with evidence from the text (1 mark each), such as:",
+        "kind or generous: she took both children when most people only wanted one",
+        "caring or comforting: she squeezed Peggy’s hand when war was announced; she kisses them goodnight",
+        "busy or lively: she “bustled in”",
+        "cheerful or healthy-looking: she has “rosy cheeks”"
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2d",
       "marks": 3,
       "prompt": "How do Peggy’s feelings change during the diary? Explain, using evidence from the text.",
@@ -192,7 +213,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why is the diary divided into sections that each begin with a date? Tick one.",
@@ -209,7 +230,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the diary? Tick one.",

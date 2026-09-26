@@ -35,6 +35,19 @@
     },
     {
       "id": "q2",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at paragraph 1.\nThe writer says that your heart “never takes a day off”.\nWhat does this tell you about the heart?",
+      "paragraph": 1,
+      "kind": "self",
+      "model": "It tells you that the heart works all the time, every day and night, without ever stopping to rest.",
+      "points": [
+        "explaining that the heart keeps working all the time, or never stops or rests (even when you are asleep).",
+        "Do not accept answers that take the words literally, e.g. “it does not go to work”."
+      ]
+    },
+    {
+      "id": "q3",
       "domain": "2b",
       "marks": 1,
       "prompt": "According to paragraph 1, about how many times does your heart beat every day? Tick one.",
@@ -52,7 +65,7 @@
       ]
     },
     {
-      "id": "q3",
+      "id": "q4",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nFind and copy one word that means kept safe from harm.",
@@ -63,7 +76,7 @@
       ]
     },
     {
-      "id": "q4",
+      "id": "q5",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at paragraph 3.\nWhat are the four spaces inside the heart called?",
@@ -80,7 +93,7 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q6",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraphs 5 and 6.\nWhy do you think the blood has to keep going back to the lungs? Tick one.",
@@ -98,7 +111,7 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q7",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 6.\n…it **delivers** oxygen and nutrients from your food to every part of your body…\nWhich word is closest in meaning to **delivers**? Tick one.",
@@ -116,7 +129,7 @@
       ]
     },
     {
-      "id": "q7",
+      "id": "q8",
       "domain": "2b",
       "marks": 1,
       "prompt": "Using information from the text, decide whether each statement is true or false.",
@@ -135,7 +148,7 @@
       ]
     },
     {
-      "id": "q8",
+      "id": "q9",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these stages from 1 to 5 to show the journey of the blood, starting when it leaves the right side of the heart.",
@@ -156,25 +169,20 @@
       ]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2d",
-      "marks": 1,
-      "prompt": "Look at paragraph 7.\nWhy do you think many doctors refused to believe William Harvey at first? Tick one.",
+      "marks": 2,
+      "prompt": "Look at paragraph 7.\nHow did William Harvey show that the old idea about blood was wrong?\nWhy do you think many doctors refused to believe him at first?",
       "paragraph": 7,
-      "kind": "choice",
-      "options": [
-        "because he was not a real doctor",
-        "because he had never studied the heart",
-        "because he said that blood was made in the liver",
-        "because his idea was very different from what doctors had believed for more than a thousand years"
-      ],
-      "pick": 1,
-      "answer": [
-        3
+      "kind": "self",
+      "model": "Harvey carefully studied animals and the veins in people’s arms, and proved that the same blood travels round and round the body, pumped by the heart. I think many doctors refused to believe him because the old idea had been believed for more than a thousand years, so his idea was very different from everything they had been taught.",
+      "points": [
+        "how Harvey showed it (1 mark): he carefully studied animals and the veins in people’s arms.",
+        "why doctors did not believe him (1 mark), e.g. doctors had believed the old idea for more than a thousand years; his idea was completely different from what they had always been taught."
       ]
     },
     {
-      "id": "q10",
+      "id": "q11",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why has the writer included paragraph 7 in the text? Tick one.",
@@ -192,7 +200,28 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q12",
+      "domain": "2b",
+      "marks": 1,
+      "prompt": "Look at paragraph 9.\nWhere should you press two fingers to find your pulse?",
+      "paragraph": 9,
+      "kind": "text",
+      "accept": [
+        "on the inside of your wrist",
+        "the inside of your wrist",
+        "inside your wrist",
+        "on your wrist",
+        "your wrist",
+        "the wrist",
+        "on the wrist",
+        "on the inside of the wrist",
+        "the inside of the wrist",
+        "just below your thumb",
+        "below your thumb"
+      ]
+    },
+    {
+      "id": "q13",
       "domain": "2d",
       "marks": 3,
       "prompt": "The title of the text is **Your Amazing Heart**.\nWhy do you think the writer describes the heart as amazing? Explain, using evidence from the text.",
@@ -205,7 +234,7 @@
       ]
     },
     {
-      "id": "q12",
+      "id": "q14",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",
@@ -213,7 +242,7 @@
       "options": [
         "The heart is a muscle that only works hard when you exercise.",
         "The heart is a powerful pump that keeps blood moving around the body, and there are ways to help it stay healthy.",
-        "William Harvey was the first person to find out that the heart has four chambers.",
+        "William Harvey was the first person to find out that the heart is a muscle.",
         "Blood is made in the liver and then used up by the body."
       ],
       "pick": 1,

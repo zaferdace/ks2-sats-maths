@@ -44,24 +44,6 @@
     },
     {
       "id": "q3",
-      "domain": "2b",
-      "marks": 1,
-      "prompt": "According to paragraph 2, where do puffins spend the autumn and winter? Tick one.",
-      "paragraph": 2,
-      "kind": "choice",
-      "options": [
-        "in burrows on the cliff tops",
-        "in old rabbit holes",
-        "on sandy beaches",
-        "far out on the ocean"
-      ],
-      "pick": 1,
-      "answer": [
-        3
-      ]
-    },
-    {
-      "id": "q4",
       "domain": "2d",
       "marks": 1,
       "prompt": "Look at paragraph 2.\nPuffins bob on the waves “even in wild storms”.\nWhat does this suggest about puffins? Tick one.",
@@ -79,7 +61,7 @@
       ]
     },
     {
-      "id": "q5",
+      "id": "q4",
       "domain": "2b",
       "marks": 1,
       "prompt": "According to paragraph 3, what kind of small fish do puffins catch?",
@@ -95,7 +77,7 @@
       ]
     },
     {
-      "id": "q6",
+      "id": "q5",
       "domain": "2b",
       "marks": 1,
       "prompt": "Using information from the text, decide whether each statement is true or false.",
@@ -114,7 +96,7 @@
       ]
     },
     {
-      "id": "q7",
+      "id": "q6",
       "domain": "2a",
       "marks": 1,
       "prompt": "Look at paragraph 5.\n…the hungry puffling eats and eats until it grows **plump**.\nWhich word is closest in meaning to **plump**? Tick one.",
@@ -132,6 +114,18 @@
       ]
     },
     {
+      "id": "q7",
+      "domain": "2h",
+      "marks": 2,
+      "prompt": "Using the text, explain how a puffin’s life in autumn and winter is different from its life in spring and summer.",
+      "kind": "self",
+      "model": "In autumn and winter, puffins live far out on the ocean, bobbing on the waves even in wild storms. In spring and summer, they come back to land, often to the very same cliff tops, to raise a family in a burrow.",
+      "points": [
+        "what puffins do in autumn and winter (1 mark), e.g. they live far out on the ocean; they bob on the waves, even in wild storms.",
+        "what puffins do in spring and summer (1 mark), e.g. they return to land or to the cliff tops; they raise a family in a burrow; they lay an egg and feed their chick."
+      ]
+    },
+    {
       "id": "q8",
       "domain": "2d",
       "marks": 2,
@@ -146,6 +140,31 @@
     },
     {
       "id": "q9",
+      "domain": "2a",
+      "marks": 1,
+      "prompt": "Look at paragraph 6.\nFind and copy **one** word that shows the puffling moves quickly, with small steps.",
+      "paragraph": 6,
+      "kind": "text",
+      "accept": [
+        "scurries"
+      ]
+    },
+    {
+      "id": "q10",
+      "domain": "2e",
+      "marks": 2,
+      "prompt": "Look at paragraph 7.\nWhat do you think will happen to the puffins on Lundy in the future?\nUse evidence from the text to support your prediction.",
+      "paragraph": 7,
+      "kind": "self",
+      "model": "I think there will be more and more puffins on Lundy, because the rats that ate their eggs and chicks have been removed, and puffins “now raise chicks there again”.",
+      "points": [
+        "a sensible prediction (1 mark), e.g. there will be more puffins on Lundy; more chicks will survive; puffins will keep coming back to nest there.",
+        "evidence from the text that supports the prediction (1 mark), e.g. the rats that ate their eggs and chicks were removed; puffins now raise chicks there again; people are working hard to help.",
+        "A prediction that numbers might not grow much can also score if it uses evidence, e.g. there are fewer sand eels for them to eat in some areas."
+      ]
+    },
+    {
+      "id": "q11",
       "domain": "2c",
       "marks": 1,
       "prompt": "Number these events from 1 to 5 to show the order in which they happen in a puffin’s year.",
@@ -166,7 +185,7 @@
       ]
     },
     {
-      "id": "q10",
+      "id": "q12",
       "domain": "2f",
       "marks": 1,
       "prompt": "Why does the writer begin the text with a question? Tick one.",
@@ -184,7 +203,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which of these is the best summary of the whole text? Tick one.",

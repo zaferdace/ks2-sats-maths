@@ -71,6 +71,18 @@
     },
     {
       "id": "q5",
+      "domain": "2g",
+      "marks": 1,
+      "prompt": "Look at the fourth stanza.\n‘Her stories rose with the bread\nuntil the whole kitchen was full.’\nWhat does this suggest about Nan’s stories?",
+      "paragraph": 4,
+      "kind": "self",
+      "model": "It suggests that Nan told lots of stories while the bread was rising, and that they grew bigger and more exciting until the kitchen was filled with them, just as it was filled with the bread and its smell.",
+      "points": [
+        "explaining that Nan told lots of stories, or that the stories grew and filled the kitchen as the bread rose, or that they made the kitchen feel warm and full of happiness."
+      ]
+    },
+    {
+      "id": "q6",
       "domain": "2b",
       "marks": 1,
       "prompt": "Look at the whole poem.\nTick **one** box in each row to show whether each statement is **true** or **false**.",
@@ -84,23 +96,19 @@
       "answer": [true, true, false, false]
     },
     {
-      "id": "q6",
+      "id": "q7",
       "domain": "2d",
       "marks": 1,
-      "prompt": "Look at the fifth stanza.\nWhat does this stanza suggest? Tick **one**.",
+      "prompt": "Look at the fifth stanza.\nWhat does this stanza suggest has happened to Nan?",
       "paragraph": 5,
-      "kind": "choice",
-      "options": [
-        "Nan has painted her door blue.",
-        "Nan no longer lives in her old house.",
-        "Nan now bakes bread with another family.",
-        "The speaker visits the new family every Saturday."
-      ],
-      "pick": 1,
-      "answer": [1]
+      "kind": "self",
+      "model": "It suggests that Nan no longer lives in her house. She may have moved away or died, because ‘Nan’s house belongs to another family now’.",
+      "points": [
+        "explaining that Nan no longer lives in her old house (she has moved or has died), e.g. ‘Nan’s house belongs to another family now’."
+      ]
     },
     {
-      "id": "q7",
+      "id": "q8",
       "domain": "2f",
       "marks": 1,
       "prompt": "Look at the fifth stanza.\nHere, the poem changes from the past tense to the present tense. Why? Tick **one**.",
@@ -116,7 +124,7 @@
       "answer": [2]
     },
     {
-      "id": "q8",
+      "id": "q9",
       "domain": "2g",
       "marks": 1,
       "prompt": "Look at the last stanza.\nWhat does the poet mean by ‘the clock stops counting’? Tick **one**.",
@@ -132,10 +140,11 @@
       "answer": [0]
     },
     {
-      "id": "q9",
+      "id": "q10",
       "domain": "2h",
       "marks": 1,
       "prompt": "Compare the first stanza with the last stanza.\nWhich **two** things are true of both stanzas? Tick **two**.",
+      "paragraph": 1,
       "kind": "choice",
       "options": [
         "It is a Saturday morning.",
@@ -147,10 +156,26 @@
       "answer": [0, 2]
     },
     {
-      "id": "q10",
+      "id": "q11",
+      "domain": "2d",
+      "marks": 2,
+      "prompt": "What impressions do you get of Nan from the poem?\nGive **two** impressions, using evidence from the poem to support each one.",
+      "kind": "self",
+      "model": "Nan was a good storyteller, because ‘Her stories rose with the bread until the whole kitchen was full’. She was also adventurous and fun, because she once ‘ran away to join the circus for a whole afternoon’.",
+      "points": [
+        "each different impression that is backed up with evidence from the poem (1 mark each), such as:",
+        "a good baker or teacher: ‘Nan’s hands were floury clouds’; ‘She showed me how to knead the dough’",
+        "a good storyteller: ‘Her stories rose with the bread until the whole kitchen was full’",
+        "adventurous or fun: she ‘ran away to join the circus for a whole afternoon’",
+        "warm and welcoming: the smell of warm bread ‘wrapped its arms around me’; her kitchen was ‘always too warm’"
+      ]
+    },
+    {
+      "id": "q12",
       "domain": "2d",
       "marks": 3,
       "prompt": "Look at stanzas 5 and 6.\nHow does the speaker feel at the end of the poem?\nExplain, using evidence from the poem.",
+      "paragraph": 5,
       "kind": "self",
       "model": "The speaker misses Nan and feels a little sad, because her house ‘belongs to another family now’ and has ‘a new blue door’. But baking makes the speaker feel comforted and close to Nan again: the smell of warm bread ‘wraps its arms around me’, just as it did at Nan’s back door. For a moment ‘the clock stops counting’, as if the speaker were back in Nan’s kitchen, where nobody listened to the clock.",
       "points": [
@@ -160,7 +185,7 @@
       ]
     },
     {
-      "id": "q11",
+      "id": "q13",
       "domain": "2c",
       "marks": 1,
       "prompt": "Which is the best summary of the whole poem? Tick **one**.",

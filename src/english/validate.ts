@@ -11,6 +11,8 @@ import {
   TENSES,
   type GpsItem,
   type GrammarSentence,
+  type ReadingDomain,
+  type ReadingQuestion,
   type ReadingText,
   type Span,
   type SpellingWord,
@@ -131,13 +133,66 @@ export function checkSpelling(w: SpellingWord): string[] {
   return out;
 }
 
-const norm = (s: string) =>
+/**
+ * Words only, for comparing copied words with the text: lower case, with punctuation the letter
+ * keyboard cannot type (commas, quotation marks, dashes) turned into spaces. Apostrophes and hyphens
+ * inside words stay ("Leo's", "sand-eels").
+ */
+export const wordsOnly = (s: string): string =>
   s
     .toLowerCase()
-    .replace(/[‘’]/g, "'")
-    .replace(/[“”]/g, '"')
+    .replace(/[‘’`]/g, "'")
+    .replace(/[^a-z0-9'-]+/g, ' ')
+    .replace(/(^| )['-]+|['-]+(?= |$)/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+
+const ORDINALS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth'];
+
+/**
+ * The paragraphs (1-based, in the order named) a prompt sends the pupil to: "paragraph 3",
+ * "paragraphs 5 to 7", "paragraphs 2, 4 and 8", "the first stanza", "the last verse".
+ */
+export function partsNamed(prompt: string, count: number): number[] {
+  const out: number[] = [];
+  const text = prompt.replace(/\*\*|__/g, '');
+  const pattern = new RegExp(
+    `\\b(?:(${ORDINALS.join('|')}|last|final|opening)\\s+(?:paragraph|verse|stanza)s?\\b|(?:paragraphs?|verses?|stanzas?)\\s+(\\d+(?:\\s*(?:,|and|to|–|-)\\s*\\d+)*))`,
+    'gi',
+  );
+  for (const m of text.matchAll(pattern)) {
+    if (m[1]) {
+      const word = m[1].toLowerCase();
+      out.push(word === 'last' || word === 'final' ? count : word === 'opening' ? 1 : ORDINALS.indexOf(word) + 1);
+      continue;
+    }
+    for (const r of m[2].matchAll(/(\d+)(?:\s*(?:to|–|-)\s*(\d+))?/g)) {
+      const [a, b] = [Number(r[1]), Number(r[2] ?? r[1])];
+      for (let k = a; k <= b; k++) out.push(k);
+    }
+  }
+  return out;
+}
+
+/** Marks a reading text carries: one text of the real paper is about a third of its 50 marks. */
+export const TEXT_MARKS = { min: 15, max: 18 };
+/** Share of a text's marks for written answers (typed words and explanations), as in the real paper. */
+export const TEXT_WRITTEN_SHARE = 0.4;
+/** Prose at least this long counts as a longer text, which needs a 3-mark question. */
+export const LONGER_TEXT_WORDS = 450;
+/** Domains every text asks about: word meanings, retrieval and inference. */
+const CORE_DOMAINS: ReadingDomain[] = ['2a', '2b', '2d'];
+
+export const isWritten = (q: ReadingQuestion): boolean => q.kind === 'text' || q.kind === 'self';
+
+/** What a pupil can read in a question before answering it, as words (see `wordsOnly`). */
+function shownWords(q: ReadingQuestion): string {
+  const parts = [q.prompt];
+  if (q.kind === 'choice') parts.push(...q.options);
+  if (q.kind === 'tf') parts.push(...q.statements);
+  if (q.kind === 'order') parts.push(...q.items);
+  return ` ${wordsOnly(parts.join('\n'))} `;
+}
 
 export function checkReading(t: ReadingText): string[] {
   const out: string[] = [];
@@ -160,9 +215,10 @@ export function checkReading(t: ReadingText): string[] {
     if (!q.prompt?.trim()) out.push(`${where}: empty prompt`);
     if (q.paragraph !== undefined && (q.paragraph < 1 || q.paragraph > t.paragraphs.length)) out.push(`${where}: paragraph out of range`);
     // "Look at paragraphs 9 and 10": the paragraph shown to the pupil is the first one named.
-    const named = /\b(?:paragraphs?|verses?|stanzas?)\s+(\d+)/i.exec(q.prompt);
-    if (named && q.paragraph !== undefined && q.paragraph !== Number(named[1])) {
-      out.push(`${where}: the prompt starts at paragraph ${named[1]}, but "paragraph" is ${q.paragraph}`);
+    const named = partsNamed(q.prompt, t.paragraphs.length);
+    if (named.some((p) => p < 1 || p > t.paragraphs.length)) out.push(`${where}: the prompt names a paragraph the text does not have`);
+    if (named.length && q.paragraph !== named[0]) {
+      out.push(`${where}: the prompt starts at paragraph ${named[0]}, but "paragraph" is ${q.paragraph ?? 'missing'}`);
     }
     switch (q.kind) {
       case 'choice':
@@ -180,20 +236,53 @@ export function checkReading(t: ReadingText): string[] {
         break;
       case 'text': {
         if (!q.accept.length || q.accept.some((a) => !a.trim())) out.push(`${where}: text needs acceptable answers`);
-        else if (!q.accept.some(typeable)) out.push(`${where}: no accepted answer can be typed with letters only`);
-        if (/copy/i.test(q.prompt)) {
-          const scope = norm(q.paragraph ? t.paragraphs[q.paragraph - 1] : t.paragraphs.join('\n'));
-          for (const a of q.accept) if (!scope.includes(norm(a))) out.push(`${where}: "${a}" is not in the text it should be copied from`);
+        // The letter keyboard types a-z, apostrophes, hyphens and spaces, up to 40 characters.
+        for (const a of q.accept) if (!typeable(a)) out.push(`${where}: "${a}" cannot be typed on the letter keyboard`);
+        if (new Set(q.accept.map(normText)).size !== q.accept.length) out.push(`${where}: an accepted answer is listed twice`);
+        if (/\bcopy\b/i.test(q.prompt)) {
+          // Copied words must be the text's own words, in the part the question sends the pupil to.
+          const parts = named.length ? named : q.paragraph ? [q.paragraph] : t.paragraphs.map((_, i) => i + 1);
+          const scope = ` ${parts.map((p) => wordsOnly(t.paragraphs[p - 1] ?? '')).join(' ')} `;
+          for (const a of q.accept) if (!scope.includes(` ${wordsOnly(a)} `)) out.push(`${where}: "${a}" is not in the text it should be copied from`);
         }
         if (q.marks !== 1) out.push(`${where}: typed answers are 1 mark`);
         break;
       }
       case 'self':
-        if (!q.model.trim() || q.points.length < q.marks || q.marks < 2) out.push(`${where}: self-marked needs 2-3 marks, a model answer and a point per mark`);
+        if (!q.model?.trim()) out.push(`${where}: self-marked needs a model answer`);
+        if (!Array.isArray(q.points) || q.points.length < q.marks || q.points.some((p) => !p.trim())) {
+          out.push(`${where}: self-marked needs marking points, at least one per mark`);
+        }
         break;
       default:
         out.push(`${where}: unknown kind`);
     }
   }
+  // A typed answer must not be readable in another question of the same text (a tick-box option,
+  // an event to put in order, a quotation), or the pupil can copy it from there.
+  for (const q of t.questions) {
+    if (q.kind !== 'text') continue;
+    for (const other of t.questions) {
+      if (other === q) continue;
+      const shown = shownWords(other);
+      const given = q.accept.find((a) => {
+        const w = wordsOnly(a).replace(/^(a|an|the) /, '');
+        return w.length >= 3 && shown.includes(` ${w} `);
+      });
+      if (given) out.push(`question ${q.id}: its answer "${given}" can be read in question ${other.id}`);
+    }
+  }
+  // Balance, as in one text of the real paper: written answers carry much of the marks, and a
+  // text has questions worth more than one mark.
+  const marks = t.questions.reduce((s, q) => s + q.marks, 0);
+  if (marks < TEXT_MARKS.min || marks > TEXT_MARKS.max) out.push(`${marks} marks; keep a text between ${TEXT_MARKS.min} and ${TEXT_MARKS.max}`);
+  const written = t.questions.filter(isWritten).reduce((s, q) => s + q.marks, 0);
+  if (written < TEXT_WRITTEN_SHARE * marks) out.push(`written answers carry ${written} of ${marks} marks; they need at least ${TEXT_WRITTEN_SHARE * 100}%`);
+  if (!t.questions.some((q) => q.marks === 2)) out.push('needs a 2-mark question');
+  if (t.genre !== 'poetry' && total >= LONGER_TEXT_WORDS && !t.questions.some((q) => q.marks === 3)) out.push('a longer text needs a 3-mark question');
+  const domains = new Set(t.questions.map((q) => q.domain));
+  for (const d of CORE_DOMAINS) if (!domains.has(d)) out.push(`no ${d} question`);
+  if (domains.size < 5) out.push(`asks about ${domains.size} content domains; ask about at least 5`);
+  if (!t.questions.some((q) => q.kind === 'text' && /\bcopy\b/i.test(q.prompt))) out.push('needs a find-and-copy question');
   return out;
 }
