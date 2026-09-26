@@ -1,3 +1,4 @@
+import { BookOpen, Volume2 } from 'lucide-react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { emptyAnswer, type AnswerInput } from '../answer/answer';
 import { readingText } from '../english/bank';
@@ -199,6 +200,13 @@ export function TextAnswer({ q, answer, onAnswer, mark }: EnglishAnswerProps<'te
   );
 }
 
+/** What a written answer needs for its marks, as the real reading test marks it. */
+const WRITING_HINT: Record<number, string> = {
+  1: 'One clear point is enough for 1 mark.',
+  2: 'For 2 marks, make two points, or one point with evidence from the text.',
+  3: 'For 3 marks, make more than one point and back each one up with evidence from the text.',
+};
+
 /**
  * Explanation questions: the pupil writes an answer during the test, like the real one. After Finish
  * it is marked against a model answer on the results screen, ideally with a grown-up. (Papers begun
@@ -256,9 +264,7 @@ export function SelfAnswer({ q, answer, onAnswer }: EnglishAnswerProps<'self'>) 
             onChange={(e) => write(e.target.value)}
             onBlur={flush}
           />
-          <p className="muted small">
-            Explain with evidence from the text, as in the real test. You will mark it after you finish, using a model answer.
-          </p>
+          <p className="muted small">{WRITING_HINT[Math.min(q.marks, 3)]} You will mark it after you finish, using a model answer.</p>
         </>
       ) : (
         <>
@@ -329,14 +335,16 @@ export function SpeakBlock({ word, sentence, compact }: { word: string; sentence
   if (compact) {
     return (
       <button type="button" className="btn e-replay" onClick={() => dictate(word, sentence)} aria-label="Hear the word again">
-        🔊 Hear it
+        <Volume2 aria-hidden />
+        Hear it
       </button>
     );
   }
   return (
     <div className="e-speak">
       <button type="button" className="btn btn-primary btn-big" onClick={() => dictate(word, sentence)}>
-        🔊 Hear the word
+        <Volume2 aria-hidden />
+        Hear the word
       </button>
       <button type="button" className="btn" onClick={() => sayWord(word)}>
         Word only
@@ -354,7 +362,7 @@ export function PassageRef({ textId, paragraph }: { textId: string; paragraph?: 
   const part = text?.genre === 'poetry' ? 'verse' : 'paragraph';
   return (
     <p className="passage-ref">
-      <span aria-hidden="true">📖</span> {text?.title ?? 'the text'}
+      <BookOpen className="passage-ref-icon" aria-hidden /> {text?.title ?? 'the text'}
       {paragraph ? ` · ${part} ${paragraph}` : ''}
     </p>
   );

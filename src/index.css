@@ -1,3 +1,50 @@
+/*
+ * Tailwind's theme and utilities (no preflight: the app's own base styles below stay as they are).
+ * The app's hand-written styles sit in the `legacy` layer, under the utilities, so a utility class
+ * always wins where both apply.
+ */
+@layer theme, base, legacy, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* The one preflight rule the app needs: an element with the hidden attribute stays hidden, even when
+   a utility sets its display (an inactive tab panel has class flex and the hidden attribute). */
+@layer base {
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+
+@theme {
+  --font-sans: 'Nunito Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-page: #f5f6fa;
+  --color-card: #ffffff;
+  --color-ink: #0f172a;
+  --color-ink-2: #475569;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-brand: #256abf;
+  --color-brand-dark: #1d5499;
+  --color-brand-soft: #e8f0fb;
+  --color-maths: #256abf;
+  --color-maths-soft: #e8f0fb;
+  --color-english: #7c3aed;
+  --color-english-soft: #f1ebfe;
+  --color-good: #16a34a;
+  --color-good-soft: #dcfce7;
+  --color-good-ink: #166534;
+  --color-warn: #f59e0b;
+  --color-warn-soft: #fef3c7;
+  --color-warn-ink: #92400e;
+  --color-bad: #dc2626;
+  --color-bad-soft: #fee2e2;
+  --color-bad-ink: #991b1b;
+  --radius-card: 20px;
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(15 23 42 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.06), 0 12px 28px rgb(15 23 42 / 0.1);
+}
+
+@layer legacy {
 /* Light theme only: the app is used on one iPad and must not flip in dark mode. */
 :root {
   color-scheme: light;
@@ -21,7 +68,7 @@
   --good-text: #006300;
   --critical-text: #b42f2f;
   --radius: 16px;
-  --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Nunito Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   font-family: var(--font);
   color: var(--ink);
@@ -456,16 +503,6 @@ th.num {
   justify-content: center;
   font-size: 28px;
   font-weight: 700;
-}
-
-.profile-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.profile-btn {
-  min-width: 160px;
 }
 
 /* Home */
@@ -2440,3 +2477,325 @@ tr.clickable:active {
 .critical-text {
   color: var(--critical-text);
 }
+
+/* ==========================================================================
+   Design refresh: one look for every screen (colours, cards, buttons, type).
+   Later rules of equal specificity win, so these restyle the rules above.
+   ========================================================================== */
+:root {
+  --page: #f5f6fa;
+  --surface: #f8fafc;
+  --ink: #0f172a;
+  --ink-2: #475569;
+  --muted: #64748b;
+  --grid: #e2e8f0;
+  --axis: #cbd5e1;
+  --border: rgba(15, 23, 42, 0.08);
+  --accent-wash: #d6e4f7;
+  --accent-soft: #edf3fc;
+  --accent-dark: #1d5499;
+  --english: #7c3aed;
+  --english-soft: #f3edfe;
+  --radius: 20px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --shadow-lift: 0 2px 4px rgba(15, 23, 42, 0.06), 0 16px 32px rgba(15, 23, 42, 0.12);
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.topbar h1 {
+  font-size: 28px;
+}
+
+.card {
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  box-shadow: var(--shadow-card);
+}
+
+.card h2 {
+  font-size: 21px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.btn {
+  border: 1px solid var(--grid);
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 0 var(--grid);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    background-color 0.15s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  box-shadow: 0 2px 0 var(--accent-dark);
+}
+
+.btn-ghost {
+  box-shadow: none;
+}
+
+.btn-ghost:active:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.tile {
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.tile .label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tile .value {
+  font-weight: 800;
+}
+
+.hero {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.backdrop {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.modal {
+  border-radius: 24px;
+  box-shadow: var(--shadow-lift);
+}
+
+input[type='text'],
+textarea {
+  border-color: var(--axis);
+  border-radius: 14px;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  outline: 3px solid var(--accent-wash);
+  border-color: var(--accent);
+}
+
+.banner {
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.choice {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  transition:
+    transform 0.08s ease,
+    background-color 0.15s ease;
+}
+
+.choice:active {
+  transform: scale(0.98);
+  background: var(--accent-wash);
+}
+
+.chip-btn {
+  border-radius: 999px;
+}
+
+.segmented {
+  border-radius: 999px;
+  border-color: var(--grid);
+  box-shadow: var(--shadow-card);
+}
+
+.segmented button {
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.segmented button.on {
+  box-shadow: 0 2px 0 var(--accent-dark);
+}
+
+.paper-card {
+  border-top: 0;
+}
+
+.paper-card.arithmetic,
+.paper-card.reasoning {
+  border-top: 0;
+}
+
+.progress {
+  border-radius: 16px;
+  background: var(--accent-soft);
+  border-color: var(--accent-wash);
+}
+
+/* Test screen: the question map and the question card */
+.test-title {
+  font-weight: 800;
+}
+
+.qchip {
+  border-color: var(--grid);
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 0 var(--grid);
+}
+
+.qmap-full .qchip {
+  min-width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.qchip.answered {
+  background: var(--accent-wash);
+  border-color: var(--accent-wash);
+  box-shadow: 0 2px 0 #b8cfee;
+}
+
+.qchip.current {
+  border: 3px solid var(--accent);
+}
+
+.question-card {
+  box-shadow: var(--shadow-card);
+}
+
+.key {
+  border-color: var(--grid);
+  border-radius: 18px;
+  box-shadow: 0 3px 0 var(--axis);
+  font-weight: 700;
+}
+
+.key:active:not(:disabled) {
+  transform: translateY(3px);
+}
+
+
+/* Icons (lucide) inside the older buttons and keys */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.key svg {
+  width: 34px;
+  height: 34px;
+  stroke-width: 1.75;
+}
+
+.key.lkey svg {
+  width: 26px;
+  height: 26px;
+}
+
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timer .timer-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.flag-mark {
+  display: inline-flex;
+}
+
+svg.flag-mark,
+.flag-mark svg {
+  width: 14px;
+  height: 14px;
+}
+
+
+/* Reading with the letter keyboard, iPad landscape: the page fits the screen. The text (left) and the
+   question (right) each scroll on their own above the keyboard, so nothing hides behind it and the
+   page itself never scrolls. */
+@media (min-width: 901px) and (orientation: landscape) {
+  .test-page.fit-screen {
+    height: calc(100vh - 32px);
+    height: calc(100dvh - max(16px, env(safe-area-inset-top)) - max(16px, env(safe-area-inset-bottom)));
+  }
+
+  .test-page.fit-screen .test-body {
+    flex: 1 1 0;
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: stretch;
+  }
+
+  .test-page.fit-screen .passage-panel {
+    position: static;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .test-page.fit-screen .question-card {
+    align-self: start;
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .test-page.fit-screen .question-card .abox {
+    scroll-margin: 16px;
+  }
+
+  .test-page.fit-screen .letters-wrap {
+    position: static;
+  }
+}
+
+.passage-ref .passage-ref-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  color: var(--accent);
+}
+
+.btn-big svg {
+  width: 24px;
+  height: 24px;
+}
+
+} /* legacy */

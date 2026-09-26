@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -11,6 +12,7 @@ export default defineConfig({
   base,
   plugins: [
     react(),
+    tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
@@ -29,7 +31,8 @@ export default defineConfig({
       },
       workbox: {
         // The plugin adds manifest.webmanifest itself; globbing it too creates a conflicting entry.
-        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        // Fonts are bundled (woff2) and must be precached too, or the app falls back to another font offline.
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         // The English question bank is bundled into the main script (about 1 MB); allow room to grow.
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         cleanupOutdatedCaches: true,

@@ -1,4 +1,23 @@
+import {
+  ArrowRight,
+  ChartColumn,
+  ClipboardCheck,
+  Flag,
+  House,
+  PenLine,
+  RotateCcw,
+  Sparkles,
+  Target,
+  ThumbsUp,
+  Timer,
+  Trophy,
+  type LucideIcon,
+} from 'lucide-react';
+import { useState, type ReactNode } from 'react';
 import { awaitingMark, formatCorrect, formatInput, formNote, isBlank, maxMarks } from '../answer/answer';
+import { Button } from '../components/ui/button';
+import { Card, CardTitle } from '../components/ui/card';
+import { Progress } from '../components/ui/progress';
 import { readingText } from '../english/bank';
 import { LEVEL_NAME, PAPER_NAME, typeInfo } from '../gen/catalog';
 import { isItem, TOPICS } from '../gen/types';
@@ -9,6 +28,9 @@ import { sessionTitle, textsOf } from '../ui/labels';
 import { MathText } from '../ui/MathText';
 import { Passage } from '../ui/Passage';
 import { ReasoningAnswer, ReasoningBody } from '../ui/ReasoningView';
+import { cn } from '../lib/utils';
+import { Confetti } from '../report/Confetti';
+import { ScoreRing } from '../report/ScoreRing';
 import { RichText } from '../ui/RichText';
 import { formatDateTime, formatDuration, formatSeconds } from '../ui/time';
 import { gpsPractice, mathsPractice } from './practiceRequests';
@@ -38,6 +60,8 @@ function praise(pct: number): string {
 }
 
 export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelfMark, onAccept, onPractise }: Props) {
+  // Confetti only when the session has just been marked, not on a later visit.
+  const [justMarked] = useState(() => Date.now() - at < 20_000);
   const first = attempt.markedAt.indexOf(at);
   if (first === -1) {
     return (
@@ -98,37 +122,54 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
     };
   }).filter((t) => t.total > 0);
 
+  const Praise = pct >= 90 ? Trophy : pct >= 75 ? Sparkles : pct >= 50 ? ThumbsUp : Target;
+  const celebrate = justMarked && pct >= 85 && total > 0;
+  const note = (tone: 'info' | 'good' | 'warn', icon: LucideIcon, children: ReactNode) => {
+    const Icon = icon;
+    return (
+      <div
+        className={cn(
+          'flex items-start gap-3 rounded-2xl border p-4 text-[15px] leading-snug font-semibold',
+          tone === 'good' ? 'border-good/30 bg-good-soft text-good-ink' : tone === 'warn' ? 'border-warn/40 bg-warn-soft text-warn-ink' : 'border-brand/20 bg-brand-soft text-ink',
+        )}
+      >
+        <Icon className="mt-0.5 size-5 shrink-0" aria-hidden />
+        <div>{children}</div>
+      </div>
+    );
+  };
+
   return (
-    <div className="page">
-      <header className="topbar">
-        <h1>
+    <div className="page gap-5">
+      {celebrate && <Confetti />}
+      <header className="flex flex-wrap items-center gap-3">
+        <h1 className="m-0 min-w-0 flex-1 text-3xl font-black text-ink">
           {paperName} · {sessionTitle(attempt, session.day)}
         </h1>
-        <button type="button" className="btn" onClick={onHome}>
+        <Button onClick={onHome}>
+          <House aria-hidden />
           Home
-        </button>
+        </Button>
       </header>
 
-      <section className="card result-hero">
-        <div>
-          <div className="hero">
+      <Card className="result-hero flex-row flex-wrap items-center gap-6">
+        <ScoreRing pct={pct} />
+        <div className="flex min-w-0 flex-1 flex-col gap-2">
+          <div className="hero text-5xl font-black text-ink">
             {score} / {total}
           </div>
-          <div className="result-pct">
-            {total !== indexes.length ? 'marks · ' : ''}
-            {pct}%
-          </div>
-        </div>
-        <div className="grow">
-          <p className="praise">{praise(pct)}</p>
-          <p className="muted small">
-            Paper {attempt.paperCode} · {formatDateTime(at)}
+          <p className="praise m-0 flex items-center gap-2 text-xl font-extrabold text-ink">
+            <Praise className={cn('size-6 shrink-0', pct >= 75 ? 'text-warn' : 'text-brand')} aria-hidden />
+            {praise(pct)}
+          </p>
+          <p className="m-0 text-sm text-muted">
+            {total !== indexes.length ? 'Marks, not questions · ' : ''}Paper {attempt.paperCode} · {formatDateTime(at)}
             {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
           </p>
         </div>
-      </section>
+      </Card>
 
-      <div className="tiles">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
         <div className="tile">
           <div className="label">Time</div>
           <div className="value">{formatDuration(timeMs)}</div>
@@ -147,71 +188,82 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
         )}
       </div>
 
-      {limit !== undefined && (
-        <p className={timeMs <= limit ? 'banner ok small' : 'banner small'}>
-          Mock test:{' '}
-          {timeMs <= limit
-            ? `finished with ${formatDuration(limit - timeMs)} to spare out of ${formatDuration(limit)}.`
-            : `${formatDuration(timeMs - limit)} over the ${formatDuration(limit)} allowed. In the real test, answers written after the time is up do not count.`}
-        </p>
-      )}
-      {hasTwoMarkers && (
-        <p className="banner small">
-          Two-mark questions score 2 or 0 here. In the real test, a correct method can still earn 1 mark when the
-          answer is wrong, so show your working on paper.
-        </p>
-      )}
-      {hasMethod && (
-        <p className="banner small">
-          Long multiplication and long division are worth 2 marks in the real test. Write out the formal method in the
-          answer space: if the answer is wrong, a correct method with one slip still earns 1 mark.
-        </p>
-      )}
-      {pending > 0 && (
-        <p className="banner">
-          {pending === 1 ? 'One written answer' : `${pending} written answers`} (up to {pendingMarks}{' '}
-          {pendingMarks === 1 ? 'mark' : 'marks'}) still {pending === 1 ? 'needs' : 'need'} marking. Read each one with a
-          grown-up, compare it with the model answer below and choose the marks. Until then {pending === 1 ? 'it is' : 'they are'} left
-          out of the score.
-        </p>
-      )}
-      {selfMarked && pending === 0 && (
-        <p className="banner small">
-          Written answers were marked against a model answer. A grown-up can change a mark below.
-        </p>
-      )}
+      {limit !== undefined &&
+        note(
+          timeMs <= limit ? 'good' : 'warn',
+          Timer,
+          <>
+            Mock test:{' '}
+            {timeMs <= limit
+              ? `finished with ${formatDuration(limit - timeMs)} to spare out of ${formatDuration(limit)}.`
+              : `${formatDuration(timeMs - limit)} over the ${formatDuration(limit)} allowed. In the real test, answers written after the time is up do not count.`}
+          </>,
+        )}
+      {hasTwoMarkers &&
+        note(
+          'info',
+          PenLine,
+          'Two-mark questions score 2 or 0 here. In the real test, a correct method can still earn 1 mark when the answer is wrong, so show your working on paper.',
+        )}
+      {hasMethod &&
+        note(
+          'info',
+          PenLine,
+          'Long multiplication and long division are worth 2 marks in the real test. Write out the formal method in the answer space: if the answer is wrong, a correct method with one slip still earns 1 mark.',
+        )}
+      {pending > 0 &&
+        note(
+          'warn',
+          ClipboardCheck,
+          <>
+            {pending === 1 ? 'One written answer' : `${pending} written answers`} (up to {pendingMarks} {pendingMarks === 1 ? 'mark' : 'marks'})
+            still {pending === 1 ? 'needs' : 'need'} marking. Read each one with a grown-up, compare it with the model answer below and
+            choose the marks. Until then {pending === 1 ? 'it is' : 'they are'} left out of the score.
+          </>,
+        )}
+      {selfMarked && pending === 0 && note('info', ClipboardCheck, 'Written answers were marked against a model answer. A grown-up can change a mark below.')}
 
-      <div className="row">
+      <div className="flex flex-wrap gap-3">
         {next && (
-          <button type="button" className="btn btn-primary btn-big" onClick={onContinue}>
+          <Button variant="primary" size="lg" onClick={onContinue}>
             Start Day {next.day}
-          </button>
+            <ArrowRight aria-hidden />
+          </Button>
         )}
         {practiceRequest && (
-          <button type="button" className="btn btn-big" onClick={() => onPractise(practiceRequest)}>
+          <Button size="lg" onClick={() => onPractise(practiceRequest)}>
+            <RotateCcw aria-hidden />
             Practise what went wrong
-          </button>
+          </Button>
         )}
-        <button type="button" className="btn btn-big" onClick={onReport}>
+        <Button size="lg" onClick={onReport}>
+          <ChartColumn aria-hidden />
           See the report
-        </button>
+        </Button>
       </div>
 
-      <section className="card">
-        <h2>By topic</h2>
-        <table>
-          <tbody>
-            {topics.map((t) => (
-              <tr key={t.label}>
-                <td>{t.label}</td>
-                <td className="num">
+      <Card>
+        <CardTitle>By topic</CardTitle>
+        <ul className="m-0 grid list-none gap-3 p-0">
+          {topics.map((t) => {
+            const share = t.total ? t.correct / t.total : 0;
+            return (
+              <li key={t.label} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1.5">
+                <span className="font-bold text-ink">{t.label}</span>
+                <span className="text-sm font-bold text-ink-2 tabular-nums">
                   {t.correct} / {t.total}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+                </span>
+                <Progress
+                  className="col-span-2 h-2.5"
+                  value={share * 100}
+                  indicatorClassName={share >= 0.85 ? 'bg-good' : share >= 0.7 ? 'bg-warn' : share >= 0.5 ? 'bg-orange-500' : 'bg-bad'}
+                  aria-label={`${t.label}: ${t.correct} of ${t.total}`}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      </Card>
 
       <section className="card">
         <h2>Questions</h2>
@@ -237,8 +289,8 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
                 <span className="q-number small-num">
                   {i + 1}
                   {attempt.flagged[i] && (
-                    <span className="flag-mark" aria-label="flagged">
-                      ⚑
+                    <span className="flag-mark" role="img" aria-label="flagged">
+                      <Flag aria-hidden fill="currentColor" />
                     </span>
                   )}
                 </span>

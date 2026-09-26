@@ -1,3 +1,4 @@
+import { Delete } from 'lucide-react';
 import { useEffect } from 'react';
 
 interface Props {
@@ -41,7 +42,7 @@ export function Keypad({ onKey, allowDecimal, enabled = true, allowNegative = fa
           aria-label={k === 'back' ? 'Delete' : k === '.' ? 'Decimal point' : k}
           onClick={() => onKey(k)}
         >
-          {k === 'back' ? '⌫' : k}
+          {k === 'back' ? <Delete aria-hidden /> : k}
         </button>
       ))}
       {allowNegative && (

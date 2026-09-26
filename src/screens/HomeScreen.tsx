@@ -1,4 +1,34 @@
+import {
+  ArrowRight,
+  BookOpen,
+  BookOpenText,
+  Calculator,
+  CalendarDays,
+  ChartColumn,
+  Check,
+  ChevronRight,
+  FileText,
+  Flame,
+  Library,
+  Lightbulb,
+  ListChecks,
+  PenLine,
+  Settings,
+  Shapes,
+  SpellCheck,
+  Target,
+  Timer,
+  Trophy,
+  Users,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Card, CardDescription, CardTitle } from '../components/ui/card';
+import { Stat } from '../components/ui/stat';
+import { cn } from '../lib/utils';
 import { isBlank } from '../answer/answer';
 import { GPS_ITEMS, READING_TEXTS, SPELLING_WORDS } from '../english/bank';
 import { ENGLISH_TYPES } from '../english/catalog';
@@ -53,6 +83,7 @@ const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 interface Option {
   title: string;
   about: string;
+  icon: LucideIcon;
   request: Omit<StartRequest, 'level'>;
 }
 
@@ -60,19 +91,22 @@ interface PaperCard {
   paper: PaperKind;
   title: string;
   about: string;
+  icon: LucideIcon;
   options: Option[];
 }
 
 const MATHS: PaperCard[] = [
   {
     paper: 'arithmetic',
+    icon: Calculator,
     title: 'Paper 1: Arithmetic',
     about: '40 questions, 44 marks: long multiplication and division are worth 2',
     options: [
-      { title: 'New daily paper', about: '8 questions a day for 5 days', request: { paper: 'arithmetic', mode: 'daily' } },
-      { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },
+      { title: 'New daily paper', icon: CalendarDays, about: '8 questions a day for 5 days', request: { paper: 'arithmetic', mode: 'daily' } },
+      { title: 'New full paper', icon: FileText, about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },
       {
         title: 'Mock test',
+        icon: Timer,
         about: 'Like the real paper: 36 questions, 40 marks, 30 minutes',
         request: { paper: 'arithmetic', mode: 'full', mock: true },
       },
@@ -80,12 +114,13 @@ const MATHS: PaperCard[] = [
   },
   {
     paper: 'reasoning',
+    icon: Lightbulb,
     title: 'Papers 2 & 3: Reasoning',
     about: '25 questions, 35 marks, about 40 minutes',
     options: [
-      { title: 'New daily paper', about: '5 questions a day for 5 days', request: { paper: 'reasoning', mode: 'daily' } },
-      { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'reasoning', mode: 'full' } },
-      { title: 'Mock test', about: 'Timed like the real paper: 40 minutes', request: { paper: 'reasoning', mode: 'full', mock: true } },
+      { title: 'New daily paper', icon: CalendarDays, about: '5 questions a day for 5 days', request: { paper: 'reasoning', mode: 'daily' } },
+      { title: 'New full paper', icon: FileText, about: 'The whole paper in one go', request: { paper: 'reasoning', mode: 'full' } },
+      { title: 'Mock test', icon: Timer, about: 'Timed like the real paper: 40 minutes', request: { paper: 'reasoning', mode: 'full', mock: true } },
     ],
   },
 ];
@@ -93,31 +128,34 @@ const MATHS: PaperCard[] = [
 const ENGLISH: PaperCard[] = [
   {
     paper: 'gps',
+    icon: PenLine,
     title: 'Grammar, punctuation & vocabulary',
     about: 'Paper 1: 50 questions, 45 minutes',
     options: [
-      { title: 'New daily paper', about: '10 questions a day for 5 days', request: { paper: 'gps', mode: 'daily' } },
-      { title: 'New full paper', about: 'All 50 questions in one go', request: { paper: 'gps', mode: 'full' } },
-      { title: 'Mock test', about: '50 questions in 45 minutes, easy to hard', request: { paper: 'gps', mode: 'full', mock: true } },
+      { title: 'New daily paper', icon: CalendarDays, about: '10 questions a day for 5 days', request: { paper: 'gps', mode: 'daily' } },
+      { title: 'New full paper', icon: FileText, about: 'All 50 questions in one go', request: { paper: 'gps', mode: 'full' } },
+      { title: 'Mock test', icon: Timer, about: '50 questions in 45 minutes, easy to hard', request: { paper: 'gps', mode: 'full', mock: true } },
     ],
   },
   {
     paper: 'spelling',
+    icon: SpellCheck,
     title: 'Spelling',
     about: 'Paper 2: the iPad reads each word and a sentence. Turn the sound on.',
     options: [
-      { title: 'Quick test', about: '10 words', request: { paper: 'spelling', mode: 'full', size: 10 } },
-      { title: 'Full spelling test', about: '20 words, like the real test', request: { paper: 'spelling', mode: 'full', size: 20 } },
+      { title: 'Quick test', icon: Zap, about: '10 words', request: { paper: 'spelling', mode: 'full', size: 10 } },
+      { title: 'Full spelling test', icon: ListChecks, about: '20 words, like the real test', request: { paper: 'spelling', mode: 'full', size: 20 } },
     ],
   },
   {
     paper: 'reading',
+    icon: BookOpen,
     title: 'Reading',
     about: 'Read a text, then answer questions about it. The text stays on screen.',
     options: [
-      { title: 'One text', about: 'A story, poem or information text', request: { paper: 'reading', mode: 'full', size: 1 } },
-      { title: 'Full reading paper', about: '3 texts, about 60 minutes', request: { paper: 'reading', mode: 'full', size: 3 } },
-      { title: 'Mock test', about: '3 texts in 60 minutes, easy to hard', request: { paper: 'reading', mode: 'full', size: 3, mock: true } },
+      { title: 'One text', icon: BookOpenText, about: 'A story, poem or information text', request: { paper: 'reading', mode: 'full', size: 1 } },
+      { title: 'Full reading paper', icon: Library, about: '3 texts, about 60 minutes', request: { paper: 'reading', mode: 'full', size: 3 } },
+      { title: 'Mock test', icon: Timer, about: '3 texts in 60 minutes, easy to hard', request: { paper: 'reading', mode: 'full', size: 3, mock: true } },
     ],
   },
 ];
@@ -165,6 +203,7 @@ const PRACTICE: Record<Subject, PracticeGroup[]> = {
   ],
 };
 
+/** An unfinished paper, mock or practice: where it has got to, and a button to carry on. */
 function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () => void }) {
   const session = openSession(attempt);
   if (!session) return null;
@@ -176,33 +215,59 @@ function Progress({ attempt, onContinue }: { attempt: Attempt; onContinue: () =>
       ? `Continue Day ${session.day} (${answered}/${questions} answered)`
       : `Start Day ${session.day}`
     : `Continue (${answered}/${questions} answered)`;
+  const title = sessionTitle(attempt, null);
   return (
-    <div className="progress">
-      <div className="muted small">
-        In progress · {sessionTitle(attempt, null) === 'Full paper' ? `paper ${attempt.paperCode}` : sessionTitle(attempt, null)}
+    <div className="flex flex-col gap-3 rounded-2xl bg-brand-soft p-4">
+      <div className="text-sm font-bold text-brand">
+        In progress · {title === 'Full paper' ? `paper ${attempt.paperCode}` : title}
         {attempt.level !== undefined && ` · ${LEVEL_NAME[attempt.level]}`}
       </div>
       {attempt.mode === 'daily' && (
-        <ol className="days">
+        <ol className="m-0 grid list-none grid-cols-5 gap-2 p-0">
           {Array.from({ length: DAYS }, (_, k) => {
             const from = k * size;
             const done = attempt.marks[from] !== null;
             const current = session.day === k + 1;
             const s = scoreOf(attempt, from, Math.min(from + size, attempt.questions.length));
             return (
-              <li key={k} className={`day ${done ? 'done' : ''} ${current ? 'current' : ''}`}>
-                <span className="day-name">Day {k + 1}</span>
-                <span className="day-score">{done ? `${s.score}/${s.total}` : current ? 'Next' : ''}</span>
+              <li
+                key={k}
+                className={cn(
+                  'flex flex-col items-center gap-0.5 rounded-xl border-2 px-1 py-2 text-center',
+                  done ? 'border-transparent bg-good-soft text-good-ink' : current ? 'border-brand bg-card text-brand' : 'border-transparent bg-card/60 text-muted',
+                )}
+              >
+                <span className="text-xs font-bold tracking-wide uppercase">Day {k + 1}</span>
+                <span className="flex items-center gap-1 text-base font-extrabold">
+                  {done ? (
+                    <>
+                      <Check className="size-4" aria-hidden />
+                      {s.score}/{s.total}
+                    </>
+                  ) : current ? (
+                    'Next'
+                  ) : (
+                    '·'
+                  )}
+                </span>
               </li>
             );
           })}
         </ol>
       )}
-      <button type="button" className="btn btn-primary btn-big" onClick={onContinue}>
+      <Button variant="primary" size="lg" onClick={onContinue}>
         {label}
-      </button>
+        <ArrowRight aria-hidden />
+      </Button>
     </div>
   );
+}
+
+/** A small figure with an icon: the streak, this week's questions… */
+/** Score as a coloured pill: green 85%+, amber 70-84%, red below. */
+function ScorePill({ score, total }: { score: number; total: number }) {
+  const pct = total ? Math.round((score / total) * 100) : 0;
+  return <Badge tone={pct >= 85 ? 'good' : pct >= 70 ? 'warn' : 'bad'}>{pct}%</Badge>;
 }
 
 export function HomeScreen(props: Props) {
@@ -263,55 +328,77 @@ export function HomeScreen(props: Props) {
 
   const cards = subject === 'maths' ? MATHS : ENGLISH;
 
+  const finished = attempts.filter((a) => a.completedAt !== null && a.mode !== 'practice').length;
+  const weekPct = lastWeek.total ? `${Math.round((lastWeek.correct / lastWeek.total) * 100)}%` : '—';
+
   return (
-    <div className="page">
-      <header className="topbar">
-        <h1>Hi, {profile.name}</h1>
-        <button type="button" className="btn btn-ghost" onClick={props.onSwitchProfile}>
+    <div className="page gap-5">
+      <header className="flex flex-wrap items-center gap-3">
+        <div className="min-w-0 flex-1">
+          <h1 className="m-0 text-3xl font-black text-ink">Hi, {profile.name}</h1>
+          <p className="m-0 mt-1 flex items-center gap-1.5 font-semibold text-muted">
+            <CalendarDays className="size-4.5 shrink-0" aria-hidden />
+            {toGo > 0
+              ? `${toGo} ${toGo === 1 ? 'day' : 'days'} to the SATs (Monday 10 May 2027)`
+              : toGo > -4
+                ? 'It is SATs week. You have practised for this: good luck!'
+                : 'The SATs are done. Well done for all the practice!'}
+          </p>
+        </div>
+        <Button variant="ghost" onClick={props.onSwitchProfile}>
+          <Users aria-hidden />
           Switch
-        </button>
-        <button type="button" className="btn" onClick={props.onSettings}>
+        </Button>
+        <Button onClick={props.onSettings}>
+          <Settings aria-hidden />
           Settings
-        </button>
+        </Button>
       </header>
 
-      <div className="tiles">
-        {toGo > 0 && (
-          <div className="tile">
-            <div className="label">Days to the SATs</div>
-            <div className="value">{toGo}</div>
-          </div>
-        )}
-        <div className="tile">
-          <div className="label">Practice streak</div>
-          <div className="value">
-            {streak} {streak === 1 ? 'day' : 'days'}
-          </div>
-        </div>
-        <div className="tile">
-          <div className="label">Questions this week</div>
-          <div className="value">{lastWeek.total}</div>
-        </div>
-        <div className="tile">
-          <div className="label">Correct this week</div>
-          <div className="value">{lastWeek.total ? `${Math.round((lastWeek.correct / lastWeek.total) * 100)}%` : '—'}</div>
-        </div>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <Stat icon={Flame} tone="bg-orange-50 text-orange-500" label="Practice streak" value={`${streak} ${streak === 1 ? 'day' : 'days'}`} />
+        <Stat icon={ListChecks} tone="bg-brand-soft text-brand" label="Questions this week" value={lastWeek.total} />
+        <Stat icon={Target} tone="bg-good-soft text-good" label="Correct this week" value={weekPct} />
+        <Stat icon={Trophy} tone="bg-warn-soft text-warn" label="Papers finished" value={finished} />
       </div>
 
-      {attempts.some((a) => a.completedAt !== null && a.mode !== 'practice') && <Readiness attempts={attempts} compact />}
+      {finished > 0 && <Readiness attempts={attempts} compact />}
 
-      <div className="segmented subject-switch" role="radiogroup" aria-label="Subject">
-        {(['maths', 'english'] as const).map((s) => (
-          <button key={s} type="button" role="radio" aria-checked={subject === s} className={subject === s ? 'on' : ''} onClick={() => chooseSubject(s)}>
-            {s === 'maths' ? 'Maths' : 'English'}
-          </button>
-        ))}
+      <div
+        className="grid grid-cols-2 gap-1.5 rounded-full border border-line bg-card p-1.5 shadow-[var(--shadow-card)] sm:max-w-md"
+        role="radiogroup"
+        aria-label="Subject"
+      >
+        {(['maths', 'english'] as const).map((s) => {
+          const on = subject === s;
+          const Icon = s === 'maths' ? Calculator : BookOpen;
+          return (
+            <button
+              key={s}
+              type="button"
+              role="radio"
+              aria-checked={on}
+              onClick={() => chooseSubject(s)}
+              className={cn(
+                'flex min-h-12 items-center justify-center gap-2 rounded-full border-0 text-lg font-extrabold transition-colors',
+                on
+                  ? s === 'maths'
+                    ? 'bg-maths text-white shadow-[0_3px_0_var(--color-brand-dark)]'
+                    : 'bg-english text-white shadow-[0_3px_0_#5b21b6]'
+                  : 'bg-transparent text-ink-2',
+              )}
+            >
+              <Icon className="size-5" aria-hidden />
+              {s === 'maths' ? 'Maths' : 'English'}
+            </button>
+          );
+        })}
       </div>
 
       {subject === 'english' && (
-        <section className="card level-card">
-          <div className="row">
-            <h2 className="grow">Level</h2>
+        <Card className="gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <CardTitle className="flex-1">Level</CardTitle>
             <div className="segmented" role="radiogroup" aria-label="Level">
               {LEVELS.map((l) => (
                 <button key={l} type="button" role="radio" aria-checked={level === l} className={level === l ? 'on' : ''} onClick={() => chooseLevel(l)}>
@@ -320,7 +407,7 @@ export function HomeScreen(props: Props) {
               ))}
             </div>
           </div>
-          <p className="muted small">
+          <CardDescription className="text-sm">
             {level === 'mixed'
               ? 'Mixed starts easy and gets harder, like the real SATs papers.'
               : level === 1
@@ -328,89 +415,131 @@ export function HomeScreen(props: Props) {
                 : level === 2
                   ? 'Medium: Year 5 and 6 work at the expected standard.'
                   : 'Hard: the trickiest questions, at the higher standard.'}
-          </p>
-        </section>
+          </CardDescription>
+        </Card>
       )}
 
-      <div className="papers">
+      <div className="grid gap-4 lg:grid-cols-2">
         {cards.map((p) => {
           const active = activeAttempt(data, profile.id, p.paper);
           const mock = activeAttempt(data, profile.id, p.paper, true);
           const content = bank[p.paper];
           const empty = content !== undefined && content.have === 0;
+          const english = SUBJECT_OF[p.paper] === 'english';
+          const Icon = p.icon;
           return (
-            <section key={p.paper} className={`card paper-card ${p.paper}`}>
-              <h2>{p.title}</h2>
-              <p className="muted">{p.about}</p>
+            <Card key={p.paper}>
+              <div className="flex items-start gap-3">
+                <span className={cn('grid size-12 shrink-0 place-items-center rounded-2xl', english ? 'bg-english-soft text-english' : 'bg-maths-soft text-maths')}>
+                  <Icon className="size-6" aria-hidden />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <CardTitle>{p.title}</CardTitle>
+                  <CardDescription className="mt-1">{p.about}</CardDescription>
+                </div>
+              </div>
               {active && <Progress attempt={active} onContinue={() => onContinue(active.id)} />}
               {mock && <Progress attempt={mock} onContinue={() => onContinue(mock.id)} />}
               {empty ? (
                 <p className="banner small">Questions for this paper are on their way.</p>
               ) : (
-                <div className="choices">
-                  {p.options.map((o) => (
-                    <button
-                      key={o.title}
-                      type="button"
-                      className="choice"
-                      onClick={() => start({ ...o.request, ...(subject === 'english' && { level }) })}
-                    >
-                      <strong>{o.title}</strong>
-                      <span className="muted">{o.about}</span>
-                    </button>
-                  ))}
+                <div className="grid gap-2">
+                  {p.options.map((o) => {
+                    const OptionIcon = o.icon;
+                    const isMock = o.request.mock === true;
+                    return (
+                      <button
+                        key={o.title}
+                        type="button"
+                        onClick={() => start({ ...o.request, ...(english && { level }) })}
+                        className={cn(
+                          'flex w-full items-center gap-3 rounded-2xl border p-3 text-left transition-transform active:scale-[0.99]',
+                          isMock ? 'border-warn/40 bg-warn-soft/60' : 'border-line bg-page/70',
+                        )}
+                      >
+                        <span className={cn('grid size-10 shrink-0 place-items-center rounded-xl bg-card shadow-sm', isMock ? 'text-warn-ink' : english ? 'text-english' : 'text-brand')}>
+                          <OptionIcon className="size-5" aria-hidden />
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <strong className="block text-lg leading-tight font-extrabold text-ink">{o.title}</strong>
+                          <span className="block text-sm text-muted">{o.about}</span>
+                        </span>
+                        <ChevronRight className="size-5 shrink-0 text-muted" aria-hidden />
+                      </button>
+                    );
+                  })}
                 </div>
               )}
-              {content && !empty && <p className="muted small bank-note">{content.note}</p>}
-            </section>
+              {content && !empty && <p className="m-0 text-sm text-muted">{content.note}</p>}
+            </Card>
           );
         })}
       </div>
 
-      <section className="card paper-card practice-card">
-        <h2>Practise a topic</h2>
-        <p className="muted">
-          {subject === 'english'
-            ? 'Ten questions on one thing, at the level chosen above.'
-            : 'Ten questions on one thing, from easy to hard.'}
-        </p>
+      <Card>
+        <div className="flex items-start gap-3">
+          <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-good-soft text-good">
+            <Shapes className="size-6" aria-hidden />
+          </span>
+          <div className="min-w-0 flex-1">
+            <CardTitle>Practise a topic</CardTitle>
+            <CardDescription className="mt-1">
+              {subject === 'english' ? 'Ten questions on one thing, at the level chosen above.' : 'Ten questions on one thing, from easy to hard.'}
+            </CardDescription>
+          </div>
+        </div>
         {practice && <Progress attempt={practice} onContinue={() => onContinue(practice.id)} />}
         {suggestions.length > 0 && (
-          <div className="suggestions">
-            <div className="muted small">Suggested from your results</div>
-            <div className="chips">
-              {suggestions.map(({ row, request }) => (
-                <button key={row.typeId} type="button" className="chip-btn" onClick={() => practise(request)}>
-                  {row.label}
-                  <span className="muted small"> {Math.round((row.tally.correct / row.tally.total) * 100)}%</span>
-                </button>
-              ))}
+          <div className="flex flex-col gap-2">
+            <div className="text-sm font-bold text-muted">Suggested from your results</div>
+            <div className="flex flex-wrap gap-2">
+              {suggestions.map(({ row, request }) => {
+                const pct = Math.round((row.tally.correct / row.tally.total) * 100);
+                return (
+                  <button
+                    key={row.typeId}
+                    type="button"
+                    className="flex min-h-11 items-center gap-2 rounded-full border border-line bg-card px-4 font-bold text-ink shadow-[0_2px_0_var(--color-line)] active:translate-y-0.5"
+                    onClick={() => practise(request)}
+                  >
+                    {row.label}
+                    <Badge tone={pct >= 70 ? 'warn' : 'bad'}>{pct}%</Badge>
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
-        <div className="choices">
-          <button type="button" className="choice" onClick={() => setChoosing(true)}>
-            <strong>Choose a topic</strong>
-            <span className="muted">
-              {subject === 'english'
-                ? 'Grammar, punctuation, vocabulary or a spelling rule'
-                : 'Any arithmetic or reasoning question type'}
+        <button
+          type="button"
+          className="flex w-full items-center gap-3 rounded-2xl border border-line bg-page/70 p-3 text-left active:scale-[0.99]"
+          onClick={() => setChoosing(true)}
+        >
+          <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-card text-good shadow-sm">
+            <Target className="size-5" aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <strong className="block text-lg leading-tight font-extrabold text-ink">Choose a topic</strong>
+            <span className="block text-sm text-muted">
+              {subject === 'english' ? 'Grammar, punctuation, vocabulary or a spelling rule' : 'Any arithmetic or reasoning question type'}
             </span>
-          </button>
-        </div>
-      </section>
+          </span>
+          <ChevronRight className="size-5 shrink-0 text-muted" aria-hidden />
+        </button>
+      </Card>
 
-      <section className="card">
-        <div className="row">
-          <h2 className="grow">Recent results</h2>
-          <button type="button" className="btn btn-primary" onClick={props.onReport}>
+      <Card>
+        <div className="flex flex-wrap items-center gap-3">
+          <CardTitle className="flex-1">Recent results</CardTitle>
+          <Button variant="primary" onClick={props.onReport}>
+            <ChartColumn aria-hidden />
             Report and heat maps
-          </button>
+          </Button>
         </div>
         {sessions.length === 0 ? (
-          <p className="muted">No results yet. Finish a day or a paper to see scores here.</p>
+          <CardDescription>No results yet. Finish a day or a paper to see scores here.</CardDescription>
         ) : (
-          <table>
+          <table className="recent">
             <tbody>
               {sessions
                 .slice(-8)
@@ -419,21 +548,23 @@ export function HomeScreen(props: Props) {
                   const attempt = findAttempt(data, s.attemptId);
                   return (
                     <tr key={`${s.attemptId}-${s.at}`} className="clickable" onClick={() => onOpenResult(s.attemptId, s.at)}>
-                      <td>{formatDateTime(s.at)}</td>
-                      <td>
+                      <td className="text-muted">{formatDateTime(s.at)}</td>
+                      <td className="font-bold">
                         {PAPER_NAME[s.paper]} · {attempt ? sessionTitle(attempt, s.day) : s.day ? `Day ${s.day}` : 'Full paper'}
                       </td>
                       <td className="num">
                         {s.score} / {s.total}
                       </td>
-                      <td className="num">{Math.round((s.score / s.total) * 100)}%</td>
+                      <td className="num">
+                        <ScorePill score={s.score} total={s.total} />
+                      </td>
                     </tr>
                   );
                 })}
             </tbody>
           </table>
         )}
-      </section>
+      </Card>
 
       {choosing && (
         <div className="backdrop" role="dialog" aria-modal="true" aria-labelledby="choose-title" onClick={() => setChoosing(false)}>

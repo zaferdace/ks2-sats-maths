@@ -1,3 +1,4 @@
+import { ArchiveRestore, FolderOpen } from 'lucide-react';
 import { useState, type ChangeEvent } from 'react';
 import type { StoreData } from '../store/model';
 import { parseStore } from '../store/persist';
@@ -40,6 +41,7 @@ export function RestoreBackup({ onRestore }: Props) {
       {note && <div className={note.kind === 'ok' ? 'banner ok' : 'banner'}>{note.text}</div>}
       <div className="row">
         <label className="btn file-btn">
+          <FolderOpen aria-hidden />
           Choose backup file
           <input type="file" accept="application/json,.json" onChange={onFile} hidden />
         </label>
@@ -53,6 +55,7 @@ export function RestoreBackup({ onRestore }: Props) {
       />
       <div className="row">
         <button type="button" className="btn" disabled={!pasted.trim()} onClick={() => restore(pasted)}>
+          <ArchiveRestore aria-hidden />
           Restore pasted text
         </button>
       </div>

@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { Delete } from 'lucide-react';
+import { useEffect, type ReactNode } from 'react';
 
 interface Props {
   onKey: (key: string) => void;
@@ -32,7 +33,7 @@ export function LetterKeyboard({ onKey, enabled = true }: Props) {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [onKey, enabled]);
 
-  const key = (k: string, label = k, cls = '', aria?: string) => (
+  const key = (k: string, label: ReactNode = k, cls = '', aria?: string) => (
     <button key={k} type="button" className={`key lkey ${cls}`} aria-label={aria} onClick={() => onKey(k)}>
       {label}
     </button>
@@ -54,7 +55,7 @@ export function LetterKeyboard({ onKey, enabled = true }: Props) {
       <div className="letters-row">
         {key('clear', 'Clear', 'wide')}
         {key('space', 'space', 'space', 'Space')}
-        {key('back', '⌫', 'wide', 'Delete')}
+        {key('back', <Delete aria-hidden />, 'wide', 'Delete')}
       </div>
     </div>
   );

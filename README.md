@@ -24,10 +24,14 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
   on-screen letter keyboard.
 - **Spelling (GPS Paper 2).** The iPad reads each word, a sentence and the word again in a British
   voice; the pupil types the word into the printed sentence. Words come from the statutory
-  Year 3/4 and Year 5/6 lists and the spelling rules. Misspelt words come back in later tests.
+  Year 3/4 and Year 5/6 lists, the spelling rules and the homophones. Misspelt words come back in
+  later tests.
 - **Reading.** Stories, poems and non-fiction texts with questions across the reading domains
-  (vocabulary, retrieval, inference, summary, structure, language). The text stays on screen
-  beside the questions. Explanation questions are self-marked against a model answer, and what the
+  (vocabulary, retrieval, inference, prediction, summary, structure, language). Each text carries
+  16-17 marks, so three texts make a paper close to the real 50 marks, and written answers
+  (including 2- and 3-mark explanations) are over half of them, as in the real test. The text stays
+  on screen beside the questions; with the letter keyboard in landscape, the text and the question
+  each scroll above it. Explanation questions are self-marked against a model answer, and what the
   pupil wrote is kept for a grown-up to read.
 - **Levels.** Every English paper can be Easy, Medium, Hard or Mixed (easy to hard, like the real
   test). New papers prefer questions not seen before. Mock tests (grammar 45 minutes, reading
@@ -38,8 +42,10 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
 **Everywhere**
 
 - **Report.** A SATs estimate (recent full papers scaled to the real tests, against the 2025
-  expected standard), score per session, accuracy by topic, a skill heat map of every question
-  type, progress by week and the question types to practise next, for maths, English or both.
+  expected standard), then three tabs: an overview (accuracy, streak, the question types to
+  practise next and the score per session), topics and skills (accuracy by topic and a heat map of
+  every question type) and progress over time (by week and by question number), for maths,
+  English or both.
 - **Private.** Everything happens on the device; results stay in the browser's storage
   (IndexedDB). Settings has backup and restore.
 
@@ -63,6 +69,11 @@ npm run e2e      # browser smoke tests at iPad sizes (builds, then serves dist/ 
 ```
 
 `.npmrc` pins the public npm registry so installs work on machines with a different default.
+
+The interface uses Tailwind CSS v4 (theme and utilities, no preflight: the older hand-written
+styles sit in a lower cascade layer, so a utility class always wins), Radix UI primitives in the
+shadcn/ui style (`src/components/ui`), lucide icons, Motion for the score ring and confetti, and the
+Nunito font bundled with the app so it works offline.
 
 ## How the questions are made
 

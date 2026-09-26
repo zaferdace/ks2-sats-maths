@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight, Flag, Timer } from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   emptyAnswer,
@@ -60,6 +61,12 @@ function firstFocus(q: AnyQuestion): Focus {
 function revealAnswerBox() {
   const box = document.querySelector<HTMLElement>('.question-card .abox.focus');
   if (!box) return;
+  // Reading with the letter keyboard in landscape fits the screen: the question card scrolls, not the page.
+  const card = box.closest<HTMLElement>('.fit-screen .question-card');
+  if (card && getComputedStyle(card).overflowY === 'auto') {
+    box.scrollIntoView({ block: 'nearest' });
+    return;
+  }
   const r = box.getBoundingClientRect();
   const over = (selector: string) => {
     const el = document.querySelector(selector)?.getBoundingClientRect();
@@ -277,7 +284,8 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   const nav = (where: string) => (
     <div className={`q-nav ${where}`}>
       <button type="button" className="btn" disabled={position === 1} onClick={() => goTo(index - 1)}>
-        ← Back
+        <ArrowLeft aria-hidden />
+        Back
       </button>
       <button
         type="button"
@@ -285,7 +293,8 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         aria-pressed={attempt.flagged[index]}
         onClick={() => edit((a) => toggleFlag(a, index))}
       >
-        ⚑ {attempt.flagged[index] ? 'Flagged' : 'Flag'}
+        <Flag aria-hidden fill={attempt.flagged[index] ? 'currentColor' : 'none'} />
+        {attempt.flagged[index] ? 'Flagged' : 'Flag'}
       </button>
       {isLast ? (
         <button type="button" className="btn btn-primary" onClick={() => setConfirming(true)}>
@@ -293,7 +302,8 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
         </button>
       ) : (
         <button type="button" className="btn btn-primary" onClick={() => goTo(index + 1)}>
-          Next →
+          Next
+          <ArrowRight aria-hidden />
         </button>
       )}
     </div>
@@ -315,10 +325,11 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
   ].join(' ');
 
   return (
-    <div className={`page test-page ${passage ? 'reading-page' : ''}`}>
+    <div className={`page test-page ${passage ? 'reading-page' : ''} ${passage && keyboard === 'letters' ? 'fit-screen' : ''}`}>
       <header className="topbar test-top">
         <button type="button" className="btn btn-ghost" onClick={onExit} aria-label="Save and go home">
-          ← Home
+          <ArrowLeft aria-hidden />
+          Home
         </button>
         <div className="grow">
           <div className="test-title">
@@ -334,7 +345,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
           className={`timer ${left !== null && left <= 5 * 60_000 ? 'timer-low' : ''}`}
           aria-label={left !== null ? 'Time left in the mock test' : 'Time on this session'}
         >
-          ⏱{' '}
+          <Timer className="timer-icon" aria-hidden />
           {left === null
             ? formatDuration(elapsed)
             : left >= 0
@@ -366,7 +377,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
               }`}
             >
               {i + 1}
-              {attempt.flagged[i] && <span className="flag-mark">⚑</span>}
+              {attempt.flagged[i] && <Flag className="flag-mark" aria-hidden fill="currentColor" />}
             </button>
           );
         })}

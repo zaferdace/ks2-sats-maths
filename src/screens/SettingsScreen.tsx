@@ -1,3 +1,4 @@
+import { ArchiveRestore, Copy, Download, Info, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
 import type { StoreData } from '../store/model';
 import { backupFileName, restoreBackup } from '../store/persist';
@@ -52,7 +53,10 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       {note && <div className={note.kind === 'ok' ? 'banner ok' : 'banner'}>{note.text}</div>}
 
       <section className="card">
-        <h2>Backup</h2>
+        <h2 className="flex items-center gap-2">
+          <ShieldCheck className="size-6 text-brand" aria-hidden />
+          Backup
+        </h2>
         <p className="muted">
           Results live only on this iPad ({plural(papers, 'paper')}, {plural(marked, 'marked question')}). Save a backup now and then
           so nothing is lost if Safari data is cleared.
@@ -65,9 +69,11 @@ export function SettingsScreen({ data, update, onBack }: Props) {
         )}
         <div className="row">
           <button type="button" className="btn btn-primary" onClick={saveBackup}>
+            <Download aria-hidden />
             Save backup file
           </button>
           <button type="button" className="btn" onClick={copyBackup}>
+            <Copy aria-hidden />
             Copy backup text
           </button>
         </div>
@@ -75,7 +81,10 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       </section>
 
       <section className="card">
-        <h2>Restore</h2>
+        <h2 className="flex items-center gap-2">
+          <ArchiveRestore className="size-6 text-brand" aria-hidden />
+          Restore
+        </h2>
         <p className="muted">Restoring merges a backup into what is here; nothing is deleted.</p>
         <RestoreBackup
           onRestore={(incoming) => {
@@ -86,12 +95,16 @@ export function SettingsScreen({ data, update, onBack }: Props) {
       </section>
 
       <section className="card">
-        <h2>About</h2>
+        <h2 className="flex items-center gap-2">
+          <Info className="size-6 text-brand" aria-hidden />
+          About
+        </h2>
         <p className="muted">
           Maths questions are generated on this device in the style of the KS2 SATs papers; English questions
           come from a bank of original questions, texts and spelling words stored in the app. Nothing is sent
-          anywhere. Equivalent maths answers are accepted (3/4, 6/8 and 0.75 all score). Spelling words are read
-          aloud by the iPad's own voice.
+          anywhere. Answers are marked the way the real mark schemes mark them: in Paper 1, 3/4, 6/8 and 0.75 all
+          score, while money needs two decimal places and a question that asks for a fraction needs a fraction.
+          Spelling words are read aloud by the iPad's own voice.
         </p>
       </section>
     </div>

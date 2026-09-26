@@ -79,3 +79,29 @@ test('reading: a choice tapped beside the text shows as right', async ({ page })
   await expect(resultScore(page)).toHaveText(`${q.marks} / ${total}`);
   await expectMarkedRight(page, index);
 });
+
+test('reading with the letter keyboard: the text and the answer box stay above the keyboard', async ({ page }, info) => {
+  const paper = await startPaper(page, 'Reading', 'One text');
+  const index = paper.questions.findIndex((q) => isItem(q) && q.input.kind === 'text');
+  expect(index, 'every text has a typed (find and copy) question').toBeGreaterThanOrEqual(0);
+  await goToQuestion(page, index);
+
+  const keyboard = page.getByRole('group', { name: 'Letter keyboard' });
+  await expect(keyboard).toBeVisible();
+  await tapLetters(page, 'abc');
+  const box = page.getByLabel('Your answer: abc', { exact: true });
+  await expect(box).toBeVisible();
+
+  // The panel holding the keyboard (and Back / Flag / Next) is the limit.
+  const limit = (await page.locator('.letters-wrap').boundingBox())!.y;
+  const answer = (await box.boundingBox())!;
+  expect(answer.y + answer.height, 'the answer box is above the keyboard').toBeLessThanOrEqual(limit);
+
+  if (info.project.name === 'ipad-landscape') {
+    // Landscape: the text beside the question ends above the keyboard, and the page itself fits the screen.
+    const text = (await page.getByRole('complementary', { name: /^Text: / }).boundingBox())!;
+    expect(text.y + text.height, 'the text is above the keyboard').toBeLessThanOrEqual(limit + 1);
+    const overflow = await page.evaluate(() => document.documentElement.scrollHeight - window.innerHeight);
+    expect(overflow, 'the page does not scroll').toBeLessThanOrEqual(1);
+  }
+});
