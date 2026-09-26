@@ -92,7 +92,8 @@ describe('attempts', () => {
     let a = createAttempt('p1', 'full', 'TESTAB', paper, 1000, 'a2');
     for (let i = 0; i < 40; i++) a = answerRight(a, i);
     a = submitSession(a, 5000);
-    expect(scoreOf(a)).toMatchObject({ score: 40, total: 40 });
+    // 40 questions: long multiplication and division (4 of them) are worth 2 marks, as in the real test.
+    expect(scoreOf(a)).toMatchObject({ score: 44, total: 44 });
     expect(a.completedAt).toBe(5000);
   });
 

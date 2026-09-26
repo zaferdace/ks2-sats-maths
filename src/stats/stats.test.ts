@@ -45,7 +45,7 @@ describe('stats', () => {
     expect(records).toHaveLength(16);
     expect(sessions.map((s) => [s.day, s.score, s.total, s.timeMs])).toEqual([
       [1, 8, 8, 80_000],
-      [2, 4, 8, 160_000],
+      [2, 4, 9, 160_000], // Q16 is long multiplication: 2 marks
     ]);
   });
 

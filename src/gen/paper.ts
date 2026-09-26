@@ -12,7 +12,8 @@ export function toQuestion(type: QuestionType, difficulty: Difficulty, g: Genera
     parts: g.parts,
     answer: ratToString(g.answer),
     kind: g.kind,
-    ...(g.showMethod ? { showMethod: true } : {}),
+    // Long multiplication and division are worth 2 marks in the real test (1 of them for the method).
+    ...(g.showMethod ? { showMethod: true, marks: 2 } : {}),
   };
 }
 

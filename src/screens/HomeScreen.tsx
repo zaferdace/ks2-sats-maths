@@ -65,7 +65,7 @@ const MATHS: PaperCard[] = [
   {
     paper: 'arithmetic',
     title: 'Paper 1: Arithmetic',
-    about: '40 questions, 1 mark each',
+    about: '40 questions, 44 marks: long multiplication and division are worth 2',
     options: [
       { title: 'New daily paper', about: '8 questions a day for 5 days', request: { paper: 'arithmetic', mode: 'daily' } },
       { title: 'New full paper', about: 'The whole paper in one go', request: { paper: 'arithmetic', mode: 'full' } },

@@ -70,6 +70,8 @@ export interface Question {
   answer: string; // exact rational "n/d"
   kind: AnswerKind;
   showMethod?: boolean;
+  /** Marks when not 1: long multiplication and division are worth 2, as in the real test (papers made before this say nothing: 1). */
+  marks?: number;
 }
 
 /** What an arithmetic generator returns before it is snapshotted into a Question. */

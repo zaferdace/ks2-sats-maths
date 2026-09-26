@@ -196,7 +196,7 @@ export function markFor(q: AnyQuestion, a: AnswerInput | null | undefined): numb
   if (!a) return 0;
   if (!isItem(q)) {
     const v = parseAnswer(a);
-    return v !== null && eq(v, ratFromString(q.answer)) ? 1 : 0;
+    return v !== null && eq(v, ratFromString(q.answer)) ? maxMarks(q) : 0;
   }
   if (q.input.kind === 'self') return Math.max(0, Math.min(a.self ?? 0, q.marks));
   if (a.accepted && q.input.kind === 'text' && a.text?.trim()) return q.marks;
@@ -207,7 +207,7 @@ export function markFor(q: AnyQuestion, a: AnswerInput | null | undefined): numb
 export const awaitingMark = (q: AnyQuestion, a: AnswerInput | null | undefined): boolean =>
   isItem(q) && q.input.kind === 'self' && a?.self === undefined && Boolean(a?.text?.trim());
 
-export const maxMarks = (q: AnyQuestion): number => (isItem(q) ? q.marks : 1);
+export const maxMarks = (q: AnyQuestion): number => (isItem(q) ? q.marks : (q.marks ?? 1));
 
 /** Any equivalent form scores: 3/4, 6/8 and 0.75 are all right for 3/4; £3.5 equals £3.50. */
 export const isCorrect = (q: AnyQuestion, a: AnswerInput | null | undefined): boolean => markFor(q, a) === maxMarks(q);
