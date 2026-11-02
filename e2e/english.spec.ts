@@ -110,7 +110,7 @@ test('reading with the letter keyboard: the text and the answer box stay above t
 
 test('grammar topics: a topic explains itself, then a practice set asks only about that topic', async ({ page }) => {
   await card(page, 'Grammar topics').getByRole('button', { name: 'Present perfect', exact: true }).tap();
-  await expect(page.getByRole('heading', { name: 'Present perfect' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Present perfect', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'In the test' })).toBeVisible();
 
   await page.getByRole('button', { name: 'Practise this topic' }).first().tap();
