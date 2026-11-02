@@ -11,8 +11,53 @@
     "tenses": [
       "simple present"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "The test calls it the simple present and pairs it with the simple past: you may be asked to rewrite underlined verbs in one tense or the other, or to tick the verb that is in the wrong tense in a passage. Check that every verb agrees with its subject: she plays, they play.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "A verb's **tense** is the form that shows when something happens: present or past. The **simple present** says what happens now, what happens regularly, or what is always true. 'Simple' means the verb stands on its own, with no helping verb (an **auxiliary verb**) such as am or have.",
+        "examples": [
+          "Jamal **goes** to the pool every day.",
+          "She **likes** chocolate.",
+          "The bus **arrives** at three."
+        ]
+      },
+      {
+        "heading": "How to form it: ordinary verbs",
+        "text": "Use the verb's basic form. After he, she, it, or one person or thing, add **-s** (or **-es** after -s, -sh, -ch, -x):\nI/you/we/they **play** · he/she/it **plays**\nA verb ending in a consonant + y changes to **-ies**: cry → cries. Three common verbs are special: he **does**, she **goes**, it **has**.",
+        "examples": [
+          "I **walk** to school; my brother **walks** too.",
+          "The baby **cries** at night.",
+          "Dad **does** the washing-up and Mum **watches**."
+        ]
+      },
+      {
+        "heading": "The verb to be",
+        "text": "Be is **irregular**: it does not follow the pattern, so learn its three forms:\nI **am** · you/we/they **are** · he/she/it **is**\nOn its own, be says what someone or something is like, or where it is. It is also the helping verb in the progressive (is playing), so you will meet it often.",
+        "examples": [
+          "I **am** ten.",
+          "You **are** my friend.",
+          "The cat **is** asleep; the dogs **are** outside."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "The verb must agree with its subject. One dog **barks**; two dogs **bark**. Words like everyone, nobody and each count as one: 'Everyone **likes** it.' Use Standard English forms: 'we **are**', not 'we is'; 'they **were**', not 'they was'. A present-tense verb can also talk about the future ('The train **leaves** at six'): it is still the simple present.",
+        "examples": [
+          "The dogs **bark** at night. (not barks)",
+          "Everyone **likes** the new teacher. (everyone is singular)",
+          "We **are** ready. (not we is)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): present tense, tense, verb, subject",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Years 2 and 4",
+      "Oak National Academy: Simple present, past and future tense (OGL v3.0)",
+      "Oak National Academy: Writing sentences in the simple present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1a",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "simple-past",
@@ -26,8 +71,61 @@
     "tenses": [
       "simple past"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "Questions give a sentence in the present and ask you to 'rewrite the underlined verbs so that they are in the simple past', or give verbs in boxes ('to bring', 'to forget') and ask you to complete a passage with their simple past. Irregular verbs are the point: brought and forgot, not bringed and forgetted.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **simple past** names an event or state that happened before now. It is the verb's second form: play → **played**, go → **went**. 'Simple' means there is no helping verb (**auxiliary verb**): the verb does the job alone. The form is the same for every subject: I/you/he/she/it/we/they **played**.",
+        "examples": [
+          "Antonio **went** on holiday to Brazil.",
+          "Tom and Chris **showed** me their new TV.",
+          "He **knew** my father."
+        ]
+      },
+      {
+        "heading": "How to form it: regular verbs",
+        "text": "Most verbs add **-ed**: walk → walked, jump → jumped.\nEnds in -e? Add -d: like → liked.\nEnds in a consonant + y? Change to -ied: carry → carried.\nShort verb ending in one vowel + one consonant? Double the consonant: stop → stopped, plan → planned.",
+        "examples": [
+          "The crowd **cheered** and **clapped**.",
+          "She **carried** the box upstairs.",
+          "We **stopped** at the shop and **hurried** home."
+        ]
+      },
+      {
+        "heading": "Irregular verbs",
+        "text": "Many common verbs do not add -ed. They change in other ways, and you have to learn them: go → went, come → came, bring → brought, catch → caught, eat → ate, drink → drank, see → saw, take → took, feel → felt, draw → drew, tear → tore, fly → flew, sit → sat, say → said, find → found. A few never change: put → put, cut → cut.",
+        "examples": [
+          "I **brought** my violin to school. I **forgot** it last week.",
+          "Joseph **drew** the portrait, then **tore** the page out.",
+          "The plane **flew** above the clouds while the passengers **sat** and **relaxed**."
+        ]
+      },
+      {
+        "heading": "Was and were",
+        "text": "The past of be has two forms:\nI/he/she/it **was** · you/we/they **were**\nStandard English, the kind used in writing and in the test, always has **were** with we, you and they: 'we were', never 'we was'. The same goes for 'I **did**', not 'I done'.",
+        "examples": [
+          "I **was** late and they **were** cross.",
+          "We **were** all at the skate park yesterday evening.",
+          "The weather **was** very cold this winter."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "The simple past is not the form used after have: 'I **did** it' but 'I have **done** it'. 'I done it' and 'I seen it' are wrong. When a question says 'rewrite the underlined verbs', change every one of them, and check the irregular ones: feels → **felt**, not feeled; wins → **won**.",
+        "examples": [
+          "Oliver **felt** proud when he **collected** his medal after he **won** the race.",
+          "I **saw** the film. (not I seen)",
+          "She **did** her homework. (not she done)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): past tense, inflection, Standard English",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 4 Standard English verb forms",
+      "Oak National Academy: Simple present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1a",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "present-progressive",
@@ -41,8 +139,53 @@
     "tenses": [
       "present progressive"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Which option completes the sentence using the present progressive?' or 'Rewrite the underlined verb in the present progressive.' Look for am, is or are followed by a verb ending in -ing.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **progressive** (your school may say 'continuous') describes an action in progress: going on, not finished. The **present progressive** says what is happening right now, or what is arranged. It needs two verbs: a form of **be** as the helping verb (**auxiliary verb**), and the main verb ending in **-ing** (its **present participle**).",
+        "examples": [
+          "Michael **is singing** in the store room.",
+          "They **are winning** the match.",
+          "My friends **are coming** to play."
+        ]
+      },
+      {
+        "heading": "How to form it",
+        "text": "I **am** playing · you/we/they **are** playing · he/she/it **is** playing\nAdd -ing to the main verb. Drop a final -e first (make → making); double the last letter of a short verb ending in one vowel + one consonant (run → running, sit → sitting).",
+        "examples": [
+          "I **am reading** a comic.",
+          "What **are** you **doing**?",
+          "The dog **is running** across the field."
+        ]
+      },
+      {
+        "heading": "Simple present or present progressive?",
+        "text": "The simple present is for things that happen regularly or are always true. The progressive is for what is happening at this moment. 'She **plays** the piano' means she can and does. 'She **is playing** the piano' means she is doing it now.",
+        "examples": [
+          "Jamal **swims** every day. (simple present)",
+          "Jamal **is swimming** right now. (present progressive)",
+          "I **am hoping** to win. (in progress now)"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Not every -ing word is a progressive verb: in 'a running tap', running describes the tap. Check there is a form of be before it. And be on its own is not progressive: 'I **am** happy' is the simple present of be. In a question be comes first ('**Are** you **listening**?'); in a negative, not sits between the two verbs ('They **are not listening**').",
+        "examples": [
+          "I **am** happy today. (simple present: no -ing verb)",
+          "The tap **is running**. (present progressive)",
+          "**Are** you **coming** to the party?"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): progressive, auxiliary verb, participle",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 2",
+      "Oak National Academy: Simple and progressive tense (OGL v3.0)",
+      "Oak National Academy: Progressive present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1d",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "past-progressive",
@@ -56,8 +199,52 @@
     "tenses": [
       "past progressive"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "The test gives a verb in a box ('to talk') and asks you to 'complete the sentence using the past progressive form' (While we were talking...), asks 'Which sentence uses the past progressive?' (What were you doing?), or asks you to rewrite an underlined verb in the past progressive (walked → was walking).",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **past progressive** (continuous) describes an action that was going on at a moment in the past, often when something else happened. Two verbs: the past of **be** (was or were) as the helping verb, and the main verb ending in **-ing**.",
+        "examples": [
+          "Amanda **was making** a patchwork quilt.",
+          "While we **were talking** to our friend, his phone started ringing.",
+          "It **was raining**, but we were indoors."
+        ]
+      },
+      {
+        "heading": "How to form it",
+        "text": "I/he/she/it **was** playing · you/we/they **were** playing\nThe -ing word stays the same whoever the subject is; only was/were changes. Question: **Were** you **sleeping**? Negative: she **wasn't looking**.",
+        "examples": [
+          "I **was reading** when the lights went out.",
+          "The children **were playing** in the garden.",
+          "**Were** you **sleeping**?"
+        ]
+      },
+      {
+        "heading": "With the simple past",
+        "text": "Writers often put a longer action in the past progressive and a short, sudden one in the simple past: 'We **were walking** home when it **started** to rain.' The walking was in progress; the rain interrupted it.",
+        "examples": [
+          "Alexandra **was walking** home when she **saw** a fox.",
+          "The teacher **was talking**, but nobody **listened**."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Use **were**, not was, with we, you and they: 'we were talking', never 'we was talking'. The negative still counts as progressive: 'They **weren't listening**.' Don't confuse 'I **was** tired' (simple past of be, no -ing verb) with 'I **was getting** tired' (past progressive).",
+        "examples": [
+          "We **were waiting** for the bus. (not we was)",
+          "He **was** late. (simple past) · He **was running** late. (past progressive)",
+          "What **did** you do? (simple past) · What **were** you **doing**? (past progressive)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): progressive, auxiliary verb",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Years 2 and 4",
+      "Oak National Academy: Progressive present, past and future tense (OGL v3.0)",
+      "Oak National Academy: Writing sentences in the progressive present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1d",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "present-perfect",
@@ -71,8 +258,53 @@
     "tenses": [
       "present perfect"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "The test calls this 'the perfect form': 'Complete the sentence with the present perfect form of the verb in the box' or 'Which sentence uses the present perfect?'. Look for have or has followed by the past participle (has gone, have eaten).",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **perfect** form links a past event to a later time. The **present perfect** links it to now: 'He **has gone** to lunch' means he went and is still away. Compare 'He **went** to lunch', just a finished event. It uses **have** or **has** as the helping verb (**auxiliary verb**) plus the main verb's **past participle**.",
+        "examples": [
+          "She **has downloaded** some songs. (so now she has them)",
+          "I **have finished** my homework.",
+          "**Have** you **heard** that Joe has moved?"
+        ]
+      },
+      {
+        "heading": "How to form it",
+        "text": "I/you/we/they **have** played · he/she/it **has** played\nFor regular verbs the past participle is the -ed form (played, walked). Irregular verbs have their own: go → gone, eat → eaten, see → seen, take → taken, do → done, write → written, fly → flown, break → broken, bring → brought, swim → swum.",
+        "examples": [
+          "The manager **has sent** you an email.",
+          "We **have eaten** all the biscuits.",
+          "The birds **have flown** away."
+        ]
+      },
+      {
+        "heading": "Present perfect or simple past?",
+        "text": "Use the simple past for a finished time ('yesterday', 'last week'): 'I **forgot** it last week.' Use the present perfect when the time is not over, or when the result matters now: 'I **have forgotten** my violin' (so I don't have it).",
+        "examples": [
+          "He **went** out to play. (simple past: it happened)",
+          "He **has gone** out to play. (present perfect: he is still out)",
+          "Billy **has started** swimming lessons."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "The past participle is not always the same as the simple past: 'it **has flown** off', not 'it has flew off'; 'she **has gone**', not 'she has went'; 'I **have done**', not 'I have did'. And have is not always a helping verb: 'I **have** three pets' is the simple present of have.",
+        "examples": [
+          "She **has gone** home. (not has went)",
+          "They **have seen** the film. (not have saw)",
+          "I **have** two sisters. (simple present, not perfect)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): perfect, participle, auxiliary verb",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 3",
+      "Oak National Academy: Perfect present tense (OGL v3.0)",
+      "Oak National Academy: Perfect tense revision (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1b",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "past-perfect",
@@ -86,8 +318,51 @@
     "tenses": [
       "past perfect"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Which option completes the sentence in the past perfect?' with choices such as I eat / I was eating / I had eaten / I have eaten, or 'Complete the sentence with the past perfect form of the verb in the box' (to decide → had decided).",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **past perfect** looks back from a time in the past to something that had already happened before it. 'I **had eaten** lunch when you came': the eating came first, then you came. It is formed with **had** plus the main verb's **past participle**.",
+        "examples": [
+          "I **had eaten** lunch when you came.",
+          "Hannah said I could share her snack because I **had forgotten** mine.",
+          "The teacher told the class that he **had decided** not to give them any homework."
+        ]
+      },
+      {
+        "heading": "How to form it",
+        "text": "**had** + past participle, the same for every subject: I/you/he/she/it/we/they **had played**\nRegular participles end in -ed; irregular ones have their own form (gone, eaten, seen, written, brought, swum). In speech and stories it is often shortened: I'd eaten, she'd gone.",
+        "examples": [
+          "By bedtime, the children **had finished** their game.",
+          "She realised she **had left** her bag on the bus.",
+          "I **had swum** across the lake before anyone woke up."
+        ]
+      },
+      {
+        "heading": "Why writers use it",
+        "text": "It puts two past events in order without saying 'first' or 'before that'. In a story told in the simple past, the past perfect takes you one step further back. It also links ideas across paragraphs: 'He **had seen** her before.'",
+        "examples": [
+          "When we arrived, the film **had started**. (it started before we arrived)",
+          "When we arrived, the film **started**. (it started as we arrived)"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Only had + past participle is the past perfect. 'I **have eaten**' is the present perfect (links to now); 'I **was eating**' is the past progressive (in progress). Use the participle, not the simple past: 'had **gone**', not 'had went'; 'had **written**', not 'had wrote'.",
+        "examples": [
+          "I **had eaten** breakfast before school. (past perfect)",
+          "I **was eating** breakfast. (past progressive)",
+          "I **have eaten** breakfast. (present perfect)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): perfect, participle",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 5 tense choices for cohesion",
+      "Oak National Academy: Sentences in the perfect present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1b",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "future",
@@ -97,8 +372,52 @@
     "typeIds": [
       "g-verb-forms"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "There is no 'future tense' question: the test treats will as a modal verb, so future meaning turns up in modal-verb questions ('We will walk home' changed to 'We might walk home') and in tense-consistency questions. If a question asks for a verb's tense, the answer is present or past.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "In English, **tense** is the choice between present and past verb forms: plays / played. Unlike French or Spanish, English has no separate future tense form: there is no ending you add to play to make it future. Instead we show future time with a present-tense verb plus extra words, or with a modal verb such as **will**.",
+        "examples": [
+          "He **leaves** tomorrow. (present-tense verb, future time)",
+          "He **will leave** tomorrow.",
+          "He **is going to leave** tomorrow."
+        ]
+      },
+      {
+        "heading": "will + verb",
+        "text": "The commonest way: **will** followed by the verb's basic form (its **infinitive**). Will is a **modal verb**, a helping verb that never changes: I will, she will (not she wills). It is often shortened to 'll, and will not to won't. **Shall** is a more formal choice with I and we.",
+        "examples": [
+          "I **will play** football on Saturday.",
+          "She**'ll be** ten next week.",
+          "We **won't be** long.",
+          "**Shall** we **go**?"
+        ]
+      },
+      {
+        "heading": "going to, and the present",
+        "text": "**am/is/are going to** + verb is for plans and things you can see coming: 'It **is going to** rain.' The present progressive also shows arrangements: 'My friends **are coming** to play.' The simple present shows timetables: 'The bus **arrives** at three.' All of these use a present-tense verb.",
+        "examples": [
+          "I**'m going to visit** my uncle at the weekend.",
+          "We **are leaving** at six tomorrow.",
+          "The train **leaves** at six."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Your school may call 'will play' the future tense. The National Curriculum, which the test follows, says English has two tenses, present and past, and treats will as a modal verb. After will, may or might the main verb keeps its basic form: 'she will **go**', not 'she will goes'. Other modals point to the future too: 'It **might** snow tomorrow.'",
+        "examples": [
+          "She **will go** to school. (not will goes)",
+          "They **may arrive** late.",
+          "It **might snow** tomorrow."
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): future, tense, modal verb, infinitive",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1c, G4.2, and 'modal verbs to express future time'",
+      "Oak National Academy: Simple present, past and future tense (OGL v3.0)",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "future-progressive",
@@ -108,8 +427,51 @@
     "typeIds": [
       "g-verb-forms"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "The test rarely asks for this form by name, but it can appear among the options in a progressive or tense-consistency question. Spot it by will be followed by a verb ending in -ing.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **future progressive** (continuous) describes an action that will be in progress at a time in the future: 'At eight tomorrow I **will be sitting** on the train.' It is the progressive form (be + -ing) with the modal verb **will** in front, so it has three verb words.",
+        "examples": [
+          "This time next week we **will be lying** on the beach.",
+          "Don't ring at seven: I **will be eating** dinner.",
+          "During the afternoon, the children **will be following** the trail."
+        ]
+      },
+      {
+        "heading": "How to form it",
+        "text": "**will be** + verb-ing, the same for every subject: I/you/he/she/it/we/they **will be playing**\nShortened: I'll be playing. Negative: won't be playing. Question: Will you be playing?",
+        "examples": [
+          "She**'ll be waiting** at the gate.",
+          "They **won't be coming** to the party.",
+          "**Will** you **be using** the computer later?"
+        ]
+      },
+      {
+        "heading": "The three progressives",
+        "text": "The -ing verb stays the same; only the helping verb changes.\nPresent: I **am playing** · Past: I **was playing** · Future: I **will be playing**",
+        "examples": [
+          "I **am playing** now.",
+          "I **was playing** yesterday.",
+          "I **will be playing** tomorrow."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "'Will be' on its own is not progressive: 'It **will be** sunny' is just will + be. You need an -ing verb after it. A negative still counts: 'won't be waiting' is progressive. 'Going to' works too: 'I'm going to be working all day.'",
+        "examples": [
+          "It **will be** cold. (not progressive)",
+          "It **will be snowing**. (future progressive)",
+          "We **won't be waiting** long."
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): progressive, future, modal verb",
+      "Oak National Academy: Progressive present, past and future tense (OGL v3.0)",
+      "Oak National Academy: Writing sentences in the progressive present, past and future tense (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1d"
+    ]
   },
   {
     "id": "modals",
@@ -123,8 +485,54 @@
     "targets": [
       "modal"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Circle the modal verb in the sentence below' (could), 'Which sentence has a modal verb?' (I must be at school early tomorrow) or 'Explain how the change of modal verb affects the meaning of the second sentence' (will → might: from certain to possible).",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "A **modal verb** is a helping verb (**auxiliary verb**) that changes the meaning of the main verb. It shows how likely, possible, necessary or allowed something is. The modal verbs are **can, could, may, might, must, shall, should, will, would** (and ought to).",
+        "examples": [
+          "I **can** do this maths work by myself. (ability)",
+          "This ride **may** be too scary for you! (possibility)",
+          "You **should** help your little brother. (advice)",
+          "I **must** be at school early tomorrow. (necessity)"
+        ]
+      },
+      {
+        "heading": "How to spot one",
+        "text": "A modal comes before the main verb, which stays in its basic form: 'she **might go**', not 'she might goes'. Modals never change: no -s, no -ed, no -ing. In a question the modal comes first: '**Could** you help?' Not follows it, often shortened: can't, won't, shouldn't, mustn't.",
+        "examples": [
+          "Hannah said I **could** share her snack.",
+          "**Will** you come with me?",
+          "We **couldn't** decide what to wear."
+        ]
+      },
+      {
+        "heading": "Degrees of possibility",
+        "text": "Modals make a scale from certain to unlikely. **will** and **must** are strong: 'It **will** rain.' **should** sits in the middle: probably. **may, might** and **could** are weak: 'It **might** rain.' Changing the modal changes how sure the writer sounds. Adverbs can do the same job: perhaps, surely, definitely.",
+        "examples": [
+          "We **will** walk home. (certain)",
+          "We **should** be home by six. (probably)",
+          "We **might** walk home. (possible, not certain)"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Not every helping verb is a modal: in 'Alex **had been** yawning', had and been are auxiliary verbs but not modals. 'Have to' and 'need to' mean something like must, but they are not modal verbs. Never write 'could of': it is 'could **have**' (could've).",
+        "examples": [
+          "I **could have** done better. (not could of)",
+          "Alex had been yawning all day. (no modal)",
+          "You **must** try harder. (modal)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): modal verb, auxiliary verb",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 5",
+      "Oak National Academy: Modal verbs (OGL v3.0)",
+      "Oak National Academy: Further study of modal verbs (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.1c",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "active-passive",
@@ -135,8 +543,60 @@
       "g-voice",
       "g-active-passive"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Which sentence is in the passive?', 'Rewrite the sentence below in the passive' (Rabia broke the mug → The mug was broken by Rabia) and 'Rewrite the sentence below in the active' (The trees are being harmed by pollution → Pollution is harming the trees). The rewritten sentence must be punctuated correctly to get the mark.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "In an **active** sentence the **subject** does the action: 'The school **arranged** a visit.' Subject (the school), verb (arranged), then the **object** (a visit): the thing the action is done to. In the **passive**, the object moves to the front and becomes the subject: 'A visit **was arranged** by the school.' Now the action is done to the subject.",
+        "examples": [
+          "Active: Our dog **ate** it.",
+          "Passive: It **was eaten** by our dog.",
+          "Active: The noise **disturbed** us. · Passive: We **were disturbed** by the noise."
+        ]
+      },
+      {
+        "heading": "How to form the passive",
+        "text": "A form of **be** (is, are, was, were, is being, has been) + the main verb's **past participle** (eaten, broken, taken). The doer can follow after **by**, or be left out: 'The mug was broken.' Keep the tense of the original: 'Pollution **is harming** the trees' → 'The trees **are being harmed** by pollution.'",
+        "examples": [
+          "Rabia broke the mug. → The mug **was broken** by Rabia.",
+          "Someone stole the treasure. → The treasure **was stolen**.",
+          "The council maintains the park. → The park **is maintained** by the council."
+        ]
+      },
+      {
+        "heading": "Passive to active",
+        "text": "Find the doer after by and make it the subject. Then put the verb back in the same tense, without be: 'The park **is maintained** by the council' → 'The council **maintains** the park.' If there is no by, add a doer that makes sense: 'The treasure was stolen' → 'Someone **stole** the treasure.'",
+        "examples": [
+          "The local park is maintained by the council. → The council **maintains** the local park.",
+          "We were disturbed by the traffic. → The traffic **disturbed** us."
+        ]
+      },
+      {
+        "heading": "Why use the passive",
+        "text": "The passive puts the thing that matters first, or hides who did it: 'The window **was broken** (by me)' sounds more detached than 'I broke the window.' It is common in formal writing, news and science: 'The mixture **was heated**.'",
+        "examples": [
+          "I broke the window in the greenhouse. (active)",
+          "The window in the greenhouse **was broken**. (passive: no one is named)"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "A sentence is not passive just because it has was or were: 'The weather **was** very cold' is active (was is the main verb; nothing is done to the weather). 'He **received** a warning' sounds passive in meaning but is active. Look for be + past participle, then ask: is the subject having something done to it?",
+        "examples": [
+          "The weather was very cold this winter. (active)",
+          "Our dog lost her new collar. (active)",
+          "The meal **was enjoyed** by everyone. (passive)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): active voice, passive, subject, object",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 6",
+      "Oak National Academy: Identifying the active and passive voice (OGL v3.0)",
+      "Oak National Academy: Using the active and passive voice (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.4",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "subjunctive",
@@ -146,8 +606,60 @@
     "typeIds": [
       "g-subjunctive"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Which sentence uses the subjunctive?' (If I were to look inside the box, what would I find?) or 'Circle the verb that is in the subjunctive' (If I **were** to help...). It also counts as formal language, so a 'most formal sentence' question can hinge on it.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "The **subjunctive** is a special verb form used in formal speech and writing for things that are wished, imagined, demanded or required, not stated as facts. English has very few subjunctive forms, so there are just two patterns to learn: **were**, and the verb's basic form.",
+        "examples": [
+          "If Zoë **were** the class president, things would be much better.",
+          "The school requires that all pupils **be** honest.",
+          "I wish it **were** Saturday."
+        ]
+      },
+      {
+        "heading": "Pattern 1: were",
+        "text": "Normally we say 'I was', 'he was'. In the subjunctive, **were** is used with every subject to show the situation is imagined or unreal: 'If I **were** you...', 'If she **were** taller...', 'I wish it **were** true.' It usually follows if or wish, and the other half of the sentence uses would.",
+        "examples": [
+          "If I **were** to help, I would start by clearing the tables.",
+          "If I **were** you, I would apologise.",
+          "She wishes she **were** on holiday."
+        ]
+      },
+      {
+        "heading": "Pattern 2: the basic form after that",
+        "text": "After verbs of demanding or asking (insist, demand, require, ask, recommend, suggest) plus **that**, the verb keeps its basic form: no -s, no to. 'The teacher insists that he **be** on time.' 'The head asked that everyone **leave** quietly.' Not goes in front: 'that pupils **not enter**'.",
+        "examples": [
+          "The teacher insists that he **be** on time.",
+          "The teacher asked that everyone **leave** the hall quietly.",
+          "The rules demand that pupils **not enter** the gym at lunchtime."
+        ]
+      },
+      {
+        "heading": "How to spot it",
+        "text": "Look for a verb that seems to break the usual rules: were after I, he, she or it; or no -s after he, she or it ('that he **be**', 'that she **arrive**'). If the sentence sounds very formal and is about a wish, a demand or an imagined if, it is probably the subjunctive. A very formal pattern drops if and starts with were: '**Were** they to come, we would be ready.'",
+        "examples": [
+          "If I **were** to look inside the box, what would I find? (subjunctive)",
+          "If you are late, you might miss the bus. (not subjunctive: a real possibility)",
+          "**Were** they to come, we would be ready."
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "'If I was late' is everyday English, but in formal writing and in the test the answer is 'If I **were**'. Not every if sentence is subjunctive: 'If I had to choose, I would choose pizza' uses the ordinary past had. Only were, and the bare basic form, count.",
+        "examples": [
+          "If I **were** rich, I would travel. (subjunctive)",
+          "If I had to choose my favourite food, I would choose pizza. (not subjunctive)",
+          "Mum insists that Sam **tidy** his room. (subjunctive: tidy, not tidies)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): subjunctive",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 6 formal structures",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G4.3 and G7.4",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "determiners",
@@ -161,8 +673,52 @@
     "targets": [
       "det"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Circle the three determiners in the sentence below' (some, this, any; or the, every, my) and 'What is the word class of the underlined words?' with determiner among the options. Count numbers and every as determiners too.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "A **determiner** goes before a **noun** (or before the adjectives that describe it) and says which one or how many you mean: the dog, a bone, this tin, my friend, some biscuits, three pencils. It marks the noun as known (the dog) or unknown (a dog).",
+        "examples": [
+          "**The** dog found **a** bone in **an** old box.",
+          "I go to **the** swimming pool **every** week with **my** best friend Peter.",
+          "There are **some** biscuits in **this** tin but there are not **any** chocolate ones."
+        ]
+      },
+      {
+        "heading": "The kinds",
+        "text": "**Articles**: the, a, an.\n**Demonstratives**: this, that, these, those.\n**Possessives**: my, your, his, her, its, our, their.\n**Quantifiers**: some, any, every, each, many, few, several, all, no, and numbers: two, ten.",
+        "examples": [
+          "**Those** big boys ate **all** **the** cake.",
+          "**Each** child has **two** pencils.",
+          "**Her** little brother lost **his** coat."
+        ]
+      },
+      {
+        "heading": "a or an",
+        "text": "Use **a** before a consonant sound and **an** before a vowel sound. It is the sound that counts, not the letter: an hour (silent h), a university (sounds like 'you').",
+        "examples": [
+          "**a** rock, **an** open box",
+          "**an** hour, **a** university",
+          "**an** honest answer, **a** one-way street"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Adjectives can sit between the determiner and its noun: in 'the strict maths teacher', the is still the determiner. This, those, his and so on are determiners only when a noun follows: 'this tin' (determiner) but 'I like this' (pronoun); 'his coat' (determiner) but 'the coat is his' (possessive pronoun).",
+        "examples": [
+          "**the** strict maths teacher with curly hair (determiner, adjectives, noun)",
+          "I want **this** book. (determiner) · I want this. (pronoun)",
+          "**My** bag is heavier than yours. (my: determiner; yours: pronoun)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): determiner, article, noun, possessive",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Years 3 and 4",
+      "Oak National Academy: Determiners: articles, possessive pronouns, quantifiers and demonstratives (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G1.8",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "prepositions",
@@ -176,8 +732,53 @@
     "targets": [
       "prep"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Circle the two prepositions in the sentence below', 'Circle the preposition in each sentence' or 'Tick one box to show which word is a preposition'. The sentence often contains a word like until that is a conjunction here, to see if you can tell the difference.",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "A **preposition** links a noun, pronoun or **noun phrase** to the rest of the sentence. It usually comes just before that noun: in the box, to Christy, after playtime. Prepositions often show place or direction, but also time and cause.",
+        "examples": [
+          "Tom waved goodbye **to** Christy.",
+          "She'll be back **from** Australia **in** two weeks.",
+          "The bridge **over** the stream was broken."
+        ]
+      },
+      {
+        "heading": "The common ones",
+        "text": "Place: **in, on, under, over, inside, behind, between, beside, across, near, at**.\nMovement: **to, into, through, up, down, towards, from, off**.\nTime: **before, after, during, until, since, at, in, on**.\nOthers: **with, without, for, of, about, like, because of**.",
+        "examples": [
+          "Stef trained hard **before** the hockey tournament.",
+          "Emma hit the ball **into** the net.",
+          "Jack takes his little brother **to** the park **after** school."
+        ]
+      },
+      {
+        "heading": "Preposition phrases",
+        "text": "A preposition plus its noun phrase makes a **preposition phrase**: in the greenhouse, with curly hair. These phrases add detail to a noun ('the teacher **with curly hair**') or to a verb ('we met **after the party**'). Some questions ask you to name 'a preposition phrase' among other sentence parts.",
+        "examples": [
+          "He was **in bed**.",
+          "the man **in the moon**",
+          "the strict maths teacher **with curly hair**"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Before, after, until and since can be prepositions or conjunctions. Followed by a noun phrase, they are prepositions: 'before **the match**'. Followed by a clause (a group of words with its own verb), they are conjunctions: 'before **the match started**'. Some words are prepositions or adverbs: 'climb **up** the ladder' (preposition) but 'look up' (adverb: no noun after it).",
+        "examples": [
+          "**After** playtime, you must stay **inside** the classroom until it is lunchtime. (After, inside: prepositions; until: conjunction)",
+          "I haven't seen my dog **since** this morning. (preposition)",
+          "I'm going, since no one wants me here. (conjunction)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): preposition, preposition phrase",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Year 3",
+      "Oak National Academy: Prepositions (OGL v3.0)",
+      "Oak National Academy: Synonyms, antonyms, prepositions and adverbs (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G1.7",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   },
   {
     "id": "conjunctions",
@@ -191,7 +792,60 @@
     "targets": [
       "conj"
     ],
-    "inTheTest": "TODO",
-    "learn": []
+    "inTheTest": "'Circle the conjunction' (while), 'Circle the subordinating conjunction' (until), 'Circle the two co-ordinating conjunctions' (or, and), 'Circle all the conjunctions in the passage' or 'What is the word class of the underlined words?' (Although, when → conjunctions).",
+    "learn": [
+      {
+        "heading": "What it is",
+        "text": "A **conjunction** joins words, phrases or clauses. A **clause** is a group of words with a verb in it; a sentence can hold several clauses, linked by conjunctions. There are two kinds: **co-ordinating** and **subordinating**.",
+        "examples": [
+          "James bought a bat **and** ball.",
+          "Kylie is young **but** she can kick the ball hard.",
+          "Everyone watches **when** Kyle does back-flips."
+        ]
+      },
+      {
+        "heading": "Co-ordinating conjunctions",
+        "text": "**and, but, or** join two equal parts: two words, two phrases or two **main clauses** (each would make sense alone). Each has a job: and adds, but contrasts, or offers a choice. 'Susan got a bus **but** Amra walked.' So and yet can also join clauses as equals: 'It was late, **so** we left.'",
+        "examples": [
+          "Susan **and** Amra met in a café.",
+          "Susan got a bus **but** Amra walked.",
+          "Do you want trainers **or** boots?"
+        ]
+      },
+      {
+        "heading": "Subordinating conjunctions",
+        "text": "A subordinating conjunction starts a **subordinate clause**: a clause that adds to the main clause and cannot stand alone. Common ones: **because, when, if, although, while, until, since, before, after, as, unless, whether**. The subordinate clause can come first or second: 'Although the battery was low, Amy called.' / 'Amy called although the battery was low.'",
+        "examples": [
+          "Joe can't practise kicking **because** he's injured.",
+          "**Although** the battery on her phone was low, Amy managed to call her mum **when** she knew she would be late.",
+          "The youth club will be closed **until** we have completed the repairs."
+        ]
+      },
+      {
+        "heading": "Telling them apart",
+        "text": "Try moving the clause: a subordinating conjunction can go to the front with its clause ('**Because** he's injured, Joe can't practise'), while and, but and or stay between the two parts. There are only a few co-ordinating conjunctions; nearly everything else is subordinating. Because is subordinating, however often you hear 'and because'.",
+        "examples": [
+          "Joe can't practise **because** he's injured. → **Because** he's injured, Joe can't practise. (subordinating)",
+          "Susan got a bus **but** Amra walked. (co-ordinating: stays in the middle)"
+        ]
+      },
+      {
+        "heading": "Watch out",
+        "text": "Before, after, until and since are conjunctions only when a clause (with a verb) follows: 'before **we go** to the park' (conjunction) but 'before **lunch**' (preposition). Then, next and therefore are adverbs, not conjunctions, so two clauses joined by them need a full stop or semi-colon, not a comma. Relative pronouns (who, which, that) start clauses too, but they are not conjunctions.",
+        "examples": [
+          "We'll be going shopping **before** we go to the park. (conjunction)",
+          "We'll be going shopping before lunch. (preposition)",
+          "It rained all morning; then the sun came out. (then is an adverb)"
+        ]
+      }
+    ],
+    "sources": [
+      "National Curriculum English glossary (OGL v3.0): conjunction, co-ordination, subordinate clause, main clause",
+      "National Curriculum English Appendix 2: Vocabulary, grammar and punctuation (OGL v3.0): Years 2 and 3",
+      "Oak National Academy: Two types of conjunction (OGL v3.0)",
+      "Oak National Academy: Three ways for co-ordination in compound sentences (OGL v3.0)",
+      "KS2 English GPS test framework 2016 (OGL v3.0): G1.4, G3.3, G3.4",
+      "KS2 English GPS Paper 1, 2024 to 2026 (OGL v3.0)"
+    ]
   }
 ]
