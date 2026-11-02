@@ -2,6 +2,7 @@
   {
     "id": "gi-verb-forms-001",
     "type": "g-verb-forms",
+    "topic": "simple-past",
     "level": 1,
     "prompt": "Which sentence is written in the simple past?",
     "input": {
@@ -15,6 +16,7 @@
   {
     "id": "gi-verb-forms-002",
     "type": "g-verb-forms",
+    "topic": "simple-past",
     "level": 1,
     "prompt": "Complete the sentence with the simple past form of the verb **to eat**.\nYesterday, Leo ___ a whole pizza.",
     "input": {
@@ -26,6 +28,7 @@
   {
     "id": "gi-verb-forms-003",
     "type": "g-verb-forms",
+    "topic": "present-progressive",
     "level": 1,
     "prompt": "Which sentence is written in the present progressive?",
     "input": {
@@ -39,6 +42,7 @@
   {
     "id": "gi-verb-forms-004",
     "type": "g-verb-forms",
+    "topic": "simple-past",
     "level": 1,
     "prompt": "Complete the sentence with the simple past form of the verb **to catch**.\nYusuf ___ the ball with one hand.",
     "input": {
@@ -50,6 +54,7 @@
   {
     "id": "gi-verb-forms-005",
     "type": "g-verb-forms",
+    "topic": "simple-present",
     "level": 1,
     "prompt": "Which sentence is written in the simple present?",
     "input": {
@@ -63,6 +68,7 @@
   {
     "id": "gi-verb-forms-006",
     "type": "g-verb-forms",
+    "topic": "simple-past",
     "level": 1,
     "prompt": "Tap the verb that is in the simple past.",
     "input": {
@@ -76,6 +82,7 @@
   {
     "id": "gi-verb-forms-007",
     "type": "g-verb-forms",
+    "topic": "present-progressive",
     "level": 1,
     "prompt": "Which verb completes the sentence in the present progressive?\nLook! The children ___ in the snow.",
     "input": {
@@ -89,6 +96,7 @@
   {
     "id": "gi-verb-forms-008",
     "type": "g-verb-forms",
+    "topic": "past-progressive",
     "level": 1,
     "prompt": "Is each sentence written in the past progressive? Tap true or false for each one.",
     "input": {
@@ -101,6 +109,7 @@
   {
     "id": "gi-verb-forms-009",
     "type": "g-verb-forms",
+    "topic": "past-progressive",
     "level": 2,
     "prompt": "Complete the sentence with the past progressive form of the verb **to rain**.\nIt ___ when we left the cinema.",
     "input": {
@@ -112,6 +121,7 @@
   {
     "id": "gi-verb-forms-010",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 2,
     "prompt": "Complete the sentence with the present perfect form of the verb **to write**.\nAmir ___ two poems this week.",
     "input": {
@@ -123,6 +133,7 @@
   {
     "id": "gi-verb-forms-011",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 2,
     "prompt": "Which sentence is written in the present perfect?",
     "input": {
@@ -136,6 +147,7 @@
   {
     "id": "gi-verb-forms-012",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 2,
     "prompt": "Which sentence is written in the past perfect?",
     "input": {
@@ -149,6 +161,7 @@
   {
     "id": "gi-verb-forms-013",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 2,
     "prompt": "Tap the **two** words that make the present perfect verb.",
     "input": {
@@ -162,6 +175,7 @@
   {
     "id": "gi-verb-forms-014",
     "type": "g-verb-forms",
+    "topic": "past-progressive",
     "level": 2,
     "prompt": "Which verb form completes the sentence?\nWhile Theo ___ his bike, he saw a fox.",
     "input": {
@@ -175,6 +189,7 @@
   {
     "id": "gi-verb-forms-015",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 2,
     "prompt": "Complete the sentence with the past perfect form of the verb **to forget**.\nZara realised that she ___ her lunchbox.",
     "input": {
@@ -186,6 +201,7 @@
   {
     "id": "gi-verb-forms-016",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 2,
     "prompt": "Which verb form completes the sentence?\nPriya ___ every race so far this season.",
     "input": {
@@ -199,6 +215,7 @@
   {
     "id": "gi-verb-forms-017",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 2,
     "prompt": "Which verb form is underlined in the sentence below?\nThe players __had trained__ hard before the final.",
     "input": {
@@ -212,6 +229,7 @@
   {
     "id": "gi-verb-forms-018",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 2,
     "prompt": "Which word completes the sentence?\nThey have ___ home already.",
     "input": {
@@ -225,6 +243,7 @@
   {
     "id": "gi-verb-forms-019",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 3,
     "prompt": "Which sentence uses the present perfect correctly?",
     "input": {
@@ -238,6 +257,7 @@
   {
     "id": "gi-verb-forms-020",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 3,
     "prompt": "Which verb form best completes the sentence?\nBy the time the firefighters arrived, the fire ___ out.",
     "input": {
@@ -251,6 +271,7 @@
   {
     "id": "gi-verb-forms-021",
     "type": "g-verb-forms",
+    "topic": "present-progressive",
     "level": 2,
     "prompt": "Complete the sentence with the present progressive form of the verb **to hop**.\nA rabbit ___ across the lawn.",
     "input": {
@@ -262,6 +283,7 @@
   {
     "id": "gi-verb-forms-022",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 3,
     "prompt": "Tick the **two** sentences that are written in the present perfect.",
     "input": {
@@ -275,6 +297,7 @@
   {
     "id": "gi-verb-forms-023",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 3,
     "prompt": "Tap the **two** words that make the past perfect verb.",
     "input": {
@@ -288,6 +311,7 @@
   {
     "id": "gi-verb-forms-024",
     "type": "g-verb-forms",
+    "topic": "present-perfect",
     "level": 3,
     "prompt": "Which sentence shows an action that started in the past and is still true now?",
     "input": {
@@ -301,6 +325,7 @@
   {
     "id": "gi-verb-forms-025",
     "type": "g-verb-forms",
+    "topic": "present-progressive",
     "level": 2,
     "prompt": "Which verb form best completes the sentence?\nListen! Someone ___ at the door.",
     "input": {
@@ -314,6 +339,7 @@
   {
     "id": "gi-verb-forms-026",
     "type": "g-verb-forms",
+    "topic": "past-perfect",
     "level": 3,
     "prompt": "Complete the sentence with the past perfect form of the verb **to begin**.\nWhen we found our seats, the film ___.",
     "input": {
@@ -325,6 +351,7 @@
   {
     "id": "gi-active-passive-001",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
@@ -338,6 +365,7 @@
   {
     "id": "gi-active-passive-002",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Which sentence is written in the active voice?",
     "input": {
@@ -351,6 +379,7 @@
   {
     "id": "gi-active-passive-003",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Read this passive sentence.\nThe tent was put up by Amir.\nWho did the action?",
     "input": {
@@ -364,6 +393,7 @@
   {
     "id": "gi-active-passive-004",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "This sentence is in the passive voice. Tap the name of the person who did the action.",
     "input": {
@@ -377,6 +407,7 @@
   {
     "id": "gi-active-passive-005",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Is each sentence written in the passive voice? Tap true or false for each one.",
     "input": {
@@ -389,6 +420,7 @@
   {
     "id": "gi-active-passive-006",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Which sentence is written in the active voice?",
     "input": {
@@ -402,6 +434,7 @@
   {
     "id": "gi-active-passive-007",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 1,
     "prompt": "Which passive sentence does **not** tell us who did the action?",
     "input": {
@@ -415,6 +448,7 @@
   {
     "id": "gi-active-passive-008",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
@@ -428,6 +462,7 @@
   {
     "id": "gi-active-passive-009",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Which is the passive version of this sentence?\nThe teacher marked the tests.",
     "input": {
@@ -441,6 +476,7 @@
   {
     "id": "gi-active-passive-010",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Which is the active version of this sentence?\nThe tickets were sold by Theo.",
     "input": {
@@ -454,6 +490,7 @@
   {
     "id": "gi-active-passive-011",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Complete the passive version of this sentence.\nThe twins built the sandcastle.\nThe sandcastle ___ by the twins.",
     "input": {
@@ -465,6 +502,7 @@
   {
     "id": "gi-active-passive-012",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Complete the passive version of this sentence.\nThe farmer feeds the hens every morning.\nThe hens ___ by the farmer every morning.",
     "input": {
@@ -476,6 +514,7 @@
   {
     "id": "gi-active-passive-013",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Tick the **two** sentences that are written in the passive voice.",
     "input": {
@@ -489,6 +528,7 @@
   {
     "id": "gi-active-passive-014",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Tap the **two** words that make the passive verb.",
     "input": {
@@ -502,6 +542,7 @@
   {
     "id": "gi-active-passive-015",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Which verb completes the sentence so that it is in the passive voice?\nThe posters ___ by Year 6 this morning.",
     "input": {
@@ -515,6 +556,7 @@
   {
     "id": "gi-active-passive-016",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 2,
     "prompt": "Read the sentence.\nThe winning goal was scored by Priya.\nTap true or false for each statement.",
     "input": {
@@ -527,6 +569,7 @@
   {
     "id": "gi-active-passive-017",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
@@ -540,6 +583,7 @@
   {
     "id": "gi-active-passive-018",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Why might a writer choose the passive voice for this sentence?\nThe shop window was smashed during the night.",
     "input": {
@@ -553,6 +597,7 @@
   {
     "id": "gi-active-passive-019",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Complete the passive version of this sentence.\nA bee stung Leo.\nLeo ___ by a bee.",
     "input": {
@@ -564,6 +609,7 @@
   {
     "id": "gi-active-passive-020",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Which is the passive version of this sentence?\nThe children are planting trees.",
     "input": {
@@ -577,6 +623,7 @@
   {
     "id": "gi-active-passive-021",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Which is the passive version of this sentence?\nOur class will perform the play.",
     "input": {
@@ -590,6 +637,7 @@
   {
     "id": "gi-active-passive-022",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Which sentence changes this active sentence into the passive correctly?\nThe wind blew the leaves across the field.",
     "input": {
@@ -603,6 +651,7 @@
   {
     "id": "gi-active-passive-023",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "This sentence is in the passive voice. Tap the noun that tells you what did the action.",
     "input": {
@@ -616,6 +665,7 @@
   {
     "id": "gi-active-passive-024",
     "type": "g-active-passive",
+    "topic": "active-passive",
     "level": 3,
     "prompt": "Which sentence is written in the passive voice?",
     "input": {
@@ -629,6 +679,7 @@
   {
     "id": "gi-modals-001",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Tap the modal verb in this sentence.",
     "input": {
@@ -642,6 +693,7 @@
   {
     "id": "gi-modals-002",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Tap the modal verb in this sentence.",
     "input": {
@@ -655,6 +707,7 @@
   {
     "id": "gi-modals-003",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Which word is a modal verb?",
     "input": {
@@ -668,6 +721,7 @@
   {
     "id": "gi-modals-004",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Which sentence contains a modal verb?",
     "input": {
@@ -681,6 +735,7 @@
   {
     "id": "gi-modals-005",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Which modal verb completes the sentence to show that it is **certain**?\nThe sun ___ rise tomorrow morning.",
     "input": {
@@ -694,6 +749,7 @@
   {
     "id": "gi-modals-006",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Is each word a modal verb? Tap true or false for each one.",
     "input": {
@@ -706,6 +762,7 @@
   {
     "id": "gi-modals-007",
     "type": "g-modals",
+    "topic": "modals",
     "level": 1,
     "prompt": "Which sentence shows the **most** certainty?",
     "input": {
@@ -719,6 +776,7 @@
   {
     "id": "gi-modals-008",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which sentence shows that it is **possible**, but not certain, that Jack will win the race?",
     "input": {
@@ -732,6 +790,7 @@
   {
     "id": "gi-modals-009",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Complete the sentence with a modal verb that shows it is **possible**, but not certain.\nThe parcel ___ arrive tomorrow.",
     "input": {
@@ -743,6 +802,7 @@
   {
     "id": "gi-modals-010",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which sentence uses a modal verb to give advice?",
     "input": {
@@ -756,6 +816,7 @@
   {
     "id": "gi-modals-011",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Tap the **two** modal verbs.",
     "input": {
@@ -769,6 +830,7 @@
   {
     "id": "gi-modals-012",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "What does the modal verb **must** show in this sentence?\nYou must wash your hands before lunch.",
     "input": {
@@ -782,6 +844,7 @@
   {
     "id": "gi-modals-013",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which sentence uses a modal verb to show **ability**?",
     "input": {
@@ -795,6 +858,7 @@
   {
     "id": "gi-modals-014",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which modal verb completes the sentence to show that it is a **rule**?\nVisitors ___ show their tickets at the gate.",
     "input": {
@@ -808,6 +872,7 @@
   {
     "id": "gi-modals-015",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which word could replace **might** without changing the meaning?\nIt might rain later.",
     "input": {
@@ -821,6 +886,7 @@
   {
     "id": "gi-modals-016",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Read the sentence.\nWe could visit the castle, or we might go to the zoo.\nTap true or false for each statement.",
     "input": {
@@ -833,6 +899,7 @@
   {
     "id": "gi-modals-017",
     "type": "g-modals",
+    "topic": "modals",
     "level": 2,
     "prompt": "Which word in the sentence is a modal verb?\nThe twins would often play chess after school.",
     "input": {
@@ -846,6 +913,7 @@
   {
     "id": "gi-modals-018",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Maya sees puddles all over the playground. Which sentence shows that she is **sure** it has rained?",
     "input": {
@@ -859,6 +927,7 @@
   {
     "id": "gi-modals-019",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Which sentence shows that something is **impossible**?",
     "input": {
@@ -872,6 +941,7 @@
   {
     "id": "gi-modals-020",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Complete the sentence with a modal verb that shows **certainty**.\nToday is Friday, so tomorrow ___ be Saturday.",
     "input": {
@@ -883,6 +953,7 @@
   {
     "id": "gi-modals-021",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "In which sentence does the modal verb show **possibility**?",
     "input": {
@@ -896,6 +967,7 @@
   {
     "id": "gi-modals-022",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Which sentence shows the **least** certainty?",
     "input": {
@@ -909,6 +981,7 @@
   {
     "id": "gi-modals-023",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Tap the **two** modal verbs.",
     "input": {
@@ -922,6 +995,7 @@
   {
     "id": "gi-modals-024",
     "type": "g-modals",
+    "topic": "modals",
     "level": 3,
     "prompt": "Tick the **two** sentences that show something is **possible** but not certain.",
     "input": {
@@ -935,6 +1009,7 @@
   {
     "id": "gi-subjunctive-001",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIf I ___ taller, I could reach the top shelf.",
     "input": {
@@ -948,6 +1023,7 @@
   {
     "id": "gi-subjunctive-002",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Which sentence uses the subjunctive form?",
     "input": {
@@ -961,6 +1037,7 @@
   {
     "id": "gi-subjunctive-003",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nIf I ___ you, I would take an umbrella.",
     "input": {
@@ -972,6 +1049,7 @@
   {
     "id": "gi-subjunctive-004",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Tap the verb that is in the subjunctive form.",
     "input": {
@@ -985,6 +1063,7 @@
   {
     "id": "gi-subjunctive-005",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIf Leo ___ the captain, he would choose Ava first.",
     "input": {
@@ -998,6 +1077,7 @@
   {
     "id": "gi-subjunctive-006",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 1,
     "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nIf Omar ___ older, he could stay up late.",
     "input": {
@@ -1009,6 +1089,7 @@
   {
     "id": "gi-subjunctive-007",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which sentence uses the subjunctive to make a wish?",
     "input": {
@@ -1022,6 +1103,7 @@
   {
     "id": "gi-subjunctive-008",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nThe coach insisted that Sam ___ on time for training.",
     "input": {
@@ -1035,6 +1117,7 @@
   {
     "id": "gi-subjunctive-009",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIt is essential that every pupil ___ a packed lunch.",
     "input": {
@@ -1048,6 +1131,7 @@
   {
     "id": "gi-subjunctive-010",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Complete the sentence with the subjunctive form of the verb **to arrive**.\nThe headteacher requests that every visitor ___ before nine o'clock.",
     "input": {
@@ -1059,6 +1143,7 @@
   {
     "id": "gi-subjunctive-011",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which sentence uses the subjunctive form?",
     "input": {
@@ -1072,6 +1157,7 @@
   {
     "id": "gi-subjunctive-012",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Tap the verb that is in the subjunctive form.",
     "input": {
@@ -1085,6 +1171,7 @@
   {
     "id": "gi-subjunctive-013",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Is each sentence written in the subjunctive? Tap true or false for each one.",
     "input": {
@@ -1097,6 +1184,7 @@
   {
     "id": "gi-subjunctive-014",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nThe letter demands that Priya ___ the library book at once.",
     "input": {
@@ -1110,6 +1198,7 @@
   {
     "id": "gi-subjunctive-015",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Which sentence uses the subjunctive form?",
     "input": {
@@ -1123,6 +1212,7 @@
   {
     "id": "gi-subjunctive-016",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 2,
     "prompt": "Tap the verb that is in the subjunctive form.",
     "input": {
@@ -1136,6 +1226,7 @@
   {
     "id": "gi-subjunctive-017",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Tick the **two** sentences that use the subjunctive form.",
     "input": {
@@ -1149,6 +1240,7 @@
   {
     "id": "gi-subjunctive-018",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Complete the sentence with the subjunctive form of the verb **to be**.\nThe rules require that every player ___ at the pitch by ten o'clock.",
     "input": {
@@ -1160,6 +1252,7 @@
   {
     "id": "gi-subjunctive-019",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Which **two** words can be subjunctive forms of the verb **to be**?",
     "input": {
@@ -1173,6 +1266,7 @@
   {
     "id": "gi-subjunctive-020",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Which sentence is written in the subjunctive form?",
     "input": {
@@ -1186,6 +1280,7 @@
   {
     "id": "gi-subjunctive-021",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Complete the sentence with the subjunctive form of the verb **to go**.\nThe nurse suggested that my brother ___ home to rest.",
     "input": {
@@ -1197,6 +1292,7 @@
   {
     "id": "gi-subjunctive-022",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nIt is important that the dog ___ fed twice a day.",
     "input": {
@@ -1210,6 +1306,7 @@
   {
     "id": "gi-subjunctive-023",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Which sentence is **not** written in the subjunctive form?",
     "input": {
@@ -1223,6 +1320,7 @@
   {
     "id": "gi-subjunctive-024",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "Which verb completes the sentence in the subjunctive form?\nI propose that the meeting ___ on Friday.",
     "input": {
@@ -1236,6 +1334,7 @@
   {
     "id": "gi-subjunctive-025",
     "type": "g-subjunctive",
+    "topic": "subjunctive",
     "level": 3,
     "prompt": "In which sentence is **were** in the subjunctive form?",
     "input": {
@@ -1891,6 +1990,7 @@
   {
     "id": "gi-conjunctions-001",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Tap the conjunction in this sentence.",
     "input": {
@@ -1904,6 +2004,7 @@
   {
     "id": "gi-conjunctions-002",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Tap the conjunction in this sentence.",
     "input": {
@@ -1917,6 +2018,7 @@
   {
     "id": "gi-conjunctions-003",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Which conjunction best completes the sentence?\nWe can have pasta for tea ___ we can have rice.",
     "input": {
@@ -1930,6 +2032,7 @@
   {
     "id": "gi-conjunctions-004",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Which word is a conjunction?",
     "input": {
@@ -1943,6 +2046,7 @@
   {
     "id": "gi-conjunctions-005",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Which conjunction best completes the sentence?\nThe plants died ___ nobody watered them.",
     "input": {
@@ -1956,6 +2060,7 @@
   {
     "id": "gi-conjunctions-006",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Which conjunction best completes the sentence?\nI will lend you my bike ___ you promise to be careful.",
     "input": {
@@ -1969,6 +2074,7 @@
   {
     "id": "gi-conjunctions-007",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 1,
     "prompt": "Is each word a co-ordinating conjunction? Tap true or false for each one.",
     "input": {
@@ -1981,6 +2087,7 @@
   {
     "id": "gi-conjunctions-008",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Which sentence uses a **subordinating** conjunction?",
     "input": {
@@ -1994,6 +2101,7 @@
   {
     "id": "gi-conjunctions-009",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Which word is a **co-ordinating** conjunction?",
     "input": {
@@ -2007,6 +2115,7 @@
   {
     "id": "gi-conjunctions-010",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Which conjunction best completes the sentence?\nAva loves swimming, ___ her brother prefers football.",
     "input": {
@@ -2020,6 +2129,7 @@
   {
     "id": "gi-conjunctions-011",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Write a co-ordinating conjunction to complete the sentence.\nWould you like to walk ___ would you rather take the bus?",
     "input": {
@@ -2031,6 +2141,7 @@
   {
     "id": "gi-conjunctions-012",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Write a subordinating conjunction to complete the sentence.\nYou cannot go out to play ___ you have finished your lunch.",
     "input": {
@@ -2042,6 +2153,7 @@
   {
     "id": "gi-conjunctions-013",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Tap the **subordinating** conjunction.",
     "input": {
@@ -2055,6 +2167,7 @@
   {
     "id": "gi-conjunctions-014",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Tap the **two** conjunctions.",
     "input": {
@@ -2068,6 +2181,7 @@
   {
     "id": "gi-conjunctions-015",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Tick the **two** subordinating conjunctions.",
     "input": {
@@ -2081,6 +2195,7 @@
   {
     "id": "gi-conjunctions-016",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Which conjunction best completes the sentence?\n___ it was snowing, the children still walked to school.",
     "input": {
@@ -2094,6 +2209,7 @@
   {
     "id": "gi-conjunctions-017",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 2,
     "prompt": "Which word in this sentence is a subordinating conjunction?\nIf you finish early, you can read quietly or draw.",
     "input": {
@@ -2107,6 +2223,7 @@
   {
     "id": "gi-conjunctions-018",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "Write a conjunction that gives a **reason** to complete the sentence.\nThe match was cancelled ___ the pitch was flooded.",
     "input": {
@@ -2118,6 +2235,7 @@
   {
     "id": "gi-conjunctions-019",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "In which sentence is **before** used as a conjunction?",
     "input": {
@@ -2131,6 +2249,7 @@
   {
     "id": "gi-conjunctions-020",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "In which sentence is **since** used as a conjunction?",
     "input": {
@@ -2144,6 +2263,7 @@
   {
     "id": "gi-conjunctions-021",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "Which conjunction best completes the sentence?\nOmar practised every day ___ he could win the competition.",
     "input": {
@@ -2157,6 +2277,7 @@
   {
     "id": "gi-conjunctions-022",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "Tap the **co-ordinating** conjunction.",
     "input": {
@@ -2170,6 +2291,7 @@
   {
     "id": "gi-conjunctions-023",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "In which sentence does **and** join two main clauses?",
     "input": {
@@ -2183,6 +2305,7 @@
   {
     "id": "gi-conjunctions-024",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "Read the sentence.\nWhile Mum cooked dinner, Isla laid the table and Leo filled the jug.\nTap true or false for each statement.",
     "input": {
@@ -2195,6 +2318,7 @@
   {
     "id": "gi-conjunctions-025",
     "type": "g-conjunctions",
+    "topic": "conjunctions",
     "level": 3,
     "prompt": "Which conjunction best completes the sentence?\nYou will get wet ___ you take an umbrella.",
     "input": {
@@ -2522,6 +2646,7 @@
   {
     "id": "gi-determiners-001",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Which word completes the sentence?\nI saw ___ elephant at the zoo.",
     "input": {
@@ -2535,6 +2660,7 @@
   {
     "id": "gi-determiners-002",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Tap the **two** determiners.",
     "input": {
@@ -2548,6 +2674,7 @@
   {
     "id": "gi-determiners-003",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Which word is a determiner?",
     "input": {
@@ -2561,6 +2688,7 @@
   {
     "id": "gi-determiners-004",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Write **a** or **an** to complete the sentence.\nChloe drew ___ eagle.",
     "input": {
@@ -2572,6 +2700,7 @@
   {
     "id": "gi-determiners-005",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Which sentence uses **a** or **an** correctly?",
     "input": {
@@ -2585,6 +2714,7 @@
   {
     "id": "gi-determiners-006",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Tap the determiner.",
     "input": {
@@ -2598,6 +2728,7 @@
   {
     "id": "gi-determiners-007",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 1,
     "prompt": "Which determiner completes the sentence?\n___ books on the top shelf are mine.",
     "input": {
@@ -2611,6 +2742,7 @@
   {
     "id": "gi-determiners-008",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Write **a** or **an** to complete the sentence.\nWe waited for ___ hour.",
     "input": {
@@ -2622,6 +2754,7 @@
   {
     "id": "gi-determiners-009",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Tap the **two** determiners.",
     "input": {
@@ -2635,6 +2768,7 @@
   {
     "id": "gi-determiners-010",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Which determiner completes the sentence?\nThere isn't ___ milk left in the fridge.",
     "input": {
@@ -2648,6 +2782,7 @@
   {
     "id": "gi-determiners-011",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Which **two** words are determiners in this sentence?\nOur new neighbours have three dogs.",
     "input": {
@@ -2661,6 +2796,7 @@
   {
     "id": "gi-determiners-012",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Read the sentence.\nEvery pupil in this class has a pencil.\nTap true or false for each statement.",
     "input": {
@@ -2673,6 +2809,7 @@
   {
     "id": "gi-determiners-013",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Write **a** or **an** to complete the sentence.\nIt was ___ honest mistake.",
     "input": {
@@ -2684,6 +2821,7 @@
   {
     "id": "gi-determiners-014",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Which sentence uses a number as a determiner?",
     "input": {
@@ -2697,6 +2835,7 @@
   {
     "id": "gi-determiners-015",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Tap the **three** determiners.",
     "input": {
@@ -2710,6 +2849,7 @@
   {
     "id": "gi-determiners-016",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Which determiner completes the sentence?\nHow ___ sweets are in the jar?",
     "input": {
@@ -2723,6 +2863,7 @@
   {
     "id": "gi-determiners-017",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 2,
     "prompt": "Which of these words from the sentence is a determiner?\nThe tortoise hid its head inside its shell.",
     "input": {
@@ -2736,6 +2877,7 @@
   {
     "id": "gi-determiners-018",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "In which sentence is **that** a determiner?",
     "input": {
@@ -2749,6 +2891,7 @@
   {
     "id": "gi-determiners-019",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "In which sentence is **his** a determiner?",
     "input": {
@@ -2762,6 +2905,7 @@
   {
     "id": "gi-determiners-020",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Write **a** or **an** to complete the sentence.\nMy big sister goes to ___ university in Scotland.",
     "input": {
@@ -2773,6 +2917,7 @@
   {
     "id": "gi-determiners-021",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Tap the **three** determiners.",
     "input": {
@@ -2786,6 +2931,7 @@
   {
     "id": "gi-determiners-022",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Which word completes the sentence?\nWe have very ___ time left, so we must hurry.",
     "input": {
@@ -2799,6 +2945,7 @@
   {
     "id": "gi-determiners-023",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Tap the determiner.",
     "input": {
@@ -2812,6 +2959,7 @@
   {
     "id": "gi-determiners-024",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Which sentence uses **a** and **an** correctly?",
     "input": {
@@ -2825,6 +2973,7 @@
   {
     "id": "gi-determiners-025",
     "type": "g-determiners",
+    "topic": "determiners",
     "level": 3,
     "prompt": "Write **a** or **an** to complete the sentence.\nThe lorry drove down ___ one-way street.",
     "input": {
@@ -3152,6 +3301,7 @@
   {
     "id": "gi-prepositions-001",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Tap the preposition.",
     "input": {
@@ -3165,6 +3315,7 @@
   {
     "id": "gi-prepositions-002",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Which word is a preposition?",
     "input": {
@@ -3178,6 +3329,7 @@
   {
     "id": "gi-prepositions-003",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Which preposition completes the sentence?\nWe go swimming ___ Saturdays.",
     "input": {
@@ -3191,6 +3343,7 @@
   {
     "id": "gi-prepositions-004",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Which preposition completes the sentence?\nThe film starts ___ six o'clock.",
     "input": {
@@ -3204,6 +3357,7 @@
   {
     "id": "gi-prepositions-005",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Which preposition completes the sentence?\nMy birthday is ___ May.",
     "input": {
@@ -3217,6 +3371,7 @@
   {
     "id": "gi-prepositions-006",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Complete the sentence with **in**, **on** or **at**.\nThe leaves change colour ___ autumn.",
     "input": {
@@ -3228,6 +3383,7 @@
   {
     "id": "gi-prepositions-007",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Is each word a preposition? Tap true or false for each one.",
     "input": {
@@ -3240,6 +3396,7 @@
   {
     "id": "gi-prepositions-008",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 1,
     "prompt": "Which sentence contains a preposition?",
     "input": {
@@ -3253,6 +3410,7 @@
   {
     "id": "gi-prepositions-009",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Tap the preposition of time.",
     "input": {
@@ -3266,6 +3424,7 @@
   {
     "id": "gi-prepositions-010",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Tap the **two** prepositions.",
     "input": {
@@ -3279,6 +3438,7 @@
   {
     "id": "gi-prepositions-011",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Which word in this sentence is a preposition?\nThe tired dog slept beside the fire.",
     "input": {
@@ -3292,6 +3452,7 @@
   {
     "id": "gi-prepositions-012",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Write a preposition that means the opposite of the underlined word.\nThe plane flew __above__ the clouds.",
     "input": {
@@ -3303,6 +3464,7 @@
   {
     "id": "gi-prepositions-013",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Tick the **two** prepositions of time.",
     "input": {
@@ -3316,6 +3478,7 @@
   {
     "id": "gi-prepositions-014",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Which preposition best completes the sentence?\nThe children walked ___ the dark tunnel, holding their torches.",
     "input": {
@@ -3329,6 +3492,7 @@
   {
     "id": "gi-prepositions-015",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Which preposition completes the sentence?\nThe library is open from Monday ___ Friday.",
     "input": {
@@ -3342,6 +3506,7 @@
   {
     "id": "gi-prepositions-016",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Complete the sentence with **in**, **on** or **at**.\nWe will meet outside the school gates ___ noon.",
     "input": {
@@ -3353,6 +3518,7 @@
   {
     "id": "gi-prepositions-017",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Which of these is a preposition of place?",
     "input": {
@@ -3366,6 +3532,7 @@
   {
     "id": "gi-prepositions-018",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 2,
     "prompt": "Read the sentence.\nOn Monday, we walked along the canal to the old mill.\nTap true or false for each statement.",
     "input": {
@@ -3378,6 +3545,7 @@
   {
     "id": "gi-prepositions-019",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "In which sentence is **after** used as a preposition?",
     "input": {
@@ -3391,6 +3559,7 @@
   {
     "id": "gi-prepositions-020",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "In which sentence is **outside** a preposition?",
     "input": {
@@ -3404,6 +3573,7 @@
   {
     "id": "gi-prepositions-021",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "Tap the preposition.",
     "input": {
@@ -3417,6 +3587,7 @@
   {
     "id": "gi-prepositions-022",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "Tap the **two** prepositions.",
     "input": {
@@ -3430,6 +3601,7 @@
   {
     "id": "gi-prepositions-023",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "In which sentence is **until** a preposition?",
     "input": {
@@ -3443,6 +3615,7 @@
   {
     "id": "gi-prepositions-024",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "Which preposition completes the sentence?\nThe teacher sat ___ Ella and Theo.",
     "input": {
@@ -3456,6 +3629,7 @@
   {
     "id": "gi-prepositions-025",
     "type": "g-prepositions",
+    "topic": "prepositions",
     "level": 3,
     "prompt": "Complete the sentence with **in**, **on** or **at**.\nOur school play is ___ the first of July.",
     "input": {

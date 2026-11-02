@@ -90,7 +90,9 @@ export function checkGpsItem(item: GpsItem): string[] {
   if (item.topic !== undefined && !(GRAMMAR_TOPIC_IDS as readonly string[]).includes(item.topic)) out.push(`unknown topic "${item.topic}"`);
   if (item.source !== undefined) {
     if (!item.source.paper?.trim()) out.push('source needs a paper');
-    if (item.source.year !== undefined && !(Number.isInteger(item.source.year) && item.source.year >= 2003 && item.source.year <= 2030)) out.push('source year looks wrong');
+    // A test year (2003-2030) or, for an open lesson such as Oak's, the year group (1-11).
+    const y = item.source.year;
+    if (y !== undefined && !(Number.isInteger(y) && ((y >= 2003 && y <= 2030) || (y >= 1 && y <= 11)))) out.push('source year looks wrong');
   }
   const { input, answer } = item;
   const ints = (xs: unknown[]) => xs.every((x) => Number.isInteger(x));
