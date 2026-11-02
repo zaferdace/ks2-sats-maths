@@ -83,7 +83,8 @@ export function checkSentence(s: GrammarSentence): string[] {
 
 export function checkGpsItem(item: GpsItem): string[] {
   const out: string[] = [];
-  if (!/^gi-[a-z-]+-\d{3,}$/.test(item.id)) out.push('id must look like gi-commas-001');
+  // Past-paper items carry the test year and a part letter: gi-past-2025-027, gi-past-2023-035b.
+  if (!/^gi-[a-z-]+(?:-\d{4})?-\d{3,}[a-z]?$/.test(item.id)) out.push('id must look like gi-commas-001 or gi-past-2025-027b');
   if (!(item.type in GPS_ITEM_TYPES)) out.push(`unknown type "${item.type}"`);
   if (!LEVELS.includes(item.level)) out.push('level must be 1, 2 or 3');
   if (!item.prompt?.trim()) out.push('empty prompt');
