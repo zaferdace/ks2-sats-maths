@@ -4829,6 +4829,7 @@
       1
     ],
     "explain": "The other sentences jump between past and present for no reason; this one keeps each tense where it makes sense.",
+    "topic": "simple-past",
     "source": {
       "paper": "KS2 GPS Paper 1",
       "year": 2023,
@@ -8180,6 +8181,7 @@
       0
     ],
     "explain": "The whole sentence stays in the past: **sat**, **ate** and **had found**; the others mix past and present.",
+    "topic": "past-perfect",
     "source": {
       "paper": "KS2 GPS Paper 1",
       "year": 2019,
@@ -11333,6 +11335,7 @@
       3
     ],
     "explain": "**Now** needs the present (**is**) and **once** needs the past (**was**).",
+    "topic": "simple-present",
     "source": {
       "paper": "KS2 GPS Paper 1",
       "year": 2016,
