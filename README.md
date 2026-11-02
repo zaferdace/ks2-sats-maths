@@ -34,6 +34,12 @@ SATs-style practice for Year 6, maths and English, as an offline web app made fo
   on screen beside the questions; with the letter keyboard in landscape, the text and the question
   each scroll above it. Explanation questions are self-marked against a model answer, and what the
   pupil wrote is kept for a grown-up to read.
+- **Grammar topics.** Fourteen topics (the tenses, talking about the future, modal verbs, active
+  and passive, the subjunctive, determiners, prepositions, conjunctions), each with a short
+  explanation anchored on the National Curriculum glossary and Oak National Academy lessons, and a
+  ten-question practice narrowed to that topic. The practices mix generated questions with real
+  questions from past KS2 tests (Crown copyright, Open Government Licence v3.0) and Oak lesson
+  quizzes (OGL v3.0); those carry a source badge.
 - **Levels.** Every English paper can be Easy, Medium, Hard or Mixed (easy to hard, like the real
   test). New papers prefer questions not seen before. Mock tests (grammar 45 minutes, reading
   60 minutes) are Mixed, like the real papers.
