@@ -1,0 +1,197 @@
+[
+  {
+    "id": "simple-present",
+    "title": "Simple present",
+    "group": "tenses",
+    "blurb": "What happens now or always: I play, she plays, we are, he is.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "simple present"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "simple-past",
+    "title": "Simple past",
+    "group": "tenses",
+    "blurb": "What happened before: I played, she went, we were, he was.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "simple past"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "present-progressive",
+    "title": "Present progressive (continuous)",
+    "group": "tenses",
+    "blurb": "What is happening right now: I am playing, they are running.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "present progressive"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "past-progressive",
+    "title": "Past progressive (continuous)",
+    "group": "tenses",
+    "blurb": "What was happening at a moment in the past: I was playing, they were running.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "past progressive"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "present-perfect",
+    "title": "Present perfect",
+    "group": "tenses",
+    "blurb": "Something that has happened and still matters now: I have finished, she has gone.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "present perfect"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "past-perfect",
+    "title": "Past perfect",
+    "group": "tenses",
+    "blurb": "Something that had happened before another past event: I had eaten when you came.",
+    "typeIds": [
+      "g-tense",
+      "g-verb-forms"
+    ],
+    "tenses": [
+      "past perfect"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "future",
+    "title": "Talking about the future",
+    "group": "tenses",
+    "blurb": "What will happen: I will play, we are going to visit, the train leaves at six.",
+    "typeIds": [
+      "g-verb-forms"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "future-progressive",
+    "title": "Future progressive (continuous)",
+    "group": "tenses",
+    "blurb": "What will be happening at a time in the future: I will be playing.",
+    "typeIds": [
+      "g-verb-forms"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "modals",
+    "title": "Modal verbs",
+    "group": "verbs",
+    "blurb": "can, could, may, might, must, shall, should, will, would: how likely or necessary something is.",
+    "typeIds": [
+      "g-modals",
+      "g-find-word"
+    ],
+    "targets": [
+      "modal"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "active-passive",
+    "title": "Active and passive voice",
+    "group": "verbs",
+    "blurb": "Who does the action: The dog chased the cat (active). The cat was chased by the dog (passive).",
+    "typeIds": [
+      "g-voice",
+      "g-active-passive"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "subjunctive",
+    "title": "The subjunctive",
+    "group": "verbs",
+    "blurb": "A formal form: If I were you... The teacher insists that he be on time.",
+    "typeIds": [
+      "g-subjunctive"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "determiners",
+    "title": "Determiners",
+    "group": "word-classes",
+    "blurb": "Words before a noun that say which or how many: the, a, this, my, some, three.",
+    "typeIds": [
+      "g-determiners",
+      "g-find-word"
+    ],
+    "targets": [
+      "det"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "prepositions",
+    "title": "Prepositions",
+    "group": "word-classes",
+    "blurb": "Words that show where, when or how things relate: on, under, before, with.",
+    "typeIds": [
+      "g-prepositions",
+      "g-find-word"
+    ],
+    "targets": [
+      "prep"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  },
+  {
+    "id": "conjunctions",
+    "title": "Conjunctions",
+    "group": "sentences",
+    "blurb": "Words that join: and, but, or (co-ordinating); because, when, although (subordinating).",
+    "typeIds": [
+      "g-conjunctions",
+      "g-find-word"
+    ],
+    "targets": [
+      "conj"
+    ],
+    "inTheTest": "TODO",
+    "learn": []
+  }
+]

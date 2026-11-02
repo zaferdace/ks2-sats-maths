@@ -5,6 +5,7 @@ import { withArticle } from '../gen/wording';
 import { gapPossible, joinTokens } from './tokens';
 import {
   GPS_ITEM_TYPES,
+  GRAMMAR_TOPIC_IDS,
   READING_DOMAINS,
   SPELLING_GROUPS,
   TAGS,
@@ -86,6 +87,11 @@ export function checkGpsItem(item: GpsItem): string[] {
   if (!(item.type in GPS_ITEM_TYPES)) out.push(`unknown type "${item.type}"`);
   if (!LEVELS.includes(item.level)) out.push('level must be 1, 2 or 3');
   if (!item.prompt?.trim()) out.push('empty prompt');
+  if (item.topic !== undefined && !(GRAMMAR_TOPIC_IDS as readonly string[]).includes(item.topic)) out.push(`unknown topic "${item.topic}"`);
+  if (item.source !== undefined) {
+    if (!item.source.paper?.trim()) out.push('source needs a paper');
+    if (item.source.year !== undefined && !(Number.isInteger(item.source.year) && item.source.year >= 2003 && item.source.year <= 2030)) out.push('source year looks wrong');
+  }
   const { input, answer } = item;
   const ints = (xs: unknown[]) => xs.every((x) => Number.isInteger(x));
   switch (input?.kind) {

@@ -116,6 +116,38 @@ export type ItemInput =
   /** True or false for each statement. answer: booleans. */
   | { kind: 'tf'; statements: string[] };
 
+/**
+ * Grammar topics a pupil can learn and practise on their own (see topics.ts). Finer than a
+ * question type: "present perfect" is one of several things a g-tense question can ask.
+ */
+export const GRAMMAR_TOPIC_IDS = [
+  'simple-present',
+  'simple-past',
+  'present-progressive',
+  'past-progressive',
+  'present-perfect',
+  'past-perfect',
+  'future',
+  'future-progressive',
+  'modals',
+  'active-passive',
+  'subjunctive',
+  'determiners',
+  'prepositions',
+  'conjunctions',
+] as const;
+export type GrammarTopicId = (typeof GRAMMAR_TOPIC_IDS)[number];
+
+/** Where a ready-made question came from, when it is a real test question or an open lesson. */
+export interface ItemSource {
+  /** "KS2 GPS Paper 1" or "Oak National Academy". */
+  paper: string;
+  /** Test year (2016-2026) or the lesson's year group for Oak. */
+  year?: number;
+  /** Question number as printed ("27", "35b") or the lesson slug. */
+  question?: string;
+}
+
 export interface GpsItem {
   id: string; // "gi-commas-001"
   type: GpsItemType;
@@ -126,6 +158,10 @@ export interface GpsItem {
   answer: (number | string | boolean)[];
   /** One short sentence shown after marking: why the answer is right. */
   explain?: string;
+  /** The grammar topic this item practises, when it belongs to one (topic practice draws on it). */
+  topic?: GrammarTopicId;
+  /** Set for questions taken from a real past paper or an openly licensed lesson. */
+  source?: ItemSource;
 }
 
 // ---------------------------------------------------------------------------
