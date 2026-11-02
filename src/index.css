@@ -2803,4 +2803,14 @@ svg.flag-mark,
   font-size: 20px;
 }
 
+.source-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--english);
+  background: var(--english-soft);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
 } /* legacy */

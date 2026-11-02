@@ -15,6 +15,9 @@ import { ProfilesScreen } from './screens/ProfilesScreen';
 import { ReportScreen } from './screens/ReportScreen';
 import { ResultScreen } from './screens/ResultScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { TopicScreen } from './screens/TopicScreen';
+import { englishLevel } from './screens/practiceRequests';
+import type { GrammarTopicId } from './english/types';
 import { TestScreen } from './screens/TestScreen';
 import {
   addProfile,
@@ -46,7 +49,8 @@ type Screen =
   | { name: 'test'; attemptId: string }
   | { name: 'result'; attemptId: string; at: number }
   | { name: 'report' }
-  | { name: 'settings' };
+  | { name: 'settings' }
+  | { name: 'topic'; id: GrammarTopicId };
 
 export default function App() {
   const { data, update, saveFailed } = useStore();
@@ -98,7 +102,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
 
   const startPaper = (request: StartRequest) => {
     if (!profile) return;
-    const { paper, mode, size, types, groups, topic, mock } = request;
+    const { paper, mode, size, types, groups, topic, mock, grammarTopic } = request;
     // A mock is the real test: mixed levels (easy to hard) and its full length.
     const level = mock ? 'mixed' : (request.level ?? 'mixed');
     const code = newPaperCode();
@@ -113,7 +117,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
         questions = types ? buildMathsPractice(code, 'reasoning', types) : generateReasoningPaper(code);
         break;
       case 'gps':
-        questions = types ? buildGpsPractice(code, types, level, history()) : buildGpsPaper(code, level, history());
+        questions = types ? buildGpsPractice(code, types, level, history(), 10, grammarTopic) : buildGpsPaper(code, level, history());
         break;
       case 'spelling':
         questions = buildSpellingTest(code, level, history(), size, groups);
@@ -203,6 +207,8 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
     );
   } else if (screen.name === 'settings') {
     body = <SettingsScreen data={data} update={update} onBack={goHome} />;
+  } else if (screen.name === 'topic') {
+    body = <TopicScreen topicId={screen.id} level={englishLevel()} onBack={goHome} onPractise={startPaper} />;
   } else {
     body = (
       <HomeScreen
@@ -220,6 +226,7 @@ function Main({ data, update, saveFailed }: { data: StoreData; update: Update; s
           update((d) => selectProfile(d, null));
           setScreen({ name: 'profiles' });
         }}
+        onTopic={(id) => setScreen({ name: 'topic', id })}
       />
     );
   }

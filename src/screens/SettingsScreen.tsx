@@ -106,6 +106,12 @@ export function SettingsScreen({ data, update, onBack }: Props) {
           score, while money needs two decimal places and a question that asks for a fraction needs a fraction.
           Spelling words are read aloud by the iPad's own voice.
         </p>
+        <p className="muted small">
+          Grammar topic practices include questions from past KS2 English grammar, punctuation and spelling tests
+          (Standards and Testing Agency, Crown copyright) and from Oak National Academy lessons, both re-used under
+          the Open Government Licence v3.0. Contains public sector information licensed under the Open Government
+          Licence v3.0. The topic explanations draw on the National Curriculum glossary.
+        </p>
       </section>
     </div>
   );

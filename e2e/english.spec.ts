@@ -1,5 +1,6 @@
 import {
   answerByTapping,
+  card,
   chooseLevel,
   chooseSubject,
   createProfile,
@@ -11,6 +12,7 @@ import {
   item,
   marksOf,
   note,
+  openedPaper,
   questionMap,
   resultScore,
   startPaper,
@@ -104,4 +106,23 @@ test('reading with the letter keyboard: the text and the answer box stay above t
     const overflow = await page.evaluate(() => document.documentElement.scrollHeight - window.innerHeight);
     expect(overflow, 'the page does not scroll').toBeLessThanOrEqual(1);
   }
+});
+
+test('grammar topics: a topic explains itself, then a practice set asks only about that topic', async ({ page }) => {
+  await card(page, 'Grammar topics').getByRole('button', { name: 'Present perfect', exact: true }).tap();
+  await expect(page.getByRole('heading', { name: 'Present perfect' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'In the test' })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Practise this topic' }).first().tap();
+  const paper = await openedPaper(page);
+  expect(paper.topic).toBe('Present perfect');
+  expect(paper.questions.length).toBe(10);
+  // Every question practises the present perfect: a tense question built from a present perfect
+  // sentence, or a ready-made item tagged with the topic.
+  for (const q of paper.questions) {
+    const text = isItem(q) && q.body[0]?.b === 'text' ? q.body[0].text : '';
+    if (q.typeId === 'g-tense') expect(q.answer, text).toBeDefined();
+    expect(['g-tense', 'g-verb-forms']).toContain(q.typeId);
+  }
+  await expect(page.getByText('Practice: Present perfect')).toBeVisible();
 });

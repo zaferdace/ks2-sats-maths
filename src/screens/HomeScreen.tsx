@@ -1,4 +1,5 @@
 import {
+  GraduationCap,
   ArrowRight,
   BookOpen,
   BookOpenText,
@@ -33,7 +34,8 @@ import { isBlank } from '../answer/answer';
 import { GPS_ITEMS, READING_TEXTS, SPELLING_WORDS } from '../english/bank';
 import { ENGLISH_TYPES } from '../english/catalog';
 import { englishHistory } from '../english/history';
-import { SPELLING_GROUPS } from '../english/types';
+import { GRAMMAR_TOPICS, TOPIC_GROUPS, type TopicGroup } from '../english/topics';
+import { SPELLING_GROUPS, type GrammarTopicId } from '../english/types';
 import { DAYS } from '../gen/blueprint';
 import { daysToSats } from '../gen/exam';
 import { ALL_TYPES, LEVEL_NAME, PAPER_NAME } from '../gen/catalog';
@@ -76,6 +78,8 @@ interface Props {
   onReport: () => void;
   onSettings: () => void;
   onSwitchProfile: () => void;
+  /** Opens a grammar topic's explanation and practice (English). */
+  onTopic: (id: GrammarTopicId) => void;
 }
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
@@ -475,6 +479,39 @@ export function HomeScreen(props: Props) {
           );
         })}
       </div>
+
+      {subject === 'english' && (
+        <Card>
+          <div className="flex items-start gap-3">
+            <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-english-soft text-english">
+              <GraduationCap className="size-6" aria-hidden />
+            </span>
+            <div className="min-w-0 flex-1">
+              <CardTitle>Grammar topics</CardTitle>
+              <CardDescription className="mt-1">Learn one thing at a time, then practise it: ten questions, with real SATs questions mixed in.</CardDescription>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {(Object.keys(TOPIC_GROUPS) as TopicGroup[]).map((group) => (
+              <section key={group} className="flex flex-col gap-2">
+                <h3 className="m-0 text-sm font-bold text-muted">{TOPIC_GROUPS[group]}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {GRAMMAR_TOPICS.filter((t) => t.group === group).map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => props.onTopic(t.id)}
+                      className="min-h-11 rounded-full border border-english/30 bg-card px-4 text-[15px] font-bold text-ink shadow-[0_2px_0_var(--color-line)] active:translate-y-0.5 active:shadow-none"
+                    >
+                      {t.title}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </Card>
+      )}
 
       <Card>
         <div className="flex items-start gap-3">

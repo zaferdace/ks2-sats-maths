@@ -172,6 +172,8 @@ export interface ItemQuestion {
   explain?: string;
   /** Bank entry the question came from (English), so papers can avoid repeats and revisit mistakes. */
   sourceId?: string;
+  /** Where a real question came from, for a badge: "KS2 SATs 2025, question 27". */
+  source?: string;
   input: InputSpec;
   answer: string;
 }

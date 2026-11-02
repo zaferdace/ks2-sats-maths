@@ -1,6 +1,8 @@
 // What the Home and Report screens start when a topic is practised, and small per-device choices.
 import { typeInfo } from '../gen/catalog';
 import type { LevelChoice } from '../gen/types';
+import { grammarTopic } from '../english/topics';
+import type { GrammarTopicId } from '../english/types';
 import type { StartRequest } from '../store/model';
 
 export const gpsPractice = (ids: string[], topic: string): Omit<StartRequest, 'level'> => ({
@@ -9,6 +11,13 @@ export const gpsPractice = (ids: string[], topic: string): Omit<StartRequest, 'l
   types: ids,
   topic,
 });
+
+/** A practice request for a grammar topic: its question types, narrowed to the topic. */
+export function topicPractice(topicId: GrammarTopicId, level: LevelChoice): StartRequest | null {
+  const topic = grammarTopic(topicId);
+  if (!topic) return null;
+  return { ...gpsPractice(topic.typeIds, topic.title), level, grammarTopic: topic.id };
+}
 
 export const spellingPractice = (group: string, label: string): Omit<StartRequest, 'level'> => ({
   paper: 'spelling',

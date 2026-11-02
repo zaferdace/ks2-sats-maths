@@ -6,7 +6,7 @@ import type { Rng } from '../../gen/rng';
 import type { ItemQuestion } from '../../gen/types';
 import { withArticle } from '../../gen/wording';
 import { SENTENCES } from '../bank';
-import { TENSES, type GrammarSentence, type Level, type Span, type Tag } from '../types';
+import { TENSES, type GrammarSentence, type Level, type Span, type Tag, type Tense } from '../types';
 import { joinTokens } from '../tokens';
 
 export type GeneratedGpsType =
@@ -22,7 +22,13 @@ export type GeneratedGpsType =
   | 'g-voice'
   | 'g-end-punctuation';
 
-type Target = 'noun' | 'verb' | 'modal' | 'adj' | 'adv' | 'prep' | 'det' | 'pron' | 'conj';
+export type Target = 'noun' | 'verb' | 'modal' | 'adj' | 'adv' | 'prep' | 'det' | 'pron' | 'conj';
+
+/** Narrows what a template asks: a topic practice wants only its tenses, or only its word class. */
+export interface GenFocus {
+  tenses?: readonly Tense[];
+  targets?: readonly Target[];
+}
 
 const LABEL: Record<Target, string> = {
   noun: 'noun',
@@ -141,8 +147,8 @@ const findWordOk =
     return n >= 1 && n <= 3 && !risky;
   };
 
-function findWord(rng: Rng, level: Level): ItemQuestion | null {
-  const target = rng.pick<Target>(FIND_TARGETS);
+function findWord(rng: Rng, level: Level, focus?: GenFocus): ItemQuestion | null {
+  const target = rng.pick<Target>(focus?.targets?.length ? [...focus.targets] : FIND_TARGETS);
   const candidates = pool(level, findWordOk(target));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
@@ -212,8 +218,9 @@ function endPunctuation(rng: Rng, level: Level): ItemQuestion | null {
 // about the future are never keyed with a tense.
 const hasTense = (s: GrammarSentence): boolean => (TENSES as readonly string[]).includes(s.tense ?? '');
 
-function tense(rng: Rng, level: Level): ItemQuestion | null {
-  const candidates = pool(level, hasTense);
+function tense(rng: Rng, level: Level, focus?: GenFocus): ItemQuestion | null {
+  const wanted = focus?.tenses?.length ? focus.tenses : null;
+  const candidates = pool(level, (s) => hasTense(s) && (!wanted || wanted.includes(s.tense!)));
   if (!candidates.length) return null;
   const s = rng.pick(candidates);
   const { input, answer } = choices(rng, [s.tense!], rng.shuffle(TENSES.filter((t) => t !== s.tense)).slice(0, 3));
@@ -471,7 +478,7 @@ function voice(rng: Rng, level: Level): ItemQuestion | null {
   };
 }
 
-export const GENERATORS: Record<GeneratedGpsType, (rng: Rng, level: Level) => ItemQuestion | null> = {
+export const GENERATORS: Record<GeneratedGpsType, (rng: Rng, level: Level, focus?: GenFocus) => ItemQuestion | null> = {
   'g-word-class': wordClass,
   'g-find-word': findWord,
   'g-sentence-type': sentenceType,

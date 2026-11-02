@@ -359,7 +359,8 @@ export function ResultScreen({ attempt, at, onHome, onReport, onContinue, onSelf
                     )}
                     {!right && isItem(q) && q.explain && <RichText className="explain" text={q.explain} />}
                     <span className="muted small">
-                      {typeInfo(q.typeId)?.label} · {formatSeconds(attempt.timeMs[i])}
+                      {typeInfo(q.typeId)?.label}
+                      {isItem(q) && q.source && ` · ${q.source}`} · {formatSeconds(attempt.timeMs[i])}
                     </span>
                   </div>
                 </div>

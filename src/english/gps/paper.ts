@@ -4,8 +4,9 @@ import type { ItemQuestion, LevelChoice } from '../../gen/types';
 import { GPS_ITEMS } from '../bank';
 import { freshFirst, type History } from '../history';
 import { shuffleOptions } from '../options';
-import type { GpsItem, Level } from '../types';
-import { GENERATORS, isGenerated } from './generated';
+import { grammarTopic } from '../topics';
+import type { GpsItem, GrammarTopicId, Level } from '../types';
+import { GENERATORS, isGenerated, type GenFocus } from './generated';
 
 export const GPS_QUESTIONS = 50;
 
@@ -84,11 +85,25 @@ export function fromGpsItem(item: GpsItem, rng?: Rng): ItemQuestion {
     answer: encode(item.answer),
     explain: item.explain,
     sourceId: item.id,
+    ...(item.source && { source: sourceLabel(item.source) }),
   };
 }
 
-function readyMade(type: string, level: Level, rng: Rng, used: Set<string>, history: History): ItemQuestion | null {
-  const items = GPS_ITEMS.filter((it) => it.type === type && !used.has(it.id));
+/** "KS2 SATs 2025, question 27" or "Oak National Academy, Year 6". */
+function sourceLabel(src: NonNullable<GpsItem['source']>): string {
+  if (src.paper === 'KS2 GPS Paper 1') return `KS2 SATs ${src.year ?? ''}${src.question ? `, question ${src.question}` : ''}`.replace(/\s+,/, ',');
+  if (src.paper === 'Oak National Academy') return `Oak National Academy${src.year ? `, Year ${src.year}` : ''}`;
+  return [src.paper, src.year].filter(Boolean).join(' ');
+}
+
+/** What a topic practice narrows questions to: its ready-made items, its tenses, its word classes. */
+interface Narrow {
+  topic?: GrammarTopicId;
+  focus?: GenFocus;
+}
+
+function readyMade(type: string, level: Level, rng: Rng, used: Set<string>, history: History, narrow?: Narrow): ItemQuestion | null {
+  const items = GPS_ITEMS.filter((it) => it.type === type && !used.has(it.id) && (!narrow?.topic || it.topic === narrow.topic));
   if (!items.length) return null;
   const atLevel = items.filter((it) => it.level === level);
   const pool = atLevel.length ? atLevel : items;
@@ -102,11 +117,11 @@ function readyMade(type: string, level: Level, rng: Rng, used: Set<string>, hist
  * A question from a sentence template. When a level has only a few sentences the template may use
  * one from the nearest level (and says so in `difficulty`); a question at the level asked for wins.
  */
-function generated(type: string, level: Level, rng: Rng, used: Set<string>): ItemQuestion | null {
+function generated(type: string, level: Level, rng: Rng, used: Set<string>, narrow?: Narrow): ItemQuestion | null {
   if (!isGenerated(type)) return null;
   let otherLevel: ItemQuestion | null = null;
   for (let t = 0; t < 12; t++) {
-    const q = GENERATORS[type](rng, level);
+    const q = GENERATORS[type](rng, level, narrow?.focus);
     if (!q || used.has(q.sourceId ?? '')) continue;
     if (q.difficulty === level) return q;
     otherLevel ??= q;
@@ -114,10 +129,10 @@ function generated(type: string, level: Level, rng: Rng, used: Set<string>): Ite
   return otherLevel;
 }
 
-function question(type: string, level: Level, rng: Rng, used: Set<string>, history: History): ItemQuestion | null {
+function question(type: string, level: Level, rng: Rng, used: Set<string>, history: History, narrow?: Narrow): ItemQuestion | null {
   // End punctuation comes from both sources.
-  if (type === 'g-end-punctuation' && rng.chance(0.5)) return generated(type, level, rng, used) ?? readyMade(type, level, rng, used, history);
-  return isGenerated(type) && type !== 'g-end-punctuation' ? generated(type, level, rng, used) : readyMade(type, level, rng, used, history);
+  if (type === 'g-end-punctuation' && rng.chance(0.5)) return generated(type, level, rng, used, narrow) ?? readyMade(type, level, rng, used, history, narrow);
+  return isGenerated(type) && type !== 'g-end-punctuation' ? generated(type, level, rng, used, narrow) : readyMade(type, level, rng, used, history, narrow);
 }
 
 /**
@@ -156,14 +171,26 @@ export function buildGpsPaper(code: string, choice: LevelChoice, history: Histor
   return out;
 }
 
-/** A short practice set of some GPS question types ("mixed" goes from easy to hard). */
-export function buildGpsPractice(code: string, types: string[], choice: LevelChoice, history: History, count = 10): ItemQuestion[] {
+/**
+ * A short practice set of some GPS question types ("mixed" goes from easy to hard). With a grammar
+ * topic, only that topic's questions: its ready-made items, and generated questions in its tenses
+ * or about its word class.
+ */
+export function buildGpsPractice(code: string, types: string[], choice: LevelChoice, history: History, count = 10, topic?: GrammarTopicId): ItemQuestion[] {
   const rng = createRng(`GP${code}`);
   const used = new Set<string>();
   const out: ItemQuestion[] = [];
-  for (let i = 0; i < count * 3 && out.length < count; i++) {
-    const q = question(rng.pick(types), levelAt(out.length, count, choice), rng, used, history);
-    if (!q) continue;
+  const t = topic ? grammarTopic(topic) : undefined;
+  const narrow: Narrow | undefined = t && { topic: t.id, focus: { tenses: t.tenses, targets: t.targets } };
+  // A type with nothing left is dropped, so the set fills up from the others.
+  const pool = new Set(types);
+  for (let i = 0; i < count * 4 && out.length < count && pool.size; i++) {
+    const type = rng.pick([...pool]);
+    const q = question(type, levelAt(out.length, count, choice), rng, used, history, narrow);
+    if (!q || (q.sourceId && used.has(q.sourceId))) {
+      if (!q) pool.delete(type);
+      continue;
+    }
     out.push(q);
     if (q.sourceId) used.add(q.sourceId);
   }

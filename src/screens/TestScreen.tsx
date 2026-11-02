@@ -391,6 +391,7 @@ export function TestScreen({ attempt, edit, onFinished, onExit }: Props) {
             <span className="q-number">{index + 1}</span>
             {!item && question.showMethod && <span className="method-tag">Show your method: work it out on paper</span>}
             <span className="grow" />
+            {item && question.source && <span className="source-tag">{question.source}</span>}
             <span className={marks > 1 ? 'marks-tag' : 'muted small'}>{marks > 1 ? `${marks} marks` : '1 mark'}</span>
           </div>
           {item ? (

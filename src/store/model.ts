@@ -1,6 +1,7 @@
 // App data and the pure functions that change it. React state holds one StoreData value;
 // persist.ts writes it to localStorage.
 import { awaitingMark, emptyAnswer, markFor, maxMarks, type AnswerInput } from '../answer/answer';
+import type { GrammarTopicId } from '../english/types';
 import { DAYS } from '../gen/blueprint';
 import { isItem, SUBJECT_OF, type AnyQuestion, type LevelChoice, type PaperKind, type Subject } from '../gen/types';
 
@@ -27,6 +28,8 @@ export interface StartRequest {
   types?: string[];
   groups?: string[];
   topic?: string;
+  /** A grammar topic practice (English Topics screen): narrows the types to that topic. */
+  grammarTopic?: GrammarTopicId;
   /** A timed mock test: the real paper's length, time and (English) mixed level. */
   mock?: boolean;
 }

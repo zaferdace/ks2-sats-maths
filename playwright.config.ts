@@ -6,7 +6,10 @@ const port = Number(process.env.E2E_PORT ?? 4173);
 const baseURL = `http://localhost:${port}/ks2-sats-maths/`;
 const ci = Boolean(process.env.CI);
 
-const ipad = { browserName: 'chromium', hasTouch: true, isMobile: true, deviceScaleFactor: 2 } as const;
+// A machine with another Chromium build than the one this Playwright version wants (the cloud
+// container pre-installs one) sets PW_CHROMIUM to its executable instead of downloading.
+const launchOptions = process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {};
+const ipad = { browserName: 'chromium', hasTouch: true, isMobile: true, deviceScaleFactor: 2, launchOptions } as const;
 
 export default defineConfig({
   testDir: 'e2e',
