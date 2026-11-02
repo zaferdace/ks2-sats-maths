@@ -1,0 +1,5670 @@
+[
+  {
+    "id": "gi-verb-forms-027",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which sentence is about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["Amara will paint a picture.", "Amara painted a picture.", "Amara is painting a picture.", "Amara paints pictures."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will paint tells us that the painting has not happened yet."
+  },
+  {
+    "id": "gi-verb-forms-028",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Tap the word that shows this sentence is about the future.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Next", "week", "we", "will", "visit", "the", "farm", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Will is a modal verb that shows the visit is going to happen."
+  },
+  {
+    "id": "gi-verb-forms-029",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which option completes the sentence so that it is about the future?\nTomorrow, Dev ___ his grandparents.",
+    "input": {
+      "kind": "choice",
+      "options": ["visited", "visits", "will visit", "was visiting"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Tomorrow is in the future, so we use will + visit."
+  },
+  {
+    "id": "gi-verb-forms-030",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Write the verb **to swim** in the box so that the sentence is about the future.\nNext summer, Hana ___ in the sea every day.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will swim", "is going to swim", "shall swim", "will be swimming"],
+    "explain": "Will swim (or is going to swim) shows that the swimming is still to come."
+  },
+  {
+    "id": "gi-verb-forms-031",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Is each sentence about the future? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["We will have pizza on Friday.", "We had pizza on Friday.", "The shop is going to open at nine.", "The shop opened at nine."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Will have and is going to open point to the future; had and opened are in the past."
+  },
+  {
+    "id": "gi-verb-forms-032",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which sentence is about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["The bell rang at three o'clock.", "The bell is ringing now.", "The bell will ring at three o'clock.", "The bell has rung."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will ring shows that the bell has not rung yet."
+  },
+  {
+    "id": "gi-verb-forms-033",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which word is used with a verb to show that something will happen in the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["will", "was", "has", "did"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will goes in front of a verb to point to the future: will happen."
+  },
+  {
+    "id": "gi-verb-forms-034",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Tap the **two** words that make this sentence about the future.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Leo", "will", "swim", ",", "and", "then", "he", "will", "rest", "."],
+      "pick": 2
+    },
+    "answer": [1, 7],
+    "explain": "Will swim and will rest are both about the future, so the two words are will and will."
+  },
+  {
+    "id": "gi-verb-forms-035",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which option completes the sentence so that it is about the future?\nNext year, I ___ ten years old.",
+    "input": {
+      "kind": "choice",
+      "options": ["am", "was", "will be", "have been"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Next year has not come yet, so we use will be."
+  },
+  {
+    "id": "gi-verb-forms-036",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Write the verb **to go** in the box so that the sentence is about the future.\nOn Saturday, we ___ to the cinema.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will go", "are going to go", "shall go", "are going", "will be going"],
+    "explain": "Will go, shall go and are going (to go) all point to the future."
+  },
+  {
+    "id": "gi-verb-forms-037",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which word is a modal verb that is often used to talk about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["will", "very", "yesterday", "walked"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will is a modal verb: it goes with another verb to show the future, as in will walk."
+  },
+  {
+    "id": "gi-verb-forms-038",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which sentence is about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["The spacecraft has landed on the moon.", "The spacecraft is going to land on the moon.", "The spacecraft landed on the moon.", "The spacecraft was landing on the moon."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Is going to land shows a plan for the future."
+  },
+  {
+    "id": "gi-verb-forms-039",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which sentence uses the **present tense** to talk about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["The train leaves at six tomorrow morning.", "The train left at six this morning.", "The train has left.", "The train was leaving at six."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "English can use the simple present (leaves) with a time word such as tomorrow to talk about a planned event."
+  },
+  {
+    "id": "gi-verb-forms-040",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which option completes the sentence so that it is about the future?\nBy this time next week, the builders ___ the new roof.",
+    "input": {
+      "kind": "choice",
+      "options": ["finished", "will have finished", "have finished", "had finished"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Will have finished looks forward to a time next week when the work is complete."
+  },
+  {
+    "id": "gi-verb-forms-041",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Tap the word that shows this sentence is about the future.",
+    "input": {
+      "kind": "words",
+      "tokens": ["After", "lunch", ",", "the", "class", "shall", "perform", "their", "play", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Shall, like will, is a modal verb that points to the future."
+  },
+  {
+    "id": "gi-verb-forms-042",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Read each sentence. Is the verb about the future? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["Grandad is going to teach me chess.", "Grandad taught me chess.", "Grandad will teach me chess next week.", "Grandad teaches me chess every week."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Is going to teach and will teach are about the future; taught is past and teaches is present."
+  },
+  {
+    "id": "gi-verb-forms-043",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which **two** sentences are about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["Maya is going to run the race.", "Maya ran the race.", "Maya will run the race tomorrow.", "Maya has run the race."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Is going to run and will run both point to the future."
+  },
+  {
+    "id": "gi-verb-forms-044",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Write the verb **to write** in the box so that the sentence is about the future.\nTomorrow afternoon, Kofi ___ a letter to his pen pal.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will write", "is going to write", "shall write", "will be writing"],
+    "explain": "Will write (or is going to write) shows that the letter is still to be written."
+  },
+  {
+    "id": "gi-verb-forms-045",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "What does the word **will** tell us in this sentence?\nThe parcel will arrive on Thursday.",
+    "input": {
+      "kind": "choice",
+      "options": ["The parcel arrived in the past.", "The parcel is arriving now.", "The parcel has not arrived yet; it is going to arrive.", "The parcel arrives every Thursday."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will arrive points forward to Thursday, which has not come yet."
+  },
+  {
+    "id": "gi-verb-forms-046",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which option completes the sentence so that it is about the future?\nI think it ___ snow tonight.",
+    "input": {
+      "kind": "choice",
+      "options": ["snowed", "will", "snows", "has"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "It will snow tonight: will + snow is about the future."
+  },
+  {
+    "id": "gi-verb-forms-047",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the verb about the future.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Our", "team", "will", "play", "in", "the", "final", "next", "Saturday", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Will play is the verb; will shows that the match is still to come."
+  },
+  {
+    "id": "gi-verb-forms-048",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which option completes the sentence so that it is about the future?\nThe doctor says Ravi ___ better by Monday.",
+    "input": {
+      "kind": "choice",
+      "options": ["felt", "will feel", "feels", "has felt"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "By Monday is in the future, so the verb is will feel."
+  },
+  {
+    "id": "gi-verb-forms-049",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which sentence is about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["If it rains, the match will be cancelled.", "Because it rained, the match was cancelled.", "The match has been cancelled because of rain.", "The match was being cancelled when we arrived."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be cancelled is about the future; the other main verbs are about the past."
+  },
+  {
+    "id": "gi-verb-forms-050",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which option completes the sentence so that it is about the future?\nWhen the bell rings, the pupils ___ for their coats.",
+    "input": {
+      "kind": "choice",
+      "options": ["rushed", "will rush", "had rushed", "were rushing"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The bell has not rung yet, so the main clause uses will rush."
+  },
+  {
+    "id": "gi-verb-forms-051",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Write the verb **to open** in the box so that the sentence is about the future.\nThe new museum ___ its doors to the public next spring.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will open", "is going to open", "opens", "shall open", "will be opening", "is opening"],
+    "explain": "Will open and is going to open point to next spring; English can also use opens for a planned event."
+  },
+  {
+    "id": "gi-verb-forms-052",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Read the sentence.\nNext year, our school will be a hundred years old, so there is going to be a huge party.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The sentence is about the future.", "The word \"will\" is a modal verb.", "The verb \"is going to be\" is about the past."]
+    },
+    "answer": [true, true, false],
+    "explain": "Will be and is going to be both point to next year; will is a modal verb."
+  },
+  {
+    "id": "gi-verb-forms-053",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which sentence uses **shall** to talk about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["We shall arrive before dark.", "We arrived before dark.", "We should arrive before dark.", "We were arriving before dark."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Shall, like will, shows that something is going to happen; should gives advice or an expectation."
+  },
+  {
+    "id": "gi-verb-forms-054",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which **two** sentences are about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["The volcano is going to erupt soon, say scientists.", "The volcano erupted in 1883.", "Scientists expect that the volcano will erupt within a decade.", "The volcano has erupted several times."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Is going to erupt and will erupt point to the future; erupted and has erupted are about the past."
+  },
+  {
+    "id": "gi-verb-forms-055",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which sentence is **not** about the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["The concert starts at seven tonight.", "The concert will start at seven.", "The concert is going to start at seven.", "The concert started at seven."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Started is in the simple past; the other three all point to a concert still to come."
+  },
+  {
+    "id": "gi-verb-forms-056",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Tap the word that shows the main clause is about the future.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Although", "the", "sky", "is", "grey", ",", "the", "sun", "will", "shine", "this", "afternoon", "."],
+      "pick": 1
+    },
+    "answer": [8],
+    "explain": "Will shine is the verb of the main clause, and will points to the future."
+  },
+  {
+    "id": "gi-verb-forms-057",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Tomorrow, Sam will be playing football.", "Tomorrow, Sam will play football.", "Sam is playing football.", "Sam was playing football."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The future progressive uses will be + a verb ending in -ing: will be playing."
+  },
+  {
+    "id": "gi-verb-forms-058",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which option completes the sentence using the future progressive?\nAt eight o'clock tonight, we ___ our favourite film.",
+    "input": {
+      "kind": "choice",
+      "options": ["watched", "are watching", "will be watching", "have watched"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will be watching is will be + the -ing form of watch."
+  },
+  {
+    "id": "gi-verb-forms-059",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Write the verb **to sleep** in the box in the future progressive.\nAt midnight, the whole family ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be sleeping", "shall be sleeping"],
+    "explain": "The future progressive is will be + sleeping."
+  },
+  {
+    "id": "gi-verb-forms-060",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Tap the **three** words that make the future progressive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["This", "time", "tomorrow", ",", "Isla", "will", "be", "flying", "to", "Spain", "."],
+      "pick": 3
+    },
+    "answer": [5, 6, 7],
+    "explain": "Will be flying is the future progressive verb."
+  },
+  {
+    "id": "gi-verb-forms-061",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Is each sentence written in the future progressive? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["We will be swimming all afternoon.", "We will swim this afternoon.", "The birds will be singing at dawn.", "The birds were singing at dawn."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Will be swimming and will be singing use will be + -ing; will swim has no -ing verb and were singing is in the past."
+  },
+  {
+    "id": "gi-verb-forms-062",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Grandma knitted a scarf.", "Grandma is knitting a scarf.", "Grandma will be knitting a scarf all evening.", "Grandma has knitted a scarf."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will be knitting is will be + an -ing verb: the future progressive."
+  },
+  {
+    "id": "gi-verb-forms-063",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which option completes the sentence using the future progressive?\nNext week, the Year 6 pupils ___ their tests.",
+    "input": {
+      "kind": "choice",
+      "options": ["will be taking", "took", "take", "have taken"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be taking shows an action that will be going on next week."
+  },
+  {
+    "id": "gi-verb-forms-064",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Write the verb **to wait** in the box in the future progressive.\nDon't worry: I ___ for you outside the station.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be waiting", "shall be waiting"],
+    "explain": "The future progressive is will be + waiting."
+  },
+  {
+    "id": "gi-verb-forms-065",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which pair of words comes before the -ing verb in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["will be", "was being", "has been", "is going"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The future progressive is always will be + a verb ending in -ing."
+  },
+  {
+    "id": "gi-verb-forms-066",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["The baby will be sleeping when you arrive.", "The baby slept when you arrived.", "The baby will sleep soon.", "The baby is sleeping now."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be sleeping shows an action that will be happening at a future moment."
+  },
+  {
+    "id": "gi-verb-forms-067",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which option completes the sentence using the future progressive?\nTomorrow morning, Grandad ___ in his garden.",
+    "input": {
+      "kind": "choice",
+      "options": ["dug", "is digging", "will be digging", "has dug"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Will be digging is will be + the -ing form of dig."
+  },
+  {
+    "id": "gi-verb-forms-068",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["By the time you read this, I will be flying over the ocean.", "By the time you read this, I will have flown over the ocean.", "When you read this, I was flying over the ocean.", "I fly over the ocean every summer."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be flying is the future progressive; will have flown is a perfect form."
+  },
+  {
+    "id": "gi-verb-forms-069",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Which option completes the sentence using the future progressive?\nWhile you are at school, the builders ___ the new classroom.",
+    "input": {
+      "kind": "choice",
+      "options": ["built", "will be building", "have built", "build"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Will be building shows an action going on during a future time."
+  },
+  {
+    "id": "gi-verb-forms-070",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Write the verb **to study** in the box in the future progressive.\nThis time next year, my sister ___ at university.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be studying"],
+    "explain": "Will be + studying makes the future progressive."
+  },
+  {
+    "id": "gi-verb-forms-071",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Tap the **three** words that make the future progressive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["When", "the", "guests", "arrive", ",", "Dad", "will", "be", "cooking", "in", "the", "kitchen", "."],
+      "pick": 3
+    },
+    "answer": [6, 7, 8],
+    "explain": "Will be cooking is the future progressive verb; arrive is in the simple present."
+  },
+  {
+    "id": "gi-verb-forms-072",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Read the sentence.\nAt ten o'clock tomorrow, the choir will be singing in the town hall.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The verb is in the future progressive.", "The singing has already finished.", "The verb is made of will be + singing.", "The sentence is about the past."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Will be singing is about an action that will be going on tomorrow."
+  },
+  {
+    "id": "gi-verb-forms-073",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Which **two** sentences are written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["The children will be camping in the garden tonight.", "The children camped in the garden last night.", "The dog will be barking at the fireworks later.", "The dog is barking at the fireworks."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Will be camping and will be barking use will be + -ing."
+  },
+  {
+    "id": "gi-verb-forms-074",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "What does the future progressive tell us in this sentence?\nAt six o'clock, Mum will be driving home.",
+    "input": {
+      "kind": "choice",
+      "options": ["An action that will be going on at a time in the future.", "An action that finished in the past.", "An action that happens every day.", "An action that is happening right now."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be driving describes an action in progress at six o'clock in the future."
+  },
+  {
+    "id": "gi-verb-forms-075",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Write the verb **to rain** in the box in the future progressive.\nThe forecast says it ___ all day tomorrow.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be raining"],
+    "explain": "Will be + raining makes the future progressive."
+  },
+  {
+    "id": "gi-verb-forms-076",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Which option completes the sentence using the future progressive?\nDon't ring at seven, because we ___ dinner.",
+    "input": {
+      "kind": "choice",
+      "options": ["ate", "will be eating", "have eaten", "eat"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Will be eating shows that dinner will be going on at seven."
+  },
+  {
+    "id": "gi-verb-forms-077",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Jamal will be running the marathon in April.", "Jamal runs every morning.", "Jamal has been running for years.", "Jamal will run the marathon in April."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be running is will be + -ing; will run has no -ing verb."
+  },
+  {
+    "id": "gi-verb-forms-078",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 2,
+    "prompt": "Write the verb **to travel** in the box in the future progressive.\nNext Monday, the explorers ___ across the desert.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be travelling"],
+    "explain": "Will be + travelling makes the future progressive; travel doubles its l before -ing."
+  },
+  {
+    "id": "gi-verb-forms-079",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Which sentence is written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Scientists will be studying the comet for several months.", "Scientists will have studied the comet by then.", "Scientists had been studying the comet for months.", "Scientists are going to study the comet."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be studying is will be + -ing; the others are perfect forms or a plan with going to."
+  },
+  {
+    "id": "gi-verb-forms-080",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Which option completes the sentence using the future progressive?\nWhen the train pulls in, hundreds of passengers ___ on the platform.",
+    "input": {
+      "kind": "choice",
+      "options": ["waited", "will be waiting", "have waited", "wait"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Will be waiting shows an action that will be going on when the train arrives."
+  },
+  {
+    "id": "gi-verb-forms-081",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Write the verb **to perform** in the box in the future progressive.\nAt this time tomorrow, our class ___ the play in front of the whole school.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will be performing"],
+    "explain": "Will be + performing makes the future progressive."
+  },
+  {
+    "id": "gi-verb-forms-082",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Tap the **three** words that make the future progressive verb in the main clause.",
+    "input": {
+      "kind": "words",
+      "tokens": ["If", "the", "weather", "stays", "fine", ",", "we", "will", "be", "picnicking", "by", "the", "river", "."],
+      "pick": 3
+    },
+    "answer": [7, 8, 9],
+    "explain": "Will be picnicking is the future progressive verb of the main clause."
+  },
+  {
+    "id": "gi-verb-forms-083",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Is each verb in the future progressive? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["will be travelling", "was travelling", "will travel", "will have travelled", "shall be travelling"]
+    },
+    "answer": [true, false, false, false, true],
+    "explain": "The future progressive needs will (or shall) + be + an -ing verb."
+  },
+  {
+    "id": "gi-verb-forms-084",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Which sentence is **not** written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["Next month, I will be learning to dive.", "Soon, you will be hearing from us.", "Tonight, they will be celebrating.", "Tomorrow, we will have finished."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Will have finished is a perfect form; the other three use will be + -ing."
+  },
+  {
+    "id": "gi-verb-forms-085",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Which **two** sentences are written in the future progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["This evening, the fans will be cheering in the stadium.", "The fans will have gone home by midnight.", "Tomorrow, the players will be training in the rain.", "The players trained hard yesterday."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Will be cheering and will be training use will be + -ing."
+  },
+  {
+    "id": "gi-verb-forms-086",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 3,
+    "prompt": "Why has the writer used the future progressive in this sentence?\nAt nine o'clock tomorrow, I will be sitting my maths test.",
+    "input": {
+      "kind": "choice",
+      "options": ["To show an action that will be in progress at a certain time in the future.", "To show an action that has just finished.", "To show an action that happened before another past action.", "To show an action that happens regularly."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Will be sitting describes what will be going on at nine o'clock tomorrow."
+  },
+  {
+    "id": "gi-subjunctive-026",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 1,
+    "prompt": "Which option completes the sentence in the subjunctive form?\nIf I ___ a giant, I would step over the river.",
+    "input": {
+      "kind": "choice",
+      "options": ["was", "were", "am", "be"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "For something imagined after if, the subjunctive uses were: If I were a giant."
+  },
+  {
+    "id": "gi-subjunctive-027",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 1,
+    "prompt": "Write the subjunctive form of the verb **to be** in the box.\nIf Nadia ___ here, she would know what to do.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["were"],
+    "explain": "Nadia is not here, so the subjunctive were is used for the imagined situation."
+  },
+  {
+    "id": "gi-subjunctive-028",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 1,
+    "prompt": "Which sentence uses **were** in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["If my dog were able to talk, he would ask for treats.", "My dogs were asking for treats.", "We were giving the dog treats.", "They were happy dogs."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Were is subjunctive when it describes something imagined: a dog that could talk."
+  },
+  {
+    "id": "gi-subjunctive-029",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 2,
+    "prompt": "Which sentence is written in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["The judge demanded that the court be silent.", "The judge said that the court was silent.", "The judge thinks the court is silent.", "The court was silent."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After demanded that, the subjunctive uses the base form be."
+  },
+  {
+    "id": "gi-subjunctive-030",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 2,
+    "prompt": "Tap the verb that is in the subjunctive form.",
+    "input": {
+      "kind": "words",
+      "tokens": ["It", "is", "essential", "that", "everyone", "wear", "a", "helmet", "."],
+      "pick": 1
+    },
+    "answer": [5],
+    "explain": "Wear has no -s even though everyone is singular, because it is in the subjunctive."
+  },
+  {
+    "id": "gi-subjunctive-031",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 2,
+    "prompt": "Which option completes the sentence in the subjunctive form?\nThe captain insisted that every sailor ___ on deck at dawn.",
+    "input": {
+      "kind": "choice",
+      "options": ["is", "was", "be", "being"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "After insisted that, the subjunctive uses be."
+  },
+  {
+    "id": "gi-subjunctive-032",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 2,
+    "prompt": "Write the subjunctive form of the verb **to be** in the box.\nThe teacher asks that every pupil ___ ready by nine o'clock.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["be"],
+    "explain": "After asks that, the subjunctive form of to be is be."
+  },
+  {
+    "id": "gi-subjunctive-033",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 3,
+    "prompt": "Is each sentence written in the subjunctive form? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["I wish I were taller.", "I wish I was taller.", "The head requested that the hall be cleared.", "The head cleared the hall."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Were after wish and be after requested that are subjunctive forms; was and cleared are ordinary past forms."
+  },
+  {
+    "id": "gi-subjunctive-034",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 3,
+    "prompt": "Which sentence is written in the subjunctive form?",
+    "input": {
+      "kind": "choice",
+      "options": ["Were she to win, she would donate the prize.", "She won, so she donated the prize.", "If she wins, she will donate the prize.", "She was winning when it rained."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Were she to win is a formal subjunctive way of saying If she were to win."
+  },
+  {
+    "id": "gi-subjunctive-035",
+    "type": "g-subjunctive",
+    "topic": "subjunctive",
+    "level": 3,
+    "prompt": "Which option completes the sentence in the subjunctive form?\nThe council recommends that each household ___ its waste.",
+    "input": {
+      "kind": "choice",
+      "options": ["recycles", "recycle", "recycled", "recycling"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the subjunctive the verb keeps its base form: recycle, not recycles."
+  },
+  {
+    "id": "gi-modals-025",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 1,
+    "prompt": "Tap the modal verb in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Zara", "can", "speak", "three", "languages", "."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Can is a modal verb: here it shows ability."
+  },
+  {
+    "id": "gi-modals-026",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 1,
+    "prompt": "Which sentence uses a modal verb to show **possibility**?",
+    "input": {
+      "kind": "choice",
+      "options": ["It might snow tonight.", "It snowed last night.", "It is snowing now.", "It snows every winter."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Might is a modal verb that shows something is possible but not certain."
+  },
+  {
+    "id": "gi-modals-027",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 1,
+    "prompt": "Which option completes the sentence with a modal verb?\nYou ___ finish your homework before you play.",
+    "input": {
+      "kind": "choice",
+      "options": ["must", "finished", "are", "have"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Must is a modal verb; it goes in front of the verb finish."
+  },
+  {
+    "id": "gi-modals-028",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 1,
+    "prompt": "Which word is a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["would", "walk", "wonderful", "window"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Would is a modal verb; it goes with another verb, as in would walk."
+  },
+  {
+    "id": "gi-modals-029",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which sentence uses a modal verb to show **obligation** (something that has to be done)?",
+    "input": {
+      "kind": "choice",
+      "options": ["You must wear a seatbelt in the car.", "You might wear a seatbelt in the car.", "You could wear a seatbelt in the car.", "You wore a seatbelt in the car."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Must shows that wearing a seatbelt is something you have to do."
+  },
+  {
+    "id": "gi-modals-030",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Tap the **two** modal verbs in this sentence.",
+    "input": {
+      "kind": "words",
+      "tokens": ["We", "should", "leave", "now", ",", "or", "we", "may", "miss", "the", "train", "."],
+      "pick": 2
+    },
+    "answer": [1, 7],
+    "explain": "Should and may are modal verbs; leave and miss are the main verbs."
+  },
+  {
+    "id": "gi-modals-031",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Read the sentence.\nAisha could win the race, but she will need to train hard.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"could\" is a modal verb.", "The word \"will\" is a modal verb.", "The word \"train\" is a modal verb.", "The sentence says Aisha is certain to win."]
+    },
+    "answer": [true, true, false, false],
+    "explain": "Could and will are modal verbs; could shows only a possibility of winning."
+  },
+  {
+    "id": "gi-modals-032",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Which sentence uses a modal verb to make a **polite request**?",
+    "input": {
+      "kind": "choice",
+      "options": ["Could you pass the salt, please?", "Pass the salt.", "You passed the salt.", "She is passing the salt."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Could is a modal verb; Could you is a polite way of asking."
+  },
+  {
+    "id": "gi-modals-033",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Write a modal verb in the box that shows the speaker is **certain**.\nIf you drop the glass, it ___ break.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will", "shall"],
+    "explain": "Will shows the speaker is sure about what happens next."
+  },
+  {
+    "id": "gi-modals-034",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "In which sentence does **may** show possibility rather than permission?",
+    "input": {
+      "kind": "choice",
+      "options": ["You may leave the table now.", "May I borrow your pen?", "The road may be icy this morning.", "Pupils may use the library at lunchtime."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The road may be icy means it is possibly icy; the other sentences give or ask for permission."
+  },
+  {
+    "id": "gi-active-passive-025",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 1,
+    "prompt": "Which sentence is in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The gardener planted the roses.", "The roses were planted by the gardener.", "The gardener is planting roses.", "The gardener will plant roses."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Were planted is passive: the roses have the action done to them."
+  },
+  {
+    "id": "gi-active-passive-026",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 1,
+    "prompt": "Is each sentence in the passive voice? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The letter was written by Ella.", "Ella wrote the letter.", "The windows were cleaned yesterday.", "Dad cleaned the windows."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Was written and were cleaned are passive verbs: a form of be + a past participle."
+  },
+  {
+    "id": "gi-active-passive-027",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 1,
+    "prompt": "Which sentence is in the active voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The nest was built by two robins.", "Two robins built the nest.", "The eggs were laid in the nest.", "The nest was hidden by leaves."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the active sentence the doers, two robins, are the subject."
+  },
+  {
+    "id": "gi-active-passive-028",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 2,
+    "prompt": "Complete the passive version of this sentence.\nThe storm damaged the old barn.\nThe old barn ___ by the storm.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was damaged"],
+    "explain": "The passive keeps the past tense: damaged becomes was damaged."
+  },
+  {
+    "id": "gi-active-passive-029",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 2,
+    "prompt": "Which is the active version of this sentence?\nThe trophy was lifted by the captain.",
+    "input": {
+      "kind": "choice",
+      "options": ["The captain lifted the trophy.", "The trophy lifted the captain.", "The captain was lifted by the trophy.", "The trophy was lifting the captain."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The doer, the captain, becomes the subject: The captain lifted the trophy."
+  },
+  {
+    "id": "gi-active-passive-030",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 2,
+    "prompt": "Which option completes the sentence so that it is in the passive voice?\nEvery morning, the hall ___ by the caretaker.",
+    "input": {
+      "kind": "choice",
+      "options": ["sweeps", "is swept", "was sweeping", "swept"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Is swept is passive: is + the past participle swept."
+  },
+  {
+    "id": "gi-active-passive-031",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which sentence is in the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The results have been announced by the judges.", "The judges have announced the results.", "The judges were announcing the results.", "The judges had announced the results."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Have been announced is passive; the other verbs are active."
+  },
+  {
+    "id": "gi-active-passive-032",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Tap the **three** words that make the passive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "ancient", "coins", "had", "been", "buried", "for", "centuries", "."],
+      "pick": 3
+    },
+    "answer": [3, 4, 5],
+    "explain": "Had been buried is a passive verb in the past perfect."
+  },
+  {
+    "id": "gi-verb-forms-087",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Which option completes the sentence in the simple present?\nMy brother ___ seven years old.",
+    "input": {
+      "kind": "choice",
+      "options": ["is", "was", "will be", "has been"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Is is the simple present of the verb to be."
+  },
+  {
+    "id": "gi-verb-forms-088",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Which sentence is written in the simple present?",
+    "input": {
+      "kind": "choice",
+      "options": ["Omar brushes his teeth twice a day.", "Omar brushed his teeth.", "Omar is brushing his teeth.", "Omar has brushed his teeth."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Brushes is the simple present: after he, she or it the verb adds -s or -es."
+  },
+  {
+    "id": "gi-verb-forms-089",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Write the verb **to be** in the box in the simple present.\nI ___ ten years old today.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["am"],
+    "explain": "After I, the simple present of to be is am."
+  },
+  {
+    "id": "gi-verb-forms-090",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Write the verb **to go** in the box in the simple present.\nEvery Saturday, Priya ___ to her swimming lesson.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["goes"],
+    "explain": "After she (Priya), the simple present adds -es: goes."
+  },
+  {
+    "id": "gi-verb-forms-091",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Which option completes the sentence in the simple present?\nThe twins ___ always late for school.",
+    "input": {
+      "kind": "choice",
+      "options": ["is", "are", "were", "was"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The twins are plural, so the simple present of to be is are."
+  },
+  {
+    "id": "gi-verb-forms-092",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Tap the verb that is in the simple present.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Yesterday", "it", "rained", ",", "but", "today", "the", "sun", "shines", "brightly", "."],
+      "pick": 1
+    },
+    "answer": [8],
+    "explain": "Shines is in the simple present; rained is in the simple past."
+  },
+  {
+    "id": "gi-verb-forms-093",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Is each sentence written in the simple present? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["Bats sleep during the day.", "The bat slept all day.", "Water boils at one hundred degrees.", "The water is boiling."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Sleep and boils are simple present; slept is past and is boiling is progressive."
+  },
+  {
+    "id": "gi-verb-forms-094",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Write the verb **to fly** in the box in the simple present.\nA swift ___ thousands of miles every year.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["flies"],
+    "explain": "After it (a swift), fly changes y to i and adds -es: flies."
+  },
+  {
+    "id": "gi-verb-forms-095",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Which sentence uses the simple present correctly?",
+    "input": {
+      "kind": "choice",
+      "options": ["She don't like spiders.", "She doesn't like spiders.", "She not likes spiders.", "She didn't likes spiders."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "After she, the simple present uses does: she doesn't like."
+  },
+  {
+    "id": "gi-verb-forms-096",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Which option completes the sentence in the simple present?\nEach of the players ___ a number on their shirt.",
+    "input": {
+      "kind": "choice",
+      "options": ["have", "has", "had", "having"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Each is singular, so the simple present verb is has."
+  },
+  {
+    "id": "gi-verb-forms-097",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Tap the **two** verbs that are in the simple present.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Every", "morning", ",", "the", "baker", "is", "busy", "and", "the", "shop", "smells", "of", "bread", "."],
+      "pick": 2
+    },
+    "answer": [5, 10],
+    "explain": "Is and smells are both in the simple present."
+  },
+  {
+    "id": "gi-verb-forms-098",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Write the verb **to go** in the box in the simple past.\nYesterday, we ___ to the park.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["went"],
+    "explain": "Go is irregular: its simple past is went."
+  },
+  {
+    "id": "gi-verb-forms-099",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which option completes the sentence in the simple past?\nLast night, the stars ___ very bright.",
+    "input": {
+      "kind": "choice",
+      "options": ["are", "were", "is", "was"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The stars are plural, so the simple past of to be is were."
+  },
+  {
+    "id": "gi-verb-forms-100",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Write the verb **to be** in the box in the simple past.\nI ___ late for school this morning.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was"],
+    "explain": "After I, the simple past of to be is was."
+  },
+  {
+    "id": "gi-verb-forms-101",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 2,
+    "prompt": "Which sentence is written in the simple past?",
+    "input": {
+      "kind": "choice",
+      "options": ["The children swam in the lake.", "The children swim in the lake.", "The children were swimming in the lake.", "The children have swum in the lake."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Swam is the simple past of the irregular verb swim."
+  },
+  {
+    "id": "gi-verb-forms-102",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 2,
+    "prompt": "Write the verb **to buy** in the box in the simple past.\nOn holiday, Dad ___ ice creams for everyone.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["bought"],
+    "explain": "Buy is irregular: its simple past is bought."
+  },
+  {
+    "id": "gi-verb-forms-103",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 2,
+    "prompt": "Is each verb in the simple past? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["ran", "runs", "was", "had been", "taught"]
+    },
+    "answer": [true, false, true, false, true],
+    "explain": "Ran, was and taught are simple past forms; runs is present and had been is past perfect."
+  },
+  {
+    "id": "gi-verb-forms-104",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Which pair of verbs completes the sentence in the simple past?\nThe knights ___ brave, and their king ___ proud of them.",
+    "input": {
+      "kind": "choice",
+      "options": ["was, were", "were, was", "are, is", "were, were"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The knights are plural (were) and the king is singular (was)."
+  },
+  {
+    "id": "gi-verb-forms-105",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Tap the **two** verbs that are in the simple past.",
+    "input": {
+      "kind": "words",
+      "tokens": ["When", "the", "storm", "began", ",", "we", "hid", "under", "the", "table", "."],
+      "pick": 2
+    },
+    "answer": [3, 6],
+    "explain": "Began and hid are the simple past forms of begin and hide."
+  },
+  {
+    "id": "gi-verb-forms-106",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Write the verb **to think** in the box in the simple past.\nEveryone ___ the film was brilliant.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["thought"],
+    "explain": "Think is irregular: its simple past is thought."
+  },
+  {
+    "id": "gi-verb-forms-107",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Write the verb **to read** in the box in the present progressive.\nRight now, Tom ___ a comic.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["is reading"],
+    "explain": "The present progressive is is + reading."
+  },
+  {
+    "id": "gi-verb-forms-108",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Which option completes the sentence in the present progressive?\nShh! The baby ___ at last.",
+    "input": {
+      "kind": "choice",
+      "options": ["slept", "is sleeping", "sleeps", "has slept"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Is sleeping is is + an -ing verb: the present progressive."
+  },
+  {
+    "id": "gi-verb-forms-109",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the present progressive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["My", "cousins", "are", "visiting", "us", "this", "weekend", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Are visiting is the present progressive verb."
+  },
+  {
+    "id": "gi-verb-forms-110",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 2,
+    "prompt": "Is each sentence written in the present progressive? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["I am writing a story.", "I wrote a story.", "We are learning about rivers.", "We learnt about rivers."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Am writing and are learning use am or are + -ing; wrote and learnt are in the simple past."
+  },
+  {
+    "id": "gi-verb-forms-111",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 3,
+    "prompt": "Which sentence is written in the present progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["The ice is melting faster every year.", "The ice melts every spring.", "The ice melted last spring.", "The ice has melted."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Is melting is is + an -ing verb: the present progressive."
+  },
+  {
+    "id": "gi-verb-forms-112",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 3,
+    "prompt": "Write the verb **to run** in the box in the present progressive.\nThe athletes ___ their final lap.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["are running"],
+    "explain": "Are + running: run doubles its n before -ing."
+  },
+  {
+    "id": "gi-verb-forms-113",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the past progressive?",
+    "input": {
+      "kind": "choice",
+      "options": ["The dog was digging in the garden.", "The dog digs in the garden.", "The dog dug in the garden.", "The dog is digging in the garden."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Was digging is was + an -ing verb: the past progressive."
+  },
+  {
+    "id": "gi-verb-forms-114",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Write the verb **to play** in the box in the past progressive.\nThe children ___ outside when it started to rain.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["were playing"],
+    "explain": "The past progressive is were + playing."
+  },
+  {
+    "id": "gi-verb-forms-115",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 2,
+    "prompt": "Which option completes the sentence in the past progressive?\nAt midnight, the owls ___ in the trees.",
+    "input": {
+      "kind": "choice",
+      "options": ["hoot", "were hooting", "have hooted", "are hooting"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Were hooting is were + an -ing verb: the past progressive."
+  },
+  {
+    "id": "gi-verb-forms-116",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the past progressive verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["While", "we", "were", "eating", ",", "the", "phone", "rang", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Were eating is the past progressive verb; rang is in the simple past."
+  },
+  {
+    "id": "gi-verb-forms-117",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Read the sentence.\nAs the sun was setting, the fishermen were pulling in their nets.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["Both verbs are in the past progressive.", "The verb \"were pulling\" is in the simple past.", "The past progressive uses was or were with a verb ending in -ing."]
+    },
+    "answer": [true, false, true],
+    "explain": "Was setting and were pulling are both past progressive verbs."
+  },
+  {
+    "id": "gi-verb-forms-118",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Write the verb **to swim** in the box in the past progressive.\nMeena ___ when she saw the dolphin.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["was swimming"],
+    "explain": "Was + swimming: swim doubles its m before -ing."
+  },
+  {
+    "id": "gi-verb-forms-119",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which option completes the sentence using the present perfect?\nWe ___ our homework already.",
+    "input": {
+      "kind": "choice",
+      "options": ["finished", "have finished", "finish", "are finishing"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Have finished is have + a past participle: the present perfect."
+  },
+  {
+    "id": "gi-verb-forms-120",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Write the verb **to eat** in the box in the present perfect.\nSomeone ___ all the biscuits!",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["has eaten"],
+    "explain": "The present perfect is has + the past participle eaten."
+  },
+  {
+    "id": "gi-verb-forms-121",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Tap the **two** words that make the present perfect verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Aunt", "Bea", "has", "lived", "in", "Wales", "for", "twenty", "years", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Has lived is the present perfect verb."
+  },
+  {
+    "id": "gi-verb-forms-122",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Is each verb in the present perfect? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["has gone", "had gone", "have seen", "was seeing", "has been"]
+    },
+    "answer": [true, false, true, false, true],
+    "explain": "The present perfect uses has or have (not had) + a past participle."
+  },
+  {
+    "id": "gi-verb-forms-123",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Which sentence is written in the present perfect?",
+    "input": {
+      "kind": "choice",
+      "options": ["The explorers have reached the summit.", "The explorers reached the summit.", "The explorers had reached the summit.", "The explorers are reaching the summit."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Have reached is have + a past participle: the present perfect."
+  },
+  {
+    "id": "gi-verb-forms-124",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 1,
+    "prompt": "Which sentence is written in the past perfect?",
+    "input": {
+      "kind": "choice",
+      "options": ["Ali had finished his lunch before the bell rang.", "Ali finished his lunch when the bell rang.", "Ali has finished his lunch.", "Ali was finishing his lunch."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Had finished is had + a past participle: the past perfect."
+  },
+  {
+    "id": "gi-verb-forms-125",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 1,
+    "prompt": "Write the verb **to close** in the box in the past perfect.\nWhen we reached the shop, it ___.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["had closed"],
+    "explain": "The past perfect is had + the past participle closed."
+  },
+  {
+    "id": "gi-verb-forms-126",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 1,
+    "prompt": "Tap the **two** words that make the past perfect verb.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "cat", "had", "hidden", "under", "the", "bed", "."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Had hidden is the past perfect verb."
+  },
+  {
+    "id": "gi-verb-forms-127",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 2,
+    "prompt": "Which option completes the sentence using the past perfect?\nBy the time Mum came home, we ___ the whole house.",
+    "input": {
+      "kind": "choice",
+      "options": ["tidied", "have tidied", "had tidied", "were tidying"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Had tidied shows the tidying was finished before Mum came home."
+  },
+  {
+    "id": "gi-verb-forms-128",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 2,
+    "prompt": "Write the verb **to see** in the box in the past perfect.\nRosa recognised the castle because she ___ it in a book.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["had seen"],
+    "explain": "The past perfect is had + the past participle seen."
+  },
+  {
+    "id": "gi-verb-forms-129",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 2,
+    "prompt": "Is each sentence written in the past perfect? Tap true or false for each one.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The snow had melted by lunchtime.", "The snow melted at lunchtime.", "They had never seen the sea before.", "They have never seen the sea."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "Had melted and had seen use had + a past participle; melted is simple past and have seen is present perfect."
+  },
+  {
+    "id": "gi-verb-forms-130",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 3,
+    "prompt": "Which sentence is written in the past perfect?",
+    "input": {
+      "kind": "choice",
+      "options": ["Before the storm hit, the farmers had gathered the harvest.", "Before the storm hit, the farmers gathered the harvest.", "The farmers have gathered the harvest.", "The farmers were gathering the harvest when the storm hit."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Had gathered is the past perfect: it shows the harvest was in before the storm."
+  },
+  {
+    "id": "gi-verb-forms-131",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 3,
+    "prompt": "Why has the writer used the past perfect in this sentence?\nThe match had already started when we found our seats.",
+    "input": {
+      "kind": "choice",
+      "options": ["To show that one past event happened before another past event.", "To show that something is happening now.", "To show that something will happen in the future.", "To show that something happens regularly."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Had started shows the match began before the other past event, finding the seats."
+  },
+  {
+    "id": "gi-verb-forms-132",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 3,
+    "prompt": "Write the verb **to write** in the box in the past perfect.\nThe author ___ ten books before she turned thirty.",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["had written"],
+    "explain": "The past perfect is had + the past participle written."
+  },
+  {
+    "id": "gi-determiners-026",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Tap the **two** determiners.",
+    "input": {
+      "kind": "words",
+      "tokens": ["A", "fox", "ran", "across", "our", "garden", "."],
+      "pick": 2
+    },
+    "answer": [0, 4],
+    "explain": "A and our come before the nouns fox and garden."
+  },
+  {
+    "id": "gi-determiners-027",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which word in this sentence is a determiner?\nSeveral boats sailed slowly past the lighthouse.",
+    "input": {
+      "kind": "choice",
+      "options": ["Several", "sailed", "slowly", "past"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Several comes before the noun boats and tells us how many."
+  },
+  {
+    "id": "gi-determiners-028",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which option completes the sentence with a determiner?\n___ pupils in my class have a pet.",
+    "input": {
+      "kind": "choice",
+      "options": ["Many", "Happily", "Quickly", "Have"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Many is a determiner: it comes before the noun pupils and says how many."
+  },
+  {
+    "id": "gi-determiners-029",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Tap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["In \"Those apples are ripe\", the word \"Those\" is a determiner.", "In \"I like those\", the word \"those\" is a determiner.", "In \"Her bike is red\", the word \"Her\" is a determiner.", "In \"The bike is hers\", the word \"hers\" is a determiner."]
+    },
+    "answer": [true, false, true, false],
+    "explain": "A determiner comes before a noun; those and hers on their own are pronouns."
+  },
+  {
+    "id": "gi-prepositions-026",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "Tap the preposition.",
+    "input": {
+      "kind": "words",
+      "tokens": ["The", "children", "hid", "behind", "the", "curtain", "."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Behind is a preposition: it shows where the children hid."
+  },
+  {
+    "id": "gi-prepositions-027",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "Which option completes the sentence with a preposition?\nThe cat jumped ___ the wall.",
+    "input": {
+      "kind": "choice",
+      "options": ["onto", "quickly", "jumped", "happy"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Onto is a preposition: it links jumped to the wall."
+  },
+  {
+    "id": "gi-prepositions-028",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 2,
+    "prompt": "Which word in this sentence is a preposition?\nAfter the rain, the garden smelt wonderful.",
+    "input": {
+      "kind": "choice",
+      "options": ["After", "rain", "smelt", "wonderful"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "After is a preposition here because a noun phrase, the rain, follows it."
+  },
+  {
+    "id": "gi-prepositions-029",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 3,
+    "prompt": "Tap the **two** prepositions.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Despite", "the", "cold", ",", "we", "swam", "in", "the", "lake", "."],
+      "pick": 2
+    },
+    "answer": [0, 6],
+    "explain": "Despite and in are prepositions; each is followed by a noun phrase."
+  },
+  {
+    "id": "gi-conjunctions-026",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Tap the conjunction.",
+    "input": {
+      "kind": "words",
+      "tokens": ["Rhea", "likes", "tea", ",", "but", "her", "sister", "prefers", "juice", "."],
+      "pick": 1
+    },
+    "answer": [4],
+    "explain": "But is a co-ordinating conjunction joining the two clauses."
+  },
+  {
+    "id": "gi-conjunctions-027",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Which option completes the sentence with a conjunction?\nWe stayed indoors ___ it was raining.",
+    "input": {
+      "kind": "choice",
+      "options": ["because", "rain", "wet", "indoors"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Because is a conjunction that joins the clauses and gives a reason."
+  },
+  {
+    "id": "gi-conjunctions-028",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 2,
+    "prompt": "Which sentence uses a **co-ordinating** conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["Ben packed his bag and left for school.", "Ben left for school when he had packed his bag.", "Ben left for school because he was ready.", "Although Ben was late, he walked slowly."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "And is a co-ordinating conjunction; when, because and although are subordinating."
+  },
+  {
+    "id": "gi-conjunctions-029",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Read the sentence.\nUnless it snows, we will walk to school, but Dad will drive us if the roads are icy.\nTap true or false for each statement.",
+    "input": {
+      "kind": "tf",
+      "statements": ["The word \"Unless\" is a subordinating conjunction.", "The word \"but\" is a co-ordinating conjunction.", "The word \"if\" is a co-ordinating conjunction."]
+    },
+    "answer": [true, true, false],
+    "explain": "Unless and if start subordinate clauses; but joins two main clauses."
+  },
+  {
+    "id": "gi-conjunctions-030",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Fill in the gap: any conjunction is a word that __________.",
+    "input": {
+      "kind": "choice",
+      "options": ["joins", "contracts", "expresses surprise"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Co-ordinating conjunctions join main clauses in compound sentences.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-031",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Fill in the gap: a subordinating conjunction is a word that __________ an adverbial clause.",
+    "input": {
+      "kind": "choice",
+      "options": ["starts", "ends", "breaks"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Subordinating conjunctions join the adverbial clause to the main clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-032",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Which of these pairs of words are **subordinating conjunctions**?",
+    "input": {
+      "kind": "choice",
+      "options": ["and but", "I me", "you they", "when because"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Subordinating conjunctions join adverbial clauses to main clauses.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-033",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which of the following are co-ordinating conjunctions?",
+    "input": {
+      "kind": "choice",
+      "options": ["or", "and", "because", "which", "but"],
+      "pick": 3
+    },
+    "answer": [0, 1, 4],
+    "explain": "We can remember the co-ordinating conjunctions using the acronym 'BOA'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "adverbial-relative-and-non-finite-complex-sentences-revision"
+    }
+  },
+  {
+    "id": "gi-conjunctions-034",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which words in this complex sentence are subordinating conjunctions? 'When Miss O'Neill arrived, we cheered because she had been poorly for days.'",
+    "input": {
+      "kind": "choice",
+      "options": ["when", "arrived", "cheered", "because"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Subordinating conjunctions start adverbial clauses, which are a type of subordinate clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "adverbial-relative-and-non-finite-complex-sentences-revision"
+    }
+  },
+  {
+    "id": "gi-determiners-030",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which word class is introduced by a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["nouns", "verbs", "adjectives", "adverbs"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Determiners include words such as 'an', 'the', 'my' and 'our'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-articles-and-possessive-pronouns-review"
+    }
+  },
+  {
+    "id": "gi-determiners-031",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "What kind of determiners are 'a', 'an' and 'the'?",
+    "input": {
+      "kind": "choice",
+      "options": ["possessive pronouns", "articles", "nouns"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Articles help us show how specific we are being about the noun we are introducing. They don't tell us who a noun belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-articles-and-possessive-pronouns-review"
+    }
+  },
+  {
+    "id": "gi-determiners-032",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which of the following words can act as determiners?",
+    "input": {
+      "kind": "choice",
+      "options": ["low", "the", "our", "as"],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Test out the words by trying to use them to introduce a noun like 'tractor'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-articles-and-possessive-pronouns-review"
+    }
+  },
+  {
+    "id": "gi-determiners-033",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "How would using the article 'a' instead of 'the' change the meaning of the sentence 'Take me to **the** hospital'?",
+    "input": {
+      "kind": "choice",
+      "options": ["It would suggest that we don't really need to go to the hospital.", "It would suggest we don't have a specific hospital in mind.", "It would suggest we wanted to go to one particular hospital."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Consider the difference between 'I won an award' and 'I won the award'; the second one suggests I won a specific award that I've perhaps mentioned before.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-articles-and-possessive-pronouns-review"
+    }
+  },
+  {
+    "id": "gi-determiners-034",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which of the following determiners could fit in this gap? 'I opened __________ door and I gasped in horror.'",
+    "input": {
+      "kind": "choice",
+      "options": ["an", "the", "my", "your"],
+      "pick": 3
+    },
+    "answer": [1, 2, 3],
+    "explain": "Try saying the sentence with each determiner in the gap to see which ones sound right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-articles-and-possessive-pronouns-review"
+    }
+  },
+  {
+    "id": "gi-determiners-035",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "What kind of word is introduced by a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["adverb", "verb", "noun", "adjective"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Examples of determiners might include 'the', 'a', 'an', 'my', 'his' and 'her'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-036",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Which type of determiner are the following words? a, an, the",
+    "input": {
+      "kind": "choice",
+      "options": ["possessive pronouns", "adjectives", "articles"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Possessive pronouns are words like 'my' and 'your' which tell us who the noun belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-037",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Which type of determiner are the following words? my, your, its, our, their, his, her",
+    "input": {
+      "kind": "choice",
+      "options": ["possessive pronouns", "adjectives", "articles"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Possessive pronouns help us know who the noun we are talking about belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-038",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Which determiners could fill the gap in this sentence? 'As I walked into the house, I put __________ keys on the table'.",
+    "input": {
+      "kind": "choice",
+      "options": ["a", "an", "the", "my"],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "Only one of the three articles (a, an, the) could fit in this gap.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-039",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "What are the three determiners in this sentence? 'We gave the dog its bone and it was happy for an hour.'",
+    "input": {
+      "kind": "choice",
+      "options": ["the", "its", "it", "an"],
+      "pick": 3
+    },
+    "answer": [0, 1, 3],
+    "explain": "Determiners introduce nouns. Find the three nouns, then find the three determiners before them.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-040",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Are the determiners in this sentence articles or possessive pronouns? 'I asked my uncle to drive our family to his house'.",
+    "input": {
+      "kind": "choice",
+      "options": ["possessive pronouns", "articles"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Possessive pronouns tell us who the noun belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "determiners-articles-and-possessive-pronouns"
+    }
+  },
+  {
+    "id": "gi-determiners-041",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Which is the correct definition of a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["a word that introduces a noun in a phrase or clause", "a word that begins a clause or phrase", "a word that comes before the main verb in a phrase or clause"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The word 'the' is the determiner in the clause 'the dog barked'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "determiners-articles-possessive-pronouns-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-042",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select all the clauses that contain an article.",
+    "input": {
+      "kind": "choice",
+      "options": ["we ate an apple each", "they ran towards the mountains", "we saw some seagulls soaring past", "my sister dashed towards us"],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "One article is 'a'; there are two more.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "determiners-articles-possessive-pronouns-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-043",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select all the sentences that contain demonstratives.",
+    "input": {
+      "kind": "choice",
+      "options": ["Put those books in this box.", "Put them here.", "Give that ball to me.", "Give it to me."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "One example of a demonstrative is the word 'these'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "determiners-articles-possessive-pronouns-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-044",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Which determiners could be used in the gap in the following sentence? '__________ queue is never-ending!'",
+    "input": {
+      "kind": "choice",
+      "options": ["some", "this", "the", "my"],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Try saying the sentence with each of the determiners in the gap - which ones make sense?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "determiners-articles-possessive-pronouns-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-045",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select all the sentences with two determiners.",
+    "input": {
+      "kind": "choice",
+      "options": ["I put my book in my bag.", "She gave her money to me.", "We watched some TV and we ate a few sweets.", "We watched the movie, but we hated its message."],
+      "pick": 3
+    },
+    "answer": [0, 2, 3],
+    "explain": "Look at the nouns in the sentences and look for the words in front of them.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "determiners-articles-possessive-pronouns-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-046",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "What is the purpose of determiners?",
+    "input": {
+      "kind": "choice",
+      "options": ["to introduce verbs in a sentence", "to introduce nouns in a phrase or a clause", "to introduce adjectives in a phrase"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The word 'the' is the determiner in the sentence 'We went into the forest.'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-047",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which of the following are types of determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["articles (a, an, the)", "adjectives (soft, warm, cold)", "nouns (shop, planet, ball)", "possessive pronouns (my, your, our)"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Determiners introduce nouns in a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-048",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Where is the determiner placed in relation to the noun in a sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["before the noun", "after the noun", "either before or after the noun"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In the sentence 'We had a party', the word 'a' is the determiner.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-049",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Tick the sentences that contain a determiner.",
+    "input": {
+      "kind": "choice",
+      "options": ["We ran away.", "We ran to the hills.", "She boarded our bus.", "She looked away."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Possessive pronouns are a type of determiner that show who a noun belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-050",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Tick the sentences that contain a possessive pronoun.",
+    "input": {
+      "kind": "choice",
+      "options": ["This is my stop.", "We hoped you'd find your coat.", "This was a mistake.", "We'll need our wellies."],
+      "pick": 3
+    },
+    "answer": [0, 1, 3],
+    "explain": "Possessive pronouns introduce nouns to show who they belong to like 'its', 'their' and 'his'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-051",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which words are the determiners in this sentence? 'He put the dog in its kennel.'",
+    "input": {
+      "kind": "choice",
+      "options": ["the", "put", "in", "its"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Possessive pronouns introduce nouns to show who they belong to like 'my', 'their' and 'his'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-052",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which of the following sentences contain a quantifier?",
+    "input": {
+      "kind": "choice",
+      "options": ["We need some bread.", "I want these shoes.", "There are many shops nearby.", "Take those to the office."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Quantifiers are determiners that tell us how much or how many of a noun we are talking about.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-053",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which of these sentences contain a demonstrative?",
+    "input": {
+      "kind": "choice",
+      "options": ["Put those books away right now!", "I bought these flowers for you.", "I bought some flowers for you.", "Put your books away right now!"],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "'Your' is a possessive pronoun.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-054",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "In which of these sentences does the demonstrative **not** work as a determiner that is introducing a noun?",
+    "input": {
+      "kind": "choice",
+      "options": ["Send me that letter.", "Pass me those pieces of paper.", "Pass me those."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "For a demonstrative to be a determiner, it has to have a noun after it.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "determiners-quantifiers-and-demonstratives"
+    }
+  },
+  {
+    "id": "gi-determiners-055",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Tick the words that are types of determiner.",
+    "input": {
+      "kind": "choice",
+      "options": ["demonstrative", "noun", "article", "possessive pronoun", "quantifier"],
+      "pick": 4
+    },
+    "answer": [0, 2, 3, 4],
+    "explain": "The purpose of determiners is to introduce nouns.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "fronted-adverbials-single-words-phrases-and-clauses"
+    }
+  },
+  {
+    "id": "gi-determiners-056",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 2,
+    "prompt": "Which type of determiner is used in this sentence? 'We had plenty of time to get there.'",
+    "input": {
+      "kind": "choice",
+      "options": ["demonstrative", "quantifier", "article", "possessive pronoun"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The determiner in this sentence is 'plenty of'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "fronted-adverbials-single-words-phrases-and-clauses"
+    }
+  },
+  {
+    "id": "gi-verb-forms-133",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Tick the sentence that uses a simple tense.",
+    "input": {
+      "kind": "choice",
+      "options": ["We play here every day.", "We have played here for years.", "We are playing there tonight."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The simple tenses do not use auxiliary verbs except in the future form.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-verb-forms-134",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Tick the sentence that is written in a progressive tense.",
+    "input": {
+      "kind": "choice",
+      "options": ["We hoped it would never happen.", "We were hoping it would never happen.", "We had hoped it would never happen."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The progressive tenses use auxiliary verbs based on 'to be'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-verb-forms-135",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Tick the sentence that is written in a perfect tense.",
+    "input": {
+      "kind": "choice",
+      "options": ["I have many friends.", "I have made new friends.", "I have a lot of friends."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The perfect tenses use 'have' as an auxiliary verb not a main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-verb-forms-136",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Which verb form completes this sentence? 'Since January, I __________ my handwriting skills.'",
+    "input": {
+      "kind": "choice",
+      "options": ["developed", "am developing", "have developed"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Read each possible answer inside the sentence to see what sounds right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-verb-forms-137",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Which verb form completes this sentence? 'Every morning, I ___________ on my school uniform.'",
+    "input": {
+      "kind": "choice",
+      "options": ["am putting", "have put", "put"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Read each possible answer inside the sentence to see what sounds right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-035",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Which of these speech sentences use a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["Mr Martinez bellowed, \"Everyone should be here at 8am tomorrow!\"", "\"I don't like this,\" scowled Jun angrily.", "\"Can you help me?\" asked Sofia with a frown."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Modal verbs often come at the start of questions.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-036",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Which words in this persuasive sentence are modal verbs? 'We must do more to help, or we may regret it.'",
+    "input": {
+      "kind": "choice",
+      "options": ["must", "do", "regret", "may"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Modal verbs are auxiliary verbs: they need to be paired with a main verb in a clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-037",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Which modal verbs could come at the start of this rhetorical question? '__________ we ignore this situation any longer?'",
+    "input": {
+      "kind": "choice",
+      "options": ["Can", "Ought to", "Will", "Have to"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Try saying each option at the start of the question to see if it sounds right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-study-of-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-active-passive-033",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "What would be the passive version of this active sentence? 'The artist is drawing a picture.'",
+    "input": {
+      "kind": "choice",
+      "options": ["A picture drew the artist.", "A picture was drawn by the artist.", "A picture is being drawn by the artist.", "A picture was being drawn by the artist."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The object becomes the subject of the passive sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-word-level-revision"
+    }
+  },
+  {
+    "id": "gi-active-passive-034",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "What would be the active version of this sentence? 'An announcement was made by the headteacher.'",
+    "input": {
+      "kind": "choice",
+      "options": ["The headteacher was making an announcement.", "The headteacher made an announcement.", "The headteacher is making an announcement.", "An announcement made the headteacher."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Look in the preposition phrase at the end of the passive sentence for the subject of the active sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-word-level-revision"
+    }
+  },
+  {
+    "id": "gi-active-passive-035",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Tick the passive voice sentences.",
+    "input": {
+      "kind": "choice",
+      "options": ["A solution was found.", "We found a solution.", "The consequence was given.", "They gave us a consequence."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "We sometimes remove the old subject altogether when we write in the passive.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-word-level-revision"
+    }
+  },
+  {
+    "id": "gi-prepositions-030",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 3,
+    "prompt": "What are the prepositions in this sentence? 'After the match, I went to the cinema with Andeep.'",
+    "input": {
+      "kind": "choice",
+      "options": ["after", "went", "to", "cinema", "with"],
+      "pick": 3
+    },
+    "answer": [0, 2, 4],
+    "explain": "Prepositions are always followed by a noun or noun phrase.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "further-word-level-revision"
+    }
+  },
+  {
+    "id": "gi-modals-038",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 3,
+    "prompt": "Which of these speech sentences use a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["Miss O'Neill asked, 'Will we all be ready to go in five minutes?'", "'I can help!' smiled Aisha happily.", "'What's wrong?' Sam asked with a smile."],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "Modal verbs often come at the start of questions.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "identifying-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-036",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which of these are true for the passive voice?",
+    "input": {
+      "kind": "choice",
+      "options": ["The subject is doing the verb.", "The verb is 'done to' the subject.", "It often uses the preposition 'by'.", "What would normally be the object becomes the subject."],
+      "pick": 3
+    },
+    "answer": [1, 2, 3],
+    "explain": "An example of a passive voice sentence would be 'We were shocked by her appearance.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "identifying-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-037",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Select all the passive voice sentences.",
+    "input": {
+      "kind": "choice",
+      "options": ["We were seen by many people.", "Many people saw us.", "Miss O'Neill taught us Spanish.", "We were taught Spanish by Miss O'Neill."],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "The passive voice often uses the preposition 'by'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "identifying-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-038",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which is the correct passive voice version of the following active sentence? 'A loud noise broke the silence.'",
+    "input": {
+      "kind": "choice",
+      "options": ["A silence broke the loud noise.", "The silence was broken by a loud noise.", "The silence was broken a loud noise.", "A loud noise was broken by the silence."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Make the object of this sentence the subject of a passive sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "identifying-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-verb-forms-138",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Which of these sentences is written in a perfect tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["I have known him for years.", "I knew him for years.", "She played the piano for years.", "She has played the piano for years."],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "The perfect tense uses an auxiliary verb based on the infinitive 'to have'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-verb-forms-139",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Tick the sentences that use the perfect present tense correctly.",
+    "input": {
+      "kind": "choice",
+      "options": ["Since I was four, I known Andeep.", "I have known Andeep since I was four.", "I known Andeep since I was four.", "Since I was four, I have known Andeep."],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "The perfect present tense is formed using the auxiliary verb 'have' or 'has'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-039",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "A modal verb is a type of...",
+    "input": {
+      "kind": "choice",
+      "options": ["noun", "auxiliary verb", "adjective", "adverb"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "In the sentence \"I will wait.\", the modal verb is 'will'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-040",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which of the following are modal verbs?",
+    "input": {
+      "kind": "choice",
+      "options": ["should", "stay", "might", "watch"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Modal verbs are auxiliary verbs that must be paired with a main verb in a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-041",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "What is the purpose of the modal verb 'ought to' in this sentence? \"We ought to do more for the environment.\"",
+    "input": {
+      "kind": "choice",
+      "options": ["To show that we are definitely going to do more.", "To show that we feel an obligation to do more.", "To show that we will not do any more."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Think about how this sentence has a different meaning - \"We will do more for the environment.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-042",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "What are the modal verbs in this sentence? \"We might do French today, or we may practise for the play.\"",
+    "input": {
+      "kind": "choice",
+      "options": ["might", "do", "practise", "may"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Modal verbs are auxiliary verbs that must be paired with a main verb in a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-043",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Tick the modal verbs that show certainty.",
+    "input": {
+      "kind": "choice",
+      "options": ["will", "shall", "could", "might"],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "Think about the difference between 'I will come' and 'I might come'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-044",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which sentence contains a modal verb showing obligation?",
+    "input": {
+      "kind": "choice",
+      "options": ["You will make more effort.", "You should make more effort.", "You could make more effort."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "An obligation is something we think we or someone else should do.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "modal-verbs"
+    }
+  },
+  {
+    "id": "gi-conjunctions-035",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "What kind of word starts an adverbial clause?",
+    "input": {
+      "kind": "choice",
+      "options": ["subordinating conjunction", "relative pronoun", "noun", "relative clause"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Adverbial clauses start with words like 'as', 'after', 'whilst' and 'although'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "new-subordinating-conjunctions-and-relative-pronouns"
+    }
+  },
+  {
+    "id": "gi-conjunctions-036",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which of the following can be subordinating conjunctions that start adverbial clauses?",
+    "input": {
+      "kind": "choice",
+      "options": ["when", "whose", "since", "whilst", "where"],
+      "pick": 3
+    },
+    "answer": [0, 2, 3],
+    "explain": "'Where' can be used as a relative pronoun.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "new-subordinating-conjunctions-and-relative-pronouns"
+    }
+  },
+  {
+    "id": "gi-conjunctions-037",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which of the following could complete this sentence? 'Aisha won the race even though __________.'",
+    "input": {
+      "kind": "choice",
+      "options": ["she was very fast", "she had the best trainers out of anyone", "she had hurt her leg", "she had not had any time to practise"],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "'Even though' is used to show a contrast.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "new-subordinating-conjunctions-and-relative-pronouns"
+    }
+  },
+  {
+    "id": "gi-verb-forms-140",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which of the following sentences is written in the simple future tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["We will go to the post office tomorrow.", "The flowers have died because no one fed them any water.", "The lion yawns sleepily."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The future tense is used when something hasn't happened yet!",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-141",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Which of the following would be found in a sentence in a progressive tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["an auxiliary verb from ‘to be’", "a verb ending with -ed", "a verb ending with an -ing suffix", "an auxiliary verb from ‘to have’"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "'I am walking to the shops.' and 'They were feeling shocked.' are both written in the progressive tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-142",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Which form of the infinitive 'to have' would you use in the following sentence? 'She __________ long, curly hair.'",
+    "input": {
+      "kind": "choice",
+      "options": ["has", "have", "haven't"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Say the sentence out loud with each option to hear which one sounds correct.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-143",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Which form of the infinitive 'to have' would you use in the following sentence? 'We all __________ pegs to put our coats on'.",
+    "input": {
+      "kind": "choice",
+      "options": ["has", "have", "hasn't"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Say the sentence out loud with each option to hear which one sounds correct.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-144",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Complete the following sentence: 'The perfect tense uses having verbs as __________ verbs.'",
+    "input": {
+      "kind": "choice",
+      "options": ["auxiliary", "main", "imperative"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The having verb helps the main verb, for example, 'I have played tennis for six years.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-145",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which of the following sentences is written in the perfect present tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["I have played tennis twice this week.", "I played tennis twice this week.", "I play tennis every week.", "I will play tennis next week."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Remember, the perfect tense uses having verbs as auxiliary verbs and the main verb is always written in the past tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-146",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which form of the infinitive 'to drink' should be used in the following sentence? 'She has __________ all her apple juice already'.",
+    "input": {
+      "kind": "choice",
+      "options": ["drink", "drunk", "drinking"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Say the sentence out loud with each option to hear which sounds correct.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-147",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Which sentences are written in the simple past tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["We were having a fight.", "We were fighting.", "We had a fight.", "We fought."],
+      "pick": 2
+    },
+    "answer": [2, 3],
+    "explain": "The simple past tense does not use an auxiliary (helping) verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-148",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "What is the simple past tense version of this sentence? 'We have lunch here every day.'",
+    "input": {
+      "kind": "choice",
+      "options": ["We had eaten lunch here every day.", "We had lunch here every day.", "We were having lunch here every day.", "We will have lunch here every day."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The simple past tense does not use an auxiliary verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-149",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Which sentence is in the past progressive tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["We were waiting for his signal.", "We are waiting for his signal.", "We will be waiting for his signal."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "To see which progressive tense is being used, we look at the auxiliary verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-150",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 3,
+    "prompt": "Which verb form completes this sentence in the **progressive present** tense? 'Because he __________, we should talk quietly.'",
+    "input": {
+      "kind": "choice",
+      "options": ["was listening", "is listening", "will be listening", "listens"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "To see which progressive tense is being used, we look at the auxiliary verb. Find the auxiliary verb from 'to be' that is in the **present** tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-151",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 3,
+    "prompt": "Which perfect past verbs would complete this sentence? 'We __________ at the restaurant many times.'",
+    "input": {
+      "kind": "choice",
+      "options": ["have eaten", "had eaten", "has eaten", "are eating"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Look carefully at the auxiliary verbs - which having verb shows action in the past?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-152",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Which perfect present verbs would complete this sentence? 'She __________ every opportunity she has had.'",
+    "input": {
+      "kind": "choice",
+      "options": ["had taken", "was taking", "has taken", "will have taken"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Look carefully at the auxiliary verbs - which having verb shows action in the present?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "perfect-tense-revision"
+    }
+  },
+  {
+    "id": "gi-determiners-057",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Which word in this sentence is a possessive pronoun? 'We went to our local shops.'",
+    "input": {
+      "kind": "choice",
+      "options": ["we", "our", "local", "to"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Possessive pronouns are determiners that help to show who a noun 'belongs to'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-determiners-058",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "Which is the correct article to use in this sentence? '__________ unknown animal has been stealing our food.'",
+    "input": {
+      "kind": "choice",
+      "options": ["a", "an", "the"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "We use 'an' if the word after it starts with a vowel sound.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-determiners-059",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 1,
+    "prompt": "In this sentence, what kind of determiner is used? 'We walked into the cinema and bought a ticket each.'",
+    "input": {
+      "kind": "choice",
+      "options": ["possessive pronouns", "articles", "nouns"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Possessive pronouns are words like 'my', 'his' and 'our'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-prepositions-031",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "In this sentence, which word is the preposition? 'Sam walked into the empty classroom.'",
+    "input": {
+      "kind": "choice",
+      "options": ["walked", "into", "the"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The preposition in this case helps to show where Sam was walking.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-prepositions-032",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "In this sentence, which words are the preposition phrase? 'Sam walked into the empty classroom.'",
+    "input": {
+      "kind": "choice",
+      "options": ["Sam walked", "walked into", "empty classroom", "into the empty classroom"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "The preposition phrase is made up of the preposition itself and the noun phrase that follows it.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-prepositions-033",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "Which preposition best completes this sentence? 'When the maths lesson was over, we ran out __________ the sun.'",
+    "input": {
+      "kind": "choice",
+      "options": ["of", "into", "through", "for"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Try the four options in the gap to see which one makes the most sense. Remember: we are trying to create a preposition phrase to help show where the character is going.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-prepositions-034",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "What is the preposition phrase in this sentence? 'The moon, which was high in the night sky, was a perfect circle.'",
+    "input": {
+      "kind": "choice",
+      "options": ["the moon was a perfect circle", "was a perfect circle", "which was high", "in the night sky"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "A preposition phrase does not contain a verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "prepositions"
+    }
+  },
+  {
+    "id": "gi-verb-forms-153",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the progressive tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["I have started my homework.", "I am starting my homework.", "I start my homework at 5 o'clock every day."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "All progressive tense sentences include a main verb with the suffix -ing.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-154",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which sentence is written in the progressive future tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["We were looking at the map closely.", "They will be wondering where we are.", "You weren't concentrating properly.", "I am looking for the station."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The auxiliary verb from the infinitive 'to be' tells us the tense. Read each auxiliary verb again by itself to find the future one.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-155",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which word is the auxiliary verb in this sentence? 'They have finished all their work.'",
+    "input": {
+      "kind": "choice",
+      "options": ["they", "have", "finished", "all", "their"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "An auxiliary verb is a helping verb. It helps the main verb. The main verb in this sentence is 'finished'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-156",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Which word is the auxiliary verb in this sentence? 'I am brushing my hair.'",
+    "input": {
+      "kind": "choice",
+      "options": ["I", "am", "brushing", "my", "hair"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The main verb in this sentence is 'brushing' so look for the auxiliary verb that comes just before it.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-157",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Which suffix does the main verb in the progressive tense always end with?",
+    "input": {
+      "kind": "choice",
+      "options": ["-ly", "-ing", "-ed"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "'I was playing.' is written in the progressive tense. Look at the suffix at the end of the main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-158",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "The main verb in the perfect tense is always in which tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["present", "past", "future"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "'I have eaten.' is written in the perfect tense. Which tense is the main verb ('eaten') in?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-159",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which of the following sentences is written in the perfect present tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["She has curly hair.", "They have carried it all the way here.", "I have a friend.", "We are helping each other."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The perfect tense uses an auxiliary verb from the infinitive 'to have' and a main verb in the past tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-and-perfect-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-160",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which sentence sounds like its tense is correct when you read it out loud?",
+    "input": {
+      "kind": "choice",
+      "options": ["Yesterday, you knew the answer to that question.", "Yesterday, you knows the answer to that question.", "Yesterday, you will know the answer to that question."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Look for the sentence that shows that the action of knowing has already happened.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-161",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which tense tells us that the action is yet to happen / has not happened yet?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["future tense", "future"],
+    "explain": "The past tense tells us about action that has already happened. The present tense tells us about action that is happening right now.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-162",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Which sentence is in the present tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["They will catch the ball expertly in the game tomorrow.", "They almost caught the ball in the game last week.", "They catch the ball every time they play."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "'Caught' is the simple past tense. It tells the reader that 'they' have already done the action of catching.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-163",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "What sort of action does a progressive tense sentence tell us about?",
+    "input": {
+      "kind": "choice",
+      "options": ["action that has definitely finished", "action that will never happen", "action that is ongoing over a timeframe"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The action in the sentence 'We will be trying our best in the lesson.' has not definitely finished.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-164",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which words tell you that the following sentence is in the progressive future tense? 'Five kangaroos will be visiting the zoo next week.'",
+    "input": {
+      "kind": "choice",
+      "options": ["five kangaroos", "next week", "the zoo", "will be", "be visiting"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "'Next week' tells us something about the time frame being in the future, but it is not a verb. Find the part of the verb that tells you that the kangaroos' visit is yet to happen.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-165",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which word tells you that the following sentence is in the progressive past tense? 'I was learning to play the guitar last year.'",
+    "input": {
+      "kind": "choice",
+      "options": ["was", "learning", "last", "year"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "'Learning' is the main verb. It would stay the same if we were talking or writing in the past, present or future progressive tense. This does not help us when we are identifying the tense of the sentence. We must find a different type of verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-166",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which of these is written in the progressive future tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["The class was hoping to win the Attendance Award.", "Jun is enjoying the school residential.", "Miss Ofoedu will be arriving slightly late today."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The auxiliary verb 'is' shows action that is happening in the present.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-167",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "In a progressive tense, what form does the main verb take?",
+    "input": {
+      "kind": "choice",
+      "options": ["'-ed' ending (played)", "'-ing' ending (playing)", "'-s' ending (plays)"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "This sentence is in the past progressive tense: 'She was trying to open the present carefully'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-168",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which sentence shows the future progressive tense version of this simple present sentence: 'Andeep wants to win the match'.",
+    "input": {
+      "kind": "choice",
+      "options": ["Andeep will want to win the match.", "Andeep will be wanting to win the match.", "Andeep was wanting to win the match.", "Andeep is wanting to win the match."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The simple future tense uses the auxiliary verb 'will', but it does not use a second auxiliary verb based on the infinitive 'to be'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-169",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which of these sentences are written in a perfect tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["I ate my breakfast.", "I have eaten my breakfast.", "The man is paying a fine.", "The man has paid a fine."],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "The perfect tenses all use an auxiliary verb based on the infinitive 'to have'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-170",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "What kind of auxiliary verb will always be found in a perfect tense sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["an auxiliary verb based on 'to be'", "an auxiliary verb based on 'to do'", "an auxiliary verb based on 'to have'"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An example of a perfect tense sentence is 'We have taken our time'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-171",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Which sentence shows the correct perfect present tense version of this sentence: 'Since I was four, I practised origami.'",
+    "input": {
+      "kind": "choice",
+      "options": ["Since I was four, I will have practised origami.", "Since I was four, I was practising origami.", "Since I was four, I have practised origami."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The perfect present tense is formed using the auxiliary verb 'have' or 'has'; it does not have two auxiliary verbs.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-172",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 1,
+    "prompt": "Choose the correct perfect present verb form to complete the gap: 'Jun (to live)__________ in the village for years'.",
+    "input": {
+      "kind": "choice",
+      "options": ["lived", "was living", "has lived", "will have lived"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The perfect present will be formed from 'has' or 'have' followed by a past tense form of the verb 'to live'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-173",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "What is the auxiliary verb in this progressive sentence? 'Aisha was sitting down when I entered'.",
+    "input": {
+      "kind": "choice",
+      "options": ["sitting", "was", "when", "entered"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "An auxiliary verb is a helping verb that links to the main verb; in this case, it tells us when the main verb took place.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-174",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which word shows that this sentence took place in the past? 'Andeep and Alex were shivering with cold'.",
+    "input": {
+      "kind": "choice",
+      "options": ["were (the auxiliary verb)", "shivering (the main verb)", "and (the conjunction)"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "In progressive tenses, the main verb is always in its '-ing' form; it doesn't change in different tenses.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-175",
+    "type": "g-verb-forms",
+    "topic": "future-progressive",
+    "level": 1,
+    "prompt": "Which of these sentences is in the progressive future tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["Aisha's cousin was driving to pick us up from the park.", "Aisha's cousin will be picking us up from the park.", "Aisha's cousin is coming to collect us from the park."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The auxiliary verb 'was' shows action in the past.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-176",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which sentence shows the progressive past tense version of this simple past tense sentence? 'As the waves crashed on the shore, we lay on the sand'.",
+    "input": {
+      "kind": "choice",
+      "options": ["As the waves are crashing on the shore, we are lying on the sand.", "As the waves were crashing on the shore, we were lying on the sand.", "As the waves are crashing on the shore, we will be lying on the sand."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Look at the auxiliary verb in each sentence that is based on the infinitive 'to be'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-177",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which sentence is happening in the past?",
+    "input": {
+      "kind": "choice",
+      "options": ["Tomorrow, we will go to the shops.", "I am doing my best!", "We walked up the steep hill."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The verb 'am' is a present tense verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-178",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which sentence is happening in the future?",
+    "input": {
+      "kind": "choice",
+      "options": ["That morning, we packed our bags quickly.", "We will walk as far as possible today!", "I'm so hungry!"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Verbs in the past tense often end in -ed.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-179",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which is the correct pair of verbs to complete the gaps: 'I didn't ___________ what to do when it __________'.",
+    "input": {
+      "kind": "choice",
+      "options": ["knew, happened", "know, happen", "know, happened", "knows, happened"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Read each pair of verbs in the complete sentence to see if they make sense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-180",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which word in this sentence tells us what the tense is? 'Lucas and Sam waited patiently in the corridor'.",
+    "input": {
+      "kind": "choice",
+      "options": ["and", "waited", "patiently", "corridor"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Verbs tell us the tense of a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-181",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "Which word in this sentence is the auxiliary verb? 'Andeep will try his best today'.",
+    "input": {
+      "kind": "choice",
+      "options": ["Andeep", "today", "try", "will"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "The main verb in this sentence is 'try'; auxiliary verbs link to the main verb in a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-182",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "What is the tense of this sentence: 'You'll have a great time here'.",
+    "input": {
+      "kind": "choice",
+      "options": ["simple past tense", "simple present tense", "simple future tense"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "'You'll' is the contracted form of 'you will'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-183",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Which verb in this sentence needs to be changed to maintain the tense? 'Jun rushed up the stairs, crashed into Miss Ofoedu and slams into the ground'.",
+    "input": {
+      "kind": "choice",
+      "options": ["rushed", "crashed", "slams"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The verb 'slams' is in the simple present tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-184",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Which sentence shows an action happening in the past?",
+    "input": {
+      "kind": "choice",
+      "options": ["I am studying French.", "I studied French last year.", "I will study French at secondary school."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The verb 'will' shows future action.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-185",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 3,
+    "prompt": "Which sentence shows action happening in the present?",
+    "input": {
+      "kind": "choice",
+      "options": ["She practised every day for a month.", "She practises every day after school.", "She will practise tonight."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The verb 'will' shows future action.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-186",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Tick the sentence which uses the correct tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["When I woke up, I brush my teeth.", "When I wake up, I brushed my teeth.", "When I woke up, I brushed my teeth."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "We often (but not always) keep verbs in a sentence in the same tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-187",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "What type of tense uses auxiliary verbs based on 'to have'?",
+    "input": {
+      "kind": "choice",
+      "options": ["simple tenses", "perfect tenses", "progressive tenses"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "This would include auxiliary verbs like 'have', 'had', 'has' and 'hasn't', which would be paired with a main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-188",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Tick all the sentences using a perfect tense.",
+    "input": {
+      "kind": "choice",
+      "options": ["We have known this all along.", "He has played football for 7 years.", "We played cricket on the beach.", "I knew she was listening."],
+      "pick": 2
+    },
+    "answer": [0, 1],
+    "explain": "The perfect tenses use an auxiliary verb based on 'to have'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-189",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 3,
+    "prompt": "Which type of tense uses an auxiliary verb based on 'to be'?",
+    "input": {
+      "kind": "choice",
+      "options": ["progressive tenses", "simple tenses", "perfect tenses"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "This would include auxiliary verbs such as 'are', 'am', 'is' and 'were'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-190",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Tick all the sentences that use a progressive tense.",
+    "input": {
+      "kind": "choice",
+      "options": ["She waited for me for ages.", "She was waiting for me for ages.", "We were learning a lot about each other.", "We learned a lot about each other."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Progressive tenses always use the -ing form of the main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-191",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 3,
+    "prompt": "Which simple tense uses an auxiliary verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["simple past", "simple present", "simple future"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An auxiliary verb is a 'helping' verb that is paired with the main verb in a clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-192",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Which verb form completes this sentence? 'Since July, I __________ a lot about geography.'",
+    "input": {
+      "kind": "choice",
+      "options": ["learning", "am learning", "have learned"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Read each possible answer inside the sentence to see what sounds right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "sentences-in-the-simple-progressive-and-perfect-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-determiners-060",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Which words are determiners in this sentence? 'My feet are killing me after that long walk!'",
+    "input": {
+      "kind": "choice",
+      "options": ["my", "feet", "are", "after", "that"],
+      "pick": 2
+    },
+    "answer": [0, 4],
+    "explain": "Determiners come in front of the nouns they introduce.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-compound-sentences-revision"
+    }
+  },
+  {
+    "id": "gi-conjunctions-038",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Tick the correct list of co-ordinating conjunctions.",
+    "input": {
+      "kind": "choice",
+      "options": ["and, or, but", "but, because, while", "and, that, which"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "We can remember the co-ordinating conjunction using the word 'BOA'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-compound-sentences-revision"
+    }
+  },
+  {
+    "id": "gi-conjunctions-039",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which words in this complex sentence are subordinating conjunctions? 'As the fog cleared, we gasped in astonishment because we saw we were in a beautiful place.'",
+    "input": {
+      "kind": "choice",
+      "options": ["as", "in", "because", "were"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Subordinating conjunctions start adverbial clauses, which are a type of subordinate clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-progressive-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-193",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "Which sentence is written in the simple past tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["He had a headache.", "He has a headache.", "He is having a headache.", "He was having a headache."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The simple past tense does not use an auxiliary verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-progressive-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-194",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 3,
+    "prompt": "What is the simple past tense version of this sentence? 'She takes me to practice every Monday.'",
+    "input": {
+      "kind": "choice",
+      "options": ["She is taking me to practice every Monday.", "She took me to practice every Monday.", "She was taking me to practice every Monday.", "She will take me to practice every Monday."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The simple past tense does not use an auxiliary verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-progressive-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-195",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 3,
+    "prompt": "Which sentence is in the past progressive tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["The committee is meeting in the village hall.", "The committee will be meeting in the village hall.", "The committee was meeting in the village hall."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "To see which progressive tense is being used, we look at the auxiliary verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-progressive-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-196",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 3,
+    "prompt": "Which verb form completes this sentence in the **progressive present** tense? 'When she _________ her book, we have to be very quiet.'",
+    "input": {
+      "kind": "choice",
+      "options": ["was writing", "is writing", "will be writing", "wrote"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "To see which progressive tense is being used, we look at the auxiliary verb. Find the auxiliary verb from 'to be' that is in the **present** tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "simple-and-progressive-tense-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-197",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "'I finished my homework.' What tense is this sentence written in?",
+    "input": {
+      "kind": "choice",
+      "options": ["simple past tense", "progressive past tense", "simple future tense", "progressive present tense"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The progressive tense uses an auxiliary verb from the infinitive 'to be'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-198",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 1,
+    "prompt": "Identify the auxiliary verb in the following sentence: 'They are reading their books.'",
+    "input": {
+      "kind": "choice",
+      "options": ["they", "are", "reading", "their", "books"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "'Reading' is the main verb in the sentence. The auxiliary verb helps the main verb. Which verb helps the verb 'reading'?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-199",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "What should the main verb be in the following sentence? 'I was __________ out of the window and I saw a hot air balloon.'",
+    "input": {
+      "kind": "choice",
+      "options": ["look", "looked", "looking", "will look"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Say the sentence out loud with each option and see if you can hear which sounds right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-200",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "What is the auxiliary verb in the following sentence? 'The penguins were diving into the water at speed.'",
+    "input": {
+      "kind": "choice",
+      "options": ["were", "diving", "into", "speed"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The auxiliary verb in this sentence is helping the main verb 'diving'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-201",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which words tell you that the following sentence is written in the progressive tense? 'Alex and Jun were hoping for a pet rabbit.'",
+    "input": {
+      "kind": "choice",
+      "options": ["Alex and Jun", "were hoping", "for a", "pet rabbit"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The verb/verbs carry the tense of a sentence. A verb is a doing, a being or a having word.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-202",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 1,
+    "prompt": "Which word in the following sentence tells you that it is written in the progressive past tense? 'We were treading carefully on the icy pond.'",
+    "input": {
+      "kind": "choice",
+      "options": ["were", "treading", "carefully"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "'Treading' is the main verb. It would stay the same if we wrote 'We are treading carefully.' or 'We will be treading carefully.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-and-progressive-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-203",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "What is the past tense of the verb 'go'?",
+    "input": {
+      "kind": "choice",
+      "options": ["came", "took", "went"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Say this present tense sentence in the past tense as if you did it yesterday: 'We go to the shops.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-204",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Select the sentence that makes sense.",
+    "input": {
+      "kind": "choice",
+      "options": ["He dig a hole in the sandpit.", "He digs a hole in the sandpit.", "He will digs a hole in the sandpit."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Say the sentence aloud to see if you can hear if it does or doesn't sound right.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-205",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 1,
+    "prompt": "Select the sentence written in the **present tense**.",
+    "input": {
+      "kind": "choice",
+      "options": ["Jun plays tennis.", "Jun will play tennis.", "Jun played tennis."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "The present tense is happening now. Find the sentence that tells you that Jun is doing the action of playing tennis now.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-206",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 1,
+    "prompt": "Identify the past tense form of the verb ‘play’.",
+    "input": {
+      "kind": "choice",
+      "options": ["plays", "will play", "playd", "played"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Past tense verbs often end in -ed.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-207",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 1,
+    "prompt": "What is the **auxiliary verb** in this simple future tense sentence? 'We will take the bus.'",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["will"],
+    "explain": "The auxiliary verb is paired with the main verb ‘take’.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-determiners-061",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "What is introduced by a determiner?",
+    "input": {
+      "kind": "choice",
+      "options": ["a phrase", "a noun", "a clause", "a verb"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The word 'the' is the determiner in the clause 'the river flowed'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "single-words-phrases-and-clauses-in-fronted-adverbials"
+    }
+  },
+  {
+    "id": "gi-determiners-062",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select all the clauses that contain a possessive pronoun.",
+    "input": {
+      "kind": "choice",
+      "options": ["this is our house", "because they took his shoes", "we saw many people there", "my sister rushed in"],
+      "pick": 3
+    },
+    "answer": [0, 1, 3],
+    "explain": "Possessive pronouns are used to show who the noun belongs to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "single-words-phrases-and-clauses-in-fronted-adverbials"
+    }
+  },
+  {
+    "id": "gi-determiners-063",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select the sentences that contain quantifiers.",
+    "input": {
+      "kind": "choice",
+      "options": ["Give me those books.", "Give me some books.", "I want to see lots of work.", "I want to see your work."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "'Those' is a demonstrative used to tell us which noun we are referring to.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "single-words-phrases-and-clauses-in-fronted-adverbials"
+    }
+  },
+  {
+    "id": "gi-determiners-064",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Which determiners could be used in this gap? '__________ food is excellent today!'",
+    "input": {
+      "kind": "choice",
+      "options": ["your", "these", "the", "many"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Try saying the sentence with each of the determiners in the gap - which ones make sense?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "single-words-phrases-and-clauses-in-fronted-adverbials"
+    }
+  },
+  {
+    "id": "gi-determiners-065",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Select all the sentences with two determiners.",
+    "input": {
+      "kind": "choice",
+      "options": ["Give this letter to your teacher.", "Give my thanks to the secretary.", "Give some money to your nan.", "Give this money to Miss O'Neill."],
+      "pick": 3
+    },
+    "answer": [0, 1, 2],
+    "explain": "Look at the nouns in the sentences and look for the words in front of them.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "single-words-phrases-and-clauses-in-fronted-adverbials"
+    }
+  },
+  {
+    "id": "gi-conjunctions-040",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which of the following can be subordinating conjunctions that start adverbial clauses?",
+    "input": {
+      "kind": "choice",
+      "options": ["because", "after", "whose", "who", "as"],
+      "pick": 3
+    },
+    "answer": [0, 1, 4],
+    "explain": "'Whose' can be used as a relative pronoun.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-and-object"
+    }
+  },
+  {
+    "id": "gi-conjunctions-041",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 3,
+    "prompt": "Which of the following could complete the adverbial clause in this sentence? 'I have known her since __________.'",
+    "input": {
+      "kind": "choice",
+      "options": ["she is my cousin", "I was six", "she arrived at this school", "2022"],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "'since 2022' would not be an adverbial clause because it doesn't contain a verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-and-object"
+    }
+  },
+  {
+    "id": "gi-verb-forms-208",
+    "type": "g-verb-forms",
+    "topic": "past-perfect",
+    "level": 3,
+    "prompt": "Which perfect past verbs would complete this sentence? 'He __________ out of nowhere.'",
+    "input": {
+      "kind": "choice",
+      "options": ["has appeared", "is appearing", "appeared", "had appeared"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Look carefully at the auxiliary verbs - which one having verb shows action in the past?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-object-active-voice-and-passive-voice-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-209",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 3,
+    "prompt": "Which perfect present verbs would complete this sentence? 'Sam __________ to every single meeting.'",
+    "input": {
+      "kind": "choice",
+      "options": ["came", "had come", "has come", "comes"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Look carefully at the auxiliary verbs - which one having verb shows action in the present?",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-object-active-voice-and-passive-voice-revision"
+    }
+  },
+  {
+    "id": "gi-active-passive-039",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "What would be the passive version of this active sentence? 'The committee made the decision.'",
+    "input": {
+      "kind": "choice",
+      "options": ["The committee was made by the decision.", "The decision was made by the committee.", "The decision is being made by the committee.", "The decision was being made by the committee."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The object becomes the subject of the passive sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-object-active-voice-and-passive-voice-revision"
+    }
+  },
+  {
+    "id": "gi-active-passive-040",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "What would be the active version of this sentence? 'A poem will be performed by Year 5.'",
+    "input": {
+      "kind": "choice",
+      "options": ["Year 5 will have performed a poem.", "Year 5 will perform a poem.", "A poem will perform Year 5.", "By Year 5 will a poem be performed."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Look in the preposition phrase at the end of the passive sentence for the subject of the active sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-object-active-voice-and-passive-voice-revision"
+    }
+  },
+  {
+    "id": "gi-active-passive-041",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Tick the passive voice sentences.",
+    "input": {
+      "kind": "choice",
+      "options": ["A decision was made.", "We made a decision.", "The committee took a decision.", "A decision has been taken."],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "We sometimes remove the old subject altogether when we write in the passive.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "subject-object-active-voice-and-passive-voice-revision"
+    }
+  },
+  {
+    "id": "gi-conjunctions-042",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Fill in the gap: a __________ starts an adverbial clause.",
+    "input": {
+      "kind": "choice",
+      "options": ["co-ordinating conjunction", "suffix", "prefix", "subordinating conjunction"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Prefixes and suffixes are groups of letters.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "subordination-with-as-in-adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-043",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What is \"because\" subordinating conjunction useful for?",
+    "input": {
+      "kind": "choice",
+      "options": ["for giving a reason", "for giving a time frame", "for giving a result"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "\"Because\" is used to explain something.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "subordination-with-as-in-adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-044",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What is \"when\" subordinating conjunction useful for?",
+    "input": {
+      "kind": "choice",
+      "options": ["for giving a reason", "for giving a time frame", "for giving a result"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "\"When\" is useful for telling the reader when something has happened, is happening or will happen.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "subordination-with-as-in-adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-prepositions-035",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 1,
+    "prompt": "Fill in the gap: a preposition is a word or words that can tell the reader __________.",
+    "input": {
+      "kind": "choice",
+      "options": ["where a noun is", "how surprised a character is", "the beginning, middle and end of a story"],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Use the word 'position' within the word 'preposition' to help you.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "subordination-with-as-in-adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-045",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What is the subordinating conjunction that is useful for stating **simultaneous** action?",
+    "input": {
+      "kind": "choice",
+      "options": ["when", "because", "so", "as"],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "Different subordinating conjunctions have different purposes.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "subordination-with-as-in-adverbial-complex-sentences"
+    }
+  },
+  {
+    "id": "gi-prepositions-036",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 3,
+    "prompt": "What always follows a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["a verb", "no other word", "a noun or noun phrase", "an adjective"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An example would be the word 'into' in the sentence 'We walked into the shop.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "synonyms-antonyms-prepositions-and-adverbs"
+    }
+  },
+  {
+    "id": "gi-prepositions-037",
+    "type": "g-prepositions",
+    "topic": "prepositions",
+    "level": 3,
+    "prompt": "Which two of the following sentences contain a preposition?",
+    "input": {
+      "kind": "choice",
+      "options": ["We shuffled down the street.", "The tower fell down.", "Suddenly, I looked up.", "He waited at the bus stop."],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Prepositions must be followed by a noun or noun phrase.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "synonyms-antonyms-prepositions-and-adverbs"
+    }
+  },
+  {
+    "id": "gi-conjunctions-046",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What is a conjunction?",
+    "input": {
+      "kind": "choice",
+      "options": ["a being or doing word", "a word that describes a noun", "a joining word", "a person, place or thing"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Examples of conjunctions are 'and', 'because' and 'so'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "three-sentence-types"
+    }
+  },
+  {
+    "id": "gi-conjunctions-047",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What is the purpose of a co-ordinating conjunction in a compound sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["to join an adverbial clause and a main clause", "to join two main clauses", "to join two nouns", "to join two adverbial clauses"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "An example of a compound sentence is 'Jun waited patiently, but Sofia kept checking her watch.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "three-sentence-types"
+    }
+  },
+  {
+    "id": "gi-conjunctions-048",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Where can the subordinating conjunction be placed in an adverbial complex sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["at the start of the sentence", "at the end of the sentence", "in the middle of the sentence, after the main clause", "anywhere in the sentence"],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Here are two examples: 'As the snow fell, we wrapped up warm.' and 'We wrapped up warm as the snow fell.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "three-sentence-types"
+    }
+  },
+  {
+    "id": "gi-conjunctions-049",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "What type of conjunction joins the two main clauses in a compound sentence?",
+    "input": {
+      "kind": "text"
+    },
+    "answer": ["co-ordinating conjunction", "co-ordinating"],
+    "explain": "Conjunctions can join words, phrases or clauses.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "three-ways-for-co-ordination-in-compound-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-050",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Which of the following are co-ordinating conjunctions?",
+    "input": {
+      "kind": "choice",
+      "options": ["and", "but", "because", "when", "or"],
+      "pick": 3
+    },
+    "answer": [0, 1, 4],
+    "explain": "Say a sentence with two ideas out loud to help you.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 3,
+      "question": "three-ways-for-co-ordination-in-compound-sentences"
+    }
+  },
+  {
+    "id": "gi-conjunctions-051",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Which of the following are **subordinating conjunctions**?",
+    "input": {
+      "kind": "choice",
+      "options": ["or", "because", "while", "and", "as"],
+      "pick": 3
+    },
+    "answer": [1, 2, 4],
+    "explain": "Subordinating conjunctions could come at the beginning of a sentence or after a main clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "two-types-of-conjunction"
+    }
+  },
+  {
+    "id": "gi-conjunctions-052",
+    "type": "g-conjunctions",
+    "topic": "conjunctions",
+    "level": 1,
+    "prompt": "Which **subordinating conjunction** best completes this sentence: '___________ Aisha went to sleep, she put on her pyjamas.'",
+    "input": {
+      "kind": "choice",
+      "options": ["after", "while", "before", "as"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Try each subordinating conjunction in the gap and decide which shows the correct order of events.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 4,
+      "question": "two-types-of-conjunction"
+    }
+  },
+  {
+    "id": "gi-modals-045",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "What type of word is a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["An adjective.", "An adverb.", "A noun.", "An auxiliary verb."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "In the sentence \"I can try.\", the modal verb is 'can'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-046",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which of the following are modal verbs?",
+    "input": {
+      "kind": "choice",
+      "options": ["be", "might", "could", "learn"],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Modal verbs are auxiliary verbs that must be paired with a main verb in a sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-047",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "What is the purpose of the modal verb 'will' in this sentence? \"They will find us somewhere to stay.\"",
+    "input": {
+      "kind": "choice",
+      "options": ["To show that they have an obligation to find us somewhere to stay.", "To show that they might possibly find us somewhere to stay.", "To show that they definitely will find us somewhere to stay."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Think about how this sentence has a different meaning - \"They may find us somewhere to stay.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-048",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Tick the modal verbs that show that something is possible to happen but not certain.",
+    "input": {
+      "kind": "choice",
+      "options": ["will", "may", "could", "shall"],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "Think about the difference between \"I could stay.\" and \"I will stay.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-049",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which sentence contains a modal verb showing obligation?",
+    "input": {
+      "kind": "choice",
+      "options": ["We ought to try harder.", "We could try harder.", "We will try harder."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "An obligation is something we think we or someone else should do.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-050",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which of these speech sentences use a modal verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["\"You have one more chance,\" said Mrs. Begum.", "\"You should stop right now!\" bellowed Mr. McIntyre.", "\"We'll get into trouble,\" whispered Sam."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "'We'll' is a contracted form of 'we will'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-modals-051",
+    "type": "g-modals",
+    "topic": "modals",
+    "level": 2,
+    "prompt": "Which words in this persuasive sentence are modal verbs? \"You must change your behaviour, or you may find yourself in deep trouble.\"",
+    "input": {
+      "kind": "choice",
+      "options": ["must", "change", "or", "may", "find"],
+      "pick": 2
+    },
+    "answer": [0, 3],
+    "explain": "Modal verbs are auxiliary verbs - they need to be paired with a main verb in a clause.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "using-modal-verbs"
+    }
+  },
+  {
+    "id": "gi-active-passive-042",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "How do we know this sentence is in the passive voice? 'The photo was taken by Sam.'",
+    "input": {
+      "kind": "choice",
+      "options": ["It contains the preposition 'by'.", "The verb is 'done to' the subject.", "The subject is doing the verb.", "It includes an auxiliary verb from 'to be' along with a past tense main verb."],
+      "pick": 3
+    },
+    "answer": [0, 1, 3],
+    "explain": "'Was' is an auxiliary verb in this sentence and it is paired with the main verb 'taken'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-043",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Tick all the passive voice sentences.",
+    "input": {
+      "kind": "choice",
+      "options": ["The thieves took some plants.", "Some plants were taken by the thieves.", "We were surprised by the noise.", "The noise surprised us."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "The passive voice often uses the preposition 'by'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-044",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which is the correct passive voice version of this active sentence? 'Lightning struck the lighthouse.'",
+    "input": {
+      "kind": "choice",
+      "options": ["Lightning was struck by the lighthouse.", "The lighthouse was struck by lightning.", "The lighthouse was being struck by lightning.", "The lighthouse is being struck by lightning."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Make the object of this sentence the subject of a passive sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-045",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "What do we need to do to change an active sentence to a passive one?",
+    "input": {
+      "kind": "choice",
+      "options": ["make the old object the subject of the new sentence", "use the preposition 'by'", "use an auxiliary verb based on 'to be' and a past tense main verb", "remove the object"],
+      "pick": 3
+    },
+    "answer": [0, 1, 2],
+    "explain": "An example of a conversion would be 'Mr Martinez played the guitar' > 'The guitar was played by Mr Martinez.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-046",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Why might we convert an active sentence to the passive?",
+    "input": {
+      "kind": "choice",
+      "options": ["to emphasise who did the action", "to emphasise how the action was done", "to emphasise the action instead of who did it"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An example of a passive sentence would be 'The vaccine was discovered by the scientists.'",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-047",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which is the correct passive version of this active sentence? 'The headteacher is giving the speech.'",
+    "input": {
+      "kind": "choice",
+      "options": ["The speech has been given by the headteacher.", "The speech was being given by the headteacher.", "The speech is being given by the headteacher."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The tense of the passive sentence must match the tense of the active sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-048",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which is the correct active version of this passive sentence? 'The gold has been taken by the thieves.'",
+    "input": {
+      "kind": "choice",
+      "options": ["The thieves are taking the gold.", "The thieves have taken the gold.", "The thieves were taking the gold."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The tense of the passive sentence must match the tense of the active sentence.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-active-passive-049",
+    "type": "g-active-passive",
+    "topic": "active-passive",
+    "level": 3,
+    "prompt": "Which of these sentences emphasises best the 'doer' of the action?",
+    "input": {
+      "kind": "choice",
+      "options": ["The register was taken by Miss O'Neill.", "The register was taken.", "The register is being taken by Miss O'Neill.", "Miss O'Neill is taking the register."],
+      "pick": 1
+    },
+    "answer": [3],
+    "explain": "The active voice emphasises the 'doer' of the action.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "using-the-active-and-passive-voice"
+    }
+  },
+  {
+    "id": "gi-determiners-066",
+    "type": "g-determiners",
+    "topic": "determiners",
+    "level": 3,
+    "prompt": "Which words are determiners in this sentence? 'Those children are damaging my plants with their boots!'",
+    "input": {
+      "kind": "choice",
+      "options": ["those", "children", "damaging", "my", "their"],
+      "pick": 3
+    },
+    "answer": [0, 3, 4],
+    "explain": "Determiners come in front of the nouns they introduce.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 6,
+      "question": "word-class-revision"
+    }
+  },
+  {
+    "id": "gi-verb-forms-210",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 2,
+    "prompt": "What two kinds of word are always found in a progressive tense sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["A verb with an -ing suffix.", "A verb with an -s suffix.", "An auxiliary verb based on the infinitive 'to be'.", "A verb with an -ly suffix."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "An example of a progressive tense sentence is \"We are singing loudly.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-211",
+    "type": "g-verb-forms",
+    "topic": "past-progressive",
+    "level": 2,
+    "prompt": "Tick the sentences written in the progressive past tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["She was trying her best and he was wasting time.", "Sofia is growing more confident, but Sam is feeling unsure.", "When we were watching, he was behaving beautifully."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "Look carefully at the auxiliary verbs based on 'to be' and decide whether they are in the past or present tense.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-212",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Which of the following would always be found in a perfect tense sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["A main verb with an -ing suffix.", "A past tense form of a main verb.", "An auxiliary verb based on the infinitive 'to be'.", "An auxiliary verb based on the infinitive 'to have'."],
+      "pick": 2
+    },
+    "answer": [1, 3],
+    "explain": "An example of a perfect present tense sentence is \"I have known this for years.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-213",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Which of these sentences use the perfect present tense?",
+    "input": {
+      "kind": "choice",
+      "options": ["We walked down Sam's street yesterday.", "We have walked down Sam's street every day this week.", "She has spoken French since she was born.", "She spoke French when she was little."],
+      "pick": 2
+    },
+    "answer": [1, 2],
+    "explain": "The perfect present tense uses an auxiliary verb based on the infinitive 'to have'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-214",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Tick the sentence that uses the perfect present tense correctly.",
+    "input": {
+      "kind": "choice",
+      "options": ["Since I was two, I lived on this street.", "Since I was two, I has lived on this street.", "Since I was two, I have lived on this street."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The perfect present tense is formed using the auxiliary verb 'have' or 'has'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-215",
+    "type": "g-verb-forms",
+    "topic": "present-perfect",
+    "level": 2,
+    "prompt": "Choose the correct perfect present verb form to complete the gap: \"Alex (to stand) __________ in the queue for hours.\"",
+    "input": {
+      "kind": "choice",
+      "options": ["stood", "was stood", "has stood", "will have stood"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "The perfect present will be formed from 'has' or 'have' followed by a past tense form of the verb 'to stand'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-perfect-present-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-216",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Tick the sentence that is written in the simple present tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["When Mrs. Begum laughed, we all smiled.", "Because it snowed earlier, we will stay inside for lunch.", "The town, which is close to Manchester, has many cinemas."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Look for two verbs in the same simple tense - remember that the simple future tense uses the auxiliary verb 'will'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-217",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Tick the sentence that is written in the simple future tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["Mr. McIntyre, who is very strict, will teach us next year.", "As the sun rises, the temperature increases.", "Year 4 will sing their song and Year 5 will say a prayer."],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "Remember that the simple future tense is formed from two verbs - the auxiliary verb 'will' and a main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-218",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 2,
+    "prompt": "What kind of word will we always find in a progressive tense sentence?",
+    "input": {
+      "kind": "choice",
+      "options": ["A verb ending -ly", "A verb ending -s", "A verb ending -ing"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An example of a progressive tense sentence is \"I was waiting there.\"",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-219",
+    "type": "g-verb-forms",
+    "topic": "present-progressive",
+    "level": 2,
+    "prompt": "Tick the sentences written in the progressive present tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["We are waiting and we are listening.", "I will be listening this time.", "While we're playing, they're annoying us.", "We were hoping for this."],
+      "pick": 2
+    },
+    "answer": [0, 2],
+    "explain": "'They're' is a contracted form of 'they are'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-progressive-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-220",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Which word in this sentence is the verb? 'They are very kind.'",
+    "input": {
+      "kind": "choice",
+      "options": ["they", "are", "very", "kind"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "A verb is a being, a doing or a having word.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-221",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Which word in this sentence is the verb? 'He has no money left.'",
+    "input": {
+      "kind": "choice",
+      "options": ["he", "has", "no", "money", "left"],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "A verb is a being, a doing or a having word.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-222",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Which of the following sentences contains a verb that is a 'being' verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["We wait here every day.", "She is a great player.", "They work very hard."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "The verb 'to be' has forms such as 'are' and 'am'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-223",
+    "type": "g-verb-forms",
+    "topic": "future",
+    "level": 2,
+    "prompt": "Which simple tense requires an auxiliary verb to 'help' the main verb?",
+    "input": {
+      "kind": "choice",
+      "options": ["simple past", "simple present", "simple future"],
+      "pick": 1
+    },
+    "answer": [2],
+    "explain": "An example of a sentence in the simple future tense would be 'They will find us.'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-224",
+    "type": "g-verb-forms",
+    "topic": "simple-past",
+    "level": 2,
+    "prompt": "Tick the sentence that is written in the simple past tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["When Mrs Begum laughed, we all smiled.", "Because it snowed earlier, we will stay inside for lunch.", "The town, which is close to Manchester, had many factories in the past."],
+      "pick": 1
+    },
+    "answer": [0],
+    "explain": "Look for two verbs in the same simple tense - remember that the simple future tense uses the auxiliary verb 'will'.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  },
+  {
+    "id": "gi-verb-forms-225",
+    "type": "g-verb-forms",
+    "topic": "simple-present",
+    "level": 2,
+    "prompt": "Tick the sentence that is written in the simple present tense throughout.",
+    "input": {
+      "kind": "choice",
+      "options": ["Mr McIntyre, who is very strict, will teach us next year.", "As the sun rises, the temperature increases.", "Year 4 will sing their song and Year 5 will say a prayer."],
+      "pick": 1
+    },
+    "answer": [1],
+    "explain": "Remember that the simple future tense is formed from two verbs - the auxiliary verb 'will' and a main verb.",
+    "source": {
+      "paper": "Oak National Academy",
+      "year": 5,
+      "question": "writing-sentences-in-the-simple-present-past-and-future-tense"
+    }
+  }
+]
